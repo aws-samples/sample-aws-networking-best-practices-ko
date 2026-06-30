@@ -8,7 +8,9 @@ name: News update & deploy
 
 on:
   schedule:
-    - cron: "0 19 * * *"   # 매일 19:00 UTC (KST 04:00)
+    # AWS What's New는 미 태평양(PT) 업무시간 중 게시되므로 PT 업무일 종료 후 수집한다.
+    # SF 19:00(PDT) = 02:00 UTC = KST 익일 11:00. (sync와 1시간 차로 동시 실행 회피)
+    - cron: "0 2 * * *"
   workflow_dispatch:
 
 permissions:

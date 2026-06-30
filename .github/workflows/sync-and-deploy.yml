@@ -7,7 +7,9 @@ name: Sync translations & deploy
 
 on:
   schedule:
-    - cron: "0 18 * * *"   # 매일 18:00 UTC (KST 03:00)
+    # 샌프란시스코(PT) 18:00 기준. GitHub cron은 UTC 고정이라 서머타임은 자동 반영 안 됨.
+    # PDT(여름): SF 18:00 = 01:00 UTC = KST 익일 10:00 / PST(겨울)엔 SF 17:00에 해당.
+    - cron: "0 1 * * *"
   workflow_dispatch:
 
 permissions:
