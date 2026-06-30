@@ -2,7 +2,8 @@ name: Sync translations & deploy
 
 # upstream(aws/aws-networking-best-practices) 변경분을 Bedrock(Claude)로 EN→KO 번역해
 # 커밋하고, 사이트를 빌드해 GitHub Pages에 배포한다.
-# AWS 접근은 OIDC(장기 키 없음)로만 하며, secrets.AWS_ROLE_ARN 역할을 가정한다.
+# AWS 접근은 secrets.AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY
+# (bedrock:InvokeModel 만 가진 전용 최소권한 키)로 한다.
 
 on:
   schedule:
@@ -35,10 +36,11 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt boto3
 
-      - name: Configure AWS credentials (OIDC)
+      - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
       - name: Sync (EN→KO translate via Bedrock)
