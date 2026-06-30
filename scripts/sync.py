@@ -357,6 +357,7 @@ def _base_config() -> dict:
             "name": "material",
             "language": "ko",
             "custom_dir": "overrides",
+            "favicon": "assets/favicon.svg",
             "font": {"text": "Noto Sans KR", "code": "JetBrains Mono"},
             "palette": [
                 {
