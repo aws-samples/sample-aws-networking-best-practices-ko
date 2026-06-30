@@ -1,0 +1,3369 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AWS Networking Architecture guidance and best practices (community Korean-translation mirror)">
+      
+      
+      
+        <link rel="canonical" href="https://aws-samples.github.io/sample-aws-networking-best-practices-ko/en/application-networking/service-to-service/">
+      
+      
+        <link rel="prev" href="../load-balancing/">
+      
+      
+        <link rel="next" href="../container-mesh/">
+      
+      
+        
+          <link rel="alternate" href="../../../application-networking/service-to-service/" hreflang="ko">
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Service to Service - AWS Networking Best Practices</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans KR";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#service-to-service" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  
+    Community mirror of
+    <a href="https://aws.github.io/aws-networking-best-practices/" target="_blank" rel="noopener">
+      AWS Networking Best Practices</a>
+    · a <strong>Korean translation</strong> is available — use the language switcher in the header
+  
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="AWS Networking Best Practices" class="md-header__button md-logo" aria-label="AWS Networking Best Practices" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M180.4 203c-.7 22.6 10.6 32.7 10.9 39-.1 1.3-.6 2.5-1.3 3.6s-1.7 2-2.8 2.6l-12.8 9c-1.7 1.2-3.6 1.8-5.6 1.9-.4 0-8.2 1.8-20.5-25.6-7.5 9.4-17 16.9-27.9 22s-22.7 7.7-34.7 7.5c-16.3.9-60.4-9.2-58.1-56.2-1.6-38.3 34.1-62.1 70.9-60 7.1 0 21.6.4 47 6.3v-15.6c2.7-26.5-14.7-47-44.8-43.9-2.4 0-19.4-.5-45.8 10.1-7.4 3.4-8.3 2.8-10.8 2.8-7.4 0-4.4-21.5-2.9-24.2 5.2-6.4 35.9-18.4 65.9-18.2 20.1-1.8 40.1 4.4 55.7 17.3 6.3 7.1 11.2 15.4 14.2 24.4s4.2 18.5 3.5 28v69.3zM94 235.4c32.4-.5 46.2-20 49.3-30.5 2.5-10.1 2.1-16.4 2.1-27.4-9.7-2.3-23.6-4.9-39.6-4.9-15.2-1.1-42.8 5.6-41.7 32.3-1.2 16.8 11.1 31.4 30 30.5zm170.9 23.1c-7.9.7-11.5-4.9-12.7-10.4L202.4 83.4c-1-2.8-1.6-5.6-1.9-8.6-.2-1.2.1-2.4.8-3.4s1.8-1.6 3-1.8h22.2c8.8-.9 11.6 6 12.6 10.4l35.8 140.8L308.1 80c.5-3.2 2.9-11.1 12.8-10.2h17.2c2.2-.2 11.1-.5 12.7 10.4l33.3 142.5L421 80.1c.5-2.2 2.7-11.4 12.7-10.4h19.7c.9-.1 6.2-.8 5.3 8.6-.4 1.8 3.4-10.7-52.8 169.9-1.1 5.5-4.8 11.1-12.7 10.4h-18.7c-10.9 1.2-12.5-9.7-12.7-10.7l-33.2-137.1-32.8 137c-.2 1.1-1.7 11.9-12.7 10.7h-18.3zm273.5 5.6c-5.9 0-33.9-.3-57.4-12.3-2.3-1-4.3-2.6-5.7-4.8s-2.1-4.6-2.1-7.1v-10.7c0-8.5 6.2-6.9 8.8-5.9 10 4.1 16.5 7.1 28.8 9.6 36.7 7.5 52.8-2.3 56.7-4.5 13.2-7.8 14.2-25.7 5.3-34.9-10.5-8.8-15.5-9.1-53.1-21-4.6-1.3-43.7-13.6-43.8-52.4-.6-28.2 25-56.2 69.5-56 12.7 0 46.4 4.1 55.6 15.6 1.4 2.1 2 4.6 1.9 7v10.1c0 4.4-1.6 6.7-4.9 6.7-7.7-.9-21.4-11.2-49.2-10.8-6.9-.4-39.9.9-38.4 25-.4 19 26.6 26.1 29.7 26.9 36.5 11 48.6 12.8 63.1 29.6 17.1 22.2 7.9 48.3 4.3 55.4-19.1 37.5-68.4 34.4-69.3 34.4zM578.6 369c-70 51.7-171.7 79.2-258.5 79.2C203 449 89.8 405.9 2.8 327.5c-6.5-5.9-.8-14 7.2-9.5 96.5 55.2 205.7 84.2 316.9 84.1 83-.4 165.1-17.3 241.6-49.5 11.8-5 21.8 7.8 10.1 16.4m29.2-33.3c-9-11.5-59.3-5.4-81.8-2.7-6.8.8-7.9-5.1-1.8-9.5 40.1-28.2 105.9-20.1 113.4-10.6s-2.1 75.4-39.6 106.9c-5.8 4.9-11.3 2.3-8.7-4.1 8.4-21.3 27.4-68.5 18.4-80z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AWS Networking Best Practices
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Service to Service
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="다크 모드로 전환"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="다크 모드로 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="라이트 모드로 전환"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="라이트 모드로 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../application-networking/service-to-service/" hreflang="ko" class="md-select__link">
+              한국어
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aws/aws-networking-best-practices/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+          
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+        
+      
+        
+          
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../decisions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Decision Map
+
+      </a>
+    </li>
+  
+
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu">
+            <a href="../../foundation/" class="md-tabs__link">Foundation</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../foundation/">Overview</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../foundation/aws-prerequisites/">Before You Start</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../foundation/organizations/">AWS Organizations</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../foundation/vpc/">Amazon VPC</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../foundation/regions-azs/">Regions & Availability Zones</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../foundation/cidr/">CIDR Planning</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../foundation/subnets/">Subnets</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../foundation/dns/">DNS Architecture</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../foundation/ipam/">IPAM</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu">
+            <a href="../../connectivity/" class="md-tabs__link">Connectivity</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../connectivity/">Overview</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../connectivity/internet/">Internet</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../connectivity/within-aws/">Within AWS</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../connectivity/hybrid-multicloud/">Hybrid & Multi-Cloud</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../connectivity/remote-access/">Remote Access</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu md-tabs__item--active">
+            <a href="../" class="md-tabs__link">Application Networking</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../">Overview</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../load-balancing/">Load Balancing</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="./">Service to Service</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../container-mesh/">Container Mesh</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu">
+            <a href="../../security/" class="md-tabs__link">Security</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../security/">Overview</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../security/perimeter-inbound/">Perimeter Controls</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../security/outbound/">Outbound Controls</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../security/segmentation/">Network Segmentation</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu">
+            <a href="../../observability/" class="md-tabs__link">Observability</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../observability/">Overview</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../observability/internal-traffic/">Internal Traffic</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../observability/external-traffic/">External Traffic</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../observability/service-monitoring/">AWS Services</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../observability/notifications/">Notifications</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu">
+            <a href="../../community/" class="md-tabs__link">Community</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../community/">Overview</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../community/contribute/">How to contribute</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../community/report-a-correction/">Report a correction</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../community/new-best-practice/">New best practice</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../community/making-a-pull-request/">Making a pull request</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../community/philosophy/">Philosophy</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../community/conventions/">Conventions</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu">
+            <a href="../../news/whats-new/" class="md-tabs__link">News</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../news/whats-new/">AWS What's New</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../news/blog-networking/">Networking Blog</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../news/blog-korea/">AWS Korea Tech Blog</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="AWS Networking Best Practices" class="md-nav__button md-logo" aria-label="AWS Networking Best Practices" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M180.4 203c-.7 22.6 10.6 32.7 10.9 39-.1 1.3-.6 2.5-1.3 3.6s-1.7 2-2.8 2.6l-12.8 9c-1.7 1.2-3.6 1.8-5.6 1.9-.4 0-8.2 1.8-20.5-25.6-7.5 9.4-17 16.9-27.9 22s-22.7 7.7-34.7 7.5c-16.3.9-60.4-9.2-58.1-56.2-1.6-38.3 34.1-62.1 70.9-60 7.1 0 21.6.4 47 6.3v-15.6c2.7-26.5-14.7-47-44.8-43.9-2.4 0-19.4-.5-45.8 10.1-7.4 3.4-8.3 2.8-10.8 2.8-7.4 0-4.4-21.5-2.9-24.2 5.2-6.4 35.9-18.4 65.9-18.2 20.1-1.8 40.1 4.4 55.7 17.3 6.3 7.1 11.2 15.4 14.2 24.4s4.2 18.5 3.5 28v69.3zM94 235.4c32.4-.5 46.2-20 49.3-30.5 2.5-10.1 2.1-16.4 2.1-27.4-9.7-2.3-23.6-4.9-39.6-4.9-15.2-1.1-42.8 5.6-41.7 32.3-1.2 16.8 11.1 31.4 30 30.5zm170.9 23.1c-7.9.7-11.5-4.9-12.7-10.4L202.4 83.4c-1-2.8-1.6-5.6-1.9-8.6-.2-1.2.1-2.4.8-3.4s1.8-1.6 3-1.8h22.2c8.8-.9 11.6 6 12.6 10.4l35.8 140.8L308.1 80c.5-3.2 2.9-11.1 12.8-10.2h17.2c2.2-.2 11.1-.5 12.7 10.4l33.3 142.5L421 80.1c.5-2.2 2.7-11.4 12.7-10.4h19.7c.9-.1 6.2-.8 5.3 8.6-.4 1.8 3.4-10.7-52.8 169.9-1.1 5.5-4.8 11.1-12.7 10.4h-18.7c-10.9 1.2-12.5-9.7-12.7-10.7l-33.2-137.1-32.8 137c-.2 1.1-1.7 11.9-12.7 10.7h-18.3zm273.5 5.6c-5.9 0-33.9-.3-57.4-12.3-2.3-1-4.3-2.6-5.7-4.8s-2.1-4.6-2.1-7.1v-10.7c0-8.5 6.2-6.9 8.8-5.9 10 4.1 16.5 7.1 28.8 9.6 36.7 7.5 52.8-2.3 56.7-4.5 13.2-7.8 14.2-25.7 5.3-34.9-10.5-8.8-15.5-9.1-53.1-21-4.6-1.3-43.7-13.6-43.8-52.4-.6-28.2 25-56.2 69.5-56 12.7 0 46.4 4.1 55.6 15.6 1.4 2.1 2 4.6 1.9 7v10.1c0 4.4-1.6 6.7-4.9 6.7-7.7-.9-21.4-11.2-49.2-10.8-6.9-.4-39.9.9-38.4 25-.4 19 26.6 26.1 29.7 26.9 36.5 11 48.6 12.8 63.1 29.6 17.1 22.2 7.9 48.3 4.3 55.4-19.1 37.5-68.4 34.4-69.3 34.4zM578.6 369c-70 51.7-171.7 79.2-258.5 79.2C203 449 89.8 405.9 2.8 327.5c-6.5-5.9-.8-14 7.2-9.5 96.5 55.2 205.7 84.2 316.9 84.1 83-.4 165.1-17.3 241.6-49.5 11.8-5 21.8 7.8 10.1 16.4m29.2-33.3c-9-11.5-59.3-5.4-81.8-2.7-6.8.8-7.9-5.1-1.8-9.5 40.1-28.2 105.9-20.1 113.4-10.6s-2.1 75.4-39.6 106.9c-5.8 4.9-11.3 2.3-8.7-4.1 8.4-21.3 27.4-68.5 18.4-80z"/></svg>
+
+    </a>
+    AWS Networking Best Practices
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aws/aws-networking-best-practices/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../foundation/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundation
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foundation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/aws-prerequisites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Before You Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/organizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS Organizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/vpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Amazon VPC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/regions-azs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regions & Availability Zones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/cidr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CIDR Planning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/subnets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subnets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/dns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/ipam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IPAM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../connectivity/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connectivity
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Connectivity
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connectivity/internet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connectivity/within-aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Within AWS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connectivity/hybrid-multicloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hybrid & Multi-Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connectivity/remote-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application Networking
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Application Networking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../load-balancing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Load Balancing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service to Service
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service to Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#synchronous-service-to-service-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synchronous service-to-service patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Synchronous service-to-service patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#service-discovery-and-addressing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service discovery and addressing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-authentication-and-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request authentication and authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic-management-for-safe-deployments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traffic management for safe deployments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observability-for-service-to-service-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observability for service-to-service traffic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-vpc-and-cross-account-service-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-VPC and cross-account service access
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asynchronous-service-to-service-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asynchronous service-to-service patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Asynchronous service-to-service patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-choose-asynchronous-over-synchronous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to choose asynchronous over synchronous
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calling-vpc-based-services-from-amazon-eventbridge-and-aws-step-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calling VPC-based services from Amazon EventBridge and AWS Step Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipv6-for-service-to-service-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IPv6 for service-to-service communication
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-considerations-for-cross-vpc-service-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost considerations for cross-VPC service access
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-your-service-to-service-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building your service-to-service stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building your service-to-service stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New environments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#existing-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Existing environments
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container-mesh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Container Mesh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../security/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/perimeter-inbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Perimeter Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/outbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbound Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Segmentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../observability/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observability
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Observability
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observability/internal-traffic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internal Traffic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observability/external-traffic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    External Traffic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observability/service-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observability/notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../community/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Community
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/contribute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to contribute
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/report-a-correction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report a correction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/new-best-practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New best practice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/making-a-pull-request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Making a pull request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/philosophy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philosophy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conventions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    News
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    News
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../news/whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS What's New
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../news/blog-networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../news/blog-korea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS Korea Tech Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#synchronous-service-to-service-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synchronous service-to-service patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Synchronous service-to-service patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#service-discovery-and-addressing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service discovery and addressing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-authentication-and-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request authentication and authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic-management-for-safe-deployments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traffic management for safe deployments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observability-for-service-to-service-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observability for service-to-service traffic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-vpc-and-cross-account-service-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-VPC and cross-account service access
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asynchronous-service-to-service-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asynchronous service-to-service patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Asynchronous service-to-service patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-choose-asynchronous-over-synchronous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to choose asynchronous over synchronous
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calling-vpc-based-services-from-amazon-eventbridge-and-aws-step-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calling VPC-based services from Amazon EventBridge and AWS Step Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipv6-for-service-to-service-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IPv6 for service-to-service communication
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-considerations-for-cross-vpc-service-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost considerations for cross-VPC service access
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-your-service-to-service-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building your service-to-service stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building your service-to-service stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New environments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#existing-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Existing environments
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+  
+  
+  <!-- 본문 페이지: 언어 전환은 헤더의 언어 선택기로 제공(원문 링크 불필요) -->
+  
+                  
+
+
+
+<h1 id="service-to-service">Service to Service<a class="headerlink" href="#service-to-service" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Prerequisites</p>
+<p>This section assumes familiarity with <a href="../../foundation/vpc/">Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr></a>, <a href="../../foundation/subnets/">Subnets</a>, the connectivity patterns in the <a href="../../connectivity/within-aws/">Within AWS</a> page (especially Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice), and the <a href="../load-balancing/">Load Balancing</a> page. Service-to-service communication builds on those primitives.</p>
+</div>
+<p>Service-to-service communication in AWS spans five architectural concerns: discovery (how consumers find providers via Route 53 private hosted zones or Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr>), authentication (<abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr>-based SigV4 signing with <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice auth policies, or mutual <abbr title="전송 계층 보안(Transport Layer Security)">TLS</abbr> on <abbr title="Application Load Balancer">ALB</abbr>), cross-<abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> reach (<abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice service networks shared via RAM without <abbr title="클래스 없는 도메인 간 라우팅(Classless Inter-Domain Routing)">CIDR</abbr> coordination, or PrivateLink endpoint services for <abbr title="전송 제어 프로토콜(Transmission Control Protocol)">TCP</abbr>), traffic management (<abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice weighted routing shifts traffic between target groups in seconds, not <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> <abbr title="유효 기간(Time To Live)">TTL</abbr> minutes), and observability (<abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice access logs with caller identity and auth decisions on every request). The interesting questions are rarely "<abbr title="Application Load Balancer">ALB</abbr> or <abbr title="Network Load Balancer">NLB</abbr>?" — they're "how do consumers find providers?", "how do services authenticate each other?", and "how do I deploy a new version safely?"</p>
+<p>This page is <strong>patterns-first</strong>. Each pattern below has multiple AWS-supported options; the right choice depends on the rest of the architecture. The framing question to keep in mind across the page: <strong>how much of the networking layer do you want to manage yourself?</strong></p>
+<p>Each pattern's options can be assembled from individual building blocks (Amazon Route 53, AWS PrivateLink, <abbr title="Application Load Balancer">ALB</abbr> / <abbr title="Network Load Balancer">NLB</abbr>, <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr>, CloudWatch, AWS <abbr title="웹 애플리케이션 방화벽(Web Application Firewall)">WAF</abbr>) where the application or platform team owns the integration, <em>or</em> covered through <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/what-is-vpc-lattice.html">Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice</a>, which folds discovery, authentication, cross-<abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> reach, traffic management, and observability into a single managed application networking layer with the connectivity abstracted away. Both shapes are valid.</p>
+<p>The deeper <em>connectivity-side</em> treatment of Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice (service networks, association models, network-team-side best practices) lives in the <a href="../../connectivity/within-aws/">Within AWS</a> page; this page focuses on how application teams <em>use</em> the patterns.</p>
+<figure>
+<p><img alt="Service-to-service patterns showing synchronous concerns (discovery, authentication, cross-VPC access, traffic management, observability) and asynchronous patterns (EventBridge, Step Functions)" src="../../assets/application-networking/s2s-patterns.png" /></p>
+<figcaption>
+<p>Service-to-service patterns — <a href="../../assets/application-networking/s2s-patterns.drawio">Drawio Source</a></p>
+</figcaption>
+</figure>
+<h2 id="synchronous-service-to-service-patterns">Synchronous service-to-service patterns<a class="headerlink" href="#synchronous-service-to-service-patterns" title="Permanent link">&para;</a></h2>
+<p>Synchronous service-to-service communication (a service makes a request, waits for the response) is the most common shape of service interaction inside a typical workload. The patterns below cover the design questions that consistently come up: how the consumer finds the provider, how the two sides authenticate, how the call crosses <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> and account boundaries, how new versions roll out safely, and how the operator sees what's happening.</p>
+<h3 id="service-discovery-and-addressing">Service discovery and addressing<a class="headerlink" href="#service-discovery-and-addressing" title="Permanent link">&para;</a></h3>
+<p>Hard-coded IPs don't survive contact with a real environment. Targets scale, instances replace, Availability Zones fail, and the service backing a name might migrate. Service discovery answers two questions: given a service name, what address(es) should the consumer use right now, and how do you keep that name stable as the implementation behind it changes?</p>
+<p>The right pattern in AWS, regardless of which option below you choose, is <strong>always abstract the consumer-facing name with an Amazon Route 53 record</strong>. The application calls <code>payments.internal.example.com</code>, never a bare load-balancer <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> name and never an Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice managed <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> name. Route 53 alias records resolve the friendly name to whatever's actually backing the service today (an internal <abbr title="Application Load Balancer">ALB</abbr>, an <abbr title="Network Load Balancer">NLB</abbr>, an Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice service, an <abbr title="Elastic Compute Cloud">EC2</abbr> instance), and changing the implementation becomes a Route 53 record change rather than a consumer-side coordination exercise.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Use it when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Amazon Route 53 private hosted zones with alias records</strong></td>
+<td>The application code calls a friendly internal name (<code>payments.internal.example.com</code>); the Route 53 alias record resolves it to the current backing target. Alias records are first-class for internal ALBs, NLBs, and Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice services. As the implementation moves (<abbr title="Elastic Compute Cloud">EC2</abbr> to ECS, AWS PrivateLink endpoint service to Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice service), only the alias record changes; application code is untouched. Owned and shared across accounts as a single internal <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> control plane.</td>
+</tr>
+<tr>
+<td><strong>AWS Cloud Map</strong></td>
+<td>The discovery layer needs a service-instance registry with custom attribute filtering (deployment stage, capacity, color), or you're using Amazon ECS service discovery's automatic per-task registration. ECS registers and deregisters task IPs in AWS Cloud Map automatically; consumers can query by service name (<abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr>) or filter by attribute (API). For non-ECS and non-attribute-filtered cases, Route 53 private hosted zones are simpler.</td>
+</tr>
+<tr>
+<td><strong>Direct <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> to <abbr title="Application Load Balancer">ALB</abbr>, <abbr title="Network Load Balancer">NLB</abbr>, or Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice service</strong></td>
+<td>Single-team, single-<abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> simple setups where the consumer can call the AWS-assigned <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> name (<code>internal-foo-1234.elb.us-east-1.amazonaws.com</code> or <code>my-service.7d67968.vpc-lattice-svcs.us-east-1.on.aws</code>) directly. Works, but binds the consumer to that specific instance of the provider. Promote to a Route 53 alias as the workload grows.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="manage-private-hosted-zones-at-scale">Manage Private Hosted Zones at scale<a class="headerlink" href="#manage-private-hosted-zones-at-scale" title="Permanent link">&para;</a></h4>
+<p><a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/profiles.html">Amazon Route 53 Profiles</a> bundle Private Hosted Zones, Resolver forwarding rules, and <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> Firewall rule groups into a single shareable object distributed through AWS RAM. Profiles live in the network or platform account and are shared to consumer VPCs across the organization.</p>
+<p>The main decision when working at scale in multi-account environments is <strong>where the Private Hosted Zones referenced by the Profile live, and who can add zones to it</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Ownership model</th>
+<th>Where Private Hosted Zones live</th>
+<th>How application teams add records</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Centralized</strong></td>
+<td>Network or platform account owns every Private Hosted Zone referenced by the Profile.</td>
+<td>Through PRs to a central IaC repo, a Service Catalog product, or a tightly-scoped delegated <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> role on the central account.</td>
+</tr>
+<tr>
+<td><strong>Decentralized</strong></td>
+<td>Each application team owns its Private Hosted Zone in its own account. The platform team shares the Profile with admin permissions (granular controls) to those application accounts so teams can add their own zones to it.</td>
+<td>Each team manages its own zone directly and adds it to the Profile.</td>
+</tr>
+</tbody>
+</table>
+<p>Most environments end up <strong>hybrid</strong>: platform-owned zones for cross-cutting infrastructure (<code>aws.internal</code>, <code>db.internal</code>), team-owned zones per business domain (<code>payments.app.internal</code>, <code>inventory.app.internal</code>), all referenced by one (or a few) centrally-owned Profile and consumed by VPCs through read-only sharing.</p>
+<h4 id="service-discovery-best-practices">Service discovery best practices<a class="headerlink" href="#service-discovery-best-practices" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Use Amazon Route 53 Profiles to distribute Private Hosted Zones, Resolver forwarding rules, and <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> Firewall rule groups across multi-account environments</strong>. Share at the OU level so new accounts inherit configuration automatically. Without Profiles, multi-account <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> turns into custom cross-account-association automation; with Profiles it's a first-class operation.</li>
+<li><strong>Decide deliberately between centralized and decentralized Private Hosted Zone ownership</strong> (or a hybrid of the two), based on how the organization works: platform-owned with delegated change paths for application teams, or team-owned with platform aggregation through a shared admin Profile.</li>
+<li><strong>Always front load balancers and Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice services with a Route 53 alias record</strong>. Alias records are first-class for <abbr title="Application Load Balancer">ALB</abbr>, <abbr title="Network Load Balancer">NLB</abbr>, and Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice services; they resolve at AWS-<abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr>-time without an extra CNAME hop and are free of charge inside Route 53 hosted zones. The alias means the implementation can change underneath without consumers noticing.</li>
+<li><strong>Use AWS Cloud Map only when its specific shape matches the workload</strong>. Amazon ECS service discovery's per-task automatic registration, or attribute-filtered discovery (<code>deployment_color = blue</code>). For everything else, Route 53 is simpler.</li>
+<li><strong>Avoid hard-coded IPs and bare load-balancer or Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> names in application code</strong>. Both bind the consumer to a specific instantiation of the provider; the Route 53 alias indirection is what makes any change safe.</li>
+</ul>
+<h4 id="service-discovery-documentation">Service discovery documentation<a class="headerlink" href="#service-discovery-documentation" title="Permanent link">&para;</a></h4>
+<div class="grid cards">
+<ul>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>Amazon Route 53 private hosted zones</strong></p>
+<hr />
+<p>Internal <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> authoritative name service inside one or more VPCs, including alias records to AWS resources.</p>
+<p><a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-private.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>Amazon Route 53 alias records</strong></p>
+<hr />
+<p>First-class records that resolve to AWS resources (<abbr title="Application Load Balancer">ALB</abbr>, <abbr title="Network Load Balancer">NLB</abbr>, Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice service, CloudFront, <abbr title="Simple Storage Service">S3</abbr>) without an extra <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> hop.</p>
+<p><a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>Amazon Route 53 Profiles</strong></p>
+<hr />
+<p>Bundle private hosted zones, Resolver forwarding rules, and <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> Firewall rule groups into a single shareable object distributed through AWS RAM to multi-account environments.</p>
+<p><a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/profiles.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>AWS Cloud Map</strong></p>
+<hr />
+<p>Service-instance registry with <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> and API discovery, custom attributes, and Amazon ECS service-discovery integration.</p>
+<p><a href="https://docs.aws.amazon.com/cloud-map/latest/dg/what-is-cloud-map.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>Amazon ECS service discovery</strong></p>
+<hr />
+<p>Automatic per-task registration of Amazon ECS services in AWS Cloud Map for native container service discovery.</p>
+<p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+</ul>
+</div>
+<h3 id="request-authentication-and-authorization">Request authentication and authorization<a class="headerlink" href="#request-authentication-and-authorization" title="Permanent link">&para;</a></h3>
+<p>A service answering a request needs to know two things: who's calling, and whether that caller is allowed to call. The traditional network approach (security groups plus shared secrets in headers) works for small environments but stops scaling once services span teams, VPCs, and accounts. The options below differ in <strong>what</strong> they authenticate (network source vs cryptographic identity vs application-presented certificate) and in <strong>how much of the auth control plane you operate yourself</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it authenticates</th>
+<th>What you operate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice auth policies + AWS SigV4 / SigV4A</strong></td>
+<td>The <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> identity of the caller (an <abbr title="Elastic Compute Cloud">EC2</abbr> instance profile, an Amazon ECS task role, an Amazon EKS pod <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> role, a Lambda execution role). Each consumer signs requests with its own role; Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice evaluates the request against the service's auth policy and either allows or denies it, with the caller's identity recorded in access logs.</td>
+<td>An <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr>-based policy on each Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice service. The signing happens in the AWS SDK on the consumer side; no shared secrets to rotate.</td>
+</tr>
+<tr>
+<td><strong>Security groups + private connectivity (network-based authentication)</strong></td>
+<td>Which network source can reach the service (typically a security group identifier or a <abbr title="클래스 없는 도메인 간 라우팅(Classless Inter-Domain Routing)">CIDR</abbr>). Necessary for <abbr title="전송 제어 프로토콜(Transmission Control Protocol)">TCP</abbr> services that can't sign requests, and the right answer when the consumer is a legacy workload that only knows IP-based access.</td>
+<td>The security group rules at every consumer/provider pair. Security groups answer "what can call you", not "who". Different applications running with the same security group identifier are indistinguishable.</td>
+</tr>
+<tr>
+<td><strong>Mutual <abbr title="전송 계층 보안(Transport Layer Security)">TLS</abbr> (mTLS)</strong></td>
+<td>A client X.509 certificate presented during the <abbr title="전송 계층 보안(Transport Layer Security)">TLS</abbr> handshake. Available on Application Load Balancer (the <abbr title="Application Load Balancer">ALB</abbr> terminates <abbr title="전송 계층 보안(Transport Layer Security)">TLS</abbr> and validates the client cert in <code>passthrough</code> or <code>verify</code> mode) and on Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice <abbr title="전송 계층 보안(Transport Layer Security)">TLS</abbr> passthrough listeners (Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice routes the encrypted flow on SNI without terminating <abbr title="전송 계층 보안(Transport Layer Security)">TLS</abbr>, and the application or load balancer behind it terminates mTLS). The Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice <abbr title="전송 계층 보안(Transport Layer Security)">TLS</abbr> passthrough path keeps end-to-end encryption intact at the cost of restricting auth policies to anonymous principals on that listener.</td>
+<td>The client-cert lifecycle (issuance, rotation, revocation). Real operational overhead at scale, but the right call for B2B integrations, IoT, and workloads where mTLS is a contract or compliance requirement.</td>
+</tr>
+<tr>
+<td><strong>Shared API keys, bearer tokens, HTTP basic auth</strong></td>
+<td>A static secret in a header. Concentrates trust on one rotated-by-hand secret.</td>
+<td>Manual rotation, distribution, and revocation. Avoid for service-to-service in any environment where <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr>-signed requests are an option.</td>
+</tr>
+</tbody>
+</table>
+<p>The four options layer cleanly: a security group still controls <em>what can reach you</em>, an Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice auth policy controls <em>what <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> identity is allowed to invoke you</em>, and mTLS (on <abbr title="Application Load Balancer">ALB</abbr> or through Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice <abbr title="전송 계층 보안(Transport Layer Security)">TLS</abbr> passthrough) controls <em>what client certificate is presented</em>. They don't replace each other: the question is which combination matches the workload.</p>
+<h4 id="authentication-and-authorization-best-practices">Authentication and authorization best practices<a class="headerlink" href="#authentication-and-authorization-best-practices" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Sign service-to-service requests with AWS SigV4 / SigV4A</strong> wherever the consumer can. The AWS SDK on <abbr title="Elastic Compute Cloud">EC2</abbr>, Amazon ECS, Amazon EKS, and Lambda will sign automatically when the consumer runs with an <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> role.</li>
+<li><strong>Use <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> roles end-to-end for the consumer identity</strong>. <abbr title="Elastic Compute Cloud">EC2</abbr> instance profiles, Amazon ECS task roles, Amazon EKS pod <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> roles (through <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> Roles for Service Accounts or Amazon EKS Pod Identity), and Lambda execution roles. Avoid shared <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> users or shared credentials; the audit trail in CloudTrail and Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice access logs is only useful when each caller has its own role.</li>
+<li><strong>Combine network-based and identity-based authentication for defense in depth</strong>, not as alternatives. Security groups limit which network sources can reach the service or service network; identity-based auth enforces which principals can invoke the service. A misconfigured security group still leaves identity-based auth as the gate; a misconfigured auth policy still leaves the network-source restriction in place. The two layers reduce the blast radius of any single misconfiguration.</li>
+<li><strong>Pick the identity-evaluation point that matches the service surface, not a separate authentication mechanism</strong>. SigV4-signed requests with <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> identities are the consistent identity-based mechanism across AWS service-to-service traffic; the evaluation point differs by what's in front of the consuming service:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Service surface</th>
+<th>Identity evaluation point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice service</td>
+<td>Auth policy on the service or service network (evaluates SigV4-signed requests).</td>
+</tr>
+<tr>
+<td>Amazon API Gateway REST or HTTP API</td>
+<td><abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> authorizer (evaluates SigV4-signed requests).</td>
+</tr>
+<tr>
+<td>Direct AWS-service calls (DynamoDB, <abbr title="Simple Storage Service">S3</abbr>, KMS, etc.)</td>
+<td>The AWS SDK signs with SigV4; the AWS service evaluates against <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr>.</td>
+</tr>
+<tr>
+<td>AWS AppSync, AWS-native APIs with <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> auth</td>
+<td>Same SigV4 + <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> mechanism, evaluated at the service.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Use mTLS only when the contract genuinely requires it</strong>. B2B integrations with named clients, IoT devices presenting certificates as their identity, or compliance baselines that mandate mTLS. The client-cert lifecycle is real work in either case; don't reach for mTLS as a general service-to-service pattern.</li>
+<li><strong>Don't use shared API keys, bearer tokens, or HTTP basic auth for service-to-service</strong>. They're fragile under rotation, hard to audit per-caller, and the <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr>-signed alternative solves the same problem with the credential lifecycle already managed by <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr>.</li>
+<li><strong>Until consumers are updated to sign requests, write Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice auth policies with conditions that match what the request already carries</strong> (source <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr>, HTTP method, path, headers). This gives you access logs, explicit allow/deny decisions, and a working control plane immediately, without blocking on application changes. Tighten to principal-based conditions as consumers adopt signing.</li>
+</ul>
+<h4 id="authentication-and-authorization-documentation">Authentication and authorization documentation<a class="headerlink" href="#authentication-and-authorization-documentation" title="Permanent link">&para;</a></h4>
+<div class="grid cards">
+<ul>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice auth policies</strong></p>
+<hr />
+<p><abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr>-based access control at the service level: principals, conditions, request attributes, and SigV4 / SigV4A signing.</p>
+<p><a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>AWS Signature Version 4 (SigV4)</strong></p>
+<hr />
+<p>The AWS request-signing standard used by SDK clients to authenticate API calls and Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice service requests with <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> identities.</p>
+<p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv-create-signed-request.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>Application Load Balancer mutual <abbr title="전송 계층 보안(Transport Layer Security)">TLS</abbr></strong></p>
+<hr />
+<p>Client X.509 certificate authentication on the <abbr title="Application Load Balancer">ALB</abbr>, with <code>passthrough</code> and <code>verify</code> modes.</p>
+<p><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/mutual-authentication.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice <abbr title="전송 계층 보안(Transport Layer Security)">TLS</abbr> passthrough listeners</strong></p>
+<hr />
+<p>SNI-based routing of <abbr title="전송 계층 보안(Transport Layer Security)">TLS</abbr> and mTLS traffic without <abbr title="전송 계층 보안(Transport Layer Security)">TLS</abbr> termination at Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice, preserving end-to-end encryption to the application.</p>
+<p><a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/tls-listeners.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong><abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> security groups</strong></p>
+<hr />
+<p>Network-level access control for ENIs, ALBs, NLBs, and Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice service-network associations.</p>
+<p><a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+</ul>
+</div>
+<h3 id="traffic-management-for-safe-deployments">Traffic management for safe deployments<a class="headerlink" href="#traffic-management-for-safe-deployments" title="Permanent link">&para;</a></h3>
+<p>Releasing a new version of a service without disrupting consumers is one of the recurring tests of a service-to-service architecture. The networking layer can carry most of the weight if you let it: shift a small percentage of traffic to the new version, observe, increase, repeat. The options below differ in <strong>where</strong> the traffic-shifting decision is made and <strong>how fast</strong> it takes effect.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Where shifting happens</th>
+<th>Speed of change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice weighted routing</strong></td>
+<td>Inside the Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice service, across target groups. Weights can route to mixed compute types: <abbr title="Elastic Compute Cloud">EC2</abbr>, Amazon ECS, Amazon EKS, and Lambda can back the same Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice service through different target groups.</td>
+<td>Seconds. The weighted-routing change in the Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice service is what shifts traffic; no <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> <abbr title="유효 기간(Time To Live)">TTL</abbr> involved.</td>
+</tr>
+<tr>
+<td><strong><abbr title="Application Load Balancer">ALB</abbr> weighted target groups</strong></td>
+<td>Inside the <abbr title="Application Load Balancer">ALB</abbr> listener rule, across target groups behind that <abbr title="Application Load Balancer">ALB</abbr>. Same in-listener-rule shifting; different load balancer.</td>
+<td>Seconds. Listener-rule changes propagate quickly.</td>
+</tr>
+<tr>
+<td><strong>Route 53 weighted records</strong></td>
+<td>At the <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> layer, across <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> endpoints. Suitable when the workload genuinely lives across endpoints that can't be unified at the load-balancing layer (multi-Region active-active, <abbr title="Application Load Balancer">ALB</abbr> to <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice migration).</td>
+<td>Slow. Depends on the consumer's <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> <abbr title="유효 기간(Time To Live)">TTL</abbr>. The wrong tool for in-Region service-to-service traffic.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="traffic-management-best-practices">Traffic management best practices<a class="headerlink" href="#traffic-management-best-practices" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Shift traffic at the load-balancing layer, not at the <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> layer</strong>. Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice weighted routing and <abbr title="Application Load Balancer">ALB</abbr> weighted target groups change traffic distribution in seconds; <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr>-based shifting waits for TTLs to expire on every consumer.</li>
+<li><strong>Use weighted routing for compute migrations, not just version releases</strong>. Moving a workload from <abbr title="Elastic Compute Cloud">EC2</abbr> to Amazon ECS, or from Amazon ECS to Lambda, can be done with Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice weights inside one service (no consumer-side change).</li>
+<li><strong>Combine weighted routing with health checks and observability</strong> so that a bad new version automatically reduces in weight (or gets rolled back) when its error rate climbs. Per-target-group health checks plus access logs give the signal; CloudWatch alarms on the new target group close the loop.</li>
+<li><strong>Reach for Route 53 weighted records only across <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> endpoints that can't be unified at the load-balancing layer</strong>. Typically multi-Region active-active. Use this option also when you are migrating between solutions (<abbr title="Application Load Balancer">ALB</abbr> to <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice).</li>
+</ul>
+<h4 id="traffic-management-documentation">Traffic management documentation<a class="headerlink" href="#traffic-management-documentation" title="Permanent link">&para;</a></h4>
+<div class="grid cards">
+<ul>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice listener rules and weighted target groups</strong></p>
+<hr />
+<p>Weighted routing across target groups inside an Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice service, including across compute types.</p>
+<p><a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong><abbr title="Application Load Balancer">ALB</abbr> weighted target groups</strong></p>
+<hr />
+<p>Weighted routing inside an <abbr title="Application Load Balancer">ALB</abbr> listener rule for blue/green and canary deployments.</p>
+<p><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/lb-target-group-weights.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>Route 53 weighted routing</strong></p>
+<hr />
+<p><abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr>-layer weighted routing across endpoints, suitable for cross-Region or cross-platform shifts where no single load balancer covers all targets.</p>
+<p><a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-weighted.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+</ul>
+</div>
+<h3 id="observability-for-service-to-service-traffic">Observability for service-to-service traffic<a class="headerlink" href="#observability-for-service-to-service-traffic" title="Permanent link">&para;</a></h3>
+<p>Service-to-service traffic is invisible to operators by default, there's no central place where every internal request is recorded. The observability story matters because a service-to-service incident usually starts with "service A is failing, but I don't know which downstream call is the cause".</p>
+<p>The three layers of signal are: <strong>network-level</strong> (was the connection allowed and did it complete?), <strong>request-level</strong> (per-request log with the request, response, latency, and, when the front door evaluates <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr>, the calling principal), and <strong>application-level</strong> (what was the call graph for this user-facing operation, and where was the latency?). Each layer answers a different question, and a healthy service-to-service environment uses all three.</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Source</th>
+<th>What it tells you</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Network-level</strong></td>
+<td><abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Flow Logs</td>
+<td>Whether the IP-level connection was permitted and how much data flowed. Useful for security-group / <abbr title="네트워크 액세스 제어 목록(Network Access Control List)">NACL</abbr> debugging; doesn't show identities or request semantics.</td>
+</tr>
+<tr>
+<td><strong>Request-level</strong></td>
+<td>Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice access logs (identity-aware), <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html">Application Load Balancer access logs</a></td>
+<td>Per-request log with the source, destination, latency, response code, and timestamp. Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice access logs additionally include the source <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> principal and the auth policy decision; <abbr title="Application Load Balancer">ALB</abbr> access logs do not (the front door doesn't evaluate <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr>). The signal that maps a service-to-service incident to a specific request, and (for the Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice path) to a specific caller and authorization outcome.</td>
+</tr>
+<tr>
+<td><strong>Application-level</strong></td>
+<td>AWS X-Ray, OpenTelemetry, <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Signals.html">Application Signals</a></td>
+<td>Distributed traces across service boundaries. Per-request call graph and latency budget; useful for "where was the time spent and why?".</td>
+</tr>
+</tbody>
+</table>
+<h4 id="observability-best-practices">Observability best practices<a class="headerlink" href="#observability-best-practices" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Use all three layers when traffic traverses load balancers or transit-network plumbing</strong>. Network-level for connectivity debugging, request-level for audit and per-request triage, application-level traces for latency and call-graph analysis. <strong>For Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice traffic, network-level logs are optional</strong>: traffic flows directly between consumer and provider VPCs through the Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice data plane, so <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Flow Logs add less value than they do for traffic that hops through Transit Gateway, AWS Cloud WAN, or peering. Keep them on for general <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> observability, but the request-level and application-level layers carry the operational weight.</li>
+<li><strong>Enable Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice access logs from day one</strong> for every service network, and <strong>enable <abbr title="Application Load Balancer">ALB</abbr> access logs</strong> for any load balancer fronting an internal service. Both are cheap relative to the visibility they give, and they're hard to recreate after the fact when you need them for an incident.</li>
+<li><strong>Use service-level instrumentation, not just network-level</strong>. Distributed traces and Application Signals give you the call graph and latency budget that access logs alone can't. The two together are the foundation of operationally healthy service-to-service traffic.</li>
+<li><strong>Treat <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Flow Logs as a debugging fallback, not a primary signal</strong>. They're useful for "is the connection even reaching the destination IP?" debugging but don't substitute for application-aware observability.</li>
+</ul>
+<h4 id="observability-documentation">Observability documentation<a class="headerlink" href="#observability-documentation" title="Permanent link">&para;</a></h4>
+<div class="grid cards">
+<ul>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice access logs</strong></p>
+<hr />
+<p>Per-request access logging to Amazon <abbr title="Simple Storage Service">S3</abbr>, Amazon CloudWatch Logs, or Amazon Data Firehose, including auth policy decisions.</p>
+<p><a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/monitoring-access-logs.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>Application Load Balancer access logs</strong></p>
+<hr />
+<p>Per-request access logging to Amazon <abbr title="Simple Storage Service">S3</abbr> with client IP, request, response code, latency, and target details.</p>
+<p><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>AWS X-Ray</strong></p>
+<hr />
+<p>Distributed tracing across service boundaries with per-request call-graph analysis.</p>
+<p><a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>Amazon CloudWatch Application Signals</strong></p>
+<hr />
+<p>Service-level monitoring with built-in service map, request rate, latency, and error metrics.</p>
+<p><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Signals.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong><abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Flow Logs</strong></p>
+<hr />
+<p>Network-level traffic capture for ENIs, subnets, and VPCs, available in Amazon <abbr title="Simple Storage Service">S3</abbr> and Amazon CloudWatch Logs.</p>
+<p><a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+</ul>
+</div>
+<h3 id="cross-vpc-and-cross-account-service-access">Cross-<abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> and cross-account service access<a class="headerlink" href="#cross-vpc-and-cross-account-service-access" title="Permanent link">&para;</a></h3>
+<p>Synchronous service-to-service inside a single <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> is straightforward. Across <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> and account boundaries, the question that shapes the operational model isn't "which connectivity option do I pick?" (that's the <a href="../../connectivity/within-aws/">Within AWS</a> page's question), it's <strong>how much of the cross-account connectivity is bundled with the service</strong>.</p>
+<p>Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice services bring the cross-<abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> and cross-account networking <em>with</em> the service: AWS RAM-sharing of a service network gives consumer VPCs reachability without <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> peering, AWS Transit Gateway, AWS Cloud WAN, or <abbr title="클래스 없는 도메인 간 라우팅(Classless Inter-Domain Routing)">CIDR</abbr> coordination. The application team publishes the service; the connectivity is part of what's published.</p>
+<p><a href="https://docs.aws.amazon.com/vpc/latest/privatelink/configure-endpoint-service.html">AWS PrivateLink endpoint services</a> also solve cross-<abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> and cross-account reach without peering or <abbr title="클래스 없는 도메인 간 라우팅(Classless Inter-Domain Routing)">CIDR</abbr> coordination, but they do it as a per-pair construct: the provider deploys an <abbr title="Network Load Balancer">NLB</abbr> and an endpoint service, each consumer creates an interface <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> endpoint in its own <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr>, and the provider accepts the connection. That works cleanly for a small number of named consumer VPCs, but stops scaling once "many providers, many consumers, many environments" turns into hundreds of endpoint connections to maintain. Use AWS PrivateLink endpoint services where the workload's shape is genuinely "one <abbr title="전송 제어 프로토콜(Transmission Control Protocol)">TCP</abbr> service exposed to a small set of consumers"; for general service-to-service traffic at scale, Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice services are the better fit.</p>
+<p>The remaining options (<abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> peering, AWS Transit Gateway, AWS Cloud WAN) are connectivity primitives, not service-exposure primitives. The application team exposes the service through an internal <abbr title="Application Load Balancer">ALB</abbr> or <abbr title="Network Load Balancer">NLB</abbr> and relies on the consumer's <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> having IP routing to the provider's <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> over the underlying connectivity, with auth and observability layered on top separately.</p>
+<table>
+<thead>
+<tr>
+<th>Architecture</th>
+<th>What's bundled with the service</th>
+<th>What's operated separately</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice services + AWS RAM sharing</strong></td>
+<td>Cross-<abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> and cross-account reachability, service discovery, <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr>-based auth policies, weighted routing, access logs. CIDRs can overlap; no peering or transit gateway required.</td>
+<td>The Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice service network design itself (which is shared platform infrastructure, not per-service work).</td>
+</tr>
+<tr>
+<td><strong>AWS PrivateLink endpoint services</strong></td>
+<td>Cross-<abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> and cross-account <abbr title="전송 제어 프로토콜(Transmission Control Protocol)">TCP</abbr> reach without peering, with per-consumer endpoint connections.</td>
+<td>An <abbr title="Network Load Balancer">NLB</abbr> in the provider <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr>, the endpoint service, the per-consumer interface <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> endpoints, and the connection-acceptance process for each new consumer. Scales linearly with the number of consumer VPCs.</td>
+</tr>
+<tr>
+<td><strong>Internal <abbr title="Application Load Balancer">ALB</abbr> / <abbr title="Network Load Balancer">NLB</abbr> over existing connectivity</strong></td>
+<td>The load balancer the application team owns.</td>
+<td>The connectivity layer (<abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> peering, AWS Transit Gateway, AWS Cloud WAN), the auth layer (security groups, <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> at the application or another front-door service), and the observability layer (access logs, traces).</td>
+</tr>
+</tbody>
+</table>
+<p>The connectivity-side treatment of these options lives in the <a href="../../connectivity/within-aws/">Within AWS</a> page.</p>
+<h2 id="asynchronous-service-to-service-patterns">Asynchronous service-to-service patterns<a class="headerlink" href="#asynchronous-service-to-service-patterns" title="Permanent link">&para;</a></h2>
+<p>Not every service-to-service interaction is request/response. Many of the most operationally healthy patterns are asynchronous: the producer publishes an event or message and moves on; the consumer reacts when it can. Asynchronous communication absorbs traffic spikes through buffering, decouples deployment cadence between producer and consumer, and removes the synchronous failure mode where a slow downstream call blocks the upstream caller.</p>
+<p>This page is a <em>networking</em> best-practices guide, not an event-driven-architecture guide. The core async building blocks (<a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html">Amazon EventBridge</a>, <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS</a>, <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html">Amazon SQS</a>, <a href="https://docs.aws.amazon.com/streams/latest/dev/introduction.html">Amazon Kinesis</a>, <a href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step Functions</a>) are AWS services in their own right, with their own depth of documentation. The networking-relevant question for this page is narrower: when an asynchronous workflow needs to <strong>call a synchronous service in a <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr></strong> (a private API on <abbr title="Elastic Compute Cloud">EC2</abbr>, Amazon ECS, Amazon EKS, or behind an internal load balancer), how should that call be made?</p>
+<h3 id="when-to-choose-asynchronous-over-synchronous">When to choose asynchronous over synchronous<a class="headerlink" href="#when-to-choose-asynchronous-over-synchronous" title="Permanent link">&para;</a></h3>
+<p>Reach for an asynchronous pattern when:</p>
+<ul>
+<li>The producer doesn't need a response in the same execution. A service that publishes "order placed" and lets the downstream "send confirmation email" service pick it up doesn't need to block.</li>
+<li>The work has spiky arrival rates, and the consumer cannot scale instantly. A queue absorbs the burst and the consumer processes it at its sustainable rate.</li>
+<li>Multiple consumers need the same event. Amazon EventBridge, Amazon SNS, and Amazon Kinesis all let one event reach many consumers without the producer knowing who they are.</li>
+<li>The work is long-running. An AWS Step Functions workflow can orchestrate multi-step processes with retries, branching, and human-in-the-loop steps without a synchronous timeout dictating the structure.</li>
+</ul>
+<p>Asynchronous communication isn't always the right answer, request/response is the right shape when the consumer genuinely needs the result before it can continue (paying for an order, validating a login, fetching a configuration). The two patterns coexist in healthy architectures.</p>
+<h3 id="calling-vpc-based-services-from-amazon-eventbridge-and-aws-step-functions">Calling <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr>-based services from Amazon EventBridge and AWS Step Functions<a class="headerlink" href="#calling-vpc-based-services-from-amazon-eventbridge-and-aws-step-functions" title="Permanent link">&para;</a></h3>
+<p>The networking question that consistently comes up: "I have an async producer (an Amazon EventBridge rule, an AWS Step Functions workflow), and the consumer is an HTTP service running on <abbr title="Elastic Compute Cloud">EC2</abbr>, Amazon ECS, or Amazon EKS. How does the producer reach the private endpoint?"</p>
+<p>Historically, the answer was a Lambda-as-relay: the Amazon EventBridge rule invoked a Lambda function deployed in the <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr>, which then made an HTTP call to the private endpoint. That worked but added a managed component that existed only to bridge the network layers, with its own scaling, error handling, and observability surface.</p>
+<p>However, <strong>Amazon EventBridge and AWS Step Functions both integrate directly with private endpoints in a <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr></strong> through <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html">EventBridge connections to private APIs</a>. The integration uses <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/resource-configuration.html">Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice resource configurations</a> as the wrapper that represents the private endpoint. A resource configuration can point at <em>any</em> private API. The integration works regardless of whether the consuming service has otherwise adopted Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice; the resource configuration is just thin glue between the async producer and the private resource.</p>
+<p>When EventBridge creates the connection, it manages the resource association between the resource configuration and an Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice service network owned by the EventBridge service itself. You don't need to operate that service network, EventBridge brings it. Cross-account is supported: a connection in one account can target a resource configuration in another account where the private API actually lives.</p>
+<p>The two main patterns this enables:</p>
+<ul>
+<li><strong>Amazon EventBridge rules with private API targets</strong>. A producer publishes an event to an Amazon EventBridge bus; an Amazon EventBridge rule routes the matching event through a connection to a resource configuration that points at the private API. The private API receives an HTTP POST with the event payload over the AWS backbone, processes it, and the producer is none the wiser.</li>
+<li><strong>AWS Step Functions HTTP Task with private API targets</strong>. An HTTP Task in an AWS Step Functions state machine uses an Amazon EventBridge connection to invoke a private HTTPS endpoint as part of the orchestration. Use this when a multi-step workflow needs to call a private service synchronously partway through (for example, a state machine that orchestrates an order-fulfillment process and needs to call a private inventory service before continuing).</li>
+</ul>
+<h4 id="async-to-sync-documentation">Async-to-sync documentation<a class="headerlink" href="#async-to-sync-documentation" title="Permanent link">&para;</a></h4>
+<div class="grid cards">
+<ul>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>Amazon EventBridge connections to private API targets</strong></p>
+<hr />
+<p>Direct invocation of private API targets in a <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> from Amazon EventBridge rules through connections to Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice resource configurations.</p>
+<p><a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>AWS Step Functions HTTP Task</strong></p>
+<hr />
+<p>Call HTTPS APIs from AWS Step Functions workflows, including private endpoints through Amazon EventBridge connections.</p>
+<p><a href="https://docs.aws.amazon.com/step-functions/latest/dg/call-https-apis.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice resource configurations</strong></p>
+<hr />
+<p>Resource representations of private endpoints (<abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> names, IPs, ARNs) used by Amazon EventBridge and AWS Step Functions to reach <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr>-based services.</p>
+<p><a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/resource-configuration.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+</ul>
+</div>
+<h2 id="ipv6-for-service-to-service-communication"><abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr> for service-to-service communication<a class="headerlink" href="#ipv6-for-service-to-service-communication" title="Permanent link">&para;</a></h2>
+<p>Service-to-service traffic should be dual-stack from the start. All of the synchronous patterns on this page support <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr>, and adopting it for internal traffic removes <abbr title="네트워크 주소 변환(Network Address Translation)">NAT</abbr> gateway dependency (and its per-GB cost) for east-west communication.</p>
+<p><strong><abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr> support across the service-to-service options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th><abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr> support</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice</strong></td>
+<td>Dual-stack (<abbr title="인터넷 프로토콜 버전 4(Internet Protocol version 4)">IPv4</abbr>, <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr>, or both)</td>
+<td>Services and target groups support dual-stack. Consumers can reach providers over <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr> without <abbr title="네트워크 주소 변환(Network Address Translation)">NAT</abbr>.</td>
+</tr>
+<tr>
+<td><strong>Application Load Balancer</strong></td>
+<td>Dual-stack and <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr>-only listeners</td>
+<td>Internal ALBs support dual-stack; backend targets can be <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr>.</td>
+</tr>
+<tr>
+<td><strong>Network Load Balancer</strong></td>
+<td>Dual-stack and <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr>-only listeners</td>
+<td>Internal NLBs support <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr> targets for <abbr title="전송 제어 프로토콜(Transmission Control Protocol)">TCP</abbr>/<abbr title="사용자 데이터그램 프로토콜(User Datagram Protocol)">UDP</abbr>/<abbr title="전송 계층 보안(Transport Layer Security)">TLS</abbr>.</td>
+</tr>
+<tr>
+<td><strong>Route 53 private hosted zones</strong></td>
+<td>AAAA records</td>
+<td>Alias records to dual-stack ALBs and <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice services resolve to <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr> addresses for <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr>-capable consumers.</td>
+</tr>
+<tr>
+<td><strong>AWS PrivateLink</strong></td>
+<td>Dual-stack interface endpoints</td>
+<td>Interface <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> endpoints support <abbr title="인터넷 프로토콜 버전 4(Internet Protocol version 4)">IPv4</abbr> and <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr> addressing.</td>
+</tr>
+<tr>
+<td><strong>Security groups</strong></td>
+<td>Separate <abbr title="인터넷 프로토콜 버전 4(Internet Protocol version 4)">IPv4</abbr> and <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr> rules</td>
+<td>Security groups require explicit <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr> rules — <abbr title="인터넷 프로토콜 버전 4(Internet Protocol version 4)">IPv4</abbr> rules do not apply to <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr> traffic.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Best practices for dual-stack service-to-service:</strong></p>
+<ul>
+<li><strong>Configure <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice services as dual-stack</strong> so that consumers in <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr>-only subnets can reach them without NAT64. This is especially relevant for EKS clusters running in <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr> mode where pods have only <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr> addresses.</li>
+<li><strong>Add AAAA alias records alongside A records</strong> in Route 53 private hosted zones for every internal service. <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr>-capable consumers will prefer the AAAA record automatically.</li>
+<li><strong>Update security groups for both address families</strong> on every service endpoint. A common failure: the <abbr title="Application Load Balancer">ALB</abbr>'s security group allows <code>10.0.0.0/8</code> on port 443 but has no <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr> rule, so <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr> consumers get connection refused.</li>
+<li><strong>Use <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr> for east-west traffic to eliminate <abbr title="네트워크 주소 변환(Network Address Translation)">NAT</abbr> gateway costs.</strong> Service-to-service calls between VPCs over <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice or peering don't need <abbr title="네트워크 주소 변환(Network Address Translation)">NAT</abbr> when both sides are <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr>-capable. This removes the per-GB <abbr title="네트워크 주소 변환(Network Address Translation)">NAT</abbr> gateway processing charge from internal traffic paths.</li>
+</ul>
+<p><strong><em>Key insight:</em></strong> <em><abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr> for service-to-service is primarily a cost optimization: it removes <abbr title="네트워크 주소 변환(Network Address Translation)">NAT</abbr> gateway from east-west traffic paths. The functionality is identical to <abbr title="인터넷 프로토콜 버전 4(Internet Protocol version 4)">IPv4</abbr> — the same auth policies, the same weighted routing, the same access logs. The difference is that <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr> traffic between services doesn't incur <abbr title="네트워크 주소 변환(Network Address Translation)">NAT</abbr> processing charges.</em></p>
+<h2 id="cost-considerations-for-cross-vpc-service-access">Cost considerations for cross-<abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> service access<a class="headerlink" href="#cost-considerations-for-cross-vpc-service-access" title="Permanent link">&para;</a></h2>
+<p>The choice between service-to-service connectivity options has significant cost implications that scale with traffic volume. The table below compares the cost model of each cross-<abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> access pattern.</p>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Fixed cost</th>
+<th>Per-GB cost</th>
+<th>Cost scales with</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice</strong></td>
+<td>No hourly charge for the service network or service</td>
+<td>Per-GB data processed (<a href="https://aws.amazon.com/vpc/lattice/pricing/">Lattice pricing</a>)</td>
+<td>Request volume and payload size</td>
+</tr>
+<tr>
+<td><strong>AWS PrivateLink endpoint services</strong></td>
+<td>Per-<abbr title="가용 영역(Availability Zone)">AZ</abbr> per-endpoint-hour charge</td>
+<td>Per-GB data processed (<a href="https://aws.amazon.com/privatelink/pricing/">PrivateLink pricing</a>)</td>
+<td>Number of consumer VPCs × Availability Zones, plus traffic volume</td>
+</tr>
+<tr>
+<td><strong>Transit Gateway + internal <abbr title="Application Load Balancer">ALB</abbr>/<abbr title="Network Load Balancer">NLB</abbr></strong></td>
+<td>Per-attachment-hour charge (<a href="https://aws.amazon.com/transit-gateway/pricing/"><abbr title="Transit Gateway">TGW</abbr> pricing</a>)</td>
+<td>Per-GB <abbr title="Transit Gateway">TGW</abbr> data processing</td>
+<td>Number of attached VPCs, plus all traffic through <abbr title="Transit Gateway">TGW</abbr> (not just service traffic)</td>
+</tr>
+<tr>
+<td><strong><abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Peering + internal <abbr title="Application Load Balancer">ALB</abbr>/<abbr title="Network Load Balancer">NLB</abbr></strong></td>
+<td>Free (no hourly charge, no data processing)</td>
+<td>Standard cross-<abbr title="가용 영역(Availability Zone)">AZ</abbr> per-GB charges only (if cross-<abbr title="가용 영역(Availability Zone)">AZ</abbr>)</td>
+<td>Only cross-<abbr title="가용 영역(Availability Zone)">AZ</abbr> traffic; same-<abbr title="가용 영역(Availability Zone)">AZ</abbr> is free</td>
+</tr>
+<tr>
+<td><strong><abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice + <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr> (no <abbr title="네트워크 주소 변환(Network Address Translation)">NAT</abbr>)</strong></td>
+<td>No hourly charge</td>
+<td>Per-GB Lattice processing (no <abbr title="네트워크 주소 변환(Network Address Translation)">NAT</abbr> processing)</td>
+<td>Request volume; eliminates the <abbr title="네트워크 주소 변환(Network Address Translation)">NAT</abbr> gateway per-GB charge on the consumer side</td>
+</tr>
+</tbody>
+</table>
+<p><strong>When cost drives the decision:</strong></p>
+<ul>
+<li><strong>Low traffic volume, many consumers</strong>: <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice wins — no per-consumer fixed cost, and the per-GB rate is competitive.</li>
+<li><strong>High traffic volume, few consumers</strong>: <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Peering + internal LB wins — zero data processing charges. The trade-off is managing peering connections and <abbr title="클래스 없는 도메인 간 라우팅(Classless Inter-Domain Routing)">CIDR</abbr> non-overlap.</li>
+<li><strong>Moderate traffic, moderate consumers</strong>: PrivateLink is cost-effective when consumer count is small (the per-<abbr title="가용 영역(Availability Zone)">AZ</abbr> hourly charge is the dominant cost at low traffic).</li>
+<li><strong>Already running Transit Gateway for other traffic</strong>: The marginal cost of service-to-service over <abbr title="Transit Gateway">TGW</abbr> is just the per-GB processing — the attachment cost is already paid. But if <abbr title="Transit Gateway">TGW</abbr> exists only for service-to-service, <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice is cheaper.</li>
+</ul>
+<p><strong><em>Key insight:</em></strong> <em>The cheapest cross-<abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> service access path depends on two variables: how many consumer VPCs and how much traffic. <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice's zero fixed cost makes it cheapest for many-consumer, moderate-traffic patterns. <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Peering's zero processing cost makes it cheapest for high-traffic, few-consumer patterns. Transit Gateway's per-GB charge makes it the most expensive option for service-to-service specifically, but it's often already deployed for other connectivity needs.</em></p>
+<h2 id="building-your-service-to-service-stack">Building your service-to-service stack<a class="headerlink" href="#building-your-service-to-service-stack" title="Permanent link">&para;</a></h2>
+<p>Service-to-service architecture is the layer between connectivity (covered in the <a href="../../connectivity/within-aws/">Within AWS</a> page) and application code. The patterns above can be assembled from individual AWS services or covered through Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice as a single managed surface; both shapes are valid, and many environments end up combining them per workload.</p>
+<figure>
+<p><img alt="Service-to-service stack showing three tiers: Synchronous (Route 53, VPC Lattice, mTLS, PrivateLink), Asynchronous (EventBridge, Step Functions), and Observability (access logs, traces, flow logs)" src="../../assets/application-networking/s2s-stack.png" /></p>
+<figcaption>
+<p>Service-to-service stack — <a href="../../assets/application-networking/s2s-stack.drawio">Drawio Source</a></p>
+</figcaption>
+</figure>
+<h3 id="new-environments">New environments<a class="headerlink" href="#new-environments" title="Permanent link">&para;</a></h3>
+<p>Organizations building service-to-service communication on a clean slate can start with a coherent stack from day one:</p>
+<ol>
+<li><strong>Amazon Route 53 private hosted zones as the central <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> control plane</strong>, owned by the network or platform team and distributed across accounts through Amazon Route 53 Profiles (shared via AWS RAM at the OU level). Every internal service is published as a friendly name (<code>payments.internal.example.com</code>), with an alias record resolving to the current backing target. Application code never calls a bare load-balancer <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> name or an Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice managed <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> name.</li>
+<li><strong><abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> roles end-to-end for consumer identity, layered with security groups for defense in depth</strong>. <abbr title="Elastic Compute Cloud">EC2</abbr> instance profiles, Amazon ECS task roles, Amazon EKS pod <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> roles, and Lambda execution roles let the AWS SDK sign requests with SigV4 automatically; identity-based auth (Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice auth policies, Amazon API Gateway <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> authorizers, the AWS SDK's built-in SigV4 evaluation) enforces who can call what; security groups continue to control which network sources can reach the service. The two layers reduce the blast radius of any single misconfiguration.</li>
+<li><strong>Decide per workload how much of the networking layer you want to own</strong>. Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice services give you discovery, auth, weighted routing, cross-<abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> reach, and access logs in one managed surface. The pattern-by-pattern alternative gives you the same outcomes from individual services (Route 53, AWS PrivateLink, <abbr title="Application Load Balancer">ALB</abbr>, <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr>, CloudWatch) at the cost of operating the integration. Both shapes are valid; pick deliberately rather than by default.</li>
+<li><strong>Amazon EventBridge for event-driven communication, connected to private APIs directly</strong>. Use Amazon EventBridge connections to private APIs from day one, with the private API wrapped as an Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice resource configuration (the resource configuration can point at an internal <abbr title="Application Load Balancer">ALB</abbr>, an <abbr title="Elastic Compute Cloud">EC2</abbr> instance, an Amazon EKS service, an on-premises endpoint, or an Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice service). No Lambda relays.</li>
+<li><strong>AWS Step Functions for multi-step workflows that include calls to private services</strong>. HTTP Task with Amazon EventBridge connections is the modern integration; pair it with the same auth policy story as direct service-to-service.</li>
+<li><strong>Request-level access logs and distributed traces from day one</strong>. Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice access logs (identity-aware, where Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice is in the path), <abbr title="Application Load Balancer">ALB</abbr> access logs (for any <abbr title="Application Load Balancer">ALB</abbr>-fronted internal service), plus application-level traces (X-Ray, OpenTelemetry, or Application Signals) across every service.</li>
+</ol>
+<h3 id="existing-environments">Existing environments<a class="headerlink" href="#existing-environments" title="Permanent link">&para;</a></h3>
+<p>Organizations running existing service-to-service patterns have working architectures that don't all need to change at once:</p>
+<ol>
+<li><strong>AWS PrivateLink endpoint services</strong> continue to work. Onboard the next new cross-<abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> or cross-account synchronous service to Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice instead, and migrate existing endpoint services incrementally as you touch them: register the existing target as an Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice target group, expose the new Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice service <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> name (behind the same Route 53 alias), and shift consumers through weighted routing. The migration steps are documented in the <a href="../../connectivity/within-aws/">Within AWS</a> page.</li>
+<li><strong>Internal ALBs and NLBs</strong> stay in place for workloads that don't yet need Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice's auth and weighted-routing features. As workloads adopt Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice, point the Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice service at the existing load balancer as a target group; the consumer-facing surface becomes the Route 53 alias (now backed by the Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice service) without re-platforming the backend.</li>
+<li><strong>Hard-coded IPs, bare load-balancer <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> names, and bare Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Lattice <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> names in application code</strong> should be moved behind Route 53 friendly names with alias records as you touch the calling code. Don't break a working call to fix the indirection; fix it during the next change you'd be making anyway.</li>
+<li><strong>Lambda-as-relay patterns for Amazon EventBridge or AWS Step Functions to private endpoints</strong> can be replaced with direct Amazon EventBridge connections to private APIs when convenient. Existing relays continue to work; new integrations should use the direct path.</li>
+<li><strong>API keys and shared secrets for service-to-service authentication</strong> are the most fragile pattern in older environments. Plan their replacement with <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr>-signed requests as the consumer code is updated, starting with the calls that have the highest blast radius if the secret leaks.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../load-balancing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Load Balancing">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Load Balancing
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../container-mesh/" class="md-footer__link md-footer__link--next" aria-label="Next: Container Mesh">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Container Mesh
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Community mirror of <a href="https://github.com/aws/aws-networking-best-practices" target="_blank">AWS Networking Best Practices</a>. &copy; Amazon Web Services, Inc.
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/aws/aws-networking-best-practices" target="_blank" rel="noopener" title="원본 레포지토리" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.indexes", "navigation.footer", "navigation.sections", "toc.follow", "content.code.copy", "content.code.annotate", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  <script>
+    /* 홈에서 실제 Material 검색(.md-search)을 헤더 → 히어로 슬롯으로 이동.
+       navigation.instant를 껐으므로 매 페이지가 전체 로드 → 안전하게 1회 이동. */
+    (function () {
+      function relocateSearch() {
+        var slot = document.querySelector("[data-ko-search-slot]");
+        var search = document.querySelector(".md-search");
+        if (slot && search && !slot.contains(search)) {
+          slot.appendChild(search);
+          document.body.classList.add("ko-hero-has-search");
+        }
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", relocateSearch);
+      } else {
+        relocateSearch();
+      }
+    })();
+
+    /* 헤더 타이틀 텍스트 클릭 시 홈으로 이동(로고 링크의 href 재사용) */
+    (function () {
+      function makeTitleClickable() {
+        var logo = document.querySelector("a.md-logo, a.md-header__button.md-logo");
+        var title = document.querySelector(".md-header__title");
+        if (logo && title && !title.dataset.koHomeLinked) {
+          title.dataset.koHomeLinked = "1";
+          title.style.cursor = "pointer";
+          title.addEventListener("click", function () {
+            window.location.href = logo.href;
+          });
+        }
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", makeTitleClickable);
+      } else {
+        makeTitleClickable();
+      }
+    })();
+
+    /* 전역: 본문 외부 링크는 새 탭으로 열기(rel=noopener) */
+    (function () {
+      function externalNewTab() {
+        var here = location.host;
+        document.querySelectorAll(".md-content a[href]").forEach(function (a) {
+          try {
+            var u = new URL(a.href, location.href);
+            if (u.host && u.host !== here && /^https?:$/.test(u.protocol)) {
+              a.target = "_blank";
+              a.rel = "noopener noreferrer";
+            }
+          } catch (e) {}
+        });
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", externalNewTab);
+      } else {
+        externalNewTab();
+      }
+    })();
+
+    /* 접근성: 모션 최소화 설정이면 히어로 네트워크 애니메이션 정지 */
+    (function () {
+      try {
+        if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          var run = function () {
+            var svg = document.querySelector(".ko-hero__net svg");
+            if (svg && svg.pauseAnimations) svg.pauseAnimations();
+          };
+          if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);
+          else run();
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  </body>
+</html>

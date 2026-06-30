@@ -1,0 +1,207 @@
+# 이 파일은 scripts/sync.py가 생성합니다. 직접 수정하지 마세요.
+site_name: AWS 네트워킹 베스트 프랙티스
+site_description: AWS 네트워킹 아키텍처 가이드와 베스트 프랙티스 — 한국어 번역본
+site_url: https://aws-samples.github.io/sample-aws-networking-best-practices-ko/
+repo_name: GitHub
+repo_url: https://github.com/aws/aws-networking-best-practices/
+edit_uri: ''
+docs_dir: content
+copyright: 본 사이트는 <a href="https://github.com/aws/aws-networking-best-practices" target="_blank">AWS
+  Networking Best Practices</a>의 한국어 번역본입니다. 원문 저작권 &copy; Amazon Web Services, Inc.
+theme:
+  name: material
+  language: ko
+  custom_dir: overrides
+  font:
+    text: Noto Sans KR
+    code: JetBrains Mono
+  palette:
+  - media: '(prefers-color-scheme: light)'
+    scheme: default
+    primary: custom
+    accent: custom
+    toggle:
+      icon: material/weather-night
+      name: 다크 모드로 전환
+  - media: '(prefers-color-scheme: dark)'
+    scheme: slate
+    primary: custom
+    accent: custom
+    toggle:
+      icon: material/weather-sunny
+      name: 라이트 모드로 전환
+  icon:
+    logo: fontawesome/brands/aws
+    repo: fontawesome/brands/github
+  features:
+  - navigation.tracking
+  - navigation.tabs
+  - navigation.tabs.sticky
+  - navigation.top
+  - navigation.indexes
+  - navigation.footer
+  - navigation.sections
+  - toc.follow
+  - content.code.copy
+  - content.code.annotate
+  - search.suggest
+  - search.highlight
+  - search.share
+extra:
+  social:
+  - icon: fontawesome/brands/github
+    link: https://github.com/aws/aws-networking-best-practices
+    name: 원본 레포지토리
+  generator: false
+markdown_extensions:
+- toc:
+    permalink: true
+    toc_depth: 3
+- admonition
+- abbr
+- attr_list
+- md_in_html
+- tables
+- def_list
+- footnotes
+- pymdownx.details
+- pymdownx.caret
+- pymdownx.mark
+- pymdownx.tilde
+- pymdownx.highlight:
+    anchor_linenums: true
+    line_spans: __span
+- pymdownx.inlinehilite
+- pymdownx.snippets:
+    auto_append:
+    - includes/abbreviations.md
+- pymdownx.tabbed:
+    alternate_style: true
+- pymdownx.tasklist:
+    custom_checkbox: true
+- pymdownx.emoji:
+    emoji_index: !!python/name:material.extensions.emoji.twemoji
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg
+- pymdownx.superfences:
+    custom_fences:
+    - name: mermaid
+      class: mermaid
+      format: !!python/name:pymdownx.superfences.fence_code_format
+- pymdownx.blocks.caption
+extra_css:
+- stylesheets/extra.css
+plugins:
+- search
+- i18n:
+    docs_structure: folder
+    reconfigure_material: true
+    reconfigure_search: true
+    fallback_to_default: true
+    languages:
+    - locale: ko
+      name: 한국어
+      default: true
+      build: true
+    - locale: en
+      name: English
+      build: true
+      site_name: AWS Networking Best Practices
+      site_description: AWS Networking Architecture guidance and best practices (community
+        Korean-translation mirror)
+      copyright: Community mirror of <a href="https://github.com/aws/aws-networking-best-practices"
+        target="_blank">AWS Networking Best Practices</a>. &copy; Amazon Web Services,
+        Inc.
+      nav:
+      - Introduction: index.md
+      - Decision Map: decisions.md
+      - Foundation:
+        - foundation/index.md
+        - Before You Start: foundation/aws-prerequisites.md
+        - AWS Organizations: foundation/organizations.md
+        - Amazon VPC: foundation/vpc.md
+        - Regions & Availability Zones: foundation/regions-azs.md
+        - CIDR Planning: foundation/cidr.md
+        - Subnets: foundation/subnets.md
+        - DNS Architecture: foundation/dns.md
+        - IPAM: foundation/ipam.md
+      - Connectivity:
+        - connectivity/index.md
+        - Internet: connectivity/internet.md
+        - Within AWS: connectivity/within-aws.md
+        - Hybrid & Multi-Cloud: connectivity/hybrid-multicloud.md
+        - Remote Access: connectivity/remote-access.md
+      - Application Networking:
+        - application-networking/index.md
+        - Load Balancing: application-networking/load-balancing.md
+        - Service to Service: application-networking/service-to-service.md
+        - Container Mesh: application-networking/container-mesh.md
+      - Security:
+        - security/index.md
+        - Perimeter Controls: security/perimeter-inbound.md
+        - Outbound Controls: security/outbound.md
+        - Network Segmentation: security/segmentation.md
+      - Observability:
+        - observability/index.md
+        - Internal Traffic: observability/internal-traffic.md
+        - External Traffic: observability/external-traffic.md
+        - AWS Services: observability/service-monitoring.md
+        - Notifications: observability/notifications.md
+      - Community:
+        - community/index.md
+        - How to contribute: community/contribute.md
+        - Report a correction: community/report-a-correction.md
+        - New best practice: community/new-best-practice.md
+        - Making a pull request: community/making-a-pull-request.md
+        - Philosophy: community/philosophy.md
+        - Conventions: community/conventions.md
+      - News:
+        - AWS What's New: news/whats-new.md
+        - Networking Blog: news/blog-networking.md
+        - AWS Korea Tech Blog: news/blog-korea.md
+nav:
+- HOME: index.md
+- 의사결정 맵: decisions.md
+- 기반:
+  - foundation/index.md
+  - 시작하기 전에: foundation/aws-prerequisites.md
+  - AWS Organizations: foundation/organizations.md
+  - Amazon VPC: foundation/vpc.md
+  - 리전 및 가용 영역: foundation/regions-azs.md
+  - CIDR 계획: foundation/cidr.md
+  - 서브넷: foundation/subnets.md
+  - DNS 아키텍처: foundation/dns.md
+  - IPAM: foundation/ipam.md
+- 연결:
+  - connectivity/index.md
+  - 인터넷: connectivity/internet.md
+  - AWS 내부: connectivity/within-aws.md
+  - 하이브리드 및 멀티 클라우드: connectivity/hybrid-multicloud.md
+  - 원격 액세스: connectivity/remote-access.md
+- 애플리케이션 네트워킹:
+  - application-networking/index.md
+  - 로드 밸런싱: application-networking/load-balancing.md
+  - 서비스 간 통신: application-networking/service-to-service.md
+  - 컨테이너 메시: application-networking/container-mesh.md
+- 보안:
+  - security/index.md
+  - 경계 제어: security/perimeter-inbound.md
+  - 아웃바운드 제어: security/outbound.md
+  - 네트워크 세분화: security/segmentation.md
+- 관측성:
+  - observability/index.md
+  - 내부 트래픽: observability/internal-traffic.md
+  - 외부 트래픽: observability/external-traffic.md
+  - AWS 서비스: observability/service-monitoring.md
+  - 알림: observability/notifications.md
+- 커뮤니티:
+  - community/index.md
+  - 기여 방법: community/contribute.md
+  - 수정 사항 보고: community/report-a-correction.md
+  - 새로운 모범 사례: community/new-best-practice.md
+  - 풀 리퀘스트 만들기: community/making-a-pull-request.md
+  - 철학: community/philosophy.md
+  - 규칙: community/conventions.md
+- 소식:
+  - AWS What's New: news/whats-new.md
+  - Networking 블로그 (영문): news/blog-networking.md
+  - AWS 한국 기술 블로그: news/blog-korea.md

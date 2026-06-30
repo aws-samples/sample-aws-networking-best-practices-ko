@@ -1,0 +1,2660 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AWS 네트워킹 아키텍처 가이드와 베스트 프랙티스 — 한국어 번역본">
+      
+      
+      
+        <link rel="canonical" href="https://aws-samples.github.io/sample-aws-networking-best-practices-ko/foundation/">
+      
+      
+        <link rel="prev" href="../decisions/">
+      
+      
+        <link rel="next" href="aws-prerequisites/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="ko">
+        
+          <link rel="alternate" href="../en/foundation/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>기반(Foundation) - AWS 네트워킹 베스트 프랙티스</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans KR";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#foundation" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  
+    이 사이트는
+    <a href="https://aws.github.io/aws-networking-best-practices/" target="_blank" rel="noopener">
+      AWS Networking Best Practices</a>
+    의 <strong>한국어 번역본</strong>입니다 · 원문이 갱신되면 자동으로 재번역됩니다
+  
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href=".." title="AWS 네트워킹 베스트 프랙티스" class="md-header__button md-logo" aria-label="AWS 네트워킹 베스트 프랙티스" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M180.4 203c-.7 22.6 10.6 32.7 10.9 39-.1 1.3-.6 2.5-1.3 3.6s-1.7 2-2.8 2.6l-12.8 9c-1.7 1.2-3.6 1.8-5.6 1.9-.4 0-8.2 1.8-20.5-25.6-7.5 9.4-17 16.9-27.9 22s-22.7 7.7-34.7 7.5c-16.3.9-60.4-9.2-58.1-56.2-1.6-38.3 34.1-62.1 70.9-60 7.1 0 21.6.4 47 6.3v-15.6c2.7-26.5-14.7-47-44.8-43.9-2.4 0-19.4-.5-45.8 10.1-7.4 3.4-8.3 2.8-10.8 2.8-7.4 0-4.4-21.5-2.9-24.2 5.2-6.4 35.9-18.4 65.9-18.2 20.1-1.8 40.1 4.4 55.7 17.3 6.3 7.1 11.2 15.4 14.2 24.4s4.2 18.5 3.5 28v69.3zM94 235.4c32.4-.5 46.2-20 49.3-30.5 2.5-10.1 2.1-16.4 2.1-27.4-9.7-2.3-23.6-4.9-39.6-4.9-15.2-1.1-42.8 5.6-41.7 32.3-1.2 16.8 11.1 31.4 30 30.5zm170.9 23.1c-7.9.7-11.5-4.9-12.7-10.4L202.4 83.4c-1-2.8-1.6-5.6-1.9-8.6-.2-1.2.1-2.4.8-3.4s1.8-1.6 3-1.8h22.2c8.8-.9 11.6 6 12.6 10.4l35.8 140.8L308.1 80c.5-3.2 2.9-11.1 12.8-10.2h17.2c2.2-.2 11.1-.5 12.7 10.4l33.3 142.5L421 80.1c.5-2.2 2.7-11.4 12.7-10.4h19.7c.9-.1 6.2-.8 5.3 8.6-.4 1.8 3.4-10.7-52.8 169.9-1.1 5.5-4.8 11.1-12.7 10.4h-18.7c-10.9 1.2-12.5-9.7-12.7-10.7l-33.2-137.1-32.8 137c-.2 1.1-1.7 11.9-12.7 10.7h-18.3zm273.5 5.6c-5.9 0-33.9-.3-57.4-12.3-2.3-1-4.3-2.6-5.7-4.8s-2.1-4.6-2.1-7.1v-10.7c0-8.5 6.2-6.9 8.8-5.9 10 4.1 16.5 7.1 28.8 9.6 36.7 7.5 52.8-2.3 56.7-4.5 13.2-7.8 14.2-25.7 5.3-34.9-10.5-8.8-15.5-9.1-53.1-21-4.6-1.3-43.7-13.6-43.8-52.4-.6-28.2 25-56.2 69.5-56 12.7 0 46.4 4.1 55.6 15.6 1.4 2.1 2 4.6 1.9 7v10.1c0 4.4-1.6 6.7-4.9 6.7-7.7-.9-21.4-11.2-49.2-10.8-6.9-.4-39.9.9-38.4 25-.4 19 26.6 26.1 29.7 26.9 36.5 11 48.6 12.8 63.1 29.6 17.1 22.2 7.9 48.3 4.3 55.4-19.1 37.5-68.4 34.4-69.3 34.4zM578.6 369c-70 51.7-171.7 79.2-258.5 79.2C203 449 89.8 405.9 2.8 327.5c-6.5-5.9-.8-14 7.2-9.5 96.5 55.2 205.7 84.2 316.9 84.1 83-.4 165.1-17.3 241.6-49.5 11.8-5 21.8 7.8 10.1 16.4m29.2-33.3c-9-11.5-59.3-5.4-81.8-2.7-6.8.8-7.9-5.1-1.8-9.5 40.1-28.2 105.9-20.1 113.4-10.6s-2.1 75.4-39.6 106.9c-5.8 4.9-11.3 2.3-8.7-4.1 8.4-21.3 27.4-68.5 18.4-80z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AWS 네트워킹 베스트 프랙티스
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              기반(Foundation)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="다크 모드로 전환"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="다크 모드로 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="라이트 모드로 전환"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="라이트 모드로 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="언어설정">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="ko" class="md-select__link">
+              한국어
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../en/foundation/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="공유" aria-label="공유" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aws/aws-networking-best-practices/" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+          
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  HOME
+
+      </a>
+    </li>
+  
+
+        
+      
+        
+          
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../decisions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  의사결정 맵
+
+      </a>
+    </li>
+  
+
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu md-tabs__item--active">
+            <a href="./" class="md-tabs__link">기반</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="./">개요</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="aws-prerequisites/">시작하기 전에</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="organizations/">AWS Organizations</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="vpc/">Amazon VPC</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="regions-azs/">리전 및 가용 영역</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="cidr/">CIDR 계획</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="subnets/">서브넷</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="dns/">DNS 아키텍처</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="ipam/">IPAM</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu">
+            <a href="../connectivity/" class="md-tabs__link">연결</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../connectivity/">개요</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../connectivity/internet/">인터넷</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../connectivity/within-aws/">AWS 내부</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../connectivity/hybrid-multicloud/">하이브리드 및 멀티 클라우드</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../connectivity/remote-access/">원격 액세스</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu">
+            <a href="../application-networking/" class="md-tabs__link">애플리케이션 네트워킹</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../application-networking/">개요</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../application-networking/load-balancing/">로드 밸런싱</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../application-networking/service-to-service/">서비스 간 통신</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../application-networking/container-mesh/">컨테이너 메시</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu">
+            <a href="../security/" class="md-tabs__link">보안</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../security/">개요</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../security/perimeter-inbound/">경계 제어</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../security/outbound/">아웃바운드 제어</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../security/segmentation/">네트워크 세분화</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu">
+            <a href="../observability/" class="md-tabs__link">관측성</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../observability/">개요</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../observability/internal-traffic/">내부 트래픽</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../observability/external-traffic/">외부 트래픽</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../observability/service-monitoring/">AWS 서비스</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../observability/notifications/">알림</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu">
+            <a href="../community/" class="md-tabs__link">커뮤니티</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../community/">개요</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../community/contribute/">기여 방법</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../community/report-a-correction/">수정 사항 보고</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../community/new-best-practice/">새로운 모범 사례</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../community/making-a-pull-request/">풀 리퀘스트 만들기</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../community/philosophy/">철학</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../community/conventions/">규칙</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu">
+            <a href="../news/whats-new/" class="md-tabs__link">소식</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../news/whats-new/">AWS What's New</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../news/blog-networking/">Networking 블로그 (영문)</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../news/blog-korea/">AWS 한국 기술 블로그</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AWS 네트워킹 베스트 프랙티스" class="md-nav__button md-logo" aria-label="AWS 네트워킹 베스트 프랙티스" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M180.4 203c-.7 22.6 10.6 32.7 10.9 39-.1 1.3-.6 2.5-1.3 3.6s-1.7 2-2.8 2.6l-12.8 9c-1.7 1.2-3.6 1.8-5.6 1.9-.4 0-8.2 1.8-20.5-25.6-7.5 9.4-17 16.9-27.9 22s-22.7 7.7-34.7 7.5c-16.3.9-60.4-9.2-58.1-56.2-1.6-38.3 34.1-62.1 70.9-60 7.1 0 21.6.4 47 6.3v-15.6c2.7-26.5-14.7-47-44.8-43.9-2.4 0-19.4-.5-45.8 10.1-7.4 3.4-8.3 2.8-10.8 2.8-7.4 0-4.4-21.5-2.9-24.2 5.2-6.4 35.9-18.4 65.9-18.2 20.1-1.8 40.1 4.4 55.7 17.3 6.3 7.1 11.2 15.4 14.2 24.4s4.2 18.5 3.5 28v69.3zM94 235.4c32.4-.5 46.2-20 49.3-30.5 2.5-10.1 2.1-16.4 2.1-27.4-9.7-2.3-23.6-4.9-39.6-4.9-15.2-1.1-42.8 5.6-41.7 32.3-1.2 16.8 11.1 31.4 30 30.5zm170.9 23.1c-7.9.7-11.5-4.9-12.7-10.4L202.4 83.4c-1-2.8-1.6-5.6-1.9-8.6-.2-1.2.1-2.4.8-3.4s1.8-1.6 3-1.8h22.2c8.8-.9 11.6 6 12.6 10.4l35.8 140.8L308.1 80c.5-3.2 2.9-11.1 12.8-10.2h17.2c2.2-.2 11.1-.5 12.7 10.4l33.3 142.5L421 80.1c.5-2.2 2.7-11.4 12.7-10.4h19.7c.9-.1 6.2-.8 5.3 8.6-.4 1.8 3.4-10.7-52.8 169.9-1.1 5.5-4.8 11.1-12.7 10.4h-18.7c-10.9 1.2-12.5-9.7-12.7-10.7l-33.2-137.1-32.8 137c-.2 1.1-1.7 11.9-12.7 10.7h-18.3zm273.5 5.6c-5.9 0-33.9-.3-57.4-12.3-2.3-1-4.3-2.6-5.7-4.8s-2.1-4.6-2.1-7.1v-10.7c0-8.5 6.2-6.9 8.8-5.9 10 4.1 16.5 7.1 28.8 9.6 36.7 7.5 52.8-2.3 56.7-4.5 13.2-7.8 14.2-25.7 5.3-34.9-10.5-8.8-15.5-9.1-53.1-21-4.6-1.3-43.7-13.6-43.8-52.4-.6-28.2 25-56.2 69.5-56 12.7 0 46.4 4.1 55.6 15.6 1.4 2.1 2 4.6 1.9 7v10.1c0 4.4-1.6 6.7-4.9 6.7-7.7-.9-21.4-11.2-49.2-10.8-6.9-.4-39.9.9-38.4 25-.4 19 26.6 26.1 29.7 26.9 36.5 11 48.6 12.8 63.1 29.6 17.1 22.2 7.9 48.3 4.3 55.4-19.1 37.5-68.4 34.4-69.3 34.4zM578.6 369c-70 51.7-171.7 79.2-258.5 79.2C203 449 89.8 405.9 2.8 327.5c-6.5-5.9-.8-14 7.2-9.5 96.5 55.2 205.7 84.2 316.9 84.1 83-.4 165.1-17.3 241.6-49.5 11.8-5 21.8 7.8 10.1 16.4m29.2-33.3c-9-11.5-59.3-5.4-81.8-2.7-6.8.8-7.9-5.1-1.8-9.5 40.1-28.2 105.9-20.1 113.4-10.6s-2.1 75.4-39.6 106.9c-5.8 4.9-11.3 2.3-8.7-4.1 8.4-21.3 27.4-68.5 18.4-80z"/></svg>
+
+    </a>
+    AWS 네트워킹 베스트 프랙티스
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aws/aws-networking-best-practices/" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOME
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    의사결정 맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    기반
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    기반
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="aws-prerequisites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    시작하기 전에
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="organizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS Organizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Amazon VPC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="regions-azs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리전 및 가용 영역
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cidr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CIDR 계획
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="subnets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    서브넷
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS 아키텍처
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ipam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IPAM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../connectivity/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    연결
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    연결
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectivity/internet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    인터넷
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectivity/within-aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS 내부
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectivity/hybrid-multicloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    하이브리드 및 멀티 클라우드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectivity/remote-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    원격 액세스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../application-networking/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    애플리케이션 네트워킹
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    애플리케이션 네트워킹
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../application-networking/load-balancing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    로드 밸런싱
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../application-networking/service-to-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    서비스 간 통신
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../application-networking/container-mesh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    컨테이너 메시
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../security/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    보안
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    보안
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/perimeter-inbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    경계 제어
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/outbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    아웃바운드 제어
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    네트워크 세분화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../observability/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    관측성
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    관측성
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../observability/internal-traffic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    내부 트래픽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../observability/external-traffic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    외부 트래픽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../observability/service-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS 서비스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../observability/notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    알림
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../community/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    커뮤니티
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    커뮤니티
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/contribute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    기여 방법
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/report-a-correction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    수정 사항 보고
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/new-best-practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    새로운 모범 사례
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/making-a-pull-request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    풀 리퀘스트 만들기
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/philosophy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    철학
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    규칙
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소식
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    소식
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../news/whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS What's New
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../news/blog-networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking 블로그 (영문)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../news/blog-korea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS 한국 기술 블로그
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 시작하기 전에
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-aws-organizations-and-account-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. AWS Organizations 및 계정 구조
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-amazon-vpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Amazon VPC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-regions-and-availability-zones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 리전 및 가용 영역
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ip-address-planning-with-cidr-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. CIDR 블록을 활용한 IP 주소 계획
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-subnets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 서브넷
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ip-address-management-ipam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. IP 주소 관리(IPAM)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-dns-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. DNS 아키텍처
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-foundation-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        기반 주제 탐색
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+  
+  
+  <!-- 본문 페이지: 언어 전환은 헤더의 언어 선택기로 제공(원문 링크 불필요) -->
+  
+                  
+
+
+
+<h1 id="foundation">기반(Foundation)<a class="headerlink" href="#foundation" title="Permanent link">&para;</a></h1>
+<p>이 섹션에서는 AWS 네트워킹의 핵심 구성 요소를 다룹니다. 연결성, 애플리케이션 네트워킹, 보안, 또는 가시성 솔루션을 구현하기 전에 이러한 핵심 개념을 이해하는 것이 필수적입니다. 이 가이드의 나머지 부분에 등장하는 모든 서비스와 패턴은 여기서 설명하는 기반 위에 구축됩니다.</p>
+<p>기반 계층은 "어떻게 연결할 것인가?"라는 질문보다 앞서 답해야 할 질문들을 다룹니다. 조직이 어떻게 구성되어 있는지, 네트워크가 어디에 위치하는지, 어떤 주소 공간을 사용하는지, 그리고 그 주소 공간이 어떻게 관리되는지가 바로 그것입니다. 이러한 결정을 올바르게 내리면 그 위에 구축되는 모든 것이 원활하게 작동합니다. 잘못 결정하면 나중에 수정하는 데 많은 비용이 드는 제약이 생깁니다.</p>
+<h2 id="1-before-you-start">1. 시작하기 전에<a class="headerlink" href="#1-before-you-start" title="Permanent link">&para;</a></h2>
+<p>모든 <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr>, 라우팅 테이블, Transit Gateway 어태치먼트는 계정 내에 존재하고, <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr> 정책의 적용을 받으며, 서비스 할당량의 제한을 받고, 코드로 배포되어야 합니다. 단 하나의 <abbr title="클래스 없는 도메인 간 라우팅(Classless Inter-Domain Routing)">CIDR</abbr> 블록도 건드리기 전에 이러한 비(非)네트워킹 기반을 올바르게 갖추면, 나중에 수정하기 가장 어려운 유형의 문제를 예방할 수 있습니다.</p>
+<p><strong>주요 주제:</strong></p>
+<ul>
+<li><strong>자격 증명 및 액세스 관리(<abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr>)</strong> — 네트워크 리소스를 위한 계정 간 역할, 서비스 연결 역할, SCP, 조건 키</li>
+<li><strong>코드형 인프라(Infrastructure as Code)</strong> — 네트워크 리소스 관리를 위한 CloudFormation, Terraform, CDK</li>
+<li><strong>서비스 할당량(Service Quotas)</strong> — 배포를 제한하며 사전에 계획해야 하는 한도</li>
+<li><strong>태깅 전략(Tagging Strategy)</strong> — 비용 배분, 자동화 대상 지정, 정책 적용</li>
+<li><strong>Well-Architected Framework</strong> — 네트워킹에 적용되는 보안, 안정성, 비용 최적화 원칙</li>
+</ul>
+<h2 id="2-aws-organizations-and-account-structure">2. AWS Organizations 및 계정 구조<a class="headerlink" href="#2-aws-organizations-and-account-structure" title="Permanent link">&para;</a></h2>
+<p><strong>AWS Organizations</strong>는 네트워크 리소스가 공유되는 방식, 보안 경계가 적용되는 방식, 그리고 팀이 연결 혼란을 일으키지 않고 독립적으로 운영되는 방식을 결정하는 거버넌스 계층입니다. Organizations 없이는 모든 계정 간 네트워킹 패턴에 확장되지 않는 수동 신뢰 관계가 필요합니다.</p>
+<p><strong>주요 개념:</strong></p>
+<ul>
+<li><strong>조직 단위(OUs)</strong> — RAM 공유, SCP 적용, 어태치먼트 자동화의 범위를 지정하는 논리적 그룹</li>
+<li><strong>서비스 제어 정책(SCPs)</strong> — 보안뿐만 아니라 네트워크 아키텍처를 강제하는 가드레일</li>
+<li><strong>중앙 집중식 네트워킹 계정</strong> — Transit Gateway, Direct Connect, Route 53 Resolver, IPAM을 위한 전용 계정</li>
+<li><strong>RAM을 통한 리소스 공유</strong> — OU 수준에서 네트워킹 리소스를 공유하여 자동 상속 구현</li>
+</ul>
+<p><strong><em>모범 사례:</em></strong> <em>워크로드 계정보다 먼저 전용 네트워킹 계정을 구성하세요. 이후 생성되는 모든 계정은 공유 네트워킹 리소스에 의존하게 되며, 중앙 집중식 네트워킹을 나중에 도입하는 것은 처음부터 중앙 집중식으로 시작하는 것보다 훨씬 어렵습니다.</em></p>
+<h2 id="3-amazon-vpc">3. Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr><a class="headerlink" href="#3-amazon-vpc" title="Permanent link">&para;</a></h2>
+<p><strong>Amazon Virtual Private Cloud(<abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr>)</strong>는 모든 네트워킹 결정의 기반이 되는 핵심 보안 경계이자 IP 주소 도메인이며 라우팅 컨텍스트입니다. 네트워크 연결이 필요한 모든 컴퓨팅 리소스, 데이터베이스, 컨테이너, Lambda 함수는 <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> 내에서 실행됩니다.</p>
+<p><strong>주요 결정 사항:</strong></p>
+<ul>
+<li><strong><abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> 설계 패턴</strong> — 워크로드별 <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr>(가장 일반적), RAM을 통한 공유 <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr>(중앙 집중식 제어), 또는 계정당 다중 <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr></li>
+<li><strong><abbr title="클래스 없는 도메인 간 라우팅(Classless Inter-Domain Routing)">CIDR</abbr> 크기 조정</strong> — 프로덕션 환경에는 <code>/16</code>으로 시작하고, <code>/20</code>보다 작게 설정하지 않음</li>
+<li><strong><abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr> 도입</strong> — 새 VPC에는 처음부터 듀얼 스택 활성화</li>
+<li><strong>Flow Logs</strong> — 포괄적인 보안 및 문제 해결 가시성을 위해 <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> 수준에서 활성화</li>
+</ul>
+<p><strong><em>모범 사례:</em></strong> <em>모든 것에 사용자 지정 VPC를 사용하세요. 기본 VPC는 삭제하거나 무시하세요. 전체 조직에서 기본 VPC에 리소스 생성을 거부하는 SCP를 배포하세요.</em></p>
+<h2 id="4-regions-and-availability-zones">4. 리전 및 가용 영역<a class="headerlink" href="#4-regions-and-availability-zones" title="Permanent link">&para;</a></h2>
+<p><strong>AWS 리전(Regions)</strong>은 완전히 독립적인 인프라를 갖춘 별도의 지리적 영역입니다. 각 리전에는 저지연 전용 광섬유로 연결된 물리적으로 분리된 데이터 센터인 <strong>가용 영역(Availability Zones)</strong>이 여러 개 포함되어 있습니다. 배포하는 모든 네트워킹 리소스는 정확히 하나의 가용 영역에 존재하며, 다중 <abbr title="가용 영역(Availability Zone)">AZ</abbr> 전략이 복원력, 비용, 그리고 장애 반경을 결정합니다.</p>
+<p><strong>주요 고려 사항:</strong></p>
+<ul>
+<li><strong>리전 선택</strong> — 지연 시간, Direct Connect 위치, 서비스 가용성, 규정 준수, 비용</li>
+<li><strong><abbr title="가용 영역(Availability Zone)">AZ</abbr> ID vs 가용 영역 이름</strong> — 가용 영역 이름은 계정별로 무작위로 매핑됩니다. 계정 간 조율에는 <abbr title="가용 영역(Availability Zone)">AZ</abbr> ID를 사용하세요</li>
+<li><strong>다중 <abbr title="가용 영역(Availability Zone)">AZ</abbr> 패턴</strong> — 모든 상태 저장 네트워킹 리소스를 AZ별로 배포하고, N-1 가용 영역 용량으로 크기 조정</li>
+<li><strong><abbr title="가용 영역(Availability Zone)">AZ</abbr> 간 비용</strong> — 각 방향에 GB당 요금 부과(<a href="https://aws.amazon.com/vpc/pricing/"><abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> 요금</a> 참조). 가용성을 희생하지 않으면서 불필요한 <abbr title="가용 영역(Availability Zone)">AZ</abbr> 간 트래픽 최소화</li>
+</ul>
+<p><strong><em>모범 사례:</em></strong> <em>프로덕션 워크로드는 최소 3개의 가용 영역에 걸쳐 배포하세요. 하나의 가용 영역이 손실되더라도 나머지 두 개가 과부하되지 않도록 AZ별 용량을 조정하세요.</em></p>
+<h2 id="5-ip-address-planning-with-cidr-blocks">5. <abbr title="클래스 없는 도메인 간 라우팅(Classless Inter-Domain Routing)">CIDR</abbr> 블록을 활용한 IP 주소 계획<a class="headerlink" href="#5-ip-address-planning-with-cidr-blocks" title="Permanent link">&para;</a></h2>
+<p><strong><abbr title="클래스 없는 도메인 간 라우팅(Classless Inter-Domain Routing)">CIDR</abbr>(Classless Inter-Domain Routing)</strong> 표기법은 VPC와 서브넷의 IP 주소 범위를 정의합니다. IP 주소 계획은 나중에 쉽게 변경할 수 없는 가장 중요한 초기 결정 사항입니다. 모든 <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr>, 피어링 연결, 하이브리드 링크, 라우팅 테이블은 생성 시 선택한 CIDR에 의해 제약을 받습니다.</p>
+<p><strong>주요 원칙:</strong></p>
+<ul>
+<li><strong>연속적으로 할당</strong> — 경로 요약(route summarization)을 가능하게 하고, 방화벽 규칙을 단순화하며, 토폴로지를 명확하게 만듦</li>
+<li><strong>절대 겹치지 않음</strong> — CIDR이 겹치는 VPC는 피어링, Transit Gateway, Cloud WAN을 통해 연결할 수 없음</li>
+<li><strong>하이브리드 환경 계획</strong> — AWS 할당 전에 온프레미스 범위와 조율</li>
+<li><strong>10.0.0.0/8 사용</strong> — 가장 큰 연속 프라이빗 공간으로, 깊은 계층적 할당 지원</li>
+</ul>
+<p><strong><em>모범 사례:</em></strong> <em>계층적 할당을 설계하세요: 조직 → 환경 → 리전 → <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> → 서브넷. 이 구조는 모든 수준에서 경로 요약(route summarization)을 가능하게 하고 네트워크 토폴로지를 자체 문서화합니다.</em></p>
+<h2 id="6-subnets">6. 서브넷<a class="headerlink" href="#6-subnets" title="Permanent link">&para;</a></h2>
+<p><strong>서브넷</strong>은 라우팅 정책과 IP 주소 지정이 만나는 곳입니다. 실행하는 모든 리소스는 서브넷에 배치되며, 해당 서브넷의 라우팅 테이블이 리소스가 도달할 수 있는 대상을 결정합니다. "퍼블릭"과 "프라이빗"은 서브넷 자체의 속성이 아니라 라우팅 테이블의 속성입니다.</p>
+<p><strong>주요 패턴:</strong></p>
+<ul>
+<li><strong>5계층 아키텍처</strong> — 방화벽, 퍼블릭, 프라이빗(애플리케이션), 데이터, 인프라/트랜짓 서브넷</li>
+<li><strong>계층별 가용 영역당 하나의 서브넷</strong> — 모든 가용 영역에 걸쳐 일관성 유지</li>
+<li><strong>워크로드에 맞는 크기 조정</strong> — 대부분의 계층에는 <code>/24</code>; EKS/ECS 컨테이너 서브넷에는 <code>/22</code> 이상</li>
+<li><strong>인프라 서브넷</strong> — Transit Gateway ENI, 방화벽 엔드포인트, <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> 엔드포인트 ENI를 위한 전용 <code>/28</code> 서브넷</li>
+</ul>
+<p><strong><em>모범 사례:</em></strong> <em>서브넷 체계에 번호 간격을 두세요(0, 1, 2, 3 대신 0, 10, 20, 30). 그러면 기존 서브넷을 방해하지 않고 나중에 새 계층을 삽입할 수 있습니다.</em></p>
+<h2 id="7-ip-address-management-ipam">7. IP 주소 관리(<abbr title="IP 주소 관리자(IP Address Manager)">IPAM</abbr>)<a class="headerlink" href="#7-ip-address-management-ipam" title="Permanent link">&para;</a></h2>
+<p><strong>AWS <abbr title="IP 주소 관리자(IP Address Manager)">IPAM</abbr></strong>은 스프레드시트와 암묵적 지식을 대체하여 모든 계정과 리전에 걸쳐 IP 주소를 계획, 할당, 추적, 모니터링하는 중앙 집중식 정책 기반 시스템입니다. <abbr title="IP 주소 관리자(IP Address Manager)">IPAM</abbr> 없이는 IP 주소 관리가 조율 병목 현상으로 악화되어 VPC를 연결하려 할 때에야 비로소 발견되는 중복이 발생합니다.</p>
+<p><strong>주요 기능:</strong></p>
+<ul>
+<li><strong>계층적 풀</strong> — 조직 → 리전 → 환경 → 워크로드, 각 수준에서 할당 규칙 적용</li>
+<li><strong>중복 방지</strong> — 전체 풀 계층에 대해 모든 할당 검증</li>
+<li><strong>규정 준수 모니터링</strong> — 표준을 위반하는 수동 할당 CIDR을 가진 VPC의 지속적 감지</li>
+<li><strong>IaC 통합</strong> — CloudFormation 및 Terraform에서 하드코딩된 <abbr title="클래스 없는 도메인 간 라우팅(Classless Inter-Domain Routing)">CIDR</abbr> 대신 <abbr title="IP 주소 관리자(IP Address Manager)">IPAM</abbr> 풀 참조</li>
+</ul>
+<p><strong><em>모범 사례:</em></strong> <em>첫 번째 프로덕션 VPC를 생성하기 전에 IPAM을 구현하세요. 단 하나의 <abbr title="클래스 없는 도메인 간 라우팅(Classless Inter-Domain Routing)">CIDR</abbr> 중복(수정하려면 <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> 재생성이 필요)으로 인한 비용은 수년간의 <abbr title="IP 주소 관리자(IP Address Manager)">IPAM</abbr> 비용을 초과합니다.</em></p>
+<h2 id="8-dns-architecture">8. <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> 아키텍처<a class="headerlink" href="#8-dns-architecture" title="Permanent link">&para;</a></h2>
+<p><strong>Amazon Route 53 Resolver</strong>는 <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> 내에서 발생하는 모든 <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> 쿼리를 처리합니다. 프라이빗 호스팅 영역에 대한 쿼리 응답, 온프레미스 도메인에 대한 쿼리 전달, 공용 인터넷 이름 확인이 모두 여기서 이루어집니다. 다중 계정 환경에서 <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> 결정은 서비스 검색, 하이브리드 연결, 보안 태세에 연쇄적으로 영향을 미칩니다. Route 53 Profiles는 <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> 구성(프라이빗 호스팅 영역 연결, 전달 규칙, <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> Firewall 규칙 그룹)을 OU 수준에서 배포하여 모든 계정이 자동으로 일관된 확인 설정을 상속받도록 합니다.</p>
+<p><strong>주요 기능:</strong></p>
+<ul>
+<li><strong>Route 53 Profiles</strong> — OU의 모든 계정에 <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> 구성을 번들로 공유하고, 새 계정은 자동으로 상속</li>
+<li><strong>프라이빗 호스팅 영역</strong> — 연결된 VPC에만 표시되는 내부 <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> 네임스페이스로, 서비스 검색의 기반</li>
+<li><strong>Resolver 엔드포인트</strong> — 하이브리드 DNS를 위한 인바운드(온프레미스에서 AWS 이름 확인)와 아웃바운드(AWS에서 온프레미스 이름 확인)</li>
+<li><strong><abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> Firewall</strong> — 확인 계층에서의 도메인 기반 필터링으로, 가장 저렴하고 광범위한 이그레스 제어</li>
+</ul>
+<p><strong><em>모범 사례:</em></strong> <em>처음부터 Route 53 Profiles를 배포하세요. 없으면 다중 계정 DNS가 시간이 지남에 따라 드리프트되는 취약한 계정별 자동화로 전락합니다. 있으면 <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> 구성이 조직과 함께 확장되는 일급 운영이 됩니다.</em></p>
+<hr />
+<h2 id="explore-foundation-topics">기반 주제 탐색<a class="headerlink" href="#explore-foundation-topics" title="Permanent link">&para;</a></h2>
+<div class="grid cards">
+<ul>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 4H3a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2M3 19V6h8v13zm18 0h-8V6h8zm-7-9.5h6V11h-6zm0 2.5h6v1.5h-6zm0 2.5h6V16h-6z"/></svg></span> <strong>시작하기 전에</strong></p>
+<hr />
+<p>네트워킹을 위한 <abbr title="자격 증명 및 액세스 관리(Identity and Access Management)">IAM</abbr>, 코드형 인프라, 서비스 할당량, 태깅, Well-Architected 원칙.</p>
+<p><a href="aws-prerequisites/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> 시작하기 전에</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3v18h-6v-3.5h-2V21H5V3zm-4 4h2V5h-2zm-4 0h2V5h-2zM7 7h2V5H7zm8 4h2V9h-2zm-4 0h2V9h-2zm-4 0h2V9H7zm8 4h2v-2h-2zm-4 0h2v-2h-2zm-4 0h2v-2H7zm8 4h2v-2h-2zm-8 0h2v-2H7zM21 1H3v22h18z"/></svg></span> <strong>AWS Organizations</strong></p>
+<hr />
+<p>다중 계정 거버넌스, SCP, 중앙 집중식 네트워킹 계정, RAM을 통한 리소스 공유.</p>
+<p><a href="organizations/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> AWS Organizations</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 20q-2.28 0-3.89-1.57Q1 16.85 1 14.58q0-1.95 1.17-3.48 1.18-1.53 3.08-1.95.63-2.3 2.5-3.72Q9.63 4 12 4q2.93 0 4.96 2.04Q19 8.07 19 11q1.73.2 2.86 1.5 1.14 1.28 1.14 3 0 1.88-1.31 3.19T18.5 20m-12-2h12q1.05 0 1.77-.73.73-.72.73-1.77t-.73-1.77Q19.55 13 18.5 13H17v-2q0-2.07-1.46-3.54Q14.08 6 12 6 9.93 6 8.46 7.46 7 8.93 7 11h-.5q-1.45 0-2.47 1.03Q3 13.05 3 14.5T4.03 17q1.02 1 2.47 1m5.5-6"/></svg></span> <strong>Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr></strong></p>
+<hr />
+<p><abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> 설계 패턴, <abbr title="클래스 없는 도메인 간 라우팅(Classless Inter-Domain Routing)">CIDR</abbr> 크기 조정, <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr>, Flow Logs, VPC와 계정 전략의 관계.</p>
+<p><a href="vpc/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Amazon <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr></a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.9 17.39c-.26-.8-1.01-1.39-1.9-1.39h-1v-3a1 1 0 0 0-1-1H8v-2h2a1 1 0 0 0 1-1V7h2a2 2 0 0 0 2-2v-.41a7.984 7.984 0 0 1 2.9 12.8M11 19.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.22.21-1.79L9 15v1a2 2 0 0 0 2 2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> <strong>리전 및 가용 영역</strong></p>
+<hr />
+<p>리전 선택, 가용 영역 ID, 다중 <abbr title="가용 영역(Availability Zone)">AZ</abbr> 패턴, <abbr title="가용 영역(Availability Zone)">AZ</abbr> 간 비용 관리, 로컬 존.</p>
+<p><a href="regions-azs/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> 리전 및 가용 영역</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 9h-2V7h2zm7 11v2h-7a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1H2v-2h7a1 1 0 0 1 1-1h1v-2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v2h1a1 1 0 0 1 1 1zM9 5H7v10h2zm2 10h2v-4h2a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-4z"/></svg></span> <strong><abbr title="클래스 없는 도메인 간 라우팅(Classless Inter-Domain Routing)">CIDR</abbr> 계획</strong></p>
+<hr />
+<p>계층적 할당, 경로 요약(route summarization), 하이브리드 조율, <abbr title="인터넷 프로토콜 버전 6(Internet Protocol version 6)">IPv6</abbr>, 일반적인 실수.</p>
+<p><a href="cidr/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> <abbr title="클래스 없는 도메인 간 라우팅(Classless Inter-Domain Routing)">CIDR</abbr> 계획</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v2h1a1 1 0 0 1 1 1h7v2h-7a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1H2v-2h7a1 1 0 0 1 1-1h1v-2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg></span> <strong>서브넷</strong></p>
+<hr />
+<p>계층 설계, 라우팅 테이블, 컨테이너를 위한 크기 조정, <abbr title="네트워크 액세스 제어 목록(Network Access Control List)">NACL</abbr>, 인프라 서브넷, <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> 공유.</p>
+<p><a href="subnets/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> 서브넷</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 11h-2V9h2zM3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm7 2H8v10h2zm2 10h2v-4h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-4z"/></svg></span> <strong><abbr title="IP 주소 관리자(IP Address Manager)">IPAM</abbr></strong></p>
+<hr />
+<p>풀 계층 구조, 할당 규칙, 규정 준수 모니터링, IaC 통합, 하이브리드 인식.</p>
+<p><a href="ipam/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> <abbr title="IP 주소 관리자(IP Address Manager)">IPAM</abbr></a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 9a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2m13-6H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1M7 19a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2m13-6H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1"/></svg></span> <strong><abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> 아키텍처</strong></p>
+<hr />
+<p>Route 53 Resolver, 프라이빗 호스팅 영역, 하이브리드 DNS를 위한 Resolver 엔드포인트, Route 53 Profiles, <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> Firewall.</p>
+<p><a href="dns/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> <abbr title="도메인 이름 시스템(Domain Name System)">DNS</abbr> 아키텍처</a></p>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="하단/푸터" >
+        
+          
+          <a href="../decisions/" class="md-footer__link md-footer__link--prev" aria-label="이전: 의사결정 맵">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                이전
+              </span>
+              <div class="md-ellipsis">
+                의사결정 맵
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="aws-prerequisites/" class="md-footer__link md-footer__link--next" aria-label="다음: 시작하기 전에">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                다음
+              </span>
+              <div class="md-ellipsis">
+                시작하기 전에
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      본 사이트는 <a href="https://github.com/aws/aws-networking-best-practices" target="_blank">AWS Networking Best Practices</a>의 한국어 번역본입니다. 원문 저작권 &copy; Amazon Web Services, Inc.
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/aws/aws-networking-best-practices" target="_blank" rel="noopener" title="원본 레포지토리" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.indexes", "navigation.footer", "navigation.sections", "toc.follow", "content.code.copy", "content.code.annotate", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+  
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  <script>
+    /* 홈에서 실제 Material 검색(.md-search)을 헤더 → 히어로 슬롯으로 이동.
+       navigation.instant를 껐으므로 매 페이지가 전체 로드 → 안전하게 1회 이동. */
+    (function () {
+      function relocateSearch() {
+        var slot = document.querySelector("[data-ko-search-slot]");
+        var search = document.querySelector(".md-search");
+        if (slot && search && !slot.contains(search)) {
+          slot.appendChild(search);
+          document.body.classList.add("ko-hero-has-search");
+        }
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", relocateSearch);
+      } else {
+        relocateSearch();
+      }
+    })();
+
+    /* 헤더 타이틀 텍스트 클릭 시 홈으로 이동(로고 링크의 href 재사용) */
+    (function () {
+      function makeTitleClickable() {
+        var logo = document.querySelector("a.md-logo, a.md-header__button.md-logo");
+        var title = document.querySelector(".md-header__title");
+        if (logo && title && !title.dataset.koHomeLinked) {
+          title.dataset.koHomeLinked = "1";
+          title.style.cursor = "pointer";
+          title.addEventListener("click", function () {
+            window.location.href = logo.href;
+          });
+        }
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", makeTitleClickable);
+      } else {
+        makeTitleClickable();
+      }
+    })();
+
+    /* 전역: 본문 외부 링크는 새 탭으로 열기(rel=noopener) */
+    (function () {
+      function externalNewTab() {
+        var here = location.host;
+        document.querySelectorAll(".md-content a[href]").forEach(function (a) {
+          try {
+            var u = new URL(a.href, location.href);
+            if (u.host && u.host !== here && /^https?:$/.test(u.protocol)) {
+              a.target = "_blank";
+              a.rel = "noopener noreferrer";
+            }
+          } catch (e) {}
+        });
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", externalNewTab);
+      } else {
+        externalNewTab();
+      }
+    })();
+
+    /* 접근성: 모션 최소화 설정이면 히어로 네트워크 애니메이션 정지 */
+    (function () {
+      try {
+        if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          var run = function () {
+            var svg = document.querySelector(".ko-hero__net svg");
+            if (svg && svg.pauseAnimations) svg.pauseAnimations();
+          };
+          if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);
+          else run();
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  </body>
+</html>

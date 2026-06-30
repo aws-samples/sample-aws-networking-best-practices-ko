@@ -1,0 +1,96 @@
+---
+title: AWS Networking Best Practices
+hide:
+  - navigation
+  - toc
+---
+
+# Introduction
+
+A reference architecture for AWS networking best practices.
+
+Enterprise AWS networks are built on five interconnected pillars:
+
+* **Foundation** - Core infrastructure build using AWS Organizations, Amazon VPCs, subnets, Amazon VPC IP Address Manager that everything else depends on
+* **Connectivity** - Communication through internet gateways, AWS Transit Gateway, AWS Direct Connect, and VPN services
+* **Application Networking** - Traffic distribution via Elastic Load Balancing, service-to-service communication through Amazon VPC Lattice, and container networking
+* **Security** - Protection & network isolation through AWS Network Firewall, AWS PrivateLink, Amazon Route 53 Resolver DNS Firewall
+* **Observability** - Monitoring and troubleshooting capabilities across all services
+
+![AWS Network Reference Architecture](assets/introduction/AWS-Network-Reference-Architecture.png)
+/// caption
+AWS Network Reference Architecture
+///
+
+## Getting started
+
+If you know what you're trying to accomplish, start with the **[Decision Map](decisions.md)** — it maps common AWS networking questions directly to recommended services, patterns, and trade-offs.
+
+Or, start with Foundation to understand the basics and then explore each pillar based on your specific networking requirements.
+
+<div class="grid cards" markdown>
+
+*   :material-network: **Foundation**
+
+    ---
+
+    Essential AWS networking concepts including VPCs, subnets, routing, and
+    core infrastructure components.
+
+    ---
+
+    [:octicons-arrow-right-24: Foundation](foundation/)
+
+*   :material-lan-connect: **Connectivity**
+
+    ---
+
+    Internet access, connectivity within AWS, and hybrid & multi-cloud
+    networking solutions.
+
+    ---
+
+    [:octicons-arrow-right-24: Connectivity](connectivity/)
+
+*   :material-application: **Application Networking**
+
+    ---
+
+    Load balancing, service-to-service communication, and container mesh
+    networking for modern applications.
+
+    ---
+
+    [:octicons-arrow-right-24: Application Networking](application-networking/)
+
+*   :material-lock-outline: **Security**
+
+    ---
+
+    Secure your AWS network with defense-in-depth strategies, access controls,
+    and threat protection.
+
+    ---
+
+    [:octicons-arrow-right-24: Security](security/)
+
+*   :material-monitor-eye: **Observability**
+
+    ---
+
+    Monitor network performance, troubleshoot connectivity issues, and gain
+    visibility into your AWS network.
+
+    ---
+
+    [:octicons-arrow-right-24: Observability](observability/)
+
+</div>
+
+## Contribute
+
+Help improve this guide by [reporting issues](community/report-a-correction.md),
+[suggesting new best practices](community/new-best-practice.md), or
+[contributing content](community/making-a-pull-request.md). Join our
+community-driven effort to create comprehensive AWS networking resources for
+everyone.

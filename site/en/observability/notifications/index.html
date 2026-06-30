@@ -1,0 +1,3028 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AWS Networking Architecture guidance and best practices (community Korean-translation mirror)">
+      
+      
+      
+        <link rel="canonical" href="https://aws-samples.github.io/sample-aws-networking-best-practices-ko/en/observability/notifications/">
+      
+      
+        <link rel="prev" href="../service-monitoring/">
+      
+      
+        <link rel="next" href="../../community/">
+      
+      
+        
+          <link rel="alternate" href="../../../observability/notifications/" hreflang="ko">
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Notifications - AWS Networking Best Practices</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans KR";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#notifications" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  
+    Community mirror of
+    <a href="https://aws.github.io/aws-networking-best-practices/" target="_blank" rel="noopener">
+      AWS Networking Best Practices</a>
+    · a <strong>Korean translation</strong> is available — use the language switcher in the header
+  
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="AWS Networking Best Practices" class="md-header__button md-logo" aria-label="AWS Networking Best Practices" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M180.4 203c-.7 22.6 10.6 32.7 10.9 39-.1 1.3-.6 2.5-1.3 3.6s-1.7 2-2.8 2.6l-12.8 9c-1.7 1.2-3.6 1.8-5.6 1.9-.4 0-8.2 1.8-20.5-25.6-7.5 9.4-17 16.9-27.9 22s-22.7 7.7-34.7 7.5c-16.3.9-60.4-9.2-58.1-56.2-1.6-38.3 34.1-62.1 70.9-60 7.1 0 21.6.4 47 6.3v-15.6c2.7-26.5-14.7-47-44.8-43.9-2.4 0-19.4-.5-45.8 10.1-7.4 3.4-8.3 2.8-10.8 2.8-7.4 0-4.4-21.5-2.9-24.2 5.2-6.4 35.9-18.4 65.9-18.2 20.1-1.8 40.1 4.4 55.7 17.3 6.3 7.1 11.2 15.4 14.2 24.4s4.2 18.5 3.5 28v69.3zM94 235.4c32.4-.5 46.2-20 49.3-30.5 2.5-10.1 2.1-16.4 2.1-27.4-9.7-2.3-23.6-4.9-39.6-4.9-15.2-1.1-42.8 5.6-41.7 32.3-1.2 16.8 11.1 31.4 30 30.5zm170.9 23.1c-7.9.7-11.5-4.9-12.7-10.4L202.4 83.4c-1-2.8-1.6-5.6-1.9-8.6-.2-1.2.1-2.4.8-3.4s1.8-1.6 3-1.8h22.2c8.8-.9 11.6 6 12.6 10.4l35.8 140.8L308.1 80c.5-3.2 2.9-11.1 12.8-10.2h17.2c2.2-.2 11.1-.5 12.7 10.4l33.3 142.5L421 80.1c.5-2.2 2.7-11.4 12.7-10.4h19.7c.9-.1 6.2-.8 5.3 8.6-.4 1.8 3.4-10.7-52.8 169.9-1.1 5.5-4.8 11.1-12.7 10.4h-18.7c-10.9 1.2-12.5-9.7-12.7-10.7l-33.2-137.1-32.8 137c-.2 1.1-1.7 11.9-12.7 10.7h-18.3zm273.5 5.6c-5.9 0-33.9-.3-57.4-12.3-2.3-1-4.3-2.6-5.7-4.8s-2.1-4.6-2.1-7.1v-10.7c0-8.5 6.2-6.9 8.8-5.9 10 4.1 16.5 7.1 28.8 9.6 36.7 7.5 52.8-2.3 56.7-4.5 13.2-7.8 14.2-25.7 5.3-34.9-10.5-8.8-15.5-9.1-53.1-21-4.6-1.3-43.7-13.6-43.8-52.4-.6-28.2 25-56.2 69.5-56 12.7 0 46.4 4.1 55.6 15.6 1.4 2.1 2 4.6 1.9 7v10.1c0 4.4-1.6 6.7-4.9 6.7-7.7-.9-21.4-11.2-49.2-10.8-6.9-.4-39.9.9-38.4 25-.4 19 26.6 26.1 29.7 26.9 36.5 11 48.6 12.8 63.1 29.6 17.1 22.2 7.9 48.3 4.3 55.4-19.1 37.5-68.4 34.4-69.3 34.4zM578.6 369c-70 51.7-171.7 79.2-258.5 79.2C203 449 89.8 405.9 2.8 327.5c-6.5-5.9-.8-14 7.2-9.5 96.5 55.2 205.7 84.2 316.9 84.1 83-.4 165.1-17.3 241.6-49.5 11.8-5 21.8 7.8 10.1 16.4m29.2-33.3c-9-11.5-59.3-5.4-81.8-2.7-6.8.8-7.9-5.1-1.8-9.5 40.1-28.2 105.9-20.1 113.4-10.6s-2.1 75.4-39.6 106.9c-5.8 4.9-11.3 2.3-8.7-4.1 8.4-21.3 27.4-68.5 18.4-80z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AWS Networking Best Practices
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Notifications
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="다크 모드로 전환"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="다크 모드로 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="라이트 모드로 전환"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="라이트 모드로 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../observability/notifications/" hreflang="ko" class="md-select__link">
+              한국어
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aws/aws-networking-best-practices/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+          
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+        
+      
+        
+          
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../decisions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Decision Map
+
+      </a>
+    </li>
+  
+
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu">
+            <a href="../../foundation/" class="md-tabs__link">Foundation</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../foundation/">Overview</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../foundation/aws-prerequisites/">Before You Start</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../foundation/organizations/">AWS Organizations</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../foundation/vpc/">Amazon VPC</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../foundation/regions-azs/">Regions & Availability Zones</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../foundation/cidr/">CIDR Planning</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../foundation/subnets/">Subnets</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../foundation/dns/">DNS Architecture</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../foundation/ipam/">IPAM</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu">
+            <a href="../../connectivity/" class="md-tabs__link">Connectivity</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../connectivity/">Overview</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../connectivity/internet/">Internet</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../connectivity/within-aws/">Within AWS</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../connectivity/hybrid-multicloud/">Hybrid & Multi-Cloud</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../connectivity/remote-access/">Remote Access</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu">
+            <a href="../../application-networking/" class="md-tabs__link">Application Networking</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../application-networking/">Overview</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../application-networking/load-balancing/">Load Balancing</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../application-networking/service-to-service/">Service to Service</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../application-networking/container-mesh/">Container Mesh</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu">
+            <a href="../../security/" class="md-tabs__link">Security</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../security/">Overview</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../security/perimeter-inbound/">Perimeter Controls</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../security/outbound/">Outbound Controls</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../security/segmentation/">Network Segmentation</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu md-tabs__item--active">
+            <a href="../" class="md-tabs__link">Observability</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../">Overview</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../internal-traffic/">Internal Traffic</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../external-traffic/">External Traffic</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../service-monitoring/">AWS Services</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="./">Notifications</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu">
+            <a href="../../community/" class="md-tabs__link">Community</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../community/">Overview</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../community/contribute/">How to contribute</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../community/report-a-correction/">Report a correction</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../community/new-best-practice/">New best practice</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../community/making-a-pull-request/">Making a pull request</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../community/philosophy/">Philosophy</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../community/conventions/">Conventions</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+        
+          
+          
+          
+          
+          <li class="md-tabs__item ko-tabs__item--has-menu">
+            <a href="../../news/whats-new/" class="md-tabs__link">News</a>
+            <div class="ko-tabs__menu" role="menu">
+              <ul>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../news/whats-new/">AWS What's New</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../news/blog-networking/">Networking Blog</a>
+                    
+                  </li>
+                
+                  <li role="none">
+                    
+                      <a role="menuitem" href="../../news/blog-korea/">AWS Korea Tech Blog</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="AWS Networking Best Practices" class="md-nav__button md-logo" aria-label="AWS Networking Best Practices" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M180.4 203c-.7 22.6 10.6 32.7 10.9 39-.1 1.3-.6 2.5-1.3 3.6s-1.7 2-2.8 2.6l-12.8 9c-1.7 1.2-3.6 1.8-5.6 1.9-.4 0-8.2 1.8-20.5-25.6-7.5 9.4-17 16.9-27.9 22s-22.7 7.7-34.7 7.5c-16.3.9-60.4-9.2-58.1-56.2-1.6-38.3 34.1-62.1 70.9-60 7.1 0 21.6.4 47 6.3v-15.6c2.7-26.5-14.7-47-44.8-43.9-2.4 0-19.4-.5-45.8 10.1-7.4 3.4-8.3 2.8-10.8 2.8-7.4 0-4.4-21.5-2.9-24.2 5.2-6.4 35.9-18.4 65.9-18.2 20.1-1.8 40.1 4.4 55.7 17.3 6.3 7.1 11.2 15.4 14.2 24.4s4.2 18.5 3.5 28v69.3zM94 235.4c32.4-.5 46.2-20 49.3-30.5 2.5-10.1 2.1-16.4 2.1-27.4-9.7-2.3-23.6-4.9-39.6-4.9-15.2-1.1-42.8 5.6-41.7 32.3-1.2 16.8 11.1 31.4 30 30.5zm170.9 23.1c-7.9.7-11.5-4.9-12.7-10.4L202.4 83.4c-1-2.8-1.6-5.6-1.9-8.6-.2-1.2.1-2.4.8-3.4s1.8-1.6 3-1.8h22.2c8.8-.9 11.6 6 12.6 10.4l35.8 140.8L308.1 80c.5-3.2 2.9-11.1 12.8-10.2h17.2c2.2-.2 11.1-.5 12.7 10.4l33.3 142.5L421 80.1c.5-2.2 2.7-11.4 12.7-10.4h19.7c.9-.1 6.2-.8 5.3 8.6-.4 1.8 3.4-10.7-52.8 169.9-1.1 5.5-4.8 11.1-12.7 10.4h-18.7c-10.9 1.2-12.5-9.7-12.7-10.7l-33.2-137.1-32.8 137c-.2 1.1-1.7 11.9-12.7 10.7h-18.3zm273.5 5.6c-5.9 0-33.9-.3-57.4-12.3-2.3-1-4.3-2.6-5.7-4.8s-2.1-4.6-2.1-7.1v-10.7c0-8.5 6.2-6.9 8.8-5.9 10 4.1 16.5 7.1 28.8 9.6 36.7 7.5 52.8-2.3 56.7-4.5 13.2-7.8 14.2-25.7 5.3-34.9-10.5-8.8-15.5-9.1-53.1-21-4.6-1.3-43.7-13.6-43.8-52.4-.6-28.2 25-56.2 69.5-56 12.7 0 46.4 4.1 55.6 15.6 1.4 2.1 2 4.6 1.9 7v10.1c0 4.4-1.6 6.7-4.9 6.7-7.7-.9-21.4-11.2-49.2-10.8-6.9-.4-39.9.9-38.4 25-.4 19 26.6 26.1 29.7 26.9 36.5 11 48.6 12.8 63.1 29.6 17.1 22.2 7.9 48.3 4.3 55.4-19.1 37.5-68.4 34.4-69.3 34.4zM578.6 369c-70 51.7-171.7 79.2-258.5 79.2C203 449 89.8 405.9 2.8 327.5c-6.5-5.9-.8-14 7.2-9.5 96.5 55.2 205.7 84.2 316.9 84.1 83-.4 165.1-17.3 241.6-49.5 11.8-5 21.8 7.8 10.1 16.4m29.2-33.3c-9-11.5-59.3-5.4-81.8-2.7-6.8.8-7.9-5.1-1.8-9.5 40.1-28.2 105.9-20.1 113.4-10.6s-2.1 75.4-39.6 106.9c-5.8 4.9-11.3 2.3-8.7-4.1 8.4-21.3 27.4-68.5 18.4-80z"/></svg>
+
+    </a>
+    AWS Networking Best Practices
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aws/aws-networking-best-practices/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../foundation/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundation
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foundation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/aws-prerequisites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Before You Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/organizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS Organizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/vpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Amazon VPC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/regions-azs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regions & Availability Zones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/cidr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CIDR Planning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/subnets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subnets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/dns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/ipam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IPAM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../connectivity/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connectivity
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Connectivity
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connectivity/internet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connectivity/within-aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Within AWS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connectivity/hybrid-multicloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hybrid & Multi-Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connectivity/remote-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../application-networking/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application Networking
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Application Networking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../application-networking/load-balancing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Load Balancing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../application-networking/service-to-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service to Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../application-networking/container-mesh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Container Mesh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../security/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/perimeter-inbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Perimeter Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/outbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbound Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Segmentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observability
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Observability
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internal-traffic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internal Traffic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../external-traffic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    External Traffic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notifications
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alarm-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alarm Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composite-alarms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composite Alarms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventbridge-for-state-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EventBridge for State Changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-health-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AWS Health Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notification-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notification Routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-remediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Remediation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-awareness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost Awareness
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combining-notifications-with-other-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combining notifications with other services
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-observability-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Observability Pages
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../community/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Community
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/contribute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to contribute
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/report-a-correction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report a correction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/new-best-practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New best practice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/making-a-pull-request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Making a pull request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/philosophy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philosophy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conventions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    News
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    News
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../news/whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS What's New
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../news/blog-networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../news/blog-korea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS Korea Tech Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alarm-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alarm Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composite-alarms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composite Alarms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventbridge-for-state-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EventBridge for State Changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-health-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AWS Health Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notification-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notification Routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-remediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Remediation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-awareness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost Awareness
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combining-notifications-with-other-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combining notifications with other services
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-observability-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Observability Pages
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+  
+  
+  <!-- 본문 페이지: 언어 전환은 헤더의 언어 선택기로 제공(원문 링크 불필요) -->
+  
+                  
+
+
+
+<h1 id="notifications">Notifications<a class="headerlink" href="#notifications" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Prerequisites</p>
+<p>This section assumes familiarity with <a href="../service-monitoring/">AWS Services Monitoring</a> and <a href="../../foundation/organizations/">AWS Organizations</a>. Review those topics first if you're new to AWS networking observability and multi-account governance.</p>
+</div>
+<p>The best monitoring in the world is worthless if nobody sees the alert. Notifications bridge the gap between detecting a problem and getting the right person to act on it. For networking specifically, the stakes are high: a <abbr title="가상 프라이빗 네트워크(Virtual Private Network)">VPN</abbr> tunnel down, a Direct Connect <abbr title="경계 게이트웨이 프로토콜(Border Gateway Protocol)">BGP</abbr> session flap, or a Network Firewall dropping traffic affects every workload that depends on that path. The difference between a five-minute blip and a two-hour outage is almost always how fast the notification reaches someone who can respond.</p>
+<p>This page covers the notification pipeline end-to-end: from the metric or event that signals a problem, through the alarm or rule that decides it matters, to the delivery mechanism that reaches the right team at the right time. The organizing principle is <strong>signal over noise</strong> — the number one operational failure in monitoring is alert fatigue, where teams ignore alerts because too many of them are false positives or low-priority noise.</p>
+<p>Notifications in a multi-account AWS environment require deliberate architecture. Events originate in workload accounts, but the networking team typically operates from a centralized monitoring account. Cross-account event forwarding, centralized alarm aggregation, and Organization-wide health event visibility are not optional extras — they are the baseline for any production network.</p>
+<figure>
+<p><img alt="Notification pipeline showing event sources (CloudWatch Metrics, EventBridge Events, AWS Health) flowing through the alarm and rule layer (CloudWatch Alarms, EventBridge Rules) to delivery and routing (SNS, AWS Chatbot) and finally to destinations (Email, Slack/Teams, PagerDuty/Opsgenie, Lambda auto-remediation, SQS ticket creation)" src="../../assets/observability/notification-pipeline.png" /></p>
+<figcaption>
+<p>Notification pipeline — <a href="../../assets/observability/notification-pipeline.drawio">Drawio Source</a></p>
+</figcaption>
+</figure>
+<h2 id="key-capabilities">Key Capabilities<a class="headerlink" href="#key-capabilities" title="Permanent link">&para;</a></h2>
+<div class="grid cards">
+<ul>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23 7v6h-2V7m0 8h2v2h-2M12 2a2 2 0 0 0-2 2 2 2 0 0 0 0 .29C7.12 5.14 5 7.82 5 11v6l-2 2v1h18v-1l-2-2v-6c0-3.18-2.12-5.86-5-6.71A2 2 0 0 0 14 4a2 2 0 0 0-2-2m-2 19a2 2 0 0 0 2 2 2 2 0 0 0 2-2Z"/></svg></span> <strong>CloudWatch Alarms</strong></p>
+<hr />
+<p>Metric-based alerting with static thresholds, anomaly detection bands, and math expressions. Composite alarms combine multiple alarm states into a single actionable signal, reducing noise from transient single-metric spikes.</p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg></span> <strong>Amazon EventBridge</strong></p>
+<hr />
+<p>Event-driven notifications for state changes: <abbr title="가상 프라이빗 네트워크(Virtual Private Network)">VPN</abbr> tunnel up/down, Direct Connect connection state, Network Firewall alert, <abbr title="경계 게이트웨이 프로토콜(Border Gateway Protocol)">BGP</abbr> session flap. Pattern-matching rules route events to any target without polling.</p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 5.5H9c-1.1 0-2 .9-2 2v9a2 2 0 0 0 2 2h13c1.11 0 2-.89 2-2v-9a2 2 0 0 0-2-2m0 3.67-6.5 3.33L9 9.17V7.5l6.5 3.31L22 7.5zM5 16.5c0 .17.03.33.05.5H1c-.552 0-1-.45-1-1s.448-1 1-1h4zM3 7h2.05c-.02.17-.05.33-.05.5V9H3c-.55 0-1-.45-1-1s.45-1 1-1m-2 5c0-.55.45-1 1-1h3v2H2c-.55 0-1-.45-1-1"/></svg></span> <strong>Amazon SNS</strong></p>
+<hr />
+<p>Fan-out delivery to email, SMS, HTTPS endpoints (PagerDuty, Opsgenie), Lambda functions, and SQS queues. SNS is the universal glue between alarm sources and notification destinations.</p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 4A5.5 5.5 0 0 0 2 9.5c0 .5.09 1 .22 1.5H6.3l1.27-3.37c.3-.8 1.48-.88 1.86 0L11.5 13l.59-1.42c.13-.33.48-.58.91-.58h8.78c.13-.5.22-1 .22-1.5A5.5 5.5 0 0 0 16.5 4c-1.86 0-3.5.93-4.5 2.34C11 4.93 9.36 4 7.5 4M3 12.5a1 1 0 0 0-1 1 1 1 0 0 0 1 1h2.44L11 20c1 .9 1 .9 2 0l5.56-5.5H21a1 1 0 0 0 1-1 1 1 0 0 0-1-1h-7.6l-.93 2.3c-.4 1.01-1.55.87-1.92.03L8.5 9.5l-.96 2.33c-.15.38-.49.67-.94.67z"/></svg></span> <strong>AWS Health Dashboard &amp; API</strong></p>
+<hr />
+<p>Proactive awareness of AWS service events affecting your resources: scheduled maintenance on Direct Connect, degraded performance in a Region, or planned <abbr title="가상 프라이빗 네트워크(Virtual Private Network)">VPN</abbr> endpoint rotation. Organization-wide Health events aggregate across all member accounts.</p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c5.5 0 10 3.58 10 8s-4.5 8-10 8c-1.24 0-2.43-.18-3.53-.5C5.55 21 2 21 2 21c2.33-2.33 2.7-3.9 2.75-4.5C3.05 15.07 2 13.13 2 11c0-4.42 4.5-8 10-8"/></svg></span> <strong>AWS Chatbot</strong></p>
+<hr />
+<p>Delivers CloudWatch alarms and EventBridge notifications directly to Slack channels and Microsoft Teams. Interactive — teams can acknowledge, snooze, or run runbooks from the chat interface.</p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 7v2h5V7zm10 2v2H9v2h3v2l3-3zm5 0v6h5V9zM2 11v2h5v-2zm0 4v2h5v-2z"/></svg></span> <strong>Composite Alarms</strong></p>
+<hr />
+<p>Combine multiple alarms into a single parent alarm that only fires when a combination of conditions confirms a real problem. The primary tool for eliminating alert fatigue in complex network topologies.</p>
+</li>
+</ul>
+</div>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="alarm-design">Alarm Design<a class="headerlink" href="#alarm-design" title="Permanent link">&para;</a></h3>
+<h4 id="alarm-on-what-matters-not-on-everything">Alarm on what matters, not on everything<a class="headerlink" href="#alarm-on-what-matters-not-on-everything" title="Permanent link">&para;</a></h4>
+<p>Every alarm that fires without requiring action trains your team to ignore alarms. Before creating an alarm, answer: "If this fires at 3 AM, what will someone do?" If the answer is "look at it tomorrow," it's not a P1 alarm — it's a dashboard metric or a daily report item.</p>
+<p>For networking, the alarms that matter are the ones that indicate traffic is affected or about to be affected: tunnel down, <abbr title="경계 게이트웨이 프로토콜(Border Gateway Protocol)">BGP</abbr> session lost, <abbr title="네트워크 주소 변환(Network Address Translation)">NAT</abbr> gateway ErrorPortAllocation spiking, Network Firewall dropping legitimate traffic, Transit Gateway blackholing packets. Metrics like "<abbr title="가상 프라이빗 네트워크(Virtual Private Network)">VPN</abbr> tunnel bytes in" are useful for dashboards but rarely warrant an alarm unless they drop to zero (which means the tunnel is effectively dead even if the state shows "UP").</p>
+<p><strong><em>Key insight:</em></strong> <em>If your team routinely ignores alarms, you don't have a monitoring problem — you have an alarm design problem. Every alarm must have a clear owner and a defined response action.</em></p>
+<h4 id="use-anomaly-detection-for-metrics-without-obvious-thresholds">Use anomaly detection for metrics without obvious thresholds<a class="headerlink" href="#use-anomaly-detection-for-metrics-without-obvious-thresholds" title="Permanent link">&para;</a></h4>
+<p>Some networking metrics don't have a natural static threshold. What's "normal" for Transit Gateway bytes processed depends on time of day, day of week, and business seasonality. CloudWatch anomaly detection builds a model of expected behavior and alarms when the metric deviates beyond a configurable band width. This is particularly useful for detecting <abbr title="분산 서비스 거부(Distributed Denial of Service)">DDoS</abbr> traffic patterns, unexpected traffic shifts after a routing change, or gradual degradation that wouldn't trip a static threshold.</p>
+<h4 id="implement-severity-tiers-with-distinct-routing">Implement severity tiers with distinct routing<a class="headerlink" href="#implement-severity-tiers-with-distinct-routing" title="Permanent link">&para;</a></h4>
+<p>Not every problem deserves a page. Define clear severity tiers and route each tier differently:</p>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Criteria</th>
+<th>Routing</th>
+<th>Response time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P1 — Critical</strong></td>
+<td>Traffic is dropping, connectivity is lost, failover has not occurred</td>
+<td>PagerDuty/Opsgenie page, Slack war-room channel</td>
+<td>Immediate (&lt; 5 min)</td>
+</tr>
+<tr>
+<td><strong>P2 — High</strong></td>
+<td>Redundancy is degraded, single path remaining, capacity approaching limits</td>
+<td>Slack notification, email to on-call</td>
+<td>Business hours (&lt; 4 hr)</td>
+</tr>
+<tr>
+<td><strong>P3 — Informational</strong></td>
+<td>Planned maintenance, minor metric deviation, successful failover</td>
+<td>Slack channel, daily digest email</td>
+<td>Next business day</td>
+</tr>
+</tbody>
+</table>
+<p>Map each CloudWatch alarm and EventBridge rule to exactly one severity tier. If you can't decide the tier, the alarm probably needs to be split into two: one for the critical condition and one for the informational condition.</p>
+<h3 id="composite-alarms">Composite Alarms<a class="headerlink" href="#composite-alarms" title="Permanent link">&para;</a></h3>
+<h4 id="use-composite-alarms-to-confirm-real-problems-before-paging">Use composite alarms to confirm real problems before paging<a class="headerlink" href="#use-composite-alarms-to-confirm-real-problems-before-paging" title="Permanent link">&para;</a></h4>
+<p>A single metric crossing a threshold is often not a problem. A <abbr title="가상 프라이빗 네트워크(Virtual Private Network)">VPN</abbr> tunnel briefly flapping during AWS-side maintenance is expected. But if <em>both</em> tunnels on a connection are down simultaneously, that's a real outage. Composite alarms let you express this logic: "alarm only when Alarm A AND Alarm B are both in ALARM state."</p>
+<p>Networking patterns that benefit from composite alarms:</p>
+<ul>
+<li><strong>Both <abbr title="가상 프라이빗 네트워크(Virtual Private Network)">VPN</abbr> tunnels down</strong> on the same connection (single tunnel down is P2; both down is P1)</li>
+<li><strong><abbr title="네트워크 주소 변환(Network Address Translation)">NAT</abbr> gateway errors AND increased packet drops</strong> (errors alone might be transient; combined with drops confirms impact)</li>
+<li><strong><abbr title="경계 게이트웨이 프로토콜(Border Gateway Protocol)">BGP</abbr> session down AND no traffic on the backup path</strong> (<abbr title="경계 게이트웨이 프로토콜(Border Gateway Protocol)">BGP</abbr> down alone might mean traffic shifted to backup successfully)</li>
+<li><strong>Multiple Transit Gateway attachments unhealthy</strong> (one attachment flapping is isolated; multiple suggests a broader issue)</li>
+</ul>
+<h4 id="suppress-child-alarm-actions-when-using-composite-alarms">Suppress child alarm actions when using composite alarms<a class="headerlink" href="#suppress-child-alarm-actions-when-using-composite-alarms" title="Permanent link">&para;</a></h4>
+<p>When you create a composite alarm, configure the child alarms with <code>ActionsEnabled: false</code> for their notification actions. Let only the composite alarm trigger notifications. This prevents duplicate alerts (one from each child plus one from the composite) and ensures the team receives a single, contextualized notification that describes the combined condition rather than three separate alerts they have to mentally correlate.</p>
+<h3 id="eventbridge-for-state-changes">EventBridge for State Changes<a class="headerlink" href="#eventbridge-for-state-changes" title="Permanent link">&para;</a></h3>
+<h4 id="use-eventbridge-rules-for-infrastructure-state-change-notifications">Use EventBridge rules for infrastructure state-change notifications<a class="headerlink" href="#use-eventbridge-rules-for-infrastructure-state-change-notifications" title="Permanent link">&para;</a></h4>
+<p>CloudWatch Alarms are metric-based. EventBridge handles <em>events</em> — discrete state changes that don't map cleanly to a metric threshold. For networking, the most important EventBridge patterns are:</p>
+<ul>
+<li><strong><abbr title="가상 프라이빗 네트워크(Virtual Private Network)">VPN</abbr> tunnel state change</strong>: <code>source: aws.vpn</code>, <code>detail-type: "VPN Tunnel Status Change"</code></li>
+<li><strong>Direct Connect connection state change</strong>: <code>source: aws.directconnect</code>, <code>detail-type: "Direct Connect Connection State Change"</code></li>
+<li><strong>Direct Connect virtual interface state change</strong>: <abbr title="경계 게이트웨이 프로토콜(Border Gateway Protocol)">BGP</abbr> session up/down events</li>
+<li><strong>Network Firewall alert</strong>: Stateful rule match events forwarded to EventBridge</li>
+<li><strong>Transit Gateway attachment state change</strong>: Attachment available/failing/deleting</li>
+<li><strong>AWS Health events</strong>: Scheduled maintenance, service issues affecting your resources</li>
+</ul>
+<p>EventBridge rules match on event patterns and route to targets (SNS, Lambda, SQS, Step Functions). This is the right mechanism for "something changed state" notifications, as opposed to "a metric crossed a threshold."</p>
+<h4 id="forward-events-cross-account-to-a-centralized-monitoring-account">Forward events cross-account to a centralized monitoring account<a class="headerlink" href="#forward-events-cross-account-to-a-centralized-monitoring-account" title="Permanent link">&para;</a></h4>
+<p>In a multi-account environment, networking events originate in the account that owns the resource (the centralized networking account for Transit Gateway and Direct Connect, workload accounts for <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr>-level events). Configure <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html">EventBridge cross-account event forwarding</a> to send networking events to a centralized monitoring account where your notification rules, SNS topics, and Chatbot configurations live.</p>
+<p>This pattern avoids duplicating notification infrastructure in every account and gives the networking team a single pane of glass for all network events across the Organization. Use an Organization-level EventBridge rule on the default event bus in each account to forward events matching networking patterns to the monitoring account's event bus.</p>
+<p><strong><em>Key insight:</em></strong> <em>Centralize notification logic, not event generation. Events should originate where resources live, but routing decisions and delivery configuration belong in one place.</em></p>
+<h3 id="aws-health-events">AWS Health Events<a class="headerlink" href="#aws-health-events" title="Permanent link">&para;</a></h3>
+<h4 id="subscribe-to-organization-wide-health-events-for-proactive-awareness">Subscribe to Organization-wide Health events for proactive awareness<a class="headerlink" href="#subscribe-to-organization-wide-health-events-for-proactive-awareness" title="Permanent link">&para;</a></h4>
+<p>AWS Health events tell you about scheduled maintenance (Direct Connect circuit maintenance windows, <abbr title="가상 프라이빗 네트워크(Virtual Private Network)">VPN</abbr> endpoint rotation), service issues (degraded networking in a Region), and account-specific notifications. With <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">AWS Organizations Health</a>, you see events across all member accounts from the management account or a delegated administrator.</p>
+<p>Create EventBridge rules that match Health events for networking services (<code>directconnect</code>, <code>vpn</code>, <code>ec2</code>, <code>networkfirewall</code>, <code>transitgateway</code>) and route them to the networking team's Slack channel. Knowing about a scheduled Direct Connect maintenance window 14 days in advance lets you validate failover paths <em>before</em> the maintenance occurs, rather than discovering at 2 AM that your backup path doesn't work.</p>
+<h3 id="notification-routing">Notification Routing<a class="headerlink" href="#notification-routing" title="Permanent link">&para;</a></h3>
+<h4 id="route-alarms-to-the-team-that-owns-the-response-not-to-everyone">Route alarms to the team that owns the response, not to everyone<a class="headerlink" href="#route-alarms-to-the-team-that-owns-the-response-not-to-everyone" title="Permanent link">&para;</a></h4>
+<p>A common anti-pattern is a single SNS topic that sends every network alarm to every engineer. This guarantees alert fatigue. Instead, create separate SNS topics per team and per severity:</p>
+<ul>
+<li><code>networking-p1-critical</code> → PagerDuty rotation for the networking team</li>
+<li><code>networking-p2-high</code> → Slack #network-ops channel</li>
+<li><code>networking-p3-info</code> → Slack #network-notifications channel (muted by default)</li>
+<li><code>workload-team-a-network</code> → Team A's own channel for alarms on their <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> resources</li>
+</ul>
+<p>Application teams should receive notifications about <em>their</em> workload's network health (their <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> endpoints, their load balancer health), not about shared infrastructure they can't act on. The networking team receives notifications about shared infrastructure (Transit Gateway, Direct Connect, Network Firewall).</p>
+<h3 id="automated-remediation">Automated Remediation<a class="headerlink" href="#automated-remediation" title="Permanent link">&para;</a></h3>
+<h4 id="use-eventbridge-lambda-for-automated-response-to-known-failure-modes">Use EventBridge → Lambda for automated response to known failure modes<a class="headerlink" href="#use-eventbridge-lambda-for-automated-response-to-known-failure-modes" title="Permanent link">&para;</a></h4>
+<p>Some network events have well-defined, safe automated responses:</p>
+<ul>
+<li><strong><abbr title="가상 프라이빗 네트워크(Virtual Private Network)">VPN</abbr> tunnel down</strong> → Lambda triggers a CloudFormation stack update to rotate pre-shared keys and re-establish the tunnel</li>
+<li><strong><abbr title="네트워크 주소 변환(Network Address Translation)">NAT</abbr> gateway ErrorPortAllocation</strong> → Lambda provisions an additional <abbr title="네트워크 주소 변환(Network Address Translation)">NAT</abbr> gateway and updates route tables</li>
+<li><strong>Direct Connect connection down</strong> → Lambda verifies backup <abbr title="가상 프라이빗 네트워크(Virtual Private Network)">VPN</abbr> path is active and creates a ticket if it isn't</li>
+<li><strong>Network Firewall rule group update failed</strong> → Lambda rolls back to the previous rule group version</li>
+</ul>
+<p>Automated remediation is not a replacement for human response — it's a first responder that buys time. The Lambda should always create a ticket or send a notification <em>in addition to</em> taking the remediation action, so the team knows what happened and can verify the fix.</p>
+<p><strong><em>Key insight:</em></strong> <em>Automate the response to events you've seen three or more times. If you've manually remediated the same failure mode three times, the fourth time should be automated.</em></p>
+<h3 id="cost-awareness">Cost Awareness<a class="headerlink" href="#cost-awareness" title="Permanent link">&para;</a></h3>
+<h4 id="understand-notification-costs-at-scale">Understand notification costs at scale<a class="headerlink" href="#understand-notification-costs-at-scale" title="Permanent link">&para;</a></h4>
+<p>Individual notification costs are negligible, but they compound in large Organizations:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Cost</th>
+<th>Scale consideration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CloudWatch Alarm</td>
+<td>Per-alarm/month (standard) or per-alarm/month (anomaly detection) — see <a href="https://aws.amazon.com/cloudwatch/pricing/">CloudWatch pricing</a></td>
+<td>Costs scale linearly with alarm count across accounts</td>
+</tr>
+<tr>
+<td>EventBridge rule</td>
+<td>Per-million events matched</td>
+<td>Typically negligible for networking events</td>
+</tr>
+<tr>
+<td>SNS notification</td>
+<td>Per-million email deliveries, per-100 SMS</td>
+<td>Email is essentially free; SMS adds up for large on-call rotations</td>
+</tr>
+<tr>
+<td>AWS Chatbot</td>
+<td>No additional charge</td>
+<td>Free delivery to Slack/Teams</td>
+</tr>
+</tbody>
+</table>
+<p>The real cost risk is not the notification services themselves — it's creating hundreds of alarms that nobody looks at. Each unused alarm costs money and, worse, dilutes the signal from alarms that matter. Audit your alarms quarterly: if an alarm hasn't fired in 6 months, either the threshold is wrong or the alarm isn't needed.</p>
+<h2 id="combining-notifications-with-other-services">Combining notifications with other services<a class="headerlink" href="#combining-notifications-with-other-services" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Combination</th>
+<th>Notifications provide</th>
+<th>Other service provides</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CloudWatch Alarms + CloudWatch Metrics</strong></td>
+<td>Threshold evaluation, state management, notification triggering</td>
+<td>The underlying metric data from networking services (<abbr title="가상 프라이빗 네트워크(Virtual Private Network)">VPN</abbr>, Direct Connect, <abbr title="네트워크 주소 변환(Network Address Translation)">NAT</abbr> gateway, Transit Gateway)</td>
+</tr>
+<tr>
+<td><strong>EventBridge + AWS Health</strong></td>
+<td>Rule matching and routing to notification targets</td>
+<td>Proactive service event information (maintenance, degradation, advisories)</td>
+</tr>
+<tr>
+<td><strong>SNS + PagerDuty/Opsgenie</strong></td>
+<td>Fan-out delivery to HTTPS endpoints</td>
+<td>On-call rotation, escalation policies, incident management workflow</td>
+</tr>
+<tr>
+<td><strong>AWS Chatbot + Slack/Teams</strong></td>
+<td>Formatted alarm delivery with interactive actions</td>
+<td>Team communication, acknowledgment, runbook execution from chat</td>
+</tr>
+<tr>
+<td><strong>EventBridge + Lambda</strong></td>
+<td>Event routing to compute targets</td>
+<td>Automated remediation logic (failover, scaling, ticket creation)</td>
+</tr>
+<tr>
+<td><strong>CloudWatch + AWS Organizations</strong></td>
+<td>Cross-account alarm aggregation in a centralized monitoring account</td>
+<td>Account structure, delegated administration, Organization-wide Health events</td>
+</tr>
+<tr>
+<td><strong>Composite Alarms + Simple Alarms</strong></td>
+<td>Noise reduction through boolean logic on alarm states</td>
+<td>Individual metric evaluation per resource or per condition</td>
+</tr>
+</tbody>
+</table>
+<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
+<div class="grid cards">
+<ul>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>Amazon CloudWatch Alarms</strong></p>
+<hr />
+<p>Complete documentation for creating metric alarms, anomaly detection alarms, composite alarms, and configuring alarm actions.</p>
+<p><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>Amazon EventBridge User Guide</strong></p>
+<hr />
+<p>Event patterns, rules, targets, cross-account event delivery, and integration with AWS services.</p>
+<p><a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>Amazon SNS Developer Guide</strong></p>
+<hr />
+<p>Topic creation, subscription management, message filtering, and delivery to email, SMS, HTTPS, Lambda, and SQS.</p>
+<p><a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2zm3-4v-2H6v2z"/></svg></span> <strong>AWS Health User Guide</strong></p>
+<hr />
+<p>Organization-wide health events, EventBridge integration, and programmatic access via the Health API.</p>
+<p><a href="https://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c5.5 0 10 3.58 10 8s-4.5 8-10 8c-1.24 0-2.43-.18-3.53-.5C5.55 21 2 21 2 21c2.33-2.33 2.7-3.9 2.75-4.5C3.05 15.07 2 13.13 2 11c0-4.42 4.5-8 10-8"/></svg></span> <strong>AWS Chatbot Administrator Guide</strong></p>
+<hr />
+<p>Configuring Slack and Microsoft Teams integrations, channel permissions, and interactive alarm management.</p>
+<p><a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentation</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 15h2c0 1.08 1.37 2 3 2s3-.92 3-2c0-1.1-1.04-1.5-3.24-2.03C9.64 12.44 7 11.78 7 9c0-1.79 1.47-3.31 3.5-3.82V3h3v2.18C15.53 5.69 17 7.21 17 9h-2c0-1.08-1.37-2-3-2s-3 .92-3 2c0 1.1 1.04 1.5 3.24 2.03C14.36 11.56 17 12.22 17 15c0 1.79-1.47 3.31-3.5 3.82V21h-3v-2.18C8.47 18.31 7 16.79 7 15"/></svg></span> <strong>CloudWatch Pricing</strong></p>
+<hr />
+<p>Alarm pricing tiers (standard, high-resolution, anomaly detection, composite), metric costs, and free tier details.</p>
+<p><a href="https://aws.amazon.com/cloudwatch/pricing/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Pricing</a></p>
+</li>
+</ul>
+</div>
+<h2 id="related-observability-pages">Related Observability Pages<a class="headerlink" href="#related-observability-pages" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="../service-monitoring/">AWS Services Monitoring</a></strong> — The metrics and health checks that feed into the notification pipeline covered on this page</li>
+<li><strong><a href="../internal-traffic/">Internal Traffic Monitoring</a></strong> — <abbr title="가상 프라이빗 클라우드(Virtual Private Cloud)">VPC</abbr> Flow Logs and traffic mirroring that provide the raw data for anomaly-based network alarms</li>
+<li><strong><a href="../external-traffic/">External Traffic Monitoring</a></strong> — Internet-facing traffic visibility that drives <abbr title="분산 서비스 거부(Distributed Denial of Service)">DDoS</abbr> and abuse notifications</li>
+</ul>
+<p><strong>Relationship to Foundation:</strong></p>
+<ul>
+<li><strong><a href="../../foundation/organizations/">AWS Organizations</a></strong> — Organization structure determines cross-account event forwarding topology and centralized monitoring account placement</li>
+</ul>
+<p><strong>Relationship to Connectivity:</strong></p>
+<ul>
+<li><strong><a href="../../connectivity/hybrid-multicloud/">Hybrid &amp; Multi-Cloud</a></strong> — Direct Connect and <abbr title="가상 프라이빗 네트워크(Virtual Private Network)">VPN</abbr> state-change events are the most critical networking notifications to configure</li>
+<li><strong><a href="../../connectivity/within-aws/">Connectivity Within AWS</a></strong> — Transit Gateway and Cloud WAN attachment health drives composite alarm design</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../service-monitoring/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AWS Services">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                AWS Services
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../community/" class="md-footer__link md-footer__link--next" aria-label="Next: Community">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Community
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Community mirror of <a href="https://github.com/aws/aws-networking-best-practices" target="_blank">AWS Networking Best Practices</a>. &copy; Amazon Web Services, Inc.
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/aws/aws-networking-best-practices" target="_blank" rel="noopener" title="원본 레포지토리" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.indexes", "navigation.footer", "navigation.sections", "toc.follow", "content.code.copy", "content.code.annotate", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  <script>
+    /* 홈에서 실제 Material 검색(.md-search)을 헤더 → 히어로 슬롯으로 이동.
+       navigation.instant를 껐으므로 매 페이지가 전체 로드 → 안전하게 1회 이동. */
+    (function () {
+      function relocateSearch() {
+        var slot = document.querySelector("[data-ko-search-slot]");
+        var search = document.querySelector(".md-search");
+        if (slot && search && !slot.contains(search)) {
+          slot.appendChild(search);
+          document.body.classList.add("ko-hero-has-search");
+        }
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", relocateSearch);
+      } else {
+        relocateSearch();
+      }
+    })();
+
+    /* 헤더 타이틀 텍스트 클릭 시 홈으로 이동(로고 링크의 href 재사용) */
+    (function () {
+      function makeTitleClickable() {
+        var logo = document.querySelector("a.md-logo, a.md-header__button.md-logo");
+        var title = document.querySelector(".md-header__title");
+        if (logo && title && !title.dataset.koHomeLinked) {
+          title.dataset.koHomeLinked = "1";
+          title.style.cursor = "pointer";
+          title.addEventListener("click", function () {
+            window.location.href = logo.href;
+          });
+        }
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", makeTitleClickable);
+      } else {
+        makeTitleClickable();
+      }
+    })();
+
+    /* 전역: 본문 외부 링크는 새 탭으로 열기(rel=noopener) */
+    (function () {
+      function externalNewTab() {
+        var here = location.host;
+        document.querySelectorAll(".md-content a[href]").forEach(function (a) {
+          try {
+            var u = new URL(a.href, location.href);
+            if (u.host && u.host !== here && /^https?:$/.test(u.protocol)) {
+              a.target = "_blank";
+              a.rel = "noopener noreferrer";
+            }
+          } catch (e) {}
+        });
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", externalNewTab);
+      } else {
+        externalNewTab();
+      }
+    })();
+
+    /* 접근성: 모션 최소화 설정이면 히어로 네트워크 애니메이션 정지 */
+    (function () {
+      try {
+        if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          var run = function () {
+            var svg = document.querySelector(".ko-hero__net svg");
+            if (svg && svg.pauseAnimations) svg.pauseAnimations();
+          };
+          if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);
+          else run();
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  </body>
+</html>
