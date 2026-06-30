@@ -1,0 +1,67 @@
+name: Sync translations & deploy
+
+# upstream(aws/aws-networking-best-practices) 변경분을 Bedrock(Claude)로 EN→KO 번역해
+# 커밋하고, 사이트를 빌드해 GitHub Pages에 배포한다.
+# AWS 접근은 OIDC(장기 키 없음)로만 하며, secrets.AWS_ROLE_ARN 역할을 가정한다.
+
+on:
+  schedule:
+    - cron: "0 18 * * *"   # 매일 18:00 UTC (KST 03:00)
+  workflow_dispatch:
+
+permissions:
+  contents: write   # 번역 결과를 main에 커밋
+  pages: write      # Pages 배포
+  id-token: write   # AWS OIDC + Pages 배포에 공통으로 필요
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  sync-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install -r requirements.txt boto3
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - name: Sync (EN→KO translate via Bedrock)
+        run: python scripts/sync.py
+
+      - name: Commit updated content
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No content changes — nothing to commit."
+          else
+            git commit -m "chore: sync translations from upstream"
+            git push
+          fi
+
+      - name: Build site
+        run: mkdocs build --strict
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4

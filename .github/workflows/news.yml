@@ -1,0 +1,71 @@
+name: News update & deploy
+
+# AWS What's New / 네트워킹 블로그 / 한국 블로그 RSS에서 네트워킹 항목만 골라
+# Bedrock(Claude)로 한국어 요약해 content/news/* 에 누적 커밋하고 Pages에 배포한다.
+# 중복은 scripts/news-manifest.json으로 막으므로 매일 돌려도 같은 글이 두 번 실리지 않는다.
+# AWS 접근은 OIDC(장기 키 없음)로만 하며, secrets.AWS_ROLE_ARN 역할을 가정한다.
+
+on:
+  schedule:
+    - cron: "0 19 * * *"   # 매일 19:00 UTC (KST 04:00)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  news-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install -r requirements.txt boto3
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - name: Collect & summarize news (Bedrock)
+        run: |
+          python scripts/news.py --source whats-new
+          python scripts/news.py --source blog-networking
+          python scripts/news.py --source blog-korea
+
+      - name: Commit news
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No new news — nothing to commit."
+          else
+            git commit -m "chore: update news digest"
+            git push
+          fi
+
+      - name: Build site
+        run: mkdocs build --strict
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
