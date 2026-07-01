@@ -8,6 +8,11 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-01 · Weekly summary
+
+- **[Phased AWS Transit Gateway to AWS Cloud WAN Migration with Terraform and Network MCP Server](https://aws.amazon.com/blogs/networking-and-content-delivery/phased-aws-transit-gateway-to-aws-cloud-wan-migration-with-terraform-and-network-mcp-server/)** — This post outlines a six-phase Terraform approach for migrating from AWS Transit Gateway to AWS Cloud WAN across multiple Regions, using AWS Network MCP Server for validation. The structured phased method helps reduce operational risk during complex multi-Region network transitions.
+- **[Intelligent VPN Observability: Decoding AWS Site-to-Site VPN Logs](https://aws.amazon.com/blogs/networking-and-content-delivery/intelligent-vpn-observability-decoding-aws-site-to-site-vpn-logs/)** — This post addresses the challenge of manually correlating BGP state transitions and IKE phase changes across hundreds of log entries when an AWS Site-to-Site VPN connection degrades. By automating log analysis to identify root causes such as prefix quota violations, AS path loops, or hold timer expiries, teams can significantly reduce recovery time.
+
 ## 2026-06-30 · Weekly summary
 
 - **[AWS Cloud WAN Routing Policy: Real-World Global Network Scenarios – Part 2](https://aws.amazon.com/blogs/networking-and-content-delivery/aws-cloud-wan-routing-policy-real-world-global-network-scenarios-part-2/)** — This second installment builds on Part 1's introduction to AWS Cloud WAN routing policies, exploring real-world global network scenarios using the three core components—match conditions, actions, and route summarization—to fine-tune route propagation and path selection. It provides practical guidance for applying routing policies in complex multi-Region network environments.

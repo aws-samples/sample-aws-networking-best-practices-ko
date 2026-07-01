@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-01 · 주간 요약
+
+- **[Terraform과 Network MCP Server를 활용한 AWS Transit Gateway에서 AWS Cloud WAN으로의 단계적 마이그레이션](https://aws.amazon.com/blogs/networking-and-content-delivery/phased-aws-transit-gateway-to-aws-cloud-wan-migration-with-terraform-and-network-mcp-server/)** — 6단계 Terraform 접근 방식과 AWS Network MCP Server 검증을 통해 여러 리전에 걸쳐 AWS Transit Gateway에서 AWS Cloud WAN으로 단계적으로 마이그레이션하는 방법을 소개합니다. 이를 통해 복잡한 멀티 리전 네트워크 전환 작업을 체계적으로 수행하고 운영 위험을 줄일 수 있습니다.
+- **[지능형 VPN 관측성: AWS Site-to-Site VPN 로그 분석](https://aws.amazon.com/blogs/networking-and-content-delivery/intelligent-vpn-observability-decoding-aws-site-to-site-vpn-logs/)** — AWS Site-to-Site VPN 연결 장애 시 수백 개의 로그 항목을 수동으로 분석하던 작업을 개선하기 위해, BGP 상태 전환과 IKE 단계 변경을 자동으로 연관 분석하여 프리픽스 할당량 위반, AS 경로 루프, 홀드 타이머 만료 등의 원인을 신속하게 파악하는 방법을 다룹니다. 이를 통해 반복적인 수동 작업을 줄이고 복구 시간을 단축할 수 있습니다.
+
 ## 2026-06-30 · 주간 요약
 
 - **[AWS Cloud WAN 라우팅 정책: 실제 글로벌 네트워크 시나리오 – 2부](https://aws.amazon.com/blogs/networking-and-content-delivery/aws-cloud-wan-routing-policy-real-world-global-network-scenarios-part-2/)** — AWS Cloud WAN 라우팅 정책의 세 가지 핵심 구성 요소(매칭 조건, 액션, 경로 요약)를 활용해 글로벌 네트워크에서 경로 전파와 경로 선택을 세밀하게 제어하는 실제 시나리오를 다룬 2부 시리즈입니다. 1부에서 소개한 개념을 바탕으로 복잡한 멀티 리전 네트워크 환경에서의 라우팅 정책 적용 방법을 구체적으로 설명합니다.
