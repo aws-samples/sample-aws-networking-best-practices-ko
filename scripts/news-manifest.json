@@ -1,15 +1,16 @@
 {
   "whats-new": [
+    "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-config-new-resource-types",
+    "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-mwaa-serverless-vpc/",
     "https://aws.amazon.com/about-aws/whats-new/2026/07/ecs-service-connect-zone-aware/",
-    "https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ecs-express-mode-custom-task-def/",
-    "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-network-firewall-container-attributes-referencing",
-    "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-announces-AWS-interconnect-last-mile-ATT-gated-preview/",
     "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-network-firewall-updates-default-drop-action",
-    "https://aws.amazon.com/about-aws/whats-new/2026/06/capability-insights-aws/",
-    "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-cloudformation-cdk/",
+    "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-network-firewall-container-attributes-referencing",
     "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-parallel-computing-service-upgrade/",
+    "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-cloudformation-cdk/",
+    "https://aws.amazon.com/about-aws/whats-new/2026/06/capability-insights-aws/",
     "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-security-hub-cspm-ai-security/",
-    "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-mwaa-serverless-vpc/"
+    "https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ecs-express-mode-custom-task-def/",
+    "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-announces-AWS-interconnect-last-mile-ATT-gated-preview/"
   ],
   "blog-networking": [
     "https://aws.amazon.com/blogs/networking-and-content-delivery/phased-aws-transit-gateway-to-aws-cloud-wan-migration-with-terraform-and-network-mcp-server/",

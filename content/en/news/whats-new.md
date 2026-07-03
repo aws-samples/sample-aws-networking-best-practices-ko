@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-03 · Daily update
+
+- **[AWS Config Now Supports 8 New Resource Types](https://aws.amazon.com/about-aws/whats-new/2026/06/aws-config-new-resource-types)** — AWS Config expands its coverage with 8 additional resource types across Amazon API Gateway, Amazon EC2, and Amazon S3 Vectors, enabling broader discovery, assessment, auditing, and remediation. Environments with all-resource-type recording enabled will automatically track these new additions, which are also available in Config rules and Config aggregators.
+
 ## 2026-07-02 · Daily update
 
 - **[ECS Service Connect Now Supports Zone-Aware Routing](https://aws.amazon.com/about-aws/whats-new/2026/07/ecs-service-connect-zone-aware/)** — Amazon ECS Service Connect now supports zone-aware routing, automatically prioritizing service-to-service traffic within the same AZ to reduce cross-AZ data transfer costs and latency. Traffic weights are dynamically adjusted as endpoints scale to maintain balanced load across target services.
