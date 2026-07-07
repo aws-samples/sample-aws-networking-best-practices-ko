@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-07 · Daily update
+
+- **[Amazon EVS Now Supports VCF 9.0 and 9.1](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-evs-vcf9)** — Amazon Elastic VMware Service (EVS) now supports VMware Cloud Foundation (VCF) 9.0 and 9.1, allowing customers to run the latest VCF software directly within their Amazon VPC on EC2 bare-metal instances. Users can manage their VCF environments using the same tools and processes they already use in their on-premises data centers.
+
 ## 2026-07-03 · Daily update
 
 - **[AWS Config Now Supports 8 New Resource Types](https://aws.amazon.com/about-aws/whats-new/2026/06/aws-config-new-resource-types)** — AWS Config expands its coverage with 8 additional resource types across Amazon API Gateway, Amazon EC2, and Amazon S3 Vectors, enabling broader discovery, assessment, auditing, and remediation. Environments with all-resource-type recording enabled will automatically track these new additions, which are also available in Config rules and Config aggregators.

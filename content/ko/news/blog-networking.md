@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-07 · 주간 요약
+
+- **[IAG가 Amazon VPC Lattice로 서비스 간 통신을 가속화한 방법](https://aws.amazon.com/blogs/networking-and-content-delivery/how-iag-accelerated-service-to-service-communication-with-amazon-vpc-lattice/)** — 호주·뉴질랜드 최대 손해보험사인 IAG가 서버리스 기반 디지털 엔지니어링 플랫폼에서 마이크로서비스 간 통신을 개선하기 위해 Amazon VPC Lattice를 도입한 사례를 소개합니다. VPC Lattice를 활용해 통합된 패턴과 일관된 거버넌스를 유지하면서 서비스 간 연결을 단순화하고 가속화했습니다.
+
 ## 2026-07-01 · 주간 요약
 
 - **[Terraform과 Network MCP Server를 활용한 AWS Transit Gateway에서 AWS Cloud WAN으로의 단계적 마이그레이션](https://aws.amazon.com/blogs/networking-and-content-delivery/phased-aws-transit-gateway-to-aws-cloud-wan-migration-with-terraform-and-network-mcp-server/)** — 6단계 Terraform 접근 방식과 AWS Network MCP Server 검증을 통해 여러 리전에 걸쳐 AWS Transit Gateway에서 AWS Cloud WAN으로 단계적으로 마이그레이션하는 방법을 소개합니다. 이를 통해 복잡한 멀티 리전 네트워크 전환 작업을 체계적으로 수행하고 운영 위험을 줄일 수 있습니다.

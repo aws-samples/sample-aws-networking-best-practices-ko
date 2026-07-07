@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-07 · Weekly summary
+
+- **[How IAG Accelerated Service-to-Service Communication with Amazon VPC Lattice](https://aws.amazon.com/blogs/networking-and-content-delivery/how-iag-accelerated-service-to-service-communication-with-amazon-vpc-lattice/)** — Insurance Australia Group (IAG), the largest general insurer in Australia and New Zealand, adopted Amazon VPC Lattice to streamline microservice-to-microservice communication on its serverless digital engineering platform. The solution enabled unified networking patterns and consistent governance while simplifying and accelerating service-to-service connectivity.
+
 ## 2026-07-01 · Weekly summary
 
 - **[Phased AWS Transit Gateway to AWS Cloud WAN Migration with Terraform and Network MCP Server](https://aws.amazon.com/blogs/networking-and-content-delivery/phased-aws-transit-gateway-to-aws-cloud-wan-migration-with-terraform-and-network-mcp-server/)** — This post outlines a six-phase Terraform approach for migrating from AWS Transit Gateway to AWS Cloud WAN across multiple Regions, using AWS Network MCP Server for validation. The structured phased method helps reduce operational risk during complex multi-Region network transitions.
