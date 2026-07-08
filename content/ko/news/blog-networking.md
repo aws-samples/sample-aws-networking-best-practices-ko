@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-08 · 주간 요약
+
+- **[AWS Lambda@Edge와 Amazon DynamoDB를 활용한 지능형 페일오버](https://aws.amazon.com/blogs/networking-and-content-delivery/intelligent-failover-using-aws-lambdaedge-and-amazon-dynamodb/)** — 리전 장애 발생 시 사용자를 동적으로 다른 엔드포인트로 전환하는 지능형 페일오버 솔루션을 소개합니다. Lambda@Edge와 DynamoDB를 결합해 사용자-엔드포인트 간 지속적 관계를 유지하면서 고가용성을 확보하는 참조 아키텍처를 제시합니다.
+
 ## 2026-07-07 · 주간 요약
 
 - **[IAG가 Amazon VPC Lattice로 서비스 간 통신을 가속화한 방법](https://aws.amazon.com/blogs/networking-and-content-delivery/how-iag-accelerated-service-to-service-communication-with-amazon-vpc-lattice/)** — 호주·뉴질랜드 최대 손해보험사인 IAG가 서버리스 기반 디지털 엔지니어링 플랫폼에서 마이크로서비스 간 통신을 개선하기 위해 Amazon VPC Lattice를 도입한 사례를 소개합니다. VPC Lattice를 활용해 통합된 패턴과 일관된 거버넌스를 유지하면서 서비스 간 연결을 단순화하고 가속화했습니다.

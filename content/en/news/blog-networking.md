@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-08 · Weekly summary
+
+- **[Intelligent Failover Using AWS Lambda@Edge and Amazon DynamoDB](https://aws.amazon.com/blogs/networking-and-content-delivery/intelligent-failover-using-aws-lambdaedge-and-amazon-dynamodb/)** — This post presents an intelligent failover solution that dynamically redirects users to alternate endpoints during regional disruptions. By combining Lambda@Edge with DynamoDB, it maintains persistent user-endpoint relationships while ensuring high availability across regions.
+
 ## 2026-07-07 · Weekly summary
 
 - **[How IAG Accelerated Service-to-Service Communication with Amazon VPC Lattice](https://aws.amazon.com/blogs/networking-and-content-delivery/how-iag-accelerated-service-to-service-communication-with-amazon-vpc-lattice/)** — Insurance Australia Group (IAG), the largest general insurer in Australia and New Zealand, adopted Amazon VPC Lattice to streamline microservice-to-microservice communication on its serverless digital engineering platform. The solution enabled unified networking patterns and consistent governance while simplifying and accelerating service-to-service connectivity.

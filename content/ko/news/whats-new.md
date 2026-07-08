@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-08 · 전일 업데이트
+
+- **[Amazon EC2 C8ine 인스턴스, AWS 유럽(프랑크푸르트) 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-c8ine-aws-frankfurt/)** — Amazon EC2 C8ine 인스턴스가 AWS 유럽(프랑크푸르트) 리전에서 사용 가능해졌습니다. 6세대 AWS Nitro 카드를 탑재해 이전 세대 C6in 대비 최대 43% 높은 성능과 vCPU당 최대 2.5배 향상된 패킷 처리 성능을 제공하며, 인터넷 게이트웨이를 통한 트래픽에서 최대 2배 높은 네트워크 처리량을 지원합니다.
+- **[AWS, VPC Encryption Controls에 선언적 제어 기능 도입](https://aws.amazon.com/about-aws/whats-new/2026/07/vpc-encryption-controls-declarative-controls/)** — 이제 선언적 정책(declarative policies)을 사용해 환경 내 모든 VPC에 VPC Encryption Controls를 모니터링 또는 강제 적용 모드로 중앙 집중식 관리할 수 있습니다. 계정, 조직 또는 특정 조직 단위 수준에서 VPC 내·간 전송 중 암호화를 감사·적용하고 HIPAA, FedRAMP, PCI 등 규정 준수를 입증하는 데 활용할 수 있습니다.
+
 ## 2026-07-07 · 전일 업데이트
 
 - **[Amazon EVS, VCF 9.0 및 9.1 지원 발표](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-evs-vcf9)** — Amazon Elastic VMware Service(EVS)가 VMware Cloud Foundation(VCF) 9.0 및 9.1을 지원합니다. Amazon VPC 내 EC2 베어메탈 인스턴스에서 최신 VCF 버전을 직접 실행하고, 기존 데이터센터와 동일한 도구·프로세스로 관리할 수 있습니다.

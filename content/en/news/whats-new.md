@@ -8,6 +8,11 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-08 · Daily update
+
+- **[Amazon EC2 C8ine Instances Now Available in AWS Europe (Frankfurt) Region](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-c8ine-aws-frankfurt/)** — Amazon EC2 C8ine instances are now available in the AWS Europe (Frankfurt) region, powered by custom sixth-generation Intel Xeon Scalable processors and the latest AWS Nitro cards. They deliver up to 43% higher performance than the previous C6in generation, with up to 2.5x better packet performance per vCPU and up to 2x higher network throughput for internet gateway traffic.
+- **[AWS Introduces Declarative Controls for VPC Encryption Controls](https://aws.amazon.com/about-aws/whats-new/2026/07/vpc-encryption-controls-declarative-controls/)** — AWS now supports declarative policies to enable VPC Encryption Controls in monitor or enforce mode across all VPCs, allowing centralized management at the account, organization, or organizational unit level. This simplifies auditing and enforcement of in-transit encryption within and across Amazon VPCs, helping demonstrate compliance with standards such as HIPAA, FedRAMP, and PCI.
+
 ## 2026-07-07 · Daily update
 
 - **[Amazon EVS Now Supports VCF 9.0 and 9.1](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-evs-vcf9)** — Amazon Elastic VMware Service (EVS) now supports VMware Cloud Foundation (VCF) 9.0 and 9.1, allowing customers to run the latest VCF software directly within their Amazon VPC on EC2 bare-metal instances. Users can manage their VCF environments using the same tools and processes they already use in their on-premises data centers.
