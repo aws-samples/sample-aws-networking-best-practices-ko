@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-09 · 주간 요약
+
+- **[United Airlines가 Private NAT Gateway로 IP 고갈 문제를 해결한 방법](https://aws.amazon.com/blogs/networking-and-content-delivery/how-united-airlines-solved-ip-exhaustion-with-private-nat-gateway/)** — United Airlines는 수백 개의 AWS VPC 운영 중 IP 주소 고갈 문제에 직면했으며, Private NAT Gateway를 도입해 중복 CIDR 환경에서도 VPC 간 통신을 가능하게 하고 확장성을 확보했습니다.
+
 ## 2026-07-08 · 주간 요약
 
 - **[AWS Lambda@Edge와 Amazon DynamoDB를 활용한 지능형 페일오버](https://aws.amazon.com/blogs/networking-and-content-delivery/intelligent-failover-using-aws-lambdaedge-and-amazon-dynamodb/)** — 리전 장애 발생 시 사용자를 동적으로 다른 엔드포인트로 전환하는 지능형 페일오버 솔루션을 소개합니다. Lambda@Edge와 DynamoDB를 결합해 사용자-엔드포인트 간 지속적 관계를 유지하면서 고가용성을 확보하는 참조 아키텍처를 제시합니다.

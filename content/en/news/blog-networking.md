@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-09 · Weekly summary
+
+- **[How United Airlines Solved IP Exhaustion with Private NAT Gateway](https://aws.amazon.com/blogs/networking-and-content-delivery/how-united-airlines-solved-ip-exhaustion-with-private-nat-gateway/)** — United Airlines faced IP address exhaustion across hundreds of AWS VPCs and resolved it by adopting Private NAT Gateway, enabling cross-VPC communication even in overlapping CIDR environments while achieving the scalability needed for real-time flight operations.
+
 ## 2026-07-08 · Weekly summary
 
 - **[Intelligent Failover Using AWS Lambda@Edge and Amazon DynamoDB](https://aws.amazon.com/blogs/networking-and-content-delivery/intelligent-failover-using-aws-lambdaedge-and-amazon-dynamodb/)** — This post presents an intelligent failover solution that dynamically redirects users to alternate endpoints during regional disruptions. By combining Lambda@Edge with DynamoDB, it maintains persistent user-endpoint relationships while ensuring high availability across regions.
