@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-10 · 전일 업데이트
+
+- **[AWS Client VPN, 4개 추가 AWS 리전으로 가용 범위 확대](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-client-vpn-four-additional-regions/)** — AWS Client VPN이 캐나다 서부(캘거리), 멕시코(중부), 아시아 태평양(뉴질랜드·타이베이) 등 4개 신규 리전에서 제공됩니다. 이 완전 관리형 서비스를 통해 원격 인력이 AWS 및 온프레미스 네트워크 리소스에 안전하게 연결할 수 있으며, 별도의 하드웨어 VPN 어플라이언스 없이 단일 콘솔에서 관리할 수 있습니다.
+- **[AWS Config, 191개 추가 관리형 규칙 지원](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-config-additional-managed-rules)** — AWS Config가 Amazon Bedrock, Amazon SageMaker, Amazon ECS, Amazon EKS, Amazon RDS 등 주요 서비스를 대상으로 191개의 관리형 규칙을 새롭게 지원합니다. 신규 규칙은 암호화, 로깅, 퍼블릭 액세스, 네트워크 보안, 데이터 보호 등의 구성 평가를 포함하며, AI 워크로드와 핵심 클라우드 인프라 전반의 거버넌스 적용 범위가 확대됩니다.
+
 ## 2026-07-09 · 전일 업데이트
 
 - **[AWS Security Hub, 공개적으로 접근 가능한 리소스를 식별하는 Network Scanning 기능 출시](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-security-hub-network-scanning/)** — AWS Security Hub에 Network Scanning 기능이 추가되어 실제 인터넷에서 접근 가능한 리소스를 탐지할 수 있게 되었습니다. 보안 그룹 규칙이나 라우팅 테이블 기반의 이론적 분석이 아닌 실제 프로빙 방식으로 AWS 및 Azure 환경의 공개 IP, 가상 머신, 로드 밸런서의 열린 포트와 실행 중인 서비스를 식별합니다.
