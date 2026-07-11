@@ -8,6 +8,13 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-11 · Daily update
+
+- **[Amazon EC2 R8in, R8ib, R8idn, and R8idb Instances Now Available in Additional Regions](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-r8in-r8ib-r8idn-r8idb)** — Amazon EC2 R8in, R8ib, R8idn, and R8idb instances are now available in the Asia Pacific (Tokyo) and Europe (Frankfurt, Ireland) regions. Notably, R8in and R8idn instances offer 600 Gbps network bandwidth, the highest among enhanced networking EC2 instances.
+- **[Amazon EC2 G7 Instances Now Available in the AWS US East (N. Virginia) Region](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-g7-available-North-Virginia)** — Amazon EC2 G7 instances, powered by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs, are now available in the US East (N. Virginia) Region. They deliver up to 4.6x AI inference performance and up to 2.1x graphics performance compared to G6 instances, making them suitable for AI model deployment and GPU-accelerated workloads.
+- **[AWS DMS Schema Conversion Now Supports Offline SQL Server Conversion](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-dms-schema-conversion-offline-source/)** — AWS DMS Schema Conversion now supports offline source conversion for Microsoft SQL Server, allowing schema migrations without direct connectivity to source databases. This removes the need for security reviews, firewall changes, or VPN setup, making it well-suited for organizations with strict security policies.
+- **[Amazon EC2 I8g Instances Now Available in AWS GovCloud (US) Regions](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-i8g-instances-aws-govcloud-us-regions/)** — Amazon EC2 Storage Optimized I8g instances are now generally available in AWS GovCloud (US East and US West) regions. Powered by AWS Graviton4 processors and third-generation AWS Nitro SSDs, they deliver up to 60% better compute performance and up to 50% lower storage I/O latency compared to the previous-generation I4g instances.
+
 ## 2026-07-10 · Daily update
 
 - **[AWS Client VPN Expands Availability to Four Additional AWS Regions](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-client-vpn-four-additional-regions/)** — AWS Client VPN is now available in four new regions: Canada West (Calgary), Mexico (Central), Asia Pacific (New Zealand), and Asia Pacific (Taipei). This fully managed service allows remote workforces to securely connect to AWS and on-premises resources without requiring hardware VPN appliances.

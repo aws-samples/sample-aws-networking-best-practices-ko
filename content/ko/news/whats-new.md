@@ -8,6 +8,13 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-11 · 전일 업데이트
+
+- **[Amazon EC2 네트워크/EBS 인스턴스, 추가 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-r8in-r8ib-r8idn-r8idb)** — Amazon EC2 R8in, R8ib, R8idn, R8idb 인스턴스가 아시아 태평양(도쿄) 및 유럽(프랑크푸르트, 아일랜드) 리전에서 새롭게 제공됩니다. 특히 R8in·R8idn 인스턴스는 600 Gbps 네트워크 대역폭을 지원하며, 이는 향상된 네트워킹 EC2 인스턴스 중 최고 수준입니다.
+- **[Amazon EC2 G7 인스턴스, AWS 미국 동부(버지니아 북부) 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-g7-available-North-Virginia)** — NVIDIA RTX PRO 4500 Blackwell Server Edition GPU 기반의 Amazon EC2 G7 인스턴스가 미국 동부(버지니아 북부) 리전에서 출시되었습니다. G6 인스턴스 대비 AI 추론 성능은 최대 4.6배, 그래픽 성능은 최대 2.1배 향상되어 AI 모델 배포 및 GPU 가속 워크로드에 활용할 수 있습니다.
+- **[AWS DMS Schema Conversion, 오프라인 SQL Server 변환 지원](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-dms-schema-conversion-offline-source/)** — AWS Database Migration Service(DMS) Schema Conversion이 Microsoft SQL Server의 오프라인 소스 변환을 지원하여, 소스 데이터베이스에 직접 연결하지 않고도 스키마 변환이 가능해졌습니다. 이를 통해 보안 검토, 방화벽 변경, VPN 설정 없이 마이그레이션을 진행할 수 있어 엄격한 보안 정책을 가진 조직에 특히 유용합니다.
+- **[Amazon EC2 I8g 인스턴스, AWS GovCloud(미국) 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-i8g-instances-aws-govcloud-us-regions/)** — 스토리지 최적화 Amazon EC2 I8g 인스턴스가 AWS GovCloud(미국 동부, 미국 서부) 리전에서 정식 출시되었습니다. AWS Graviton4 프로세서와 3세대 AWS Nitro SSD를 탑재하여 이전 세대 I4g 대비 컴퓨팅 성능은 최대 60%, 스토리지 I/O 지연 시간은 최대 50% 개선되었습니다.
+
 ## 2026-07-10 · 전일 업데이트
 
 - **[AWS Client VPN, 4개 추가 AWS 리전으로 가용 범위 확대](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-client-vpn-four-additional-regions/)** — AWS Client VPN이 캐나다 서부(캘거리), 멕시코(중부), 아시아 태평양(뉴질랜드·타이베이) 등 4개 신규 리전에서 제공됩니다. 이 완전 관리형 서비스를 통해 원격 인력이 AWS 및 온프레미스 네트워크 리소스에 안전하게 연결할 수 있으며, 별도의 하드웨어 VPN 어플라이언스 없이 단일 콘솔에서 관리할 수 있습니다.
