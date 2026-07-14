@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-14 · Weekly summary
+
+- **[Automating CIDR Expansion: Reducing IP Exhaustion Downtime](https://aws.amazon.com/blogs/networking-and-content-delivery/automating-cidr-expansion-reducing-ip-exhaustion-downtime/)** — This post introduces a serverless automation solution that monitors Amazon VPC IP utilization and automatically adds secondary CIDRs with new subnets when exhaustion risk is detected. Built on AWS Lambda, Step Functions, and IPAM, it supports three operating modes—full IPAM management, IPAM for subnets only, or no IPAM—and can be deployed with a single SAM command.
+
 ## 2026-07-09 · Weekly summary
 
 - **[How United Airlines Solved IP Exhaustion with Private NAT Gateway](https://aws.amazon.com/blogs/networking-and-content-delivery/how-united-airlines-solved-ip-exhaustion-with-private-nat-gateway/)** — United Airlines faced IP address exhaustion across hundreds of AWS VPCs and resolved it by adopting Private NAT Gateway, enabling cross-VPC communication even in overlapping CIDR environments while achieving the scalability needed for real-time flight operations.

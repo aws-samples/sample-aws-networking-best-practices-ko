@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-14 · 주간 요약
+
+- **[CIDR 자동 확장: IP 고갈로 인한 다운타임 줄이기](https://aws.amazon.com/blogs/networking-and-content-delivery/automating-cidr-expansion-reducing-ip-exhaustion-downtime/)** — Amazon VPC의 IP 사용률을 모니터링하고 고갈 위험 감지 시 보조 CIDR과 새 서브넷을 자동으로 추가하는 서버리스 자동화 솔루션을 소개합니다. AWS Lambda, Step Functions, IPAM을 활용하며 IPAM 완전 관리·서브넷 전용·미사용 등 세 가지 운영 모드를 지원하고, SAM 명령 하나로 배포할 수 있습니다.
+
 ## 2026-07-09 · 주간 요약
 
 - **[United Airlines가 Private NAT Gateway로 IP 고갈 문제를 해결한 방법](https://aws.amazon.com/blogs/networking-and-content-delivery/how-united-airlines-solved-ip-exhaustion-with-private-nat-gateway/)** — United Airlines는 수백 개의 AWS VPC 운영 중 IP 주소 고갈 문제에 직면했으며, Private NAT Gateway를 도입해 중복 CIDR 환경에서도 VPC 간 통신을 가능하게 하고 확장성을 확보했습니다.
