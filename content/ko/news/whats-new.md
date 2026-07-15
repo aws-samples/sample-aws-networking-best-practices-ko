@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-15 · 전일 업데이트
+
+- **[Amazon Managed Service for Apache Flink, Flink 애플리케이션 구축·운영을 위한 AI Agent Skills 제공](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-managed-service-flink-agent-skills/)** — Amazon Managed Service for Apache Flink가 AI 코딩 어시스턴트에 전문 가이던스를 제공하는 AI Agent Skills를 출시했습니다. 애플리케이션 생성, 트러블슈팅, 스케일링, 모니터링, 네트워킹 구성, 비용 최적화 등의 작업을 지원하며 Flink 2.2 등 최신 버전으로의 업그레이드도 간소화합니다.
+- **[Amazon CloudFront Functions, CloudFront 액세스 로그로의 직접 로깅 지원](https://aws.amazon.com/about-aws/whats-new/2026/07/cloudfront-functions-access-logs/)** — Amazon CloudFront Functions에서 새로운 헬퍼 메서드 cf.logCustomData()를 사용해 커스텀 데이터를 CloudFront 액세스 로그에 직접 기록할 수 있게 되었습니다. 기존에는 함수 로그가 Amazon CloudWatch Logs에 별도로 저장되어 액세스 로그와 상호 연계가 필요했으나, 이번 업데이트로 단일 로그 시스템에서 엣지 함수 동작과 요청 정보를 통합 분석할 수 있습니다.
+
 ## 2026-07-11 · 전일 업데이트
 
 - **[Amazon EC2 네트워크/EBS 인스턴스, 추가 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-r8in-r8ib-r8idn-r8idb)** — Amazon EC2 R8in, R8ib, R8idn, R8idb 인스턴스가 아시아 태평양(도쿄) 및 유럽(프랑크푸르트, 아일랜드) 리전에서 새롭게 제공됩니다. 특히 R8in·R8idn 인스턴스는 600 Gbps 네트워크 대역폭을 지원하며, 이는 향상된 네트워킹 EC2 인스턴스 중 최고 수준입니다.

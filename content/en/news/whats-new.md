@@ -8,6 +8,11 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-15 · Daily update
+
+- **[Amazon Managed Service for Apache Flink Now Offers AI Agent Skills for Building and Operating Flink Applications](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-managed-service-flink-agent-skills/)** — Amazon Managed Service for Apache Flink has launched AI Agent Skills that provide AI coding assistants with expert, up-to-date guidance for common tasks such as application creation, troubleshooting, scaling, monitoring, networking configuration, and cost optimization. The skills also simplify upgrades to the latest Apache Flink versions, including Flink 2.2.
+- **[Amazon CloudFront Functions Now Supports Logging to CloudFront Access Logs](https://aws.amazon.com/about-aws/whats-new/2026/07/cloudfront-functions-access-logs/)** — Amazon CloudFront Functions now allows custom data to be written directly into CloudFront access logs via the new cf.logCustomData() helper method, available in viewer request and viewer response functions. This eliminates the need to correlate function decisions across separate logging systems, as function log data no longer needs to be cross-referenced with CloudWatch Logs.
+
 ## 2026-07-11 · Daily update
 
 - **[Amazon EC2 R8in, R8ib, R8idn, and R8idb Instances Now Available in Additional Regions](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-r8in-r8ib-r8idn-r8idb)** — Amazon EC2 R8in, R8ib, R8idn, and R8idb instances are now available in the Asia Pacific (Tokyo) and Europe (Frankfurt, Ireland) regions. Notably, R8in and R8idn instances offer 600 Gbps network bandwidth, the highest among enhanced networking EC2 instances.
