@@ -8,6 +8,14 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-16 · 전일 업데이트
+
+- **[Amazon EC2 G7e 인스턴스, 추가 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-g7e-additional-regions/)** — Amazon EC2 G7e 인스턴스가 유럽(프랑크푸르트, 스톡홀름) 및 아시아 태평양(뭄바이) 리전에서 새롭게 제공됩니다. NVIDIA RTX PRO 6000 Blackwell GPU 기반으로 G6e 대비 최대 2.3배 추론 성능을 제공하며, LLM·생성형 AI·공간 컴퓨팅 워크로드에 활용할 수 있습니다.
+- **[Amazon RDS 및 Aurora, 추가 AWS 리전에서 R8g·M8g 데이터베이스 인스턴스 지원](https://aws.amazon.com/about-aws/whats-new/2026/7/amazon-rds-aurora-r8g-m8g-regions/)** — AWS Graviton4 기반 R8g 및 M8g 데이터베이스 인스턴스가 Amazon Aurora(MySQL·PostgreSQL 호환)와 Amazon RDS의 여러 추가 리전에서 정식 제공됩니다. 이를 통해 더 많은 리전의 고객이 Graviton4의 향상된 성능과 비용 효율성을 데이터베이스 워크로드에 활용할 수 있습니다.
+- **[AWS Elastic Disaster Recovery, AWS 간 워크로드 복구 시간 단축](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-drs-fast-recovery/)** — AWS Elastic Disaster Recovery(AWS DRS)가 Amazon EC2에서 실행 중인 소스 서버에 대해 불필요한 준비 단계를 건너뛰어 Windows는 최대 65%, Linux는 최대 40% 복구 시간을 단축합니다. AWS 기반 워크로드는 이미 호환 드라이버와 구성을 갖추고 있어 더 적은 단계로 빠르게 애플리케이션을 복구할 수 있습니다.
+- **[Amazon CloudWatch, 로그 보강을 위한 룩업 프로세서 발표](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-cloudwatch-lookup-processor/)** — Amazon CloudWatch가 CloudWatch Pipeline 내에서 CSV 파일 기반 룩업 테이블을 활용해 로그 이벤트에 추가 컨텍스트를 자동으로 보강하는 룩업 프로세서를 지원합니다. 예를 들어 IP 주소와 애플리케이션 팀을 매핑한 CSV를 업로드하면 VPC Flow Logs 수집 시 팀 소유 정보를 자동으로 태깅할 수 있어 네트워크 로그 분석이 용이해집니다.
+- **[Amazon EC2 M8in, M8idn, M8ib, M8idb 인스턴스, 추가 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/07/m8in-m8idn-m8ib-m8idb-new-regions)** — 네트워크 최적화 인스턴스인 Amazon EC2 M8in·M8idn과 EBS 최적화 인스턴스인 M8ib·M8idb가 미국 동부(오하이오), 유럽(아일랜드), 아시아 태평양(도쿄) 리전에서 추가로 제공됩니다. M8in·M8idn은 최대 600Gbps 네트워크 대역폭을 제공하며, 최신 6세대 AWS Nitro 카드를 탑재해 이전 세대 대비 최대 43% 높은 성능을 발휘합니다.
+
 ## 2026-07-15 · 전일 업데이트
 
 - **[Amazon Managed Service for Apache Flink, Flink 애플리케이션 구축·운영을 위한 AI Agent Skills 제공](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-managed-service-flink-agent-skills/)** — Amazon Managed Service for Apache Flink가 AI 코딩 어시스턴트에 전문 가이던스를 제공하는 AI Agent Skills를 출시했습니다. 애플리케이션 생성, 트러블슈팅, 스케일링, 모니터링, 네트워킹 구성, 비용 최적화 등의 작업을 지원하며 Flink 2.2 등 최신 버전으로의 업그레이드도 간소화합니다.

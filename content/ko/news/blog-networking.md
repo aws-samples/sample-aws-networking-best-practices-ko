@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-16 · 주간 요약
+
+- **[Amazon EC2에서 Layer 2 네트워킹 설정하기](https://aws.amazon.com/blogs/networking-and-content-delivery/setting-up-layer-2-networking-on-amazon-ec2/)** — Amazon VPC가 기본적으로 지원하지 않는 Layer 2 네트워크 통신이 필요한 워크로드(산업 제어 시스템 등)를 Amazon EC2에서 실행하는 방법을 소개합니다. 적절한 접근 방식을 통해 L2 의존성을 가진 워크로드를 AWS 환경으로 마이그레이션할 수 있습니다.
+- **[IAM 조건 키를 활용한 세분화된 Amazon Route 53 액세스 제어 (3부)](https://aws.amazon.com/blogs/networking-and-content-delivery/fine-grained-amazon-route-53-access-with-iam-condition-keys-part-3/)** — 공유 환경에서 페더레이션 사용자에게 DNS 레코드 액세스를 부여할 때 발생하는 과도한 권한 문제를 해결하기 위해, IAM 조건 키를 활용한 세분화된 Amazon Route 53 액세스 제어 방법을 시리즈 3부에서 이어서 설명합니다. 이를 통해 운영 부담을 줄이고 최소 권한 원칙을 유지할 수 있습니다.
+- **[CloudFront VPC Origins와 차세대 OpenSearch Serverless를 활용한 WebSocket 스트리밍 프라이빗 AI 에이전트](https://aws.amazon.com/blogs/networking-and-content-delivery/private-ai-agent-with-websocket-streaming-over-cloudfront-vpc-origins-and-the-next-generation-of-opensearch-serverless-for-knowledge-retrieval/)** — 파트너 계약서 검토를 자동화하기 위해 CloudFront VPC Origins를 통한 WebSocket 스트리밍과 차세대 OpenSearch Serverless 기반 지식 검색을 결합한 프라이빗 AI 에이전트 구축 방법을 소개합니다. 이 아키텍처는 민감한 문서를 외부에 노출하지 않고 안전하게 AI 추론을 수행할 수 있는 네트워킹 설계를 제시합니다.
+
 ## 2026-07-14 · 주간 요약
 
 - **[CIDR 자동 확장: IP 고갈로 인한 다운타임 줄이기](https://aws.amazon.com/blogs/networking-and-content-delivery/automating-cidr-expansion-reducing-ip-exhaustion-downtime/)** — Amazon VPC의 IP 사용률을 모니터링하고 고갈 위험 감지 시 보조 CIDR과 새 서브넷을 자동으로 추가하는 서버리스 자동화 솔루션을 소개합니다. AWS Lambda, Step Functions, IPAM을 활용하며 IPAM 완전 관리·서브넷 전용·미사용 등 세 가지 운영 모드를 지원하고, SAM 명령 하나로 배포할 수 있습니다.

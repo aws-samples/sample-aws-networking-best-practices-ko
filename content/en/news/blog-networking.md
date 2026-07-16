@@ -8,6 +8,12 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-16 · Weekly summary
+
+- **[Setting Up Layer 2 Networking on Amazon EC2](https://aws.amazon.com/blogs/networking-and-content-delivery/setting-up-layer-2-networking-on-amazon-ec2/)** — This post explains how to run workloads that depend on Layer 2 network communication on Amazon EC2, even though Amazon VPC does not natively support L2 networking. It covers practical approaches for migrating L2-dependent workloads such as industrial control systems to AWS.
+- **[Fine-Grained Amazon Route 53 Access with IAM Condition Keys (Part 3)](https://aws.amazon.com/blogs/networking-and-content-delivery/fine-grained-amazon-route-53-access-with-iam-condition-keys-part-3/)** — This third installment in the series continues exploring how IAM condition keys can enable fine-grained Amazon Route 53 access control for federated users in shared environments. The approach reduces operational overhead and avoids overly broad permissions that tend to grow as organizations scale.
+- **[Private AI Agent with WebSocket Streaming over CloudFront VPC Origins and Next-Generation OpenSearch Serverless for Knowledge Retrieval](https://aws.amazon.com/blogs/networking-and-content-delivery/private-ai-agent-with-websocket-streaming-over-cloudfront-vpc-origins-and-the-next-generation-of-opensearch-serverless-for-knowledge-retrieval/)** — This post demonstrates how to build a private AI agent that combines WebSocket streaming via CloudFront VPC Origins with next-generation OpenSearch Serverless for knowledge retrieval, using partner contract review as a practical example. The architecture keeps sensitive documents private while enabling secure, real-time AI inference without exposing data to the public internet.
+
 ## 2026-07-14 · Weekly summary
 
 - **[Automating CIDR Expansion: Reducing IP Exhaustion Downtime](https://aws.amazon.com/blogs/networking-and-content-delivery/automating-cidr-expansion-reducing-ip-exhaustion-downtime/)** — This post introduces a serverless automation solution that monitors Amazon VPC IP utilization and automatically adds secondary CIDRs with new subnets when exhaustion risk is detected. Built on AWS Lambda, Step Functions, and IPAM, it supports three operating modes—full IPAM management, IPAM for subnets only, or no IPAM—and can be deployed with a single SAM command.
