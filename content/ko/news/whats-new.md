@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-17 · 전일 업데이트
+
+- **[Amazon CloudWatch Logs Insights, 25개의 새로운 쿼리 명령 및 함수 추가](https://aws.amazon.com/about-aws/whats-new/2026/7/amazon-cloudwatch-logs-insights-ql/)** — Amazon CloudWatch Logs Insights 쿼리 언어에 타입 변환·인코딩 함수(hexToAscii, decToHex 등), 날짜/시간 함수(parseDate, formatDate 등), 통계 집계, 결측값 처리, 시간 창 비교, 이상값 탐지, 룩업 데이터 보강 등 25개의 새로운 명령과 함수가 추가되었습니다. 이를 통해 복잡한 로그 분석 및 상관 관계 파악이 더욱 용이해져 네트워킹 운영 관측성이 향상됩니다.
+
 ## 2026-07-16 · 전일 업데이트
 
 - **[Amazon EC2 G7e 인스턴스, 추가 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-g7e-additional-regions/)** — Amazon EC2 G7e 인스턴스가 유럽(프랑크푸르트, 스톡홀름) 및 아시아 태평양(뭄바이) 리전에서 새롭게 제공됩니다. NVIDIA RTX PRO 6000 Blackwell GPU 기반으로 G6e 대비 최대 2.3배 추론 성능을 제공하며, LLM·생성형 AI·공간 컴퓨팅 워크로드에 활용할 수 있습니다.

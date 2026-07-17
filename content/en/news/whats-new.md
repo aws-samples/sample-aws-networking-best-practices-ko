@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-17 · Daily update
+
+- **[Amazon CloudWatch Logs Insights Adds 25 New Query Commands and Functions](https://aws.amazon.com/about-aws/whats-new/2026/7/amazon-cloudwatch-logs-insights-ql/)** — Amazon CloudWatch Logs Insights now supports 25 new commands and functions, including type conversion and encoding functions (hexToAscii, decToHex), date/time functions (parseDate, formatDate), statistical aggregation, null handling, time-window comparison, outlier detection, and lookup-based event enrichment. These additions significantly improve log analysis capabilities, enhancing observability for networking operations.
+
 ## 2026-07-16 · Daily update
 
 - **[Amazon EC2 G7e Instances Now Available in Additional Regions](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-g7e-additional-regions/)** — Amazon EC2 G7e instances powered by NVIDIA RTX PRO 6000 Blackwell Server Edition GPUs are now available in the Europe (Frankfurt, Stockholm) and Asia Pacific (Mumbai) regions. They deliver up to 2.3x inference performance over G6e, supporting LLM, generative AI, and spatial computing workloads.

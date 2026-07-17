@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-17 · Weekly summary
+
+- **[Prevent VPN Traffic Leaks with Client VPN Route Enforcement in AWS Client VPN](https://aws.amazon.com/blogs/networking-and-content-delivery/prevent-vpn-traffic-leaks-with-client-vpn-route-enforcement-in-aws-client-vpn/)** — AWS Client VPN now supports Client VPN Route Enforcement, which prevents administrator-defined routes from being altered on connected client devices. This helps eliminate unintended traffic leaks and ensures routing integrity is maintained across remote access connections.
+
 ## 2026-07-16 · Weekly summary
 
 - **[Setting Up Layer 2 Networking on Amazon EC2](https://aws.amazon.com/blogs/networking-and-content-delivery/setting-up-layer-2-networking-on-amazon-ec2/)** — This post explains how to run workloads that depend on Layer 2 network communication on Amazon EC2, even though Amazon VPC does not natively support L2 networking. It covers practical approaches for migrating L2-dependent workloads such as industrial control systems to AWS.

@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-17 · 주간 요약
+
+- **[AWS Client VPN의 Client VPN Route Enforcement로 VPN 트래픽 누출 방지](https://aws.amazon.com/blogs/networking-and-content-delivery/prevent-vpn-traffic-leaks-with-client-vpn-route-enforcement-in-aws-client-vpn/)** — AWS Client VPN에 Client VPN Route Enforcement 기능이 추가되어, 관리자가 정의한 라우팅 규칙이 클라이언트 디바이스에서 임의로 변경되는 것을 방지할 수 있게 되었습니다. 이를 통해 원격 액세스 환경에서 의도치 않은 트래픽 누출 위험을 줄이고 VPN 터널의 라우팅 무결성을 유지할 수 있습니다.
+
 ## 2026-07-16 · 주간 요약
 
 - **[Amazon EC2에서 Layer 2 네트워킹 설정하기](https://aws.amazon.com/blogs/networking-and-content-delivery/setting-up-layer-2-networking-on-amazon-ec2/)** — Amazon VPC가 기본적으로 지원하지 않는 Layer 2 네트워크 통신이 필요한 워크로드(산업 제어 시스템 등)를 Amazon EC2에서 실행하는 방법을 소개합니다. 적절한 접근 방식을 통해 L2 의존성을 가진 워크로드를 AWS 환경으로 마이그레이션할 수 있습니다.
