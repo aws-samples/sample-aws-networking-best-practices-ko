@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-18 · Weekly summary
+
+- **[Building an Extranet on AWS: Secure, Scalable Partner Connectivity](https://aws.amazon.com/blogs/networking-and-content-delivery/building-extranet-on-aws-secure-scalable-partner-connectivity/)** — This post presents a secure, scalable, and resilient architecture pattern for modern extranet connectivity between external partners and AWS infrastructure, addressing common challenges such as overlapping IP address spaces, added costs, and communication inconsistencies. The reference architecture is designed to minimize the pitfalls typically encountered in conventional extranet designs.
+
 ## 2026-07-17 · Weekly summary
 
 - **[Prevent VPN Traffic Leaks with Client VPN Route Enforcement in AWS Client VPN](https://aws.amazon.com/blogs/networking-and-content-delivery/prevent-vpn-traffic-leaks-with-client-vpn-route-enforcement-in-aws-client-vpn/)** — AWS Client VPN now supports Client VPN Route Enforcement, which prevents administrator-defined routes from being altered on connected client devices. This helps eliminate unintended traffic leaks and ensures routing integrity is maintained across remote access connections.

@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-18 · 주간 요약
+
+- **[AWS에서 엑스트라넷 구축: 안전하고 확장 가능한 파트너 연결](https://aws.amazon.com/blogs/networking-and-content-delivery/building-extranet-on-aws-secure-scalable-partner-connectivity/)** — 외부 파트너와 AWS 인프라 간 엑스트라넷 연결 시 발생하는 IP 주소 중복, 비용 증가, 커뮤니케이션 불일치 문제를 해결하는 안전하고 확장 가능한 복원력 있는 아키텍처 패턴을 소개합니다. 이 참조 아키텍처는 일반적인 설계에서 흔히 나타나는 문제를 최소화하는 데 초점을 맞춥니다.
+
 ## 2026-07-17 · 주간 요약
 
 - **[AWS Client VPN의 Client VPN Route Enforcement로 VPN 트래픽 누출 방지](https://aws.amazon.com/blogs/networking-and-content-delivery/prevent-vpn-traffic-leaks-with-client-vpn-route-enforcement-in-aws-client-vpn/)** — AWS Client VPN에 Client VPN Route Enforcement 기능이 추가되어, 관리자가 정의한 라우팅 규칙이 클라이언트 디바이스에서 임의로 변경되는 것을 방지할 수 있게 되었습니다. 이를 통해 원격 액세스 환경에서 의도치 않은 트래픽 누출 위험을 줄이고 VPN 터널의 라우팅 무결성을 유지할 수 있습니다.
