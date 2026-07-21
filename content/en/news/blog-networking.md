@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-21 · Weekly summary
+
+- **[Introducing the LBC Ingress-to-Gateway API Migration Toolkit](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-the-lbc-ingress-to-gateway-api-migration-toolkit/)** — The new Ingress-to-Gateway API migration toolkit for AWS Load Balancer Controller (LBC) automates the error-prone process of rewriting annotations, path rules, and TLS configuration when moving from Ingress resources to the Gateway API. It provides a guided, validated migration path that reduces the risk of disrupting production traffic during the transition.
+
 ## 2026-07-18 · Weekly summary
 
 - **[Building an Extranet on AWS: Secure, Scalable Partner Connectivity](https://aws.amazon.com/blogs/networking-and-content-delivery/building-extranet-on-aws-secure-scalable-partner-connectivity/)** — This post presents a secure, scalable, and resilient architecture pattern for modern extranet connectivity between external partners and AWS infrastructure, addressing common challenges such as overlapping IP address spaces, added costs, and communication inconsistencies. The reference architecture is designed to minimize the pitfalls typically encountered in conventional extranet designs.

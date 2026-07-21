@@ -8,6 +8,12 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-21 · Daily update
+
+- **[Selectively Log Network Activity Events by Identity in AWS CloudTrail](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-cloudtrail-filter-useridentity-advance-selectors/)** — AWS CloudTrail now supports IAM user identity-based filtering for VPC endpoint network activity events. This allows customers to log only relevant events—such as access denied attempts from unknown identities—reducing logging costs and noise while maintaining visibility into unauthorized access.
+- **[Announcing General Availability of a New AWS Local Zone in Athens, Greece](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-local-zone-athens-greece/)** — AWS has launched a new Local Zone in Athens, Greece—the second in EMEA to support Amazon S3 and Amazon EBS Local Snapshots—enabling customers to store and process data within Greece to meet local data residency requirements. The zone supports Amazon EC2 with C7i, M7i, and R7i instances along with Amazon S3 and Amazon EBS storage options.
+- **[Introducing KNFSD File Cache – Now in Preview](https://aws.amazon.com/about-aws/whats-new/2026/07/knfsd-file-cache/)** — AWS has released KNFSD File Cache in preview, an open-source (Apache 2.0) solution for deploying a scalable, high-speed NFS cache on AWS. It mounts exports from on-premises filers, other AWS Availability Zones or Regions, or multicloud environments via AWS Interconnect, and re-exports them to NFS clients within AWS to improve file access performance.
+
 ## 2026-07-17 · Daily update
 
 - **[Amazon CloudWatch Logs Insights Adds 25 New Query Commands and Functions](https://aws.amazon.com/about-aws/whats-new/2026/7/amazon-cloudwatch-logs-insights-ql/)** — Amazon CloudWatch Logs Insights now supports 25 new commands and functions, including type conversion and encoding functions (hexToAscii, decToHex), date/time functions (parseDate, formatDate), statistical aggregation, null handling, time-window comparison, outlier detection, and lookup-based event enrichment. These additions significantly improve log analysis capabilities, enhancing observability for networking operations.

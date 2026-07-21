@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-21 · 전일 업데이트
+
+- **[AWS CloudTrail에서 ID 기반으로 네트워크 활동 이벤트를 선택적으로 로깅](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-cloudtrail-filter-useridentity-advance-selectors/)** — AWS CloudTrail의 VPC 엔드포인트 네트워크 활동 이벤트에 대해 IAM 사용자 ID 기반 필터링이 추가되었습니다. 이를 통해 신뢰할 수 없는 ID의 액세스 거부 이벤트만 선택적으로 기록하는 등 로깅 비용과 노이즈를 줄이면서 무단 액세스 시도를 효과적으로 포착할 수 있습니다.
+- **[그리스 아테네 AWS 로컬 존 정식 출시 발표](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-local-zone-athens-greece/)** — AWS가 그리스 아테네에 새로운 로컬 존을 정식 출시했으며, 이는 EMEA 지역에서 Amazon S3 및 Amazon EBS 로컬 스냅샷을 지원하는 두 번째 로컬 존입니다. 그리스 내 데이터 레지던시 요구 사항 충족을 위해 Amazon EC2(C7i·M7i·R7i 인스턴스), Amazon S3, Amazon EBS 등 주요 서비스를 현지에서 이용할 수 있습니다.
+- **[KNFSD File Cache 프리뷰 출시 발표](https://aws.amazon.com/about-aws/whats-new/2026/07/knfsd-file-cache/)** — AWS가 오픈소스 기반의 확장 가능한 NFS 캐시 솔루션인 KNFSD File Cache를 프리뷰로 공개했습니다. 온프레미스 파일러, 다른 AWS 가용 영역·리전의 파일 시스템, 또는 AWS Interconnect를 통한 멀티클라우드 환경의 NFS 서버를 마운트하여 AWS 내 NFS 클라이언트에 재공유함으로써 네트워크 파일 액세스 성능을 향상시킬 수 있습니다.
+
 ## 2026-07-17 · 전일 업데이트
 
 - **[Amazon CloudWatch Logs Insights, 25개의 새로운 쿼리 명령 및 함수 추가](https://aws.amazon.com/about-aws/whats-new/2026/7/amazon-cloudwatch-logs-insights-ql/)** — Amazon CloudWatch Logs Insights 쿼리 언어에 타입 변환·인코딩 함수(hexToAscii, decToHex 등), 날짜/시간 함수(parseDate, formatDate 등), 통계 집계, 결측값 처리, 시간 창 비교, 이상값 탐지, 룩업 데이터 보강 등 25개의 새로운 명령과 함수가 추가되었습니다. 이를 통해 복잡한 로그 분석 및 상관 관계 파악이 더욱 용이해져 네트워킹 운영 관측성이 향상됩니다.
