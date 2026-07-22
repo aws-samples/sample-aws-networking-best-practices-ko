@@ -8,6 +8,13 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-22 · 전일 업데이트
+
+- **[Amazon EC2 R6in 및 R6idn 인스턴스, 추가 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-r6in-r6idn/)** — Amazon EC2 R6in 및 R6idn 인스턴스가 유럽(파리)과 캐나다(중부) 리전에서 새롭게 제공됩니다. 이 6세대 네트워크 최적화 인스턴스는 최대 200Gbps 네트워크 대역폭을 지원하며, 5세대 대비 2배 높은 네트워크 대역폭과 패킷 처리 성능을 제공합니다.
+- **[Amazon EC2 C6in 인스턴스, 아시아 태평양(타이베이) 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-c6in/)** — Amazon EC2 C6in 인스턴스가 아시아 태평양(타이베이) 리전에서 새롭게 제공됩니다. 최대 200Gbps 네트워크 대역폭을 지원하는 이 6세대 네트워크 최적화 인스턴스는 네트워크 가상 어플라이언스, 텔코 5G UPF, 데이터 분석 등 고성능 네트워크 집약적 워크로드에 활용할 수 있습니다.
+- **[Amazon EC2 M6in 및 M6idn 인스턴스, 추가 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-m6in-m6idn/)** — Amazon EC2 M6in 및 M6idn 인스턴스가 아시아 태평양(하이데라바드)과 남미(상파울루) 리전에서 새롭게 제공됩니다. 최대 200Gbps 네트워크 대역폭을 갖춘 이 6세대 네트워크 최적화 인스턴스는 고성능 파일 시스템, 분산형 웹 서비스 등 네트워크 집약적 워크로드의 성능과 처리량 향상에 활용할 수 있습니다.
+- **[Amazon ECS 고급 배포 전략, AWS 유럽 소버린 클라우드에서 지원 시작](https://aws.amazon.com/about-aws/whats-new/2026/07/ecs-adv-deployments-eu-sovereign-cloud/)** — Amazon ECS의 블루/그린, 선형, 카나리 배포 전략이 AWS 유럽 소버린 클라우드에서 새롭게 지원됩니다. 별도의 커스텀 배포 툴링 없이 배포 라이프사이클 훅, 베이크 타임, 빠른 롤백 등 프로덕션 수준의 제어 기능을 활용해 컨테이너화된 애플리케이션을 더 안전하게 업데이트할 수 있습니다.
+
 ## 2026-07-21 · 전일 업데이트
 
 - **[AWS CloudTrail에서 ID 기반으로 네트워크 활동 이벤트를 선택적으로 로깅](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-cloudtrail-filter-useridentity-advance-selectors/)** — AWS CloudTrail의 VPC 엔드포인트 네트워크 활동 이벤트에 대해 IAM 사용자 ID 기반 필터링이 추가되었습니다. 이를 통해 신뢰할 수 없는 ID의 액세스 거부 이벤트만 선택적으로 기록하는 등 로깅 비용과 노이즈를 줄이면서 무단 액세스 시도를 효과적으로 포착할 수 있습니다.

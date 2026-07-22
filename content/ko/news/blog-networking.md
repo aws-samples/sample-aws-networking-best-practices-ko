@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-22 · 주간 요약
+
+- **[Magnite가 Amazon VPC Route Server와 BGP를 활용해 동적 하이브리드 클라우드 라우팅을 구축하는 방법](https://aws.amazon.com/blogs/networking-and-content-delivery/how-magnite-uses-amazon-vpc-route-server-and-border-gateway-protocol-bgp-to-build-dynamic-hybrid-cloud-routing/)** — 최대 독립 셀사이드 광고 기업인 Magnite는 하루 1조 건 이상의 광고 요청을 처리하기 위해 Amazon VPC Route Server와 BGP를 결합해 AWS와 자체 데이터센터 간 동적 라우팅을 구현했습니다. 이를 통해 결정론적 트래픽 스티어링과 빠른 장애 조치를 실현하며 네트워크 동작을 애플리케이션 수준에서 제어합니다.
+
 ## 2026-07-21 · 주간 요약
 
 - **[LBC Ingress에서 Gateway API로 마이그레이션하는 툴킷 소개](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-the-lbc-ingress-to-gateway-api-migration-toolkit/)** — AWS Load Balancer Controller(LBC)의 Ingress 리소스를 Gateway API로 수동 전환할 때 발생하는 어노테이션·경로 규칙·TLS 설정 재작성 오류를 방지하기 위해, 검증된 가이드 방식의 마이그레이션 툴킷이 출시되었습니다. 이 툴킷은 프로덕션 트래픽 중단 위험을 줄이면서 안전하게 Gateway API로 전환할 수 있는 경로를 제공합니다.

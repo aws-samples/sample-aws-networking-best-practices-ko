@@ -8,6 +8,13 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-22 · Daily update
+
+- **[Amazon EC2 R6in and R6idn Instances Now Available in Additional Regions](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-r6in-r6idn/)** — Amazon EC2 R6in and R6idn instances are now available in the Europe (Paris) and Canada (Central) regions. These sixth-generation network-optimized instances deliver up to 200 Gbps of network bandwidth and up to 2x higher packet-processing performance compared to fifth-generation equivalents.
+- **[Amazon EC2 C6in Instances Now Available in Asia Pacific (Taipei) Region](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-c6in/)** — Amazon EC2 C6in instances are now available in the Asia Pacific (Taipei) region, offering up to 200 Gbps of network bandwidth—2x more than comparable fifth-generation instances. These sixth-generation network-optimized instances are suited for workloads such as network virtual appliances, Telco 5G UPF, and high-performance data analytics.
+- **[Amazon EC2 M6in and M6idn Instances Now Available in Additional Regions](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-m6in-m6idn/)** — Amazon EC2 M6in and M6idn instances are now available in the Asia Pacific (Hyderabad) and South America (São Paulo) regions. These sixth-generation network-optimized instances provide up to 200 Gbps of network bandwidth, doubling the throughput of fifth-generation instances for network-intensive workloads.
+- **[Amazon ECS Advanced Deployment Strategies Now Available in AWS European Sovereign Cloud](https://aws.amazon.com/about-aws/whats-new/2026/07/ecs-adv-deployments-eu-sovereign-cloud/)** — Amazon ECS now supports built-in blue/green, linear, and canary deployment strategies in the AWS European Sovereign Cloud, enabling safer and faster updates for containerized applications. These capabilities eliminate the need for custom deployment tooling by providing production-ready controls such as deployment lifecycle hooks, bake time, and quick rollback.
+
 ## 2026-07-21 · Daily update
 
 - **[Selectively Log Network Activity Events by Identity in AWS CloudTrail](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-cloudtrail-filter-useridentity-advance-selectors/)** — AWS CloudTrail now supports IAM user identity-based filtering for VPC endpoint network activity events. This allows customers to log only relevant events—such as access denied attempts from unknown identities—reducing logging costs and noise while maintaining visibility into unauthorized access.

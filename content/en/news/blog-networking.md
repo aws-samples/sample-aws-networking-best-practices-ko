@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-22 · Weekly summary
+
+- **[How Magnite Uses Amazon VPC Route Server and BGP to Build Dynamic Hybrid-Cloud Routing](https://aws.amazon.com/blogs/networking-and-content-delivery/how-magnite-uses-amazon-vpc-route-server-and-border-gateway-protocol-bgp-to-build-dynamic-hybrid-cloud-routing/)** — Magnite, the largest independent sell-side advertising company, leverages Amazon VPC Route Server and BGP to enable dynamic routing between AWS and its own data centers, handling over a trillion ad requests per day. This approach delivers deterministic traffic steering and fast failover, treating network behavior as a first-class part of the application.
+
 ## 2026-07-21 · Weekly summary
 
 - **[Introducing the LBC Ingress-to-Gateway API Migration Toolkit](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-the-lbc-ingress-to-gateway-api-migration-toolkit/)** — The new Ingress-to-Gateway API migration toolkit for AWS Load Balancer Controller (LBC) automates the error-prone process of rewriting annotations, path rules, and TLS configuration when moving from Ingress resources to the Gateway API. It provides a guided, validated migration path that reduces the risk of disrupting production traffic during the transition.
