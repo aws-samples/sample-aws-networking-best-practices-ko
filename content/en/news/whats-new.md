@@ -8,6 +8,12 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-23 · Daily update
+
+- **[AWS Network Load Balancer Now Supports Listener Rules for Custom Traffic Routing](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-network-load-balancer-supports-listener-rules/)** — Network Load Balancer (NLB) now supports listener rules that route connections to different target groups based on source IP address type. A single dual-stack NLB can direct IPv6 client traffic to IPv6 targets and IPv4 client traffic to IPv4 targets, preserving the original client IP address end-to-end for both address families.
+- **[Amazon EKS Now Supports EFA and Placement Groups on EKS Auto Mode and Karpenter](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-eks-efa-placement-groups/)** — Amazon EKS now supports EC2 placement groups and Elastic Fabric Adapter (EFA) network device configuration for node pools on EKS Auto Mode and the open-source Karpenter project. This enables fine-grained control over network interface configuration and physical instance placement, optimizing distributed training and inference workloads for performance and availability.
+- **[AWS Direct Connect Announces 100G Expansion in Lima, Peru](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-direct-connect-100g-lima/)** — AWS has expanded 100 Gbps dedicated connections at the existing AWS Direct Connect location in the Cirion data center in Lima, Peru. This marks the first Direct Connect location in Peru to offer 100 Gbps connections with MACsec encryption, providing private network access to all public AWS Regions (excluding China), AWS GovCloud Regions, and AWS Local Zones.
+
 ## 2026-07-22 · Daily update
 
 - **[Amazon EC2 R6in and R6idn Instances Now Available in Additional Regions](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-r6in-r6idn/)** — Amazon EC2 R6in and R6idn instances are now available in the Europe (Paris) and Canada (Central) regions. These sixth-generation network-optimized instances deliver up to 200 Gbps of network bandwidth and up to 2x higher packet-processing performance compared to fifth-generation equivalents.

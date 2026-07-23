@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-23 · 전일 업데이트
+
+- **[AWS Network Load Balancer, 맞춤형 트래픽 라우팅을 위한 리스너 규칙 지원](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-network-load-balancer-supports-listener-rules/)** — Network Load Balancer(NLB)가 리스너 규칙을 지원하여 소스 IP 주소 유형에 따라 트래픽을 서로 다른 대상 그룹으로 라우팅할 수 있게 되었습니다. 이를 통해 단일 듀얼 스택 NLB에서 IPv6 클라이언트 트래픽은 IPv6 대상으로, IPv4 클라이언트 트래픽은 IPv4 대상으로 각각 전달하면서 양쪽 모두 원본 클라이언트 IP 주소를 종단 간 보존할 수 있습니다.
+- **[Amazon EKS Auto Mode 및 Karpenter에서 EFA 및 배치 그룹 지원](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-eks-efa-placement-groups/)** — Amazon EKS가 EKS Auto Mode와 오픈소스 Karpenter 프로젝트의 노드 풀에서 Amazon EC2 배치 그룹과 Elastic Fabric Adapter(EFA) 네트워크 디바이스 구성을 지원합니다. 이를 통해 분산 학습 및 추론 워크로드에 최적화된 네트워크 인터페이스 구성과 EC2 인스턴스의 물리적 배치를 세밀하게 제어할 수 있습니다.
+- **[AWS Direct Connect, 페루 리마에서 100G 확장 발표](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-direct-connect-100g-lima/)** — AWS가 페루 리마의 Cirion 데이터센터 내 기존 AWS Direct Connect 위치에서 100Gbps 전용 연결을 확장한다고 발표했습니다. 이번 확장은 페루 최초로 MACsec 암호화를 지원하는 100Gbps Direct Connect 연결을 제공하며, 중국을 제외한 모든 퍼블릭 AWS 리전, AWS GovCloud 리전, AWS 로컬 존에 대한 프라이빗 네트워크 액세스가 가능합니다.
+
 ## 2026-07-22 · 전일 업데이트
 
 - **[Amazon EC2 R6in 및 R6idn 인스턴스, 추가 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-r6in-r6idn/)** — Amazon EC2 R6in 및 R6idn 인스턴스가 유럽(파리)과 캐나다(중부) 리전에서 새롭게 제공됩니다. 이 6세대 네트워크 최적화 인스턴스는 최대 200Gbps 네트워크 대역폭을 지원하며, 5세대 대비 2배 높은 네트워크 대역폭과 패킷 처리 성능을 제공합니다.

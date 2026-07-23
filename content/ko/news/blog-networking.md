@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-23 · 주간 요약
+
+- **[계정 수명 주기 이벤트 중 Amazon Route 53 도메인 보호: 멀티 계정 조직의 도메인 거버넌스 모범 사례](https://aws.amazon.com/blogs/networking-and-content-delivery/protect-amazon-route-53-domains-during-account-lifecycle-events-best-practices-for-domain-governance-in-multi-account-organizations/)** — AWS 계정 폐쇄 시 Amazon Route 53에 등록된 도메인을 적절히 관리하지 않으면 웹사이트 중단, 이메일 장애, SSL 인증서 검증 실패 등 심각한 장애로 이어질 수 있습니다. 이 글은 멀티 계정 조직 환경에서 계정 수명 주기 전반에 걸쳐 도메인을 안전하게 보호하기 위한 거버넌스 모범 사례를 제시합니다.
+- **[올바른 AWS 프라이빗 연결 옵션 선택: 의사결정 프레임워크](https://aws.amazon.com/blogs/networking-and-content-delivery/selecting-the-right-aws-private-connectivity-options-a-decision-framework/)** — AWS Direct Connect, AWS Direct Connect SiteLink, AWS Interconnect(라스트 마일 및 멀티클라우드) 등 프라이빗 연결 옵션이 다양해지면서 잘못된 선택은 과잉 프로비저닝이나 출시 지연으로 이어질 수 있습니다. 이 글은 각 옵션의 특성과 적합한 사용 사례를 기반으로 최적의 프라이빗 연결을 선택할 수 있는 의사결정 프레임워크를 제공합니다.
+- **[Network Load Balancer 리스너 규칙으로 듀얼 스택 아키텍처 통합](https://aws.amazon.com/blogs/networking-and-content-delivery/consolidate-dual-stack-architectures-with-listener-rules-for-network-load-balancer/)** — AWS가 Network Load Balancer(NLB)에 리스너 규칙 기능을 출시하여, 단일 듀얼 스택 NLB가 소스 IP 주소 유형에 따라 IPv6 클라이언트 트래픽은 IPv6 대상으로, IPv4 클라이언트 트래픽은 IPv4 대상으로 각각 라우팅할 수 있게 되었습니다. 프로토콜 변환 없이 양쪽 주소 체계 모두에서 소스 IP가 완전히 보존되어 듀얼 스택 아키텍처를 단순화할 수 있습니다.
+
 ## 2026-07-22 · 주간 요약
 
 - **[Magnite가 Amazon VPC Route Server와 BGP를 활용해 동적 하이브리드 클라우드 라우팅을 구축하는 방법](https://aws.amazon.com/blogs/networking-and-content-delivery/how-magnite-uses-amazon-vpc-route-server-and-border-gateway-protocol-bgp-to-build-dynamic-hybrid-cloud-routing/)** — 최대 독립 셀사이드 광고 기업인 Magnite는 하루 1조 건 이상의 광고 요청을 처리하기 위해 Amazon VPC Route Server와 BGP를 결합해 AWS와 자체 데이터센터 간 동적 라우팅을 구현했습니다. 이를 통해 결정론적 트래픽 스티어링과 빠른 장애 조치를 실현하며 네트워크 동작을 애플리케이션 수준에서 제어합니다.
