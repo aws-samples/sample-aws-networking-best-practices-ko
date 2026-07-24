@@ -8,6 +8,13 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-24 · Daily update
+
+- **[Amazon CloudWatch Logs Now Supports Application Load Balancer Logs](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-cloudwatch-logs/)** — Amazon CloudWatch Logs now supports ALB access, connection, and health check logs as vended logs, enabling direct analysis of traffic patterns and target health within CloudWatch. Telemetry enablement rules allow automatic logging configuration for both existing and newly created ALB resources, streamlining network troubleshooting.
+- **[Amazon EVS Now Available in Additional Regions](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-evs-available-in-additional-regions/)** — Amazon Elastic VMware Service (Amazon EVS) is now available in the Asia Pacific (Seoul), Europe (Zurich), and Europe (Stockholm) Regions, expanding options for running VMware Cloud Foundation directly within Amazon VPC on AWS Nitro-powered EC2 bare-metal instances. This regional expansion enables faster VMware workload migration to AWS in more geographies.
+- **[G7e Instances on SageMaker AI Inference Expand to Additional Regions](https://aws.amazon.com/about-aws/whats-new/2026/07/g7e-sagemaker-ai/)** — Amazon EC2 G7e instances are now available for Amazon SageMaker AI inference in Asia Pacific (Seoul), Europe (London), and Asia Pacific (Tokyo), offering up to 1,600 Gbps of Elastic Fabric Adapter networking bandwidth and up to 2.3x inference performance over previous-generation G6e instances. This expansion allows customers to deploy inference endpoints closer to end users across Asia and Europe.
+- **[Amazon SageMaker AI Inference Now Supports G7 Instances](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-sagemaker-ai-g7/)** — Amazon SageMaker AI inference now supports G7 instances powered by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs, delivering up to 4.6x AI inference performance compared to previous-generation G6 instances. With 32 GB of GPU memory per GPU, G7 instances enable cost-effective serving of medium-to-large generative AI models without over-provisioning or model quantization.
+
 ## 2026-07-23 · Daily update
 
 - **[AWS Network Load Balancer Now Supports Listener Rules for Custom Traffic Routing](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-network-load-balancer-supports-listener-rules/)** — Network Load Balancer (NLB) now supports listener rules that route connections to different target groups based on source IP address type. A single dual-stack NLB can direct IPv6 client traffic to IPv6 targets and IPv4 client traffic to IPv4 targets, preserving the original client IP address end-to-end for both address families.

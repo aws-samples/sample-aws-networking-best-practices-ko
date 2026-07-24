@@ -8,6 +8,13 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-24 · 전일 업데이트
+
+- **[Amazon CloudWatch Logs, Application Load Balancer 로그 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-cloudwatch-logs/)** — Amazon CloudWatch Logs가 ALB 로그를 벤디드 로그로 지원하여 액세스·연결·헬스 체크 로그를 CloudWatch에서 직접 분석할 수 있게 되었습니다. CloudWatch 텔레메트리 활성화 규칙을 통해 기존 및 신규 ALB 리소스의 로깅을 자동 구성할 수 있어 네트워크 트래픽 문제 진단이 간소화됩니다.
+- **[Amazon EVS, 추가 리전으로 서비스 확대](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-evs-available-in-additional-regions/)** — Amazon Elastic VMware Service(Amazon EVS)가 아시아 태평양(서울), 유럽(취리히), 유럽(스톡홀름) 리전에서 새롭게 제공됩니다. AWS Nitro 기반 EC2 베어메탈 인스턴스 위에서 Amazon VPC 내에 VMware Cloud Foundation 환경을 직접 구성할 수 있어, 더 많은 지역에서 VMware 워크로드를 AWS로 신속하게 마이그레이션할 수 있습니다.
+- **[SageMaker AI 추론에서 G7e 인스턴스 제공 리전 확대](https://aws.amazon.com/about-aws/whats-new/2026/07/g7e-sagemaker-ai/)** — Amazon EC2 G7e 인스턴스가 아시아 태평양(서울·도쿄) 및 유럽(런던) 리전의 Amazon SageMaker AI 추론에서 사용 가능해졌습니다. G7e 인스턴스는 최대 1,600 Gbps의 Elastic Fabric Adapter 네트워킹 대역폭을 제공하며, 이전 세대 G6e 대비 최대 2.3배 향상된 추론 성능으로 아시아·유럽 최종 사용자에게 더 가까운 위치에서 엔드포인트를 배포할 수 있습니다.
+- **[Amazon SageMaker AI 추론, G7 인스턴스 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-sagemaker-ai-g7/)** — Amazon SageMaker AI 추론이 NVIDIA RTX PRO 4500 Blackwell GPU 기반 G7 인스턴스를 지원하며, 이전 세대 G6 대비 최대 4.6배 향상된 AI 추론 성능을 제공합니다. GPU당 32GB 메모리를 갖춰 중대형 생성형 AI 모델을 과도한 프로비저닝이나 모델 양자화 없이 비용 효율적으로 서빙할 수 있습니다.
+
 ## 2026-07-23 · 전일 업데이트
 
 - **[AWS Network Load Balancer, 맞춤형 트래픽 라우팅을 위한 리스너 규칙 지원](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-network-load-balancer-supports-listener-rules/)** — Network Load Balancer(NLB)가 리스너 규칙을 지원하여 소스 IP 주소 유형에 따라 트래픽을 서로 다른 대상 그룹으로 라우팅할 수 있게 되었습니다. 이를 통해 단일 듀얼 스택 NLB에서 IPv6 클라이언트 트래픽은 IPv6 대상으로, IPv4 클라이언트 트래픽은 IPv4 대상으로 각각 전달하면서 양쪽 모두 원본 클라이언트 IP 주소를 종단 간 보존할 수 있습니다.
