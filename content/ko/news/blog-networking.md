@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-25 · 주간 요약
+
+- **[Amazon CloudFront의 FIFA 월드컵 2026 트래픽 처리 사례](https://aws.amazon.com/blogs/networking-and-content-delivery/how-amazon-cloudfront-delivered-traffic-for-the-fifa-world-cup-2026/)** — 스페인이 연장전에서 결승골을 넣은 순간 수천만 개의 스트림이 동시에 급증했으며, Amazon CloudFront는 해당 시점에 117 Tbps 이상의 트래픽을 처리했습니다. 이 사례는 대규모 글로벌 이벤트에서 CloudFront의 엣지 네트워크가 어떻게 급격한 트래픽 폭증을 감당하는지를 보여줍니다.
+- **[Amazon VPC Route Server와 AWS Transit Gateway를 활용한 중앙 집중식 VPC 트래픽 검사](https://aws.amazon.com/blogs/networking-and-content-delivery/centralized-vpc-inspection-with-amazon-vpc-route-server-and-aws-transit-gateway/)** — 여러 스포크 VPC의 트래픽을 AWS Transit Gateway를 통해 전용 검사 VPC로 전달하고, 방화벽 어플라이언스가 이를 검사한 뒤 전달하는 중앙 집중식 보안 아키텍처를 소개합니다. Amazon VPC Route Server를 활용하면 검사 VPC 내 라우팅 구성의 복잡성을 줄이고 동적 경로 관리를 단순화할 수 있습니다.
+
 ## 2026-07-23 · 주간 요약
 
 - **[계정 수명 주기 이벤트 중 Amazon Route 53 도메인 보호: 멀티 계정 조직의 도메인 거버넌스 모범 사례](https://aws.amazon.com/blogs/networking-and-content-delivery/protect-amazon-route-53-domains-during-account-lifecycle-events-best-practices-for-domain-governance-in-multi-account-organizations/)** — AWS 계정 폐쇄 시 Amazon Route 53에 등록된 도메인을 적절히 관리하지 않으면 웹사이트 중단, 이메일 장애, SSL 인증서 검증 실패 등 심각한 장애로 이어질 수 있습니다. 이 글은 멀티 계정 조직 환경에서 계정 수명 주기 전반에 걸쳐 도메인을 안전하게 보호하기 위한 거버넌스 모범 사례를 제시합니다.

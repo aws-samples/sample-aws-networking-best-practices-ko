@@ -8,6 +8,11 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-25 · Weekly summary
+
+- **[How Amazon CloudFront Delivered Traffic for the FIFA World Cup 2026](https://aws.amazon.com/blogs/networking-and-content-delivery/how-amazon-cloudfront-delivered-traffic-for-the-fifa-world-cup-2026/)** — When Spain scored in extra time during the FIFA World Cup Final on July 19, tens of millions of streams surged simultaneously, and Amazon CloudFront handled over 117 Tbps of traffic at that moment. This case study illustrates how CloudFront's edge network absorbs massive, instantaneous traffic spikes during large-scale global events.
+- **[Centralized VPC Inspection with Amazon VPC Route Server and AWS Transit Gateway](https://aws.amazon.com/blogs/networking-and-content-delivery/centralized-vpc-inspection-with-amazon-vpc-route-server-and-aws-transit-gateway/)** — This post presents a centralized inspection architecture where spoke VPC traffic is routed through AWS Transit Gateway to a dedicated inspection VPC, where firewall appliances examine it before forwarding. Amazon VPC Route Server simplifies dynamic route management within the inspection VPC, reducing the operational complexity of enforcing security at scale.
+
 ## 2026-07-23 · Weekly summary
 
 - **[Protect Amazon Route 53 Domains During Account Lifecycle Events: Best Practices for Domain Governance in Multi-Account Organizations](https://aws.amazon.com/blogs/networking-and-content-delivery/protect-amazon-route-53-domains-during-account-lifecycle-events-best-practices-for-domain-governance-in-multi-account-organizations/)** — Failing to properly manage Amazon Route 53 registered domains during AWS account decommissioning can trigger website outages, email failures, and SSL certificate validation errors. This post outlines domain governance best practices to safeguard domains throughout the full account lifecycle in multi-account organizations.
