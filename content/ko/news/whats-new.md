@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-28 · 전일 업데이트
+
+- **[Amazon Neptune, IAM 태그 기반 액세스 제어 지원](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-neptune-tbac/)** — Amazon Neptune Database가 IAM을 위한 태그 기반 액세스 제어(TBAC)를 지원하여, AWS 리소스 태그와 IAM 주체 태그를 IAM 정책 및 서비스 제어 정책(SCP)의 조건으로 활용해 데이터 플레인 작업에 대한 액세스를 제어할 수 있게 되었습니다. 이를 통해 대규모 다중 클러스터 환경에서 클러스터별 ARN을 일일이 열거하지 않고도 속성 기반으로 조직의 액세스 경계를 동적으로 적용할 수 있습니다.
+
 ## 2026-07-24 · 전일 업데이트
 
 - **[Amazon CloudWatch Logs, Application Load Balancer 로그 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-cloudwatch-logs/)** — Amazon CloudWatch Logs가 ALB 로그를 벤디드 로그로 지원하여 액세스·연결·헬스 체크 로그를 CloudWatch에서 직접 분석할 수 있게 되었습니다. CloudWatch 텔레메트리 활성화 규칙을 통해 기존 및 신규 ALB 리소스의 로깅을 자동 구성할 수 있어 네트워크 트래픽 문제 진단이 간소화됩니다.

@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-28 · Daily update
+
+- **[Amazon Neptune Now Supports Tag-Based Access Control for IAM](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-neptune-tbac/)** — Amazon Neptune Database now supports tag-based access control (TBAC) for IAM, allowing administrators to use AWS resource tags and IAM principal tags as conditions in IAM policies and SCPs to govern data-plane access. This enables dynamic, attribute-based enforcement of organizational access boundaries across multiple clusters at scale without enumerating individual cluster ARNs.
+
 ## 2026-07-24 · Daily update
 
 - **[Amazon CloudWatch Logs Now Supports Application Load Balancer Logs](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-cloudwatch-logs/)** — Amazon CloudWatch Logs now supports ALB access, connection, and health check logs as vended logs, enabling direct analysis of traffic patterns and target health within CloudWatch. Telemetry enablement rules allow automatic logging configuration for both existing and newly created ALB resources, streamlining network troubleshooting.
