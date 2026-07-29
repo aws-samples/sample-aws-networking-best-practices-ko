@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-29 · Daily update
+
+- **[Amazon EKS Now Supports AWS PrivateLink for the Cluster OIDC Endpoint](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-eks-oidc-endpoint-privatelink)** — Amazon EKS now allows the cluster OIDC discovery and JWKS endpoints used by IAM Roles for Service Accounts (IRSA) to be reached privately from within a VPC via AWS PrivateLink, eliminating the need for internet egress. Tools such as eksctl, Terraform, or custom token validators can access the OIDC discovery document and JWKS by creating an interface VPC endpoint.
+
 ## 2026-07-28 · Daily update
 
 - **[Amazon Neptune Now Supports Tag-Based Access Control for IAM](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-neptune-tbac/)** — Amazon Neptune Database now supports tag-based access control (TBAC) for IAM, allowing administrators to use AWS resource tags and IAM principal tags as conditions in IAM policies and SCPs to govern data-plane access. This enables dynamic, attribute-based enforcement of organizational access boundaries across multiple clusters at scale without enumerating individual cluster ARNs.

@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-29 · 전일 업데이트
+
+- **[Amazon EKS, 클러스터 OIDC 엔드포인트에 AWS PrivateLink 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-eks-oidc-endpoint-privatelink)** — Amazon EKS 클러스터의 OIDC 디스커버리 및 JWKS 엔드포인트를 AWS PrivateLink를 통해 VPC 내부에서 인터넷 없이 비공개로 접근할 수 있게 되었습니다. 이를 통해 eksctl, Terraform, 커스텀 토큰 검증기 등 VPC 내 도구들이 인터페이스 VPC 엔드포인트를 생성하여 IRSA 관련 OIDC 문서와 JWKS를 안전하게 조회할 수 있습니다.
+
 ## 2026-07-28 · 전일 업데이트
 
 - **[Amazon Neptune, IAM 태그 기반 액세스 제어 지원](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-neptune-tbac/)** — Amazon Neptune Database가 IAM을 위한 태그 기반 액세스 제어(TBAC)를 지원하여, AWS 리소스 태그와 IAM 주체 태그를 IAM 정책 및 서비스 제어 정책(SCP)의 조건으로 활용해 데이터 플레인 작업에 대한 액세스를 제어할 수 있게 되었습니다. 이를 통해 대규모 다중 클러스터 환경에서 클러스터별 ARN을 일일이 열거하지 않고도 속성 기반으로 조직의 액세스 경계를 동적으로 적용할 수 있습니다.
