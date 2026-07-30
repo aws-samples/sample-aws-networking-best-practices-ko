@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-30 · 전일 업데이트
+
+- **[AWS Glue REST API 커넥터, VPC 지원·필터 푸시다운·파티션 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-glue-rest-connector-filtering-partitioning-vpc)** — AWS Glue의 REST API 커넥터가 VPC 연결, 필터 푸시다운, 파티션 지원을 새롭게 제공합니다. 이를 통해 프라이빗 엔드포인트에 안전하게 연결하고, 필요한 데이터만 전송하며, 병렬 읽기로 수집 속도를 높이는 ETL 파이프라인을 커스텀 코드 없이 구성할 수 있습니다.
+
 ## 2026-07-29 · 전일 업데이트
 
 - **[Amazon EKS, 클러스터 OIDC 엔드포인트에 AWS PrivateLink 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-eks-oidc-endpoint-privatelink)** — Amazon EKS 클러스터의 OIDC 디스커버리 및 JWKS 엔드포인트를 AWS PrivateLink를 통해 VPC 내부에서 인터넷 없이 비공개로 접근할 수 있게 되었습니다. 이를 통해 eksctl, Terraform, 커스텀 토큰 검증기 등 VPC 내 도구들이 인터페이스 VPC 엔드포인트를 생성하여 IRSA 관련 OIDC 문서와 JWKS를 안전하게 조회할 수 있습니다.

@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-30 · Daily update
+
+- **[AWS Glue REST API Connector Now Supports VPC Connections, Filter Pushdown, and Partition Support](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-glue-rest-connector-filtering-partitioning-vpc)** — AWS Glue's REST API connector now supports VPC connections, filter pushdown, and partition-based parallel reads, enabling ETL pipelines to securely access private REST endpoints and ingest only the required data without custom code.
+
 ## 2026-07-29 · Daily update
 
 - **[Amazon EKS Now Supports AWS PrivateLink for the Cluster OIDC Endpoint](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-eks-oidc-endpoint-privatelink)** — Amazon EKS now allows the cluster OIDC discovery and JWKS endpoints used by IAM Roles for Service Accounts (IRSA) to be reached privately from within a VPC via AWS PrivateLink, eliminating the need for internet egress. Tools such as eksctl, Terraform, or custom token validators can access the OIDC discovery document and JWKS by creating an interface VPC endpoint.
