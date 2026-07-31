@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-31 · 전일 업데이트
+
+- **[AWS Direct Connect, Virtual Interface에서 BGP 경로 가시성 지원](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-direct-connect-bgp-visibility/)** — AWS Direct Connect가 프라이빗·트랜짓·퍼블릭 Virtual Interface에서 BGP 경로 가시성을 제공하여, AWS가 수락하거나 광고하는 경로를 AS 경로 및 BGP 커뮤니티 값과 함께 확인할 수 있게 되었습니다. 이를 통해 네트워크 관리자는 하이브리드 네트워크의 라우팅 문제 해결 및 경로 전파 검증을 보다 효율적으로 수행할 수 있습니다.
+- **[AWS Transit Gateway, 정책 기반 라우팅(PBR) 정식 출시 발표](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-transit-gateway-policy-based-routing/)** — AWS Transit Gateway가 정책 기반 라우팅(PBR)을 정식 지원하여, 목적지 IP 주소만이 아닌 출발지·목적지 IP, 포트, 프로토콜 등 복합 패킷 속성을 기반으로 트래픽 전달 방향을 세밀하게 제어할 수 있게 되었습니다. 이로써 트래픽 스티어링이나 워크로드 격리를 위해 다중 VPC 아키텍처를 구성하던 복잡성과 운영 부담을 줄일 수 있습니다.
+
 ## 2026-07-30 · 전일 업데이트
 
 - **[AWS Glue REST API 커넥터, VPC 지원·필터 푸시다운·파티션 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-glue-rest-connector-filtering-partitioning-vpc)** — AWS Glue의 REST API 커넥터가 VPC 연결, 필터 푸시다운, 파티션 지원을 새롭게 제공합니다. 이를 통해 프라이빗 엔드포인트에 안전하게 연결하고, 필요한 데이터만 전송하며, 병렬 읽기로 수집 속도를 높이는 ETL 파이프라인을 커스텀 코드 없이 구성할 수 있습니다.

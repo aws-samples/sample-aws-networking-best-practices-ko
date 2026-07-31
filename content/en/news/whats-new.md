@@ -8,6 +8,11 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-07-31 · Daily update
+
+- **[AWS Direct Connect Now Supports BGP Route Visibility on Virtual Interfaces](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-direct-connect-bgp-visibility/)** — AWS Direct Connect now offers BGP route visibility across private, transit, and public Virtual Interfaces, letting administrators see which routes AWS accepts from or advertises to on-premises routers along with AS path and BGP community values. This helps streamline troubleshooting, route propagation verification, and hybrid network connectivity monitoring.
+- **[AWS Announces General Availability of Policy-Based Routing on AWS Transit Gateway](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-transit-gateway-policy-based-routing/)** — AWS Transit Gateway now supports Policy-Based Routing (PBR) in general availability, enabling forwarding decisions based on a combination of source/destination IP addresses, ports, and protocols rather than destination IP alone. This eliminates the need for complex multi-VPC architectures previously required for traffic steering and workload isolation.
+
 ## 2026-07-30 · Daily update
 
 - **[AWS Glue REST API Connector Now Supports VPC Connections, Filter Pushdown, and Partition Support](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-glue-rest-connector-filtering-partitioning-vpc)** — AWS Glue's REST API connector now supports VPC connections, filter pushdown, and partition-based parallel reads, enabling ETL pipelines to securely access private REST endpoints and ingest only the required data without custom code.
