@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-01 · Daily update
+
+- **[Amazon CloudWatch Announces Managed Prometheus Collectors](https://aws.amazon.com/about-aws/whats-new/2026/07/cloudwatch-managed-collectors/)** — Amazon CloudWatch now offers fully managed Prometheus collectors that gather metrics from Amazon EKS, EC2, ECS, MSK, and OpenSearch Service workloads without requiring any self-managed agents. Users simply provide a scrape configuration and resource connection, and CloudWatch handles all provisioning and scaling automatically.
+
 ## 2026-07-31 · Daily update
 
 - **[AWS Direct Connect Now Supports BGP Route Visibility on Virtual Interfaces](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-direct-connect-bgp-visibility/)** — AWS Direct Connect now offers BGP route visibility across private, transit, and public Virtual Interfaces, letting administrators see which routes AWS accepts from or advertises to on-premises routers along with AS path and BGP community values. This helps streamline troubleshooting, route propagation verification, and hybrid network connectivity monitoring.

@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-01 · 전일 업데이트
+
+- **[Amazon CloudWatch, 관리형 Prometheus 수집기 발표](https://aws.amazon.com/about-aws/whats-new/2026/07/cloudwatch-managed-collectors/)** — Amazon CloudWatch가 에이전트 배포 없이 Prometheus 지표를 수집할 수 있는 완전 관리형 수집기를 출시했습니다. 기존에는 자체 관리형 OpenTelemetry Collector를 직접 배포·운영해야 했으나, 이제 스크레이프 설정과 리소스 연결만 제공하면 CloudWatch가 프로비저닝과 스케일링을 자동으로 처리합니다.
+
 ## 2026-07-31 · 전일 업데이트
 
 - **[AWS Direct Connect, Virtual Interface에서 BGP 경로 가시성 지원](https://aws.amazon.com/about-aws/whats-new/2026/07/aws-direct-connect-bgp-visibility/)** — AWS Direct Connect가 프라이빗·트랜짓·퍼블릭 Virtual Interface에서 BGP 경로 가시성을 제공하여, AWS가 수락하거나 광고하는 경로를 AS 경로 및 BGP 커뮤니티 값과 함께 확인할 수 있게 되었습니다. 이를 통해 네트워크 관리자는 하이브리드 네트워크의 라우팅 문제 해결 및 경로 전파 검증을 보다 효율적으로 수행할 수 있습니다.
