@@ -5,20 +5,20 @@
 
 AWS를 외부 네트워크에 연결하는 것은 두 가지 별개의 과제를 포함하며, 단일 서비스만으로 해결되는 경우는 거의 없습니다. **하이브리드 연결**은 전용 회선, 암호화된 VPN, 또는 SD-WAN 오버레이를 통해 온프레미스 데이터 센터와 지사를 AWS에 연결합니다. **멀티 클라우드 연결**은 여러 공급자에 걸친 워크로드를 위해 AWS를 다른 퍼블릭 클라우드와 연결합니다.
 
-![하이브리드 및 멀티 클라우드 개요: 하이브리드 연결(Direct Connect, VPN, SD-WAN), 멀티 클라우드 연결(AWS Interconnect, 파트너 기반), 클라이언트 통신(Client VPN, Verified Access)의 세 가지 관심사를 보여주는 다이어그램](../assets/connectivity/hybrid-overview.png)
+![세 가지 관심 영역을 보여주는 하이브리드 및 멀티 클라우드 개요: 하이브리드 연결(Direct Connect, VPN, SD-WAN), 멀티 클라우드 연결(AWS Interconnect, 파트너 기반), 클라이언트 통신(Client VPN, Verified Access)](../assets/connectivity/hybrid-overview.png)
 /// caption
 하이브리드 및 멀티 클라우드 개요 — [Drawio 소스](../assets/connectivity/hybrid-overview.drawio)
 ///
 
-온프레미스 연결의 경우, [AWS Direct Connect](https://aws.amazon.com/directconnect/)는 전용 회선을 통해 안정적이고 예측 가능한 대역폭을 제공하는 프라이빗 연결로, 대부분의 프로덕션 하이브리드 배포의 기반이 됩니다. [AWS Site-to-Site VPN](https://aws.amazon.com/vpn/site-to-site-vpn/)은 인터넷을 통한 암호화 연결을 제공하며, 전용 회선이 필요하지 않거나 레이어 3 암호화를 위해 Direct Connect를 보완하는 용도로 활용됩니다. **SD-WAN 통합**은 Transit Gateway Connect 또는 AWS Cloud WAN Connect 어태치먼트를 사용하여 서드파티 SD-WAN 오버레이를 AWS 네트워크 플레인으로 연결합니다.
+온프레미스 연결의 경우, [AWS Direct Connect](https://aws.amazon.com/directconnect/)는 전용 회선을 통해 프라이빗하고 예측 가능한 대역폭을 제공하며, 대부분의 프로덕션 하이브리드 배포의 기반이 됩니다. [AWS Site-to-Site VPN](https://aws.amazon.com/vpn/site-to-site-vpn/)은 인터넷을 통한 암호화된 연결을 제공하며, 전용 회선이 필요하지 않거나 레이어 3 암호화를 위해 Direct Connect를 보완하는 용도로 유용합니다. **SD-WAN 통합**은 Transit Gateway Connect 또는 AWS Cloud WAN Connect 어태치먼트를 사용하여 서드파티 SD-WAN 오버레이를 AWS 네트워크 플레인으로 연결합니다.
 
-멀티 클라우드의 경우, [AWS Interconnect](https://docs.aws.amazon.com/interconnect/latest/userguide/what-is-interconnect.html)가 권장 옵션입니다. 이는 코로케이션에서의 크로스 커넥트, 파트너 조율, 또는 수동 라우터 구성 없이 AWS VPC와 다른 클라우드 공급자 네트워크 간에 직접적인 프라이빗 연결을 생성하는 관리형 서비스입니다. 기존 대안(파트너 기반 Direct Connect 크로스 커넥트 또는 클라우드 간 Site-to-Site VPN)은 AWS Interconnect가 아직 지원하지 않는 다른 클라우드 환경에서 여전히 유효하지만, 운영 오버헤드가 더 크게 발생합니다. 리전 쌍 간 격차만 있는 경우라면 일반적으로 각 클라우드 내부에서 확장하는 방식으로 해결하는 것이 낫습니다.
+멀티 클라우드의 경우, [AWS Interconnect](https://docs.aws.amazon.com/interconnect/latest/userguide/what-is-interconnect.html)가 권장 옵션입니다. 이는 코로케이션에서의 크로스 커넥트, 파트너 조율, 또는 수동 라우터 구성 없이 AWS VPC와 다른 클라우드 공급자 네트워크 간에 직접적인 프라이빗 연결을 생성하는 관리형 서비스입니다. 기존 대안(파트너 기반 Direct Connect 크로스 커넥트 또는 클라우드 간 Site-to-Site VPN)은 AWS Interconnect가 아직 다른 클라우드를 지원하지 않는 경우에도 유효하지만, 운영 오버헤드가 더 큽니다. 리전 쌍 간격만의 문제라면 일반적으로 각 클라우드 내부에서 확장하는 방식으로 해결하는 것이 낫습니다.
 
-대부분의 조직은 이러한 서비스를 동시에 두 가지 이상 사용합니다. 목표는 각 서비스가 가장 큰 가치를 제공하는 곳에 적절히 활용하는 것입니다. 이러한 서비스를 결합한 권장 아키텍처는 이 페이지 하단의 [하이브리드 및 멀티 클라우드 스택 구축](#building-your-hybrid-and-multi-cloud-stack)을 참조하세요.
+대부분의 조직은 이러한 서비스를 동시에 두 개 이상 사용합니다. 목표는 각 서비스가 가장 큰 가치를 제공하는 곳에 활용하는 것입니다. 이러한 서비스를 결합한 권장 아키텍처는 이 페이지 하단의 [하이브리드 및 멀티 클라우드 스택 구축](#building-your-hybrid-and-multi-cloud-stack)을 참조하세요.
 
 ## AWS Direct Connect를 통한 온프레미스 프라이빗 연결 {#private-on-premises-connectivity-with-aws-direct-connect}
 
-[AWS Direct Connect](https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html)는 온프레미스 네트워크와 AWS 간에 프라이빗 전용 네트워크 연결을 제공합니다. 트래픽은 Direct Connect 위치에 프로비저닝된 물리적 회선을 통해 흐르며 공용 인터넷을 완전히 우회하므로, 대역폭이 예측 가능하고 지연 시간이 일정하며 AWS에서의 데이터 전송 비용이 인터넷 경유 방식보다 저렴합니다. Direct Connect는 대부분의 프로덕션 하이브리드 배포의 기반이 되며, 하이브리드 트래픽을 종료하는 모든 AWS 네트워크 서비스(가상 프라이빗 게이트웨이, Transit Gateway, AWS Cloud WAN)와 통합됩니다.
+[AWS Direct Connect](https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html)는 온프레미스 네트워크와 AWS 간에 프라이빗 전용 네트워크 연결을 제공합니다. 트래픽은 Direct Connect 위치에 프로비저닝된 물리적 회선을 통해 흐르며, 공용 인터넷을 완전히 우회하므로 대역폭이 예측 가능하고 지연 시간이 일정하며 AWS에서의 데이터 전송 비용이 인터넷보다 저렴합니다. Direct Connect는 대부분의 프로덕션 하이브리드 배포의 기반이며, 하이브리드 트래픽을 종료하는 모든 AWS 네트워크 서비스(가상 프라이빗 게이트웨이, Transit Gateway, AWS Cloud WAN)와 통합됩니다.
 
 **주요 기능**:
 
@@ -34,13 +34,13 @@ AWS를 외부 네트워크에 연결하는 것은 두 가지 별개의 과제를
 
     ---
 
-    단일 물리적 연결이 VLAN 태그가 지정된 여러 가상 인터페이스를 전달합니다. **프라이빗 VIF**는 VPC 리소스에 연결됩니다(가상 프라이빗 게이트웨이 또는 Direct Connect Gateway를 통해). **Transit VIF**는 Transit Gateway 또는 AWS Cloud WAN 코어 네트워크에 연결됩니다(Direct Connect Gateway를 통해). **퍼블릭 VIF**는 프라이빗 링크를 통해 AWS 퍼블릭 서비스 엔드포인트에 연결됩니다.
+    단일 물리적 연결이 VLAN 태그가 지정된 여러 가상 인터페이스를 전달합니다. **프라이빗 VIF**는 VPC 리소스에 연결됩니다(가상 프라이빗 게이트웨이 또는 Direct Connect Gateway를 통해). **트랜짓 VIF**는 Transit Gateway 또는 AWS Cloud WAN 코어 네트워크에 연결됩니다(Direct Connect Gateway를 통해). **퍼블릭 VIF**는 프라이빗 링크를 통해 AWS 퍼블릭 서비스 엔드포인트에 연결됩니다.
 
 *   :material-router-network: **Direct Connect Gateway**
 
     ---
 
-    전 세계에 분산된 BGP 경로 리플렉터입니다. 단일 Direct Connect Gateway를 모든 AWS 리전(중국 제외)의 가상 프라이빗 게이트웨이, Transit Gateway, 또는 AWS Cloud WAN 코어 네트워크와 연결할 수 있으므로, 여러 회선을 프로비저닝하지 않고도 하나의 물리적 연결로 여러 리전에 도달할 수 있습니다.
+    전 세계에 분산된 BGP 경로 리플렉터입니다. 단일 Direct Connect Gateway는 모든 AWS 리전(중국 제외)에 걸쳐 가상 프라이빗 게이트웨이, Transit Gateway 또는 AWS Cloud WAN 코어 네트워크와 연결되므로, 여러 회선을 프로비저닝하지 않고도 하나의 물리적 연결로 여러 리전에 도달할 수 있습니다.
 
 *   :material-transit-transfer: **SiteLink**
 
@@ -52,13 +52,13 @@ AWS를 외부 네트워크에 연결하는 것은 두 가지 별개의 과제를
 
     ---
 
-    IEEE 802.1AE MACsec은 지원되는 10 Gbps 및 100 Gbps 연결에서 라우터와 AWS Direct Connect 라우터 간의 트래픽을 레이어 2에서 암호화합니다. 컴플라이언스 요건상 전용 회선 자체에 링크 계층 암호화가 필요한 경우에 유용합니다.
+    IEEE 802.1AE MACsec은 지원되는 10 Gbps 및 100 Gbps 연결에서 사용자 라우터와 AWS Direct Connect 라우터 간의 트래픽을 레이어 2에서 암호화합니다. 컴플라이언스 요건상 전용 회선 자체에 링크 계층 암호화가 필요한 경우에 유용합니다.
 
 *   :material-ip-network: **듀얼 스택 지원**
 
     ---
 
-    프라이빗, Transit, 퍼블릭 VIF 모두 IPv4 및 IPv6 BGP 세션을 지원합니다. 듀얼 스택은 VIF별로 구성되므로 동일한 물리적 연결에서 IPv4와 IPv6를 함께 운용할 수 있습니다.
+    프라이빗, 트랜짓, 퍼블릭 VIF 모두 IPv4 및 IPv6 BGP 세션을 지원합니다. 듀얼 스택은 VIF별로 구성되므로 동일한 물리적 연결에서 IPv4와 IPv6를 함께 운영할 수 있습니다.
 
 </div>
 
@@ -66,47 +66,57 @@ AWS를 외부 네트워크에 연결하는 것은 두 가지 별개의 과제를
 
 #### 연결 수준뿐만 아니라 위치 및 공급자 수준에서 복원력을 설계하세요 {#design-for-resiliency-at-the-location-and-provider-level-not-just-at-the-connection-level}
 
-단일 전용 연결은 100 Gbps라 하더라도 하나의 Direct Connect 위치를 통과하는 하나의 회선에 불과합니다. 프로덕션 하이브리드 트래픽의 경우, Resiliency Toolkit의 **최대 복원력** 모델을 따르세요. 즉, 서로 다른 공급자로부터 제공되고 서로 다른 온프레미스 라우터에 종료되는 연결을 두 개의 별도 Direct Connect 위치에 최소 두 개 이상 구성해야 합니다. 이를 통해 위치, 공급자, 크로스 커넥트, 디바이스가 단일 장애 지점이 되는 상황을 방지할 수 있습니다.
+단일 전용 연결은 100 Gbps라 하더라도 하나의 Direct Connect 위치를 통과하는 하나의 회선에 불과합니다. 프로덕션 하이브리드 트래픽의 경우, Resiliency Toolkit의 **최대 복원력** 모델을 따르세요. 즉, 서로 다른 공급자로부터 제공되고 서로 다른 온프레미스 라우터에 종료되는 두 개의 별도 Direct Connect 위치에 최소 두 개의 연결을 구성합니다. 이를 통해 위치, 공급자, 크로스 커넥트, 디바이스가 단일 장애 지점이 되는 상황을 방지할 수 있습니다.
 
-단일 위치 장애 시 성능 저하를 허용할 수 있는 워크로드라면, **고가용성** 모델(하나 이상의 공급자를 통해 두 위치에 걸쳐 두 개의 연결)이 합리적인 절충안입니다. **개발/테스트** 단일 연결 모델은 결국 프로덕션 트래픽을 처리하게 되는 환경에는 거의 적합하지 않습니다.
+단일 위치 장애 시 성능 저하를 허용할 수 있는 워크로드라면, **고가용성** 모델(하나 이상의 공급자를 통해 두 위치에 걸친 두 개의 연결)이 합리적인 절충안입니다. **개발/테스트** 단일 연결 모델은 결국 프로덕션 트래픽을 처리하게 되는 환경에는 거의 적합하지 않습니다.
 
 #### Direct Connect Gateway를 어태치먼트 지점으로 사용하세요 {#use-a-direct-connect-gateway-as-the-attach-point}
 
-Direct Connect Gateway는 무료로 제공되는 전 세계 분산 리소스로, VIF와 AWS 네트워크 서비스(가상 프라이빗 게이트웨이, Transit Gateway, 또는 AWS Cloud WAN 코어 네트워크) 간의 BGP 어태치먼트 지점 역할을 합니다. 단일 Direct Connect Gateway를 여러 리전의 어태치먼트 지점과 연결하면, 목적지별로 리전 전용 VIF를 프로비저닝하지 않고도 하나의 물리적 연결로 모든 리전의 워크로드에 도달할 수 있습니다.
+Direct Connect Gateway는 VIF와 AWS 네트워크 서비스(가상 프라이빗 게이트웨이, Transit Gateway 또는 AWS Cloud WAN 코어 네트워크) 간의 BGP 어태치먼트 지점 역할을 하는 무료의 전 세계 분산 리소스입니다. 단일 Direct Connect Gateway를 여러 리전 어태치먼트 지점과 연결하면, 목적지별로 리전 전용 VIF를 프로비저닝하지 않고도 하나의 물리적 연결로 모든 리전의 워크로드에 도달할 수 있습니다.
 
-또한 마이그레이션이 간소화됩니다. 워크로드를 리전 간에 이동하거나 Transit Gateway에서 AWS Cloud WAN으로 전환할 때, VIF를 재프로비저닝하는 대신 Direct Connect Gateway를 재연결하면 됩니다. 아울러 BGP 컨트롤 플레인이 데이터 경로에서 분리되므로, BGP 재수렴이 정상 경로의 트래픽을 중단시키지 않습니다.
+또한 마이그레이션을 단순화합니다. 워크로드를 리전 간에 이동하거나 Transit Gateway에서 AWS Cloud WAN으로 전환할 때, VIF를 재프로비저닝하는 대신 Direct Connect Gateway를 재연결하면 됩니다. 또한 BGP 컨트롤 플레인을 데이터 경로에서 분리하므로, BGP 재수렴이 정상 경로의 트래픽을 중단시키지 않습니다.
 
 #### 각 워크로드에 적합한 VIF 유형을 선택하세요 {#choose-the-right-vif-type-for-each-workload}
 
 Direct Connect는 각각 다른 사용 사례에 적합한 세 가지 VIF 유형을 제공합니다. 모든 곳에 하나의 유형을 기본으로 사용하는 것보다 워크로드별로 올바른 유형을 선택하는 것이 더 중요합니다.
 
-* **Transit VIF**는 온프레미스 연결을 AWS 네트워크 전반으로 확장하는 기본 선택입니다. Direct Connect Gateway를 통해 Transit Gateway 또는 AWS Cloud WAN 코어 네트워크에 종료되는 단일 Transit VIF는 허브가 라우팅하는 모든 VPC에 도달할 수 있으며, VIF 수를 줄이고 라우팅을 중앙 집중식으로 관리할 수 있습니다.
-* **프라이빗 VIF**를 특정 VPC에 연결하는 방식은 전용 경로가 필요한 워크로드에 적합합니다. 지속적인 고처리량 데이터 전송, 허브의 데이터 처리 오버헤드를 피해야 하는 지연 시간에 민감한 트래픽, 또는 어태치먼트 지점을 공유할 수 없는 컴플라이언스 요건이 있는 경우가 해당됩니다.
+* **트랜짓 VIF**는 온프레미스 연결을 AWS 네트워크 전반으로 확장하는 기본 선택입니다. Direct Connect Gateway를 통해 Transit Gateway 또는 AWS Cloud WAN 코어 네트워크에 종료되는 단일 트랜짓 VIF는 허브가 라우팅하는 모든 VPC에 도달하며, VIF 수를 줄이고 라우팅을 중앙 집중화합니다.
+* **프라이빗 VIF**를 특정 VPC에 연결하는 방식은 전용 경로가 정당화되는 워크로드에 적합합니다. 지속적인 고처리량 데이터 전송, 허브의 데이터 처리 오버헤드를 피하고 싶은 지연 시간에 민감한 트래픽, 또는 워크로드가 어태치먼트 지점을 공유할 수 없는 컴플라이언스 사례가 이에 해당합니다.
 * **퍼블릭 VIF**는 Direct Connect 경로를 통해 AWS 퍼블릭 서비스 엔드포인트(예: Amazon S3 또는 Amazon DynamoDB)를 직접 사용하는 경우에 적합한 선택입니다.
 
-대부분의 프로덕션 환경에서는 세 가지 유형을 모두 운용합니다. 하나 이상의 Transit VIF를 백본으로, 소수의 고요구 워크로드에는 프라이빗 VIF를, AWS 퍼블릭 엔드포인트 트래픽이 많은 경우(가장 일반적인 사례는 S3)에는 퍼블릭 VIF를 사용합니다.
+대부분의 프로덕션 환경에서는 세 가지 모두를 운영합니다. 하나 이상의 트랜짓 VIF를 백본으로, 소수의 까다로운 워크로드에는 프라이빗 VIF를, AWS 퍼블릭 엔드포인트 트래픽이 상당한 경우(가장 일반적인 사례는 S3)에는 퍼블릭 VIF를 사용합니다.
 
-#### 여러 Direct Connect 경로에서 트래픽 엔지니어링을 위해 BGP 속성을 활용하세요 {#use-bgp-attributes-for-traffic-engineering-across-multiple-direct-connect-paths}
+#### 여러 Direct Connect 경로에서 트래픽 엔지니어링을 위해 BGP 속성을 사용하세요 {#use-bgp-attributes-for-traffic-engineering-across-multiple-direct-connect-paths}
 
-여러 Direct Connect 연결이 있는 경우, BGP 속성을 통해 트래픽 흐름을 제어할 수 있습니다. 기본 경로와 보조 경로 구분, 회선 간 부하 분산, 대칭적인 리턴 트래픽 등이 가능합니다. 지원되는 속성은 **Local Preference 커뮤니티**(AWS에서 수신한 경로에 적용, 값이 높을수록 우선), **AS_PATH 프리펜딩**(광고하는 경로에 적용, 경로가 길수록 낮은 우선순위), **MED**(광고하는 경로에 적용, AS_PATH가 동일할 때 값이 낮을수록 우선), **최장 프리픽스 매치**(항상 위의 속성보다 우선)입니다.
+여러 Direct Connect 연결이 있는 경우, BGP 속성과 커뮤니티를 통해 트래픽 흐름을 제어할 수 있습니다. AWS에 광고하는 경로에 이를 설정하며, 적용 가능한 속성은 VIF 유형에 따라 다릅니다.
 
-Direct Connect Gateway에 종료되는 VIF의 경우, 온프레미스 측 구성은 온프레미스 라우터에서 수행됩니다. VIF와 Direct Connect Gateway 자체에는 구성 가능한 BGP 정책 설정이 없으므로, 트래픽 엔지니어링은 주로 온프레미스에서 수행됩니다. AWS Cloud WAN 배포의 경우, Cloud WAN [라우팅 정책](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-routing-policies.html)이 AWS 측 제어 지점을 추가합니다. 온프레미스 라우터에서만 처리하는 대신, 정책을 통해 Cloud WAN 세그먼트와 Direct Connect Gateway 어태치먼트 간의 경로에서 BGP 속성을 필터링, 요약, 조작할 수 있습니다.
+| 속성 | VIF 유형 |
+| --- | --- |
+| **로컬 프리퍼런스 커뮤니티** (`7224:7300` 높음, `7224:7200` 중간, `7224:7100` 낮음) — AWS가 각 반환 경로에 부여하는 우선순위 | 프라이빗, 트랜짓 |
+| **MED** — AS_PATH 동점을 해소하지만, AWS는 이에 의존하지 않도록 권고 | 프라이빗, 트랜짓 |
+| **범위 커뮤니티** (`7224:9100` 로컬 리전, `7224:9200` 대륙, `7224:9300` 글로벌) — 어느 경로가 우선하는지가 아닌, AWS가 접두사를 전파하는 범위 | 퍼블릭 |
+| **AS_PATH 프리펜딩** — 길수록 선호도가 낮아지지만, 프라이빗 ASN을 사용하는 퍼블릭 VIF에서는 제거됨 | 전체 |
+| **최장 접두사 일치** — 위의 모든 항목보다 우선 | 전체 |
 
-#### 1초 미만의 페일오버를 위해 BFD를 활성화하세요 {#enable-bfd-for-sub-second-failover}
+트래픽 엔지니어링은 주로 온프레미스에서 수행하는 작업입니다. VIF나 Direct Connect Gateway에는 구성 가능한 BGP 정책 설정이 없습니다. AWS Cloud WAN 배포의 경우, Cloud WAN [라우팅 정책](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-routing-policies.html)이 AWS 측 제어 지점을 추가하여 정책에서 Direct Connect Gateway 어태치먼트 경로의 BGP 속성을 필터링, 요약 및 조작합니다. VIF에서 [BGP 경로를 확인](https://docs.aws.amazon.com/directconnect/latest/UserGuide/bgp-route-visibility.html)하여 AWS 측에서 결과를 검증하세요. 수락된 경로에는 각 접두사와 함께 AWS가 실제로 수신한 커뮤니티가 표시됩니다.
 
-BGP 홀드 타이머만으로는 기본적으로 약 90초(30초 킵얼라이브 간격의 3배) 후에 장애 발생 피어를 감지합니다. 이는 대부분의 프로덕션 하이브리드 워크로드에는 너무 긴 시간입니다. [양방향 포워딩 감지(BFD)](https://docs.aws.amazon.com/directconnect/latest/UserGuide/enable_bfd.html)는 BGP 세션과 함께 경량 활성 상태 확인을 실행하며, 포워딩 경로에 장애가 발생하는 즉시 세션을 종료합니다. 일반적으로 약 1초 이내에 처리됩니다.
+#### 1초 미만의 장애 조치를 위해 BFD를 활성화하세요 {#enable-bfd-for-sub-second-failover}
 
-AWS는 모든 Direct Connect BGP 세션에서 비동기 BFD를 자동으로 활성화하며, 감지 타이머는 300ms, 멀티플라이어는 3(세션 다운 선언까지 약 900ms)으로 설정됩니다. 온프레미스 측에서는 협상을 완료하기 위해 온프레미스 라우터에서 호환 가능한 타이머로 BFD를 활성화해야 합니다. 양쪽 모두에서 BFD가 활성화되지 않으면, 연결, VIF, 또는 피어 디바이스 문제 발생 시 페일오버가 여전히 BGP 홀드 타이머로 폴백되어 중단 시간이 1초 미만이 아닌 수십 초가 됩니다.
+BGP 홀드 타이머만으로는 기본적으로 약 90초(30초 킵얼라이브 간격의 3배) 후에 장애가 발생한 피어를 감지합니다. 이는 대부분의 프로덕션 하이브리드 워크로드에는 너무 긴 시간입니다. [양방향 포워딩 감지(BFD)](https://docs.aws.amazon.com/directconnect/latest/UserGuide/enable_bfd.html)는 BGP 세션과 함께 경량 활성 상태 확인을 실행하며, 포워딩 경로에 장애가 발생하는 즉시 세션을 종료합니다. 일반적으로 약 1초 이내에 처리됩니다.
 
-BFD는 이중화의 핵심 목적이 빠른 페일오버인 다중 회선 또는 액티브/패시브 설계에서 특히 중요합니다. 개통 검증의 일환으로 모든 세션에서 BFD가 활성화되어 있는지 확인하고, BGP 세션 상태에 알람을 설정하는 것과 동일하게 BFD 상태에도 알람을 설정하세요.
+AWS는 모든 Direct Connect BGP 세션에서 비동기 BFD를 자동으로 활성화하며, 감지 타이머는 300ms, 멀티플라이어는 3(세션 다운 선언까지 약 900ms)으로 설정됩니다. 온프레미스 측에서는 협상을 완료하기 위해 온프레미스 라우터에서 호환 가능한 타이머로 BFD를 활성화해야 합니다. 양쪽 모두에서 BFD가 활성화되지 않으면, 연결, VIF 또는 피어 디바이스 문제 발생 시 장애 조치가 여전히 BGP 홀드 타이머로 폴백되어 중단 시간이 1초 미만이 아닌 수십 초가 됩니다.
+
+BFD는 빠른 장애 조치가 이중화의 핵심인 다중 회선 또는 액티브/패시브 설계에서 특히 중요합니다. 턴업 검증의 일환으로 모든 세션에서 BFD가 활성화되어 있는지 확인하고, BGP 세션 상태를 알람으로 모니터링하는 것과 동일하게 BFD 상태도 알람으로 설정하세요.
 
 #### 처음부터 IPv6를 계획하세요 {#plan-ipv6-from-the-start}
 
-모든 VIF 유형은 IPv6 BGP 세션을 지원합니다. 현재 온프레미스 호스트가 IPv4 전용이더라도, 처음부터 각 VIF에 IPv4와 함께 IPv6를 구성하세요. AWS 측은 듀얼 스택을 지원하며, 어려운 부분은 온프레미스 전환입니다. AWS 측을 미리 준비해 두면 VIF 구성을 다시 열지 않고도 온프레미스 네트워크가 준비되는 시점에 IPv6를 도입할 수 있습니다.
+모든 VIF 유형은 IPv6 BGP 세션을 지원합니다. 온프레미스 호스트가 현재 IPv4 전용이더라도, 처음부터 각 VIF에서 IPv4와 함께 IPv6를 구성하세요. AWS 측은 듀얼 스택을 지원하며, 어려운 부분은 온프레미스 전환입니다. AWS 측을 미리 준비해 두면 VIF 구성을 다시 열지 않고도 온프레미스 네트워크가 준비되는 시점에 IPv6를 도입할 수 있습니다.
 
-#### BGP 및 VIF 지표를 적극적으로 모니터링하세요 {#monitor-bgp-and-vif-metrics-actively}
+#### BGP 및 VIF 지표를 모니터링하고 경로 자체를 검증하세요 {#monitor-bgp-and-vif-metrics-and-verify-the-routes-themselves}
 
-Direct Connect는 BGP 세션 상태, 연결 상태, VIF별 인그레스 및 이그레스 바이트와 패킷에 대한 CloudWatch 지표를 게시합니다. BGP 세션 상태 플래핑과 예상치 못한 트래픽 비대칭(BGP가 균형을 맞춰야 할 때 하나의 VIF가 형제 VIF보다 현저히 많거나 적은 트래픽을 처리하는 경우)에 알람을 설정하세요. BGP 상태 변화를 빠르게 감지하는 것이 페일오버가 사용자에게 보이지 않는 수준으로 처리되느냐, 5분간의 중단을 초래하느냐를 결정합니다.
+Direct Connect는 BGP 세션 상태(`VirtualInterfaceBgpStatus`), 각 방향의 접두사 수(`VirtualInterfaceBgpPrefixesAccepted` 및 `VirtualInterfaceBgpPrefixesAdvertised`), 연결 상태, VIF별 인그레스 및 이그레스 바이트와 패킷에 대한 CloudWatch 지표를 게시합니다. BGP 세션 상태 플래핑, 기준선 대비 수락된 접두사 수 감소, 예상치 못한 트래픽 비대칭(BGP가 균형을 맞춰야 할 때 하나의 VIF가 형제 VIF보다 현저히 많거나 적은 트래픽을 처리하는 경우)에 대해 알람을 설정하세요. BGP 상태 변화를 빠르게 감지하는 것이 장애 조치가 사용자에게 보이지 않는 것과 5분간의 중단을 일으키는 것의 차이를 만듭니다.
+
+접두사 수는 몇 개의 경로가 변경되었는지는 알려주지만, 어떤 경로인지는 알려주지 않습니다. [BGP 경로 가시성](https://docs.aws.amazon.com/directconnect/latest/UserGuide/bgp-route-visibility.html)은 각 VIF의 양방향 경로(수락 및 광고)를 AS 경로, 커뮤니티 값, 설치 시간과 함께 표시합니다. 지표에 알람을 설정한 후, 경로 목록을 읽어 변경된 접두사를 찾으세요. 또한 지표로는 알 수 없는 정보, 예를 들어 IPv6 접두사가 IPv4와 함께 교환되고 있는지, 퍼블릭 VIF에서 광고하는 모든 항목의 소유권 및 등록을 요구하는 인바운드 정책에 의해 접두사가 삭제되었는지 여부도 확인할 수 있습니다.
 
 ### AWS Direct Connect 사용 시기 {#when-to-use-aws-direct-connect}
 
@@ -115,16 +125,16 @@ Direct Connect는 BGP 세션 상태, 연결 상태, VIF별 인그레스 및 이�
 * 하이브리드 워크로드에 공용 인터넷이 보장할 수 없는 예측 가능한 대역폭 또는 지연 시간이 필요한 경우.
 * AWS에서 대용량 데이터를 전송하며 인터넷 이그레스 요금 대신 더 저렴한 Direct Connect 이그레스 요금을 원하는 경우.
 * 민감한 트래픽이 공용 인터넷을 통과하는 것을 금지하는 컴플라이언스 요건이 있는 경우.
-* 새로운 프로덕션 하이브리드 아키텍처를 구축하는 경우. 고가용성으로 가는 길은 VPN 폴백과 쌍을 이루는 단일 Direct Connect가 아니라, 여러 위치와 공급자에 걸친 다중 Direct Connect 연결입니다.
+* 새로운 프로덕션 하이브리드 아키텍처를 구축하는 경우. 고가용성으로 가는 길은 단일 Direct Connect와 VPN 폴백을 조합하는 것이 아니라, 여러 위치와 공급자에 걸친 여러 Direct Connect 연결입니다.
 
-Direct Connect는 다음과 같은 경우에는 **적합하지 않습니다**. 연결이 몇 주가 아닌 며칠 내에 필요한 경우(프로비저닝에는 크로스 커넥트 및 공급자 조율이 필요), 트래픽 볼륨이 낮아 VPN 비용과 성능이 허용 가능한 경우, 또는 연결이 단기간만 필요한 경우(예: VPN 처리량으로 충분한 일회성 데이터 마이그레이션).
+다음의 경우에는 Direct Connect가 **적합하지 않은** 출발점입니다. 연결이 몇 주가 아닌 며칠 내에 필요한 경우(프로비저닝에는 크로스 커넥트 및 공급자 조율이 필요), 트래픽 볼륨이 낮아 VPN 비용과 성능이 허용 가능한 경우, 또는 연결이 단기간인 경우(예: VPN 처리량으로 충분한 일회성 데이터 마이그레이션).
 
-### AWS Direct Connect와 다른 하이브리드 네트워킹 서비스의 조합 {#combining-aws-direct-connect-with-other-hybrid-networking-services}
+### AWS Direct Connect와 다른 하이브리드 네트워킹 서비스 조합 {#combining-aws-direct-connect-with-other-hybrid-networking-services}
 
 | 조합 | AWS Direct Connect 담당 | 다른 서비스 담당 |
 | --- | --- | --- |
 | **Direct Connect + Site-to-Site VPN** | AWS로의 프라이빗 경로 | MACsec을 사용할 수 없는 경우(예: 10 Gbps 미만의 호스팅 연결 또는 레이어 3 암호화가 필요한 컴플라이언스 기준) Direct Connect 위에 IPsec 오버레이 |
-| **Direct Connect + SD-WAN (TGW/Cloud WAN Connect 경유)** | 온프레미스 SD-WAN 어플라이언스와 AWS 간의 기반 전송 | SD-WAN 솔루션이 제공하는 오버레이 |
+| **Direct Connect + SD-WAN (TGW/Cloud WAN Connect를 통해)** | 온프레미스 SD-WAN 어플라이언스와 AWS 간의 기반 전송 | SD-WAN 솔루션이 제공하는 오버레이 |
 | **Direct Connect + AWS Interconnect (멀티 클라우드)** | 온프레미스 하이브리드 경로 | AWS와 다른 공급자 간의 클라우드 간 경로. 두 경로는 Direct Connect Gateway를 공유할 수 있음 |
 
 ### 문서 {#documentation}
@@ -143,7 +153,7 @@ Direct Connect는 다음과 같은 경우에는 **적합하지 않습니다**. �
 
     ---
 
-    AWS의 권장 복원력 모델(개발, 고가용성, 최대 복원력)과 이를 구현하기 위한 안내 워크플로입니다.
+    AWS의 권장 복원력 모델(개발, 고가용성, 최대)과 이를 구현하기 위한 안내 워크플로입니다.
 
     [:octicons-arrow-right-24: 설명서](https://docs.aws.amazon.com/directconnect/latest/UserGuide/resilency_toolkit.html)
 
@@ -151,7 +161,7 @@ Direct Connect는 다음과 같은 경우에는 **적합하지 않습니다**. �
 
     ---
 
-    AWS Networking and Content Delivery 블로그의 아키텍처 안내, 기능 발표, 구현 가이드입니다.
+    AWS 네트워킹 및 콘텐츠 전송 블로그의 아키텍처 안내, 기능 발표 및 구현 가이드입니다.
 
     [:octicons-arrow-right-24: 블로그 게시물](https://aws.amazon.com/blogs/networking-and-content-delivery/category/networking-content-delivery/aws-direct-connect/)
 
@@ -319,9 +329,9 @@ Site-to-Site VPN은 공용 인터넷이 보장할 수 없는 수준의 예측 �
 
 ## AWS Transit Gateway 및 AWS Cloud WAN과 SD-WAN 통합 {#sd-wan-integration-with-aws-transit-gateway-and-aws-cloud-wan}
 
-이 섹션은 지사 및 데이터 센터 전반에 걸쳐 이미 SD-WAN을 운영 중인 조직을 위한 내용으로, AWS를 해당 오버레이의 정식 사이트로 참여시키고자 하는 경우를 다룹니다. SD-WAN 벤더는 오버레이 자체(경로 선택, WAN 최적화, 사이트 간 암호화, 오케스트레이션)를 담당하고, AWS는 오버레이를 AWS 네트워크 플레인으로 연결하는 어태치먼트 포인트를 제공합니다.
+이 섹션은 지사 및 데이터 센터 전반에 걸쳐 SD-WAN을 이미 운영 중인 조직을 위한 내용으로, AWS를 해당 오버레이의 정식 사이트로 참여시키고자 하는 경우를 다룹니다. SD-WAN 벤더는 오버레이 자체(경로 선택, WAN 최적화, 사이트 간 암호화, 오케스트레이션)를 담당하고, AWS는 오버레이를 AWS 네트워크 플레인으로 연결하는 어태치먼트 포인트를 제공합니다.
 
-통합 메커니즘은 [AWS Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html) 또는 [AWS Cloud WAN](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-connect-attachment.html)의 **Connect 어태치먼트**입니다. Connect 어태치먼트는 여러 Connect 피어를 포함하며, 각 피어는 SD-WAN 어플라이언스와 AWS 간의 동적 라우팅을 위해 BGP를 사용합니다. BGP는 모든 SD-WAN 벤더가 지원하는 표준 컨트롤 플레인입니다. 터널 프로토콜, 언더레이, 지원되는 랜딩 서비스는 Transit Gateway와 AWS Cloud WAN 간에 차이가 있으며, 이러한 차이가 통합 설계를 결정합니다. 이어지는 섹션에서 각각을 다룹니다.
+통합 메커니즘은 [AWS Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html) 또는 [AWS Cloud WAN](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-connect-attachment.html)의 **Connect 어태치먼트**입니다. Connect 어태치먼트는 여러 Connect 피어를 포함하며, 각 피어는 SD-WAN 어플라이언스와 AWS 간의 동적 라우팅을 위해 BGP를 사용합니다. BGP는 모든 SD-WAN 벤더가 지원하는 표준 컨트롤 플레인입니다. 터널 프로토콜, 언더레이, 지원되는 랜딩 서비스는 Transit Gateway와 AWS Cloud WAN 간에 차이가 있으며, 이러한 차이가 통합 설계 방향을 결정합니다. 이어지는 섹션에서 각각을 다룹니다.
 
 ![온프레미스 디바이스가 Transit VPC의 가상 SD-WAN 어플라이언스를 통해 Transit Gateway 또는 Cloud WAN에 연결되고, 이를 통해 워크로드 VPC로 라우팅되는 SD-WAN 통합 구성도](../assets/connectivity/sdwan-integration.png)
 /// caption
@@ -336,7 +346,7 @@ SD-WAN 통합 — [Drawio 소스](../assets/connectivity/sdwan-integration.drawi
 
     ---
 
-    두 서비스 모두 BGP를 사용하는 Connect 어태치먼트를 지원하지만, 지원되는 **터널 프로토콜**과 **언더레이**에 차이가 있습니다. Transit Gateway Connect는 GRE만 지원하며 VPC 및 Direct Connect 언더레이를 모두 지원합니다. AWS Cloud WAN Connect는 GRE와 **터널리스 Connect**(캡슐화 오버헤드를 제거하는 고성능 옵션)를 지원하며, 언더레이는 반드시 VPC 어태치먼트여야 합니다. Direct Connect Gateway는 지원되지 않습니다. 기존 AWS 네트워크 백본에 맞는 랜딩 서비스를 선택하세요.
+    두 서비스 모두 BGP를 사용하는 Connect 어태치먼트를 지원하지만, 지원하는 **터널 프로토콜**과 **언더레이**가 다릅니다. Transit Gateway Connect는 GRE만 지원하며 VPC 및 Direct Connect 언더레이를 모두 지원합니다. AWS Cloud WAN Connect는 GRE와 **터널리스 Connect**(캡슐화 오버헤드를 제거하는 고성능 옵션)를 지원하며, 언더레이는 VPC 어태치먼트여야 합니다. Direct Connect Gateway는 지원되지 않습니다. 기존 AWS 네트워크 백본에 맞는 랜딩 서비스를 선택하세요.
 
 *   :material-tunnel: **GRE 및 터널리스 Connect**
 
@@ -348,13 +358,13 @@ SD-WAN 통합 — [Drawio 소스](../assets/connectivity/sdwan-integration.drawi
 
     ---
 
-    Transit Gateway Connect의 경우, 언더레이는 VPC(SD-WAN 가상 어플라이언스가 EC2 인스턴스로 실행되는 환경) 또는 Direct Connect 어태치먼트(SD-WAN 어플라이언스가 온프레미스에 위치하며 Direct Connect Gateway를 통해 Direct Connect로 AWS와 피어링하는 환경)가 될 수 있습니다. 적합한 선택은 SD-WAN 어플라이언스를 어디에 배치할지에 따라 달라집니다. AWS Cloud WAN Connect는 현재 VPC 언더레이만 지원합니다.
+    Transit Gateway Connect의 경우, 언더레이는 VPC(SD-WAN 가상 어플라이언스가 EC2 인스턴스로 실행되는 환경) 또는 Direct Connect 어태치먼트(SD-WAN 어플라이언스가 온프레미스에 있으며 Direct Connect Gateway를 통해 Direct Connect로 AWS와 피어링하는 환경)가 될 수 있습니다. 적합한 선택은 SD-WAN 어플라이언스를 어디에 배치할지에 따라 달라집니다. AWS Cloud WAN Connect는 현재 VPC 언더레이만 지원합니다.
 
-*   :material-chart-pie: **SD-WAN 트래픽을 AWS 환경으로 세분화**
+*   :material-chart-pie: **SD-WAN 트래픽을 AWS 환경별로 세분화**
 
     ---
 
-    Transit Gateway 라우팅 테이블 또는 AWS Cloud WAN 세그먼트를 사용하면 SD-WAN 트래픽 클래스(프로덕션, 비프로덕션, 게스트, IoT)를 AWS 내의 별도 라우팅 도메인에 매핑할 수 있습니다. 이를 위해서는 여러 Connect 피어(세그먼트당 하나)를 사용하거나, 벤더가 적절한 AWS 세그먼트에 매핑하는 SD-WAN 측 캡슐화가 필요합니다.
+    Transit Gateway 라우팅 테이블 또는 AWS Cloud WAN 세그먼트를 사용하면 SD-WAN 트래픽 클래스(프로덕션, 비프로덕션, 게스트, IoT)를 AWS 내의 별도 라우팅 도메인에 매핑할 수 있습니다. 이를 위해서는 여러 Connect 피어(세그먼트당 하나)를 사용하거나, SD-WAN 측 캡슐화를 통해 벤더가 적절한 AWS 세그먼트에 매핑하는 방식이 필요합니다.
 
 *   :material-ip-network: **듀얼 스택 지원**
 
@@ -380,19 +390,19 @@ SD-WAN 트래픽을 여러 AWS 환경(예: 동일한 Connect 어태치먼트를 
 
 #### 멀티 리전 SD-WAN에는 Transit Gateway 라우팅 테이블 대신 AWS Cloud WAN 세그먼트 사용 {#use-aws-cloud-wan-segments-instead-of-transit-gateway-route-tables-for-multi-region-sd-wan}
 
-단일 리전 SD-WAN 랜딩의 경우, 라우팅 테이블 세분화를 사용하는 Transit Gateway Connect가 잘 작동합니다. 여러 AWS 리전에 랜딩하는 글로벌 SD-WAN 배포의 경우, 정책 기반 세그먼트로 구성된 AWS Cloud WAN Connect 어태치먼트가 운영 측면에서 더 간단합니다. 세분화가 네트워크 정책의 일부로 리전 전반에 일관되게 적용되므로, 개별 Transit Gateway 라우팅 테이블을 통해 리전별로 관리할 필요가 없습니다.
+단일 리전 SD-WAN 랜딩의 경우, 라우팅 테이블 세분화를 사용하는 Transit Gateway Connect가 잘 작동합니다. 여러 AWS 리전에 랜딩하는 글로벌 SD-WAN 배포의 경우, 정책 기반 세그먼트로 구성된 AWS Cloud WAN Connect 어태치먼트가 운영 측면에서 더 간단합니다. 세분화가 네트워크 정책의 일부로 리전 전반에 일관되게 적용되므로, 개별 Transit Gateway 라우팅 테이블을 리전별로 관리할 필요가 없습니다.
 
 기존 Transit Gateway Connect 배포는 점진적으로 마이그레이션할 수 있습니다. AWS Cloud WAN은 Transit Gateway와 피어링하므로, 다른 트래픽이 AWS Cloud WAN으로 이동하는 동안 SD-WAN 어태치먼트는 Transit Gateway에 유지할 수 있습니다.
 
 #### BGP 프리픽스 수를 관리 가능한 수준으로 유지 {#keep-bgp-prefix-counts-manageable}
 
-Connect 피어는 IPsec VPN보다 더 많은 프리픽스 수를 지원하며(수천 개의 프리픽스를 사용하는 멀티프로토콜 BGP도 가능), SD-WAN 오버레이는 종종 모든 지사 서브넷을 별도의 프리픽스로 광고하여 수가 빠르게 증가합니다. 가능한 경우 SD-WAN 측에서 경로를 요약하고, CloudWatch를 통해 AWS 측의 수신 경로 수를 모니터링하세요. 피어당 한도에 근접하는 상황은 광고 폭풍이 발생하기 전까지 놓치기 쉽습니다.
+Connect 피어는 IPsec VPN보다 더 많은 프리픽스 수를 지원하며(수천 개의 프리픽스를 사용하는 멀티프로토콜 BGP도 가능), SD-WAN 오버레이는 모든 지사 서브넷을 별도의 프리픽스로 광고하는 경우가 많아 수가 빠르게 증가합니다. 가능한 경우 SD-WAN 측에서 경로를 요약하고, CloudWatch를 통해 AWS 측의 수신 경로 수를 모니터링하세요. 광고 폭주가 발생하기 전까지 피어당 한도에 근접하고 있다는 사실을 놓치기 쉽습니다.
 
-AWS Cloud WAN에 SD-WAN을 랜딩하는 경우, [라우팅 정책](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-routing-policies.html)을 통해 AWS 측에서도 경로를 요약할 수 있습니다. Connect 어태치먼트에 광고되는 프리픽스를 집계하거나, AWS Cloud WAN 네트워크에 도착하거나 떠나는 경로를 필터링할 수 있습니다. 이는 SD-WAN 오케스트레이터가 소스에서 깔끔하게 요약할 수 없거나, 서로 다른 세그먼트에 지사 프리픽스 공간의 다른 뷰가 필요한 경우에 유용합니다.
+AWS Cloud WAN에 SD-WAN을 랜딩하는 경우, AWS 측에서도 [라우팅 정책](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-routing-policies.html)을 통해 경로를 요약할 수 있습니다. Connect 어태치먼트에 광고되는 프리픽스를 집계하거나, AWS Cloud WAN 네트워크에 도착하거나 떠나는 경로를 필터링할 수 있습니다. 이는 SD-WAN 오케스트레이터가 소스에서 경로를 깔끔하게 요약할 수 없거나, 세그먼트마다 지사 프리픽스 공간에 대한 다른 뷰가 필요한 경우에 유용합니다.
 
 #### 처음부터 IPv6 계획 수립 {#plan-ipv6-from-the-start}
 
-모든 Connect 피어에서 처음부터 IPv4와 함께 IPv6 BGP 세션을 구성하세요. SD-WAN 벤더들은 점점 더 IPv6를 지원하고 있으며, AWS 측은 기본적으로 듀얼 스택을 지원합니다. 나중에 IPv6를 추가하려면 SD-WAN 오케스트레이터와의 조율이 필요한데, Connect 피어가 이미 듀얼 스택으로 구성되어 있으면 이 과정이 훨씬 수월합니다.
+모든 Connect 피어에서 처음부터 IPv4와 함께 IPv6 BGP 세션을 구성하세요. SD-WAN 벤더들은 점점 더 IPv6를 지원하고 있으며, AWS 측은 기본적으로 듀얼 스택을 지원합니다. Connect 피어가 이미 듀얼 스택으로 구성되어 있을 때 SD-WAN 오케스트레이터와의 조율이 더 원활하게 이루어지므로, 사후에 IPv6를 추가하는 것은 더 복잡합니다.
 
 ### 문서 {#documentation}
 
@@ -613,8 +623,8 @@ AWS Interconnect를 사용할 수 없고 워크로드가 인터넷 기반 성능
 
 하이브리드 및 멀티 클라우드 연결을 처음부터 구축하는 조직은 첫날부터 가장 잘 확장되는 패턴을 채택할 수 있습니다.
 
-1. **온프레미스 경로 및 복원력**: Direct Connect Gateway를 통해 Transit Gateway 또는 AWS Cloud WAN 코어 네트워크에 연결되는 AWS Direct Connect를 구성하되, Resiliency Toolkit의 최대 복원력 모델(여러 위치와 공급자에 걸친 다중 연결)에 따라 설계합니다. 복원력은 다중 Direct Connect 연결에서 확보하며, 단일 Direct Connect와 VPN 폴백을 조합하는 방식은 권장하지 않습니다.
-2. **가치를 더하는 곳에서의 VPN**: 아직 Direct Connect가 없는 빠른 시작 사이트, 단기 연결, 또는 MACsec을 사용할 수 없을 때 Direct Connect 위에 IPsec 오버레이로 활용하기 위해 동일한 Transit Gateway 또는 AWS Cloud WAN에 AWS Site-to-Site VPN을 구성합니다.
+1. **온프레미스 경로 및 복원력**: Direct Connect Gateway를 통해 Transit Gateway 또는 AWS Cloud WAN 코어 네트워크에 종단되는 AWS Direct Connect를 구성하되, Resiliency Toolkit의 최대 복원력 모델(여러 위치와 공급자에 걸친 다중 연결)에 따라 설계합니다. 복원력은 다중 Direct Connect 연결에서 확보하며, 단일 Direct Connect와 VPN 폴백을 조합하는 방식은 권장하지 않습니다.
+2. **가치를 더하는 곳에 VPN 활용**: 아직 Direct Connect가 없는 빠른 시작 사이트, 단기 연결, 또는 MACsec을 사용할 수 없을 때 Direct Connect 위에 IPsec 오버레이로 활용하기 위해 동일한 Transit Gateway 또는 AWS Cloud WAN에 AWS Site-to-Site VPN을 구성합니다.
 3. **멀티 클라우드**: 지원되는 경우 온프레미스 Direct Connect와 동일한 Direct Connect Gateway를 공유하는 AWS Interconnect를 사용합니다. AWS Interconnect 커버리지가 아직 제공되지 않는 경우에만 클라우드 간 파트너 기반 Direct Connect 또는 Site-to-Site VPN을 사용합니다.
 4. **SD-WAN 통합**: 조직이 이미 지사 전반에 SD-WAN을 운영하고 있으며 해당 오버레이를 AWS까지 확장하려는 경우, Transit Gateway Connect 또는 AWS Cloud WAN Connect 어태치먼트를 사용합니다.
 5. **애플리케이션 액세스**: AWS Verified Access 및 AWS Client VPN 가이드는 [원격 액세스](remote-access.md)를 참조하세요.
@@ -623,7 +633,7 @@ AWS Interconnect를 사용할 수 없고 워크로드가 인터넷 기반 성능
 
 확립된 하이브리드 패턴을 운영 중인 조직은 교체할 필요 없이 기존의 작동하는 기반을 유지할 수 있습니다.
 
-1. **AWS Direct Connect**는 계속해서 기반으로 유지됩니다. 회선이 Transit Gateway 또는 AWS Cloud WAN이 아닌 가상 프라이빗 게이트웨이에 연결되어 있다면, 환경이 성장함에 따라 Direct Connect Gateway를 통해 허브로 통합하는 방안을 검토하세요.
+1. **AWS Direct Connect**는 계속해서 기반으로 유지됩니다. 회선이 Transit Gateway 또는 AWS Cloud WAN이 아닌 가상 프라이빗 게이트웨이에 종단되어 있다면, 환경이 성장함에 따라 Direct Connect Gateway를 통해 허브로 통합하는 방안을 검토하세요.
 2. **AWS Site-to-Site VPN**은 완전히 지원됩니다. 처리량이 높은 사이트에는 Large 터널을, 리전에서 멀리 떨어진 사이트에는 Accelerated VPN을 고려하세요.
 3. **다른 클라우드로의 파트너 기반 Direct Connect**는 계속 작동하므로 단순히 교체를 위한 목적으로 제거할 필요는 없습니다. 새로운 멀티 클라우드 쌍을 구성하거나 기존 크로스 커넥트 갱신 시점에 AWS Interconnect 도입을 검토하세요.
 4. **Transit Gateway Connect의 SD-WAN 통합**은 멀티 리전 관리 복잡성이 증가할 때 AWS Cloud WAN으로 점진적으로 마이그레이션할 수 있습니다. AWS Cloud WAN은 기존 Transit Gateway와 피어링되므로 SD-WAN 트래픽을 한 번에 모두 이전할 필요가 없습니다.
