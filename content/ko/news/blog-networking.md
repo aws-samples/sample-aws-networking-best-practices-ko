@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-05 · 주간 요약
+
+- **[보안 아웃바운드 연결을 위한 Network Firewall 프록시 재소개](https://aws.amazon.com/blogs/networking-and-content-delivery/reintroducing-network-firewall-proxy-for-secure-egress-connectivity/)** — AWS Network Firewall이 명시적 프록시로 동작할 수 있는 기능이 re:Invent 2025 프리뷰를 거쳐 정식 출시됩니다. 별도의 프록시 제품 없이 기존 Network Firewall의 모든 보안 정책을 그대로 활용해 아웃바운드 트래픽을 제어할 수 있어 운영 복잡성이 줄어듭니다.
+- **[배포 전 AWS 리전 네트워크 지연 시간 측정하기](https://aws.amazon.com/blogs/networking-and-content-delivery/measuring-network-latency-to-aws-region-before-deployment/)** — AWS 리전 선택 시 단순한 지리적 근접성 대신 실제 네트워크 지연 시간을 측정하는 방법을 소개합니다. 복잡한 실제 환경에서는 지리적 가정만으로는 최적 리전을 판단하기 어렵기 때문에, 배포 전 실측 기반의 의사결정이 중요합니다.
+
 ## 2026-07-25 · 주간 요약
 
 - **[Amazon CloudFront의 FIFA 월드컵 2026 트래픽 처리 사례](https://aws.amazon.com/blogs/networking-and-content-delivery/how-amazon-cloudfront-delivered-traffic-for-the-fifa-world-cup-2026/)** — 스페인이 연장전에서 결승골을 넣은 순간 수천만 개의 스트림이 동시에 급증했으며, Amazon CloudFront는 해당 시점에 117 Tbps 이상의 트래픽을 처리했습니다. 이 사례는 대규모 글로벌 이벤트에서 CloudFront의 엣지 네트워크가 어떻게 급격한 트래픽 폭증을 감당하는지를 보여줍니다.

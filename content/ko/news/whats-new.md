@@ -8,6 +8,13 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-05 · 전일 업데이트
+
+- **[[미리 보기 발표] AWS Network Firewall 기능으로 포워드 프록시 재도입](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-network-firewall-forward-proxy-preview/)** — AWS Network Firewall이 기존의 모든 필터링 기능을 유지하면서 명시적 포워드 프록시로도 동작할 수 있게 되었습니다. 이전에 별도 제품으로 분리되어 있던 프록시 기능이 Network Firewall에 통합되어, 단일 보안 정책으로 데이터 유출 및 악성코드 주입에 대한 중앙 집중식 보안 제어가 가능해집니다.
+- **[Amazon EC2 C8g 인스턴스, 추가 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-c8g-instances-additional-regions/)** — Amazon EC2 C8g 인스턴스가 유럽(파리), 아프리카(케이프타운), 이스라엘(텔아비브), 캐나다 서부(캘거리) 리전에서 새롭게 제공됩니다. AWS Graviton4 프로세서 기반으로 Graviton3 대비 최대 30% 향상된 성능을 제공하며, HPC·배치 처리·게임·비디오 인코딩 등 컴퓨팅 집약적 워크로드에 적합합니다.
+- **[AWS Application Load Balancer 및 Network Load Balancer, RFC 9151 준수 보안 정책 지원](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-application-network/)** — AWS ALB와 NLB가 미국 NSA의 CNSA 1.0 요건을 정의한 RFC 9151을 준수하는 새로운 TLS 기반 보안 정책을 지원합니다. TLS 1.2 및 TLS 1.3 프로토콜에서 CNSA 1.0 TLS 보안 요건을 충족해야 하는 고객은 이제 ALB·NLB에서 해당 정책을 직접 적용할 수 있습니다.
+- **[Amazon EC2 I8g 인스턴스, AWS 유럽(파리) 및 아시아 태평양(자카르타) 리전 출시](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-i8g-instances-aws-paris-jakarta-regions/)** — AWS Graviton4 프로세서 기반의 스토리지 최적화 Amazon EC2 I8g 인스턴스가 유럽(파리)과 아시아 태평양(자카르타) 리전에서 정식 출시되었습니다. 3세대 AWS Nitro SSD를 탑재하여 I4g 대비 TB당 실시간 스토리지 성능이 최대 65% 향상되고, 스토리지 I/O 지연 시간은 최대 50% 단축됩니다.
+
 ## 2026-08-01 · 전일 업데이트
 
 - **[Amazon CloudWatch, 관리형 Prometheus 수집기 발표](https://aws.amazon.com/about-aws/whats-new/2026/07/cloudwatch-managed-collectors/)** — Amazon CloudWatch가 에이전트 배포 없이 Prometheus 지표를 수집할 수 있는 완전 관리형 수집기를 출시했습니다. 기존에는 자체 관리형 OpenTelemetry Collector를 직접 배포·운영해야 했으나, 이제 스크레이프 설정과 리소스 연결만 제공하면 CloudWatch가 프로비저닝과 스케일링을 자동으로 처리합니다.

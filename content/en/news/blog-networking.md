@@ -8,6 +8,11 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-05 · Weekly summary
+
+- **[Reintroducing Network Firewall Proxy for Secure Egress Connectivity](https://aws.amazon.com/blogs/networking-and-content-delivery/reintroducing-network-firewall-proxy-for-secure-egress-connectivity/)** — AWS Network Firewall is moving toward general availability as an explicit proxy, following customer feedback gathered during the re:Invent 2025 preview. This allows teams to control egress traffic using their existing Network Firewall security policies without managing a separate proxy product.
+- **[Measuring Network Latency to an AWS Region Before Deployment](https://aws.amazon.com/blogs/networking-and-content-delivery/measuring-network-latency-to-aws-region-before-deployment/)** — This post explains how to measure actual network latency to AWS Regions before deployment, rather than relying solely on geographic proximity. In complex real-world scenarios, empirical latency measurements are essential for selecting the optimal Region.
+
 ## 2026-07-25 · Weekly summary
 
 - **[How Amazon CloudFront Delivered Traffic for the FIFA World Cup 2026](https://aws.amazon.com/blogs/networking-and-content-delivery/how-amazon-cloudfront-delivered-traffic-for-the-fifa-world-cup-2026/)** — When Spain scored in extra time during the FIFA World Cup Final on July 19, tens of millions of streams surged simultaneously, and Amazon CloudFront handled over 117 Tbps of traffic at that moment. This case study illustrates how CloudFront's edge network absorbs massive, instantaneous traffic spikes during large-scale global events.
