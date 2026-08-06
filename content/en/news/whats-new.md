@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-06 · Daily update
+
+- **[AWS Lambda Announces Scalable Network Bandwidth Up to 3,000 Mbps for Functions Outside a VPC](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-lambda-network-bandwidth/)** — AWS Lambda now offers scalable network bandwidth for functions running outside a VPC, scaling proportionally from 625 Mbps at 2 GB of memory up to 3,000 Mbps at 10 GB. This improvement benefits latency-sensitive data processing workloads that require high-throughput transfer of large data volumes into the Lambda execution environment.
+
 ## 2026-08-05 · Daily update
 
 - **[[Preview Announcement] Re-introducing Forward Proxy as AWS Network Firewall Functionality](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-network-firewall-forward-proxy-preview/)** — AWS Network Firewall can now operate as an explicit forward proxy while retaining all its existing filtering capabilities. Previously offered as a standalone product with a separate policy, the proxy functionality is now integrated into Network Firewall, enabling centralized security controls against data exfiltration and malware injection under a single security policy.

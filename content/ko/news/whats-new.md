@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-06 · 전일 업데이트
+
+- **[AWS Lambda, VPC 외부 함수에 최대 3,000 Mbps 확장형 네트워크 대역폭 지원 발표](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-lambda-network-bandwidth/)** — AWS Lambda가 VPC 외부에서 실행되는 함수에 대해 메모리 크기에 비례하는 확장형 네트워크 대역폭을 지원합니다. 메모리 2 GB에서 625 Mbps, 10 GB에서 최대 3,000 Mbps까지 제공되어 대용량 데이터를 처리하는 지연 시간에 민감한 워크로드의 데이터 전송 성능이 크게 향상됩니다.
+
 ## 2026-08-05 · 전일 업데이트
 
 - **[[미리 보기 발표] AWS Network Firewall 기능으로 포워드 프록시 재도입](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-network-firewall-forward-proxy-preview/)** — AWS Network Firewall이 기존의 모든 필터링 기능을 유지하면서 명시적 포워드 프록시로도 동작할 수 있게 되었습니다. 이전에 별도 제품으로 분리되어 있던 프록시 기능이 Network Firewall에 통합되어, 단일 보안 정책으로 데이터 유출 및 악성코드 주입에 대한 중앙 집중식 보안 제어가 가능해집니다.
