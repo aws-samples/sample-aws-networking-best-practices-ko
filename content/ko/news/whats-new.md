@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-07 · 전일 업데이트
+
+- **[Amazon EC2 G7 인스턴스, AWS 유럽(스페인) 리전에서 출시](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-g7-available-spain)** — NVIDIA RTX PRO 4500 Blackwell GPU를 탑재한 Amazon EC2 G7 인스턴스가 유럽(스페인) 리전에서 제공됩니다. G6 대비 AI 추론 성능 최대 4.6배, 그래픽 성능 최대 2.1배 향상되어 언어 번역·영상 분석·음성 인식 등 GPU 가속 워크로드에 활용할 수 있습니다.
+- **[Amazon EC2 M8g 인스턴스, 추가 리전으로 확대 제공](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-m8g-instances-additional-regions/)** — AWS Graviton4 프로세서 기반의 Amazon EC2 M8g 인스턴스가 AWS 아시아 태평양(타이베이) 및 AWS 멕시코(중부) 리전에서 새롭게 제공됩니다. Graviton3 기반 인스턴스 대비 최대 30% 향상된 성능을 제공하며, 애플리케이션 서버·마이크로서비스·게임 서버 등 범용 워크로드에 적합합니다.
+
 ## 2026-08-06 · 전일 업데이트
 
 - **[AWS Lambda, VPC 외부 함수에 최대 3,000 Mbps 확장형 네트워크 대역폭 지원 발표](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-lambda-network-bandwidth/)** — AWS Lambda가 VPC 외부에서 실행되는 함수에 대해 메모리 크기에 비례하는 확장형 네트워크 대역폭을 지원합니다. 메모리 2 GB에서 625 Mbps, 10 GB에서 최대 3,000 Mbps까지 제공되어 대용량 데이터를 처리하는 지연 시간에 민감한 워크로드의 데이터 전송 성능이 크게 향상됩니다.

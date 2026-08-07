@@ -8,6 +8,11 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-07 · Daily update
+
+- **[Amazon EC2 G7 Instances Now Available in the AWS Europe (Spain) Region](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-g7-available-spain)** — Amazon EC2 G7 instances powered by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs are now available in the Europe (Spain) Region. They deliver up to 4.6x AI inference performance and up to 2.1x graphics performance compared to G6 instances, supporting workloads such as language translation, video analysis, and speech recognition.
+- **[Amazon EC2 M8g Instances Now Available in Additional Regions](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-m8g-instances-additional-regions/)** — Amazon EC2 M8g instances, powered by AWS Graviton4 processors, are now available in the AWS Asia Pacific (Taipei) and AWS Mexico (Central) regions. They offer up to 30% better performance than Graviton3-based instances and are suited for general-purpose workloads including application servers, microservices, and gaming servers.
+
 ## 2026-08-06 · Daily update
 
 - **[AWS Lambda Announces Scalable Network Bandwidth Up to 3,000 Mbps for Functions Outside a VPC](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-lambda-network-bandwidth/)** — AWS Lambda now offers scalable network bandwidth for functions running outside a VPC, scaling proportionally from 625 Mbps at 2 GB of memory up to 3,000 Mbps at 10 GB. This improvement benefits latency-sensitive data processing workloads that require high-throughput transfer of large data volumes into the Lambda execution environment.
