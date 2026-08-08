@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-08 · 전일 업데이트
+
+- **[Amazon OpenSearch UI, 네트워크 액세스 제어 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/08/opensearch-ui-network-access-control)** — Amazon OpenSearch Service의 OpenSearch UI 애플리케이션에 네트워크 액세스 제어 기능이 추가되어, aws:SourceVpce·aws:SourceVpc·aws:SourceIp 등 IAM 조건 키를 활용해 승인된 네트워크로만 액세스를 제한할 수 있습니다. ID 기반·리소스 기반·서비스 제어 정책 등 세 가지 수준에서 네트워크 제한을 적용해 일관된 데이터 경계를 구성할 수 있습니다.
+
 ## 2026-08-07 · 전일 업데이트
 
 - **[Amazon EC2 G7 인스턴스, AWS 유럽(스페인) 리전에서 출시](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-g7-available-spain)** — NVIDIA RTX PRO 4500 Blackwell GPU를 탑재한 Amazon EC2 G7 인스턴스가 유럽(스페인) 리전에서 제공됩니다. G6 대비 AI 추론 성능 최대 4.6배, 그래픽 성능 최대 2.1배 향상되어 언어 번역·영상 분석·음성 인식 등 GPU 가속 워크로드에 활용할 수 있습니다.

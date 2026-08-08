@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-08 · Daily update
+
+- **[Amazon OpenSearch UI Now Supports Network Access Control](https://aws.amazon.com/about-aws/whats-new/2026/08/opensearch-ui-network-access-control)** — Amazon OpenSearch Service now supports network access controls for OpenSearch UI applications, allowing you to restrict access to approved networks using IAM condition keys such as aws:SourceVpce, aws:SourceVpc, and aws:SourceIp. Network restrictions can be enforced at three levels—identity-based, resource-based, and service control policies—enabling a consistent data perimeter across your environment.
+
 ## 2026-08-07 · Daily update
 
 - **[Amazon EC2 G7 Instances Now Available in the AWS Europe (Spain) Region](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-g7-available-spain)** — Amazon EC2 G7 instances powered by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs are now available in the Europe (Spain) Region. They deliver up to 4.6x AI inference performance and up to 2.1x graphics performance compared to G6 instances, supporting workloads such as language translation, video analysis, and speech recognition.
