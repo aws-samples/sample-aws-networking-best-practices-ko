@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-09 · 전일 업데이트
+
+- **[Amazon VPC IPAM, BYOIP 접두사에 대한 BGP 경로 보호 모니터링 및 위임된 RPKI 지원](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-vpc-ipam-bgp-rpki-byoip/)** — Amazon VPC IPAM이 BYOIP 접두사에 대해 BGP 경로 보호 모니터링과 위임된 RPKI 관리를 지원합니다. 네트워크 관리자는 단일 대시보드에서 RPKI 유효성 상태, ROA 강도, 경로 중복 감지를 중앙 집중식으로 확인하고 계정 및 리전 전반의 ROA 관리를 자동화할 수 있습니다.
+
 ## 2026-08-08 · 전일 업데이트
 
 - **[Amazon OpenSearch UI, 네트워크 액세스 제어 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/08/opensearch-ui-network-access-control)** — Amazon OpenSearch Service의 OpenSearch UI 애플리케이션에 네트워크 액세스 제어 기능이 추가되어, aws:SourceVpce·aws:SourceVpc·aws:SourceIp 등 IAM 조건 키를 활용해 승인된 네트워크로만 액세스를 제한할 수 있습니다. ID 기반·리소스 기반·서비스 제어 정책 등 세 가지 수준에서 네트워크 제한을 적용해 일관된 데이터 경계를 구성할 수 있습니다.

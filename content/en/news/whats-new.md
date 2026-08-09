@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-09 · Daily update
+
+- **[Amazon VPC IPAM Now Supports BGP Route Protection Monitoring and Delegated RPKI for BYOIP Prefixes](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-vpc-ipam-bgp-rpki-byoip/)** — Amazon VPC IPAM now supports BGP route protection monitoring and delegated RPKI management for BYOIP prefixes. Network administrators can centrally view RPKI validity status, ROA strength, and route overlap detection across accounts and regions from a single dashboard, while automating ROA management organization-wide.
+
 ## 2026-08-08 · Daily update
 
 - **[Amazon OpenSearch UI Now Supports Network Access Control](https://aws.amazon.com/about-aws/whats-new/2026/08/opensearch-ui-network-access-control)** — Amazon OpenSearch Service now supports network access controls for OpenSearch UI applications, allowing you to restrict access to approved networks using IAM condition keys such as aws:SourceVpce, aws:SourceVpc, and aws:SourceIp. Network restrictions can be enforced at three levels—identity-based, resource-based, and service control policies—enabling a consistent data perimeter across your environment.
