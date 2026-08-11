@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-11 · 전일 업데이트
+
+- **[Amazon EC2, 애플리케이션 상태 확인 기능 도입](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-application-status-checks)** — Amazon EC2가 인스턴스 내 애플리케이션 수준의 문제를 감지하고 대응할 수 있는 새로운 상태 확인 기능을 출시했습니다. 웹 서버 중단, Docker 데몬 미실행, 잘못된 네트워킹 구성, 트래픽 전달 불가 네트워크 인터페이스 등 애플리케이션 계층 장애를 자동으로 탐지할 수 있어 기존 시스템 수준 상태 확인을 보완합니다.
+
 ## 2026-08-09 · 전일 업데이트
 
 - **[Amazon VPC IPAM, BYOIP 접두사에 대한 BGP 경로 보호 모니터링 및 위임된 RPKI 지원](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-vpc-ipam-bgp-rpki-byoip/)** — Amazon VPC IPAM이 BYOIP 접두사에 대해 BGP 경로 보호 모니터링과 위임된 RPKI 관리를 지원합니다. 네트워크 관리자는 단일 대시보드에서 RPKI 유효성 상태, ROA 강도, 경로 중복 감지를 중앙 집중식으로 확인하고 계정 및 리전 전반의 ROA 관리를 자동화할 수 있습니다.

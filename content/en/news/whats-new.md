@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-11 · Daily update
+
+- **[Amazon EC2 Introduces Application Status Checks](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-application-status-checks)** — Amazon EC2 has launched application status checks, a new monitoring capability that detects application-level issues such as a stopped web server, a non-running Docker daemon, incorrect networking configurations, or a network interface no longer passing traffic. This complements existing system-level status checks by extending visibility into application-layer failures on EC2 instances.
+
 ## 2026-08-09 · Daily update
 
 - **[Amazon VPC IPAM Now Supports BGP Route Protection Monitoring and Delegated RPKI for BYOIP Prefixes](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-vpc-ipam-bgp-rpki-byoip/)** — Amazon VPC IPAM now supports BGP route protection monitoring and delegated RPKI management for BYOIP prefixes. Network administrators can centrally view RPKI validity status, ROA strength, and route overlap detection across accounts and regions from a single dashboard, while automating ROA management organization-wide.

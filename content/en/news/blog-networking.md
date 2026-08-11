@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-11 · Weekly summary
+
+- **[Building Real-Time Applications with WebSocket Using Amazon VPC Lattice](https://aws.amazon.com/blogs/networking-and-content-delivery/building-real-time-applications-with-websocket-using-amazon-vpc-lattice/)** — This post explores architecture patterns and traffic flows for implementing WebSocket connectivity through Amazon VPC Lattice services with TLS listeners and resources. It covers both East-West (intra-AWS) and North-South (Internet-to-AWS) connectivity scenarios, comparing the tradeoffs to help you choose the right approach for your workload.
+
 ## 2026-08-05 · Weekly summary
 
 - **[Reintroducing Network Firewall Proxy for Secure Egress Connectivity](https://aws.amazon.com/blogs/networking-and-content-delivery/reintroducing-network-firewall-proxy-for-secure-egress-connectivity/)** — AWS Network Firewall is moving toward general availability as an explicit proxy, following customer feedback gathered during the re:Invent 2025 preview. This allows teams to control egress traffic using their existing Network Firewall security policies without managing a separate proxy product.

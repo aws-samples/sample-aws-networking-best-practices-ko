@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-11 · 주간 요약
+
+- **[Amazon VPC Lattice를 활용한 WebSocket 기반 실시간 애플리케이션 구축](https://aws.amazon.com/blogs/networking-and-content-delivery/building-real-time-applications-with-websocket-using-amazon-vpc-lattice/)** — TLS 리스너와 리소스를 갖춘 Amazon VPC Lattice 서비스를 통해 WebSocket 연결을 구현하는 아키텍처 패턴과 트래픽 흐름을 소개합니다. East-West(AWS 내부) 및 North-South(인터넷-AWS 간) 연결 시나리오를 비교하여 워크로드에 적합한 방식을 선택할 수 있도록 트레이드오프를 분석합니다.
+
 ## 2026-08-05 · 주간 요약
 
 - **[보안 아웃바운드 연결을 위한 Network Firewall 프록시 재소개](https://aws.amazon.com/blogs/networking-and-content-delivery/reintroducing-network-firewall-proxy-for-secure-egress-connectivity/)** — AWS Network Firewall이 명시적 프록시로 동작할 수 있는 기능이 re:Invent 2025 프리뷰를 거쳐 정식 출시됩니다. 별도의 프록시 제품 없이 기존 Network Firewall의 모든 보안 정책을 그대로 활용해 아웃바운드 트래픽을 제어할 수 있어 운영 복잡성이 줄어듭니다.
