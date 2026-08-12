@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-12 · Weekly summary
+
+- **[Deployment Models for AWS Network Firewall: Transit Gateway Attachment and Multiple VPC Endpoints](https://aws.amazon.com/blogs/networking-and-content-delivery/deployment-models-for-aws-network-firewall-transit-gateway-attachment-and-multiple-vpc-endpoints/)** — This post explores two key deployment models for AWS Network Firewall—centralized inspection via Transit Gateway attachment and distributed deployment using multiple VPC endpoints—addressing the operational complexity of centralized designs and the cost and management challenges of per-VPC firewall deployments. Practical reference architectures are provided to help customers scale their firewall deployments effectively.
+
 ## 2026-08-11 · Weekly summary
 
 - **[Building Real-Time Applications with WebSocket Using Amazon VPC Lattice](https://aws.amazon.com/blogs/networking-and-content-delivery/building-real-time-applications-with-websocket-using-amazon-vpc-lattice/)** — This post explores architecture patterns and traffic flows for implementing WebSocket connectivity through Amazon VPC Lattice services with TLS listeners and resources. It covers both East-West (intra-AWS) and North-South (Internet-to-AWS) connectivity scenarios, comparing the tradeoffs to help you choose the right approach for your workload.

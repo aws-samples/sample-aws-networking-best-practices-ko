@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-12 · 주간 요약
+
+- **[AWS Network Firewall 배포 모델: Transit Gateway 어태치먼트와 다중 VPC 엔드포인트](https://aws.amazon.com/blogs/networking-and-content-delivery/deployment-models-for-aws-network-firewall-transit-gateway-attachment-and-multiple-vpc-endpoints/)** — AWS Network Firewall의 두 가지 주요 배포 모델—Transit Gateway 어태치먼트를 활용한 중앙 집중식 검사와 다중 VPC 엔드포인트를 활용한 분산형 배포—의 아키텍처 패턴을 소개합니다. 중앙 집중식 모델의 운영 복잡성과 분산형 모델의 비용·관리 부담을 각각 어떻게 완화할 수 있는지 실질적인 참조 아키텍처를 제시합니다.
+
 ## 2026-08-11 · 주간 요약
 
 - **[Amazon VPC Lattice를 활용한 WebSocket 기반 실시간 애플리케이션 구축](https://aws.amazon.com/blogs/networking-and-content-delivery/building-real-time-applications-with-websocket-using-amazon-vpc-lattice/)** — TLS 리스너와 리소스를 갖춘 Amazon VPC Lattice 서비스를 통해 WebSocket 연결을 구현하는 아키텍처 패턴과 트래픽 흐름을 소개합니다. East-West(AWS 내부) 및 North-South(인터넷-AWS 간) 연결 시나리오를 비교하여 워크로드에 적합한 방식을 선택할 수 있도록 트레이드오프를 분석합니다.
