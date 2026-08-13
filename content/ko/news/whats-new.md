@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-13 · 전일 업데이트
+
+- **[AWS Global View, AWS 리전 및 AWS 로컬 존을 위한 인터랙티브 맵 뷰 제공](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-global-view-map-view/)** — AWS Management Console의 AWS Global View에 인터랙티브 맵 뷰가 추가되어, 기존 목록 방식 대신 지도에서 AWS 리전과 로컬 존의 위치를 시각적으로 확인할 수 있게 되었습니다. 이를 통해 고객은 글로벌 AWS 인프라 풋프린트를 보다 직관적으로 파악하고 인프라 배치 결정을 내릴 수 있습니다.
+
 ## 2026-08-11 · 전일 업데이트
 
 - **[Amazon EC2, 애플리케이션 상태 확인 기능 도입](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-application-status-checks)** — Amazon EC2가 인스턴스 내 애플리케이션 수준의 문제를 감지하고 대응할 수 있는 새로운 상태 확인 기능을 출시했습니다. 웹 서버 중단, Docker 데몬 미실행, 잘못된 네트워킹 구성, 트래픽 전달 불가 네트워크 인터페이스 등 애플리케이션 계층 장애를 자동으로 탐지할 수 있어 기존 시스템 수준 상태 확인을 보완합니다.

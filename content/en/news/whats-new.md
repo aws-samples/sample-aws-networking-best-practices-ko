@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-13 · Daily update
+
+- **[AWS Global View Now Offers an Interactive Map View for AWS Regions and AWS Local Zones](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-global-view-map-view/)** — AWS Global View in the AWS Management Console has added an interactive map view, allowing customers to visually explore AWS Regions and AWS Local Zones on a map instead of scrolling through a list. This enhancement makes it easier to understand and manage a global AWS infrastructure footprint at a glance.
+
 ## 2026-08-11 · Daily update
 
 - **[Amazon EC2 Introduces Application Status Checks](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-application-status-checks)** — Amazon EC2 has launched application status checks, a new monitoring capability that detects application-level issues such as a stopped web server, a non-running Docker daemon, incorrect networking configurations, or a network interface no longer passing traffic. This complements existing system-level status checks by extending visibility into application-layer failures on EC2 instances.
