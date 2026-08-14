@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-14 · 전일 업데이트
+
+- **[AWS Client VPN, CLI 지원·관리 제어·빠른 연결 기능 추가](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-client-vpn-cli/)** — AWS VPN Client v6.0.x가 출시되어 CLI 지원, 기업용 관리 제어, 빠른 연결 수립 기능이 추가되었습니다. CLI를 통해 VPN 연결을 자동화 워크플로 및 IaC 배포에 통합할 수 있으며, 기존에는 서드파티 도구가 필요했던 작업을 기본 기능으로 처리할 수 있습니다.
+- **[Spot Placement Score, 로컬 존 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/08/spot-placement-score-local-zones/)** — AWS Spot Placement Score가 이제 로컬 존을 포함한 점수를 제공하여 Spot 용량 요청 성공 가능성이 높은 위치를 더 넓은 범위에서 파악할 수 있습니다. 기존에는 로컬 존 용량 정보가 지역 및 영역 점수에서 제외되었으나, 이제 선택적으로 포함할 수 있습니다.
+- **[AWS Certificate Manager, 이메일에서 DNS 검증 방식으로 전환 지원](https://aws.amazon.com/about-aws/whats-new/2026/08/AWS-Certificate-Manager-Email-DNS-Switch)** — AWS Certificate Manager(ACM)가 기존 공개 TLS 인증서의 도메인 검증 방식을 인증서 재발급이나 ARN 변경 없이 이메일에서 DNS로 전환할 수 있도록 지원합니다. CA/B Forum의 이메일 기반 도메인 검증 폐지 방침에 따라 ACM은 2027년부터 이메일 검증 인증서 발급을 단계적으로 중단할 예정입니다.
+
 ## 2026-08-13 · 전일 업데이트
 
 - **[AWS Global View, AWS 리전 및 AWS 로컬 존을 위한 인터랙티브 맵 뷰 제공](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-global-view-map-view/)** — AWS Management Console의 AWS Global View에 인터랙티브 맵 뷰가 추가되어, 기존 목록 방식 대신 지도에서 AWS 리전과 로컬 존의 위치를 시각적으로 확인할 수 있게 되었습니다. 이를 통해 고객은 글로벌 AWS 인프라 풋프린트를 보다 직관적으로 파악하고 인프라 배치 결정을 내릴 수 있습니다.

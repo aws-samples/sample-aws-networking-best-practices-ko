@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-14 · 주간 요약
+
+- **[CLI 지원 및 관리자 제어 기능을 갖춘 차세대 AWS VPN Client 출시](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-the-next-generation-aws-vpn-client-with-cli-support-and-admin-controls/)** — AWS가 OpenVPN3 기반으로 완전히 재설계한 차세대 AWS VPN Client를 발표했습니다. 완전한 CLI 인터페이스, 엔터프라이즈 관리자 제어 기능을 새롭게 제공하면서 기존 AWS Client VPN 엔드포인트와의 하위 호환성도 유지합니다.
+
 ## 2026-08-12 · 주간 요약
 
 - **[AWS Network Firewall 배포 모델: Transit Gateway 어태치먼트와 다중 VPC 엔드포인트](https://aws.amazon.com/blogs/networking-and-content-delivery/deployment-models-for-aws-network-firewall-transit-gateway-attachment-and-multiple-vpc-endpoints/)** — AWS Network Firewall의 두 가지 주요 배포 모델—Transit Gateway 어태치먼트를 활용한 중앙 집중식 검사와 다중 VPC 엔드포인트를 활용한 분산형 배포—의 아키텍처 패턴을 소개합니다. 중앙 집중식 모델의 운영 복잡성과 분산형 모델의 비용·관리 부담을 각각 어떻게 완화할 수 있는지 실질적인 참조 아키텍처를 제시합니다.

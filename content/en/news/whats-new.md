@@ -8,6 +8,12 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-14 · Daily update
+
+- **[AWS Client VPN Now Supports CLI, Administrative Controls, and Faster Connections](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-client-vpn-cli/)** — AWS VPN Client v6.0.x introduces CLI support with full GUI feature parity, enterprise administrative controls, and faster connection establishment. VPN connectivity can now be scripted directly into automation workflows and infrastructure-as-code deployments without third-party tooling.
+- **[Spot Placement Score Now Includes Local Zones](https://aws.amazon.com/about-aws/whats-new/2026/08/spot-placement-score-local-zones/)** — AWS Spot Placement Score now optionally includes Local Zones in its zonal and regional scoring, giving a broader view of available Spot capacity. Previously, Local Zone capacity was excluded from placement score responses, limiting visibility into capacity options.
+- **[AWS Certificate Manager Supports Switching from Email to DNS Validation](https://aws.amazon.com/about-aws/whats-new/2026/08/AWS-Certificate-Manager-Email-DNS-Switch)** — ACM now allows changing the domain validation method on existing public TLS certificates from email to DNS without reissuing the certificate or modifying its ARN. This change aligns with the CA/B Forum's mandated deprecation of email-based domain validation, with ACM phasing out email validation support throughout 2027.
+
 ## 2026-08-13 · Daily update
 
 - **[AWS Global View Now Offers an Interactive Map View for AWS Regions and AWS Local Zones](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-global-view-map-view/)** — AWS Global View in the AWS Management Console has added an interactive map view, allowing customers to visually explore AWS Regions and AWS Local Zones on a map instead of scrolling through a list. This enhancement makes it easier to understand and manage a global AWS infrastructure footprint at a glance.

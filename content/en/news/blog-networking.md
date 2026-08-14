@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-14 · Weekly summary
+
+- **[Introducing the Next-Generation AWS VPN Client with CLI Support and Admin Controls](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-the-next-generation-aws-vpn-client-with-cli-support-and-admin-controls/)** — AWS has announced a next-generation AWS VPN Client rebuilt from the ground up on OpenVPN3, introducing a fully functional CLI and enterprise administrative controls. The new client maintains full backward compatibility with existing AWS Client VPN endpoints while enabling greater automation and improved security posture for enterprises.
+
 ## 2026-08-12 · Weekly summary
 
 - **[Deployment Models for AWS Network Firewall: Transit Gateway Attachment and Multiple VPC Endpoints](https://aws.amazon.com/blogs/networking-and-content-delivery/deployment-models-for-aws-network-firewall-transit-gateway-attachment-and-multiple-vpc-endpoints/)** — This post explores two key deployment models for AWS Network Firewall—centralized inspection via Transit Gateway attachment and distributed deployment using multiple VPC endpoints—addressing the operational complexity of centralized designs and the cost and management challenges of per-VPC firewall deployments. Practical reference architectures are provided to help customers scale their firewall deployments effectively.
