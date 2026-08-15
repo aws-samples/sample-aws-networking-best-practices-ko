@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-15 · 주간 요약
+
+- **[Amazon VPC Lattice를 활용한 에이전트 AI의 제로 트러스트 네트워킹](https://aws.amazon.com/blogs/networking-and-content-delivery/zero-trust-networking-for-agentic-ai-with-amazon-vpc-lattice/)** — 민감한 데이터가 저장된 프라이빗 Amazon VPC 환경에서 AI 에이전트가 안전하게 데이터에 접근할 수 있도록, Amazon VPC Lattice를 기반으로 한 제로 트러스트 네트워킹 아키텍처 적용 방법을 소개합니다. 기존 네트워킹 방식의 한계를 극복하고 에이전트 AI 워크로드에 적합한 ID 인식 액세스 제어를 구현할 수 있습니다.
+
 ## 2026-08-14 · 주간 요약
 
 - **[CLI 지원 및 관리자 제어 기능을 갖춘 차세대 AWS VPN Client 출시](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-the-next-generation-aws-vpn-client-with-cli-support-and-admin-controls/)** — AWS가 OpenVPN3 기반으로 완전히 재설계한 차세대 AWS VPN Client를 발표했습니다. 완전한 CLI 인터페이스, 엔터프라이즈 관리자 제어 기능을 새롭게 제공하면서 기존 AWS Client VPN 엔드포인트와의 하위 호환성도 유지합니다.

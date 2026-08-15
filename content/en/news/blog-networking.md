@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-15 · Weekly summary
+
+- **[Zero-trust networking for agentic AI with Amazon VPC Lattice](https://aws.amazon.com/blogs/networking-and-content-delivery/zero-trust-networking-for-agentic-ai-with-amazon-vpc-lattice/)** — This post explores how Amazon VPC Lattice can enable AI agents to securely access sensitive data residing in private Amazon VPCs without internet exposure, using a zero-trust networking architecture. It addresses the limitations of traditional networking approaches by implementing identity-aware access control tailored for agentic AI workloads.
+
 ## 2026-08-14 · Weekly summary
 
 - **[Introducing the Next-Generation AWS VPN Client with CLI Support and Admin Controls](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-the-next-generation-aws-vpn-client-with-cli-support-and-admin-controls/)** — AWS has announced a next-generation AWS VPN Client rebuilt from the ground up on OpenVPN3, introducing a fully functional CLI and enterprise administrative controls. The new client maintains full backward compatibility with existing AWS Client VPN endpoints while enabling greater automation and improved security posture for enterprises.
