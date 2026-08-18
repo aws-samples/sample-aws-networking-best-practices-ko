@@ -8,6 +8,13 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-18 · Daily update
+
+- **[Amazon EC2 Auto Scaling Now Supports Batch Instance Termination](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-auto-scaling-batch-termination)** — Amazon EC2 Auto Scaling now allows up to 100 instance IDs to be passed in a single TerminateInstanceInAutoScalingGroup API call, reducing the number of API calls required to scale down. This is particularly beneficial for workloads that need rapid scale-down, such as AI/ML training jobs and event-driven architectures managing large temporary fleets.
+- **[Amazon MSK Now Supports Custom Domain Names for Provisioned Clusters](https://aws.amazon.com/about-aws/whats-new/2026/17/amazon-msk-custom-domain-names/)** — Amazon MSK Provisioned clusters now support cluster-level custom domain name configuration for both ZooKeeper and KRaft metadata modes, eliminating the need to configure each broker individually. This simplifies cluster migrations, disaster recovery failovers, and scaling operations by allowing client applications to retain consistent connection endpoints without reconfiguration.
+- **[AWS Network Firewall Now Supports Stateful Rule Hit Counts](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-network-firewall-stateful-rule-hit-counts/)** — AWS Network Firewall now tracks hit counts for stateful rules, giving network and security administrators visibility into how frequently each rule matches traffic. This enables faster incident response, identification of shadow or redundant rules, and validation of policy changes within firewall policies.
+- **[Amazon OpenSearch Service Now Supports Automatic Semantic Enrichment for VPC Domains](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-opensearch-service-vpc/)** — Amazon OpenSearch Service now extends automatic semantic enrichment to VPC-enabled domains, allowing customers with private network configurations to use AI-powered semantic search without exposing their domains to the public internet. The feature enables context-aware retrieval that understands query intent, returning relevant results even when exact terms are absent from indexed content.
+
 ## 2026-08-14 · Daily update
 
 - **[AWS Client VPN Now Supports CLI, Administrative Controls, and Faster Connections](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-client-vpn-cli/)** — AWS VPN Client v6.0.x introduces CLI support with full GUI feature parity, enterprise administrative controls, and faster connection establishment. VPN connectivity can now be scripted directly into automation workflows and infrastructure-as-code deployments without third-party tooling.

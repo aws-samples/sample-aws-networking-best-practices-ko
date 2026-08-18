@@ -8,6 +8,13 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-18 · 전일 업데이트
+
+- **[Amazon EC2 Auto Scaling, 인스턴스 일괄 종료 지원](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-auto-scaling-batch-termination)** — Amazon EC2 Auto Scaling이 단일 API 호출로 최대 100개의 인스턴스를 일괄 종료하는 기능을 지원합니다. AI/ML 학습 작업이나 이벤트 기반 아키텍처처럼 대규모 플릿을 빠르게 축소해야 하는 워크로드에서 API 호출 횟수를 줄이고 스케일 다운 속도를 높일 수 있습니다.
+- **[Amazon MSK, Provisioned 클러스터에 대한 사용자 지정 도메인 이름 구성 지원](https://aws.amazon.com/about-aws/whats-new/2026/17/amazon-msk-custom-domain-names/)** — Amazon MSK Provisioned 클러스터에서 ZooKeeper 및 KRaft 모드 모두 클러스터 수준의 사용자 지정 도메인 이름을 손쉽게 설정할 수 있게 되었습니다. 이를 통해 클러스터 마이그레이션, 재해 복구 페일오버, 스케일링 시 클라이언트 애플리케이션의 연결 엔드포인트를 재구성 없이 유지할 수 있습니다.
+- **[AWS Network Firewall, 스테이트풀 규칙 적중 횟수 지원](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-network-firewall-stateful-rule-hit-counts/)** — AWS Network Firewall이 스테이트풀 규칙별 적중 횟수를 제공하여 각 규칙이 네트워크 트래픽과 얼마나 자주 매칭되는지 파악할 수 있게 되었습니다. 이를 통해 인시던트 대응 가속화, 중복·미사용 규칙 식별, 정책 변경 검증 등 방화벽 정책 관리를 개선할 수 있습니다.
+- **[Amazon OpenSearch Service, VPC 도메인에 대한 자동 시맨틱 강화 지원](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-opensearch-service-vpc/)** — Amazon OpenSearch Service가 VPC 도메인에서도 자동 시맨틱 강화 기능을 지원하여, 프라이빗 네트워크 환경의 고객이 도메인을 퍼블릭 인터넷에 노출하지 않고도 AI 기반 시맨틱 검색을 활용할 수 있게 되었습니다. 이 기능은 쿼리의 의미를 이해해 키워드 일치 없이도 관련 결과를 반환하는 컨텍스트 인식 검색을 가능하게 합니다.
+
 ## 2026-08-14 · 전일 업데이트
 
 - **[AWS Client VPN, CLI 지원·관리 제어·빠른 연결 기능 추가](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-client-vpn-cli/)** — AWS VPN Client v6.0.x가 출시되어 CLI 지원, 기업용 관리 제어, 빠른 연결 수립 기능이 추가되었습니다. CLI를 통해 VPN 연결을 자동화 워크플로 및 IaC 배포에 통합할 수 있으며, 기존에는 서드파티 도구가 필요했던 작업을 기본 기능으로 처리할 수 있습니다.
