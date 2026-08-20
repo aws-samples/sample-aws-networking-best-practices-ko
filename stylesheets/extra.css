@@ -667,33 +667,25 @@ body[data-md-color-scheme] .md-content__inner > .ko-hero ~ * {
 }
 
 /* =============================================================
-   소식(News) 탭 강조 — 상단 탭바에서 pill + 라이브 점 배지
+   소식(News) 탭 강조 — 텍스트를 AWS Smile Orange로, 우측 상단에
+   깜빡이는 점 배지(매일 갱신 신호). 레이아웃은 다른 탭과 동일 유지.
    소식은 nav의 마지막 항목(sync.py 생성 순서)이므로 :last-child로
    언어(KO/EN/JA) 무관하게 매칭된다. 순서 변경 시 이 규칙도 수정할 것.
    ============================================================= */
 .md-tabs__item:last-child .md-tabs__link {
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 2rem;
-  padding: 0.1rem 0.7rem;
-  margin-top: 0.45rem;
+  color: #ff9900; /* AWS Smile Orange */
   font-weight: 600;
   opacity: 1;
-  transition: background 0.15s ease;
-}
-.md-tabs__item:last-child .md-tabs__link:hover,
-.md-tabs__item:last-child .md-tabs__link--active {
-  background: rgba(255, 255, 255, 0.24);
 }
 .md-tabs__item:last-child .md-tabs__link::after {
   content: "";
   display: inline-block;
-  width: 0.38rem;
-  height: 0.38rem;
-  margin-left: 0.4rem;
+  width: 0.3rem;
+  height: 0.3rem;
+  margin-left: 0.25rem;
   border-radius: 50%;
-  background: #ff9900; /* AWS Smile Orange — 매일 갱신되는 콘텐츠 신호 */
-  vertical-align: 0.06rem;
+  background: #ff9900;
+  vertical-align: 0.5em; /* 우측 상단 배지 위치 */
   animation: news-dot-pulse 2.4s ease-in-out infinite;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -701,5 +693,5 @@ body[data-md-color-scheme] .md-content__inner > .ko-hero ~ * {
 }
 @keyframes news-dot-pulse {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.35; }
+  50% { opacity: 0.3; }
 }
