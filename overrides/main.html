@@ -1,5 +1,13 @@
 {% extends "base.html" %}
 
+<!-- Pretendard 폰트: extra.css의 @import는 sync.py 병합 시 파일 중간에 놓여
+     무시되므로 여기서 <link>로 로드한다 -->
+{% block extrahead %}
+  {{ super() }}
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+{% endblock %}
+
 <!-- 사이트 전역 안내 바: 언어별 분기 (한국어 기본 /, 영어 /en/, 일본어 /ja/) -->
 {% block announce %}
   {% if page and page.url and page.url.startswith('en/') %}
