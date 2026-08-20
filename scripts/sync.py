@@ -19,6 +19,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -64,6 +65,13 @@ EN_COPYRIGHT = (
     'Community mirror of <a href="https://github.com/aws/aws-networking-best-practices" '
     'target="_blank">AWS Networking Best Practices</a>. '
     "&copy; Amazon Web Services, Inc."
+)
+SITE_NAME_JA = "AWS ネットワーキング ベストプラクティス"
+SITE_DESC_JA = "AWS ネットワーキングのアーキテクチャガイダンスとベストプラクティス — 日本語訳"
+JA_COPYRIGHT = (
+    '本サイトは <a href="https://github.com/aws/aws-networking-best-practices" '
+    'target="_blank">AWS Networking Best Practices</a> の日本語訳です。'
+    "原文の著作権 &copy; Amazon Web Services, Inc."
 )
 # HOME_NAV_LABEL, NAV_LABEL_FIX, TERM_NORMALIZE는 glossary.py에서 import (단일 소스)
 
@@ -276,6 +284,7 @@ def build_mkdocs(manifest: dict) -> None:
                 {"AWS What's New": "news/whats-new.md"},
                 {"Networking 블로그 (영문)": "news/blog-networking.md"},
                 {"AWS 한국 기술 블로그": "news/blog-korea.md"},
+                {"AWS Japan 기술 블로그": "news/blog-japan.md"},
             ]
         })
     if (CONTENT_EN / "news" / "whats-new.md").exists():
@@ -284,12 +293,88 @@ def build_mkdocs(manifest: dict) -> None:
                 {"AWS What's New": "news/whats-new.md"},
                 {"Networking Blog": "news/blog-networking.md"},
                 {"AWS Korea Tech Blog": "news/blog-korea.md"},
+                {"AWS Japan Tech Blog": "news/blog-japan.md"},
             ]
         })
 
     cfg = _base_config()
     cfg["nav"] = nav_ko  # 최상위 nav = 기본 언어(한국어)
-    # i18n 플러그인: 한국어(루트 /) 기본, 영어(/en/). 헤더 언어 선택기 자동 생성.
+
+    languages = [
+        {"locale": "ko", "name": "Korean", "default": True, "build": True},
+        {"locale": "en", "name": "English", "build": True,
+         "site_name": SITE_NAME_EN, "site_description": SITE_DESC_EN,
+         "copyright": EN_COPYRIGHT, "nav": nav_en},
+    ]
+    # 일본어(content/ja)가 있으면 ja 로케일 추가(/ja/). 현재 범위: 홈 ~ 관측성(observability).
+    if (CONTENT_ROOT / "ja" / "index.md").exists():
+        nav_ja = [
+            {"ホーム": "index.md"},
+            {"意思決定マップ": "decisions.md"},
+            {"基盤": [
+                "foundation/index.md",
+                {"始める前に": "foundation/aws-prerequisites.md"},
+                {"AWS Organizations": "foundation/organizations.md"},
+                {"Amazon VPC": "foundation/vpc.md"},
+                {"リージョンとアベイラビリティーゾーン": "foundation/regions-azs.md"},
+                {"CIDR 計画": "foundation/cidr.md"},
+                {"サブネット": "foundation/subnets.md"},
+                {"DNS アーキテクチャ": "foundation/dns.md"},
+                {"IPAM": "foundation/ipam.md"},
+            ]},
+            {"接続": [
+                "connectivity/index.md",
+                {"インターネット": "connectivity/internet.md"},
+                {"AWS 内": "connectivity/within-aws.md"},
+                {"ハイブリッド & マルチクラウド": "connectivity/hybrid-multicloud.md"},
+                {"リモートアクセス": "connectivity/remote-access.md"},
+            ]},
+            {"アプリケーションネットワーキング": [
+                "application-networking/index.md",
+                {"ロードバランシング": "application-networking/load-balancing.md"},
+                {"サービス間通信": "application-networking/service-to-service.md"},
+                {"コンテナメッシュ": "application-networking/container-mesh.md"},
+            ]},
+            {"セキュリティ": [
+                "security/index.md",
+                {"境界制御": "security/perimeter-inbound.md"},
+                {"アウトバウンド制御": "security/outbound.md"},
+                {"ネットワークセグメンテーション": "security/segmentation.md"},
+            ]},
+            {"オブザーバビリティ": [
+                "observability/index.md",
+                {"内部トラフィック": "observability/internal-traffic.md"},
+                {"外部トラフィック": "observability/external-traffic.md"},
+                {"AWS サービス": "observability/service-monitoring.md"},
+                {"通知": "observability/notifications.md"},
+            ]},
+            {"コミュニティ": [
+                "community/index.md",
+                {"貢献方法": "community/contribute.md"},
+                {"修正の報告": "community/report-a-correction.md"},
+                {"新しいベストプラクティス": "community/new-best-practice.md"},
+                {"プルリクエストの作成": "community/making-a-pull-request.md"},
+                {"理念": "community/philosophy.md"},
+                {"規約": "community/conventions.md"},
+            ]},
+        ]
+        # 소식(뉴스) 섹션 — 일본어 전용 콘텐츠(content/ja/news)가 있으면 추가
+        if (CONTENT_ROOT / "ja" / "news" / "whats-new.md").exists():
+            nav_ja.append({
+                "ニュース": [
+                    {"AWS What's New": "news/whats-new.md"},
+                    {"Networking ブログ": "news/blog-networking.md"},
+                    {"AWS Korea ブログ": "news/blog-korea.md"},
+                    {"AWS Japan ブログ": "news/blog-japan.md"},
+                ]
+            })
+        languages.append({
+            "locale": "ja", "name": "Japanese", "build": True,
+            "site_name": SITE_NAME_JA, "site_description": SITE_DESC_JA,
+            "copyright": JA_COPYRIGHT, "nav": nav_ja,
+        })
+
+    # i18n 플러그인: 한국어(루트 /) 기본, 영어(/en/), 일본어(/ja/, 샘플). 언어 선택기 자동 생성.
     cfg["plugins"] = [
         "search",
         {
@@ -298,23 +383,7 @@ def build_mkdocs(manifest: dict) -> None:
                 "reconfigure_material": True,
                 "reconfigure_search": True,
                 "fallback_to_default": True,
-                "languages": [
-                    {
-                        "locale": "ko",
-                        "name": "한국어",
-                        "default": True,
-                        "build": True,
-                    },
-                    {
-                        "locale": "en",
-                        "name": "English",
-                        "build": True,
-                        "site_name": SITE_NAME_EN,
-                        "site_description": SITE_DESC_EN,
-                        "copyright": EN_COPYRIGHT,
-                        "nav": nav_en,
-                    },
-                ],
+                "languages": languages,
             }
         },
     ]
@@ -347,7 +416,10 @@ def _base_config() -> dict:
     return {
         "site_name": SITE_NAME,
         "site_description": SITE_DESC,
-        "site_url": "https://aws-samples.github.io/sample-aws-networking-best-practices-ko/",
+        "site_url": os.environ.get(
+            "SITE_URL",
+            "https://aws-samples.github.io/sample-aws-networking-best-practices-ko/",
+        ),
         "repo_name": "GitHub",
         "repo_url": "https://github.com/aws/aws-networking-best-practices/",
         "edit_uri": "",

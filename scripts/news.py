@@ -32,6 +32,7 @@ from glossary import PROMPT_GLOSSARY
 ROOT = Path(__file__).resolve().parent.parent
 NEWS_KO = ROOT / "content" / "ko" / "news"  # 한국어 소식
 NEWS_EN = ROOT / "content" / "en" / "news"  # 영어 소식
+NEWS_JA = ROOT / "content" / "ja" / "news"  # 일본어 소식
 MANIFEST = ROOT / "scripts" / "news-manifest.json"
 INSERT_MARKER = "<!-- NEWS:INSERT -->"
 KST = timezone(timedelta(hours=9))
@@ -39,30 +40,40 @@ KST = timezone(timedelta(hours=9))
 REGION = "us-east-1"
 MODEL_ID = "us.anthropic.claude-sonnet-4-6"
 
+# 각 피드의 "outputs"는 {언어: md경로} — 해당 언어 소식 파일에만 기록한다.
+# 공유 소스(whats-new, blog-networking)는 ko/en/ja 전부, 지역 블로그는 해당 언어만.
 FEEDS = {
     "whats-new": {
         "url": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
-        "md_ko": NEWS_KO / "whats-new.md",
-        "md_en": NEWS_EN / "whats-new.md",
+        "outputs": {"ko": NEWS_KO / "whats-new.md", "en": NEWS_EN / "whats-new.md",
+                    "ja": NEWS_JA / "whats-new.md"},
         "window_days": 2,
         "section_kind": "daily",
         "filter": True,   # 전 서비스 발표 → 네트워킹 키워드로 필터
     },
     "blog-networking": {
         "url": "https://aws.amazon.com/blogs/networking-and-content-delivery/feed/",
-        "md_ko": NEWS_KO / "blog-networking.md",
-        "md_en": NEWS_EN / "blog-networking.md",
+        "outputs": {"ko": NEWS_KO / "blog-networking.md", "en": NEWS_EN / "blog-networking.md",
+                    "ja": NEWS_JA / "blog-networking.md"},
         "window_days": 14,
         "section_kind": "weekly",
         "filter": False,  # 네트워킹 전용 블로그 → 전 글 포함(필터 불필요)
     },
     "blog-korea": {
         "url": "https://aws.amazon.com/ko/blogs/korea/feed/",
-        "md_ko": NEWS_KO / "blog-korea.md",
-        "md_en": NEWS_EN / "blog-korea.md",
+        "outputs": {"ko": NEWS_KO / "blog-korea.md", "en": NEWS_EN / "blog-korea.md",
+                    "ja": NEWS_JA / "blog-korea.md"},
         "window_days": 14,
         "section_kind": "weekly",
-        "filter": True,   # 전 주제 블로그 → 네트워킹 키워드로 필터
+        "filter": True,   # 한국 블로그(전 주제) → 네트워킹 키워드로 필터. 전 언어판에 제공.
+    },
+    "blog-japan": {
+        "url": "https://aws.amazon.com/jp/blogs/news/feed/",
+        "outputs": {"ko": NEWS_KO / "blog-japan.md", "en": NEWS_EN / "blog-japan.md",
+                    "ja": NEWS_JA / "blog-japan.md"},
+        "window_days": 14,
+        "section_kind": "weekly",
+        "filter": True,   # 일본 블로그(전 주제) → 네트워킹 키워드로 필터. 전 언어판에 제공.
     },
 }
 
@@ -77,6 +88,8 @@ NET_KEYWORDS = [
     "vpc peering", "wavelength", "local zone", "dns firewall", "elastic ip",
     "subnet", "cidr", "networking", "cloud map", "network access scope",
     "네트워킹", "로드 밸런", "로드밸런", "트랜짓 게이트웨이", "다이렉트 커넥트",
+    "ネットワーキング", "ロードバラン", "トランジットゲートウェイ", "ダイレクトコネクト",
+    "サブネット", "プライベートリンク",
 ]
 
 _client = boto3.client(
@@ -86,16 +99,18 @@ _client = boto3.client(
 )
 
 SUMMARY_SYSTEM = """\
-당신은 AWS 네트워킹 소식을 한국어와 영어로 간결하게 요약하는 기술 편집자입니다.
+당신은 AWS 네트워킹 소식을 한국어·영어·일본어로 간결하게 요약하는 기술 편집자입니다.
 입력은 RSS 항목 목록(JSON 배열)이며 각 원소는 {"i": 번호, "title": 제목, "desc": 본문요약}입니다.
-각 항목에 대해 다음 네 필드를 생성하세요.
+각 항목에 대해 다음 여섯 필드를 생성하세요.
 - ko_title: 제목을 자연스러운 한국어로. AWS 서비스/제품 고유명사는 영문 유지(Amazon VPC, AWS Transit Gateway 등).
 - summary: 1~2문장의 한국어 요약. 무엇이 새로워졌는지와 네트워킹 관점의 의미를 담되 과장 없이 사실 위주로.
-- en_title: 자연스러운 영어 제목. 원문 제목이 이미 영어면 그대로(고유명사 보존), 한국어면 영어로 번역.
+- en_title: 자연스러운 영어 제목. 원문 제목이 이미 영어면 그대로(고유명사 보존), 아니면 영어로 번역.
 - summary_en: 1~2문장의 영어 요약. ko summary와 동일한 사실을 담되 자연스러운 영어로.
+- ja_title: 자연스러운 일본어 제목. 원문 제목이 이미 일본어면 그대로, 아니면 일본어로 번역. AWS 제품 고유명사는 영문 유지.
+- summary_ja: 1~2문장의 일본어 요약(です・ます체). 반각 영숫자와 일본어 사이에는 반각 스페이스를 넣는다.
 
 출력은 입력과 동일한 순서·개수의 JSON 배열만 반환하세요.
-각 원소는 {"i": 번호, "ko_title": "...", "summary": "...", "en_title": "...", "summary_en": "..."}.
+각 원소는 {"i": 번호, "ko_title": "...", "summary": "...", "en_title": "...", "summary_en": "...", "ja_title": "...", "summary_ja": "..."}.
 설명·머리말·코드펜스 없이 JSON 그 자체만 출력하세요.
 
 """ + PROMPT_GLOSSARY
@@ -173,6 +188,8 @@ def summarize(items: list[dict]) -> list[dict]:
                     "summary": (o.get("summary") or "").strip(),
                     "en_title": (o.get("en_title") or it["title"]).strip(),
                     "summary_en": (o.get("summary_en") or "").strip(),
+                    "ja_title": (o.get("ja_title") or it["title"]).strip(),
+                    "summary_ja": (o.get("summary_ja") or "").strip(),
                 })
             return out
         except Exception as e:  # noqa: BLE001
@@ -182,17 +199,19 @@ def summarize(items: list[dict]) -> list[dict]:
 
 
 def section_heading(kind: str, now_kst: datetime, lang: str) -> str:
-    if lang == "en":
-        label = "Weekly summary" if kind == "weekly" else "Daily update"
-    else:
-        label = "주간 요약" if kind == "weekly" else "전일 업데이트"
-    return f"## {now_kst:%Y-%m-%d} · {label}"
+    labels = {
+        "en": ("Weekly summary", "Daily update"),
+        "ja": ("週次まとめ", "前日のアップデート"),
+        "ko": ("주간 요약", "전일 업데이트"),
+    }
+    weekly, daily = labels.get(lang, labels["ko"])
+    return f"## {now_kst:%Y-%m-%d} · {weekly if kind == 'weekly' else daily}"
 
 
 def render_section(items: list[dict], kind: str, now_kst: datetime, lang: str) -> str:
-    """lang('ko'|'en')에 맞는 제목/요약 필드로 섹션을 렌더링."""
-    title_key = "en_title" if lang == "en" else "ko_title"
-    summary_key = "summary_en" if lang == "en" else "summary"
+    """lang('ko'|'en'|'ja')에 맞는 제목/요약 필드로 섹션을 렌더링."""
+    title_key = {"en": "en_title", "ja": "ja_title"}.get(lang, "ko_title")
+    summary_key = {"en": "summary_en", "ja": "summary_ja"}.get(lang, "summary")
     lines = [section_heading(kind, now_kst, lang), ""]
     for it in sorted(items, key=lambda x: x["dt"] or now_kst, reverse=True):
         s = it.get(summary_key, "")
@@ -222,16 +241,17 @@ def run(source: str) -> int:
     if not items:
         print(f"• [{source}] 새 네트워킹 항목 없음")
         return 0
-    print(f"• [{source}] 새 네트워킹 항목 {len(items)}개 → Bedrock 요약(영/한)")
+    print(f"• [{source}] 새 네트워킹 항목 {len(items)}개 → Bedrock 요약(ko/en/ja)")
     items = summarize(items)
     now_kst = datetime.now(KST)
-    # 한국어·영어 섹션을 각 언어 파일에 삽입
-    prepend_section(feed["md_ko"], render_section(items, feed["section_kind"], now_kst, "ko"))
-    prepend_section(feed["md_en"], render_section(items, feed["section_kind"], now_kst, "en"))
+    # 피드가 대상으로 하는 각 언어 파일에 섹션 삽입
+    for lang, md_path in feed["outputs"].items():
+        prepend_section(md_path, render_section(items, feed["section_kind"], now_kst, lang))
     # manifest 갱신(최근 500개만 유지)
     manifest[source] = ([it["link"] for it in items] + list(seen))[:500]
     save_manifest(manifest)
-    print(f"• [{source}] {len(items)}개 추가 → {feed['md_ko'].relative_to(ROOT)} · {feed['md_en'].relative_to(ROOT)}")
+    outs = " · ".join(str(p.relative_to(ROOT)) for p in feed["outputs"].values())
+    print(f"• [{source}] {len(items)}개 추가 → {outs}")
     return len(items)
 
 

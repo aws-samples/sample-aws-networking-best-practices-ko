@@ -100,7 +100,7 @@ plugins:
     fallback_to_default: true
     languages:
     - locale: ko
-      name: 한국어
+      name: Korean
       default: true
       build: true
     - locale: en
@@ -159,6 +159,63 @@ plugins:
         - AWS What's New: news/whats-new.md
         - Networking Blog: news/blog-networking.md
         - AWS Korea Tech Blog: news/blog-korea.md
+        - AWS Japan Tech Blog: news/blog-japan.md
+    - locale: ja
+      name: Japanese
+      build: true
+      site_name: AWS ネットワーキング ベストプラクティス
+      site_description: AWS ネットワーキングのアーキテクチャガイダンスとベストプラクティス — 日本語訳
+      copyright: 本サイトは <a href="https://github.com/aws/aws-networking-best-practices"
+        target="_blank">AWS Networking Best Practices</a> の日本語訳です。原文の著作権 &copy; Amazon
+        Web Services, Inc.
+      nav:
+      - ホーム: index.md
+      - 意思決定マップ: decisions.md
+      - 基盤:
+        - foundation/index.md
+        - 始める前に: foundation/aws-prerequisites.md
+        - AWS Organizations: foundation/organizations.md
+        - Amazon VPC: foundation/vpc.md
+        - リージョンとアベイラビリティーゾーン: foundation/regions-azs.md
+        - CIDR 計画: foundation/cidr.md
+        - サブネット: foundation/subnets.md
+        - DNS アーキテクチャ: foundation/dns.md
+        - IPAM: foundation/ipam.md
+      - 接続:
+        - connectivity/index.md
+        - インターネット: connectivity/internet.md
+        - AWS 内: connectivity/within-aws.md
+        - ハイブリッド & マルチクラウド: connectivity/hybrid-multicloud.md
+        - リモートアクセス: connectivity/remote-access.md
+      - アプリケーションネットワーキング:
+        - application-networking/index.md
+        - ロードバランシング: application-networking/load-balancing.md
+        - サービス間通信: application-networking/service-to-service.md
+        - コンテナメッシュ: application-networking/container-mesh.md
+      - セキュリティ:
+        - security/index.md
+        - 境界制御: security/perimeter-inbound.md
+        - アウトバウンド制御: security/outbound.md
+        - ネットワークセグメンテーション: security/segmentation.md
+      - オブザーバビリティ:
+        - observability/index.md
+        - 内部トラフィック: observability/internal-traffic.md
+        - 外部トラフィック: observability/external-traffic.md
+        - AWS サービス: observability/service-monitoring.md
+        - 通知: observability/notifications.md
+      - コミュニティ:
+        - community/index.md
+        - 貢献方法: community/contribute.md
+        - 修正の報告: community/report-a-correction.md
+        - 新しいベストプラクティス: community/new-best-practice.md
+        - プルリクエストの作成: community/making-a-pull-request.md
+        - 理念: community/philosophy.md
+        - 規約: community/conventions.md
+      - ニュース:
+        - AWS What's New: news/whats-new.md
+        - Networking ブログ: news/blog-networking.md
+        - AWS Korea ブログ: news/blog-korea.md
+        - AWS Japan ブログ: news/blog-japan.md
 nav:
 - HOME: index.md
 - 의사결정 맵: decisions.md
@@ -206,3 +263,4 @@ nav:
   - AWS What's New: news/whats-new.md
   - Networking 블로그 (영문): news/blog-networking.md
   - AWS 한국 기술 블로그: news/blog-korea.md
+  - AWS Japan 기술 블로그: news/blog-japan.md
