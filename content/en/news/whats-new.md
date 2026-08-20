@@ -8,6 +8,11 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-20 · Daily update
+
+- **[AWS Marketplace Launches Support for Amazon Lightsail](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-marketplace-launch-ami-amazon-lightsail)** — AWS Marketplace now supports deploying select AMIs directly on Amazon Lightsail, enabling customers to launch Marketplace workloads with Lightsail's simple, fixed-price bundles that include compute, storage, and data transfer allowance.
+- **[AWS Storage Gateway Now Supports FIPS-Compliant Private Connectivity for Tape and Volume Gateway](https://aws.amazon.com/about-aws/whats-new/2026/08/storage-gateway-fips-privatelink/)** — AWS Storage Gateway now supports FIPS 140-3 validated endpoints over AWS PrivateLink for Tape Gateway and Volume Gateway, allowing FIPS-compliant traffic to remain on the private AWS network via an interface VPC endpoint instead of traversing the public internet.
+
 ## 2026-08-18 · Daily update
 
 - **[Amazon EC2 Auto Scaling Now Supports Batch Instance Termination](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-auto-scaling-batch-termination)** — Amazon EC2 Auto Scaling now allows up to 100 instance IDs to be passed in a single TerminateInstanceInAutoScalingGroup API call, reducing the number of API calls required to scale down. This is particularly beneficial for workloads that need rapid scale-down, such as AI/ML training jobs and event-driven architectures managing large temporary fleets.

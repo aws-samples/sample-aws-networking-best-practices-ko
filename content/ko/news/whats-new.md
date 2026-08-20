@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-20 · 전일 업데이트
+
+- **[AWS Marketplace, Amazon Lightsail 지원 시작](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-marketplace-launch-ami-amazon-lightsail)** — AWS Marketplace에서 선택된 AMI를 Amazon Lightsail에 바로 배포할 수 있게 되었습니다. 고정 월정액으로 컴퓨팅·스토리지·데이터 전송을 제공하는 Lightsail의 간편한 인스턴스 생성 경험과 Marketplace AMI를 결합해 애플리케이션 배포가 더욱 쉬워졌습니다.
+- **[AWS Storage Gateway, Tape 및 Volume Gateway에 FIPS 준수 프라이빗 연결 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/08/storage-gateway-fips-privatelink/)** — AWS Storage Gateway의 Tape Gateway와 Volume Gateway가 AWS PrivateLink를 통해 FIPS 140-3 검증 엔드포인트를 지원하게 되었습니다. 이제 FIPS 준수 트래픽을 퍼블릭 인터넷 대신 VPC 내 인터페이스 VPC 엔드포인트를 통해 프라이빗 AWS 네트워크로 유지할 수 있어 규제 대상 워크로드에서의 활용이 용이해졌습니다.
+
 ## 2026-08-18 · 전일 업데이트
 
 - **[Amazon EC2 Auto Scaling, 인스턴스 일괄 종료 지원](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-auto-scaling-batch-termination)** — Amazon EC2 Auto Scaling이 단일 API 호출로 최대 100개의 인스턴스를 일괄 종료하는 기능을 지원합니다. AI/ML 학습 작업이나 이벤트 기반 아키텍처처럼 대규모 플릿을 빠르게 축소해야 하는 워크로드에서 API 호출 횟수를 줄이고 스케일 다운 속도를 높일 수 있습니다.
