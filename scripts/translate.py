@@ -61,13 +61,56 @@ SYSTEM_PROMPT = """\
 출력은 번역된 Markdown **본문만** 출력합니다. 설명, 머리말, 코드펜스 감싸기 없이 변환된 내용 그 자체만 반환하세요."""
 
 
-def _converse(text: str) -> str:
+# 일본어 베이스라인 프롬프트. JP 팀의 상세 프롬프트/용어집으로 교체 가능(모듈식).
+SYSTEM_PROMPT_JA = """\
+あなたは AWS ネットワーキングの技術文書を英語から日本語へ翻訳するプロの翻訳者です。
+入力は MkDocs Material でレンダリングされる Markdown です。次のルールを**厳守**してください。
+
+[翻訳対象 — 自然な日本語に翻訳]
+- 本文の散文、見出し(heading)テキスト、リスト項目のテキスト
+- admonition のタイトル引用符内テキスト: `!!! note "ここ"` の「ここ」
+- grid cards / 表(table)の人間が読むテキスト
+- `/// caption` ブロック内のキャプション文
+- 画像の代替テキスト `![ここ](パス)` の「ここ」
+- リンクの表示テキスト `[ここ](パス)` の「ここ」(ただしパスは絶対に変更しない)
+
+[絶対保持 — 原文のまま維持]
+- YAML frontmatter(--- ... ---)のキーと構造
+- コードブロック(``` ```)、インラインコード(`code`)の内容
+- mermaid 図ブロック内部のコード/ノードID/ラベル構文(ラベル内の英語テキストもそのまま)
+- すべての URL・ファイルパス・アンカー(.md, #anchor, ../assets/...) — 一文字も変更しない
+- Material アイコン/絵文字ショートコード: `:material-...:`, `:octicons-...:`, `:fontawesome-...:`
+- HTML タグとその属性/class(例: `<div class="grid cards" markdown>`)
+- admonition タイプのキーワード(note, info, tip, warning, danger, example など)は英語のまま
+- `/// ... ///`、`--8<--` スニペット、`*[ABBR]:` 略語定義の略語キー
+- Markdown 構造文字(#, *, -, >, |, インデント, 改行, 空行)を原文と同一に維持
+
+[翻訳スタイル]
+- AWS のサービス/製品固有名は英語のまま維持: Amazon VPC, AWS Transit Gateway, Elastic Load Balancing, PrivateLink など
+- 技術用語は日本の IT 業界の慣例に従う。初出の重要用語は「日本語(English)」の併記可
+- 丁寧で簡潔な技術文書体(です・ます調)。直訳調を避け、自然な日本語にする
+- 略語定義 `*[VPC]: Virtual Private Cloud` はキー([VPC])を維持し説明を日本語に: `*[VPC]: 仮想プライベートクラウド(Virtual Private Cloud)`
+
+[表記ルール — 文書全体で一貫して適用]
+- 半角の英数字と日本語の間には半角スペースを 1 つ入れ、文書全体で統一する。
+  例: 「AWS の VPC」「/16 は 65,536 アドレス」「IP アドレス」「本番 VPC」「EKS ポッド」「セカンダリ CIDR」
+- ただし、コード/インラインコード/URL/パスの内部、および句読点(、。)や括弧「」()に隣接する箇所には適用しない。
+- 同一の原語には同一の訳語・表記を用い、セクションごとに表記がぶれないようにする。
+
+出力は翻訳後の Markdown **本文のみ**。説明・前置き・コードフェンスで囲まずに、変換後の内容そのものだけを返してください。"""
+
+
+SYSTEM_PROMPTS = {"ko": SYSTEM_PROMPT, "ja": SYSTEM_PROMPT_JA}
+
+
+def _converse(text: str, lang: str = "ko") -> str:
+    system = SYSTEM_PROMPTS.get(lang, SYSTEM_PROMPT)
     last_err = None
     for attempt in range(4):
         try:
             resp = _client.converse(
                 modelId=MODEL_ID,
-                system=[{"text": SYSTEM_PROMPT}],
+                system=[{"text": system}],
                 messages=[{"role": "user", "content": [{"text": text}]}],
                 inferenceConfig={"maxTokens": MAX_TOKENS, "temperature": 0},
             )
@@ -99,12 +142,12 @@ def _split_h2_fence_aware(md: str) -> list[str]:
     return chunks
 
 
-def translate_markdown(md: str) -> str:
-    """마크다운 문자열을 한국어로 번역해 반환."""
+def translate_markdown(md: str, lang: str = "ko") -> str:
+    """마크다운 문자열을 대상 언어(lang: 'ko'|'ja')로 번역해 반환."""
     if not md.strip():
         return md
     if len(md) <= CHUNK_THRESHOLD:
-        return _converse(md).rstrip("\n") + "\n"
+        return _converse(md, lang).rstrip("\n") + "\n"
 
     parts = _split_h2_fence_aware(md)
     out: list[str] = []
@@ -112,7 +155,7 @@ def translate_markdown(md: str) -> str:
         if not part.strip():
             out.append(part)
             continue
-        out.append(_converse(part).rstrip("\n"))
+        out.append(_converse(part, lang).rstrip("\n"))
     return "\n\n".join(out).rstrip("\n") + "\n"
 
 

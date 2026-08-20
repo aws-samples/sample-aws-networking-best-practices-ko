@@ -51,6 +51,7 @@ jobs:
           python scripts/news.py --source whats-new
           python scripts/news.py --source blog-networking
           python scripts/news.py --source blog-korea
+          python scripts/news.py --source blog-japan
 
       - name: Commit news
         run: |

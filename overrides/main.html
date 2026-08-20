@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 
-<!-- 사이트 전역 안내 바: 언어별 분기 (한국어 기본, 영어는 /en/) -->
+<!-- 사이트 전역 안내 바: 언어별 분기 (한국어 기본 /, 영어 /en/, 일본어 /ja/) -->
 {% block announce %}
   {% if page and page.url and page.url.startswith('en/') %}
     Community mirror of
     <a href="https://aws.github.io/aws-networking-best-practices/" target="_blank" rel="noopener">
       AWS Networking Best Practices</a>
     · a <strong>Korean translation</strong> is available — use the language switcher in the header
+  {% elif page and page.url and page.url.startswith('ja/') %}
+    本コンテンツは<strong>AIによる機械翻訳</strong>です。正確な情報は
+    <a href="https://aws.github.io/aws-networking-best-practices/" target="_blank" rel="noopener">英語の原文</a>
+    をご参照ください
   {% else %}
     이 사이트는
     <a href="https://aws.github.io/aws-networking-best-practices/" target="_blank" rel="noopener">
@@ -16,8 +20,10 @@
 {% endblock %}
 
 {% block content %}
-  {% set is_ko = not (page and page.url and page.url.startswith('en/')) %}
-  {% set is_home = page.is_homepage or (page.url and page.url.rstrip('/') == 'en') %}
+  {% set is_en = page and page.url and page.url.startswith('en/') %}
+  {% set is_ja = page and page.url and page.url.startswith('ja/') %}
+  {% set is_ko = not is_en and not is_ja %}
+  {% set is_home = page.is_homepage or (page.url and page.url.rstrip('/') in ['en', 'ja']) %}
   {% if is_home %}
   <!-- 홈 = 포털: 컴팩트 히어로 + 핵심 영역 카드 (번역된 본문은 렌더하지 않음) -->
   <section class="ko-hero ko-hero--compact">
@@ -70,26 +76,34 @@
       </svg>
     </div>
     <div class="ko-hero__inner">
-      {% if is_ko %}
-      <p class="ko-hero__eyebrow">AWS NETWORKING BEST PRACTICES · 한국어판</p>
-      <h1 class="ko-hero__title">AWS 네트워킹 베스트 프랙티스</h1>
-      <p class="ko-hero__subtitle ko-hero__subtitle--lead">운영 우수성 · 보안 · 안정성 · 성능 효율성 · 비용 최적화를 아우르는 AWS 네트워킹 아키텍처 가이드.</p>
-      <p class="ko-hero__subtitle ko-hero__subtitle--sub">여기저기 흩어진 모범 사례를 한곳에 모았습니다.</p>
-      {% else %}
+      {% if is_ja %}
+      <p class="ko-hero__eyebrow">AWS NETWORKING BEST PRACTICES · 日本語版</p>
+      <h1 class="ko-hero__title">AWS ネットワーキング ベストプラクティス</h1>
+      <p class="ko-hero__subtitle ko-hero__subtitle--lead">運用上の優秀性・セキュリティ・信頼性・パフォーマンス効率・コスト最適化を網羅する AWS ネットワーキングのアーキテクチャガイド。</p>
+      <p class="ko-hero__subtitle ko-hero__subtitle--sub">散在するベストプラクティスを一箇所に集めました。</p>
+      {% elif is_en %}
       <p class="ko-hero__eyebrow">AWS NETWORKING BEST PRACTICES</p>
       <h1 class="ko-hero__title">AWS Networking Best Practices</h1>
       <p class="ko-hero__subtitle ko-hero__subtitle--lead">AWS networking architecture guidance spanning operational excellence, security, reliability, performance efficiency, and cost optimization.</p>
       <p class="ko-hero__subtitle ko-hero__subtitle--sub">Scattered best practices, gathered in one place.</p>
+      {% else %}
+      <p class="ko-hero__eyebrow">AWS NETWORKING BEST PRACTICES · 한국어판</p>
+      <h1 class="ko-hero__title">AWS 네트워킹 베스트 프랙티스</h1>
+      <p class="ko-hero__subtitle ko-hero__subtitle--lead">운영 우수성 · 보안 · 안정성 · 성능 효율성 · 비용 최적화를 아우르는 AWS 네트워킹 아키텍처 가이드.</p>
+      <p class="ko-hero__subtitle ko-hero__subtitle--sub">여기저기 흩어진 모범 사례를 한곳에 모았습니다.</p>
       {% endif %}
       <!-- 실제 Material 검색이 여기로 이동된다(아래 스크립트). instant 비활성화로 안전. -->
       <div class="ko-hero__search" data-ko-search-slot></div>
       <div class="ko-hero__actions">
-        {% if is_ko %}
-        <a class="ko-btn ko-btn--primary" href="foundation/">기초부터 시작하기 →</a>
-        <a class="ko-btn ko-btn--ghost" href="decisions/">의사결정 맵 둘러보기</a>
-        {% else %}
+        {% if is_ja %}
+        <a class="ko-btn ko-btn--primary" href="foundation/">基盤から始める →</a>
+        <a class="ko-btn ko-btn--ghost" href="decisions/">意思決定マップを見る</a>
+        {% elif is_en %}
         <a class="ko-btn ko-btn--primary" href="foundation/">Start with the foundations →</a>
         <a class="ko-btn ko-btn--ghost" href="decisions/">Explore the decision map</a>
+        {% else %}
+        <a class="ko-btn ko-btn--primary" href="foundation/">기초부터 시작하기 →</a>
+        <a class="ko-btn ko-btn--ghost" href="decisions/">의사결정 맵 둘러보기</a>
         {% endif %}
       </div>
     </div>
@@ -98,35 +112,44 @@
   <!-- 핵심 영역 카드 (히어로 바로 아래) — 언어별 텍스트 분기 -->
   {% set cards = [
     {'href': 'decisions/', 'icon': 'map-marker-path', 'accent': true,
-     'en': 'Decision Map', 'ko': '의사결정 맵',
+     'en': 'Decision Map', 'ko': '의사결정 맵', 'ja': '意思決定マップ',
      'd_ko': '목표를 권장 서비스 · 패턴 · 트레이드오프에 바로 연결',
-     'd_en': 'Map your goals straight to recommended services, patterns, and trade-offs'},
+     'd_en': 'Map your goals straight to recommended services, patterns, and trade-offs',
+     'd_ja': '目標を推奨サービス・パターン・トレードオフに直接マッピング'},
     {'href': 'foundation/', 'icon': 'server-network', 'accent': false,
-     'en': 'Foundation', 'ko': '기반',
+     'en': 'Foundation', 'ko': '기반', 'ja': '基盤',
      'd_ko': 'VPC · 서브넷 · 라우팅 등 AWS 네트워킹의 핵심 인프라와 필수 개념',
-     'd_en': 'Core infrastructure and essential concepts: VPC, subnets, routing, and more'},
+     'd_en': 'Core infrastructure and essential concepts: VPC, subnets, routing, and more',
+     'd_ja': 'VPC・サブネット・ルーティングなど AWS ネットワーキングの中核インフラと必須概念'},
     {'href': 'connectivity/', 'icon': 'lan-connect', 'accent': false,
-     'en': 'Connectivity', 'ko': '연결',
+     'en': 'Connectivity', 'ko': '연결', 'ja': '接続',
      'd_ko': '인터넷 액세스, AWS 내부 연결, 하이브리드·멀티 클라우드 네트워킹',
-     'd_en': 'Internet access, within-AWS connectivity, hybrid and multi-cloud networking'},
+     'd_en': 'Internet access, within-AWS connectivity, hybrid and multi-cloud networking',
+     'd_ja': 'インターネットアクセス、AWS 内接続、ハイブリッド・マルチクラウドネットワーキング'},
     {'href': 'application-networking/', 'icon': 'application-outline', 'accent': false,
-     'en': 'Application Networking', 'ko': '애플리케이션 네트워킹',
+     'en': 'Application Networking', 'ko': '애플리케이션 네트워킹', 'ja': 'アプリケーションネットワーキング',
      'd_ko': '로드 밸런싱, 서비스 간 통신, 컨테이너 메시 네트워킹',
-     'd_en': 'Load balancing, service-to-service communication, container mesh networking'},
+     'd_en': 'Load balancing, service-to-service communication, container mesh networking',
+     'd_ja': 'ロードバランシング、サービス間通信、コンテナメッシュネットワーキング'},
     {'href': 'security/', 'icon': 'shield-lock-outline', 'accent': false,
-     'en': 'Security', 'ko': '보안',
+     'en': 'Security', 'ko': '보안', 'ja': 'セキュリティ',
      'd_ko': '심층 방어, 액세스 제어, 위협 방지를 통한 네트워크 보호',
-     'd_en': 'Protect your network with defense in depth, access control, and threat prevention'},
+     'd_en': 'Protect your network with defense in depth, access control, and threat prevention',
+     'd_ja': '多層防御、アクセス制御、脅威防止によるネットワーク保護'},
     {'href': 'observability/', 'icon': 'chart-timeline-variant', 'accent': false,
-     'en': 'Observability', 'ko': '관측성',
+     'en': 'Observability', 'ko': '관측성', 'ja': 'オブザーバビリティ',
      'd_ko': '네트워크 모니터링, 연결 문제 해결, 가시성 확보',
-     'd_en': 'Network monitoring, connectivity troubleshooting, and visibility'}
+     'd_en': 'Network monitoring, connectivity troubleshooting, and visibility',
+     'd_ja': 'ネットワーク監視、接続のトラブルシューティング、可視性の確保'}
   ] %}
-  <section class="ko-home-cards" aria-label="{{ '핵심 영역' if is_ko else 'Key areas' }}">
+  <section class="ko-home-cards" aria-label="{{ '핵심 영역' if is_ko else ('主要領域' if is_ja else 'Key areas') }}">
     {% for c in cards %}
     <a class="ko-card{{ ' ko-card--accent' if c.accent else '' }}" href="{{ c.href }}">
       <span class="ko-card__icon">{% include ".icons/material/" ~ c.icon ~ ".svg" %}</span>
-      {% if is_ko %}
+      {% if is_ja %}
+      <span class="ko-card__title">{{ c.ja }}</span>
+      <span class="ko-card__desc">{{ c.d_ja }}</span>
+      {% elif is_ko %}
       <span class="ko-card__title">{{ c.ko }} <em>{{ c.en }}</em></span>
       <span class="ko-card__desc">{{ c.d_ko }}</span>
       {% else %}

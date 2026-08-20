@@ -27,7 +27,7 @@
                 {% for child in nav_item.children %}
                   <li role="none">
                     {% if child.is_index %}
-                      <a role="menuitem" href="{{ child.url | url }}">{{ '개요' if config.theme.language == 'ko' else 'Overview' }}</a>{# nosemgrep: generic.html-templates.security.var-in-href #}
+                      <a role="menuitem" href="{{ child.url | url }}">{{ '개요' if config.theme.language == 'ko' else ('概要' if config.theme.language == 'ja' else 'Overview') }}</a>{# nosemgrep: generic.html-templates.security.var-in-href #}
                     {% elif child.children %}
                       <a role="menuitem" href="{{ (child.children | first).url | url }}">{{ child.title }}</a>{# nosemgrep: generic.html-templates.security.var-in-href #}
                     {% else %}
