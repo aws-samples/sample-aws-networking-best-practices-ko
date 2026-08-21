@@ -8,6 +8,13 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-21 · 前日のアップデート
+
+- **[ラスベガス（ネバダ州）に新しい AWS Local Zone が一般提供開始](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-local-zones-las-vegas-nevada/)** — AWS は米国ネバダ州ラスベガスに新しい AWS Local Zone を一般提供開始しました。この Local Zone は Amazon EC2 C7i/M7i/R7i/C8gn インスタンス、Amazon EBS、Amazon ECS、Amazon EKS、Application Load Balancer、AWS Direct Connect をサポートし、大都市圏のユーザーに低レイテンシーのコンピューティングおよびネットワーキングサービスを提供します。
+- **[Amazon EC2 P6-B300 インスタンスがアジアパシフィック（ソウル）リージョンで利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-p6-b300/)** — Amazon EC2 P6-B300 インスタンスがアジアパシフィック（ソウル）リージョンで利用可能になりました。6.4 Tbps の EFA ネットワーキングと 300 Gbps の専用 ENA スループットを備え、P6-B200 比で 2 倍のネットワーキング帯域幅を提供するため、大規模な基盤モデルや LLM のトレーニング・推論ワークロードに適しています。
+- **[Amazon CloudFront が Amazon S3 Multi-Region Access Points の Origin Access Control（OAC）をサポート](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-cloudfront-oac-s3-mrap)** — Amazon CloudFront が Amazon S3 Multi-Region Access Points（MRAP）に対する Origin Access Control（OAC）をサポートしました。これにより、顧客は SigV4a 署名を手動で処理することなく、指定した CloudFront ディストリビューションからのみ MRAP オリジンへのアクセスを制限でき、グローバル分散コンテンツ配信のセキュリティと運用性が向上します。
+- **[AWS Direct Connect がインバウンドプレフィックス制御と大規模プレフィックススケールをサポート](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-direct-connect-new-prefix-controls)** — AWS Direct Connect にインバウンドプレフィックス制御機能が追加され、プライベートおよびトランジット仮想インターフェース（VIF）で IPv4・IPv6 それぞれ最大 1,000 個のルートプレフィックスを許可できるようになりました。従来の上限 100 個による経路要約などの回避策が不要となり、大規模なオンプレミスネットワーク環境での運用が大幅に簡素化されます。
+
 ## 2026-06-30 · 日次アップデート
 
 - **[Amazon MWAA Serverless が共有 VPC 構成をサポート](https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-mwaa-serverless-vpc/)** — Amazon MWAA Serverless が AWS RAM 経由で共有された VPC サブネットをサポートするようになりました。これにより、共有 VPC 環境でのワークフロー作成をブロックしていたバリデーションエラーが解消されます。マルチアカウントのランディングゾーンアーキテクチャで集中型ネットワーキングを採用している組織が、MWAA Provisioned 環境と同様に、共有サブネット上に MWAA Serverless ワークフローをデプロイできるようになります。

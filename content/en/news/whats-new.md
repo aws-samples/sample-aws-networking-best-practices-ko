@@ -8,6 +8,13 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-21 · Daily update
+
+- **[AWS announces general availability of a new AWS Local Zone in Las Vegas, Nevada](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-local-zones-las-vegas-nevada/)** — AWS has launched a new AWS Local Zone in Las Vegas, Nevada, now generally available. The zone supports Amazon EC2 C7i/M7i/R7i/C8gn instances, Amazon EBS, Amazon ECS, Amazon EKS, Application Load Balancer, and AWS Direct Connect, bringing low-latency compute and networking closer to users in the Las Vegas metropolitan area.
+- **[Amazon EC2 P6-B300 instances are now available in the Asia Pacific (Seoul) Region](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-p6-b300/)** — Amazon EC2 P6-B300 instances are now available in the Asia Pacific (Seoul) Region, featuring 6.4 Tbps EFA networking and 300 Gbps dedicated ENA throughput. Compared to P6-B200 instances, they deliver 2x networking bandwidth, making them well suited for training and deploying large-scale foundation models and LLMs.
+- **[Amazon CloudFront now supports Origin Access Control (OAC) for Amazon S3 Multi-Region Access Points](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-cloudfront-oac-s3-mrap)** — Amazon CloudFront now supports Origin Access Control (OAC) for Amazon S3 Multi-Region Access Points (MRAP), allowing customers to restrict origin access exclusively to designated CloudFront distributions without manually computing SigV4a authorization headers. This simplifies security configuration for globally distributed content delivery using MRAP.
+- **[AWS Direct Connect introduces inbound prefix controls and higher prefix scale](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-direct-connect-new-prefix-controls)** — AWS Direct Connect now supports inbound prefix controls, allowing customers to allocate up to 1,000 IPv4 and 1,000 IPv6 route prefixes per VIF on private and transit virtual interfaces—up from the previous limit of 100. This eliminates the need for workarounds such as route summarization for large or growing on-premises networks connecting to AWS.
+
 ## 2026-08-20 · Daily update
 
 - **[AWS Marketplace Launches Support for Amazon Lightsail](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-marketplace-launch-ami-amazon-lightsail)** — AWS Marketplace now supports deploying select AMIs directly on Amazon Lightsail, enabling customers to launch Marketplace workloads with Lightsail's simple, fixed-price bundles that include compute, storage, and data transfer allowance.

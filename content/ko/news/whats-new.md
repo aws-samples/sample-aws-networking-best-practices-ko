@@ -8,6 +8,13 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-21 · 전일 업데이트
+
+- **[라스베이거스, 네바다주 신규 AWS Local Zone 일반 출시 발표](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-local-zones-las-vegas-nevada/)** — AWS가 미국 라스베이거스, 네바다주에 새로운 AWS Local Zone을 일반 출시했습니다. 이 로컬 존은 Amazon EC2 C7i/M7i/R7i/C8gn 인스턴스, Amazon EBS, Amazon ECS, Amazon EKS, Application Load Balancer, AWS Direct Connect를 지원하여 해당 대도시권 사용자에게 낮은 지연 시간의 컴퓨팅·네트워킹 서비스를 제공합니다.
+- **[Amazon EC2 P6-B300 인스턴스, 아시아 태평양(서울) 리전에서 출시](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-p6-b300/)** — Amazon EC2 P6-B300 인스턴스가 아시아 태평양(서울) 리전에서 사용 가능해졌습니다. 이 인스턴스는 6.4 Tbps EFA 네트워킹과 300 Gbps 전용 ENA 처리량을 제공하며, P6-B200 대비 2배의 네트워킹 대역폭을 갖춰 대규모 파운데이션 모델 학습 및 추론 워크로드에 적합합니다.
+- **[Amazon CloudFront, Amazon S3 Multi-Region Access Points에 대한 Origin Access Control(OAC) 지원](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-cloudfront-oac-s3-mrap)** — Amazon CloudFront가 Amazon S3 Multi-Region Access Points(MRAP)에 대해 Origin Access Control(OAC)을 지원하기 시작했습니다. 이를 통해 고객은 별도의 SigV4a 서명 처리 없이 지정된 CloudFront 배포에서만 MRAP 오리진에 액세스하도록 제한할 수 있어, 글로벌 분산 콘텐츠 제공의 보안과 운영 편의성이 향상됩니다.
+- **[AWS Direct Connect, 인바운드 프리픽스 제어 및 더 높은 프리픽스 규모 지원 도입](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-direct-connect-new-prefix-controls)** — AWS Direct Connect가 인바운드 프리픽스 제어 기능을 도입하여 프라이빗 및 트랜짓 가상 인터페이스(VIF)에서 IPv4·IPv6 각각 최대 1,000개의 경로 프리픽스를 허용합니다. 기존 최대 100개 제한으로 인해 경로 요약 등의 우회 설계가 필요했던 대규모 온프레미스 네트워크 환경에서 운영 복잡성이 크게 줄어들 것으로 기대됩니다.
+
 ## 2026-08-20 · 전일 업데이트
 
 - **[AWS Marketplace, Amazon Lightsail 지원 시작](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-marketplace-launch-ami-amazon-lightsail)** — AWS Marketplace에서 선택된 AMI를 Amazon Lightsail에 바로 배포할 수 있게 되었습니다. 고정 월정액으로 컴퓨팅·스토리지·데이터 전송을 제공하는 Lightsail의 간편한 인스턴스 생성 경험과 Marketplace AMI를 결합해 애플리케이션 배포가 더욱 쉬워졌습니다.
