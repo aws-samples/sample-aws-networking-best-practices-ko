@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-22 · 주간 요약
+
+- **[NEL로 클라이언트 측 네트워크 장애에 대한 관측성 확보하기](https://aws.amazon.com/blogs/networking-and-content-delivery/gain-visibility-into-client-side-network-failures-with-nel/)** — NEL(Network Error Logging)을 활용하면 DNS 해석 실패, TCP 타임아웃 등 서버 로그에 남지 않는 클라이언트 측 네트워크 장애를 수집·분석할 수 있습니다. CDN 환경에서 특정 오리진에 귀속하기 어려운 연결 문제를 파악하는 데 네트워킹 관측성 측면에서 실질적인 도움이 됩니다.
+
 ## 2026-08-15 · 주간 요약
 
 - **[Amazon VPC Lattice를 활용한 에이전트 AI의 제로 트러스트 네트워킹](https://aws.amazon.com/blogs/networking-and-content-delivery/zero-trust-networking-for-agentic-ai-with-amazon-vpc-lattice/)** — 민감한 데이터가 저장된 프라이빗 Amazon VPC 환경에서 AI 에이전트가 안전하게 데이터에 접근할 수 있도록, Amazon VPC Lattice를 기반으로 한 제로 트러스트 네트워킹 아키텍처 적용 방법을 소개합니다. 기존 네트워킹 방식의 한계를 극복하고 에이전트 AI 워크로드에 적합한 ID 인식 액세스 제어를 구현할 수 있습니다.

@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-22 · 前日のアップデート
+
+- **[Amazon EC2 C8gd、M8gd、R8gd インスタンスが追加の AWS リージョンで利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-c8gd-m8gd/)** — Amazon EC2 C8gd、M8gd、R8gd インスタンスが、アジアパシフィック（シンガポール）、メキシコ（中部）、アジアパシフィック（メルボルン）、ヨーロッパ（チューリッヒ）などの追加リージョンで利用可能になりました。 AWS Graviton4 プロセッサを搭載し、最大 11.4 TB のローカル NVMe SSD ストレージを備え、Graviton3 ベースのインスタンスと比較して最大 30% 高いパフォーマンスを提供します。
+
 ## 2026-08-21 · 前日のアップデート
 
 - **[ラスベガス（ネバダ州）に新しい AWS Local Zone が一般提供開始](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-local-zones-las-vegas-nevada/)** — AWS は米国ネバダ州ラスベガスに新しい AWS Local Zone を一般提供開始しました。この Local Zone は Amazon EC2 C7i/M7i/R7i/C8gn インスタンス、Amazon EBS、Amazon ECS、Amazon EKS、Application Load Balancer、AWS Direct Connect をサポートし、大都市圏のユーザーに低レイテンシーのコンピューティングおよびネットワーキングサービスを提供します。

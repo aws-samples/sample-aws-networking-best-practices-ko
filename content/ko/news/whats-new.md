@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-22 · 전일 업데이트
+
+- **[Amazon EC2 C8gd, M8gd, R8gd 인스턴스, 추가 AWS 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-c8gd-m8gd/)** — Amazon EC2 C8gd, M8gd, R8gd 인스턴스가 싱가포르, 멕시코(중부), 멜버른, 취리히 등 추가 리전으로 확대 제공됩니다. AWS Graviton4 프로세서 기반으로 최대 11.4TB의 로컬 NVMe SSD 스토리지를 탑재하며, Graviton3 대비 최대 30% 향상된 성능을 제공합니다.
+
 ## 2026-08-21 · 전일 업데이트
 
 - **[라스베이거스, 네바다주 신규 AWS Local Zone 일반 출시 발표](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-local-zones-las-vegas-nevada/)** — AWS가 미국 라스베이거스, 네바다주에 새로운 AWS Local Zone을 일반 출시했습니다. 이 로컬 존은 Amazon EC2 C7i/M7i/R7i/C8gn 인스턴스, Amazon EBS, Amazon ECS, Amazon EKS, Application Load Balancer, AWS Direct Connect를 지원하여 해당 대도시권 사용자에게 낮은 지연 시간의 컴퓨팅·네트워킹 서비스를 제공합니다.

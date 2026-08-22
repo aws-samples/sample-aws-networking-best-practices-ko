@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-22 · Weekly summary
+
+- **[Gain Visibility into Client-Side Network Failures with NEL](https://aws.amazon.com/blogs/networking-and-content-delivery/gain-visibility-into-client-side-network-failures-with-nel/)** — Network Error Logging (NEL) enables you to capture client-side network failures—such as DNS resolution errors and TCP timeouts—that never appear in server logs. This provides meaningful observability into connectivity issues on shared infrastructure like CDNs that are otherwise difficult to attribute to a specific origin.
+
 ## 2026-08-15 · Weekly summary
 
 - **[Zero-trust networking for agentic AI with Amazon VPC Lattice](https://aws.amazon.com/blogs/networking-and-content-delivery/zero-trust-networking-for-agentic-ai-with-amazon-vpc-lattice/)** — This post explores how Amazon VPC Lattice can enable AI agents to securely access sensitive data residing in private Amazon VPCs without internet exposure, using a zero-trust networking architecture. It addresses the limitations of traditional networking approaches by implementing identity-aware access control tailored for agentic AI workloads.

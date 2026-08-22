@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-22 · Daily update
+
+- **[Amazon EC2 C8gd, M8gd, and R8gd Instances Now Available in Additional AWS Regions](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-c8gd-m8gd/)** — Amazon EC2 C8gd, M8gd, and R8gd instances, featuring up to 11.4 TB of local NVMe-based SSD storage, are now available in additional regions including Asia Pacific (Singapore), Mexico (Central), Asia Pacific (Melbourne), and Europe (Zurich). Powered by AWS Graviton4 processors, these instances deliver up to 30% better performance compared to Graviton3-based instances.
+
 ## 2026-08-21 · Daily update
 
 - **[AWS announces general availability of a new AWS Local Zone in Las Vegas, Nevada](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-local-zones-las-vegas-nevada/)** — AWS has launched a new AWS Local Zone in Las Vegas, Nevada, now generally available. The zone supports Amazon EC2 C7i/M7i/R7i/C8gn instances, Amazon EBS, Amazon ECS, Amazon EKS, Application Load Balancer, and AWS Direct Connect, bringing low-latency compute and networking closer to users in the Las Vegas metropolitan area.

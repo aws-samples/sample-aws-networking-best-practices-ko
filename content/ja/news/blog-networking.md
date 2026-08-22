@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-22 · 週次まとめ
+
+- **[NEL でクライアント側のネットワーク障害を可視化する](https://aws.amazon.com/blogs/networking-and-content-delivery/gain-visibility-into-client-side-network-failures-with-nel/)** — NEL (Network Error Logging) を活用することで、サーバーログには残らない DNS 解決失敗や TCP タイムアウトなどのクライアント側ネットワーク障害を収集・分析できます。CDN などの共有インフラ上で特定のオリジンに起因する接続問題を把握するうえで、ネットワーク観測性の観点から実践的な手段となります。
+
 ## 2026-06-30 · 週次サマリー
 
 - **[AWS Cloud WAN Routing Policy: Real-World Global Network Scenarios – Part 2](https://aws.amazon.com/blogs/networking-and-content-delivery/aws-cloud-wan-routing-policy-real-world-global-network-scenarios-part-2/)** — Part 1 で紹介した AWS Cloud WAN ルーティングポリシーの基礎を踏まえ、マッチ条件・アクション・ルート集約という 3 つのコアコンポーネントを活用して、ルート伝播とパス選択を細かく制御する実際のグローバルネットワークシナリオを探求する第 2 弾です。複数リージョンにまたがる複雑なネットワーク環境でルーティングポリシーを適用するための実践的なガイダンスを提供します。
