@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-25 · 週次まとめ
+
+- **[CloudFront Functions の統合ロギング](https://aws.amazon.com/blogs/networking-and-content-delivery/cloudfront-functions-unified-logging/)** — CloudFront Functions のログを Amazon CloudWatch Logs に統合して送信できるようになり、トークン検証結果やヘッダー情報などの関数実行履歴を一か所で確認できるようになりました。これまで CloudFront Realtime Logs など複数の経路から分散収集する必要があった観測性の課題が改善されます。
+- **[Amazon Route 53 Global Resolver を使ったマルチアカウント環境向け共有 DNS ビュー](https://aws.amazon.com/blogs/networking-and-content-delivery/shared-dns-views-for-multi-account-environments-with-amazon-route-53-global-resolver/)** — Amazon Route 53 Global Resolver の DNS ビュー機能により、ネットワーキングチームは共有名前解決を中央集中式で制御しながら、アプリケーションチームはマルチアカウント構成でも独自の DNS レコードを自律的に管理できるようになります。これにより、複雑な DNS 環境における中央ガバナンスとチームの自律性のバランスを保つことが可能です。
+
 ## 2026-08-22 · 週次まとめ
 
 - **[NEL でクライアント側のネットワーク障害を可視化する](https://aws.amazon.com/blogs/networking-and-content-delivery/gain-visibility-into-client-side-network-failures-with-nel/)** — NEL (Network Error Logging) を活用することで、サーバーログには残らない DNS 解決失敗や TCP タイムアウトなどのクライアント側ネットワーク障害を収集・分析できます。CDN などの共有インフラ上で特定のオリジンに起因する接続問題を把握するうえで、ネットワーク観測性の観点から実践的な手段となります。

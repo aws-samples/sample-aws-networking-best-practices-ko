@@ -8,6 +8,11 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-25 · Weekly summary
+
+- **[CloudFront Functions Unified Logging](https://aws.amazon.com/blogs/networking-and-content-delivery/cloudfront-functions-unified-logging/)** — CloudFront Functions now supports unified logging to Amazon CloudWatch Logs, allowing developers to view function execution details—such as token validation results and origin response headers—in a single location. This improvement addresses the observability gap that previously required collecting logs from multiple sources like CloudFront Realtime Logs.
+- **[Shared DNS Views for Multi-Account Environments with Amazon Route 53 Global Resolver](https://aws.amazon.com/blogs/networking-and-content-delivery/shared-dns-views-for-multi-account-environments-with-amazon-route-53-global-resolver/)** — Amazon Route 53 Global Resolver's DNS views feature enables networking teams to maintain centralized control over shared name resolution while allowing application teams to independently manage their own DNS records across multi-account architectures. This capability helps organizations strike the right balance between central governance and team autonomy in complex DNS environments.
+
 ## 2026-08-22 · Weekly summary
 
 - **[Gain Visibility into Client-Side Network Failures with NEL](https://aws.amazon.com/blogs/networking-and-content-delivery/gain-visibility-into-client-side-network-failures-with-nel/)** — Network Error Logging (NEL) enables you to capture client-side network failures—such as DNS resolution errors and TCP timeouts—that never appear in server logs. This provides meaningful observability into connectivity issues on shared infrastructure like CDNs that are otherwise difficult to attribute to a specific origin.
