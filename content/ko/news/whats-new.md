@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-26 · 전일 업데이트
+
+- **[AWS Batch, Amazon ECS Managed Instances 지원 시작](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-batch-on-ecs-managed-instances/)** — AWS Batch가 Amazon ECS Managed Instances(ECS MI)를 새로운 컴퓨팅 옵션으로 지원하여, GPU 가속 및 컴퓨팅 집약적 배치 워크로드를 AWS 관리형 인프라에서 실행할 수 있게 되었습니다. AMI 업데이트, 보안 패치, 인스턴스 수명 주기를 AWS가 자동으로 처리하므로 고객이 직접 Amazon EC2 인프라를 관리하는 운영 부담이 줄어듭니다.
+- **[AWS Lambda MicroVMs, AWS PrivateLink 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/08/lambda-microvms-supports-privatelink)** — AWS Lambda MicroVMs가 AWS PrivateLink를 지원하여 Amazon VPC 리소스에서 퍼블릭 인터넷을 거치지 않고 Lambda MicroVMs에 직접 프라이빗 연결이 가능해졌습니다. 이를 통해 금융, 의료, 공공 분야 등 규제 산업의 엄격한 네트워크 격리 요건을 충족할 수 있습니다.
+
 ## 2026-08-22 · 전일 업데이트
 
 - **[Amazon EC2 C8gd, M8gd, R8gd 인스턴스, 추가 AWS 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-c8gd-m8gd/)** — Amazon EC2 C8gd, M8gd, R8gd 인스턴스가 싱가포르, 멕시코(중부), 멜버른, 취리히 등 추가 리전으로 확대 제공됩니다. AWS Graviton4 프로세서 기반으로 최대 11.4TB의 로컬 NVMe SSD 스토리지를 탑재하며, Graviton3 대비 최대 30% 향상된 성능을 제공합니다.

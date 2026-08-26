@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-26 · 前日のアップデート
+
+- **[AWS Batch が Amazon ECS Managed Instances をサポート開始](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-batch-on-ecs-managed-instances/)** — AWS Batch が新しいコンピューティングオプションとして Amazon ECS Managed Instances (ECS MI) をサポートし、GPU アクセラレーテッドおよびコンピューティング集約型のバッチワークロードを AWS マネージドインフラで実行できるようになりました。AMI の更新、セキュリティパッチ適用、インスタンスのライフサイクル管理を AWS が自動的に処理するため、お客様による Amazon EC2 インフラの運用負担が軽減されます。
+- **[AWS Lambda MicroVMs が AWS PrivateLink をサポート開始](https://aws.amazon.com/about-aws/whats-new/2026/08/lambda-microvms-supports-privatelink)** — AWS Lambda MicroVMs が AWS PrivateLink をサポートし、Amazon VPC リソースからパブリックインターネットを経由せずに Lambda MicroVMs へプライベート接続できるようになりました。金融、医療、政府機関など規制の厳しい業界のワークロードが、厳格なネットワーク分離要件を満たすことが可能になります。
+
 ## 2026-08-22 · 前日のアップデート
 
 - **[Amazon EC2 C8gd、M8gd、R8gd インスタンスが追加の AWS リージョンで利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-c8gd-m8gd/)** — Amazon EC2 C8gd、M8gd、R8gd インスタンスが、アジアパシフィック（シンガポール）、メキシコ（中部）、アジアパシフィック（メルボルン）、ヨーロッパ（チューリッヒ）などの追加リージョンで利用可能になりました。 AWS Graviton4 プロセッサを搭載し、最大 11.4 TB のローカル NVMe SSD ストレージを備え、Graviton3 ベースのインスタンスと比較して最大 30% 高いパフォーマンスを提供します。

@@ -8,6 +8,11 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-26 · Daily update
+
+- **[AWS Batch now supports Amazon ECS Managed Instances](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-batch-on-ecs-managed-instances/)** — AWS Batch now supports Amazon ECS Managed Instances (ECS MI) as a new compute option, allowing GPU-accelerated and compute-intensive batch workloads to run on AWS-managed infrastructure. AWS automatically handles AMI updates, security patching, and instance lifecycle management, reducing the operational overhead of self-managed Amazon EC2 infrastructure.
+- **[AWS Lambda MicroVMs now supports AWS PrivateLink](https://aws.amazon.com/about-aws/whats-new/2026/08/lambda-microvms-supports-privatelink)** — AWS Lambda MicroVMs now supports AWS PrivateLink, enabling private connectivity from Amazon VPC resources to Lambda MicroVMs without routing traffic over the public internet. This capability helps regulated workloads in financial services, healthcare, and government sectors meet strict network isolation requirements.
+
 ## 2026-08-22 · Daily update
 
 - **[Amazon EC2 C8gd, M8gd, and R8gd Instances Now Available in Additional AWS Regions](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-c8gd-m8gd/)** — Amazon EC2 C8gd, M8gd, and R8gd instances, featuring up to 11.4 TB of local NVMe-based SSD storage, are now available in additional regions including Asia Pacific (Singapore), Mexico (Central), Asia Pacific (Melbourne), and Europe (Zurich). Powered by AWS Graviton4 processors, these instances deliver up to 30% better performance compared to Graviton3-based instances.
