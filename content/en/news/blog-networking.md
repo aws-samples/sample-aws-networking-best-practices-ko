@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-27 · Weekly summary
+
+- **[Building Multi-Region Active-Active Architectures with CloudFront VPC Origins and Advanced Routing](https://aws.amazon.com/blogs/networking-and-content-delivery/building-multi-region-active-active-architectures-with-cloudfront-vpc-origins-and-advanced-routing/)** — This post explores how to build a multi-region active-active architecture using Amazon CloudFront VPC Origins (launched November 2024), covering advanced traffic routing, session consistency, and automated failover to maintain regional availability.
+
 ## 2026-08-25 · Weekly summary
 
 - **[CloudFront Functions Unified Logging](https://aws.amazon.com/blogs/networking-and-content-delivery/cloudfront-functions-unified-logging/)** — CloudFront Functions now supports unified logging to Amazon CloudWatch Logs, allowing developers to view function execution details—such as token validation results and origin response headers—in a single location. This improvement addresses the observability gap that previously required collecting logs from multiple sources like CloudFront Realtime Logs.

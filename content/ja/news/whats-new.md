@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-27 · 前日のアップデート
+
+- **[Amazon EC2 R8id インスタンスが追加の AWS リージョンで利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-r8id/)** — Amazon EC2 R8id インスタンスが、アジアパシフィック（ムンバイ、マレーシア、シドニー）、カナダ（中部）、ヨーロッパ（アイルランド、ストックホルム）の各リージョンで利用可能になりました。最大 22.8 TB の NVMe SSD ローカルストレージを備え、R6id と比較して最大 43% 高いパフォーマンスを発揮し、インメモリデータベースやリアルタイムビッグデータ分析などのメモリ集約型ワークロードに適しています。
+- **[Amazon EC2 C8id および M8id インスタンスが追加の AWS リージョンで利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-c8id-m8id-aws-regions/)** — Amazon EC2 C8id インスタンスはアジアパシフィック（シドニー）とカナダ（中部）、M8id インスタンスはアジアパシフィック（ムンバイ）とカナダ（中部）で新たに利用可能になりました。両インスタンスとも最大 22.8 TB のローカル NVMe SSD ストレージを備え、前世代の第 6 世代インスタンスと比較して最大 43% 高いコンピューティングパフォーマンスと 3.3 倍のメモリ帯域幅を提供します。
+
 ## 2026-08-26 · 前日のアップデート
 
 - **[AWS Batch が Amazon ECS Managed Instances をサポート開始](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-batch-on-ecs-managed-instances/)** — AWS Batch が新しいコンピューティングオプションとして Amazon ECS Managed Instances (ECS MI) をサポートし、GPU アクセラレーテッドおよびコンピューティング集約型のバッチワークロードを AWS マネージドインフラで実行できるようになりました。AMI の更新、セキュリティパッチ適用、インスタンスのライフサイクル管理を AWS が自動的に処理するため、お客様による Amazon EC2 インフラの運用負担が軽減されます。

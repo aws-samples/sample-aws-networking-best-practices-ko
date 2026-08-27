@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-27 · 주간 요약
+
+- **[CloudFront VPC Origins와 고급 라우팅을 활용한 멀티 리전 액티브-액티브 아키텍처 구축](https://aws.amazon.com/blogs/networking-and-content-delivery/building-multi-region-active-active-architectures-with-cloudfront-vpc-origins-and-advanced-routing/)** — Amazon CloudFront VPC Origins(2024년 11월 출시)를 활용해 멀티 리전 액티브-액티브 아키텍처를 구성하는 방법을 소개하며, 트래픽 라우팅·세션 일관성·자동 장애 조치를 통한 가용성 유지 방안을 다룹니다.
+
 ## 2026-08-25 · 주간 요약
 
 - **[CloudFront Functions 통합 로깅](https://aws.amazon.com/blogs/networking-and-content-delivery/cloudfront-functions-unified-logging/)** — CloudFront Functions의 로그를 Amazon CloudWatch Logs로 통합 전송하는 기능이 추가되어, 토큰 검증 결과나 헤더 정보 등 함수 실행 내역을 단일 위치에서 확인할 수 있게 되었습니다. 기존에는 CloudFront Realtime Logs 등 여러 경로를 통해 분산 수집해야 했던 관측성 문제가 개선됩니다.

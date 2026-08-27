@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-27 · 전일 업데이트
+
+- **[Amazon EC2 R8id 인스턴스, 추가 AWS 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-r8id/)** — Amazon EC2 R8id 인스턴스가 아시아 태평양(뭄바이, 말레이시아, 시드니), 캐나다(중부), 유럽(아일랜드, 스톡홀름) 리전으로 확대 제공됩니다. R8id 인스턴스는 최대 22.8TB NVMe SSD 로컬 스토리지와 R6id 대비 최대 43% 높은 성능을 제공하여 인메모리 데이터베이스 및 실시간 빅데이터 분석 등 메모리 집약적 워크로드에 적합합니다.
+- **[Amazon EC2 C8id 및 M8id 인스턴스, 추가 AWS 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-c8id-m8id-aws-regions/)** — Amazon EC2 C8id 인스턴스는 아시아 태평양(시드니)과 캐나다(중부), M8id 인스턴스는 아시아 태평양(뭄바이)과 캐나다(중부) 리전으로 확대 제공됩니다. 두 인스턴스 모두 최대 22.8TB의 로컬 NVMe SSD 스토리지를 제공하며, 이전 6세대 인스턴스 대비 최대 43% 높은 컴퓨팅 성능과 3.3배 더 많은 메모리 대역폭을 지원합니다.
+
 ## 2026-08-26 · 전일 업데이트
 
 - **[AWS Batch, Amazon ECS Managed Instances 지원 시작](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-batch-on-ecs-managed-instances/)** — AWS Batch가 Amazon ECS Managed Instances(ECS MI)를 새로운 컴퓨팅 옵션으로 지원하여, GPU 가속 및 컴퓨팅 집약적 배치 워크로드를 AWS 관리형 인프라에서 실행할 수 있게 되었습니다. AMI 업데이트, 보안 패치, 인스턴스 수명 주기를 AWS가 자동으로 처리하므로 고객이 직접 Amazon EC2 인프라를 관리하는 운영 부담이 줄어듭니다.

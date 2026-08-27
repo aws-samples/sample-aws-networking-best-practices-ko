@@ -8,6 +8,11 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-27 · Daily update
+
+- **[Amazon EC2 R8id Instances Now Available in Additional AWS Regions](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-r8id/)** — Amazon EC2 R8id instances are now available in Asia Pacific (Mumbai, Malaysia, Sydney), Canada (Central), and Europe (Ireland, Stockholm) regions. Featuring up to 22.8 TB of NVMe SSD local storage and up to 43% higher performance than R6id, these instances are well-suited for memory-intensive workloads such as in-memory databases and real-time big data analytics.
+- **[Amazon EC2 C8id and M8id Instances Now Available in Additional AWS Regions](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-c8id-m8id-aws-regions/)** — Amazon EC2 C8id instances are now available in Asia Pacific (Sydney) and Canada (Central), while M8id instances expand to Asia Pacific (Mumbai) and Canada (Central). Both instance types offer up to 22.8 TB of local NVMe SSD storage, delivering up to 43% higher compute performance and 3.3x more memory bandwidth compared to sixth-generation predecessors.
+
 ## 2026-08-26 · Daily update
 
 - **[AWS Batch now supports Amazon ECS Managed Instances](https://aws.amazon.com/about-aws/whats-new/2026/08/aws-batch-on-ecs-managed-instances/)** — AWS Batch now supports Amazon ECS Managed Instances (ECS MI) as a new compute option, allowing GPU-accelerated and compute-intensive batch workloads to run on AWS-managed infrastructure. AWS automatically handles AMI updates, security patching, and instance lifecycle management, reducing the operational overhead of self-managed Amazon EC2 infrastructure.
