@@ -8,6 +8,11 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-29 · Daily update
+
+- **[Amazon EC2 C8gn Instances Now Available in AWS Europe (Paris) Region](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-c8gn-europe-paris/)** — Amazon EC2 C8gn instances, powered by AWS Graviton4 processors, are now available in the AWS Europe (Paris) region. They offer up to 600 Gbps network bandwidth—the highest among network-optimized EC2 instances—along with 30% better compute performance than C7gn instances.
+- **[Amazon EC2 P6-B300 Instances Now Available in Additional AWS Regions](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-p6-b300-instances-available-additional-regions)** — Amazon EC2 P6-B300 instances are now available in the Asia Pacific (Hyderabad) and South America (Sao Paulo) regions, featuring 6.4 Tbps EFA networking and 300 Gbps dedicated ENA throughput. Compared to P6-B200 instances, they deliver 2x networking bandwidth, making them well suited for training and deploying large-scale foundation models.
+
 ## 2026-08-27 · Daily update
 
 - **[Amazon EC2 R8id Instances Now Available in Additional AWS Regions](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-r8id/)** — Amazon EC2 R8id instances are now available in Asia Pacific (Mumbai, Malaysia, Sydney), Canada (Central), and Europe (Ireland, Stockholm) regions. Featuring up to 22.8 TB of NVMe SSD local storage and up to 43% higher performance than R6id, these instances are well-suited for memory-intensive workloads such as in-memory databases and real-time big data analytics.

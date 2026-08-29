@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-29 · 전일 업데이트
+
+- **[Amazon EC2 C8gn 인스턴스, AWS 유럽(파리) 리전에서 출시](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-c8gn-europe-paris/)** — AWS Graviton4 프로세서 기반의 Amazon EC2 C8gn 인스턴스가 유럽(파리) 리전에서 제공됩니다. 최대 600 Gbps 네트워크 대역폭을 지원하며, 네트워크 최적화 EC2 인스턴스 중 가장 높은 네트워크 대역폭을 제공합니다.
+- **[Amazon EC2 P6-B300 인스턴스, 추가 AWS 리전에서 출시](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-p6-b300-instances-available-additional-regions)** — Amazon EC2 P6-B300 인스턴스가 아시아 태평양(하이데라바드) 및 남미(상파울루) 리전으로 확대 제공됩니다. 6.4 Tbps EFA 네트워킹과 300 Gbps 전용 ENA 처리량을 갖추고 있으며, P6-B200 대비 2배의 네트워킹 대역폭을 제공해 대규모 파운데이션 모델 학습 및 배포에 적합합니다.
+
 ## 2026-08-27 · 전일 업데이트
 
 - **[Amazon EC2 R8id 인스턴스, 추가 AWS 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-r8id/)** — Amazon EC2 R8id 인스턴스가 아시아 태평양(뭄바이, 말레이시아, 시드니), 캐나다(중부), 유럽(아일랜드, 스톡홀름) 리전으로 확대 제공됩니다. R8id 인스턴스는 최대 22.8TB NVMe SSD 로컬 스토리지와 R6id 대비 최대 43% 높은 성능을 제공하여 인메모리 데이터베이스 및 실시간 빅데이터 분석 등 메모리 집약적 워크로드에 적합합니다.

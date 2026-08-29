@@ -8,6 +8,10 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-29 · Weekly summary
+
+- **[Analyzing Application Load Balancer Logs with Amazon CloudWatch Logs](https://aws.amazon.com/jp/blogs/news/analyze-application-load-balancer-logs-with-amazon-cloudwatch-logs/)** — Amazon CloudWatch Logs now supports ALB access logs, connection logs, and health check logs as Vended Logs, delivering them directly as structured JSON. This enables per-request, per-connection, and per-target observability with dashboards, Log Analytics, alarms, and Contributor Insights for streamlined troubleshooting.
+
 ## 2026-08-25 · Weekly summary
 
 - **[Weekly AWS – Week of August 17, 2026](https://aws.amazon.com/jp/blogs/news/aws-weekly-20260817/)** — AWS Direct Connect announced inbound prefix control and expansion to up to 1,000 routes per VIF, marking a notable networking update this week, alongside broader improvements such as a visual file editor in AWS CloudShell, increased Amazon ECR replication rule limits, and AWS Glue 6.0 GA with a 30% price reduction.

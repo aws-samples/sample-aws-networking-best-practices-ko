@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-29 · 주간 요약
+
+- **[Amazon CloudWatch Logs로 Application Load Balancer 로그 분석하기](https://aws.amazon.com/jp/blogs/news/analyze-application-load-balancer-logs-with-amazon-cloudwatch-logs/)** — Amazon CloudWatch Logs가 ALB의 액세스 로그, 연결 로그, 헬스체크 로그를 Vended Logs로 구조화된 JSON 형태로 직접 수집하는 기능을 지원합니다. 이를 통해 요청·연결·대상 단위의 세밀한 관측성을 확보하고, 대시보드·Log Analytics·Contributor Insights를 활용한 장애 분석 및 알람 설정이 가능해집니다.
+
 ## 2026-08-25 · 주간 요약
 
 - **[주간 AWS – 2026년 8월 17일 주](https://aws.amazon.com/jp/blogs/news/aws-weekly-20260817/)** — AWS Direct Connect가 인바운드 프리픽스 제어 및 VIF당 최대 1,000개 경로 확장을 발표하는 등 네트워킹 관련 업데이트가 포함되었으며, AWS CloudShell 비주얼 파일 편집기 추가·Amazon ECR 복제 규칙 상한 25개 상향 등 다양한 서비스 개선이 이루어졌습니다.

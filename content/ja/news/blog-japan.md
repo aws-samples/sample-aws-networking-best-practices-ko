@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-29 · 週次まとめ
+
+- **[Amazon CloudWatch Logs で Application Load Balancer のログを分析する](https://aws.amazon.com/jp/blogs/news/analyze-application-load-balancer-logs-with-amazon-cloudwatch-logs/)** — Amazon CloudWatch Logs が ALB のアクセスログ・接続ログ・ヘルスチェックログを Vended Logs として構造化 JSON で直接配信できるようになりました。これにより、リクエスト・接続・ターゲット単位の詳細な観測性が実現し、ダッシュボードや Log Analytics、Contributor Insights を活用した障害切り分けやアラーム設定が可能になります。
+
 ## 2026-08-25 · 週次まとめ
 
 - **[週刊 AWS – 2026/8/17 週](https://aws.amazon.com/jp/blogs/news/aws-weekly-20260817/)** — AWS Direct Connect がインバウンドプレフィックス制御と VIF あたり最大 1,000 経路への拡張を発表するなど、ネットワーキング面での重要なアップデートが含まれています。その他にも AWS CloudShell へのビジュアルファイルエディタ追加、Amazon ECR のレプリケーションルール上限引き上げ、AWS Glue 6.0 の GA と 30% 値下げなど、幅広いサービス改善が行われました。

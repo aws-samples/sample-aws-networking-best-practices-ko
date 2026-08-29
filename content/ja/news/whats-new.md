@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-08-29 · 前日のアップデート
+
+- **[Amazon EC2 C8gn インスタンスが AWS ヨーロッパ（パリ）リージョンで利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-c8gn-europe-paris/)** — AWS Graviton4 プロセッサを搭載した Amazon EC2 C8gn インスタンスが、AWS ヨーロッパ（パリ）リージョンで利用可能になりました。ネットワーク最適化 EC2 インスタンスの中で最大となる 600 Gbps のネットワーク帯域幅を提供し、C7gn インスタンスと比較して最大 30% のコンピューティング性能向上を実現しています。
+- **[Amazon EC2 P6-B300 インスタンスが追加の AWS リージョンで利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-p6-b300-instances-available-additional-regions)** — Amazon EC2 P6-B300 インスタンスが、アジアパシフィック（ハイデラバード）および南米（サンパウロ）リージョンで新たに利用可能になりました。6.4 Tbps の EFA ネットワーキングと 300 Gbps の専用 ENA スループットを備え、P6-B200 インスタンスと比較して 2 倍のネットワーキング帯域幅を提供するため、大規模な基盤モデルのトレーニングやデプロイに適しています。
+
 ## 2026-08-27 · 前日のアップデート
 
 - **[Amazon EC2 R8id インスタンスが追加の AWS リージョンで利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-r8id/)** — Amazon EC2 R8id インスタンスが、アジアパシフィック（ムンバイ、マレーシア、シドニー）、カナダ（中部）、ヨーロッパ（アイルランド、ストックホルム）の各リージョンで利用可能になりました。最大 22.8 TB の NVMe SSD ローカルストレージを備え、R6id と比較して最大 43% 高いパフォーマンスを発揮し、インメモリデータベースやリアルタイムビッグデータ分析などのメモリ集約型ワークロードに適しています。
