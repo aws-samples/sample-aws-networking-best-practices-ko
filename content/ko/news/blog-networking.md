@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-01 · 주간 요약
+
+- **[VPC Encryption Controls로 연결 패턴 전반에 전송 중 암호화 구현하기](https://aws.amazon.com/blogs/networking-and-content-delivery/implementing-encryption-in-transit-across-connectivity-patterns-with-vpc-encryption-controls/)** — VPC Encryption Controls를 활용해 Amazon EC2 인스턴스를 포함한 다양한 네트워크 경로에서 전송 중 암호화를 일관되게 적용하는 방법을 소개합니다. 보안 및 컴플라이언스 팀이 암호화되지 않은 트래픽을 정책으로 차단할 수 있어 네트워킹 보안 거버넌스를 강화할 수 있습니다.
+- **[AWS와 Microsoft Azure, 멀티클라우드 네트워킹 확장을 위해 협력](https://aws.amazon.com/blogs/networking-and-content-delivery/aws-and-microsoft-azure-collaborate-to-expand-multicloud-networking/)** — AWS와 Microsoft Azure가 협력하여 두 클라우드 간 고성능 프라이빗 연결을 간소화하는 멀티클라우드 네트워킹 솔루션을 제공하기 시작했습니다. 기존에 복잡한 물리 인프라와 다수의 연결 공급자를 통해 수 주~수 개월이 걸리던 프로비저닝 과정을 대폭 단축할 수 있게 됩니다.
+
 ## 2026-08-27 · 주간 요약
 
 - **[CloudFront VPC Origins와 고급 라우팅을 활용한 멀티 리전 액티브-액티브 아키텍처 구축](https://aws.amazon.com/blogs/networking-and-content-delivery/building-multi-region-active-active-architectures-with-cloudfront-vpc-origins-and-advanced-routing/)** — Amazon CloudFront VPC Origins(2024년 11월 출시)를 활용해 멀티 리전 액티브-액티브 아키텍처를 구성하는 방법을 소개하며, 트래픽 라우팅·세션 일관성·자동 장애 조치를 통한 가용성 유지 방안을 다룹니다.

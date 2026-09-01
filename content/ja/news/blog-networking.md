@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-01 · 週次まとめ
+
+- **[VPC Encryption Controls を使った接続パターン全体での転送中暗号化の実装](https://aws.amazon.com/blogs/networking-and-content-delivery/implementing-encryption-in-transit-across-connectivity-patterns-with-vpc-encryption-controls/)** — VPC Encryption Controls を活用して、Amazon EC2 インスタンスを含む多様なネットワークパスで転送中の暗号化を一貫して適用する方法を紹介します。セキュリティおよびコンプライアンスチームは、任意の 2 ノード間で暗号化されていないトラフィックをポリシーでブロックでき、ネットワークセキュリティガバナンスを強化できます。
+- **[AWS と Microsoft Azure がマルチクラウドネットワーキングの拡張に向けて協力](https://aws.amazon.com/blogs/networking-and-content-delivery/aws-and-microsoft-azure-collaborate-to-expand-multicloud-networking/)** — AWS と Microsoft Azure が協力し、両クラウド間の高パフォーマンスなプライベート接続を簡素化するマルチクラウドネットワーキングソリューションの提供を開始しました。これにより、複数の接続プロバイダーや物理インフラを経由して数週間から数か月かかっていたプロビジョニング作業を大幅に短縮できます。
+
 ## 2026-08-27 · 週次まとめ
 
 - **[CloudFront VPC Origins と高度なルーティングを活用したマルチリージョン アクティブ-アクティブ アーキテクチャの構築](https://aws.amazon.com/blogs/networking-and-content-delivery/building-multi-region-active-active-architectures-with-cloudfront-vpc-origins-and-advanced-routing/)** — 2024 年 11 月にリリースされた Amazon CloudFront VPC Origins を活用し、マルチリージョン アクティブ-アクティブ アーキテクチャを構築する方法を紹介しています。トラフィック ルーティング、セッション一貫性、自動フェイルオーバーによる可用性維持の手法を解説しています。

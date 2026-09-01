@@ -8,6 +8,11 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-01 · Daily update
+
+- **[Amazon Redshift now supports AWS IAM Identity Center authentication with enhanced VPC routing](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-redshift-supports-idc-evr)** — Amazon Redshift now supports AWS IAM Identity Center authentication for provisioned clusters and serverless workgroups with Enhanced VPC Routing (EVR) enabled. This allows single sign-on access using corporate credentials while keeping all traffic within the AWS network via Amazon VPC, meeting data residency and network-isolation requirements.
+- **[Amazon Cognito now supports machine-to-machine authorization without a user pool domain](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-cognito-get-client-token/)** — Amazon Cognito introduces the GetClientToken API operation, allowing app clients to obtain access tokens for machine-to-machine (M2M) authorization directly via the AWS SDK, CLI, or API without requiring a user pool domain. This simplifies service-to-service authentication for microservices and automated workloads by removing the need for additional domain configuration.
+
 ## 2026-08-29 · Daily update
 
 - **[Amazon EC2 C8gn Instances Now Available in AWS Europe (Paris) Region](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-c8gn-europe-paris/)** — Amazon EC2 C8gn instances, powered by AWS Graviton4 processors, are now available in the AWS Europe (Paris) region. They offer up to 600 Gbps network bandwidth—the highest among network-optimized EC2 instances—along with 30% better compute performance than C7gn instances.

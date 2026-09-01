@@ -8,6 +8,11 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-01 · Weekly summary
+
+- **[Implementing Encryption in Transit Across Connectivity Patterns with VPC Encryption Controls](https://aws.amazon.com/blogs/networking-and-content-delivery/implementing-encryption-in-transit-across-connectivity-patterns-with-vpc-encryption-controls/)** — This post explains how to use VPC Encryption Controls to consistently enforce encryption in transit across various network paths, including Amazon EC2 instance fleets. Security and compliance teams can apply policies that block unencrypted traffic between any two nodes, strengthening network security governance.
+- **[AWS and Microsoft Azure Collaborate to Expand Multicloud Networking](https://aws.amazon.com/blogs/networking-and-content-delivery/aws-and-microsoft-azure-collaborate-to-expand-multicloud-networking/)** — AWS and Microsoft Azure have announced a collaboration to simplify high-performance private connectivity between the two clouds, making multicloud networking more accessible. This initiative significantly reduces the complex, time-consuming provisioning process that previously required navigating multiple connectivity providers and physical infrastructure.
+
 ## 2026-08-27 · Weekly summary
 
 - **[Building Multi-Region Active-Active Architectures with CloudFront VPC Origins and Advanced Routing](https://aws.amazon.com/blogs/networking-and-content-delivery/building-multi-region-active-active-architectures-with-cloudfront-vpc-origins-and-advanced-routing/)** — This post explores how to build a multi-region active-active architecture using Amazon CloudFront VPC Origins (launched November 2024), covering advanced traffic routing, session consistency, and automated failover to maintain regional availability.

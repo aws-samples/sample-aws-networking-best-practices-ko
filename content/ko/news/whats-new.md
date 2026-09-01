@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-01 · 전일 업데이트
+
+- **[Amazon Redshift, Enhanced VPC Routing 환경에서 AWS IAM Identity Center 인증 지원](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-redshift-supports-idc-evr)** — Amazon Redshift가 Enhanced VPC Routing(EVR)이 구성된 프로비저닝 클러스터 및 서버리스 워크그룹에서 AWS IAM Identity Center 인증을 지원합니다. 이를 통해 기업 자격 증명으로 SSO 액세스가 가능하며, 모든 트래픽이 Amazon VPC를 통해 AWS 네트워크 내에서만 이동하므로 데이터 상주 및 네트워크 격리 요건을 충족할 수 있습니다.
+- **[Amazon Cognito, 사용자 풀 도메인 없이 머신 간 인증 지원](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-cognito-get-client-token/)** — Amazon Cognito가 새로운 GetClientToken API 작업을 통해 사용자 풀 도메인 구성 없이 AWS SDK, CLI, 또는 API로 직접 머신 간(M2M) 액세스 토큰을 발급받을 수 있게 되었습니다. 이를 통해 마이크로서비스 및 자동화 워크로드의 서비스 간 통신 인증 경로가 추가되어 네트워크 구성 복잡도를 줄일 수 있습니다.
+
 ## 2026-08-29 · 전일 업데이트
 
 - **[Amazon EC2 C8gn 인스턴스, AWS 유럽(파리) 리전에서 출시](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-c8gn-europe-paris/)** — AWS Graviton4 프로세서 기반의 Amazon EC2 C8gn 인스턴스가 유럽(파리) 리전에서 제공됩니다. 최대 600 Gbps 네트워크 대역폭을 지원하며, 네트워크 최적화 EC2 인스턴스 중 가장 높은 네트워크 대역폭을 제공합니다.
