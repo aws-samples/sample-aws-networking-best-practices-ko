@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-03 · Weekly summary
+
+- **[Reduce Traffic Interruptions with Gateway Load Balancer TCP Reset](https://aws.amazon.com/blogs/networking-and-content-delivery/reduce-traffic-interruptions-with-gateway-load-balancer-tcp-reset/)** — Previously, when a firewall or security appliance behind a Gateway Load Balancer (GWLB) failed, TCP connections could hang for minutes while retry and exponential backoff mechanisms ran their course. The new TCP Reset feature allows GWLB to immediately send TCP RST packets upon failure, significantly reducing traffic interruption time.
+
 ## 2026-09-01 · Weekly summary
 
 - **[Implementing Encryption in Transit Across Connectivity Patterns with VPC Encryption Controls](https://aws.amazon.com/blogs/networking-and-content-delivery/implementing-encryption-in-transit-across-connectivity-patterns-with-vpc-encryption-controls/)** — This post explains how to use VPC Encryption Controls to consistently enforce encryption in transit across various network paths, including Amazon EC2 instance fleets. Security and compliance teams can apply policies that block unencrypted traffic between any two nodes, strengthening network security governance.

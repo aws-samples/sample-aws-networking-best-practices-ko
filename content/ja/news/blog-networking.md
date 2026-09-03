@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-03 · 週次まとめ
+
+- **[Gateway Load Balancer TCP Reset でトラフィック中断を最小化する](https://aws.amazon.com/blogs/networking-and-content-delivery/reduce-traffic-interruptions-with-gateway-load-balancer-tcp-reset/)** — Gateway Load Balancer (GWLB) 配下のファイアウォールやセキュリティアプライアンスに障害が発生した際、従来は TCP リトライと指数バックオフの完了まで数分間接続が中断される可能性がありました。新しい TCP Reset 機能により、障害発生時に即座に TCP RST パケットを送信し、トラフィック中断時間を大幅に短縮できます。
+
 ## 2026-09-01 · 週次まとめ
 
 - **[VPC Encryption Controls を使った接続パターン全体での転送中暗号化の実装](https://aws.amazon.com/blogs/networking-and-content-delivery/implementing-encryption-in-transit-across-connectivity-patterns-with-vpc-encryption-controls/)** — VPC Encryption Controls を活用して、Amazon EC2 インスタンスを含む多様なネットワークパスで転送中の暗号化を一貫して適用する方法を紹介します。セキュリティおよびコンプライアンスチームは、任意の 2 ノード間で暗号化されていないトラフィックをポリシーでブロックでき、ネットワークセキュリティガバナンスを強化できます。
