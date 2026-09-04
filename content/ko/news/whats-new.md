@@ -8,6 +8,15 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-04 · 전일 업데이트
+
+- **[Amazon EC2 P6-B200 인스턴스, AWS 아시아 태평양(하이데라바드) 리전 출시](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ec2-p6-b200-instances-available-asia-pacific-hyderabad)** — NVIDIA Blackwell GPU 기반의 Amazon EC2 P6-B200 인스턴스가 AWS 아시아 태평양(하이데라바드) 리전에서 제공됩니다. P5en 대비 최대 2배의 AI 학습·추론 성능과 최대 3.2Tbps의 EFAv4 네트워킹을 지원합니다.
+- **[Amazon EC2 P6-B300 인스턴스, AWS 아시아 태평양(자카르타) 리전 출시](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ec2-p6-b300-instances-available-asia-pacific-jakarta)** — NVIDIA Blackwell Ultra GPU 8개와 6.4Tbps EFA 네트워킹을 갖춘 Amazon EC2 P6-B300 인스턴스가 AWS 아시아 태평양(자카르타) 리전에서 출시되었습니다. P6-B200 대비 2배의 네트워킹 대역폭과 1.5배의 GPU 메모리를 제공하여 대규모 파운데이션 모델 학습 및 배포에 적합합니다.
+- **[Amazon CloudFront, 정액제 요금제 API 지원 발표](https://aws.amazon.com/about-aws/whats-new/2026/09/cloudfront-flat-rate-pricing-plans-api/)** — Amazon CloudFront의 정액제 요금제를 이제 AWS CLI, SDK, CloudFormation, CDK 또는 PricingPlanManager API를 통해 프로그래밍 방식으로 구독 및 관리할 수 있습니다. 이를 통해 IaC 워크플로에서 콘솔 수동 작업 없이 콘텐츠 전송, WAF, DDoS, DNS 등을 포함한 정액 요금제를 자동화할 수 있습니다.
+- **[AWS Gateway Load Balancer, 빠른 장애 복구를 위한 TCP Reset 지원](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-gateway-load-balancer-tcp-reset/)** — AWS Gateway Load Balancer(GWLB)가 대상 인스턴스가 비정상 상태가 되거나 등록 해제될 때, 또는 유휴 타임아웃 만료 시 TCP Reset(RST) 패킷을 전송하는 기능을 지원합니다. 이를 통해 장애 감지 및 복구 시간을 기존 수 분에서 수 초로 단축할 수 있습니다.
+- **[Amazon S3, FIPS 엔드포인트에 대한 PrivateLink 지원](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-s3-privatelink-fips-endpoints)** — Amazon S3가 FIPS 140-3 검증 엔드포인트에 대해 AWS PrivateLink를 지원하기 시작했습니다. 이를 통해 보안 및 규정 준수 요건이 있는 고객은 트래픽을 VPC 내부에 유지하면서 FIPS 검증 암호화 모듈을 사용해 S3에 연결할 수 있습니다.
+- **[Amazon MemoryDB, AWS GovCloud(미국) 리전에서 AWS PrivateLink 지원](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-memorydb-privatelink/)** — Amazon MemoryDB가 AWS GovCloud(US-West) 및 AWS GovCloud(US-East) 리전에서 AWS PrivateLink를 통한 프라이빗 액세스를 지원합니다. 인터페이스 VPC 엔드포인트를 생성하면 퍼블릭 인터넷에 트래픽을 노출하지 않고 VPC에서 MemoryDB에 안전하게 연결할 수 있습니다.
+
 ## 2026-09-01 · 전일 업데이트
 
 - **[Amazon Redshift, Enhanced VPC Routing 환경에서 AWS IAM Identity Center 인증 지원](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-redshift-supports-idc-evr)** — Amazon Redshift가 Enhanced VPC Routing(EVR)이 구성된 프로비저닝 클러스터 및 서버리스 워크그룹에서 AWS IAM Identity Center 인증을 지원합니다. 이를 통해 기업 자격 증명으로 SSO 액세스가 가능하며, 모든 트래픽이 Amazon VPC를 통해 AWS 네트워크 내에서만 이동하므로 데이터 상주 및 네트워크 격리 요건을 충족할 수 있습니다.
