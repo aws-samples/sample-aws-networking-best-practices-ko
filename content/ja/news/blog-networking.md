@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-05 · 週次まとめ
+
+- **[Amazon VPC Lattice を活用した AWS PrivateLink インターフェイスエンドポイントの集中管理のタイミングと方法](https://aws.amazon.com/blogs/networking-and-content-delivery/when-and-how-to-centralize-aws-privatelink-interface-endpoints-with-amazon-vpc-lattice/)** — 大規模なマルチアカウント AWS 環境では、各 Amazon VPC に同じ AWS PrivateLink インターフェイスエンドポイントを個別にプロビジョニングすると、コスト増加やポリシーの不整合、運用負荷が生じます。 Amazon VPC Lattice を活用してエンドポイントを中央集中式に管理することで、これらの課題を解消し、一貫したポリシー管理とコスト効率を実現できます。
+
 ## 2026-09-03 · 週次まとめ
 
 - **[Gateway Load Balancer TCP Reset でトラフィック中断を最小化する](https://aws.amazon.com/blogs/networking-and-content-delivery/reduce-traffic-interruptions-with-gateway-load-balancer-tcp-reset/)** — Gateway Load Balancer (GWLB) 配下のファイアウォールやセキュリティアプライアンスに障害が発生した際、従来は TCP リトライと指数バックオフの完了まで数分間接続が中断される可能性がありました。新しい TCP Reset 機能により、障害発生時に即座に TCP RST パケットを送信し、トラフィック中断時間を大幅に短縮できます。

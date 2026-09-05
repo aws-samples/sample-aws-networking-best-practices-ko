@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-05 · 전일 업데이트
+
+- **[Amazon EC2 C8g 인스턴스, 추가 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ec2-c8g-instances-additional-regions/)** — Amazon EC2 C8g 인스턴스가 AWS 아시아 태평양(타이베이, 뉴질랜드) 및 AWS GovCloud(US-East) 리전에서 새롭게 제공됩니다. AWS Graviton4 프로세서 기반으로 Graviton3 대비 최대 30% 향상된 성능을 제공하며, HPC·배치 처리·게임·비디오 인코딩 등 컴퓨팅 집약적 워크로드에 적합합니다.
+
 ## 2026-09-04 · 전일 업데이트
 
 - **[Amazon EC2 P6-B200 인스턴스, AWS 아시아 태평양(하이데라바드) 리전 출시](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ec2-p6-b200-instances-available-asia-pacific-hyderabad)** — NVIDIA Blackwell GPU 기반의 Amazon EC2 P6-B200 인스턴스가 AWS 아시아 태평양(하이데라바드) 리전에서 제공됩니다. P5en 대비 최대 2배의 AI 학습·추론 성능과 최대 3.2Tbps의 EFAv4 네트워킹을 지원합니다.

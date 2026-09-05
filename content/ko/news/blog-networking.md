@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-05 · 주간 요약
+
+- **[Amazon VPC Lattice를 활용한 AWS PrivateLink 인터페이스 엔드포인트 중앙 집중화 시기와 방법](https://aws.amazon.com/blogs/networking-and-content-delivery/when-and-how-to-centralize-aws-privatelink-interface-endpoints-with-amazon-vpc-lattice/)** — 대규모 멀티 계정 AWS 환경에서 VPC와 계정 수가 늘어날수록 각 VPC에 동일한 AWS PrivateLink 인터페이스 엔드포인트를 개별 프로비저닝하면 비용 증가, 정책 불일치, 운영 부담이 발생한다. Amazon VPC Lattice를 활용해 엔드포인트를 중앙 집중식으로 관리하면 이러한 문제를 해소하고 일관된 엔드포인트 정책과 비용 효율성을 확보할 수 있다.
+
 ## 2026-09-03 · 주간 요약
 
 - **[Gateway Load Balancer TCP Reset으로 트래픽 중단 최소화](https://aws.amazon.com/blogs/networking-and-content-delivery/reduce-traffic-interruptions-with-gateway-load-balancer-tcp-reset/)** — Gateway Load Balancer(GWLB) 뒤의 방화벽 또는 보안 어플라이언스가 장애를 일으킬 때, 기존에는 TCP 재시도 및 지수 백오프 메커니즘이 완료될 때까지 수 분간 연결이 중단될 수 있었습니다. 이제 GWLB의 TCP Reset 기능을 통해 장애 발생 시 즉시 TCP RST 패킷을 전송하여 연결 중단 시간을 대폭 줄일 수 있습니다.

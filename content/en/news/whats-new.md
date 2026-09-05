@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-05 · Daily update
+
+- **[Amazon EC2 C8g Instances Now Available in Additional Regions](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ec2-c8g-instances-additional-regions/)** — Amazon EC2 C8g instances are now available in the AWS Asia Pacific (Taipei, New Zealand) and AWS GovCloud (US-East) regions. Powered by AWS Graviton4 processors, these instances deliver up to 30% better performance than Graviton3-based instances and are optimized for compute-intensive workloads such as HPC, batch processing, gaming, and video encoding.
+
 ## 2026-09-04 · Daily update
 
 - **[Amazon EC2 P6-B200 instances are now available in the AWS Asia Pacific (Hyderabad) Region](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ec2-p6-b200-instances-available-asia-pacific-hyderabad)** — Amazon EC2 P6-B200 instances powered by NVIDIA Blackwell GPUs are now available in the AWS Asia Pacific (Hyderabad) Region, offering up to 2x AI training and inference performance over P5en instances. The instances feature up to 3.2 Tbps of EFAv4 networking and 1440 GB of high-bandwidth GPU memory.

@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-05 · Weekly summary
+
+- **[When and How to Centralize AWS PrivateLink Interface Endpoints with Amazon VPC Lattice](https://aws.amazon.com/blogs/networking-and-content-delivery/when-and-how-to-centralize-aws-privatelink-interface-endpoints-with-amazon-vpc-lattice/)** — In large multi-account AWS environments, provisioning the same AWS PrivateLink interface endpoints separately in each Amazon VPC leads to increased costs, inconsistent endpoint policies, and operational overhead. Centralizing endpoints with Amazon VPC Lattice addresses these challenges by enabling consistent policy management and reducing redundant provisioning across VPCs and accounts.
+
 ## 2026-09-03 · Weekly summary
 
 - **[Reduce Traffic Interruptions with Gateway Load Balancer TCP Reset](https://aws.amazon.com/blogs/networking-and-content-delivery/reduce-traffic-interruptions-with-gateway-load-balancer-tcp-reset/)** — Previously, when a firewall or security appliance behind a Gateway Load Balancer (GWLB) failed, TCP connections could hang for minutes while retry and exponential backoff mechanisms ran their course. The new TCP Reset feature allows GWLB to immediately send TCP RST packets upon failure, significantly reducing traffic interruption time.

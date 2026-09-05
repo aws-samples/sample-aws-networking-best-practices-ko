@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-05 · 前日のアップデート
+
+- **[Amazon EC2 C8g インスタンスが追加リージョンで利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ec2-c8g-instances-additional-regions/)** — Amazon EC2 C8g インスタンスが、AWS アジアパシフィック（台北、ニュージーランド）および AWS GovCloud (US-East) リージョンで新たに利用可能になりました。AWS Graviton4 プロセッサを搭載し、Graviton3 ベースのインスタンスと比較して最大 30% 高いパフォーマンスを発揮し、HPC やバッチ処理、ゲーム、動画エンコードなどのコンピューティング集約型ワークロードに適しています。
+
 ## 2026-09-04 · 前日のアップデート
 
 - **[Amazon EC2 P6-B200 インスタンスが AWS アジアパシフィック（ハイデラバード）リージョンで利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ec2-p6-b200-instances-available-asia-pacific-hyderabad)** — NVIDIA Blackwell GPU を搭載した Amazon EC2 P6-B200 インスタンスが、AWS アジアパシフィック（ハイデラバード）リージョンで利用可能になりました。P5en インスタンスと比較して最大 2 倍の AI 学習・推論性能と、最大 3.2 Tbps の EFAv4 ネットワーキングを提供します。
