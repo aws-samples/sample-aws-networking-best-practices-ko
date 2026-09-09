@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-09 · 前日のアップデート
+
+- **[Amazon CloudFront 向け Dynamic Image Transformation に 4 つの新機能を追加](https://aws.amazon.com/about-aws/whats-new/2026/08/dynamic-image-transfromation-adds-new-features/)** — AWS は Amazon CloudFront 向け Dynamic Image Transformation (DIT) に、カスタムラベル検出を活用したスマートクロップ、高度なコンポジション制御、CloudFront のマルチ階層デバイス検出を利用した自動画像最適化など 4 つの新機能を追加しました。スマートフォンからスマート TV まで幅広いデバイスに最適化された画像を配信できるようになり、コンテンツ配信の効率が向上します。
+
 ## 2026-09-05 · 前日のアップデート
 
 - **[Amazon EC2 C8g インスタンスが追加リージョンで利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ec2-c8g-instances-additional-regions/)** — Amazon EC2 C8g インスタンスが、AWS アジアパシフィック（台北、ニュージーランド）および AWS GovCloud (US-East) リージョンで新たに利用可能になりました。AWS Graviton4 プロセッサを搭載し、Graviton3 ベースのインスタンスと比較して最大 30% 高いパフォーマンスを発揮し、HPC やバッチ処理、ゲーム、動画エンコードなどのコンピューティング集約型ワークロードに適しています。

@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-09 · Daily update
+
+- **[Dynamic Image Transformation for Amazon CloudFront Adds Four New Features](https://aws.amazon.com/about-aws/whats-new/2026/08/dynamic-image-transfromation-adds-new-features/)** — AWS has added four new features to Dynamic Image Transformation for Amazon CloudFront (DIT), including enhanced smart cropping with custom label detection, advanced composition controls, and automatic image optimization using CloudFront's multi-tier device detection. These enhancements enable appropriately sized images to be delivered across a wide range of devices, from phones and tablets to smart TVs.
+
 ## 2026-09-05 · Daily update
 
 - **[Amazon EC2 C8g Instances Now Available in Additional Regions](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ec2-c8g-instances-additional-regions/)** — Amazon EC2 C8g instances are now available in the AWS Asia Pacific (Taipei, New Zealand) and AWS GovCloud (US-East) regions. Powered by AWS Graviton4 processors, these instances deliver up to 30% better performance than Graviton3-based instances and are optimized for compute-intensive workloads such as HPC, batch processing, gaming, and video encoding.

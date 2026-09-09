@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-09 · 주간 요약
+
+- **[AWS가 라우팅 컨트롤 플레인을 통합하여 네트워크 가용성과 성능을 개선한 방법](https://aws.amazon.com/blogs/networking-and-content-delivery/how-aws-unified-its-routing-control-plane-to-improve-network-availability-and-performance/)** — AWS는 39개 리전, 123개 가용 영역, 750개 이상의 PoP에 걸친 보더 네트워크의 라우팅 컨트롤 플레인을 통합하여 가용성과 성능을 향상시켰습니다. 이 글은 API 호출, Amazon CloudFront 스트리밍, Amazon Route 53 도메인 해석 등 모든 트래픽 경로에 영향을 미치는 컨트롤 플레인 통합의 배경과 네트워킹 관점의 의미를 설명합니다.
+
 ## 2026-09-05 · 주간 요약
 
 - **[Amazon VPC Lattice를 활용한 AWS PrivateLink 인터페이스 엔드포인트 중앙 집중화 시기와 방법](https://aws.amazon.com/blogs/networking-and-content-delivery/when-and-how-to-centralize-aws-privatelink-interface-endpoints-with-amazon-vpc-lattice/)** — 대규모 멀티 계정 AWS 환경에서 VPC와 계정 수가 늘어날수록 각 VPC에 동일한 AWS PrivateLink 인터페이스 엔드포인트를 개별 프로비저닝하면 비용 증가, 정책 불일치, 운영 부담이 발생한다. Amazon VPC Lattice를 활용해 엔드포인트를 중앙 집중식으로 관리하면 이러한 문제를 해소하고 일관된 엔드포인트 정책과 비용 효율성을 확보할 수 있다.

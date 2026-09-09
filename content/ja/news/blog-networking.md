@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-09 · 週次まとめ
+
+- **[AWS がルーティングコントロールプレーンを統合してネットワークの可用性とパフォーマンスを向上させた方法](https://aws.amazon.com/blogs/networking-and-content-delivery/how-aws-unified-its-routing-control-plane-to-improve-network-availability-and-performance/)** — AWS は 39 のリージョン、123 のアベイラビリティーゾーン、750 以上の PoP にまたがるボーダーネットワークのルーティングコントロールプレーンを統合し、可用性とパフォーマンスを向上させました。この記事では、API コール・Amazon CloudFront ストリーミング・Amazon Route 53 の名前解決など、すべてのトラフィック経路に影響するコントロールプレーン統合の背景とネットワーキング上の意義を解説しています。
+
 ## 2026-09-05 · 週次まとめ
 
 - **[Amazon VPC Lattice を活用した AWS PrivateLink インターフェイスエンドポイントの集中管理のタイミングと方法](https://aws.amazon.com/blogs/networking-and-content-delivery/when-and-how-to-centralize-aws-privatelink-interface-endpoints-with-amazon-vpc-lattice/)** — 大規模なマルチアカウント AWS 環境では、各 Amazon VPC に同じ AWS PrivateLink インターフェイスエンドポイントを個別にプロビジョニングすると、コスト増加やポリシーの不整合、運用負荷が生じます。 Amazon VPC Lattice を活用してエンドポイントを中央集中式に管理することで、これらの課題を解消し、一貫したポリシー管理とコスト効率を実現できます。
