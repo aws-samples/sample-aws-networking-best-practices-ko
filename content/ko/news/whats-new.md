@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-10 · 전일 업데이트
+
+- **[AWS Lambda, Lambda Managed Instances에서 Graviton5 기반 EC2 인스턴스 지원](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-lambda-graviton5-ec2/)** — AWS Lambda가 Lambda Managed Instances에서 Graviton5 기반 C9g, C9gd, M9g, M9gd 인스턴스를 지원하기 시작했습니다. Graviton4 대비 최대 25% 향상된 컴퓨팅 성능을 제공하며, 인프라 관리 없이 EC2 가격 이점을 활용할 수 있습니다.
+- **[Amazon EBS Volume Clones, 계정 간 볼륨 복사 지원](https://aws.amazon.com/about-aws/whats-new/2026/09/ebs-volume-clones-cross-account-copy/)** — Amazon EBS Volume Clones가 계정 간 EBS 볼륨 복사 및 재암호화를 지원합니다. 대상 계정의 AWS KMS 키로 재암호화하면서 볼륨을 복사할 수 있어, 프로덕션과 개발 환경을 별도 계정으로 분리한 조직이 안전하게 데이터를 공유할 수 있습니다.
+- **[Amazon CloudFront용 Dynamic Image Transformation, 4가지 신규 기능 추가](https://aws.amazon.com/about-aws/whats-new/2026/08/dynamic-image-transformation-adds-new-features/)** — Amazon CloudFront용 Dynamic Image Transformation(DIT)에 커스텀 레이블 감지 기반 스마트 크롭, 고급 구성 제어, 브라우저 및 디바이스별 자동 이미지 최적화 등 4가지 새로운 기능이 추가되었습니다. 이를 통해 다양한 디바이스 환경에서 적절한 크기의 이미지를 효율적으로 제공할 수 있습니다.
+
 ## 2026-09-09 · 전일 업데이트
 
 - **[Amazon CloudFront용 Dynamic Image Transformation에 4가지 새로운 기능 추가](https://aws.amazon.com/about-aws/whats-new/2026/08/dynamic-image-transfromation-adds-new-features/)** — Amazon CloudFront용 Dynamic Image Transformation(DIT)에 커스텀 레이블 감지 기반 스마트 크롭, 고급 구성 제어, 멀티 계층 디바이스 감지를 활용한 자동 이미지 최적화 등 4가지 새로운 기능이 추가되었습니다. 이를 통해 스마트폰부터 스마트 TV까지 다양한 디바이스에서 최적화된 이미지를 제공할 수 있어 콘텐츠 전송 효율이 향상됩니다.

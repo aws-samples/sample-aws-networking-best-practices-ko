@@ -8,6 +8,12 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-10 · Daily update
+
+- **[AWS Lambda now supports Graviton5-powered EC2 instances on Lambda Managed Instances](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-lambda-graviton5-ec2/)** — AWS Lambda now supports Graviton5-powered C9g, C9gd, M9g, and M9gd instances on Lambda Managed Instances, delivering up to 25% better compute performance compared to Graviton4. This allows customers to leverage EC2 pricing advantages and specialized compute configurations without managing infrastructure.
+- **[Amazon EBS Volume Clones now supports copying volumes across accounts](https://aws.amazon.com/about-aws/whats-new/2026/09/ebs-volume-clones-cross-account-copy/)** — Amazon EBS Volume Clones now supports cross-account volume copying with re-encryption using an AWS KMS key in the target account. This enables organizations that separate production and development workloads across accounts to safely share data across those boundaries.
+- **[Dynamic Image Transformation for Amazon CloudFront adds four new features](https://aws.amazon.com/about-aws/whats-new/2026/08/dynamic-image-transformation-adds-new-features/)** — Dynamic Image Transformation for Amazon CloudFront has added four new features, including enhanced smart cropping with custom label detection, advanced composition controls, and automatic image optimization across browsers and device types. These improvements help customers deliver appropriately sized images efficiently across phones, tablets, and smart TVs.
+
 ## 2026-09-09 · Daily update
 
 - **[Dynamic Image Transformation for Amazon CloudFront Adds Four New Features](https://aws.amazon.com/about-aws/whats-new/2026/08/dynamic-image-transfromation-adds-new-features/)** — AWS has added four new features to Dynamic Image Transformation for Amazon CloudFront (DIT), including enhanced smart cropping with custom label detection, advanced composition controls, and automatic image optimization using CloudFront's multi-tier device detection. These enhancements enable appropriately sized images to be delivered across a wide range of devices, from phones and tablets to smart TVs.
