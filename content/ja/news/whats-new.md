@@ -8,6 +8,14 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-11 · 前日のアップデート
+
+- **[第 2 世代シングルラック AWS Outposts の発表](https://aws.amazon.com/about-aws/whats-new/2026/09/single-rack-aws-outposts/)** — AWS は、第 2 世代シングルラック AWS Outposts の一般提供を発表しました。この 42U の自己完結型ラックは、最大 2,688 vCPU と 100 TB の Amazon EBS ストレージを提供し、スペースおよび電力が制約された環境での低レイテンシーなローカルデータ処理ワークロード向けに、コンピューティング・ストレージ・ネットワーキングを 1 つのユニットに統合しています。
+- **[Amazon CloudWatch、合成モニターを使用した TGW リージョン間ピアリングのネットワーク健全性インジケーターをサポート](https://aws.amazon.com/about-aws/whats-new/2026/09/cloudwatch-network-monitoring-tgw-support/)** — Amazon CloudWatch Network Monitoring の合成モニターが、AWS Transit Gateway のリージョン間ピアリング接続を経由するパスに対してネットワーク健全性インジケーター (NHI) をサポートするようになりました。これにより、ネットワーク運用者はパフォーマンス低下の原因が AWS ネットワーク側にあるかどうかを迅速に特定でき、障害の切り分け時間を短縮できます。
+- **[AWS Elemental MediaLive が A/B フォレンジックウォーターマーキングをサポート](https://aws.amazon.com/about-aws/whats-new/2026/09/medialive-ab-forensic-watermarking/)** — AWS Elemental MediaLive が A/B フォレンジックウォーターマーキングをサポートし、1 つのチャンネルから視覚的に透明な異なるウォーターマークを持つ 2 つの同期出力バリアントを生成できるようになりました。ダウンストリームのパッケージングおよび CDN インフラがこれらをセッションごとの固有シーケンスに組み合わせ、流出コンテンツの発生源を特定できます。
+- **[AWS Storage Gateway が Amazon S3 File Gateway の FIPS 準拠プライベート接続をサポート](https://aws.amazon.com/about-aws/whats-new/2026/09/storage-gateway-fips-privatelink-s3/)** — AWS Storage Gateway が、Amazon S3 File Gateway 向けに AWS PrivateLink 経由の FIPS 140-3 検証済みエンドポイントをサポートするようになりました。これにより、FIPS 準拠のトラフィックをパブリックインターネットを経由せずプライベート AWS ネットワーク内で処理できるため、規制対象ワークロードでの利用が容易になります。
+- **[Amazon EVS が追加リージョンで利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-evs-available-in-additional-regions/)** — Amazon Elastic VMware Service (Amazon EVS) が、アジアパシフィック (大阪)、アジアパシフィック (台北)、ヨーロッパ (スペイン)、イスラエル (テルアビブ) の各リージョンで新たに利用可能になりました。Amazon EVS は、AWS Nitro を搭載した EC2 ベアメタルインスタンス上で Amazon VPC 内に VMware Cloud Foundation (VCF) 環境を直接実行でき、VMware ワークロードの迅速な AWS への移行を支援します。
+
 ## 2026-09-10 · 前日のアップデート
 
 - **[AWS Lambda、Lambda Managed Instances で Graviton5 搭載 EC2 インスタンスをサポート](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-lambda-graviton5-ec2/)** — AWS Lambda の Lambda Managed Instances で、Graviton5 搭載の C9g、C9gd、M9g、M9gd インスタンスがサポートされました。Graviton4 比で最大 25% の性能向上を実現しつつ、インフラ管理不要で EC2 の料金メリットを活用できます。

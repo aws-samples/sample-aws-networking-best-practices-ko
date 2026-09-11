@@ -8,6 +8,14 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-11 · 전일 업데이트
+
+- **[2세대 단일 랙 AWS Outposts 출시 발표](https://aws.amazon.com/about-aws/whats-new/2026/09/single-rack-aws-outposts/)** — AWS가 2세대 단일 랙 AWS Outposts의 일반 공급을 발표했습니다. 이 42U 자급식 랙은 최대 2,688 vCPU와 100TB의 Amazon EBS 스토리지를 제공하며, 공간·전력 제약 환경에서 낮은 지연 시간과 로컬 데이터 처리가 필요한 워크로드를 위해 컴퓨팅·스토리지·네트워킹을 단일 유닛으로 통합합니다.
+- **[Amazon CloudWatch, 합성 모니터를 통한 TGW 리전 간 피어링 네트워크 상태 지표 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/09/cloudwatch-network-monitoring-tgw-support/)** — Amazon CloudWatch Network Monitoring의 합성 모니터가 AWS Transit Gateway 리전 간 피어링 연결 경로에서 발생하는 성능 저하의 원인이 AWS 네트워크인지 판별하는 네트워크 상태 지표(NHI)를 지원합니다. 기존에는 AWS Direct Connect 경로에만 NHI가 적용되었으나, 이번 업데이트로 피어링된 리전 간 경로까지 확대되어 장애 원인 격리 시간을 단축할 수 있습니다.
+- **[AWS Elemental MediaLive, A/B 포렌식 워터마킹 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/09/medialive-ab-forensic-watermarking/)** — AWS Elemental MediaLive가 A/B 포렌식 워터마킹을 지원하여, 단일 채널에서 시각적으로 투명한 서로 다른 워터마크를 포함한 두 개의 동기화된 출력 변형을 생성합니다. 다운스트림 패키징 및 CDN 인프라가 이를 세션별 고유 시퀀스로 조합해 유출 콘텐츠의 출처를 추적할 수 있습니다.
+- **[AWS Storage Gateway, Amazon S3 File Gateway의 FIPS 준수 프라이빗 연결 지원](https://aws.amazon.com/about-aws/whats-new/2026/09/storage-gateway-fips-privatelink-s3/)** — AWS Storage Gateway가 Amazon S3 File Gateway에 대해 AWS PrivateLink를 통한 FIPS 140-3 검증 엔드포인트를 지원합니다. 이제 FIPS 준수 트래픽을 퍼블릭 인터넷을 거치지 않고 프라이빗 AWS 네트워크 내에서 처리할 수 있어, 규제 대상 워크로드에서의 활용이 용이해집니다.
+- **[Amazon EVS, 추가 리전으로 서비스 확대](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-evs-available-in-additional-regions/)** — Amazon Elastic VMware Service(Amazon EVS)가 아시아 태평양(오사카), 아시아 태평양(타이베이), 유럽(스페인), 이스라엘(텔아비브) 리전에서 새롭게 제공됩니다. Amazon EVS는 AWS Nitro 기반의 EC2 베어메탈 인스턴스 위에서 Amazon VPC 내에 VMware Cloud Foundation(VCF) 환경을 직접 실행할 수 있게 해줍니다.
+
 ## 2026-09-10 · 전일 업데이트
 
 - **[AWS Lambda, Lambda Managed Instances에서 Graviton5 기반 EC2 인스턴스 지원](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-lambda-graviton5-ec2/)** — AWS Lambda가 Lambda Managed Instances에서 Graviton5 기반 C9g, C9gd, M9g, M9gd 인스턴스를 지원하기 시작했습니다. Graviton4 대비 최대 25% 향상된 컴퓨팅 성능을 제공하며, 인프라 관리 없이 EC2 가격 이점을 활용할 수 있습니다.
