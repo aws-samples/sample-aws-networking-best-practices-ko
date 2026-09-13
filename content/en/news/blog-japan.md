@@ -8,6 +8,10 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-13 · Weekly summary
+
+- **[Event-Driven Pipeline Orchestration with Amazon MWAA and Airflow 3.0](https://aws.amazon.com/jp/blogs/news/event-driven-pipeline-orchestration-with-amazon-mwaa-and-airflow-3-0/)** — This post explains how to combine Apache Airflow 3.0's Asset Watcher with Amazon SQS to achieve event-driven orchestration across multiple Amazon MWAA environments and AWS accounts. Replacing polling-based sensors with event-driven triggers reduces inter-environment orchestration latency from minutes to seconds, with best practices covering cross-account IAM and Amazon VPC networking.
+
 ## 2026-08-29 · Weekly summary
 
 - **[Analyzing Application Load Balancer Logs with Amazon CloudWatch Logs](https://aws.amazon.com/jp/blogs/news/analyze-application-load-balancer-logs-with-amazon-cloudwatch-logs/)** — Amazon CloudWatch Logs now supports ALB access logs, connection logs, and health check logs as Vended Logs, delivering them directly as structured JSON. This enables per-request, per-connection, and per-target observability with dashboards, Log Analytics, alarms, and Contributor Insights for streamlined troubleshooting.

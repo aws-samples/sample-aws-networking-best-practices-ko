@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-13 · 週次まとめ
+
+- **[Amazon MWAA と Airflow 3.0 によるイベント駆動のパイプラインオーケストレーション](https://aws.amazon.com/jp/blogs/news/event-driven-pipeline-orchestration-with-amazon-mwaa-and-airflow-3-0/)** — Apache Airflow 3.0 の Asset Watcher と Amazon SQS を組み合わせることで、複数の Amazon MWAA 環境やアカウント間にまたがるイベント駆動のオーケストレーションを実現する方法を解説しています。ポーリングベースのセンサーをイベント駆動トリガーに置き換えることで環境間の遅延時間を数分から数秒に短縮でき、クロスアカウント IAM および Amazon VPC ネットワークの設定に関するモ범사례も紹介しています。
+
 ## 2026-08-29 · 週次まとめ
 
 - **[Amazon CloudWatch Logs で Application Load Balancer のログを分析する](https://aws.amazon.com/jp/blogs/news/analyze-application-load-balancer-logs-with-amazon-cloudwatch-logs/)** — Amazon CloudWatch Logs が ALB のアクセスログ・接続ログ・ヘルスチェックログを Vended Logs として構造化 JSON で直接配信できるようになりました。これにより、リクエスト・接続・ターゲット単位の詳細な観測性が実現し、ダッシュボードや Log Analytics、Contributor Insights を活用した障害切り分けやアラーム設定が可能になります。
