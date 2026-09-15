@@ -8,6 +8,10 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-15 · Weekly summary
+
+- **[Introduction to Automated Reasoning](https://aws.amazon.com/jp/blogs/news/a-gentle-introduction-to-automated-reasoning/)** — This article explains automated reasoning in an accessible way using simple C and Python examples, covering why it can verify in milliseconds what exhaustive testing would take over 1,300 years, and why a 'Don't know' answer is unavoidable due to the halting problem. It also highlights AWS use cases such as IAM Access Analyzer and VPC Reachability Analyzer.
+
 ## 2026-09-13 · Weekly summary
 
 - **[Event-Driven Pipeline Orchestration with Amazon MWAA and Airflow 3.0](https://aws.amazon.com/jp/blogs/news/event-driven-pipeline-orchestration-with-amazon-mwaa-and-airflow-3-0/)** — This post explains how to combine Apache Airflow 3.0's Asset Watcher with Amazon SQS to achieve event-driven orchestration across multiple Amazon MWAA environments and AWS accounts. Replacing polling-based sensors with event-driven triggers reduces inter-environment orchestration latency from minutes to seconds, with best practices covering cross-account IAM and Amazon VPC networking.

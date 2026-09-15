@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-15 · 週次まとめ
+
+- **[はじめての自動推論](https://aws.amazon.com/jp/blogs/news/a-gentle-introduction-to-automated-reasoning/)** — C と Python のコード例を用いて自動推論の概念をわかりやすく解説し、網羅的テストで 1,300 年以上かかる検証をミリ秒で行える理由や、停止性問題に起因する「Don't know」応答の必然性を説明しています。IAM Access Analyzer や VPC Reachability Analyzer など AWS サービスにおける活用事例も紹介しています。
+
 ## 2026-09-13 · 週次まとめ
 
 - **[Amazon MWAA と Airflow 3.0 によるイベント駆動のパイプラインオーケストレーション](https://aws.amazon.com/jp/blogs/news/event-driven-pipeline-orchestration-with-amazon-mwaa-and-airflow-3-0/)** — Apache Airflow 3.0 の Asset Watcher と Amazon SQS を組み合わせることで、複数の Amazon MWAA 環境やアカウント間にまたがるイベント駆動のオーケストレーションを実現する方法を解説しています。ポーリングベースのセンサーをイベント駆動トリガーに置き換えることで環境間の遅延時間を数分から数秒に短縮でき、クロスアカウント IAM および Amazon VPC ネットワークの設定に関するモ범사례も紹介しています。
