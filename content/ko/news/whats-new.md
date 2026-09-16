@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-16 · 전일 업데이트
+
+- **[AWS Direct Connect, 전용 연결에 대한 정액제 요금 발표](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-direct-connect-announces-flat-rate-pricing/)** — AWS Direct Connect가 10G 및 100G 전용 연결에 대해 정액제 요금 옵션을 도입했습니다. 대용량 지속적 데이터 전송 아웃(DTO) 워크로드를 운영하는 고객이 월별 비용을 예측하기 어려웠던 문제를 해소할 수 있습니다.
+- **[Amazon Q Console에서 자연어로 CloudTrail 이벤트 분석](https://aws.amazon.com/about-aws/whats-new/2026/09/cloudtrail-amazon-q-console/)** — AWS CloudTrail이 Amazon Q Console과 통합되어 자연어 질문만으로 CloudTrail 구성 확인, 보안 조사, 운영 문제 해결이 가능해졌습니다. 별도의 쿼리 작성이나 로그 파일 수동 파싱 없이 계정 활동을 분석할 수 있어 보안 감사 및 컴플라이언스 대응이 간소화됩니다.
+
 ## 2026-09-11 · 전일 업데이트
 
 - **[2세대 단일 랙 AWS Outposts 출시 발표](https://aws.amazon.com/about-aws/whats-new/2026/09/single-rack-aws-outposts/)** — AWS가 2세대 단일 랙 AWS Outposts의 일반 공급을 발표했습니다. 이 42U 자급식 랙은 최대 2,688 vCPU와 100TB의 Amazon EBS 스토리지를 제공하며, 공간·전력 제약 환경에서 낮은 지연 시간과 로컬 데이터 처리가 필요한 워크로드를 위해 컴퓨팅·스토리지·네트워킹을 단일 유닛으로 통합합니다.

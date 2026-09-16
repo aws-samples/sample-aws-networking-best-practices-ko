@@ -8,6 +8,11 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-16 · Daily update
+
+- **[AWS Direct Connect Announces Flat-Rate Pricing for Dedicated Connections](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-direct-connect-announces-flat-rate-pricing/)** — AWS Direct Connect now offers flat-rate pricing for 10 Gbps and 100 Gbps dedicated connections, providing a predictable cost alternative to per-gigabyte charges for customers with large, sustained data transfer out workloads.
+- **[Analyze Your CloudTrail Events Using Natural Language in Amazon Q Console](https://aws.amazon.com/about-aws/whats-new/2026/09/cloudtrail-amazon-q-console/)** — AWS CloudTrail now integrates with Amazon Q Console, enabling users to investigate account activity, verify trail configurations, and troubleshoot operational issues through natural language queries without writing manual log queries.
+
 ## 2026-09-11 · Daily update
 
 - **[Announcing Second-Generation Single-Rack AWS Outposts](https://aws.amazon.com/about-aws/whats-new/2026/09/single-rack-aws-outposts/)** — AWS has announced the general availability of second-generation single-rack AWS Outposts, a self-contained 42U rack delivering up to 2,688 vCPU and 100 TB of Amazon EBS storage. Designed for space- and power-constrained locations, it integrates compute, storage, and networking into a single compact unit for low-latency and local data processing workloads.

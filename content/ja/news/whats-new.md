@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-16 · 前日のアップデート
+
+- **[AWS Direct Connect、専用接続のフラットレート料金を発表](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-direct-connect-announces-flat-rate-pricing/)** — AWS Direct Connect が 10G および 100G 専用接続向けにフラットレート料金オプションを導入しました。大量かつ継続的なデータ転送アウト (DTO) を行うワークロードにおいて、月額コストの予測が容易になります。
+- **[Amazon Q Console で自然言語を使って CloudTrail イベントを分析](https://aws.amazon.com/about-aws/whats-new/2026/09/cloudtrail-amazon-q-console/)** — AWS CloudTrail が Amazon Q Console と統合され、自然言語の質問だけで CloudTrail の設定確認、セキュリティ調査、運用トラブルシューティングが行えるようになりました。クエリの記述やログファイルの手動解析が不要になり、セキュリティ監査やコンプライアンス対応が簡素化されます。
+
 ## 2026-09-11 · 前日のアップデート
 
 - **[第 2 世代シングルラック AWS Outposts の発表](https://aws.amazon.com/about-aws/whats-new/2026/09/single-rack-aws-outposts/)** — AWS は、第 2 世代シングルラック AWS Outposts の一般提供を発表しました。この 42U の自己完結型ラックは、最大 2,688 vCPU と 100 TB の Amazon EBS ストレージを提供し、スペースおよび電力が制約された環境での低レイテンシーなローカルデータ処理ワークロード向けに、コンピューティング・ストレージ・ネットワーキングを 1 つのユニットに統合しています。
