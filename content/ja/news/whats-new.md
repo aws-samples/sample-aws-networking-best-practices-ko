@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-17 · 前日のアップデート
+
+- **[AWS Client VPN が MacOS 27 Golden Gate をサポート](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-client-vpn-macos-golden-gate/)** — AWS Client VPN はクライアントバージョン 6.0 以降で MacOS 27 Golden Gate をサポートするようになりました。既存の MacOS 13.0〜26.0、Windows、Ubuntu-Linux に加え、最新の MacOS でもリモートアクセスが利用可能です。
+- **[AWS Step Functions が新しい AWS サービス統合を自動追加 — AWS Lambda MicroVMs を皮切りに](https://aws.amazon.com/about-aws/whats-new/2026/06/aws-step-functions-integrations/)** — AWS Step Functions は、新しい AWS サービスのリリース後数週間以内に AWS SDK 統合を自動的に追加するようになりました。第一弾として AWS Lambda MicroVMs および AWS Lambda Core が対象となり、カスタムコードなしでエージェントワークフローをオーケストレーションできます。
+
 ## 2026-09-16 · 前日のアップデート
 
 - **[AWS Direct Connect、専用接続のフラットレート料金を発表](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-direct-connect-announces-flat-rate-pricing/)** — AWS Direct Connect が 10G および 100G 専用接続向けにフラットレート料金オプションを導入しました。大量かつ継続的なデータ転送アウト (DTO) を行うワークロードにおいて、月額コストの予測が容易になります。

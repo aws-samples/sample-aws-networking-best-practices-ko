@@ -8,6 +8,11 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-17 · Daily update
+
+- **[AWS Client VPN Now Supports MacOS 27 Golden Gate](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-client-vpn-macos-golden-gate/)** — AWS Client VPN now supports MacOS 27 Golden Gate starting with client version 6.0, extending remote access coverage to the latest MacOS release. It already supported MacOS 13.0 through 26.0, Windows (x64 and Arm64), and Ubuntu-Linux.
+- **[AWS Step Functions Automatically Adds New AWS Service Integrations, Starting with AWS Lambda MicroVMs](https://aws.amazon.com/about-aws/whats-new/2026/06/aws-step-functions-integrations/)** — AWS Step Functions will now automatically add AWS SDK integrations for newly released AWS services within weeks of their launch, beginning with AWS Lambda MicroVMs and AWS Lambda Core. This eliminates the wait for manual updates, allowing customers to orchestrate the latest services directly from their workflows.
+
 ## 2026-09-16 · Daily update
 
 - **[AWS Direct Connect Announces Flat-Rate Pricing for Dedicated Connections](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-direct-connect-announces-flat-rate-pricing/)** — AWS Direct Connect now offers flat-rate pricing for 10 Gbps and 100 Gbps dedicated connections, providing a predictable cost alternative to per-gigabyte charges for customers with large, sustained data transfer out workloads.

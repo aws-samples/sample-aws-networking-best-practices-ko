@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-17 · 週次まとめ
+
+- **[AWS Network Firewall に適したインスペクションアーキテクチャの選び方](https://aws.amazon.com/blogs/networking-and-content-delivery/choosing-the-right-inspection-architecture-for-aws-network-firewall/)** — マルチ VPC・マルチアカウント環境で AWS Network Firewall を展開する際に選択できる 3 つのパターン（従来の検査 VPC、2025 年 5 月リリースの Multiple VPC Endpoints、2025 年 7 月リリースの Transit Gateway Native Attachment）を比較し、コンプライアンスや脅威検出に適したアーキテクチャの選び方を解説しています。
+
 ## 2026-09-09 · 週次まとめ
 
 - **[AWS がルーティングコントロールプレーンを統合してネットワークの可用性とパフォーマンスを向上させた方法](https://aws.amazon.com/blogs/networking-and-content-delivery/how-aws-unified-its-routing-control-plane-to-improve-network-availability-and-performance/)** — AWS は 39 のリージョン、123 のアベイラビリティーゾーン、750 以上の PoP にまたがるボーダーネットワークのルーティングコントロールプレーンを統合し、可用性とパフォーマンスを向上させました。この記事では、API コール・Amazon CloudFront ストリーミング・Amazon Route 53 の名前解決など、すべてのトラフィック経路に影響するコントロールプレーン統合の背景とネットワーキング上の意義を解説しています。

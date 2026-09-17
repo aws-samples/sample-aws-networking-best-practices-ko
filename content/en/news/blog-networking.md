@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-17 · Weekly summary
+
+- **[Choosing the right inspection architecture for AWS Network Firewall](https://aws.amazon.com/blogs/networking-and-content-delivery/choosing-the-right-inspection-architecture-for-aws-network-firewall/)** — AWS Network Firewall now offers three deployment patterns—Traditional Inspection VPC, Multiple VPC Endpoints (launched May 2025), and Transit Gateway Native Attachment (launched July 2025)—and this post helps networking teams select the right architecture for compliance, threat detection, and traffic filtering in multi-VPC, multi-account environments.
+
 ## 2026-09-09 · Weekly summary
 
 - **[How AWS unified its routing control plane to improve network availability and performance](https://aws.amazon.com/blogs/networking-and-content-delivery/how-aws-unified-its-routing-control-plane-to-improve-network-availability-and-performance/)** — AWS unified its routing control plane across 39 Regions, 123 Availability Zones, and over 750 Points of Presence to improve the availability and performance of its border network. The post explains the motivation and networking implications of this consolidation, which affects all traffic paths including API calls, Amazon CloudFront streaming, and Amazon Route 53 resolution.

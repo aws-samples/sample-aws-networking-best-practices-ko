@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-17 · 주간 요약
+
+- **[AWS Network Firewall에 적합한 검사 아키텍처 선택하기](https://aws.amazon.com/blogs/networking-and-content-delivery/choosing-the-right-inspection-architecture-for-aws-network-firewall/)** — 다중 VPC·다중 계정 환경에서 AWS Network Firewall을 배포할 때 선택할 수 있는 세 가지 패턴(전통적 검사 VPC, 2025년 5월 출시된 Multiple VPC Endpoints, 2025년 7월 출시된 Transit Gateway Native Attachment)을 비교하고, 각 패턴의 적합한 사용 사례를 안내합니다.
+
 ## 2026-09-09 · 주간 요약
 
 - **[AWS가 라우팅 컨트롤 플레인을 통합하여 네트워크 가용성과 성능을 개선한 방법](https://aws.amazon.com/blogs/networking-and-content-delivery/how-aws-unified-its-routing-control-plane-to-improve-network-availability-and-performance/)** — AWS는 39개 리전, 123개 가용 영역, 750개 이상의 PoP에 걸친 보더 네트워크의 라우팅 컨트롤 플레인을 통합하여 가용성과 성능을 향상시켰습니다. 이 글은 API 호출, Amazon CloudFront 스트리밍, Amazon Route 53 도메인 해석 등 모든 트래픽 경로에 영향을 미치는 컨트롤 플레인 통합의 배경과 네트워킹 관점의 의미를 설명합니다.
