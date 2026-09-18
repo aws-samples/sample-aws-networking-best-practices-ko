@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-18 · Daily update
+
+- **[AWS Transfer Family now supports source IP preservation for SFTP servers behind a Network Load Balancer (NLB)](https://aws.amazon.com/about-aws/whats-new/2026/09/transfer-family-sftp-source-ip-nlb/)** — AWS Transfer Family now supports Proxy Protocol v2 (PPv2) to preserve the client's source IP address when an NLB is placed in front of a VPC-hosted SFTP endpoint. This resolves the previous limitation where the NLB's private IP replaced the client's source IP in Transfer Family logs and events, enabling accurate IP-based auditing, access control, and compliance.
+
 ## 2026-09-17 · Daily update
 
 - **[AWS Client VPN Now Supports MacOS 27 Golden Gate](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-client-vpn-macos-golden-gate/)** — AWS Client VPN now supports MacOS 27 Golden Gate starting with client version 6.0, extending remote access coverage to the latest MacOS release. It already supported MacOS 13.0 through 26.0, Windows (x64 and Arm64), and Ubuntu-Linux.

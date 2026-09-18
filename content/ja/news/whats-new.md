@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-18 · 前日のアップデート
+
+- **[AWS Transfer Family、NLB の背後にある SFTP サーバーでソース IP 保存をサポート](https://aws.amazon.com/about-aws/whats-new/2026/09/transfer-family-sftp-source-ip-nlb/)** — AWS Transfer Family は、VPC ホスト型エンドポイントの SFTP サーバー前段に NLB を配置する際、Proxy Protocol v2 (PPv2) を使用してクライアントのソース IP アドレスを保持できるようになりました。これにより、従来 NLB のプライベート IP に置き換えられていた問題が解消され、IP ベースの監査やアクセス制御、コンプライアンス要件を満たすことが可能です。
+
 ## 2026-09-17 · 前日のアップデート
 
 - **[AWS Client VPN が MacOS 27 Golden Gate をサポート](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-client-vpn-macos-golden-gate/)** — AWS Client VPN はクライアントバージョン 6.0 以降で MacOS 27 Golden Gate をサポートするようになりました。既存の MacOS 13.0〜26.0、Windows、Ubuntu-Linux に加え、最新の MacOS でもリモートアクセスが利用可能です。
