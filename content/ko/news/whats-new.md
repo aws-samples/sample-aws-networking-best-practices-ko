@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-19 · 전일 업데이트
+
+- **[Amazon ECS Express Mode, AWS Graviton(ARM64) 워크로드 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ecs-express-mode-arm-architecture/)** — Amazon ECS Express Mode가 ARM64 CPU 아키텍처를 지원하여 AWS Graviton 기반 컴퓨팅에 ARM 컨테이너 이미지를 손쉽게 배포할 수 있게 되었습니다. 이를 통해 x86 인스턴스 대비 최대 40% 향상된 가격 대비 성능을 활용할 수 있으며, 네트워킹·로드 밸런싱 등 인프라 구성은 ECS Express Mode가 자동으로 처리합니다.
+- **[AWS RTB Fabric, 구성 가능한 가용 영역 어피니티 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-rtb-fabric-configurable-availability-zone-affinity/)** — AWS RTB Fabric이 응답자 게이트웨이에 대해 구성 가능한 가용 영역(AZ) 어피니티를 지원하여, 파트너가 자신의 AZ 또는 게이트웨이가 걸쳐 있는 임의의 AZ로 연결하도록 선택할 수 있게 되었습니다. 이를 통해 AdTech 기업의 DSP·SSP가 여러 AZ에 걸쳐 운영하는 입찰 시스템의 인프라 효율을 추가 비용 없이 높일 수 있습니다.
+- **[AWS PrivateLink, 네트워크 세그먼트 액세스를 위한 터널 엔드포인트 발표](https://aws.amazon.com/about-aws/whats-new/2026/9/privatelink-tunnel-endpoint/)** — AWS PrivateLink가 새로운 유형의 VPC 엔드포인트인 '터널' 엔드포인트를 도입하여, 다른 VPC 또는 계정의 네트워크 세그먼트에 비공개·안전하게 액세스할 수 있게 되었습니다. 기존에는 외부 벤더 등 제3자와 리소스를 공유하려면 개별 리소스마다 별도 설정이 필요했으나, 이제 터널 엔드포인트를 통해 네트워크 세그먼트 전체에 접근할 수 있어 계정 간 연결 구성이 간소화됩니다.
+
 ## 2026-09-18 · 전일 업데이트
 
 - **[AWS Transfer Family, NLB 뒤에 위치한 SFTP 서버에서 소스 IP 보존 지원](https://aws.amazon.com/about-aws/whats-new/2026/09/transfer-family-sftp-source-ip-nlb/)** — AWS Transfer Family가 VPC 호스팅 엔드포인트의 SFTP 서버 앞에 NLB를 배치할 때 Proxy Protocol v2(PPv2)를 사용해 클라이언트 소스 IP를 보존하도록 지원합니다. 이를 통해 기존에 NLB의 프라이빗 IP로 대체되던 문제가 해결되어 IP 기반 감사, 액세스 제어, 컴플라이언스 요구사항을 충족할 수 있습니다.

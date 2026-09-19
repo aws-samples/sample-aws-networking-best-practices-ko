@@ -8,6 +8,12 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-19 · Daily update
+
+- **[Amazon ECS Express Mode now supports AWS Graviton (ARM64) workloads](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ecs-express-mode-arm-architecture/)** — Amazon ECS Express Mode now supports ARM64 as the CPU architecture, enabling easy deployment of ARM-based container images on AWS Graviton-powered compute with up to 40% better price-performance than x86 instances. Networking, load balancing, and other infrastructure configurations are automatically managed by ECS Express Mode.
+- **[AWS RTB Fabric now supports configurable Availability Zone affinity](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-rtb-fabric-configurable-availability-zone-affinity/)** — AWS RTB Fabric now supports configurable Availability Zone (AZ) affinity for responder gateways, allowing partners to connect either within their own AZ or to any AZ the gateway spans. This helps AdTech companies—including DSPs and SSPs—use their bidding infrastructure more efficiently across multiple AZs at no additional cost.
+- **[AWS PrivateLink announces Tunnel Endpoints to access network segments](https://aws.amazon.com/about-aws/whats-new/2026/9/privatelink-tunnel-endpoint/)** — AWS PrivateLink introduces a new 'tunnel' VPC endpoint type that allows customers to privately and securely access network segments in another VPC or account. This simplifies cross-account resource sharing, eliminating the need to configure access for each individual resource when working with external vendors or partners.
+
 ## 2026-09-18 · Daily update
 
 - **[AWS Transfer Family now supports source IP preservation for SFTP servers behind a Network Load Balancer (NLB)](https://aws.amazon.com/about-aws/whats-new/2026/09/transfer-family-sftp-source-ip-nlb/)** — AWS Transfer Family now supports Proxy Protocol v2 (PPv2) to preserve the client's source IP address when an NLB is placed in front of a VPC-hosted SFTP endpoint. This resolves the previous limitation where the NLB's private IP replaced the client's source IP in Transfer Family logs and events, enabling accurate IP-based auditing, access control, and compliance.

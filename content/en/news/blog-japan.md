@@ -8,6 +8,10 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-19 · Weekly summary
+
+- **[Integrating SAP Commerce Cloud with SAP Cloud ERP Private on AWS – A Practical, Proven Approach](https://aws.amazon.com/jp/blogs/news/integrating-sap-commerce-cloud-with-sap-cloud-erp-private-on-aws-a-practical-and-proven-approach/)** — With the end of mainstream maintenance for SAP Commerce (SAP Hybris) 2205 approaching, this post outlines proven architectural best practices for integrating SAP Commerce Cloud SaaS with SAP Cloud ERP Private on AWS. It covers four key areas—Region selection, latency optimization using Amazon CloudFront, AWS Global Accelerator, and Amazon Route 53, and security—along with e-commerce expansion through Buy with Prime and Amazon MCF integration.
+
 ## 2026-09-15 · Weekly summary
 
 - **[Introduction to Automated Reasoning](https://aws.amazon.com/jp/blogs/news/a-gentle-introduction-to-automated-reasoning/)** — This article explains automated reasoning in an accessible way using simple C and Python examples, covering why it can verify in milliseconds what exhaustive testing would take over 1,300 years, and why a 'Don't know' answer is unavoidable due to the halting problem. It also highlights AWS use cases such as IAM Access Analyzer and VPC Reachability Analyzer.

@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-19 · 週次まとめ
+
+- **[SAP Commerce Cloud と AWS 上の SAP Cloud ERP Private の統合 – 実践的で実証済みのアプローチ](https://aws.amazon.com/jp/blogs/news/integrating-sap-commerce-cloud-with-sap-cloud-erp-private-on-aws-a-practical-and-proven-approach/)** — SAP Commerce (SAP Hybris) 2205 のメインストリームメンテナンス終了を前に、SAP Commerce Cloud SaaS と AWS 上の SAP Cloud ERP Private を統合するモダナイゼーションアーキテクチャを紹介します。リージョン選択、Amazon CloudFront・AWS Global Accelerator・Amazon Route 53 を活用した遅延時間の最適化、セキュリティの 4 つの観点からベストプラクティスを解説し、Buy with Prime および Amazon MCF との連携による e コマース拡張についても説明しています。
+
 ## 2026-09-15 · 週次まとめ
 
 - **[はじめての自動推論](https://aws.amazon.com/jp/blogs/news/a-gentle-introduction-to-automated-reasoning/)** — C と Python のコード例を用いて自動推論の概念をわかりやすく解説し、網羅的テストで 1,300 年以上かかる検証をミリ秒で行える理由や、停止性問題に起因する「Don't know」応答の必然性を説明しています。IAM Access Analyzer や VPC Reachability Analyzer など AWS サービスにおける活用事例も紹介しています。

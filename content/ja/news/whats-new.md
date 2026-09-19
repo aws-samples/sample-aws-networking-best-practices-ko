@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-19 · 前日のアップデート
+
+- **[Amazon ECS Express Mode が AWS Graviton (ARM64) ワークロードをサポート](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ecs-express-mode-arm-architecture/)** — Amazon ECS Express Mode が ARM64 CPU アーキテクチャをサポートし、AWS Graviton ベースのコンピューティングに ARM コンテナイメージを簡単にデプロイできるようになりました。x86 インスタンスと比較して最大 40% 優れた価格性能比を実現でき、ネットワーキングやロードバランシングなどのインフラ設定は ECS Express Mode が自動的に処理します。
+- **[AWS RTB Fabric が設定可能な Availability Zone アフィニティをサポート](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-rtb-fabric-configurable-availability-zone-affinity/)** — AWS RTB Fabric がレスポンダーゲートウェイに対して設定可能な Availability Zone (AZ) アフィニティをサポートし、パートナーが自身の AZ またはゲートウェイがまたがる任意の AZ に接続するかを選択できるようになりました。これにより、DSP や SSP などの AdTech 企業は追加費用なしで複数 AZ にわたる入札システムのインフラ効率を向上させることができます。
+- **[AWS PrivateLink がネットワークセグメントにアクセスするためのトンネルエンドポイントを発表](https://aws.amazon.com/about-aws/whats-new/2026/9/privatelink-tunnel-endpoint/)** — AWS PrivateLink が新しいタイプの VPC エンドポイントである「トンネル」エンドポイントを導入し、別の VPC やアカウントのネットワークセグメントにプライベートかつ安全にアクセスできるようになりました。これにより、外部ベンダーなどとリソースを共有する際にリソースごとに個別設定する必要がなくなり、アカウント間の接続構成が大幅に簡素化されます。
+
 ## 2026-09-18 · 前日のアップデート
 
 - **[AWS Transfer Family、NLB の背後にある SFTP サーバーでソース IP 保存をサポート](https://aws.amazon.com/about-aws/whats-new/2026/09/transfer-family-sftp-source-ip-nlb/)** — AWS Transfer Family は、VPC ホスト型エンドポイントの SFTP サーバー前段に NLB を配置する際、Proxy Protocol v2 (PPv2) を使用してクライアントのソース IP アドレスを保持できるようになりました。これにより、従来 NLB のプライベート IP に置き換えられていた問題が解消され、IP ベースの監査やアクセス制御、コンプライアンス要件を満たすことが可能です。
