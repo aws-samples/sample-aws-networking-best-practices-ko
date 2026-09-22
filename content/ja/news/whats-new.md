@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-22 · 前日のアップデート
+
+- **[Amazon EVS が FedRAMP Class C の対象範囲に追加](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-evs-fedramp-class-c/)** — Amazon Elastic VMware Service (EVS) が、米国の全リージョンで FedRAMP Class C（旧 Moderate ベースライン）の対象範囲に追加されました。これにより、米国政府機関および関連顧客は、Amazon VPC 内の EC2 ベアメタルインスタンス上で VMware Cloud Foundation (VCF) を実行する際に、標準化されたセキュリティ認証要件を満たすことができます。
+
 ## 2026-09-19 · 前日のアップデート
 
 - **[Amazon ECS Express Mode が AWS Graviton (ARM64) ワークロードをサポート](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ecs-express-mode-arm-architecture/)** — Amazon ECS Express Mode が ARM64 CPU アーキテクチャをサポートし、AWS Graviton ベースのコンピューティングに ARM コンテナイメージを簡単にデプロイできるようになりました。x86 インスタンスと比較して最大 40% 優れた価格性能比を実現でき、ネットワーキングやロードバランシングなどのインフラ設定は ECS Express Mode が自動的に処理します。

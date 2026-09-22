@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-22 · Daily update
+
+- **[Amazon EVS Now in Scope for FedRAMP Class C](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-evs-fedramp-class-c/)** — Amazon Elastic VMware Service (EVS) is now in scope for FedRAMP Class C (formerly Moderate baseline) across all United States Regions. This allows US government agencies and related customers to meet standardized security authorization requirements when running VMware Cloud Foundation (VCF) on EC2 bare-metal instances within Amazon VPC.
+
 ## 2026-09-19 · Daily update
 
 - **[Amazon ECS Express Mode now supports AWS Graviton (ARM64) workloads](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ecs-express-mode-arm-architecture/)** — Amazon ECS Express Mode now supports ARM64 as the CPU architecture, enabling easy deployment of ARM-based container images on AWS Graviton-powered compute with up to 40% better price-performance than x86 instances. Networking, load balancing, and other infrastructure configurations are automatically managed by ECS Express Mode.
