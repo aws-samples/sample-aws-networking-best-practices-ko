@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-23 · 전일 업데이트
+
+- **[Amazon Route 53 Resolver, 2세대 AWS Outposts 랙에서 정식 출시](https://aws.amazon.com/about-aws/whats-new/2026/09/route-53-resolver-gen2-outposts/)** — Amazon Route 53 Resolver가 2세대 AWS Outposts에서 정식 출시되어, Outpost에서 실행되는 워크로드의 DNS 쿼리를 로컬에서 직접 처리함으로써 지연 시간을 줄이고 Service Link 의존성을 제거합니다. 또한 Service Link 연결이 끊어진 상황에서도 캐시된 DNS 레코드를 유지해 지속적인 DNS 해석을 보장합니다.
+
 ## 2026-09-22 · 전일 업데이트
 
 - **[Amazon EVS, FedRAMP Class C 범위에 포함](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-evs-fedramp-class-c/)** — Amazon Elastic VMware Service(EVS)가 미국 전 리전에서 FedRAMP Class C(구 Moderate 기준) 범위에 포함되었습니다. 이를 통해 미국 정부 기관 및 관련 고객은 Amazon VPC 내 EC2 베어메탈 인스턴스에서 VMware Cloud Foundation(VCF)을 실행할 때 표준화된 보안 인증 기준을 충족할 수 있습니다.
