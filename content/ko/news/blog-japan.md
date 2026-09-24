@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-24 · 주간 요약
+
+- **[Amazon CloudFront로 SAP S/4HANA에 mTLS 인증 구현하기](https://aws.amazon.com/jp/blogs/news/implement-mtls-authentication-with-amazon-cloudfront-for-sap-s-4hana/)** — Amazon CloudFront의 mTLS verify 모드를 활용해 엣지에서 클라이언트 인증서를 검증하고, ALB 패스스루와 SAP ICM의 X.509 인증을 결합하여 패스워드 없는 SSO를 구현하는 아키텍처를 소개합니다. 이 구성은 글로벌 TLS 핸드셰이크 지연 시간을 줄이고 초기 로그인 시간을 약 40~50% 단축하는 효과를 내부 테스트에서 확인했습니다.
+
 ## 2026-09-19 · 주간 요약
 
 - **[SAP Commerce Cloud와 AWS 기반 SAP Cloud ERP Private 통합 – 실증된 실용적 접근법](https://aws.amazon.com/jp/blogs/news/integrating-sap-commerce-cloud-with-sap-cloud-erp-private-on-aws-a-practical-and-proven-approach/)** — SAP Commerce(SAP Hybris) 2205 메인스트림 유지보수 종료를 앞두고, SAP Commerce Cloud SaaS와 AWS 기반 SAP Cloud ERP Private를 통합하는 모더나이제이션 아키텍처를 소개합니다. 리전 선택, Amazon CloudFront·AWS Global Accelerator·Amazon Route 53를 활용한 지연 시간 최적화, 보안 등 네 가지 관점에서 모범 사례를 제시하며, Buy with Prime 및 Amazon MCF와의 연동을 통한 e커머스 확장 방안도 다룹니다.

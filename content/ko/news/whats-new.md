@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-24 · 전일 업데이트
+
+- **[Amazon EMR on EKS, IPv6 Amazon EKS 클러스터 지원 시작](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-emr-eks-ipv6-support)** — Amazon EMR on EKS가 IPv6 Amazon EKS 클러스터에서의 워크로드 실행을 지원합니다. 이를 통해 대규모 Apache Spark 및 Apache Flink 워크로드를 IPv6의 광대한 주소 공간을 활용해 실행할 수 있어 IP 주소 고갈 문제를 해소할 수 있습니다.
+
 ## 2026-09-23 · 전일 업데이트
 
 - **[Amazon Route 53 Resolver, 2세대 AWS Outposts 랙에서 정식 출시](https://aws.amazon.com/about-aws/whats-new/2026/09/route-53-resolver-gen2-outposts/)** — Amazon Route 53 Resolver가 2세대 AWS Outposts에서 정식 출시되어, Outpost에서 실행되는 워크로드의 DNS 쿼리를 로컬에서 직접 처리함으로써 지연 시간을 줄이고 Service Link 의존성을 제거합니다. 또한 Service Link 연결이 끊어진 상황에서도 캐시된 DNS 레코드를 유지해 지속적인 DNS 해석을 보장합니다.

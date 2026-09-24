@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-24 · Daily update
+
+- **[Amazon EMR on EKS now supports IPv6 Amazon EKS clusters](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-emr-eks-ipv6-support)** — Amazon EMR on EKS now supports running Apache Spark and Apache Flink workloads on IPv6 Amazon EKS clusters. This allows teams operating at scale to leverage the vastly larger IPv6 address space, eliminating IP address exhaustion concerns as analytics workloads grow.
+
 ## 2026-09-23 · Daily update
 
 - **[Amazon Route 53 Resolver is now generally available on second-generation AWS Outposts racks](https://aws.amazon.com/about-aws/whats-new/2026/09/route-53-resolver-gen2-outposts/)** — Amazon Route 53 Resolver is now generally available on second-generation AWS Outposts, enabling local recursive DNS resolution directly on the Outpost to reduce latency and eliminate reliance on the Service Link to the parent AWS Region. It also maintains cached DNS records during Service Link disconnections, ensuring continuous DNS resolution even when connectivity is interrupted.

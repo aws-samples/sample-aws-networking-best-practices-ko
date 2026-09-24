@@ -8,6 +8,10 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-24 · Weekly summary
+
+- **[Implementing mTLS Authentication for SAP S/4HANA with Amazon CloudFront](https://aws.amazon.com/jp/blogs/news/implement-mtls-authentication-with-amazon-cloudfront-for-sap-s-4hana/)** — This post explains an architecture that uses Amazon CloudFront's mTLS verify mode to validate client certificates at the edge, combined with ALB passthrough and SAP ICM X.509 authentication to achieve passwordless SSO. Internal testing showed the approach reduces initial login time by approximately 40–50% by minimizing global TLS handshake latency.
+
 ## 2026-09-19 · Weekly summary
 
 - **[Integrating SAP Commerce Cloud with SAP Cloud ERP Private on AWS – A Practical, Proven Approach](https://aws.amazon.com/jp/blogs/news/integrating-sap-commerce-cloud-with-sap-cloud-erp-private-on-aws-a-practical-and-proven-approach/)** — With the end of mainstream maintenance for SAP Commerce (SAP Hybris) 2205 approaching, this post outlines proven architectural best practices for integrating SAP Commerce Cloud SaaS with SAP Cloud ERP Private on AWS. It covers four key areas—Region selection, latency optimization using Amazon CloudFront, AWS Global Accelerator, and Amazon Route 53, and security—along with e-commerce expansion through Buy with Prime and Amazon MCF integration.
