@@ -8,6 +8,12 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-25 · Daily update
+
+- **[AWS Network Security Manager is now generally available in US East (N. Virginia) Region](https://aws.amazon.com/about-aws/whats-new/2026/09/network-security-manager-us-east-va/)** — AWS Network Security Manager is now generally available, enabling security teams to consistently enforce AWS WAF and AWS Shield Advanced policies across an entire AWS organization with always-on automation. Support for AWS Network Firewall is planned to follow, further simplifying large-scale network security policy management.
+- **[Amazon SageMaker HyperPod Inference Gateway for scalable LLM inference](https://aws.amazon.com/about-aws/whats-new/2026/09/sagemaker-hyperpod-inference-gateway/)** — Amazon SageMaker HyperPod Inference Gateway is a Kubernetes-native, GPU-aware routing system that replaces round-robin load balancing with real-time inference-signal-driven routing, reducing first-token latency by up to 82% and p99 TTFT by 97–98% in mixed-hardware and burst traffic scenarios. It deploys as a single EKS managed add-on on existing SageMaker HyperPod infrastructure with no application changes required.
+- **[Amazon GameLift Servers now available in 5 new regions and 8 Local Zones](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-gamelift-servers-region-expansion-2026)** — Amazon GameLift Servers has expanded to 5 new AWS Regions and 8 AWS Local Zones, bringing dedicated game server infrastructure closer to players across Latin America, Southeast Asia, Europe, the Middle East, and South Asia. This expansion helps game developers reduce latency caused by geographic distance, improving the multiplayer gaming experience.
+
 ## 2026-09-24 · Daily update
 
 - **[Amazon EMR on EKS now supports IPv6 Amazon EKS clusters](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-emr-eks-ipv6-support)** — Amazon EMR on EKS now supports running Apache Spark and Apache Flink workloads on IPv6 Amazon EKS clusters. This allows teams operating at scale to leverage the vastly larger IPv6 address space, eliminating IP address exhaustion concerns as analytics workloads grow.

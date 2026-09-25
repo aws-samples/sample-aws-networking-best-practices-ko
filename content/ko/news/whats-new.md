@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-25 · 전일 업데이트
+
+- **[AWS Network Security Manager, 미국 동부(버지니아 북부) 리전에서 정식 출시](https://aws.amazon.com/about-aws/whats-new/2026/09/network-security-manager-us-east-va/)** — AWS Network Security Manager가 정식 출시되어 AWS WAF, AWS Shield Advanced를 통한 방화벽 및 DDoS 보호 정책을 AWS 조직 전체에 일관되게 배포·적용할 수 있습니다. 향후 AWS Network Firewall 지원도 추가될 예정이며, 상시 보안 배포 자동화 기능을 통해 대규모 보안 정책 관리를 간소화합니다.
+- **[확장 가능한 LLM 추론을 위한 Amazon SageMaker HyperPod Inference Gateway 출시](https://aws.amazon.com/about-aws/whats-new/2026/09/sagemaker-hyperpod-inference-gateway/)** — Amazon SageMaker HyperPod Inference Gateway는 Kubernetes 네이티브 GPU 인식 라우팅 시스템으로, 기존 라운드로빈 로드 밸런싱을 실시간 추론 신호 기반 라우팅으로 대체해 첫 번째 토큰 지연 시간을 최대 82%, p99 TTFT를 최대 97~98% 줄입니다. EKS 관리형 애드온으로 애플리케이션 변경 없이 기존 SageMaker HyperPod 인프라에 배포할 수 있습니다.
+- **[Amazon GameLift Servers, 5개 신규 리전 및 8개 로컬 존으로 확장](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-gamelift-servers-region-expansion-2026)** — Amazon GameLift Servers가 5개의 신규 AWS 리전과 8개의 AWS 로컬 존으로 확장되어 라틴 아메리카, 동남아시아, 유럽, 중동, 남아시아 지역의 플레이어와 서버 간 지리적 거리로 인한 지연 시간 문제를 완화합니다. 게임 개발사는 플레이어에 더 가까운 위치에 게임 서버 플릿을 배포해 멀티플레이어 게임 경험을 개선할 수 있습니다.
+
 ## 2026-09-24 · 전일 업데이트
 
 - **[Amazon EMR on EKS, IPv6 Amazon EKS 클러스터 지원 시작](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-emr-eks-ipv6-support)** — Amazon EMR on EKS가 IPv6 Amazon EKS 클러스터에서의 워크로드 실행을 지원합니다. 이를 통해 대규모 Apache Spark 및 Apache Flink 워크로드를 IPv6의 광대한 주소 공간을 활용해 실행할 수 있어 IP 주소 고갈 문제를 해소할 수 있습니다.

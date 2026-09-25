@@ -8,6 +8,10 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-25 · Weekly summary
+
+- **[Weekly AWS – Week of September 14, 2026](https://aws.amazon.com/jp/blogs/news/aws-weekly-20260914/)** — This week's AWS updates include AWS Direct Connect flat-rate pricing for dedicated connections, the launch of AWS PrivateLink Tunnel Endpoint, and source IP preservation support for SFTP servers behind a Network Load Balancer in AWS Transfer Family. Additional highlights cover a new AgentCore Runtime in Amazon Bedrock AgentCore, expanded Amazon S3 Files support for Amazon ECS on EC2, and several Amazon Connect enhancements.
+
 ## 2026-09-24 · Weekly summary
 
 - **[Implementing mTLS Authentication for SAP S/4HANA with Amazon CloudFront](https://aws.amazon.com/jp/blogs/news/implement-mtls-authentication-with-amazon-cloudfront-for-sap-s-4hana/)** — This post explains an architecture that uses Amazon CloudFront's mTLS verify mode to validate client certificates at the edge, combined with ALB passthrough and SAP ICM X.509 authentication to achieve passwordless SSO. Internal testing showed the approach reduces initial login time by approximately 40–50% by minimizing global TLS handshake latency.

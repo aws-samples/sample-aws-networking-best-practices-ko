@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-25 · 주간 요약
+
+- **[주간 AWS – 2026년 9월 14일 주](https://aws.amazon.com/jp/blogs/news/aws-weekly-20260914/)** — AWS Direct Connect 전용 연결 정액 요금 도입, AWS PrivateLink Tunnel Endpoint 출시, AWS Transfer Family의 Network Load Balancer 환경에서 송신 IP 보존 지원 등 네트워킹 관련 업데이트가 다수 포함되었습니다. 그 외 Amazon Bedrock AgentCore 신규 런타임, Amazon ECS의 Amazon S3 Files 지원 확장, Amazon Connect 신규 기능 등 다양한 서비스 업데이트가 발표되었습니다.
+
 ## 2026-09-24 · 주간 요약
 
 - **[Amazon CloudFront로 SAP S/4HANA에 mTLS 인증 구현하기](https://aws.amazon.com/jp/blogs/news/implement-mtls-authentication-with-amazon-cloudfront-for-sap-s-4hana/)** — Amazon CloudFront의 mTLS verify 모드를 활용해 엣지에서 클라이언트 인증서를 검증하고, ALB 패스스루와 SAP ICM의 X.509 인증을 결합하여 패스워드 없는 SSO를 구현하는 아키텍처를 소개합니다. 이 구성은 글로벌 TLS 핸드셰이크 지연 시간을 줄이고 초기 로그인 시간을 약 40~50% 단축하는 효과를 내부 테스트에서 확인했습니다.
