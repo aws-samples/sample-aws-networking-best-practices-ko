@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-26 · Daily update
+
+- **[AWS IAM Outbound Identity Federation Now Supports Interface VPC Endpoints for OIDC Discovery](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-sts-vpc-oidc/)** — AWS IAM outbound identity federation now supports interface VPC endpoints via AWS PrivateLink, allowing OIDC discovery metadata and JWKS verification key endpoints to be accessed from within a VPC without traversing the public internet. This enables AWS workloads that use short-lived JWTs to access external services more securely.
+
 ## 2026-09-25 · Daily update
 
 - **[AWS Network Security Manager is now generally available in US East (N. Virginia) Region](https://aws.amazon.com/about-aws/whats-new/2026/09/network-security-manager-us-east-va/)** — AWS Network Security Manager is now generally available, enabling security teams to consistently enforce AWS WAF and AWS Shield Advanced policies across an entire AWS organization with always-on automation. Support for AWS Network Firewall is planned to follow, further simplifying large-scale network security policy management.

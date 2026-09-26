@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-26 · 前日のアップデート
+
+- **[AWS IAM アウトバウンド ID フェデレーション、OIDC ディスカバリー向けインターフェイス VPC エンドポイントをサポート](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-sts-vpc-oidc/)** — AWS IAM アウトバウンド ID フェデレーションが AWS PrivateLink を介したインターフェイス VPC エンドポイントをサポートし、OIDC ディスカバリーメタデータおよび JWKS 検証キーエンドポイントへパブリックインターネットを経由せずに VPC 内からアクセスできるようになりました。これにより、外部サービスにアクセスする AWS ワークロードが短期 JWT をより安全に取得できます。
+
 ## 2026-09-25 · 前日のアップデート
 
 - **[AWS Network Security Manager が米国東部 (バージニア北部) リージョンで一般提供開始](https://aws.amazon.com/about-aws/whats-new/2026/09/network-security-manager-us-east-va/)** — AWS Network Security Manager が正式リリースされ、AWS WAF および AWS Shield Advanced のファイアウォール・DDoS 保護ポリシーを AWS 組織全体に一貫して適用できるようになりました。常時稼働のセキュリティ自動化機能により大規模なポリシー管理が簡素化され、今後は AWS Network Firewall のサポートも追加される予定です。

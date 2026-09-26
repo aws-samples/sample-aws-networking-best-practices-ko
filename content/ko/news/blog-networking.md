@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-26 · 주간 요약
+
+- **[AI 에이전트와 MCP를 활용한 AWS 네트워크 운영 AI 모범 사례](https://aws.amazon.com/blogs/networking-and-content-delivery/ai-best-practices-for-aws-network-operations-with-ai-agents-and-mcp/)** — AI 에이전트와 MCP(Model Context Protocol)를 활용해 AWS 네트워크 운영을 자동화하는 모범 사례를 소개하며, 24/7 운영 팀을 위한 AWS DevOps Agent·Amazon Bedrock AgentCore 활용법과 개발·트리아지 단계에서 엔지니어가 활용할 수 있는 에이전틱 진단 방법을 다룹니다.
+
 ## 2026-09-17 · 주간 요약
 
 - **[AWS Network Firewall에 적합한 검사 아키텍처 선택하기](https://aws.amazon.com/blogs/networking-and-content-delivery/choosing-the-right-inspection-architecture-for-aws-network-firewall/)** — 다중 VPC·다중 계정 환경에서 AWS Network Firewall을 배포할 때 선택할 수 있는 세 가지 패턴(전통적 검사 VPC, 2025년 5월 출시된 Multiple VPC Endpoints, 2025년 7월 출시된 Transit Gateway Native Attachment)을 비교하고, 각 패턴의 적합한 사용 사례를 안내합니다.

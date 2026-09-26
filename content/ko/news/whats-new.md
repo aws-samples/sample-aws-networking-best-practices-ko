@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-26 · 전일 업데이트
+
+- **[AWS IAM 아웃바운드 ID 페더레이션, OIDC 디스커버리용 인터페이스 VPC 엔드포인트 지원](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-sts-vpc-oidc/)** — AWS IAM 아웃바운드 ID 페더레이션이 이제 AWS PrivateLink를 통한 인터페이스 VPC 엔드포인트를 지원하여, OIDC 디스커버리 메타데이터 및 JWKS 검증 키 엔드포인트에 퍼블릭 인터넷을 거치지 않고 VPC 내부에서 직접 액세스할 수 있습니다. 이를 통해 외부 서비스에 액세스하는 AWS 워크로드가 단기 JWT를 보다 안전하게 발급받을 수 있습니다.
+
 ## 2026-09-25 · 전일 업데이트
 
 - **[AWS Network Security Manager, 미국 동부(버지니아 북부) 리전에서 정식 출시](https://aws.amazon.com/about-aws/whats-new/2026/09/network-security-manager-us-east-va/)** — AWS Network Security Manager가 정식 출시되어 AWS WAF, AWS Shield Advanced를 통한 방화벽 및 DDoS 보호 정책을 AWS 조직 전체에 일관되게 배포·적용할 수 있습니다. 향후 AWS Network Firewall 지원도 추가될 예정이며, 상시 보안 배포 자동화 기능을 통해 대규모 보안 정책 관리를 간소화합니다.
