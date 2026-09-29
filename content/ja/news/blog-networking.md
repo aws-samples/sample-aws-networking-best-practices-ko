@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-29 · 週次まとめ
+
+- **[UDP トラフィックをオンプレミスの Network Load Balancer ターゲットにルーティングする](https://aws.amazon.com/blogs/networking-and-content-delivery/routing-udp-to-on-premises-network-load-balancer-targets/)** — 仮想デスクトップゲートウェイや IPsec VPN ヘッドエンドなど、オンプレミスに残るワークロードを AWS グローバルネットワーク経由で接続する方法を紹介しています。Network Load Balancer の UDP サポートを活用し、オンプレミスターゲットへトラフィックをルーティングするアーキテクチャを解説しています。
+
 ## 2026-09-26 · 週次まとめ
 
 - **[AI エージェントと MCP を活用した AWS ネットワーク運用の AI ベストプラクティス](https://aws.amazon.com/blogs/networking-and-content-delivery/ai-best-practices-for-aws-network-operations-with-ai-agents-and-mcp/)** — AI エージェントと MCP (Model Context Protocol) を活用して AWS ネットワーク運用をインテリジェントに自動化するモデルプラクティスを紹介しています。24 時間 365 日の運用チーム向けに AWS DevOps Agent や Amazon Bedrock AgentCore の活用方法を解説するとともに、開発・トリアージ時に個々のエンジニアが利用できるエージェンティック診断についても説明しています。

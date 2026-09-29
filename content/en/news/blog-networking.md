@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-29 · Weekly summary
+
+- **[Routing UDP Traffic to On-Premises Network Load Balancer Targets](https://aws.amazon.com/blogs/networking-and-content-delivery/routing-udp-to-on-premises-network-load-balancer-targets/)** — This post explains how workloads remaining on premises—such as virtual desktop gateways and IPsec VPN headends—can leverage the AWS global network by routing UDP traffic through a Network Load Balancer to on-premises targets.
+
 ## 2026-09-26 · Weekly summary
 
 - **[AI Best Practices for AWS Network Operations with AI Agents and MCP](https://aws.amazon.com/blogs/networking-and-content-delivery/ai-best-practices-for-aws-network-operations-with-ai-agents-and-mcp/)** — This post outlines best practices for using AI Agents and the Model Context Protocol (MCP) to enable intelligent, automated event response in AWS network operations, covering AWS DevOps Agent and Amazon Bedrock AgentCore for 24/7 ops teams as well as agentic diagnostics for individual engineers during development and triage.

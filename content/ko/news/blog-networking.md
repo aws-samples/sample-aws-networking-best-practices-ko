@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-29 · 주간 요약
+
+- **[UDP 트래픽을 온프레미스 Network Load Balancer 대상으로 라우팅하기](https://aws.amazon.com/blogs/networking-and-content-delivery/routing-udp-to-on-premises-network-load-balancer-targets/)** — 온프레미스에 남아 있는 워크로드(가상 데스크톱 게이트웨이, IPsec VPN 헤드엔드 등)를 AWS 글로벌 네트워크를 통해 연결하는 방법을 소개하며, Network Load Balancer의 UDP 지원을 활용해 온프레미스 대상으로 트래픽을 라우팅하는 아키텍처를 설명합니다.
+
 ## 2026-09-26 · 주간 요약
 
 - **[AI 에이전트와 MCP를 활용한 AWS 네트워크 운영 AI 모범 사례](https://aws.amazon.com/blogs/networking-and-content-delivery/ai-best-practices-for-aws-network-operations-with-ai-agents-and-mcp/)** — AI 에이전트와 MCP(Model Context Protocol)를 활용해 AWS 네트워크 운영을 자동화하는 모범 사례를 소개하며, 24/7 운영 팀을 위한 AWS DevOps Agent·Amazon Bedrock AgentCore 활용법과 개발·트리아지 단계에서 엔지니어가 활용할 수 있는 에이전틱 진단 방법을 다룹니다.
