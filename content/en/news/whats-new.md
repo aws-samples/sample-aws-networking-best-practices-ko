@@ -8,6 +8,12 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-30 · Daily update
+
+- **[AWS DataSync now supports shared VPCs](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-datasync-shared-vpcs/)** — AWS DataSync now supports shared VPCs via AWS Resource Access Manager (RAM), allowing data transfers over subnets and VPC endpoints managed centrally in a single account. This eliminates the need to create a separate DataSync VPC endpoint per account, reducing IP address consumption and operational overhead.
+- **[Amazon ElastiCache Serverless for Valkey now supports public endpoints](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-elasticache-serverless-public-endpoints/)** — Amazon ElastiCache Serverless for Valkey now offers public endpoints, enabling direct internet connectivity to your cache without requiring a VPN, bastion host, or SSH tunnel. The fully managed cache can be provisioned in under a minute with no VPC configuration needed, making it ideal for rapid prototyping and workloads outside AWS.
+- **[Amazon Route 53 Resolver DNS Firewall support for Palo Alto Networks Advanced DNS Security is now Generally Available (GA)](https://aws.amazon.com/about-aws/whats-new/2026/09/route-53-dns-firewall-panw-dns-security-generally-available)** — Amazon Route 53 Resolver DNS Firewall now generally supports Palo Alto Networks (PANW) Advanced DNS Security across 32 AWS Regions, enabling security teams to detect and block malicious DNS traffic directly from their VPCs without deploying separate firewalls or modifying VPC configurations. Threat protections including Command and Control, Malware, Phishing, and Newly Registered Domains can be enforced using PANW rules natively through Route 53 DNS Firewall.
+
 ## 2026-09-26 · Daily update
 
 - **[AWS IAM Outbound Identity Federation Now Supports Interface VPC Endpoints for OIDC Discovery](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-sts-vpc-oidc/)** — AWS IAM outbound identity federation now supports interface VPC endpoints via AWS PrivateLink, allowing OIDC discovery metadata and JWKS verification key endpoints to be accessed from within a VPC without traversing the public internet. This enables AWS workloads that use short-lived JWTs to access external services more securely.

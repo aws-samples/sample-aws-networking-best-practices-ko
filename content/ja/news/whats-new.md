@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-30 · 前日のアップデート
+
+- **[AWS DataSync が共有 VPC をサポート開始](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-datasync-shared-vpcs/)** — AWS DataSync が AWS Resource Access Manager (RAM) を通じて共有 VPC をサポートし、中央アカウントで管理された共有サブネットと VPC エンドポイントを使ったプライベートなデータ転送が可能になりました。これにより、アカウントごとに個別の DataSync VPC エンドポイントを作成する必要がなくなり、運用負荷が軽減されます。
+- **[Amazon ElastiCache Serverless for Valkey がパブリックエンドポイントをサポート](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-elasticache-serverless-public-endpoints/)** — Amazon ElastiCache Serverless for Valkey がパブリックエンドポイントをサポートし、VPN やバスティオンホスト、SSH トンネルなしにインターネット経由でキャッシュへ直接接続できるようになりました。VPC の設定やインフラのプロビジョニングが不要で、1 分以内に作成できるため、迅速なプロトタイピングや AWS 外のワークロードへのキャッシュ追加に適しています。
+- **[Amazon Route 53 Resolver DNS Firewall の Palo Alto Networks Advanced DNS Security サポートが一般提供 (GA) 開始](https://aws.amazon.com/about-aws/whats-new/2026/09/route-53-dns-firewall-panw-dns-security-generally-available)** — Amazon Route 53 Resolver DNS Firewall が Palo Alto Networks (PANW) Advanced DNS Security との統合を 32 の AWS リージョンで一般提供開始し、別途ファイアウォールを導入したり VPC 設定を変更したりすることなく、VPC 内から直接悪意のある DNS トラフィックを検出・ブロックできるようになりました。C&C、マルウェア、フィッシング、新規登録ドメインなどの DNS 脅威保護を Route 53 DNS Firewall を通じてネイティブに適用できます。
+
 ## 2026-09-26 · 前日のアップデート
 
 - **[AWS IAM アウトバウンド ID フェデレーション、OIDC ディスカバリー向けインターフェイス VPC エンドポイントをサポート](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-sts-vpc-oidc/)** — AWS IAM アウトバウンド ID フェデレーションが AWS PrivateLink を介したインターフェイス VPC エンドポイントをサポートし、OIDC ディスカバリーメタデータおよび JWKS 検証キーエンドポイントへパブリックインターネットを経由せずに VPC 内からアクセスできるようになりました。これにより、外部サービスにアクセスする AWS ワークロードが短期 JWT をより安全に取得できます。

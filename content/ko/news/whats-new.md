@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-09-30 · 전일 업데이트
+
+- **[AWS DataSync, 공유 VPC 지원 시작](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-datasync-shared-vpcs/)** — AWS DataSync가 AWS Resource Access Manager(RAM)를 통해 공유된 서브넷과 VPC 엔드포인트를 사용한 데이터 전송을 지원합니다. 이를 통해 계정마다 별도의 DataSync VPC 엔드포인트를 생성할 필요 없이 중앙 계정에서 관리되는 공유 서브넷을 통해 프라이빗 데이터 전송이 가능해져 운영 부담이 줄어듭니다.
+- **[Amazon ElastiCache Serverless for Valkey, 퍼블릭 엔드포인트 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-elasticache-serverless-public-endpoints/)** — Amazon ElastiCache Serverless for Valkey가 퍼블릭 엔드포인트를 지원하여 VPN, 배스천 호스트, SSH 터널 없이 인터넷을 통해 캐시에 직접 연결할 수 있게 되었습니다. VPC 구성이나 별도 인프라 프로비저닝 없이 1분 이내에 생성 가능해 프로토타이핑이나 VPC에 접근하기 어려운 워크로드에 유용합니다.
+- **[Amazon Route 53 Resolver DNS Firewall의 Palo Alto Networks Advanced DNS Security 지원, 정식 출시(GA)](https://aws.amazon.com/about-aws/whats-new/2026/09/route-53-dns-firewall-panw-dns-security-generally-available)** — Amazon Route 53 Resolver DNS Firewall이 Palo Alto Networks(PANW) Advanced DNS Security와의 통합을 32개 AWS 리전에서 정식 출시하여, 별도 방화벽 배포나 VPC 구성 변경 없이 VPC 내에서 직접 악성 DNS 트래픽을 탐지·차단할 수 있습니다. C&C, 악성코드, 피싱, 신규 등록 도메인 등 PANW의 DNS 위협 보호 규칙을 Route 53 DNS Firewall을 통해 바로 적용할 수 있습니다.
+
 ## 2026-09-26 · 전일 업데이트
 
 - **[AWS IAM 아웃바운드 ID 페더레이션, OIDC 디스커버리용 인터페이스 VPC 엔드포인트 지원](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-sts-vpc-oidc/)** — AWS IAM 아웃바운드 ID 페더레이션이 이제 AWS PrivateLink를 통한 인터페이스 VPC 엔드포인트를 지원하여, OIDC 디스커버리 메타데이터 및 JWKS 검증 키 엔드포인트에 퍼블릭 인터넷을 거치지 않고 VPC 내부에서 직접 액세스할 수 있습니다. 이를 통해 외부 서비스에 액세스하는 AWS 워크로드가 단기 JWT를 보다 안전하게 발급받을 수 있습니다.
