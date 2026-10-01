@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-01 · 週次まとめ
+
+- **[EC2 リソースタグとネクストホップメタデータで VPC Flow Logs を簡素化する](https://aws.amazon.com/blogs/networking-and-content-delivery/simplify-vpc-flow-logs-with-ec2-resource-tags-and-next-hop-metadata/)** — Amazon VPC Flow Logs のバージョン 11 に新たに追加された EC2 リソースタグおよびネクストホップメタデータフィールドを活用することで、カスタムのエンリッチメントパイプラインを構築せずにネットワークトラフィック分析を簡素化できます。
+
 ## 2026-09-29 · 週次まとめ
 
 - **[UDP トラフィックをオンプレミスの Network Load Balancer ターゲットにルーティングする](https://aws.amazon.com/blogs/networking-and-content-delivery/routing-udp-to-on-premises-network-load-balancer-targets/)** — 仮想デスクトップゲートウェイや IPsec VPN ヘッドエンドなど、オンプレミスに残るワークロードを AWS グローバルネットワーク経由で接続する方法を紹介しています。Network Load Balancer の UDP サポートを活用し、オンプレミスターゲットへトラフィックをルーティングするアーキテクチャを解説しています。

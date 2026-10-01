@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-01 · 주간 요약
+
+- **[EC2 리소스 태그와 넥스트홉 메타데이터로 VPC Flow Logs 간소화하기](https://aws.amazon.com/blogs/networking-and-content-delivery/simplify-vpc-flow-logs-with-ec2-resource-tags-and-next-hop-metadata/)** — Amazon VPC Flow Logs 버전 11에 새롭게 추가된 EC2 리소스 태그 및 넥스트홉 메타데이터 필드를 활용하면, 별도의 커스텀 보강 파이프라인 없이도 네트워크 트래픽 분석을 간소화할 수 있습니다.
+
 ## 2026-09-29 · 주간 요약
 
 - **[UDP 트래픽을 온프레미스 Network Load Balancer 대상으로 라우팅하기](https://aws.amazon.com/blogs/networking-and-content-delivery/routing-udp-to-on-premises-network-load-balancer-targets/)** — 온프레미스에 남아 있는 워크로드(가상 데스크톱 게이트웨이, IPsec VPN 헤드엔드 등)를 AWS 글로벌 네트워크를 통해 연결하는 방법을 소개하며, Network Load Balancer의 UDP 지원을 활용해 온프레미스 대상으로 트래픽을 라우팅하는 아키텍처를 설명합니다.

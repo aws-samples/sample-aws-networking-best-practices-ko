@@ -8,6 +8,12 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-01 · Daily update
+
+- **[AWS CLI now supports bulk skill updates and version checks for the Agent Toolkit for AWS](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-cli-agent-toolkit-update-skill/)** — AWS CLI has added two new commands for the Agent Toolkit for AWS, enabling users to check all installed skills against the latest registry versions and update every outdated skill in a single command. This simplifies keeping agent skills current across the 15,000+ AWS APIs supported by the AWS MCP Server.
+- **[AWS Parallel Computing Service now supports scaling logs](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-pcs-scaling-logs/)** — AWS Parallel Computing Service (AWS PCS) now offers scaling logs that record each state transition for compute nodes, including instance launches, node registrations, scale-downs, and launch failures. This opt-in feature makes it easier to troubleshoot scaling issues such as why a node group failed to reach its target size.
+- **[AWS Transfer Family now automatically approves SFTP connector quota increases up to 1,000](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-transfer-family-sftp-connector-quota-1000/)** — AWS Transfer Family now automatically approves SFTP connector quota increase requests up to 1,000 connectors per AWS account per Region, eliminating the need to wait for manual approval as file transfer needs grow. Automatic approval applies to connectors using either service-managed or Amazon VPC Lattice egress.
+
 ## 2026-09-30 · Daily update
 
 - **[AWS DataSync now supports shared VPCs](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-datasync-shared-vpcs/)** — AWS DataSync now supports shared VPCs via AWS Resource Access Manager (RAM), allowing data transfers over subnets and VPC endpoints managed centrally in a single account. This eliminates the need to create a separate DataSync VPC endpoint per account, reducing IP address consumption and operational overhead.

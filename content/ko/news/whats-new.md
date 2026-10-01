@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-01 · 전일 업데이트
+
+- **[AWS CLI, Agent Toolkit for AWS의 대량 스킬 업데이트 및 버전 확인 기능 지원](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-cli-agent-toolkit-update-skill/)** — AWS CLI에 Agent Toolkit for AWS를 위한 두 가지 새로운 명령이 추가되어, 설치된 모든 스킬의 버전을 레지스트리와 비교하거나 단일 명령으로 일괄 업데이트할 수 있게 되었습니다. 이를 통해 15,000개 이상의 AWS API에 대한 에이전트 스킬을 더 효율적으로 최신 상태로 유지할 수 있습니다.
+- **[AWS Parallel Computing Service, 스케일링 로그 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-pcs-scaling-logs/)** — AWS Parallel Computing Service(AWS PCS)가 클러스터 내 컴퓨팅 노드 그룹의 스케일링 상태 변화를 기록하는 스케일링 로그를 지원합니다. 인스턴스 시작, 노드 등록, 스케일 다운, 실패 원인 등을 추적할 수 있어 스케일링 문제 해결이 용이해집니다.
+- **[AWS Transfer Family, SFTP 커넥터 할당량 최대 1,000개까지 자동 승인 지원](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-transfer-family-sftp-connector-quota-1000/)** — AWS Transfer Family가 SFTP 커넥터 할당량 증가 요청을 AWS 계정당 최대 1,000개까지 자동으로 승인하도록 변경되어, 수동 승인 대기 없이 파일 전송 규모를 확장할 수 있게 되었습니다. 자동 승인은 서비스 관리형 및 Amazon VPC Lattice 이그레스를 사용하는 커넥터 모두에 적용됩니다.
+
 ## 2026-09-30 · 전일 업데이트
 
 - **[AWS DataSync, 공유 VPC 지원 시작](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-datasync-shared-vpcs/)** — AWS DataSync가 AWS Resource Access Manager(RAM)를 통해 공유된 서브넷과 VPC 엔드포인트를 사용한 데이터 전송을 지원합니다. 이를 통해 계정마다 별도의 DataSync VPC 엔드포인트를 생성할 필요 없이 중앙 계정에서 관리되는 공유 서브넷을 통해 프라이빗 데이터 전송이 가능해져 운영 부담이 줄어듭니다.

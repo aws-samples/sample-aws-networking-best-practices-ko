@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-01 · Weekly summary
+
+- **[Simplify VPC Flow Logs with EC2 Resource Tags and Next-Hop Metadata](https://aws.amazon.com/blogs/networking-and-content-delivery/simplify-vpc-flow-logs-with-ec2-resource-tags-and-next-hop-metadata/)** — Version 11 of Amazon VPC Flow Logs introduces EC2 resource tags and next-hop metadata fields, enabling simplified network traffic analysis without the need to build custom enrichment pipelines.
+
 ## 2026-09-29 · Weekly summary
 
 - **[Routing UDP Traffic to On-Premises Network Load Balancer Targets](https://aws.amazon.com/blogs/networking-and-content-delivery/routing-udp-to-on-premises-network-load-balancer-targets/)** — This post explains how workloads remaining on premises—such as virtual desktop gateways and IPsec VPN headends—can leverage the AWS global network by routing UDP traffic through a Network Load Balancer to on-premises targets.
