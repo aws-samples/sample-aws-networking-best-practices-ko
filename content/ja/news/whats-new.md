@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-02 · 前日のアップデート
+
+- **[Amazon Redshift がデータレイクへのリージョン間クエリをサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/redshift-cross-Region-queries-for-data-lake)** — Amazon Redshift が別の AWS リージョンにある Amazon S3 データレイクテーブルへのクエリをサポートしました。Enhanced VPC ルーティングにより、S3 と Redshift 間のクエリトラフィックは VPC 内に留まり、グローバルに分散したデータを扱う企業やセキュリティ要件の厳しいお客様に適しています。
+- **[Route 53 Global Resolver および DNS Firewall の DNS 分析とインサイト機能を発表](https://aws.amazon.com/about-aws/whats-new/2026/10/route-53-dns-analytics-insights/)** — Route 53 Global Resolver と DNS Firewall が Amazon CloudWatch のネイティブ統合を通じて DNS 分析とインサイト機能を提供するようになりました。ネットワーク管理者やセキュリティチームは DNS クエリパターンの完全な観測性を得られ、DNS Firewall ルールの効果監視や異常検知、パフォーマンス最適化が可能になります。
+- **[Amazon Kinesis Video Streams が AWS PrivateLink による VPC エンドポイントをサポート](https://aws.amazon.com/about-aws/whats-new/2026/09/kinesis-video-streams-vpc-privatelink/)** — Amazon Kinesis Video Streams が AWS PrivateLink を利用したインターフェイス VPC エンドポイントをサポートし、コントロールプレーンおよびビデオ取り込み・再生のデータプレーン全体でトラフィックが AWS ネットワーク内に留まるようになりました。厳格なセキュリティ・コンプライアンス・ネットワーク分離要件を持つお客様は、インターネットゲートウェイや NAT デバイス、パブリック IP アドレスなしにビデオの取り込み・保存・再生が可能です。
+
 ## 2026-10-01 · 前日のアップデート
 
 - **[AWS CLI が Agent Toolkit for AWS の一括スキル更新とバージョン確認をサポート](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-cli-agent-toolkit-update-skill/)** — AWS CLI に Agent Toolkit for AWS 向けの 2 つの新しいコマンドが追加され、インストール済みスキルのバージョンをレジストリと比較したり、単一コマンドで一括更新したりできるようになりました。これにより、15,000 以上の AWS API に対応するエージェントスキルを効率的に最新状態に保つことができます。

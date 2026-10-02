@@ -8,6 +8,12 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-02 · Daily update
+
+- **[Amazon Redshift now supports cross-Region queries for your data lake](https://aws.amazon.com/about-aws/whats-new/2026/10/redshift-cross-Region-queries-for-data-lake)** — Amazon Redshift can now query Amazon S3 data lake tables located in a different AWS Region, with enhanced VPC routing keeping query traffic within your own VPC. This benefits enterprises with globally distributed data and security-sensitive customers requiring tight control over data movement.
+- **[Announcing DNS analytics and insights for Route 53 Global Resolver and DNS Firewall](https://aws.amazon.com/about-aws/whats-new/2026/10/route-53-dns-analytics-insights/)** — Route 53 Global Resolver and DNS Firewall now offer DNS analytics and insights through native Amazon CloudWatch integration, giving network administrators and security teams full observability into DNS query patterns. This enables monitoring of DNS Firewall rule effectiveness, anomaly detection, and DNS infrastructure performance optimization.
+- **[Amazon Kinesis Video Streams now supports VPC endpoints with AWS PrivateLink](https://aws.amazon.com/about-aws/whats-new/2026/09/kinesis-video-streams-vpc-privatelink/)** — Amazon Kinesis Video Streams now supports interface VPC endpoints powered by AWS PrivateLink, keeping all traffic—across both the control plane and video ingestion/playback data planes—within the AWS network. Customers with strict security, compliance, or network-isolation requirements can now handle video workloads without internet gateways, NAT devices, or public IP addresses.
+
 ## 2026-10-01 · Daily update
 
 - **[AWS CLI now supports bulk skill updates and version checks for the Agent Toolkit for AWS](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-cli-agent-toolkit-update-skill/)** — AWS CLI has added two new commands for the Agent Toolkit for AWS, enabling users to check all installed skills against the latest registry versions and update every outdated skill in a single command. This simplifies keeping agent skills current across the 15,000+ AWS APIs supported by the AWS MCP Server.
