@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-03 · 前日のアップデート
+
+- **[Amazon ECS が Amazon VPC Lattice を使用したブルー/グリーン・線形・カナリアデプロイをサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ecs-vpc-lattice-blue-green-deployments)** — Amazon ECS が Amazon VPC Lattice を使用するサービスに対して、ブルー/グリーン・線形・カナリアのデプロイ戦略をネイティブサポートしました。VPC 間およびアカウント間のサービス通信に VPC Lattice を活用するアプリケーションで、ECS から直接トラフィックシフトを制御しながら安全にアップデートを展開できます。
+- **[AgentCore Gateway が VPC エンドポイント向けプライベート TLS 証明書をサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/agentcore-gateway-private-tls-vpc/)** — Amazon Bedrock AgentCore Gateway が、MCP・OpenAPI・HTTP プロキシターゲットに対してプライベート CA (認証局) が署名した TLS 証明書をサポートしました。中間の Application Load Balancer を必要とせず、Amazon VPC Lattice を利用したプライベートエンドポイントへ直接セキュアに接続できるため、VPC 内のプライベート接続構成が簡素化されます。
+
 ## 2026-10-02 · 前日のアップデート
 
 - **[Amazon Redshift がデータレイクへのリージョン間クエリをサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/redshift-cross-Region-queries-for-data-lake)** — Amazon Redshift が別の AWS リージョンにある Amazon S3 データレイクテーブルへのクエリをサポートしました。Enhanced VPC ルーティングにより、S3 と Redshift 間のクエリトラフィックは VPC 内に留まり、グローバルに分散したデータを扱う企業やセキュリティ要件の厳しいお客様に適しています。

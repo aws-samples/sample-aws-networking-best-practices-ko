@@ -8,6 +8,11 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-03 · Daily update
+
+- **[Amazon ECS adds Amazon VPC Lattice support for blue/green, linear, and canary deployments](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ecs-vpc-lattice-blue-green-deployments)** — Amazon ECS now natively supports blue/green, linear, and canary deployment strategies for services using Amazon VPC Lattice, enabling controlled traffic shifting across VPCs and AWS accounts during rollouts. Customers can choose the pace of traffic migration—all at once, in equal increments, or via canary—directly from ECS without additional tooling.
+- **[AgentCore Gateway supports private TLS certificates for VPC endpoints](https://aws.amazon.com/about-aws/whats-new/2026/10/agentcore-gateway-private-tls-vpc/)** — Amazon Bedrock AgentCore Gateway now supports TLS certificates signed by private certificate authorities (CAs) for MCP, OpenAPI, and HTTP proxy targets, allowing secure connections to private VPC endpoints without an intermediate Application Load Balancer. Users can register a private CA certificate with gateway targets powered by Amazon VPC Lattice, simplifying private connectivity within their VPC.
+
 ## 2026-10-02 · Daily update
 
 - **[Amazon Redshift now supports cross-Region queries for your data lake](https://aws.amazon.com/about-aws/whats-new/2026/10/redshift-cross-Region-queries-for-data-lake)** — Amazon Redshift can now query Amazon S3 data lake tables located in a different AWS Region, with enhanced VPC routing keeping query traffic within your own VPC. This benefits enterprises with globally distributed data and security-sensitive customers requiring tight control over data movement.
