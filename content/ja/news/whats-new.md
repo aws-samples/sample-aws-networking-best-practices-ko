@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-06 · 前日のアップデート
+
+- **[AWS IAM Identity Center が Identity Store のネットワークアクセス制御をサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-identity-store-network-controls/)** — AWS IAM Identity Center が、ユーザーとグループを管理する Identity Store に対するネットワークアクセス制御をサポートしました。リクエストの送信元ネットワークに基づいて Identity Store API および SCIM API へのアクセスを制限でき、ユーザープロビジョニングや外部 ID プロバイダー連携のセキュリティを強化できます。
+- **[AWS Client VPN がデバイスポスチャ評価をサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-client-vpn-device-posture/)** — AWS Client VPN がデバイスポスチャ評価をサポートし、接続するユーザーのデバイスがセキュリティおよびコンプライアンス要件を満たしているかを確認してからネットワークアクセスを許可できるようになりました。CrowdStrike、Jamf、JumpCloud との統合により、デバイスのセキュリティシグナルを自動評価し、信頼済みのデバイスのみが AWS リソースにアクセスできるよう制御できます。
+
 ## 2026-10-03 · 前日のアップデート
 
 - **[Amazon ECS が Amazon VPC Lattice を使用したブルー/グリーン・線形・カナリアデプロイをサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ecs-vpc-lattice-blue-green-deployments)** — Amazon ECS が Amazon VPC Lattice を使用するサービスに対して、ブルー/グリーン・線形・カナリアのデプロイ戦略をネイティブサポートしました。VPC 間およびアカウント間のサービス通信に VPC Lattice を活用するアプリケーションで、ECS から直接トラフィックシフトを制御しながら安全にアップデートを展開できます。

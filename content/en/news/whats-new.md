@@ -8,6 +8,11 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-06 · Daily update
+
+- **[AWS IAM Identity Center now supports network access controls for Identity Store](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-identity-store-network-controls/)** — AWS IAM Identity Center now supports network access controls for Identity Store, enabling you to restrict access to the Identity Store API and SCIM API based on the originating network. This allows organizations to tighten security around user provisioning workflows and external identity provider integrations.
+- **[AWS Client VPN now supports device posture assessment](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-client-vpn-device-posture/)** — AWS Client VPN now supports device posture assessment, enabling organizations to verify that connecting devices meet security and compliance requirements before granting network access. The feature integrates with CrowdStrike, Jamf, and JumpCloud to automatically evaluate device security signals, ensuring only trusted, compliant devices can reach AWS resources.
+
 ## 2026-10-03 · Daily update
 
 - **[Amazon ECS adds Amazon VPC Lattice support for blue/green, linear, and canary deployments](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ecs-vpc-lattice-blue-green-deployments)** — Amazon ECS now natively supports blue/green, linear, and canary deployment strategies for services using Amazon VPC Lattice, enabling controlled traffic shifting across VPCs and AWS accounts during rollouts. Customers can choose the pace of traffic migration—all at once, in equal increments, or via canary—directly from ECS without additional tooling.

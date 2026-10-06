@@ -8,6 +8,10 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-06 · Weekly summary
+
+- **[Weekly AWS – Week of September 28, 2026](https://aws.amazon.com/jp/blogs/news/aws-weekly-20260928/)** — This week's AWS updates include the GA of Palo Alto Networks Advanced DNS Security in Amazon Route 53 Resolver DNS Firewall, logical air-gap vault support for Amazon FSx for NetApp ONTAP in AWS Backup, and direct Apache Iceberg/Parquet querying from Aurora PostgreSQL. From a networking perspective, the enhanced DNS security integration and expanded multi-Region support for AWS IAM Identity Center are particularly noteworthy.
+
 ## 2026-09-25 · Weekly summary
 
 - **[Weekly AWS – Week of September 14, 2026](https://aws.amazon.com/jp/blogs/news/aws-weekly-20260914/)** — This week's AWS updates include AWS Direct Connect flat-rate pricing for dedicated connections, the launch of AWS PrivateLink Tunnel Endpoint, and source IP preservation support for SFTP servers behind a Network Load Balancer in AWS Transfer Family. Additional highlights cover a new AgentCore Runtime in Amazon Bedrock AgentCore, expanded Amazon S3 Files support for Amazon ECS on EC2, and several Amazon Connect enhancements.

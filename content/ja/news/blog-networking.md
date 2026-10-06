@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-06 · 週次まとめ
+
+- **[AWS Direct Connect のフラットレート料金で予測可能なコストを実現する](https://aws.amazon.com/blogs/networking-and-content-delivery/powering-predictable-costs-with-aws-direct-connect-flat-rate-pricing/)** — AWS Direct Connect がフラットレート料金オプションを提供し、従来の専用線や MPLS と同様にデータ転送量に関わらず一定のネットワークコストを維持できるようになりました。クラウド移行後もオンプレミスと同水準のコスト予測性を求める組織に適した選択肢です。
+- **[Amazon CloudFront と AWS WAF でエッジの MCP エンドポイントを保護する](https://aws.amazon.com/blogs/networking-and-content-delivery/protect-mcp-endpoints-at-the-edge-with-amazon-cloudfront-and-aws-waf/)** — AWS WAF を Amazon CloudFront と組み合わせることで、AI エージェント間通信の標準となった MCP (Model Context Protocol) エンドポイントをエッジで保護し、観測性を確保できます。2026-07-28 の MCP 改訂でプロトコルがステートレス構造に再設計され、CloudFront と WAF によるエッジ保護の適用がより容易になりました。
+
 ## 2026-10-01 · 週次まとめ
 
 - **[EC2 リソースタグとネクストホップメタデータで VPC Flow Logs を簡素化する](https://aws.amazon.com/blogs/networking-and-content-delivery/simplify-vpc-flow-logs-with-ec2-resource-tags-and-next-hop-metadata/)** — Amazon VPC Flow Logs のバージョン 11 に新たに追加された EC2 リソースタグおよびネクストホップメタデータフィールドを活用することで、カスタムのエンリッチメントパイプラインを構築せずにネットワークトラフィック分析を簡素化できます。

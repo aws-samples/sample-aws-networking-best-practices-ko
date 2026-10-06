@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-06 · 전일 업데이트
+
+- **[AWS IAM Identity Center, Identity Store에 대한 네트워크 액세스 제어 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-identity-store-network-controls/)** — AWS IAM Identity Center가 사용자 및 그룹을 저장하는 Identity Store에 대해 네트워크 액세스 제어를 지원합니다. 요청이 발생하는 네트워크를 기반으로 Identity Store API 및 SCIM API에 대한 액세스를 제한할 수 있어, 사용자 프로비저닝 워크플로와 외부 ID 공급자 연동의 보안을 강화할 수 있습니다.
+- **[AWS Client VPN, 디바이스 포스처 평가 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-client-vpn-device-posture/)** — AWS Client VPN이 디바이스 포스처 평가를 지원하여, 연결을 시도하는 사용자 디바이스가 보안 및 규정 준수 요건을 충족하는지 확인한 후에만 네트워크 액세스를 허용할 수 있게 되었습니다. CrowdStrike, Jamf, JumpCloud와의 통합을 통해 디바이스 보안 신호를 자동으로 평가함으로써 신뢰할 수 있는 디바이스만 AWS 리소스에 접근하도록 제어할 수 있습니다.
+
 ## 2026-10-03 · 전일 업데이트
 
 - **[Amazon ECS, Amazon VPC Lattice를 활용한 블루/그린·선형·카나리 배포 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ecs-vpc-lattice-blue-green-deployments)** — Amazon ECS가 Amazon VPC Lattice를 사용하는 서비스에 대해 블루/그린, 선형, 카나리 배포 전략을 기본 지원합니다. 이를 통해 VPC 간 및 계정 간 서비스 통신에 VPC Lattice를 활용하는 애플리케이션이 ECS에서 직접 트래픽 전환을 제어하며 안전하게 업데이트를 배포할 수 있습니다.

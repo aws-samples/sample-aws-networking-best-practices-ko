@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-06 · 週次まとめ
+
+- **[週刊 AWS – 2026/9/28 週](https://aws.amazon.com/jp/blogs/news/aws-weekly-20260928/)** — Amazon Route 53 Resolver DNS Firewall での Palo Alto Networks Advanced DNS Security の GA や、AWS Backup の論理的エアギャップボールトによる Amazon FSx for NetApp ONTAP 対応、Aurora PostgreSQL からの Apache Iceberg/Parquet 直接クエリなど、幅広いアップデートが発表されました。ネットワーキング観点では、DNS セキュリティの強化と AWS IAM Identity Center のマルチリージョンサポート拡大が注目ポイントです。
+
 ## 2026-09-25 · 週次まとめ
 
 - **[週刊 AWS – 2026/9/14 週](https://aws.amazon.com/jp/blogs/news/aws-weekly-20260914/)** — 今週は AWS Direct Connect 専用接続の定額料金導入、AWS PrivateLink Tunnel Endpoint のリリース、AWS Transfer Family における Network Load Balancer 配下での送信元 IP 保持サポートなど、ネットワーキング関連の重要なアップデートが複数発表されました。その他にも Amazon Bedrock AgentCore の新しい AgentCore Runtime、Amazon ECS の Amazon S3 Files サポート拡張、Amazon Connect の新機能など幅広いサービスアップデートが含まれています。

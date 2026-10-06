@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-06 · 주간 요약
+
+- **[AWS Direct Connect 정액제 요금으로 예측 가능한 비용 실현](https://aws.amazon.com/blogs/networking-and-content-delivery/powering-predictable-costs-with-aws-direct-connect-flat-rate-pricing/)** — AWS Direct Connect가 정액제(flat-rate) 요금 옵션을 제공하여, 기존 전용선·MPLS 방식처럼 데이터 전송량에 관계없이 일정한 네트워킹 비용을 유지할 수 있게 되었습니다. 클라우드 전환 후에도 온프레미스 수준의 예측 가능한 비용 구조를 원하는 조직에 적합한 선택지입니다.
+- **[Amazon CloudFront와 AWS WAF로 엣지에서 MCP 엔드포인트 보호하기](https://aws.amazon.com/blogs/networking-and-content-delivery/protect-mcp-endpoints-at-the-edge-with-amazon-cloudfront-and-aws-waf/)** — AWS WAF를 Amazon CloudFront와 함께 사용하면 AI 에이전트 간 통신 표준으로 자리잡은 MCP(Model Context Protocol) 엔드포인트를 엣지에서 보안하고 관측성을 확보할 수 있습니다. 2026-07-28 MCP 개정으로 프로토콜이 스테이트리스 구조로 재설계되면서 CloudFront·WAF 기반의 엣지 보호 적용이 더욱 용이해졌습니다.
+
 ## 2026-10-01 · 주간 요약
 
 - **[EC2 리소스 태그와 넥스트홉 메타데이터로 VPC Flow Logs 간소화하기](https://aws.amazon.com/blogs/networking-and-content-delivery/simplify-vpc-flow-logs-with-ec2-resource-tags-and-next-hop-metadata/)** — Amazon VPC Flow Logs 버전 11에 새롭게 추가된 EC2 리소스 태그 및 넥스트홉 메타데이터 필드를 활용하면, 별도의 커스텀 보강 파이프라인 없이도 네트워크 트래픽 분석을 간소화할 수 있습니다.

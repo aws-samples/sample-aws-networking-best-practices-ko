@@ -8,6 +8,11 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-06 · Weekly summary
+
+- **[Powering predictable costs with AWS Direct Connect flat-rate pricing](https://aws.amazon.com/blogs/networking-and-content-delivery/powering-predictable-costs-with-aws-direct-connect-flat-rate-pricing/)** — AWS Direct Connect now offers a flat-rate pricing option, allowing organizations to maintain consistent networking costs regardless of data transfer volume, similar to traditional leased lines and MPLS links. This makes it a compelling choice for organizations seeking on-premises-style cost predictability after migrating to the cloud.
+- **[Protect MCP Endpoints at the Edge with Amazon CloudFront and AWS WAF](https://aws.amazon.com/blogs/networking-and-content-delivery/protect-mcp-endpoints-at-the-edge-with-amazon-cloudfront-and-aws-waf/)** — AWS WAF combined with Amazon CloudFront provides a practical way to secure and observe Model Context Protocol (MCP) endpoints at the edge, as MCP has become the standard communication protocol for AI agents. The 2026-07-28 MCP revision redesigned the protocol as stateless, making edge-based protection via CloudFront and WAF more straightforward to implement.
+
 ## 2026-10-01 · Weekly summary
 
 - **[Simplify VPC Flow Logs with EC2 Resource Tags and Next-Hop Metadata](https://aws.amazon.com/blogs/networking-and-content-delivery/simplify-vpc-flow-logs-with-ec2-resource-tags-and-next-hop-metadata/)** — Version 11 of Amazon VPC Flow Logs introduces EC2 resource tags and next-hop metadata fields, enabling simplified network traffic analysis without the need to build custom enrichment pipelines.
