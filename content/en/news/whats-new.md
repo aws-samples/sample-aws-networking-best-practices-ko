@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-07 · Daily update
+
+- **[AWS Certificate Manager now supports ACME issuance through AWS PrivateLink](https://aws.amazon.com/about-aws/whats-new/2026/10/AWS-Certificate-Manager-ACME-Privatelink)** — AWS Certificate Manager (ACM) now supports ACME public certificate issuance via AWS PrivateLink, enabling TLS certificate requests and renewals to travel over a private network path entirely within the AWS network. Existing ACME clients require no configuration changes—simply create a VPC interface endpoint to the ACM ACME service.
+
 ## 2026-10-06 · Daily update
 
 - **[AWS IAM Identity Center now supports network access controls for Identity Store](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-identity-store-network-controls/)** — AWS IAM Identity Center now supports network access controls for Identity Store, enabling you to restrict access to the Identity Store API and SCIM API based on the originating network. This allows organizations to tighten security around user provisioning workflows and external identity provider integrations.

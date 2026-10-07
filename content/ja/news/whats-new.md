@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-07 · 前日のアップデート
+
+- **[AWS Certificate Manager が AWS PrivateLink 経由の ACME 証明書発行をサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/AWS-Certificate-Manager-ACME-Privatelink)** — AWS Certificate Manager (ACM) が AWS PrivateLink を介した ACME パブリック証明書の発行をサポートし、TLS 証明書のリクエストと更新を AWS ネットワーク内のプライベートパスで処理できるようになりました。VPC インターフェイスエンドポイントを作成するだけで、既存の ACME クライアントへの変更は不要です。
+
 ## 2026-10-06 · 前日のアップデート
 
 - **[AWS IAM Identity Center が Identity Store のネットワークアクセス制御をサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-identity-store-network-controls/)** — AWS IAM Identity Center が、ユーザーとグループを管理する Identity Store に対するネットワークアクセス制御をサポートしました。リクエストの送信元ネットワークに基づいて Identity Store API および SCIM API へのアクセスを制限でき、ユーザープロビジョニングや外部 ID プロバイダー連携のセキュリティを強化できます。

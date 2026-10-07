@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-07 · 주간 요약
+
+- **[Kiro 에이전틱 IDE로 AWS 인터커넥트 프로비저닝 – 멀티클라우드 연결](https://aws.amazon.com/blogs/networking-and-content-delivery/provisioning-aws-interconnect-multicloud-with-the-kiro-agentic-ide/)** — Kiro 에이전틱 IDE를 활용해 AWS와 Google Cloud, Microsoft Azure, Oracle Cloud Infrastructure 간 프라이빗 멀티클라우드 인터커넥트를 프로비저닝하는 방법을 소개합니다. 인수합병이나 기존 인프라 등으로 멀티클라우드 환경이 일반화된 상황에서, 네트워크 엔지니어가 두 환경을 안전하게 연결하는 작업을 에이전틱 IDE로 자동화하는 실용적 접근법을 다룹니다.
+
 ## 2026-10-06 · 주간 요약
 
 - **[AWS Direct Connect 정액제 요금으로 예측 가능한 비용 실현](https://aws.amazon.com/blogs/networking-and-content-delivery/powering-predictable-costs-with-aws-direct-connect-flat-rate-pricing/)** — AWS Direct Connect가 정액제(flat-rate) 요금 옵션을 제공하여, 기존 전용선·MPLS 방식처럼 데이터 전송량에 관계없이 일정한 네트워킹 비용을 유지할 수 있게 되었습니다. 클라우드 전환 후에도 온프레미스 수준의 예측 가능한 비용 구조를 원하는 조직에 적합한 선택지입니다.

@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-07 · Weekly summary
+
+- **[Provisioning AWS Interconnect – Multicloud with the Kiro Agentic IDE](https://aws.amazon.com/blogs/networking-and-content-delivery/provisioning-aws-interconnect-multicloud-with-the-kiro-agentic-ide/)** — This post explores how to use the Kiro agentic IDE to provision private multicloud interconnects between AWS and other cloud providers such as Google Cloud, Microsoft Azure, and Oracle Cloud Infrastructure. It addresses the increasingly common scenario where workloads span multiple clouds due to acquisitions or legacy footprints, and shows how agentic tooling can streamline the network engineer's connectivity workflow.
+
 ## 2026-10-06 · Weekly summary
 
 - **[Powering predictable costs with AWS Direct Connect flat-rate pricing](https://aws.amazon.com/blogs/networking-and-content-delivery/powering-predictable-costs-with-aws-direct-connect-flat-rate-pricing/)** — AWS Direct Connect now offers a flat-rate pricing option, allowing organizations to maintain consistent networking costs regardless of data transfer volume, similar to traditional leased lines and MPLS links. This makes it a compelling choice for organizations seeking on-premises-style cost predictability after migrating to the cloud.

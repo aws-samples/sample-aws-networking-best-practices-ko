@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-07 · 週次まとめ
+
+- **[Kiro エージェンティック IDE を使った AWS インターコネクトのプロビジョニング – マルチクラウド接続](https://aws.amazon.com/blogs/networking-and-content-delivery/provisioning-aws-interconnect-multicloud-with-the-kiro-agentic-ide/)** — Kiro エージェンティック IDE を活用して、AWS と Google Cloud・Microsoft Azure・Oracle Cloud Infrastructure 間のプライベートなマルチクラウドインターコネクトをプロビジョニングする方法を紹介します。買収や既存インフラなどによりマルチクラウド環境が一般化する中、ネットワークエンジニアが二つの環境を安全に接続する作業をエージェンティック IDE で自動化する実践的なアプローチを解説しています。
+
 ## 2026-10-06 · 週次まとめ
 
 - **[AWS Direct Connect のフラットレート料金で予測可能なコストを実現する](https://aws.amazon.com/blogs/networking-and-content-delivery/powering-predictable-costs-with-aws-direct-connect-flat-rate-pricing/)** — AWS Direct Connect がフラットレート料金オプションを提供し、従来の専用線や MPLS と同様にデータ転送量に関わらず一定のネットワークコストを維持できるようになりました。クラウド移行後もオンプレミスと同水準のコスト予測性を求める組織に適した選択肢です。
