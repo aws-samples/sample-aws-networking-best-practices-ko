@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-08 · 前日のアップデート
+
+- **[AWS Config が 77 個の新しいリソースタイプをサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-config-new-resource-types)** — AWS Config が Amazon EC2、Amazon S3 Files、Amazon Q Business などの主要サービスにわたる 77 個の新しいリソースタイプのサポートを追加しました。全リソースタイプの記録を有効にしている場合は自動的に追跡され、Config ルールおよび Config アグリゲーターでも利用できるため、AWS 環境の監査とコンプライアンスのカバレッジがさらに拡大します。
+
 ## 2026-10-07 · 前日のアップデート
 
 - **[AWS Certificate Manager が AWS PrivateLink 経由の ACME 証明書発行をサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/AWS-Certificate-Manager-ACME-Privatelink)** — AWS Certificate Manager (ACM) が AWS PrivateLink を介した ACME パブリック証明書の発行をサポートし、TLS 証明書のリクエストと更新を AWS ネットワーク内のプライベートパスで処理できるようになりました。VPC インターフェイスエンドポイントを作成するだけで、既存の ACME クライアントへの変更は不要です。

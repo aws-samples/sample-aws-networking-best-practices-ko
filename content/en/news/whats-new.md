@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-08 · Daily update
+
+- **[AWS Config now supports 77 new resource types](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-config-new-resource-types)** — AWS Config has expanded support to 77 additional resource types across key services including Amazon EC2, Amazon S3 Files, and Amazon Q Business. When recording is enabled for all resource types, these new additions are tracked automatically and are also available in Config rules and Config aggregators.
+
 ## 2026-10-07 · Daily update
 
 - **[AWS Certificate Manager now supports ACME issuance through AWS PrivateLink](https://aws.amazon.com/about-aws/whats-new/2026/10/AWS-Certificate-Manager-ACME-Privatelink)** — AWS Certificate Manager (ACM) now supports ACME public certificate issuance via AWS PrivateLink, enabling TLS certificate requests and renewals to travel over a private network path entirely within the AWS network. Existing ACME clients require no configuration changes—simply create a VPC interface endpoint to the ACM ACME service.

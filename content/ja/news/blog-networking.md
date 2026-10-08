@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-08 · 週次まとめ
+
+- **[Amazon VPC Lattice と Amazon API Gateway を使ったアカウント間カナリアルーティング](https://aws.amazon.com/blogs/networking-and-content-delivery/cross-account-canary-routing-with-amazon-vpc-lattice-and-amazon-api-gateway/)** — モノリスをマイクロサービスへ移行する際に各サービスを別々の AWS アカウントに配置するケースで、Amazon VPC Lattice と Amazon API Gateway を組み合わせて異なるアカウントの新サービスへ少量の本番トラフィックを精密に切り替えるカナリアルーティングの方法を紹介しています。アカウント間の分離を維持しながら、安全かつ段階的なマイグレーションを実現できます。
+
 ## 2026-10-07 · 週次まとめ
 
 - **[Kiro エージェンティック IDE を使った AWS インターコネクトのプロビジョニング – マルチクラウド接続](https://aws.amazon.com/blogs/networking-and-content-delivery/provisioning-aws-interconnect-multicloud-with-the-kiro-agentic-ide/)** — Kiro エージェンティック IDE を活用して、AWS と Google Cloud・Microsoft Azure・Oracle Cloud Infrastructure 間のプライベートなマルチクラウドインターコネクトをプロビジョニングする方法を紹介します。買収や既存インフラなどによりマルチクラウド環境が一般化する中、ネットワークエンジニアが二つの環境を安全に接続する作業をエージェンティック IDE で自動化する実践的なアプローチを解説しています。

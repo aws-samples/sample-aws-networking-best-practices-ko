@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-08 · Weekly summary
+
+- **[Cross-account canary routing with Amazon VPC Lattice and Amazon API Gateway](https://aws.amazon.com/blogs/networking-and-content-delivery/cross-account-canary-routing-with-amazon-vpc-lattice-and-amazon-api-gateway/)** — When migrating a monolith to microservices across separate AWS accounts, this post explains how to combine Amazon VPC Lattice and Amazon API Gateway to shift a precise slice of live traffic to a new service in a different account. The approach enables safe, incremental migration while preserving per-account isolation and independent ownership.
+
 ## 2026-10-07 · Weekly summary
 
 - **[Provisioning AWS Interconnect – Multicloud with the Kiro Agentic IDE](https://aws.amazon.com/blogs/networking-and-content-delivery/provisioning-aws-interconnect-multicloud-with-the-kiro-agentic-ide/)** — This post explores how to use the Kiro agentic IDE to provision private multicloud interconnects between AWS and other cloud providers such as Google Cloud, Microsoft Azure, and Oracle Cloud Infrastructure. It addresses the increasingly common scenario where workloads span multiple clouds due to acquisitions or legacy footprints, and shows how agentic tooling can streamline the network engineer's connectivity workflow.

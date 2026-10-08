@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-08 · 주간 요약
+
+- **[Amazon VPC Lattice와 Amazon API Gateway를 활용한 계정 간 카나리 라우팅](https://aws.amazon.com/blogs/networking-and-content-delivery/cross-account-canary-routing-with-amazon-vpc-lattice-and-amazon-api-gateway/)** — 모놀리스를 마이크로서비스로 전환할 때 서비스별로 별도 AWS 계정을 사용하는 경우, Amazon VPC Lattice와 Amazon API Gateway를 결합해 다른 계정의 신규 서비스로 소량의 실제 트래픽을 정밀하게 전환하는 계정 간 카나리 라우팅 방법을 소개합니다. 이를 통해 격리된 계정 구조를 유지하면서도 안전하고 점진적인 마이그레이션이 가능합니다.
+
 ## 2026-10-07 · 주간 요약
 
 - **[Kiro 에이전틱 IDE로 AWS 인터커넥트 프로비저닝 – 멀티클라우드 연결](https://aws.amazon.com/blogs/networking-and-content-delivery/provisioning-aws-interconnect-multicloud-with-the-kiro-agentic-ide/)** — Kiro 에이전틱 IDE를 활용해 AWS와 Google Cloud, Microsoft Azure, Oracle Cloud Infrastructure 간 프라이빗 멀티클라우드 인터커넥트를 프로비저닝하는 방법을 소개합니다. 인수합병이나 기존 인프라 등으로 멀티클라우드 환경이 일반화된 상황에서, 네트워크 엔지니어가 두 환경을 안전하게 연결하는 작업을 에이전틱 IDE로 자동화하는 실용적 접근법을 다룹니다.
