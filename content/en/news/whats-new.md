@@ -8,6 +8,11 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-09 · Daily update
+
+- **[AWS Network Firewall adds wildcard support for container attribute filters](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-network-firewall-container-attributes-wildcard)** — AWS Network Firewall now supports wildcard matching in container attribute-based inspection filters for Amazon EKS and Amazon ECS. This allows a single rule with patterns like app=payments-* to cover multiple container workload variants, reducing the need to create individual container associations.
+- **[Amazon EC2 C8gb instances now generally available in additional regions](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ec2-c8gb/)** — Amazon EC2 C8gb instances, powered by AWS Graviton4 processors, are now available in additional regions including US East (Ohio), US West (N. California), EU (Frankfurt, Ireland, Paris, Stockholm), and Africa (Cape Town). These instances offer up to 300 Gbps EBS bandwidth and 1,600K IOPS, delivering higher block storage performance compared to same-sized equivalent Graviton4-based instances.
+
 ## 2026-10-08 · Daily update
 
 - **[AWS Config now supports 77 new resource types](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-config-new-resource-types)** — AWS Config has expanded support to 77 additional resource types across key services including Amazon EC2, Amazon S3 Files, and Amazon Q Business. When recording is enabled for all resource types, these new additions are tracked automatically and are also available in Config rules and Config aggregators.

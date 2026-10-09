@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-09 · 前日のアップデート
+
+- **[AWS Network Firewall がコンテナ属性フィルターにワイルドカードサポートを追加](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-network-firewall-container-attributes-wildcard)** — AWS Network Firewall が Amazon EKS および Amazon ECS のコンテナ属性ベースの検査フィルターでワイルドカードマッチングをサポートしました。app=payments-* のようなパターン 1 つで複数のコンテナワークロードのバリアントを単一ルールでカバーでき、ルール管理が簡素化されます。
+- **[Amazon EC2 C8gb インスタンスが追加リージョンで一般提供開始](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ec2-c8gb/)** — AWS Graviton4 プロセッサーを搭載した Amazon EC2 C8gb インスタンスが、米国東部 (オハイオ)、米国西部 (北カリフォルニア)、EU (フランクフルト、アイルランド、パリ、ストックホルム)、アフリカ (ケープタウン) の各リージョンで新たに利用可能になりました。最大 300 Gbps の EBS 帯域幅と 160 万 IOPS を提供し、同サイズの Graviton4 ベースインスタンスと比較して高いブロックストレージ性能を実現しています。
+
 ## 2026-10-08 · 前日のアップデート
 
 - **[AWS Config が 77 個の新しいリソースタイプをサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-config-new-resource-types)** — AWS Config が Amazon EC2、Amazon S3 Files、Amazon Q Business などの主要サービスにわたる 77 個の新しいリソースタイプのサポートを追加しました。全リソースタイプの記録を有効にしている場合は自動的に追跡され、Config ルールおよび Config アグリゲーターでも利用できるため、AWS 環境の監査とコンプライアンスのカバレッジがさらに拡大します。

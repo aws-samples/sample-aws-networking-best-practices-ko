@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-09 · 전일 업데이트
+
+- **[AWS Network Firewall, 컨테이너 속성 필터에 와일드카드 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-network-firewall-container-attributes-wildcard)** — AWS Network Firewall이 Amazon EKS 및 Amazon ECS의 컨테이너 속성 기반 검사 필터에서 와일드카드 매칭을 지원합니다. 이를 통해 `app=payments-*`와 같은 패턴 하나로 여러 컨테이너 워크로드 변형을 단일 규칙으로 처리할 수 있어 규칙 관리가 간소화됩니다.
+- **[Amazon EC2 C8gb 인스턴스, 추가 리전에서 정식 출시](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ec2-c8gb/)** — AWS Graviton4 프로세서 기반의 Amazon EC2 C8gb 인스턴스가 미국 동부(오하이오), 미국 서부(북캘리포니아), EU(프랑크푸르트, 아일랜드, 파리, 스톡홀름), 아프리카(케이프타운) 리전에서 추가로 제공됩니다. 최대 300 Gbps EBS 대역폭과 160만 IOPS를 지원하며, 동급 Graviton4 기반 인스턴스 대비 높은 블록 스토리지 성능을 제공합니다.
+
 ## 2026-10-08 · 전일 업데이트
 
 - **[AWS Config, 77개 신규 리소스 유형 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-config-new-resource-types)** — AWS Config가 Amazon EC2, Amazon S3 Files, Amazon Q Business 등 주요 서비스에 걸쳐 77개의 신규 리소스 유형을 추가로 지원합니다. 전체 리소스 유형 기록을 활성화한 경우 자동으로 추적되며, Config 규칙 및 Config 집계기에서도 활용할 수 있어 AWS 환경에 대한 감사 및 규정 준수 범위가 더욱 확대됩니다.
