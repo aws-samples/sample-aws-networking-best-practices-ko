@@ -8,6 +8,12 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-10 · Daily update
+
+- **[Amazon EC2 R8gd Instances Now Available in Additional Regions](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ec2-r8gd-thf/)** — Amazon EC2 R8gd instances are now available in the AWS European Sovereign Cloud (Germany) region, featuring up to 11.4 TB of local NVMe SSD storage and up to 50 Gbps of network bandwidth. Powered by AWS Graviton4 processors, these instances deliver up to 30% better performance over Graviton3-based instances and are well-suited for applications requiring high-speed, low-latency local storage.
+- **[Amazon EC2 R8g Instances Now Available in Additional Regions](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ec2-r8g-instances-thf/)** — Amazon EC2 R8g instances are now available in the AWS European Sovereign Cloud (Germany) region, powered by AWS Graviton4 processors and delivering up to 30% better performance than Graviton3-based instances. These instances are ideal for memory-intensive workloads such as databases, in-memory caches, and real-time big data analytics.
+- **[Amazon SageMaker Unified Studio Now Supports Custom Tooling Blueprints](https://aws.amazon.com/about-aws/whats-new/2026/10/sagemaker-custom-tooling-blueprints/)** — Amazon SageMaker Unified Studio now supports custom Tooling blueprints, enabling domain administrators to define project environments using their own AWS CloudFormation templates. This allows organizations to tailor environments to specific requirements such as IAM role naming conventions and custom permissions boundaries.
+
 ## 2026-10-09 · Daily update
 
 - **[AWS Network Firewall adds wildcard support for container attribute filters](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-network-firewall-container-attributes-wildcard)** — AWS Network Firewall now supports wildcard matching in container attribute-based inspection filters for Amazon EKS and Amazon ECS. This allows a single rule with patterns like app=payments-* to cover multiple container workload variants, reducing the need to create individual container associations.

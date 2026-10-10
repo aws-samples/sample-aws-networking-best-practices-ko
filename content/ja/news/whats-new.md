@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-10 · 前日のアップデート
+
+- **[Amazon EC2 R8gd インスタンスが追加リージョンで利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ec2-r8gd-thf/)** — Amazon EC2 R8gd インスタンスが AWS European Sovereign Cloud (ドイツ) リージョンで新たに利用可能になりました。 AWS Graviton4 プロセッサを搭載し、最大 11.4 TB の NVMe SSD ローカルストレージと最大 50 Gbps のネットワーク帯域幅を提供し、高速・低レイテンシのローカルストレージを必要とするアプリケーションに最適です。
+- **[Amazon EC2 R8g インスタンスが追加リージョンで利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ec2-r8g-instances-thf/)** — Amazon EC2 R8g インスタンスが AWS European Sovereign Cloud (ドイツ) リージョンで利用可能になりました。 AWS Graviton4 プロセッサを搭載し、Graviton3 ベースのインスタンスと比較して最大 30% 優れたパフォーマンスを発揮し、データベースやインメモリキャッシュ、リアルタイムビッグデータ分析などのメモリ集約型ワークロードに適しています。
+- **[Amazon SageMaker Unified Studio がカスタム Tooling ブループリントをサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/sagemaker-custom-tooling-blueprints/)** — Amazon SageMaker Unified Studio がカスタム Tooling ブループリントをサポートし、ドメイン管理者が独自の AWS CloudFormation テンプレートを使用してプロジェクト環境の基盤を定義できるようになりました。 IAM ロール名の命名規則やカスタム権限境界など、組織固有の要件に合わせた環境構成が可能です。
+
 ## 2026-10-09 · 前日のアップデート
 
 - **[AWS Network Firewall がコンテナ属性フィルターにワイルドカードサポートを追加](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-network-firewall-container-attributes-wildcard)** — AWS Network Firewall が Amazon EKS および Amazon ECS のコンテナ属性ベースの検査フィルターでワイルドカードマッチングをサポートしました。app=payments-* のようなパターン 1 つで複数のコンテナワークロードのバリアントを単一ルールでカバーでき、ルール管理が簡素化されます。
