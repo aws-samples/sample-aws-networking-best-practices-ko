@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-13 · 전일 업데이트
+
+- **[Amazon CloudFront, AWS Lambda Web Functions를 오리진으로 지원](https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-lambda-web-functions-origin/)** — Amazon CloudFront가 AWS Lambda Web Functions를 오리진으로 지원하기 시작하여, 엣지에서 TLS 종료·캐싱·커스텀 도메인을 활용한 낮은 지연 시간의 웹 애플리케이션 제공이 가능해졌습니다. CloudFront Origin Access Control(OAC)을 통해 Lambda Web Function에 대한 직접 접근을 차단하여 보안을 강화할 수 있습니다.
+- **[Amazon EC2 G7 인스턴스, 유럽(프랑크푸르트) 및 유럽(스톡홀름) 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-g7-european-regions/)** — NVIDIA RTX PRO 4500 Blackwell Server Edition GPU를 탑재한 Amazon EC2 G7 인스턴스가 유럽(프랑크푸르트)과 유럽(스톡홀름) 리전에서 새롭게 제공됩니다. G7 인스턴스는 G6 대비 AI 추론 성능 최대 4.6배, 그래픽 성능 최대 2.1배 향상을 제공하여 AI 모델 배포 및 GPU 가속 워크로드에 활용할 수 있습니다.
+- **[AWS Lambda, Lambda Web Functions 발표](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-lambda-web-functions/)** — AWS Lambda가 HTTP 요청을 직접 처리하는 새로운 서버리스 컴퓨팅 기본 단위인 Lambda Web Functions를 발표했습니다. Express나 Hono 같은 기존 프레임워크를 어댑터 없이 그대로 사용할 수 있으며, AI 추론 엔드포인트·SSR 웹 앱·스트리밍 API 등 다양한 워크로드를 지원하고 유휴 CPU 시간이 아닌 활성 CPU 시간 기준으로 과금됩니다.
+
 ## 2026-10-10 · 전일 업데이트
 
 - **[Amazon EC2 R8gd 인스턴스, 추가 리전에서 제공 시작](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ec2-r8gd-thf/)** — Amazon EC2 R8gd 인스턴스가 AWS European Sovereign Cloud(독일) 리전에서 새롭게 제공됩니다. AWS Graviton4 프로세서 기반으로 최대 11.4TB NVMe SSD 로컬 스토리지, 최대 50Gbps 네트워크 대역폭을 지원하여 고속·저지연 로컬 스토리지가 필요한 애플리케이션에 적합합니다.

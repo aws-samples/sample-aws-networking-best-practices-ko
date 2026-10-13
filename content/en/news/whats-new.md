@@ -8,6 +8,12 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-13 · Daily update
+
+- **[Amazon CloudFront now supports AWS Lambda Web Functions as an origin](https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-lambda-web-functions-origin/)** — Amazon CloudFront now supports AWS Lambda Web Functions as an origin, enabling TLS termination at the edge, caching, and custom domains with managed TLS certificates for lower latency web delivery. CloudFront Origin Access Control (OAC) ensures the Lambda Web Function is accessible only through CloudFront, preventing requests that bypass security protections.
+- **[Amazon EC2 G7 instances now available in Europe (Frankfurt) and Europe (Stockholm) Regions](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-g7-european-regions/)** — Amazon EC2 G7 instances, powered by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs, are now available in the Europe (Frankfurt) and Europe (Stockholm) Regions. G7 instances deliver up to 4.6x AI inference performance and up to 2.1x graphics performance compared to G6 instances, supporting workloads such as AI model deployment and GPU-accelerated data analytics.
+- **[AWS Lambda announces Lambda Web Functions](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-lambda-web-functions/)** — AWS Lambda has introduced Lambda Web Functions, a new serverless compute primitive that allows code to handle HTTP requests directly on a port using familiar frameworks like Express or Hono without adapters or custom configuration. It supports workloads such as AI inference endpoints, server-side rendered web apps, and streaming APIs, with billing based on active CPU time rather than idle wait time.
+
 ## 2026-10-10 · Daily update
 
 - **[Amazon EC2 R8gd Instances Now Available in Additional Regions](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ec2-r8gd-thf/)** — Amazon EC2 R8gd instances are now available in the AWS European Sovereign Cloud (Germany) region, featuring up to 11.4 TB of local NVMe SSD storage and up to 50 Gbps of network bandwidth. Powered by AWS Graviton4 processors, these instances deliver up to 30% better performance over Graviton3-based instances and are well-suited for applications requiring high-speed, low-latency local storage.
