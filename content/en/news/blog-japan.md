@@ -8,6 +8,10 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-14 · Weekly summary
+
+- **[Amazon GuardDuty Extended Threat Detection Adds Five New Indicators to Enhance Attack Sequence Detection](https://aws.amazon.com/jp/blogs/news/guardduty-extended-threat-detection-has-added-five-new-indicators-to-surface-attack-sequences/)** — Amazon GuardDuty's extended threat detection now includes five new indicators sourced from Amazon Inspector, Amazon VPC Reachability Analyzer, Amazon Macie, and AWS Security Hub, correlating vulnerability, reachability, misconfiguration, and sensitive data signals with weak runtime findings. This consolidates low-level noise into CRITICAL-severity, actionable attack sequence findings to streamline incident response.
+
 ## 2026-10-06 · Weekly summary
 
 - **[Weekly AWS – Week of September 28, 2026](https://aws.amazon.com/jp/blogs/news/aws-weekly-20260928/)** — This week's AWS updates include the GA of Palo Alto Networks Advanced DNS Security in Amazon Route 53 Resolver DNS Firewall, logical air-gap vault support for Amazon FSx for NetApp ONTAP in AWS Backup, and direct Apache Iceberg/Parquet querying from Aurora PostgreSQL. From a networking perspective, the enhanced DNS security integration and expanded multi-Region support for AWS IAM Identity Center are particularly noteworthy.

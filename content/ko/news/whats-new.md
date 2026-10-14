@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-14 · 전일 업데이트
+
+- **[Amazon Route 53, 프리미엄 도메인 등록·이전·갱신 지원 시작](https://aws.amazon.com/about-aws/whats-new/2026/10/route-53-premium-domains/)** — Amazon Route 53 Domains가 이제 프리미엄 도메인 이름의 검색, 등록, 이전, 갱신, 복원을 직접 지원합니다. 이를 통해 고객은 짧고 기억하기 쉬운 고수요 프리미엄 도메인을 다른 등록 대행사 없이 Route 53 하나로 통합 관리할 수 있게 되었습니다.
+
 ## 2026-10-13 · 전일 업데이트
 
 - **[Amazon CloudFront, AWS Lambda Web Functions를 오리진으로 지원](https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-lambda-web-functions-origin/)** — Amazon CloudFront가 AWS Lambda Web Functions를 오리진으로 지원하기 시작하여, 엣지에서 TLS 종료·캐싱·커스텀 도메인을 활용한 낮은 지연 시간의 웹 애플리케이션 제공이 가능해졌습니다. CloudFront Origin Access Control(OAC)을 통해 Lambda Web Function에 대한 직접 접근을 차단하여 보안을 강화할 수 있습니다.

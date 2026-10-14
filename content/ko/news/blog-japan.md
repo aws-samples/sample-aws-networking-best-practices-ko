@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-14 · 주간 요약
+
+- **[Amazon GuardDuty 확장 위협 탐지에 5가지 새로운 지표 추가: 공격 시퀀스 탐지 강화](https://aws.amazon.com/jp/blogs/news/guardduty-extended-threat-detection-has-added-five-new-indicators-to-surface-attack-sequences/)** — Amazon GuardDuty 확장 위협 탐지의 공격 시퀀스 탐지 결과에 Amazon Inspector, Amazon VPC Reachability Analyzer, Amazon Macie, AWS Security Hub에서 수집한 취약점·도달 가능성·설정 오류·민감 데이터 정보를 포함한 5가지 새로운 지표가 추가되었습니다. 이를 통해 낮은 수준의 런타임 신호를 CRITICAL 심각도의 실행 가능한 탐지 결과로 통합하여 인시던트 대응 효율을 높입니다.
+
 ## 2026-10-06 · 주간 요약
 
 - **[주간 AWS – 2026년 9월 28일 주](https://aws.amazon.com/jp/blogs/news/aws-weekly-20260928/)** — Amazon Route 53 Resolver DNS Firewall에서 Palo Alto Networks Advanced DNS Security GA, AWS Backup 논리적 에어갭 볼트의 Amazon FSx for NetApp ONTAP 지원, Aurora PostgreSQL에서 Apache Iceberg/Parquet 직접 쿼리 등 다양한 네트워킹·스토리지·데이터베이스 업데이트가 발표되었습니다. 네트워킹 관점에서는 DNS 보안 강화와 AWS IAM Identity Center 멀티 리전 지원 확대가 주목할 만합니다.

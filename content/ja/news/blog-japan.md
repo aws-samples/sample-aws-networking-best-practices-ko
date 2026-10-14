@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-14 · 週次まとめ
+
+- **[Amazon GuardDuty 拡張脅威検出に 5 つの新しいインジケーターを追加: 攻撃シーケンスの検出を強化](https://aws.amazon.com/jp/blogs/news/guardduty-extended-threat-detection-has-added-five-new-indicators-to-surface-attack-sequences/)** — Amazon GuardDuty の拡張脅威検出に、Amazon Inspector・Amazon VPC Reachability Analyzer・Amazon Macie・AWS Security Hub から得られる脆弱性・到達可能性・設定ミス・機密データの情報を含む 5 つの新しいインジケーターが追加されました。これにより、弱いランタイムシグナルを CRITICAL 重大度の対応可能な攻撃シーケンス検出結果に集約し、インシデント対応の効率を向上させます。
+
 ## 2026-10-06 · 週次まとめ
 
 - **[週刊 AWS – 2026/9/28 週](https://aws.amazon.com/jp/blogs/news/aws-weekly-20260928/)** — Amazon Route 53 Resolver DNS Firewall での Palo Alto Networks Advanced DNS Security の GA や、AWS Backup の論理的エアギャップボールトによる Amazon FSx for NetApp ONTAP 対応、Aurora PostgreSQL からの Apache Iceberg/Parquet 直接クエリなど、幅広いアップデートが発表されました。ネットワーキング観点では、DNS セキュリティの強化と AWS IAM Identity Center のマルチリージョンサポート拡大が注目ポイントです。

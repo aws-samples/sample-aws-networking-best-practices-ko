@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-14 · 前日のアップデート
+
+- **[Amazon Route 53 がプレミアムドメインの登録・移管・更新をサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/route-53-premium-domains/)** — Amazon Route 53 Domains が、プレミアムドメイン名の検索・登録・移管・更新・復元を直接サポートするようになりました。これにより、短くて覚えやすい高需要のプレミアムドメインを他のレジストラを使わずに Route 53 だけで一元管理できます。
+
 ## 2026-10-13 · 前日のアップデート
 
 - **[Amazon CloudFront が AWS Lambda Web Functions をオリジンとしてサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-lambda-web-functions-origin/)** — Amazon CloudFront が AWS Lambda Web Functions をオリジンとしてサポートし、エッジでの TLS 終端・キャッシュ・カスタムドメインを活用した低遅延の Web アプリケーション配信が可能になりました。CloudFront Origin Access Control (OAC) により、Lambda Web Function への直接アクセスを遮断し、セキュリティを強化できます。

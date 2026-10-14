@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-14 · Daily update
+
+- **[Amazon Route 53 Now Supports Registrations, Transfers, and Renewals for Premium Domains](https://aws.amazon.com/about-aws/whats-new/2026/10/route-53-premium-domains/)** — Amazon Route 53 Domains now supports searching, registering, transferring, renewing, and restoring premium domain names directly within Route 53. Customers can consolidate their entire domain portfolio—including high-demand, short, or memorable premium names—under a single registrar instead of managing them across multiple providers.
+
 ## 2026-10-13 · Daily update
 
 - **[Amazon CloudFront now supports AWS Lambda Web Functions as an origin](https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-lambda-web-functions-origin/)** — Amazon CloudFront now supports AWS Lambda Web Functions as an origin, enabling TLS termination at the edge, caching, and custom domains with managed TLS certificates for lower latency web delivery. CloudFront Origin Access Control (OAC) ensures the Lambda Web Function is accessible only through CloudFront, preventing requests that bypass security protections.
