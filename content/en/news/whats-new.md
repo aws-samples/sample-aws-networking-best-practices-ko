@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-15 · Daily update
+
+- **[Announcing Blockchain Snapshots on AWS for Node Bootstrapping](https://aws.amazon.com/about-aws/whats-new/2026/10/blockchain-snapshots-node-bootstrapping/)** — AWS has announced Blockchain Snapshots on AWS, which publishes pre-synced Ethereum and Solana chain data as public snapshots on Amazon S3, allowing node operators to bootstrap nodes from a snapshot instead of syncing peer-to-peer. Hosting these snapshots within AWS infrastructure reduces latency and optimizes data transfer for customers running blockchain nodes on AWS.
+
 ## 2026-10-14 · Daily update
 
 - **[Amazon Route 53 Now Supports Registrations, Transfers, and Renewals for Premium Domains](https://aws.amazon.com/about-aws/whats-new/2026/10/route-53-premium-domains/)** — Amazon Route 53 Domains now supports searching, registering, transferring, renewing, and restoring premium domain names directly within Route 53. Customers can consolidate their entire domain portfolio—including high-demand, short, or memorable premium names—under a single registrar instead of managing them across multiple providers.

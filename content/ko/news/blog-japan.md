@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-15 · 주간 요약
+
+- **[AWS STS 세션 토큰 크기 제한 단순화 및 크기 모니터링 지원](https://aws.amazon.com/jp/blogs/news/aws-sts-simplifies-session-token-size-limits-and-adds-session-token-size-monitoring/)** — AWS STS 세션 토큰 크기 제한이 4,096바이트 단일 제한으로 단순화되어 세션 정책 및 세션 태그에 사용할 수 있는 용량이 확대되었습니다. 토큰 크기는 API 응답, Amazon CloudWatch 지표, AWS CloudTrail 이벤트를 통해 확인할 수 있으며, 로드 밸런서·데이터베이스 등 토큰을 처리하는 시스템에서는 MinimumSessionTokenSize 파라미터로 최대 토큰 크기를 검증하는 것이 권장됩니다.
+
 ## 2026-10-14 · 주간 요약
 
 - **[Amazon GuardDuty 확장 위협 탐지에 5가지 새로운 지표 추가: 공격 시퀀스 탐지 강화](https://aws.amazon.com/jp/blogs/news/guardduty-extended-threat-detection-has-added-five-new-indicators-to-surface-attack-sequences/)** — Amazon GuardDuty 확장 위협 탐지의 공격 시퀀스 탐지 결과에 Amazon Inspector, Amazon VPC Reachability Analyzer, Amazon Macie, AWS Security Hub에서 수집한 취약점·도달 가능성·설정 오류·민감 데이터 정보를 포함한 5가지 새로운 지표가 추가되었습니다. 이를 통해 낮은 수준의 런타임 신호를 CRITICAL 심각도의 실행 가능한 탐지 결과로 통합하여 인시던트 대응 효율을 높입니다.

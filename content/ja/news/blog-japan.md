@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-15 · 週次まとめ
+
+- **[AWS STS のセッショントークンのサイズ制限を簡素化、サイズのモニタリングにも対応](https://aws.amazon.com/jp/blogs/news/aws-sts-simplifies-session-token-size-limits-and-adds-session-token-size-monitoring/)** — AWS STS のセッショントークンのサイズ制限が 4,096 バイトの単一制限に簡素化され、セッションポリシーおよびセッションタグに使用できる容量が拡大されました。トークンサイズは API レスポンス・Amazon CloudWatch メトリクス・AWS CloudTrail イベントで確認でき、ロードバランサーやデータベースなどトークンを扱うシステムでは MinimumSessionTokenSize パラメータによる最大サイズの検証が推奨されます。
+
 ## 2026-10-14 · 週次まとめ
 
 - **[Amazon GuardDuty 拡張脅威検出に 5 つの新しいインジケーターを追加: 攻撃シーケンスの検出を強化](https://aws.amazon.com/jp/blogs/news/guardduty-extended-threat-detection-has-added-five-new-indicators-to-surface-attack-sequences/)** — Amazon GuardDuty の拡張脅威検出に、Amazon Inspector・Amazon VPC Reachability Analyzer・Amazon Macie・AWS Security Hub から得られる脆弱性・到達可能性・設定ミス・機密データの情報を含む 5 つの新しいインジケーターが追加されました。これにより、弱いランタイムシグナルを CRITICAL 重大度の対応可能な攻撃シーケンス検出結果に集約し、インシデント対応の効率を向上させます。

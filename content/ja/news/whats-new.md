@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-15 · 前日のアップデート
+
+- **[ノードブートストラッピングのための AWS Blockchain Snapshots の発表](https://aws.amazon.com/about-aws/whats-new/2026/10/blockchain-snapshots-node-bootstrapping/)** — AWS は、Ethereum および Solana のブロックチェーンノード運用者向けに、事前同期済みのチェーンデータを Amazon S3 にパブリックスナップショットとして提供する Blockchain Snapshots on AWS を発表しました。P2P ネットワーク同期の代わりにスナップショットからノードをブートストラップできるため、AWS 上でノードを運用する際の遅延時間短縮とデータ転送の最適化が期待できます。
+
 ## 2026-10-14 · 前日のアップデート
 
 - **[Amazon Route 53 がプレミアムドメインの登録・移管・更新をサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/route-53-premium-domains/)** — Amazon Route 53 Domains が、プレミアムドメイン名の検索・登録・移管・更新・復元を直接サポートするようになりました。これにより、短くて覚えやすい高需要のプレミアムドメインを他のレジストラを使わずに Route 53 だけで一元管理できます。

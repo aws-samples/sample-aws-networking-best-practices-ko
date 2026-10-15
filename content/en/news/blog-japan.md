@@ -8,6 +8,10 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-15 · Weekly summary
+
+- **[AWS STS Session Token Size Limit Simplified with Monitoring Support](https://aws.amazon.com/jp/blogs/news/aws-sts-simplifies-session-token-size-limits-and-adds-session-token-size-monitoring/)** — AWS STS session token size limits have been consolidated into a single 4,096-byte limit, expanding the capacity available for session policies and session tags. Token sizes are now reported via API responses, Amazon CloudWatch metrics, and AWS CloudTrail events, and the MinimumSessionTokenSize parameter can be used to validate the maximum token size that infrastructure components such as load balancers and databases can handle.
+
 ## 2026-10-14 · Weekly summary
 
 - **[Amazon GuardDuty Extended Threat Detection Adds Five New Indicators to Enhance Attack Sequence Detection](https://aws.amazon.com/jp/blogs/news/guardduty-extended-threat-detection-has-added-five-new-indicators-to-surface-attack-sequences/)** — Amazon GuardDuty's extended threat detection now includes five new indicators sourced from Amazon Inspector, Amazon VPC Reachability Analyzer, Amazon Macie, and AWS Security Hub, correlating vulnerability, reachability, misconfiguration, and sensitive data signals with weak runtime findings. This consolidates low-level noise into CRITICAL-severity, actionable attack sequence findings to streamline incident response.
