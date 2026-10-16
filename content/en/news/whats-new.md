@@ -8,6 +8,11 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-16 · Daily update
+
+- **[AWS HealthOmics now supports shared VPCs](https://aws.amazon.com/about-aws/whats-new/2026/10/omics-workflows-shared-vpcs/)** — AWS HealthOmics now supports VPC sharing across accounts via AWS Resource Access Manager (RAM), allowing workflows to access resources in Amazon VPCs managed by other AWS accounts. This enables centralized networking administration by sharing subnets and security groups from a single VPC across multiple accounts within an organization.
+- **[Amazon CloudFront announces dual-stack support for VPC origins](https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-vpc-origin-dualstack/)** — Amazon CloudFront now supports end-to-end IPv6 delivery to VPC origins, enabling IPv6 traffic to reach ALBs, NLBs, and EC2 instances in private subnets without exposing them to the internet. This new dual-stack VPC origins feature helps customers meet IPv6 architecture and regulatory requirements.
+
 ## 2026-10-15 · Daily update
 
 - **[Announcing Blockchain Snapshots on AWS for Node Bootstrapping](https://aws.amazon.com/about-aws/whats-new/2026/10/blockchain-snapshots-node-bootstrapping/)** — AWS has announced Blockchain Snapshots on AWS, which publishes pre-synced Ethereum and Solana chain data as public snapshots on Amazon S3, allowing node operators to bootstrap nodes from a snapshot instead of syncing peer-to-peer. Hosting these snapshots within AWS infrastructure reduces latency and optimizes data transfer for customers running blockchain nodes on AWS.

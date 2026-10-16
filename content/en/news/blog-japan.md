@@ -8,6 +8,10 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-16 · Weekly summary
+
+- **[Extending Data Perimeters to the AWS Management Console with Private Access](https://aws.amazon.com/jp/blogs/news/extend-your-data-perimeter-to-the-aws-management-console-with-private-access/)** — AWS Management Console private access is now generally available, supporting VPCs without internet connectivity by routing all console traffic—including authentication flows, static assets, and console-specific APIs—through AWS PrivateLink VPC endpoints. Combining VPC endpoint policies with Resource Control Policies (RCPs) enables organizations to enforce a stronger data perimeter.
+
 ## 2026-10-15 · Weekly summary
 
 - **[AWS STS Session Token Size Limit Simplified with Monitoring Support](https://aws.amazon.com/jp/blogs/news/aws-sts-simplifies-session-token-size-limits-and-adds-session-token-size-monitoring/)** — AWS STS session token size limits have been consolidated into a single 4,096-byte limit, expanding the capacity available for session policies and session tags. Token sizes are now reported via API responses, Amazon CloudWatch metrics, and AWS CloudTrail events, and the MinimumSessionTokenSize parameter can be used to validate the maximum token size that infrastructure components such as load balancers and databases can handle.

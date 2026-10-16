@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-16 · 週次まとめ
+
+- **[プライベートアクセスで AWS Management Console までデータ境界を拡張する](https://aws.amazon.com/jp/blogs/news/extend-your-data-perimeter-to-the-aws-management-console-with-private-access/)** — AWS Management Console のプライベートアクセスが、インターネット接続のない VPC をサポートして一般提供を開始しました。VPC エンドポイントポリシーとリソースコントロールポリシー (RCP) を組み合わせることで、認証フローや静的アセットを含むコンソールトラフィックを AWS PrivateLink 経由でルーティングし、データ境界を強化できます。
+
 ## 2026-10-15 · 週次まとめ
 
 - **[AWS STS のセッショントークンのサイズ制限を簡素化、サイズのモニタリングにも対応](https://aws.amazon.com/jp/blogs/news/aws-sts-simplifies-session-token-size-limits-and-adds-session-token-size-monitoring/)** — AWS STS のセッショントークンのサイズ制限が 4,096 バイトの単一制限に簡素化され、セッションポリシーおよびセッションタグに使用できる容量が拡大されました。トークンサイズは API レスポンス・Amazon CloudWatch メトリクス・AWS CloudTrail イベントで確認でき、ロードバランサーやデータベースなどトークンを扱うシステムでは MinimumSessionTokenSize パラメータによる最大サイズの検証が推奨されます。

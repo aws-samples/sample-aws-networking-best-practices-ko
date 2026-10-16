@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-16 · 전일 업데이트
+
+- **[AWS HealthOmics, 공유 VPC 지원 시작](https://aws.amazon.com/about-aws/whats-new/2026/10/omics-workflows-shared-vpcs/)** — AWS HealthOmics가 AWS Resource Access Manager(RAM)를 통해 다른 AWS 계정이 관리하는 Amazon VPC를 공유할 수 있게 되었습니다. 이를 통해 조직 내 여러 계정에 걸쳐 서브넷과 보안 그룹을 단일 VPC에서 중앙 집중식으로 관리할 수 있습니다.
+- **[Amazon CloudFront, VPC 오리진에 대한 듀얼 스택 지원 발표](https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-vpc-origin-dualstack/)** — Amazon CloudFront가 VPC 오리진에 대한 듀얼 스택 지원을 추가하여, 프라이빗 서브넷에 위치한 ALB, NLB, EC2 인스턴스까지 IPv6 트래픽을 엔드투엔드로 전달할 수 있게 되었습니다. 오리진을 인터넷에 노출하지 않고도 IPv6 아키텍처 및 규정 준수 요건을 충족할 수 있습니다.
+
 ## 2026-10-15 · 전일 업데이트
 
 - **[노드 부트스트래핑을 위한 AWS Blockchain Snapshots 발표](https://aws.amazon.com/about-aws/whats-new/2026/10/blockchain-snapshots-node-bootstrapping/)** — AWS가 Ethereum 및 Solana 블록체인 노드 운영자를 위해 사전 동기화된 체인 데이터를 Amazon S3에 공개 스냅샷으로 제공하는 Blockchain Snapshots on AWS를 발표했습니다. 이를 통해 P2P 네트워크 동기화 대신 스냅샷에서 노드를 부트스트래핑할 수 있어 지연 시간 단축과 데이터 전송 최적화 효과를 얻을 수 있습니다.

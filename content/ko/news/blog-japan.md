@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-16 · 주간 요약
+
+- **[프라이빗 액세스로 데이터 경계를 AWS Management Console까지 확장](https://aws.amazon.com/jp/blogs/news/extend-your-data-perimeter-to-the-aws-management-console-with-private-access/)** — AWS Management Console 프라이빗 액세스가 인터넷 연결 없는 VPC를 지원하며 일반 공개되었습니다. VPC 엔드포인트 정책과 리소스 제어 정책(RCP)을 결합해 인증 흐름·정적 자산·콘솔 전용 API 트래픽을 AWS PrivateLink를 통해 라우팅함으로써 데이터 경계를 강화할 수 있습니다.
+
 ## 2026-10-15 · 주간 요약
 
 - **[AWS STS 세션 토큰 크기 제한 단순화 및 크기 모니터링 지원](https://aws.amazon.com/jp/blogs/news/aws-sts-simplifies-session-token-size-limits-and-adds-session-token-size-monitoring/)** — AWS STS 세션 토큰 크기 제한이 4,096바이트 단일 제한으로 단순화되어 세션 정책 및 세션 태그에 사용할 수 있는 용량이 확대되었습니다. 토큰 크기는 API 응답, Amazon CloudWatch 지표, AWS CloudTrail 이벤트를 통해 확인할 수 있으며, 로드 밸런서·데이터베이스 등 토큰을 처리하는 시스템에서는 MinimumSessionTokenSize 파라미터로 최대 토큰 크기를 검증하는 것이 권장됩니다.

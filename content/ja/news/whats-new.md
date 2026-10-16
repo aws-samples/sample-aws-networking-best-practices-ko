@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-16 · 前日のアップデート
+
+- **[AWS HealthOmics が共有 VPC をサポート開始](https://aws.amazon.com/about-aws/whats-new/2026/10/omics-workflows-shared-vpcs/)** — AWS HealthOmics が AWS Resource Access Manager (RAM) を通じて他の AWS アカウントが管理する Amazon VPC を共有できるようになりました。これにより、組織内の複数アカウントにまたがるサブネットとセキュリティグループを単一の VPC で中央集中式に管理できます。
+- **[Amazon CloudFront が VPC オリジンのデュアルスタックサポートを発表](https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-vpc-origin-dualstack/)** — Amazon CloudFront が VPC オリジンに対するデュアルスタックサポートを追加し、プライベートサブネット内の ALB・NLB・EC2 インスタンスへ IPv6 トラフィックをエンドツーエンドで配信できるようになりました。オリジンをインターネットに公開することなく、IPv6 アーキテクチャおよびコンプライアンス要件を満たすことが可能です。
+
 ## 2026-10-15 · 前日のアップデート
 
 - **[ノードブートストラッピングのための AWS Blockchain Snapshots の発表](https://aws.amazon.com/about-aws/whats-new/2026/10/blockchain-snapshots-node-bootstrapping/)** — AWS は、Ethereum および Solana のブロックチェーンノード運用者向けに、事前同期済みのチェーンデータを Amazon S3 にパブリックスナップショットとして提供する Blockchain Snapshots on AWS を発表しました。P2P ネットワーク同期の代わりにスナップショットからノードをブートストラップできるため、AWS 上でノードを運用する際の遅延時間短縮とデータ転送の最適化が期待できます。
