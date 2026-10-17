@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-17 · Daily update
+
+- **[Oracle Database@AWS supports aggregate and default routes for ODB peering](https://aws.amazon.com/about-aws/whats-new/2026/10/oracle-database-aws-aggregate-routes-odb/)** — Oracle Database@AWS (ODB) now supports advertising aggregate routes and a default route (0.0.0.0/0) when configuring ODB peering, eliminating the need to advertise each network CIDR individually. This simplifies network operations when extending new Amazon VPCs or on-premises networks to reach databases in an ODB network.
+
 ## 2026-10-16 · Daily update
 
 - **[AWS HealthOmics now supports shared VPCs](https://aws.amazon.com/about-aws/whats-new/2026/10/omics-workflows-shared-vpcs/)** — AWS HealthOmics now supports VPC sharing across accounts via AWS Resource Access Manager (RAM), allowing workflows to access resources in Amazon VPCs managed by other AWS accounts. This enables centralized networking administration by sharing subnets and security groups from a single VPC across multiple accounts within an organization.

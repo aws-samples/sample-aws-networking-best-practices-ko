@@ -8,6 +8,11 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-17 · Weekly summary
+
+- **[Detecting Multi-Stage Attacks on AWS: A Guide to Cross-Service Signal Correlation](https://aws.amazon.com/jp/blogs/news/detecting-multi-stage-attacks-on-aws-a-guide-to-cross-service-signal-correlation/)** — This guide explains how to layer business context—such as data classification, access patterns, and resource ownership—on top of Amazon GuardDuty's enhanced threat detection to reveal the full picture of multi-stage attacks. It covers four correlation patterns using CloudTrail, VPC Flow Logs, and Route 53 Resolver query logs in CloudWatch Logs Insights, along with automation via Lambda, Amazon SNS, and EventBridge Scheduler.
+- **[Accelerating SAP Network Troubleshooting from Hours to Minutes: An Agentic AI Approach](https://aws.amazon.com/jp/blogs/news/accelerate-sap-network-troubleshooting-from-hours-to-minutes-agentic-ai-approach/)** — This post demonstrates how combining Kiro-CLI with AWS MCP Servers enables an agentic AI approach that reduces complex SAP network troubleshooting from hours to minutes. Five real-world scenarios—including cross-AZ latency analysis, 504 error root-cause analysis, security group drift detection, and capacity forecasting—are covered using VPC Flow Logs, security groups, and Transit Gateway diagnostics via natural-language prompts.
+
 ## 2026-10-16 · Weekly summary
 
 - **[Extending Data Perimeters to the AWS Management Console with Private Access](https://aws.amazon.com/jp/blogs/news/extend-your-data-perimeter-to-the-aws-management-console-with-private-access/)** — AWS Management Console private access is now generally available, supporting VPCs without internet connectivity by routing all console traffic—including authentication flows, static assets, and console-specific APIs—through AWS PrivateLink VPC endpoints. Combining VPC endpoint policies with Resource Control Policies (RCPs) enables organizations to enforce a stronger data perimeter.

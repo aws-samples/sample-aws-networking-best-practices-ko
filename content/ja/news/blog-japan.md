@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-17 · 週次まとめ
+
+- **[AWS でのマルチステージ攻撃の検出: サービス横断シグナル相関分析ガイド](https://aws.amazon.com/jp/blogs/news/detecting-multi-stage-attacks-on-aws-a-guide-to-cross-service-signal-correlation/)** — Amazon GuardDuty の拡張脅威検出に、データ分類やアクセスパターン、リソースの所有関係などのビジネスコンテキストを組み合わせ、多段階攻撃の全体像を把握する方法を解説します。CloudTrail・VPC Flow Logs・Route 53 Resolver クエリログを CloudWatch Logs Insights で相関分析する 4 つのパターンと、Lambda・Amazon SNS・EventBridge Scheduler を用いた自動化手順も紹介しています。
+- **[SAP ネットワークのトラブルシューティングを数時間から数分へ: エージェント型 AI アプローチ](https://aws.amazon.com/jp/blogs/news/accelerate-sap-network-troubleshooting-from-hours-to-minutes-agentic-ai-approach/)** — Kiro-CLI と AWS MCP Servers を組み合わせたエージェント型 AI により、複雑な SAP ランドスケープのネットワークトラブルシューティングを数時間から数分に短縮する方法を解説します。VPC Flow Logs・セキュリティグループ・Transit Gateway などを自然言語プロンプトで診断し、AZ 間レイテンシー分析やセキュリティグループのドリフト検出など 5 つの実例を通じて運用効率化を紹介しています。
+
 ## 2026-10-16 · 週次まとめ
 
 - **[プライベートアクセスで AWS Management Console までデータ境界を拡張する](https://aws.amazon.com/jp/blogs/news/extend-your-data-perimeter-to-the-aws-management-console-with-private-access/)** — AWS Management Console のプライベートアクセスが、インターネット接続のない VPC をサポートして一般提供を開始しました。VPC エンドポイントポリシーとリソースコントロールポリシー (RCP) を組み合わせることで、認証フローや静的アセットを含むコンソールトラフィックを AWS PrivateLink 経由でルーティングし、データ境界を強化できます。

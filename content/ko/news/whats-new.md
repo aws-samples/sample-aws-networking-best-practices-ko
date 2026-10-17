@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-17 · 전일 업데이트
+
+- **[Oracle Database@AWS, ODB 피어링에서 집계 경로 및 기본 경로 지원](https://aws.amazon.com/about-aws/whats-new/2026/10/oracle-database-aws-aggregate-routes-odb/)** — Oracle Database@AWS(ODB)가 ODB 피어링 구성 시 집계 경로와 기본 경로(0.0.0.0/0) 광고를 지원합니다. 이를 통해 새로운 Amazon VPC나 온프레미스 네트워크를 ODB 네트워크에 연결할 때 CIDR을 개별적으로 추가할 필요 없이 네트워크 운영을 간소화할 수 있습니다.
+
 ## 2026-10-16 · 전일 업데이트
 
 - **[AWS HealthOmics, 공유 VPC 지원 시작](https://aws.amazon.com/about-aws/whats-new/2026/10/omics-workflows-shared-vpcs/)** — AWS HealthOmics가 AWS Resource Access Manager(RAM)를 통해 다른 AWS 계정이 관리하는 Amazon VPC를 공유할 수 있게 되었습니다. 이를 통해 조직 내 여러 계정에 걸쳐 서브넷과 보안 그룹을 단일 VPC에서 중앙 집중식으로 관리할 수 있습니다.

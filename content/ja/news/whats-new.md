@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-17 · 前日のアップデート
+
+- **[Oracle Database@AWS、ODB ピアリングで集約ルートおよびデフォルトルートをサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/oracle-database-aws-aggregate-routes-odb/)** — Oracle Database@AWS (ODB) は、ODB ピアリング設定時に集約ルートおよびデフォルトルート (0.0.0.0/0) のアドバタイズをサポートするようになりました。これにより、新しい Amazon VPC やオンプレミスネットワークを ODB ネットワークに接続する際、CIDR を個別に追加する必要がなくなり、ネットワーク運用が簡素化されます。
+
 ## 2026-10-16 · 前日のアップデート
 
 - **[AWS HealthOmics が共有 VPC をサポート開始](https://aws.amazon.com/about-aws/whats-new/2026/10/omics-workflows-shared-vpcs/)** — AWS HealthOmics が AWS Resource Access Manager (RAM) を通じて他の AWS アカウントが管理する Amazon VPC を共有できるようになりました。これにより、組織内の複数アカウントにまたがるサブネットとセキュリティグループを単一の VPC で中央集中式に管理できます。
