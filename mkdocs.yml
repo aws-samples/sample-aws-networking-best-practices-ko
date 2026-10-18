@@ -147,6 +147,7 @@ plugins:
         - External Traffic: observability/external-traffic.md
         - AWS Services: observability/service-monitoring.md
         - Notifications: observability/notifications.md
+      - Changelog: changelog.md
       - Community:
         - community/index.md
         - How to contribute: community/contribute.md
@@ -251,6 +252,7 @@ nav:
   - 외부 트래픽: observability/external-traffic.md
   - AWS 서비스: observability/service-monitoring.md
   - 알림: observability/notifications.md
+- 변경 로그: changelog.md
 - 커뮤니티:
   - community/index.md
   - 기여 방법: community/contribute.md
