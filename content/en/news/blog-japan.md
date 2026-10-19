@@ -8,6 +8,10 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-19 · Weekly summary
+
+- **[Implementing Least-Privilege Access in Amazon Bedrock](https://aws.amazon.com/jp/blogs/news/implementing-least-privilege-access-for-amazon-bedrock/)** — This article explains how to apply the principle of least privilege across the model selection, adaptation, testing, and production phases of generative AI applications built on Amazon Bedrock. It covers policy examples using SCPs, VPC endpoint policies, KMS key policies, Amazon Bedrock Guardrails, and Amazon Bedrock Agents, along with periodic permission reviews via IAM Access Analyzer.
+
 ## 2026-10-17 · Weekly summary
 
 - **[Detecting Multi-Stage Attacks on AWS: A Guide to Cross-Service Signal Correlation](https://aws.amazon.com/jp/blogs/news/detecting-multi-stage-attacks-on-aws-a-guide-to-cross-service-signal-correlation/)** — This guide explains how to layer business context—such as data classification, access patterns, and resource ownership—on top of Amazon GuardDuty's enhanced threat detection to reveal the full picture of multi-stage attacks. It covers four correlation patterns using CloudTrail, VPC Flow Logs, and Route 53 Resolver query logs in CloudWatch Logs Insights, along with automation via Lambda, Amazon SNS, and EventBridge Scheduler.

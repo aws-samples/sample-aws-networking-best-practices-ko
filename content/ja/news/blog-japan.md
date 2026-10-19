@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-19 · 週次まとめ
+
+- **[Amazon Bedrock における最小権限アクセスの実装](https://aws.amazon.com/jp/blogs/news/implementing-least-privilege-access-for-amazon-bedrock/)** — 生成 AI アプリケーションにおいて、Amazon Bedrock のモデル選択・適応・テスト・運用の各フェーズに最小権限の原則を適用する方法を紹介します。SCP、VPC エンドポイントポリシー、KMS キーポリシー、Amazon Bedrock Guardrails、Amazon Bedrock Agents を活用したポリシー例と、IAM Access Analyzer による定期的な権限見直しについても解説しています。
+
 ## 2026-10-17 · 週次まとめ
 
 - **[AWS でのマルチステージ攻撃の検出: サービス横断シグナル相関分析ガイド](https://aws.amazon.com/jp/blogs/news/detecting-multi-stage-attacks-on-aws-a-guide-to-cross-service-signal-correlation/)** — Amazon GuardDuty の拡張脅威検出に、データ分類やアクセスパターン、リソースの所有関係などのビジネスコンテキストを組み合わせ、多段階攻撃の全体像を把握する方法を解説します。CloudTrail・VPC Flow Logs・Route 53 Resolver クエリログを CloudWatch Logs Insights で相関分析する 4 つのパターンと、Lambda・Amazon SNS・EventBridge Scheduler を用いた自動化手順も紹介しています。
