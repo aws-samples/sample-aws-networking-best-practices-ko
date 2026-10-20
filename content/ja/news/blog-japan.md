@@ -8,6 +8,13 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-20 · 週次まとめ
+
+- **[脅威の手口を解説: サブドメイン乗っ取りの仕組みと対策](https://aws.amazon.com/jp/blogs/news/threat-tactic-spotlight-subdomain-takeover/)** — ダングリング DNS レコードを悪用したサブドメイン乗っ取り攻撃の仕組みを解説し、S3・CloudFront・Elastic Beanstalk など対象となり得るリソースを整理します。AWS Config カスタムルールによるプロアクティブな検出、DNS レコードを先に削除する標準手順、Security Hub および SNS を活用した通知・修復方法を紹介します。
+- **[リアルタイムのマルウェア防御: AWS Network Firewall のアクティブ脅威防御の活用](https://aws.amazon.com/jp/blogs/news/real-time-malware-defense-leveraging-aws-network-firewall-active-threat-defense/)** — AWS Network Firewall のアクティブ脅威防御は、Amazon のハニーポットネットワーク MadPot の脅威インテリジェンスを活用し、30 分以内に保護ルールを自動デプロイします。DNS・HTTP・TLS SNI・IP の各レイヤーで多層防御を実現し、Amazon GuardDuty との連携や CVE-2025-48703 を悪用した実際の攻撃を阻止した事例も解説します。
+- **[データ流出の防止: AWS で実現するクラウドワークロードのエグレス制御](https://aws.amazon.com/jp/blogs/news/prevent-data-exfiltration-aws-egress-controls-for-cloud-workloads/)** — アウトバウンドトラフィックを悪用したデータ流出を防ぐため、ハブアンドスポーク型アーキテクチャを基盤に AWS Network Firewall と Amazon Route 53 Resolver DNS Firewall を組み合わせた多層的なエグレス制御の実装方法を紹介します。SCP・RCP・VPC エンドポイントポリシーによるデータ境界と Amazon GuardDuty・AWS Security Hub による検出制御を組み合わせ、エージェンティック AI ワークロードへの適用についても解説します。
+- **[AWS のサービスで構築する生成 AI アプリケーションのセキュアなネットワークアーキテクチャ](https://aws.amazon.com/jp/blogs/news/build-secure-network-architectures-for-generative-ai-applications-using-aws-services/)** — 生成 AI アプリケーションを DDoS 攻撃・SQL インジェクション・悪意のあるボットなどの外部脅威から守るため、AWS PrivateLink による Amazon Bedrock へのプライベート接続、AWS WAF と AWS Shield によるエッジ保護、AWS Network Firewall による境界防御、Amazon GuardDuty による監視を組み合わせた多層防御の参照アーキテクチャを解説します。
+
 ## 2026-10-19 · 週次まとめ
 
 - **[Amazon Bedrock における最小権限アクセスの実装](https://aws.amazon.com/jp/blogs/news/implementing-least-privilege-access-for-amazon-bedrock/)** — 生成 AI アプリケーションにおいて、Amazon Bedrock のモデル選択・適応・テスト・運用の各フェーズに最小権限の原則を適用する方法を紹介します。SCP、VPC エンドポイントポリシー、KMS キーポリシー、Amazon Bedrock Guardrails、Amazon Bedrock Agents を活用したポリシー例と、IAM Access Analyzer による定期的な権限見直しについても解説しています。

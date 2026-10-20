@@ -8,6 +8,13 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-20 · 주간 요약
+
+- **[위협 수법 해설: 서브도메인 탈취의 작동 원리와 대응 방법](https://aws.amazon.com/jp/blogs/news/threat-tactic-spotlight-subdomain-takeover/)** — 댕글링 DNS 레코드를 악용한 서브도메인 탈취 공격의 원리를 설명하고, S3·CloudFront·Elastic Beanstalk 등 탈취 대상이 될 수 있는 리소스를 정리합니다. AWS Config 커스텀 규칙을 통한 사전 탐지, DNS 레코드 선삭제 표준 절차, Security Hub 및 SNS를 활용한 알림·수정 방법을 소개합니다.
+- **[실시간 멀웨어 방어: AWS Network Firewall의 능동적 위협 방어 활용](https://aws.amazon.com/jp/blogs/news/real-time-malware-defense-leveraging-aws-network-firewall-active-threat-defense/)** — AWS Network Firewall의 능동적 위협 방어 기능은 Amazon의 허니팟 네트워크 MadPot의 위협 인텔리전스를 활용해 30분 이내에 보호 규칙을 자동 배포합니다. DNS·HTTP·TLS SNI·IP 계층에 걸친 다층 방어로 공격 킬체인 각 단계를 차단하며, Amazon GuardDuty 연동 및 실제 CVE-2025-48703 공격 차단 사례도 소개합니다.
+- **[데이터 유출 방지: AWS로 구현하는 클라우드 워크로드의 이그레스 제어](https://aws.amazon.com/jp/blogs/news/prevent-data-exfiltration-aws-egress-controls-for-cloud-workloads/)** — 아웃바운드 트래픽을 악용한 데이터 유출을 막기 위해 허브 앤 스포크 아키텍처를 기반으로 AWS Network Firewall과 Amazon Route 53 Resolver DNS Firewall을 조합한 다층적 이그레스 제어 구현 방법을 소개합니다. SCP·RCP·VPC 엔드포인트 정책을 통한 데이터 경계 설정과 Amazon GuardDuty·AWS Security Hub를 활용한 탐지 제어를 결합하며, 에이전틱 AI 워크로드에도 적용 가능함을 설명합니다.
+- **[AWS 서비스로 구축하는 생성형 AI 애플리케이션의 보안 네트워크 아키텍처](https://aws.amazon.com/jp/blogs/news/build-secure-network-architectures-for-generative-ai-applications-using-aws-services/)** — 생성형 AI 애플리케이션을 DDoS 공격·SQL 인젝션·악성 봇 등 외부 위협으로부터 보호하기 위해, AWS PrivateLink를 통한 Amazon Bedrock 프라이빗 연결, AWS WAF·AWS Shield의 엣지 보호, AWS Network Firewall의 경계 방어, Amazon GuardDuty 모니터링을 결합한 다층 방어 참조 아키텍처를 소개합니다.
+
 ## 2026-10-19 · 주간 요약
 
 - **[Amazon Bedrock에서 최소 권한 액세스 구현](https://aws.amazon.com/jp/blogs/news/implementing-least-privilege-access-for-amazon-bedrock/)** — 생성형 AI 애플리케이션에서 Amazon Bedrock의 모델 선택·적응·테스트·운영 각 단계에 최소 권한 원칙을 적용하는 방법을 소개합니다. SCP, VPC 엔드포인트 정책, KMS 키 정책, Amazon Bedrock Guardrails, Amazon Bedrock Agents를 활용한 정책 예시와 함께 IAM Access Analyzer를 통한 권한 정기 검토 방법도 다룹니다.

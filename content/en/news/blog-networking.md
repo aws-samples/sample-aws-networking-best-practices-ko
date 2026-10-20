@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-20 · Weekly summary
+
+- **[How Amazon CloudFront Secures and Accelerates the AWS MCP Server](https://aws.amazon.com/blogs/networking-and-content-delivery/how-amazon-cloudfront-secures-and-accelerates-the-aws-mcp-server/)** — The AWS MCP Server runs in production behind Amazon CloudFront, leveraging more than 750 Points of Presence to handle millions of tool calls per month from hundreds of thousands of AWS accounts, with CloudFront delivering both security and performance acceleration at the edge.
+
 ## 2026-10-08 · Weekly summary
 
 - **[Cross-account canary routing with Amazon VPC Lattice and Amazon API Gateway](https://aws.amazon.com/blogs/networking-and-content-delivery/cross-account-canary-routing-with-amazon-vpc-lattice-and-amazon-api-gateway/)** — When migrating a monolith to microservices across separate AWS accounts, this post explains how to combine Amazon VPC Lattice and Amazon API Gateway to shift a precise slice of live traffic to a new service in a different account. The approach enables safe, incremental migration while preserving per-account isolation and independent ownership.

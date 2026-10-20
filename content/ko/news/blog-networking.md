@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-20 · 주간 요약
+
+- **[Amazon CloudFront가 AWS MCP Server를 보호하고 가속화하는 방법](https://aws.amazon.com/blogs/networking-and-content-delivery/how-amazon-cloudfront-secures-and-accelerates-the-aws-mcp-server/)** — AWS MCP Server는 Amazon CloudFront의 750개 이상의 PoP(Points of Presence)를 통해 수십만 개의 AWS 계정에서 발생하는 월 수백만 건의 도구 호출을 처리하며, CloudFront가 엣지에서 보안과 성능 가속을 동시에 제공한다.
+
 ## 2026-10-08 · 주간 요약
 
 - **[Amazon VPC Lattice와 Amazon API Gateway를 활용한 계정 간 카나리 라우팅](https://aws.amazon.com/blogs/networking-and-content-delivery/cross-account-canary-routing-with-amazon-vpc-lattice-and-amazon-api-gateway/)** — 모놀리스를 마이크로서비스로 전환할 때 서비스별로 별도 AWS 계정을 사용하는 경우, Amazon VPC Lattice와 Amazon API Gateway를 결합해 다른 계정의 신규 서비스로 소량의 실제 트래픽을 정밀하게 전환하는 계정 간 카나리 라우팅 방법을 소개합니다. 이를 통해 격리된 계정 구조를 유지하면서도 안전하고 점진적인 마이그레이션이 가능합니다.
