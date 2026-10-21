@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-21 · 주간 요약
+
+- **[Amazon VPC Lattice에서 프라이빗 도메인 이름 대상 사용하기](https://aws.amazon.com/blogs/networking-and-content-delivery/use-private-domain-name-targets-with-amazon-vpc-lattice/)** — VPC Lattice가 프라이빗 도메인 이름 대상을 지원하게 되어, Route 53 프라이빗 호스팅 영역이나 온프레미스 DNS 서버에서만 확인되는 이름을 리소스 구성의 대상으로 지정할 수 있습니다. 이 게시물은 DNS 확인 유형과 소스 선택 방법을 설명하고, 계정 간 프라이빗 서비스 공유를 위한 두 가지 배포 패턴을 안내합니다.
+
 ## 2026-10-20 · 주간 요약
 
 - **[Amazon CloudFront가 AWS MCP Server를 보호하고 가속화하는 방법](https://aws.amazon.com/blogs/networking-and-content-delivery/how-amazon-cloudfront-secures-and-accelerates-the-aws-mcp-server/)** — AWS MCP Server는 Amazon CloudFront의 750개 이상의 PoP(Points of Presence)를 통해 수십만 개의 AWS 계정에서 발생하는 월 수백만 건의 도구 호출을 처리하며, CloudFront가 엣지에서 보안과 성능 가속을 동시에 제공한다.

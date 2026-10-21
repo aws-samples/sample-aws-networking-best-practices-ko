@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-21 · Weekly summary
+
+- **[Use private domain-name targets with Amazon VPC Lattice](https://aws.amazon.com/blogs/networking-and-content-delivery/use-private-domain-name-targets-with-amazon-vpc-lattice/)** — VPC Lattice now supports private domain-name targets, allowing resource configurations to point to names that resolve only within a Route 53 private hosted zone or an on-premises DNS server. The post covers how to select a DNS resolution type and source, and walks through two deployment patterns for sharing a private service across accounts.
+
 ## 2026-10-20 · Weekly summary
 
 - **[How Amazon CloudFront Secures and Accelerates the AWS MCP Server](https://aws.amazon.com/blogs/networking-and-content-delivery/how-amazon-cloudfront-secures-and-accelerates-the-aws-mcp-server/)** — The AWS MCP Server runs in production behind Amazon CloudFront, leveraging more than 750 Points of Presence to handle millions of tool calls per month from hundreds of thousands of AWS accounts, with CloudFront delivering both security and performance acceleration at the edge.

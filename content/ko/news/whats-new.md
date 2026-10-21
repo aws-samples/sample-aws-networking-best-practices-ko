@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-21 · 전일 업데이트
+
+- **[Amazon ECS Gateway 출시 — ECS 서비스를 위한 관리형 인그레스 솔루션](https://aws.amazon.com/about-aws/whats-new/2026/10/announcing-amazon-ecs-gateway/)** — AWS가 컨테이너화된 애플리케이션의 인그레스 네트워킹을 단순화하는 Amazon ECS Gateway를 발표했습니다. 플랫폼 팀이 게이트웨이에 조직 네트워킹 표준을 한 번 정의하면 Application Load Balancer(ALB) 및 관련 리소스가 자동으로 프로비저닝되며, 애플리케이션 팀은 별도의 네트워킹 전문 지식 없이 해당 표준을 상속받아 중앙 집중식으로 트래픽을 제어할 수 있습니다.
+
 ## 2026-10-17 · 전일 업데이트
 
 - **[Oracle Database@AWS, ODB 피어링에서 집계 경로 및 기본 경로 지원](https://aws.amazon.com/about-aws/whats-new/2026/10/oracle-database-aws-aggregate-routes-odb/)** — Oracle Database@AWS(ODB)가 ODB 피어링 구성 시 집계 경로와 기본 경로(0.0.0.0/0) 광고를 지원합니다. 이를 통해 새로운 Amazon VPC나 온프레미스 네트워크를 ODB 네트워크에 연결할 때 CIDR을 개별적으로 추가할 필요 없이 네트워크 운영을 간소화할 수 있습니다.

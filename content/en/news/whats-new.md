@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-21 · Daily update
+
+- **[Announcing Amazon ECS Gateway, a Managed Ingress Solution for Your ECS Services](https://aws.amazon.com/about-aws/whats-new/2026/10/announcing-amazon-ecs-gateway/)** — AWS has announced Amazon ECS Gateway, a new resource that simplifies ingress networking for containerized applications by dynamically provisioning and managing Application Load Balancers (ALBs) directly in your account. Platform teams define organizational networking standards once on a gateway and associate it with one or more clusters, allowing application teams to inherit those standards without requiring networking expertise.
+
 ## 2026-10-17 · Daily update
 
 - **[Oracle Database@AWS supports aggregate and default routes for ODB peering](https://aws.amazon.com/about-aws/whats-new/2026/10/oracle-database-aws-aggregate-routes-odb/)** — Oracle Database@AWS (ODB) now supports advertising aggregate routes and a default route (0.0.0.0/0) when configuring ODB peering, eliminating the need to advertise each network CIDR individually. This simplifies network operations when extending new Amazon VPCs or on-premises networks to reach databases in an ODB network.

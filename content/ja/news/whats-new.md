@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-21 · 前日のアップデート
+
+- **[Amazon ECS Gateway 発表 — ECS サービス向けマネージドイングレスソリューション](https://aws.amazon.com/about-aws/whats-new/2026/10/announcing-amazon-ecs-gateway/)** — AWS は、コンテナ化されたアプリケーションのイングレスネットワーキングを簡素化する Amazon ECS Gateway を発表しました。プラットフォームチームがゲートウェイに組織のネットワーキング標準を一度定義すると、Application Load Balancer (ALB) および関連リソースが自動的にプロビジョニングされ、アプリケーションチームはネットワーキングの専門知識なしにその標準を継承して中央集中式にトラフィックを管理できます。
+
 ## 2026-10-17 · 前日のアップデート
 
 - **[Oracle Database@AWS、ODB ピアリングで集約ルートおよびデフォルトルートをサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/oracle-database-aws-aggregate-routes-odb/)** — Oracle Database@AWS (ODB) は、ODB ピアリング設定時に集約ルートおよびデフォルトルート (0.0.0.0/0) のアドバタイズをサポートするようになりました。これにより、新しい Amazon VPC やオンプレミスネットワークを ODB ネットワークに接続する際、CIDR を個別に追加する必要がなくなり、ネットワーク運用が簡素化されます。
