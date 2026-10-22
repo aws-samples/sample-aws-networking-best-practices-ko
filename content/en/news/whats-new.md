@@ -8,6 +8,12 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-22 · Daily update
+
+- **[AWS Direct Connect announces 100G expansion in Manchester, England](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-direct-connect-100g-manchester/)** — AWS has expanded 10 Gbps and 100 Gbps dedicated connections with MACsec encryption at the existing AWS Direct Connect location in the Equinix MA3 data center near Manchester, England. This makes it the third Direct Connect location in England to support 100 Gbps with MACsec, enabling private network access to all public AWS Regions (excluding China), AWS GovCloud Regions, and AWS Local Zones.
+- **[AWS Network Firewall now supports Route 53 Resolved IP Validation](https://aws.amazon.com/about-aws/whats-new/2026/10/network-firewall-route-53-ip-validation/)** — AWS Network Firewall now supports Route 53 Resolved IP Validation, extending domain-based filtering beyond HTTP/HTTPS to protocols such as SFTP and SSH. By verifying that a connection's destination IP was resolved through the VPC's Amazon Route 53 VPC Resolver, this feature closes security gaps that allowed clients to bypass domain rules or perform SNI spoofing.
+- **[Amazon WorkSpaces simplifies secure AI agent access to enterprise cloud desktops with less infrastructure to operate and manage](https://aws.amazon.com/about-aws/whats-new/2026/10/workspaces-ai-agents-oauth-connection-management)** — Amazon WorkSpaces now handles authentication and desktop connections for AI agents as part of its managed Model Context Protocol (MCP) service, eliminating the need for custom code to connect agents to governed cloud desktops. Sessions can be created using existing AWS credentials via OAuth 2.0, with the service automatically managing streaming URL generation and rotation to reduce operational overhead.
+
 ## 2026-10-21 · Daily update
 
 - **[Announcing Amazon ECS Gateway, a Managed Ingress Solution for Your ECS Services](https://aws.amazon.com/about-aws/whats-new/2026/10/announcing-amazon-ecs-gateway/)** — AWS has announced Amazon ECS Gateway, a new resource that simplifies ingress networking for containerized applications by dynamically provisioning and managing Application Load Balancers (ALBs) directly in your account. Platform teams define organizational networking standards once on a gateway and associate it with one or more clusters, allowing application teams to inherit those standards without requiring networking expertise.

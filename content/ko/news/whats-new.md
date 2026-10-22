@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-22 · 전일 업데이트
+
+- **[AWS Direct Connect, 영국 맨체스터에서 100G 확장 발표](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-direct-connect-100g-manchester/)** — AWS가 영국 맨체스터 인근 Equinix MA3 데이터센터의 기존 AWS Direct Connect 위치에서 MACsec 암호화를 지원하는 10Gbps 및 100Gbps 전용 연결을 확장했습니다. 이로써 해당 위치에서 중국을 제외한 모든 퍼블릭 AWS 리전, AWS GovCloud 리전, AWS Local Zones에 대한 프라이빗 직접 네트워크 액세스가 가능해졌으며, 영국 내 100Gbps MACsec 지원 Direct Connect 위치는 세 곳으로 늘었습니다.
+- **[AWS Network Firewall, Route 53 Resolved IP Validation 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/10/network-firewall-route-53-ip-validation/)** — AWS Network Firewall이 Route 53 Resolved IP Validation을 지원하여 도메인 기반 필터링을 HTTP/HTTPS 외에 SFTP, SSH 등 모든 프로토콜로 확장했습니다. 이 기능은 연결 대상 IP 주소가 VPC의 Amazon Route 53 VPC Resolver를 통해 확인된 것인지 검증함으로써 클라이언트가 도메인 규칙을 우회하거나 SNI 스푸핑을 시도하는 보안 취약점을 차단합니다.
+- **[Amazon WorkSpaces, AI 에이전트의 엔터프라이즈 클라우드 데스크톱 보안 액세스 간소화](https://aws.amazon.com/about-aws/whats-new/2026/10/workspaces-ai-agents-oauth-connection-management)** — Amazon WorkSpaces가 관리형 Model Context Protocol(MCP) 서비스의 일부로 AI 에이전트의 인증 및 데스크톱 연결을 자동 처리하여, 커스텀 코드 작성 없이 에이전트를 관리형 클라우드 데스크톱에 연결할 수 있게 되었습니다. 기존 AWS 자격 증명과 OAuth 2.0을 통해 세션을 생성하고 스트리밍 URL 관리 등의 복잡한 사전 작업을 서비스가 대신 처리하므로, 인프라 운영 부담이 크게 줄어듭니다.
+
 ## 2026-10-21 · 전일 업데이트
 
 - **[Amazon ECS Gateway 출시 — ECS 서비스를 위한 관리형 인그레스 솔루션](https://aws.amazon.com/about-aws/whats-new/2026/10/announcing-amazon-ecs-gateway/)** — AWS가 컨테이너화된 애플리케이션의 인그레스 네트워킹을 단순화하는 Amazon ECS Gateway를 발표했습니다. 플랫폼 팀이 게이트웨이에 조직 네트워킹 표준을 한 번 정의하면 Application Load Balancer(ALB) 및 관련 리소스가 자동으로 프로비저닝되며, 애플리케이션 팀은 별도의 네트워킹 전문 지식 없이 해당 표준을 상속받아 중앙 집중식으로 트래픽을 제어할 수 있습니다.
