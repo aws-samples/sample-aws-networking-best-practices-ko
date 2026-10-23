@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-23 · 前日のアップデート
+
+- **[AWS Direct Connect、インド・バンガロールで 100G 拡張を発表](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-direct-connect-100g-bangalore/)** — インド・バンガロール近郊の Netmagic DC2 データセンターにある既存の AWS Direct Connect ロケーションで、100 Gbps 専用接続がサポートされました。これにより、中国を除くすべてのパブリック AWS リージョン、AWS GovCloud リージョン、および AWS Local Zones へのプライベート直接接続が可能になります。
+- **[AWS、Megaport との AWS Interconnect ラストマイルプレビューを発表](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-announces-AWS-interconnect-last-mile-megaport-preview/)** — AWS と Megaport が共同で、支社・データセンター・リモートロケーションを数クリックで AWS に接続できる完全マネージド型の接続サービス「AWS Interconnect - last mile」のプレビューを開始しました。31 か国 1,200 以上のデータセンターをカバーする Megaport の SDN と AWS マネジメントコンソールを組み合わせることで、ネットワーク設定の複雑さを大幅に軽減できます。
+- **[AWS Transform、新規ネットワーク構築とセキュリティグループの最新化に対応](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-transform-new-networks/)** — AWS Transform が、既存ネットワークの移行・最新化に加え、新規ネットワークをゼロから構築する機能と、オンプレミスのアクセスルールを最適化されたセキュリティグループに変換して既存 VPC へデプロイする機能をサポートしました。いずれの方法でも、AWS のモ범事例に沿った安全でスケーラブルなネットワーク基盤を実現できます。
+
 ## 2026-10-22 · 前日のアップデート
 
 - **[AWS Direct Connect、英国マンチェスターで 100G 拡張を発表](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-direct-connect-100g-manchester/)** — AWS は、英国マンチェスター近郊の Equinix MA3 データセンターにある既存の AWS Direct Connect ロケーションで、MACsec 暗号化に対応した 10 Gbps および 100 Gbps 専用接続を拡張しました。これにより、英国で 100 Gbps MACsec をサポートする Direct Connect ロケーションは 3 か所となり、中国を除くすべてのパブリック AWS リージョン、AWS GovCloud リージョン、および AWS Local Zones へのプライベート接続が可能になります。

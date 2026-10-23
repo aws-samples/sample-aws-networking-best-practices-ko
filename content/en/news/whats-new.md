@@ -8,6 +8,12 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-23 · Daily update
+
+- **[AWS Direct Connect announces 100G expansion in Bangalore, India](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-direct-connect-100g-bangalore/)** — AWS has expanded 100 Gbps dedicated connections at the existing AWS Direct Connect location in the Netmagic DC2 data center near Bangalore, India. This enables private, direct network access to all public AWS Regions (except China), AWS GovCloud Regions, and AWS Local Zones from this location.
+- **[AWS announces AWS Interconnect - last mile preview with Megaport](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-announces-AWS-interconnect-last-mile-megaport-preview/)** — AWS and Megaport have launched a preview of AWS Interconnect - last mile, a fully managed connectivity offering that lets customers connect branch offices, data centers, and remote locations to AWS with just a few clicks. Leveraging Megaport's Software Defined Network spanning 1,200+ data centers across 31 countries, the service eliminates the complexity of traditional network setup through the AWS Management Console.
+- **[AWS Transform now builds new networks and modernizes security groups](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-transform-new-networks/)** — AWS Transform now offers three paths for bringing your network to AWS: migrating and modernizing an existing network, building a new network from scratch aligned to AWS best practices, or converting on-premises access rules into optimized security groups for deployment into existing VPCs. Each approach ensures customers arrive on AWS with a secure and scalable network foundation.
+
 ## 2026-10-22 · Daily update
 
 - **[AWS Direct Connect announces 100G expansion in Manchester, England](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-direct-connect-100g-manchester/)** — AWS has expanded 10 Gbps and 100 Gbps dedicated connections with MACsec encryption at the existing AWS Direct Connect location in the Equinix MA3 data center near Manchester, England. This makes it the third Direct Connect location in England to support 100 Gbps with MACsec, enabling private network access to all public AWS Regions (excluding China), AWS GovCloud Regions, and AWS Local Zones.
