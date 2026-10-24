@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-24 · 전일 업데이트
+
+- **[AWS Transit Gateway 및 AWS Cloud WAN, 1:1 NAT 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-transit-gateway-cloud-wan-1-1-nat/)** — AWS Transit Gateway와 AWS Cloud WAN이 Regional Private NAT Gateway와의 통합을 통해 어태치먼트에서 직접 1:1 NAT를 지원합니다. 이를 통해 동일한 IP 주소 대역을 사용하는 사설 네트워크 간에 IP 재할당이나 별도 NAT 어플라이언스 없이 통신이 가능해져, M&A나 파트너 네트워크 연결 시 발생하는 CIDR 중복 문제를 해소할 수 있습니다.
+
 ## 2026-10-23 · 전일 업데이트
 
 - **[AWS Direct Connect, 인도 방갈로르에서 100G 확장 발표](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-direct-connect-100g-bangalore/)** — 인도 방갈로르 인근 Netmagic DC2 데이터센터의 기존 AWS Direct Connect 위치에서 100Gbps 전용 연결이 지원됩니다. 이를 통해 중국을 제외한 모든 퍼블릭 AWS 리전, AWS GovCloud 리전, AWS Local Zones에 프라이빗 직접 연결이 가능해졌습니다.

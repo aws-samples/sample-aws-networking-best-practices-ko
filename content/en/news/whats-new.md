@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-24 · Daily update
+
+- **[AWS Transit Gateway and AWS Cloud WAN now support 1:1 NAT](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-transit-gateway-cloud-wan-1-1-nat/)** — AWS Transit Gateway and AWS Cloud WAN now support managed one-to-one NAT directly on their attachments via integration with Regional Private NAT Gateway. This allows private networks with overlapping CIDR blocks to communicate without IP renumbering or deploying a NAT appliance, addressing a common challenge in mergers, acquisitions, and partner network connectivity.
+
 ## 2026-10-23 · Daily update
 
 - **[AWS Direct Connect announces 100G expansion in Bangalore, India](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-direct-connect-100g-bangalore/)** — AWS has expanded 100 Gbps dedicated connections at the existing AWS Direct Connect location in the Netmagic DC2 data center near Bangalore, India. This enables private, direct network access to all public AWS Regions (except China), AWS GovCloud Regions, and AWS Local Zones from this location.
