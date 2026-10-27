@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-27 · 주간 요약
+
+- **[re:Invent 2026 AWS 네트워킹 및 콘텐츠 전송 가이드](https://aws.amazon.com/blogs/networking-and-content-delivery/your-aws-networking-and-content-delivery-guide-to-reinvent-2026/)** — AWS 네트워킹 및 콘텐츠 전송(CDN) 팀이 2026년 11월 30일부터 12월 4일까지 라스베이거스에서 열리는 re:Invent 참가 가이드를 공개했습니다. 5일간의 세션을 통해 클라우드 네트워킹의 미래 방향을 살펴볼 수 있는 기회를 제공합니다.
+
 ## 2026-10-21 · 주간 요약
 
 - **[Amazon VPC Lattice에서 프라이빗 도메인 이름 대상 사용하기](https://aws.amazon.com/blogs/networking-and-content-delivery/use-private-domain-name-targets-with-amazon-vpc-lattice/)** — VPC Lattice가 프라이빗 도메인 이름 대상을 지원하게 되어, Route 53 프라이빗 호스팅 영역이나 온프레미스 DNS 서버에서만 확인되는 이름을 리소스 구성의 대상으로 지정할 수 있습니다. 이 게시물은 DNS 확인 유형과 소스 선택 방법을 설명하고, 계정 간 프라이빗 서비스 공유를 위한 두 가지 배포 패턴을 안내합니다.

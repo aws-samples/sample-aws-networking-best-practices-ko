@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-27 · Weekly summary
+
+- **[Your AWS Networking and Content Delivery Guide to re:Invent 2026](https://aws.amazon.com/blogs/networking-and-content-delivery/your-aws-networking-and-content-delivery-guide-to-reinvent-2026/)** — The AWS Networking and Content Delivery (CDN) team has released a guide for re:Invent 2026, taking place November 30 through December 4 in Las Vegas, Nevada. The five-day event offers sessions covering the future direction of cloud networking.
+
 ## 2026-10-21 · Weekly summary
 
 - **[Use private domain-name targets with Amazon VPC Lattice](https://aws.amazon.com/blogs/networking-and-content-delivery/use-private-domain-name-targets-with-amazon-vpc-lattice/)** — VPC Lattice now supports private domain-name targets, allowing resource configurations to point to names that resolve only within a Route 53 private hosted zone or an on-premises DNS server. The post covers how to select a DNS resolution type and source, and walks through two deployment patterns for sharing a private service across accounts.

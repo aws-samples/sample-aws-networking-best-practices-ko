@@ -8,6 +8,10 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-27 · Weekly summary
+
+- **[Achieve Predictable Costs with AWS Direct Connect Flat-Rate Pricing](https://aws.amazon.com/jp/blogs/news/powering-predictable-costs-with-aws-direct-connect-flat-rate-pricing/)** — AWS Direct Connect now offers a flat-rate pricing option, allowing customers to use dedicated network connections at a fixed cost regardless of data transfer volume. This makes networking costs more predictable for workloads with variable traffic patterns.
+
 ## 2026-10-20 · Weekly summary
 
 - **[Threat Breakdown: How Subdomain Takeover Works and How to Defend Against It](https://aws.amazon.com/jp/blogs/news/threat-tactic-spotlight-subdomain-takeover/)** — This post explains how attackers exploit dangling DNS records to redirect traffic to attacker-controlled resources, covering targets such as S3, CloudFront, and Elastic Beanstalk. It introduces proactive detection via AWS Config custom rules, a standard procedure to delete DNS records first, and notification and remediation using Security Hub and SNS.

@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-27 · 주간 요약
+
+- **[AWS Direct Connect 정액 요금으로 예측 가능한 비용 실현](https://aws.amazon.com/jp/blogs/news/powering-predictable-costs-with-aws-direct-connect-flat-rate-pricing/)** — AWS Direct Connect에 정액 요금 옵션이 도입되어, 데이터 전송량에 관계없이 고정 비용으로 전용 네트워크 연결을 사용할 수 있게 되었습니다. 이를 통해 트래픽 변동이 큰 워크로드에서도 네트워킹 비용을 예측 가능하게 관리할 수 있습니다.
+
 ## 2026-10-20 · 주간 요약
 
 - **[위협 수법 해설: 서브도메인 탈취의 작동 원리와 대응 방법](https://aws.amazon.com/jp/blogs/news/threat-tactic-spotlight-subdomain-takeover/)** — 댕글링 DNS 레코드를 악용한 서브도메인 탈취 공격의 원리를 설명하고, S3·CloudFront·Elastic Beanstalk 등 탈취 대상이 될 수 있는 리소스를 정리합니다. AWS Config 커스텀 규칙을 통한 사전 탐지, DNS 레코드 선삭제 표준 절차, Security Hub 및 SNS를 활용한 알림·수정 방법을 소개합니다.

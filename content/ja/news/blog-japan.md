@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-27 · 週次まとめ
+
+- **[AWS Direct Connect の定額料金で予測可能なコストを実現](https://aws.amazon.com/jp/blogs/news/powering-predictable-costs-with-aws-direct-connect-flat-rate-pricing/)** — AWS Direct Connect に定額料金オプションが導入され、データ転送量に関わらず固定コストで専用ネットワーク接続を利用できるようになりました。トラフィックの変動が大きいワークロードでも、ネットワーキングコストを予測可能な形で管理できます。
+
 ## 2026-10-20 · 週次まとめ
 
 - **[脅威の手口を解説: サブドメイン乗っ取りの仕組みと対策](https://aws.amazon.com/jp/blogs/news/threat-tactic-spotlight-subdomain-takeover/)** — ダングリング DNS レコードを悪用したサブドメイン乗っ取り攻撃の仕組みを解説し、S3・CloudFront・Elastic Beanstalk など対象となり得るリソースを整理します。AWS Config カスタムルールによるプロアクティブな検出、DNS レコードを先に削除する標準手順、Security Hub および SNS を活用した通知・修復方法を紹介します。
