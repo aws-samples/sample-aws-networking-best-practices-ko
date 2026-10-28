@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-28 · 前日のアップデート
+
+- **[Amazon Aurora Serverless が最大 384 ACU をサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/aurora-serverless-supports-384-acu/)** — Amazon Aurora Serverless の Aurora PostgreSQL 互換エディションで、最大 384 ACU (Aurora Capacity Unit) がサポートされ、従来の 256 ACU から 50% 増加しました。単一データベースで最大 768 GiB のメモリまでスケールアップできるため、バースト的なトラフィックと長いアイドル時間を持つエージェンティック AI アプリケーションに特に適しています。
+
 ## 2026-10-24 · 前日のアップデート
 
 - **[AWS Transit Gateway および AWS Cloud WAN が 1:1 NAT をサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-transit-gateway-cloud-wan-1-1-nat/)** — AWS Transit Gateway と AWS Cloud WAN が、Regional Private NAT Gateway との統合により、アタッチメント上で直接マネージド 1:1 NAT をサポートするようになりました。これにより、同一の IP アドレス範囲を持つプライベートネットワーク間で、IP の再割り当てや NAT アプライアンスの導入なしに通信が可能となり、M&A やパートナーネットワーク接続時の CIDR 重複問題を解消できます。

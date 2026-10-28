@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-28 · Daily update
+
+- **[Amazon Aurora Serverless Now Supports Up to 384 ACUs](https://aws.amazon.com/about-aws/whats-new/2026/10/aurora-serverless-supports-384-acu/)** — Amazon Aurora Serverless now scales up to 384 Aurora Capacity Units (ACUs) for the PostgreSQL-Compatible Edition, a 50% increase over the previous 256 ACU limit, enabling up to 768 GiB of memory per database. This expanded capacity makes it well-suited for agentic AI workloads that require handling bursty traffic with long idle periods.
+
 ## 2026-10-24 · Daily update
 
 - **[AWS Transit Gateway and AWS Cloud WAN now support 1:1 NAT](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-transit-gateway-cloud-wan-1-1-nat/)** — AWS Transit Gateway and AWS Cloud WAN now support managed one-to-one NAT directly on their attachments via integration with Regional Private NAT Gateway. This allows private networks with overlapping CIDR blocks to communicate without IP renumbering or deploying a NAT appliance, addressing a common challenge in mergers, acquisitions, and partner network connectivity.
