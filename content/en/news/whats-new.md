@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-29 · Daily update
+
+- **[Amazon EKS Auto Mode now supports Kubernetes Gateway API](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-eks-auto-mode-kubernetes-gateway-api/)** — Amazon EKS Auto Mode now supports the Kubernetes Gateway API, allowing customers to configure application load balancing via Gateway and HTTPRoute resources without installing a separate controller. Capabilities include HTTP and gRPC routing as well as cross-namespace traffic routing for multi-team environments, with EKS Auto Mode automatically provisioning the underlying AWS infrastructure.
+
 ## 2026-10-28 · Daily update
 
 - **[Amazon Aurora Serverless Now Supports Up to 384 ACUs](https://aws.amazon.com/about-aws/whats-new/2026/10/aurora-serverless-supports-384-acu/)** — Amazon Aurora Serverless now scales up to 384 Aurora Capacity Units (ACUs) for the PostgreSQL-Compatible Edition, a 50% increase over the previous 256 ACU limit, enabling up to 768 GiB of memory per database. This expanded capacity makes it well-suited for agentic AI workloads that require handling bursty traffic with long idle periods.

@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-29 · 前日のアップデート
+
+- **[Amazon EKS Auto Mode が Kubernetes Gateway API をサポート開始](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-eks-auto-mode-kubernetes-gateway-api/)** — Amazon EKS Auto Mode が Kubernetes Gateway API をサポートし、別途コントローラーをインストールすることなく Gateway および HTTPRoute リソースでアプリケーションロードバランシングを設定できるようになりました。HTTP・gRPC ルーティングやマルチチーム環境向けの名前空間をまたいだトラフィックルーティングなど、次世代の Kubernetes トラフィック管理標準を EKS Auto Mode が AWS インフラを自動プロビジョニングしながらサポートします。
+
 ## 2026-10-28 · 前日のアップデート
 
 - **[Amazon Aurora Serverless が最大 384 ACU をサポート](https://aws.amazon.com/about-aws/whats-new/2026/10/aurora-serverless-supports-384-acu/)** — Amazon Aurora Serverless の Aurora PostgreSQL 互換エディションで、最大 384 ACU (Aurora Capacity Unit) がサポートされ、従来の 256 ACU から 50% 増加しました。単一データベースで最大 768 GiB のメモリまでスケールアップできるため、バースト的なトラフィックと長いアイドル時間を持つエージェンティック AI アプリケーションに特に適しています。

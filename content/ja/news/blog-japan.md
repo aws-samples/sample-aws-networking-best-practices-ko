@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-29 · 週次まとめ
+
+- **[Amazon CloudFront と AWS WAF によりエッジで MCP エンドポイントを保護する](https://aws.amazon.com/jp/blogs/news/protect-mcp-endpoints-at-the-edge-with-amazon-cloudfront-and-aws-waf/)** — MCP がステートレスな HTTP リクエスト/レスポンス型プロトコルとして再設計されたことで、Amazon CloudFront または ALB の背後にデプロイした MCP エンドポイントに対し、サーバーコードを変更せずに AWS WAF のレイヤー 7 検査・変換・最適化を適用できるようになりました。本記事では、新しい MCP 仕様を活用した 9 つのセキュリティおよび観測性のユースケースを紹介しています。
+
 ## 2026-10-27 · 週次まとめ
 
 - **[AWS Direct Connect の定額料金で予測可能なコストを実現](https://aws.amazon.com/jp/blogs/news/powering-predictable-costs-with-aws-direct-connect-flat-rate-pricing/)** — AWS Direct Connect に定額料金オプションが導入され、データ転送量に関わらず固定コストで専用ネットワーク接続を利用できるようになりました。トラフィックの変動が大きいワークロードでも、ネットワーキングコストを予測可能な形で管理できます。

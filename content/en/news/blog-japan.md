@@ -8,6 +8,10 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-29 · Weekly summary
+
+- **[Securing MCP Endpoints at the Edge with Amazon CloudFront and AWS WAF](https://aws.amazon.com/jp/blogs/news/protect-mcp-endpoints-at-the-edge-with-amazon-cloudfront-and-aws-waf/)** — With MCP redesigned as a stateless HTTP request/response protocol, Layer 7 inspection, transformation, and optimization via AWS WAF can now be applied to MCP endpoints deployed behind Amazon CloudFront or an ALB—without any server-side code changes. This post walks through nine practical security and observability use cases enabled by the updated MCP specification.
+
 ## 2026-10-27 · Weekly summary
 
 - **[Achieve Predictable Costs with AWS Direct Connect Flat-Rate Pricing](https://aws.amazon.com/jp/blogs/news/powering-predictable-costs-with-aws-direct-connect-flat-rate-pricing/)** — AWS Direct Connect now offers a flat-rate pricing option, allowing customers to use dedicated network connections at a fixed cost regardless of data transfer volume. This makes networking costs more predictable for workloads with variable traffic patterns.
