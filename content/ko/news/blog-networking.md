@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-30 · 주간 요약
+
+- **[서비스 삽입을 활용한 지역 세분화 AWS Cloud WAN 설계](https://aws.amazon.com/blogs/networking-and-content-delivery/designing-geo-segmented-aws-cloud-wan-with-service-insertion/)** — 데이터 레지던시 요건을 충족하기 위해 리전 내 트래픽을 리전 안에 유지하면서 중앙 집중식 보안 검사를 수행하는 AWS Cloud WAN 참조 아키텍처를 소개합니다. 4개 세그먼트·멀티 리전 구성에서 Network Function Groups를 활용한 지역 제한 세그먼트 설계와 듀얼 홉 대 싱글 홉 트레이드오프, NFG 주요 제약 사항을 다룹니다.
+
 ## 2026-10-27 · 주간 요약
 
 - **[re:Invent 2026 AWS 네트워킹 및 콘텐츠 전송 가이드](https://aws.amazon.com/blogs/networking-and-content-delivery/your-aws-networking-and-content-delivery-guide-to-reinvent-2026/)** — AWS 네트워킹 및 콘텐츠 전송(CDN) 팀이 2026년 11월 30일부터 12월 4일까지 라스베이거스에서 열리는 re:Invent 참가 가이드를 공개했습니다. 5일간의 세션을 통해 클라우드 네트워킹의 미래 방향을 살펴볼 수 있는 기회를 제공합니다.

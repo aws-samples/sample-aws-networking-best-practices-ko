@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-30 · Daily update
+
+- **[Public Endpoints for Amazon ElastiCache Serverless Now Available in AWS GovCloud (US)](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-elasticache-serverless-public-endpoints-govcloud/)** — Amazon ElastiCache Serverless for Valkey now supports public endpoints in AWS GovCloud (US) Regions, allowing applications outside a VPC to connect directly without a VPN, bastion host, or SSH tunnel. All connections are secured with IAM authentication over TLS 1.3, eliminating the need to store or rotate passwords.
+
 ## 2026-10-29 · Daily update
 
 - **[Amazon EKS Auto Mode now supports Kubernetes Gateway API](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-eks-auto-mode-kubernetes-gateway-api/)** — Amazon EKS Auto Mode now supports the Kubernetes Gateway API, allowing customers to configure application load balancing via Gateway and HTTPRoute resources without installing a separate controller. Capabilities include HTTP and gRPC routing as well as cross-namespace traffic routing for multi-team environments, with EKS Auto Mode automatically provisioning the underlying AWS infrastructure.

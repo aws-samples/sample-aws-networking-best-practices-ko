@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-30 · 전일 업데이트
+
+- **[Amazon ElastiCache Serverless 퍼블릭 엔드포인트, AWS GovCloud (US)에서 지원 시작](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-elasticache-serverless-public-endpoints-govcloud/)** — Amazon ElastiCache Serverless for Valkey가 AWS GovCloud (US) 리전에서 퍼블릭 엔드포인트를 지원합니다. VPN, 배스천 호스트, SSH 터널 없이 VPC 외부 애플리케이션에서 직접 캐시에 연결할 수 있으며, 모든 연결은 TLS 1.3 기반 IAM 인증으로 보호됩니다.
+
 ## 2026-10-29 · 전일 업데이트
 
 - **[Amazon EKS Auto Mode, Kubernetes Gateway API 지원 시작](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-eks-auto-mode-kubernetes-gateway-api/)** — Amazon EKS Auto Mode가 Kubernetes Gateway API를 지원하여 별도 컨트롤러 설치 없이 Gateway 및 HTTPRoute 리소스로 애플리케이션 로드 밸런싱을 구성할 수 있게 되었습니다. HTTP·gRPC 라우팅, 멀티팀 환경을 위한 네임스페이스 간 트래픽 라우팅 등 차세대 Kubernetes 트래픽 관리 표준을 EKS Auto Mode가 자동으로 AWS 인프라를 프로비저닝하며 지원합니다.

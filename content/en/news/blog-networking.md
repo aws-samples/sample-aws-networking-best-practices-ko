@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-30 · Weekly summary
+
+- **[Designing a Geo-Segmented AWS Cloud WAN with Service Insertion](https://aws.amazon.com/blogs/networking-and-content-delivery/designing-geo-segmented-aws-cloud-wan-with-service-insertion/)** — This post presents a deployable four-segment, multi-Region AWS Cloud WAN reference architecture that keeps regional traffic in-region for data residency while enabling centralized security inspection across geographies. It covers geo-restricted segments combined with Network Function Groups, along with dual-hop versus single-hop trade-offs and key NFG constraints.
+
 ## 2026-10-27 · Weekly summary
 
 - **[Your AWS Networking and Content Delivery Guide to re:Invent 2026](https://aws.amazon.com/blogs/networking-and-content-delivery/your-aws-networking-and-content-delivery-guide-to-reinvent-2026/)** — The AWS Networking and Content Delivery (CDN) team has released a guide for re:Invent 2026, taking place November 30 through December 4 in Las Vegas, Nevada. The five-day event offers sessions covering the future direction of cloud networking.
