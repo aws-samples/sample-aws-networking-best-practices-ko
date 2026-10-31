@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-31 · 前日のアップデート
+
+- **[Amazon CloudFront がビューワー ISP およびポスト量子 TLS 詳細情報の提供を開始](https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-viewer-isp-post-quantum-visbility/)** — Amazon CloudFront が 2 つの新しいオプションヘッダーをオリジンに転送できるようになりました。CloudFront-Viewer-ISP ヘッダーでリクエスト元の ISP を把握でき、CloudFront-Viewer-TLS-Details ヘッダーでポスト量子暗号 (PQC) の使用有無を含む TLS 接続の暗号化方式を確認できます。
+- **[AWS WAF が Amazon CloudFront ディストリビューション向け自動 SDK 統合を発表](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-waf-automatic-sdk-integration-amazon-cloudfront/)** — AWS WAF が Amazon CloudFront ディストリビューション向けに、アプリケーションコードやビルドプロセスを変更することなく AWS WAF JavaScript SDK のスクリプトタグを自動挿入する機能を発表しました。これにより、Bot Control・アカウント乗っ取り防止 (ATP)・アカウント作成不正防止 (ACFP) の 3 つのマネージドルールグループに必要なクライアント側シグナルを手動での対応なしに提供できます。
+
 ## 2026-10-30 · 前日のアップデート
 
 - **[Amazon ElastiCache Serverless のパブリックエンドポイントが AWS GovCloud (US) で利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-elasticache-serverless-public-endpoints-govcloud/)** — Amazon ElastiCache Serverless for Valkey が AWS GovCloud (US) リージョンでパブリックエンドポイントをサポートしました。VPN やバスチョンホスト、SSH トンネルなしで VPC 外部のアプリケーションからキャッシュに直接接続でき、すべての接続は TLS 1.3 による IAM 認証で保護されます。

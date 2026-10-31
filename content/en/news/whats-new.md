@@ -8,6 +8,11 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-31 · Daily update
+
+- **[Amazon CloudFront now provides viewer ISP and post-quantum TLS details](https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-viewer-isp-post-quantum-visbility/)** — Amazon CloudFront can now forward two new optional headers to your origin: CloudFront-Viewer-ISP, which identifies the viewer's internet service provider, and CloudFront-Viewer-TLS-Details, which describes the TLS cryptography used per connection including whether post-quantum cryptography (PQC) was applied. These headers enable traffic analysis by network provider and visibility into the adoption of post-quantum TLS across your viewers.
+- **[AWS WAF announces automatic SDK integration for Amazon CloudFront distributions](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-waf-automatic-sdk-integration-amazon-cloudfront/)** — AWS WAF now supports automatic JavaScript SDK integration for Amazon CloudFront distributions, injecting the required script tag into served HTML without any changes to application code or deployment pipelines. This enables client-side signals for three managed rule groups—Bot Control (targeted level), account takeover prevention (ATP), and account creation fraud prevention (ACFP)—without manual per-page instrumentation.
+
 ## 2026-10-30 · Daily update
 
 - **[Public Endpoints for Amazon ElastiCache Serverless Now Available in AWS GovCloud (US)](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-elasticache-serverless-public-endpoints-govcloud/)** — Amazon ElastiCache Serverless for Valkey now supports public endpoints in AWS GovCloud (US) Regions, allowing applications outside a VPC to connect directly without a VPN, bastion host, or SSH tunnel. All connections are secured with IAM authentication over TLS 1.3, eliminating the need to store or rotate passwords.

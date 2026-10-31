@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-10-31 · 전일 업데이트
+
+- **[Amazon CloudFront, 뷰어 ISP 및 포스트 퀀텀 TLS 상세 정보 제공](https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-viewer-isp-post-quantum-visbility/)** — Amazon CloudFront가 두 가지 새로운 선택적 헤더를 오리진으로 전달할 수 있게 되었습니다. CloudFront-Viewer-ISP 헤더로 요청이 발생한 네트워크(ISP)를 파악하고, CloudFront-Viewer-TLS-Details 헤더로 포스트 퀀텀 암호화(PQC) 사용 여부를 포함한 TLS 연결 암호화 방식을 확인할 수 있습니다.
+- **[AWS WAF, Amazon CloudFront 배포에 대한 자동 SDK 통합 발표](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-waf-automatic-sdk-integration-amazon-cloudfront/)** — AWS WAF가 Amazon CloudFront 배포에 AWS WAF JavaScript SDK 스크립트 태그를 애플리케이션 코드나 빌드 프로세스 변경 없이 자동으로 삽입하는 기능을 발표했습니다. 이를 통해 Bot Control, 계정 탈취 방지(ATP), 계정 생성 사기 방지(ACFP) 등 세 가지 관리형 규칙 그룹에 필요한 클라이언트 측 신호를 별도 코드 수정 없이 제공할 수 있습니다.
+
 ## 2026-10-30 · 전일 업데이트
 
 - **[Amazon ElastiCache Serverless 퍼블릭 엔드포인트, AWS GovCloud (US)에서 지원 시작](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-elasticache-serverless-public-endpoints-govcloud/)** — Amazon ElastiCache Serverless for Valkey가 AWS GovCloud (US) 리전에서 퍼블릭 엔드포인트를 지원합니다. VPN, 배스천 호스트, SSH 터널 없이 VPC 외부 애플리케이션에서 직접 캐시에 연결할 수 있으며, 모든 연결은 TLS 1.3 기반 IAM 인증으로 보호됩니다.
