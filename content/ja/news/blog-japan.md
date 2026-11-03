@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-03 · 週次まとめ
+
+- **[Amazon EVS と FSx for ONTAP 上で高可用性の Oracle Database を設計する](https://aws.amazon.com/jp/blogs/news/architect-highly-available-oracle-database-on-amazon-evs-and-fsx-for-ontap/)** — Amazon Elastic VMware Service (Amazon EVS) と Amazon FSx for NetApp ONTAP を組み合わせることで、既存の VMware 運用ワークフローを維持しながら Oracle Database を AWS へ移行する方法を紹介します。ストレージ・コンピューティング・ネットワーキング・ディザスタリカバリの各レイヤーが連携し、高可用性、リージョン間 DR、サブミリ秒のストレージレイテンシーを実現するアーキテクチャ設計について解説しています。
+
 ## 2026-10-29 · 週次まとめ
 
 - **[Amazon CloudFront と AWS WAF によりエッジで MCP エンドポイントを保護する](https://aws.amazon.com/jp/blogs/news/protect-mcp-endpoints-at-the-edge-with-amazon-cloudfront-and-aws-waf/)** — MCP がステートレスな HTTP リクエスト/レスポンス型プロトコルとして再設計されたことで、Amazon CloudFront または ALB の背後にデプロイした MCP エンドポイントに対し、サーバーコードを変更せずに AWS WAF のレイヤー 7 検査・変換・最適化を適用できるようになりました。本記事では、新しい MCP 仕様を活用した 9 つのセキュリティおよび観測性のユースケースを紹介しています。

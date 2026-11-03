@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-03 · 前日のアップデート
+
+- **[Amazon CloudFront が AWS Service Quotas によるセルフサービスの上限引き上げをサポート](https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-self-service-quotas/)** — Amazon CloudFront が AWS Service Quotas と統合され、ディストリビューションやキャッシュポリシー、オリジン、代替ドメイン名など 28 個のクォータをコンソールまたは API から直接確認・モニタリング・増加申請できるようになりました。AWS Business Support 以上のお客様は、公開されたしきい値内のクォータ引き上げリクエストが自動承認されるため、サポートケースを開く必要がなくなります。
+
 ## 2026-10-31 · 前日のアップデート
 
 - **[Amazon CloudFront がビューワー ISP およびポスト量子 TLS 詳細情報の提供を開始](https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-viewer-isp-post-quantum-visbility/)** — Amazon CloudFront が 2 つの新しいオプションヘッダーをオリジンに転送できるようになりました。CloudFront-Viewer-ISP ヘッダーでリクエスト元の ISP を把握でき、CloudFront-Viewer-TLS-Details ヘッダーでポスト量子暗号 (PQC) の使用有無を含む TLS 接続の暗号化方式を確認できます。

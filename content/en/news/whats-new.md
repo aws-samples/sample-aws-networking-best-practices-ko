@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-03 · Daily update
+
+- **[Amazon CloudFront now supports self-service increases in AWS Service Quotas](https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-self-service-quotas/)** — Amazon CloudFront is now integrated with AWS Service Quotas, allowing you to view, monitor, and request increases for 28 quotas—such as distributions, cache policies, origins, and alternate domain names—directly from the console or API. Customers with AWS Business Support or higher can have quota increase requests within published thresholds approved automatically, eliminating the need to open a support case.
+
 ## 2026-10-31 · Daily update
 
 - **[Amazon CloudFront now provides viewer ISP and post-quantum TLS details](https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-viewer-isp-post-quantum-visbility/)** — Amazon CloudFront can now forward two new optional headers to your origin: CloudFront-Viewer-ISP, which identifies the viewer's internet service provider, and CloudFront-Viewer-TLS-Details, which describes the TLS cryptography used per connection including whether post-quantum cryptography (PQC) was applied. These headers enable traffic analysis by network provider and visibility into the adoption of post-quantum TLS across your viewers.

@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-03 · 전일 업데이트
+
+- **[Amazon CloudFront, AWS Service Quotas를 통한 셀프서비스 한도 증가 지원](https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-self-service-quotas/)** — Amazon CloudFront가 AWS Service Quotas와 통합되어 배포, 캐시 정책, 오리진, 대체 도메인 이름 등 28개 할당량을 콘솔 또는 API에서 직접 조회·모니터링·증가 요청할 수 있게 되었습니다. AWS Business Support 이상 고객은 공개된 임계값 내 한도 증가 요청이 자동 승인되어 지원 케이스 없이 즉시 처리됩니다.
+
 ## 2026-10-31 · 전일 업데이트
 
 - **[Amazon CloudFront, 뷰어 ISP 및 포스트 퀀텀 TLS 상세 정보 제공](https://aws.amazon.com/about-aws/whats-new/2026/10/cloudfront-viewer-isp-post-quantum-visbility/)** — Amazon CloudFront가 두 가지 새로운 선택적 헤더를 오리진으로 전달할 수 있게 되었습니다. CloudFront-Viewer-ISP 헤더로 요청이 발생한 네트워크(ISP)를 파악하고, CloudFront-Viewer-TLS-Details 헤더로 포스트 퀀텀 암호화(PQC) 사용 여부를 포함한 TLS 연결 암호화 방식을 확인할 수 있습니다.

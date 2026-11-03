@@ -8,6 +8,10 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-03 · Weekly summary
+
+- **[Designing Highly Available Oracle Database on Amazon EVS and FSx for ONTAP](https://aws.amazon.com/jp/blogs/news/architect-highly-available-oracle-database-on-amazon-evs-and-fsx-for-ontap/)** — This post explains how to migrate Oracle Database to AWS using Amazon Elastic VMware Service (Amazon EVS) and Amazon FSx for NetApp ONTAP while preserving existing VMware operational workflows. It covers how storage, compute, networking, and disaster recovery layers work together to achieve high availability, cross-Region DR, and sub-millisecond storage latency.
+
 ## 2026-10-29 · Weekly summary
 
 - **[Securing MCP Endpoints at the Edge with Amazon CloudFront and AWS WAF](https://aws.amazon.com/jp/blogs/news/protect-mcp-endpoints-at-the-edge-with-amazon-cloudfront-and-aws-waf/)** — With MCP redesigned as a stateless HTTP request/response protocol, Layer 7 inspection, transformation, and optimization via AWS WAF can now be applied to MCP endpoints deployed behind Amazon CloudFront or an ALB—without any server-side code changes. This post walks through nine practical security and observability use cases enabled by the updated MCP specification.
