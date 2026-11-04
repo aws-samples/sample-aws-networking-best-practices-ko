@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-04 · 주간 요약
+
+- **[Amazon Route 53 API에 변경 기반 스로틀링 도입](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-change-based-throttling-for-amazon-route-53-apis/)** — Amazon Route 53이 변경 기반 스로틀링 방식을 도입하고 기본 API 요청 속도를 초당 5건에서 10건으로 두 배 늘렸습니다. 계정별로 요청 속도 한도와 변경 처리량 한도를 분리 관리하는 새 모델과 대규모 DNS 자동화 모범 사례를 소개합니다.
+- **[Bring Your Own ASN(BYOASN)을 활용한 AWS Direct Connect 퍼블릭 VIF의 데이터 주권 적용](https://aws.amazon.com/blogs/networking-and-content-delivery/use-bring-your-own-asn-byoasn-to-enforce-data-sovereignty-on-aws-direct-connect-public-vifs/)** — SaaS 공급자가 AWS Direct Connect 퍼블릭 VIF에 BYOASN을 적용해 리전별로 고유한 ASN을 할당하면, 최종 고객이 표준 BGP AS_PATH 신호만으로 데이터 주권을 적용할 수 있어 취약한 리전별 프리픽스 목록에 의존할 필요가 없어집니다.
+- **[Network Load Balancer 패스스루를 활용한 QUIC 기반 mTLS로 자율 주행 플릿 통신 보안 확보](https://aws.amazon.com/blogs/networking-and-content-delivery/securing-autonomous-fleet-communications-at-scale-with-mtls-over-quic-using-network-load-balancer-passthrough/)** — AWS Network Load Balancer 패스스루 모드와 QUIC 프로토콜을 결합해 엔드투엔드 상호 TLS(mTLS) 인증 아키텍처를 구성하는 방법을 소개합니다. AWS Load Balancer Controller를 통해 Amazon EKS의 quic-go 서버 파드로 QUIC 트래픽을 라우팅하고, 자율 드론 같은 지연 시간에 민감한 플릿 워크로드에 디바이스별 인증서 인증을 적용하는 방법을 설명합니다.
+
 ## 2026-10-30 · 주간 요약
 
 - **[서비스 삽입을 활용한 지역 세분화 AWS Cloud WAN 설계](https://aws.amazon.com/blogs/networking-and-content-delivery/designing-geo-segmented-aws-cloud-wan-with-service-insertion/)** — 데이터 레지던시 요건을 충족하기 위해 리전 내 트래픽을 리전 안에 유지하면서 중앙 집중식 보안 검사를 수행하는 AWS Cloud WAN 참조 아키텍처를 소개합니다. 4개 세그먼트·멀티 리전 구성에서 Network Function Groups를 활용한 지역 제한 세그먼트 설계와 듀얼 홉 대 싱글 홉 트레이드오프, NFG 주요 제약 사항을 다룹니다.

@@ -8,6 +8,12 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-04 · Weekly summary
+
+- **[Introducing change-based throttling for Amazon Route 53 APIs](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-change-based-throttling-for-amazon-route-53-apis/)** — Amazon Route 53 now applies change-based throttling and has doubled its default API request rate from 5 to 10 requests per second. The post explains the new per-account model with separate request-rate and change-throughput limits, along with best practices for automating DNS management at scale.
+- **[Use Bring Your Own ASN (BYOASN) to enforce data sovereignty on AWS Direct Connect public VIFs](https://aws.amazon.com/blogs/networking-and-content-delivery/use-bring-your-own-asn-byoasn-to-enforce-data-sovereignty-on-aws-direct-connect-public-vifs/)** — SaaS providers can assign a distinct ASN per Region on AWS Direct Connect public VIFs using BYOASN, giving end customers a standard BGP AS_PATH signal to enforce data sovereignty without relying on fragile per-Region prefix lists.
+- **[Securing autonomous fleet communications at scale with mTLS over QUIC using Network Load Balancer passthrough](https://aws.amazon.com/blogs/networking-and-content-delivery/securing-autonomous-fleet-communications-at-scale-with-mtls-over-quic-using-network-load-balancer-passthrough/)** — This post shows how to architect end-to-end mutual TLS (mTLS) authentication over QUIC using AWS Network Load Balancer passthrough mode, routing QUIC traffic to quic-go server pods on Amazon EKS via the AWS Load Balancer Controller with per-device certificate authentication for latency-sensitive fleet workloads such as autonomous drones.
+
 ## 2026-10-30 · Weekly summary
 
 - **[Designing a Geo-Segmented AWS Cloud WAN with Service Insertion](https://aws.amazon.com/blogs/networking-and-content-delivery/designing-geo-segmented-aws-cloud-wan-with-service-insertion/)** — This post presents a deployable four-segment, multi-Region AWS Cloud WAN reference architecture that keeps regional traffic in-region for data residency while enabling centralized security inspection across geographies. It covers geo-restricted segments combined with Network Function Groups, along with dual-hop versus single-hop trade-offs and key NFG constraints.

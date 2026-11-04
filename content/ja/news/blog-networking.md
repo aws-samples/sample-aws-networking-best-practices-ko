@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-04 · 週次まとめ
+
+- **[Amazon Route 53 API への変更ベーススロットリングの導入](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-change-based-throttling-for-amazon-route-53-apis/)** — Amazon Route 53 が変更ベーススロットリングを採用し、デフォルトの API リクエストレートを毎秒 5 件から 10 件に倍増しました。アカウントごとにリクエストレート上限と変更スループット上限を分離する新モデルと、大規模 DNS 自動化の모범 사례を紹介します。
+- **[Bring Your Own ASN (BYOASN) を使用した AWS Direct Connect パブリック VIF でのデータ主権の適用](https://aws.amazon.com/blogs/networking-and-content-delivery/use-bring-your-own-asn-byoasn-to-enforce-data-sovereignty-on-aws-direct-connect-public-vifs/)** — SaaS プロバイダーが AWS Direct Connect パブリック VIF に BYOASN を適用してリージョンごとに固有の ASN を割り当てることで、エンドカスタマーは標準の BGP AS_PATH シグナルだけでデータ主権を適用でき、脆弱なリージョン別プレフィックスリストへの依存を排除できます。
+- **[Network Load Balancer パススルーを使用した QUIC 上の mTLS による自律型フリート通信の大規模セキュリティ確保](https://aws.amazon.com/blogs/networking-and-content-delivery/securing-autonomous-fleet-communications-at-scale-with-mtls-over-quic-using-network-load-balancer-passthrough/)** — AWS Network Load Balancer のパススルーモードと QUIC プロトコルを組み合わせ、エンドツーエンドの相互 TLS (mTLS) 認証アーキテクチャを構成する方法を紹介します。AWS Load Balancer Controller を通じて Amazon EKS 上の quic-go サーバー Pod へ QUIC トラフィックをルーティングし、自律型ドローンなど遅延時間に敏感なフリートワークロードにデバイスごとの証明書認証を適用する手順を解説します。
+
 ## 2026-10-30 · 週次まとめ
 
 - **[サービス挿入を活用した地域セグメント化 AWS Cloud WAN の設計](https://aws.amazon.com/blogs/networking-and-content-delivery/designing-geo-segmented-aws-cloud-wan-with-service-insertion/)** — データレジデンシー要件を満たすためにリージョン内トラフィックをリージョン内に保ちつつ、地域をまたいだ中央集中式セキュリティ検査を実現する AWS Cloud WAN の参照アーキテクチャを紹介します。4 セグメント・マルチリージョン構成で Network Function Groups を組み合わせた地域制限セグメントの設計と、デュアルホップ対シングルホップのトレードオフおよび NFG の主要な制約事項を解説しています。
