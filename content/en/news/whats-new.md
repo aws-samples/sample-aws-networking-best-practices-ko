@@ -8,6 +8,11 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-05 · Daily update
+
+- **[AWS Announces AWS Interconnect - Last Mile Preview with Equinix](https://aws.amazon.com/about-aws/whats-new/2026/11/interconnect-last-mile-preview-equinix/)** — AWS Interconnect - Last Mile is now available in preview with Equinix, enabling managed, private, and resilient connections from Equinix's 282 global data centers to AWS in just a few clicks. Setup requires no cross-connect orders or router configuration—simply select a Region, bandwidth, Direct Connect Gateway, and Equinix Fabric One project ID in the AWS Management Console.
+- **[Amazon EC2 and VPC Now Display Related Resources for All Resource Types](https://aws.amazon.com/about-aws/whats-new/2026/11/ec2-vpc-related-resources-all-types/)** — Amazon EC2, Amazon VPC, and AWS Global View consoles now show related resources for all resource types—including EC2 instances, Amazon EBS volumes, Launch Templates, Auto Scaling groups, subnets, and route tables—expanding a capability previously limited to security groups. The Related Resources tab has also been relocated to the console toolbar for quicker access, making it easier to understand dependencies across your infrastructure.
+
 ## 2026-11-03 · Daily update
 
 - **[Amazon CloudFront now supports self-service increases in AWS Service Quotas](https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-self-service-quotas/)** — Amazon CloudFront is now integrated with AWS Service Quotas, allowing you to view, monitor, and request increases for 28 quotas—such as distributions, cache policies, origins, and alternate domain names—directly from the console or API. Customers with AWS Business Support or higher can have quota increase requests within published thresholds approved automatically, eliminating the need to open a support case.

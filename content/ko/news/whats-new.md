@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-05 · 전일 업데이트
+
+- **[AWS Interconnect - Last Mile, Equinix와 함께 프리뷰 출시](https://aws.amazon.com/about-aws/whats-new/2026/11/interconnect-last-mile-preview-equinix/)** — AWS Interconnect - Last Mile이 Equinix와의 파트너십으로 프리뷰 공개되었으며, Equinix의 전 세계 282개 데이터센터 인프라를 몇 번의 클릭만으로 AWS에 연결할 수 있습니다. 크로스 커넥트 주문이나 라우터 설정 없이 관리형 프라이빗 연결을 제공하며, AWS Management Console에서 리전·대역폭·Direct Connect Gateway·Equinix Fabric One 프로젝트 ID를 선택하면 설정이 완료됩니다.
+- **[Amazon EC2 및 VPC 콘솔, 모든 리소스 유형에 대한 연관 리소스 표시 지원](https://aws.amazon.com/about-aws/whats-new/2026/11/ec2-vpc-related-resources-all-types/)** — Amazon EC2, Amazon VPC, AWS Global View 콘솔이 이제 EC2 인스턴스, Amazon EBS 볼륨, 시작 템플릿, Auto Scaling 그룹, 서브넷, 라우팅 테이블 등 모든 리소스 유형에 대해 연관 리소스를 표시합니다. 기존에는 보안 그룹에만 제공되던 기능이 전체 리소스 유형으로 확대되어 리소스 간 관계를 더 쉽게 파악할 수 있으며, 관련 리소스 탭이 콘솔 툴바로 이동해 액세스가 편리해졌습니다.
+
 ## 2026-11-03 · 전일 업데이트
 
 - **[Amazon CloudFront, AWS Service Quotas를 통한 셀프서비스 한도 증가 지원](https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-self-service-quotas/)** — Amazon CloudFront가 AWS Service Quotas와 통합되어 배포, 캐시 정책, 오리진, 대체 도메인 이름 등 28개 할당량을 콘솔 또는 API에서 직접 조회·모니터링·증가 요청할 수 있게 되었습니다. AWS Business Support 이상 고객은 공개된 임계값 내 한도 증가 요청이 자동 승인되어 지원 케이스 없이 즉시 처리됩니다.
