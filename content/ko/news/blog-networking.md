@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-06 · 주간 요약
+
+- **[AWS Client VPN에 디바이스 상태 평가 기능 도입](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-device-posture-assessment-for-aws-client-vpn/)** — AWS Client VPN이 디바이스 상태 평가 기능을 제공하여, CrowdStrike·Jamf·JumpCloud 등 디바이스 신뢰 공급자를 등록하고 Cedar 정책을 작성하면 터널 연결 시 및 세션 중 지속적으로 디바이스 건강 상태를 조건으로 액세스를 제어할 수 있습니다. 섀도 모드와 연결 로그를 활용해 정책을 실제 적용 전에 테스트할 수 있어 운영 안전성이 높아집니다.
+- **[네트워크 세그먼트에 대한 프라이빗 액세스를 위한 터널 엔드포인트 도입](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-tunnel-endpoints-for-private-access-to-network-segments/)** — AWS PrivateLink 기반의 새로운 VPC 엔드포인트 유형인 터널 엔드포인트가 출시되어, 한 VPC의 애플리케이션이 다른 VPC의 전체 CIDR 블록 범위에 프라이빗으로 액세스할 수 있습니다. 네트워크 소유자가 CIDR 블록을 한 번만 공유하면 이후 생성되는 리소스를 포함한 해당 범위 내 모든 리소스에 접근할 수 있어 관리 부담이 줄어듭니다.
+
 ## 2026-11-04 · 주간 요약
 
 - **[Amazon Route 53 API에 변경 기반 스로틀링 도입](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-change-based-throttling-for-amazon-route-53-apis/)** — Amazon Route 53이 변경 기반 스로틀링 방식을 도입하고 기본 API 요청 속도를 초당 5건에서 10건으로 두 배 늘렸습니다. 계정별로 요청 속도 한도와 변경 처리량 한도를 분리 관리하는 새 모델과 대규모 DNS 자동화 모범 사례를 소개합니다.

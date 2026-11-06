@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-06 · 週次まとめ
+
+- **[AWS Client VPN にデバイスポスチャ評価機能を導入](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-device-posture-assessment-for-aws-client-vpn/)** — AWS Client VPN がデバイスポスチャ評価をサポートし、CrowdStrike・Jamf・JumpCloud などのデバイス信頼プロバイダーを登録して Cedar ポリシーを記述することで、トンネル接続時およびセッション中にデバイスの健全性をアクセス条件として評価できるようになりました。シャドウモードと接続ログを活用することで、ポリシーを適用前に安全にテストすることが可能です。
+- **[ネットワークセグメントへのプライベートアクセスのためのトンネルエンドポイントを導入](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-tunnel-endpoints-for-private-access-to-network-segments/)** — AWS PrivateLink を基盤とする新しい VPC エンドポイントタイプであるトンネルエンドポイントが登場し、ある VPC 内のアプリケーションが別の VPC の CIDR ブロック全体にプライベートアクセスできるようになりました。ネットワーク所有者が CIDR ブロックを一度共有するだけで、その範囲内の既存および将来作成されるリソースすべてに到達可能となり、管理の手間が大幅に削減されます。
+
 ## 2026-11-04 · 週次まとめ
 
 - **[Amazon Route 53 API への変更ベーススロットリングの導入](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-change-based-throttling-for-amazon-route-53-apis/)** — Amazon Route 53 が変更ベーススロットリングを採用し、デフォルトの API リクエストレートを毎秒 5 件から 10 件に倍増しました。アカウントごとにリクエストレート上限と変更スループット上限を分離する新モデルと、大規模 DNS 自動化の모범 사례を紹介します。

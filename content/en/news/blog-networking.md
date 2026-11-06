@@ -8,6 +8,11 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-06 · Weekly summary
+
+- **[Introducing device posture assessment for AWS Client VPN](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-device-posture-assessment-for-aws-client-vpn/)** — AWS Client VPN now supports device posture assessment, allowing administrators to register a device trust provider (CrowdStrike, Jamf, or JumpCloud), write a Cedar policy, and enforce device health as a condition of tunnel access at connect time and throughout the session. Shadow mode and connection logs enable safe policy testing before enforcement.
+- **[Introducing tunnel endpoints for private access to network segments](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-tunnel-endpoints-for-private-access-to-network-segments/)** — Tunnel endpoints, a new VPC endpoint type powered by AWS PrivateLink, enable an application in one VPC to privately access an entire CIDR block range in another VPC. The network owner shares the CIDR block once, making all current and future resources within that range reachable without additional configuration.
+
 ## 2026-11-04 · Weekly summary
 
 - **[Introducing change-based throttling for Amazon Route 53 APIs](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-change-based-throttling-for-amazon-route-53-apis/)** — Amazon Route 53 now applies change-based throttling and has doubled its default API request rate from 5 to 10 requests per second. The post explains the new per-account model with separate request-rate and change-throughput limits, along with best practices for automating DNS management at scale.

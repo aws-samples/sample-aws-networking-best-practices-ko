@@ -8,6 +8,13 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-06 · 전일 업데이트
+
+- **[AWS Interconnect - last mile, 미국 Northern Virginia에 새 메트로 추가](https://aws.amazon.com/about-aws/whats-new/2026/11/interconnect-last-mile-northern-virginia/)** — AWS Interconnect - last mile이 미국 Northern Virginia에 새 메트로를 추가하여 New York에 이어 두 번째 제공 지역이 되었습니다. 이 서비스는 데이터 센터, 지사, 코로케이션 시설을 AWS에 관리형 프라이빗 연결로 이어주며, 기본적으로 물리적으로 분리된 두 위치와 4개의 이중화 링크를 통해 Direct Connect 포인트까지 99.99% 가용성 SLA를 제공합니다.
+- **[AWS Network Load Balancer, AWS Phoenix 로컬 존에서 사용 가능](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-nlb-available-phx-local-zone/)** — AWS Network Load Balancer가 Phoenix 로컬 존(us-west-2-phx-2a)에서 직접 생성 가능해졌습니다. 기존에는 로드 밸런서를 상위 리전의 가용 영역에 배치해야 했으나, 이번 출시로 트래픽이 로컬 존 내에서 처리되어 지연 시간이 줄어들고 네트워크 경로가 단순해집니다.
+- **[AWS Security Hub 네트워크 스캐닝, AWS GovCloud (US)에서 지원 시작](https://aws.amazon.com/about-aws/whats-new/2026/11/security-hub-network-scanning-govcloud/)** — AWS Security Hub의 네트워크 스캐닝 기능이 AWS GovCloud (US)에서 사용 가능해졌습니다. 이 기능은 보안 그룹 규칙이나 라우팅 테이블 기반의 이론적 도달 가능성이 아닌, 인터넷에서 실제로 접근 가능한 공개 IP, 가상 머신, 로드 밸런서 및 열린 포트를 직접 탐지하여 보안 위협을 보다 정확하게 파악할 수 있습니다.
+- **[AWS WAF AI 트래픽 수익화, Stripe를 통한 법정화폐 지급 지원](https://aws.amazon.com/about-aws/whats-new/2026/11/aws-waf-stripe-fiat-payouts/)** — AWS WAF의 AI 트래픽 수익화 기능이 Stripe와 통합되어, 퍼블리셔와 API 공급자가 AI 봇·에이전트로부터 받은 스테이블코인 결제를 Stripe 잔액으로 현지 통화 정산할 수 있게 되었습니다. 이를 통해 암호화폐 지갑 없이도 에이전트 액세스를 수익화할 수 있으며, 기존 가격 정책과 에이전트 정책은 그대로 유지됩니다.
+
 ## 2026-11-05 · 전일 업데이트
 
 - **[AWS Interconnect - Last Mile, Equinix와 함께 프리뷰 출시](https://aws.amazon.com/about-aws/whats-new/2026/11/interconnect-last-mile-preview-equinix/)** — AWS Interconnect - Last Mile이 Equinix와의 파트너십으로 프리뷰 공개되었으며, Equinix의 전 세계 282개 데이터센터 인프라를 몇 번의 클릭만으로 AWS에 연결할 수 있습니다. 크로스 커넥트 주문이나 라우터 설정 없이 관리형 프라이빗 연결을 제공하며, AWS Management Console에서 리전·대역폭·Direct Connect Gateway·Equinix Fabric One 프로젝트 ID를 선택하면 설정이 완료됩니다.
