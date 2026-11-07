@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-07 · 전일 업데이트
+
+- **[Amazon MSK Replicator, AWS GovCloud (US-East, US-West) 리전에서 출시](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-msk-replicator-additional-aws-regions)** — Amazon MSK Replicator가 AWS GovCloud (US-East, US-West) 리전에서 사용 가능해졌습니다. 이를 통해 Amazon MSK 클러스터 간 또는 온프레미스·자체 관리형·타 클라우드의 외부 Apache Kafka 클러스터에서 Amazon MSK Provisioned 클러스터로 스트리밍 데이터를 자동으로 복제할 수 있으며, 별도의 복제 인프라 없이 복원력 높은 스트리밍 애플리케이션을 구축할 수 있습니다.
+
 ## 2026-11-06 · 전일 업데이트
 
 - **[AWS Interconnect - last mile, 미국 Northern Virginia에 새 메트로 추가](https://aws.amazon.com/about-aws/whats-new/2026/11/interconnect-last-mile-northern-virginia/)** — AWS Interconnect - last mile이 미국 Northern Virginia에 새 메트로를 추가하여 New York에 이어 두 번째 제공 지역이 되었습니다. 이 서비스는 데이터 센터, 지사, 코로케이션 시설을 AWS에 관리형 프라이빗 연결로 이어주며, 기본적으로 물리적으로 분리된 두 위치와 4개의 이중화 링크를 통해 Direct Connect 포인트까지 99.99% 가용성 SLA를 제공합니다.

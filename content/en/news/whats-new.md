@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-07 · Daily update
+
+- **[Amazon MSK Replicator is now available in AWS GovCloud (US-East, US-West) Regions](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-msk-replicator-additional-aws-regions)** — Amazon MSK Replicator is now available in the AWS GovCloud (US-East, US-West) Regions, enabling automated replication of streaming data between Amazon MSK clusters or from external Apache Kafka clusters—including on-premises and other cloud providers—to Amazon MSK Provisioned clusters. This eliminates the need for custom replication infrastructure and makes it easier to build regionally resilient streaming applications.
+
 ## 2026-11-06 · Daily update
 
 - **[AWS Interconnect - last mile announces new metro in Northern Virginia, USA](https://aws.amazon.com/about-aws/whats-new/2026/11/interconnect-last-mile-northern-virginia/)** — AWS Interconnect - last mile has expanded to Northern Virginia, USA, making it the second metro after New York where customers can connect their data centers, branch offices, or colocation facilities to AWS. Each connection is provisioned across two physically diverse locations with four redundant links, delivering a 99.99% availability SLA up to the Direct Connect point of presence out of the box.
