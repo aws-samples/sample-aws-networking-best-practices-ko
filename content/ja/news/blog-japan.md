@@ -8,6 +8,13 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-09 · 週次まとめ
+
+- **[週刊 AWS – 2026/11/02 週](https://aws.amazon.com/jp/blogs/news/aws-weekly-20261102/)** — 今週は Amazon Textract の日本語対応と東京リージョンでの提供開始、Amazon Inspector による AMI 脆弱性スキャン対応、AWS Lambda のセルフマネージド Kafka キュー対応、Amazon DynamoDB の bulk put items GA など多数のアップデートが発表されました。ネットワーキング観点では、Amazon CloudFront が Service Quotas によるクォータ引き上げに対応した点が注目されます。
+- **[Amazon Route 53 Resolver DNS Firewall によるハイブリッドワークロードの保護](https://aws.amazon.com/jp/blogs/news/securing-hybrid-workloads-using-amazon-route-53-resolver-dns-firewall/)** — Amazon Route 53 Resolver DNS Firewall の保護をオンプレミスワークロードまで拡張し、ハイブリッド AWS 環境全体で統一された DNS セキュリティポリシーを実現する方法を紹介します。AWS Direct Connect や AWS Site-to-Site VPN を使ったプライベート接続のフロー解説に加え、AWS Firewall Manager と AWS Security Hub を活用したマルチアカウント環境での中央集中管理手法も説明しています。
+- **[AWS Network Firewall 向け Route 53 Resolved IP Validation の紹介: ドメイン名による非ウェブトラフィック制御と SNI スプーフィング防止](https://aws.amazon.com/jp/blogs/news/introducing-route-53-resolved-ip-validation-for-aws-network-firewall/)** — 2026 年 10 月 21 日に追加料金なしでリリースされた Route 53 Resolved IP Validation は、AWS Network Firewall のアウトバウンド接続先 IP を Amazon Route 53 Resolver の応答と照合して検証します。これにより、SFTP や SSH などの非ウェブトラフィックをドメイン名でフィルタリングし、TLS インスペクションなしで SNI スプーフィングを防止できます。
+- **[Amazon Route 53 Resolver DNS Firewall で高度な DNS 脅威を防ぐ](https://aws.amazon.com/jp/blogs/news/protect-against-advanced-dns-threats-with-amazon-route-53-resolver-dns-firewall/)** — Amazon VPC 内の DNS クエリはセキュリティグループや AWS Network Firewall などの制御をバイパスする独自の経路をたどるため、DNS トンネリングやドメイン生成アルゴリズム (DGA) などの脅威に対して脆弱です。この記事では、Amazon Route 53 Resolver DNS Firewall Advanced によるリアルタイム検出の仕組み、AWS CloudFormation を使ったルールグループのデプロイ、AWS Security Hub との統合方法を解説しています。
+
 ## 2026-11-03 · 週次まとめ
 
 - **[Amazon EVS と FSx for ONTAP 上で高可用性の Oracle Database を設計する](https://aws.amazon.com/jp/blogs/news/architect-highly-available-oracle-database-on-amazon-evs-and-fsx-for-ontap/)** — Amazon Elastic VMware Service (Amazon EVS) と Amazon FSx for NetApp ONTAP を組み合わせることで、既存の VMware 運用ワークフローを維持しながら Oracle Database を AWS へ移行する方法を紹介します。ストレージ・コンピューティング・ネットワーキング・ディザスタリカバリの各レイヤーが連携し、高可用性、リージョン間 DR、サブミリ秒のストレージレイテンシーを実現するアーキテクチャ設計について解説しています。

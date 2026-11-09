@@ -8,6 +8,13 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-09 · 주간 요약
+
+- **[주간 AWS – 2026년 11월 2일 주](https://aws.amazon.com/jp/blogs/news/aws-weekly-20261102/)** — Amazon Textract의 일본어 지원 및 도쿄 리전 제공, Amazon Inspector의 AMI 취약성 스캔, AWS Lambda의 셀프 매니지드 Kafka 큐 지원, Amazon DynamoDB bulk put items GA 등 다양한 서비스 업데이트가 발표되었습니다. 네트워킹 관점에서는 Amazon CloudFront의 Service Quotas를 통한 할당량 상향 지원이 주목됩니다.
+- **[Amazon Route 53 Resolver DNS Firewall을 활용한 하이브리드 워크로드 보호](https://aws.amazon.com/jp/blogs/news/securing-hybrid-workloads-using-amazon-route-53-resolver-dns-firewall/)** — Amazon Route 53 Resolver DNS Firewall의 보호 범위를 온프레미스 워크로드까지 확장하여 하이브리드 AWS 환경 전반에 걸쳐 통합된 DNS 보안 정책을 적용하는 방법을 소개합니다. AWS Direct Connect 및 AWS Site-to-Site VPN을 통한 프라이빗 연결과 Network Load Balancer를 통한 퍼블릭 연결에서의 DNS 쿼리 흐름, 그리고 AWS Firewall Manager와 AWS Security Hub를 활용한 멀티 계정 환경의 중앙 집중식 관리 방안도 다룹니다.
+- **[AWS Network Firewall용 Route 53 Resolved IP Validation 소개: 도메인 이름 기반 비웹 트래픽 제어 및 SNI 스푸핑 방지](https://aws.amazon.com/jp/blogs/news/introducing-route-53-resolved-ip-validation-for-aws-network-firewall/)** — 2026년 10월 21일 출시된 AWS Network Firewall의 Route 53 Resolved IP Validation 기능은 추가 비용 없이 아웃바운드 연결 대상 IP를 Amazon Route 53 Resolver의 응답과 대조 검증합니다. 이를 통해 SFTP·SSH 등 비웹 트래픽을 도메인 이름으로 필터링하고, TLS 인스펙션 없이도 SNI 스푸핑을 방지할 수 있습니다.
+- **[Amazon Route 53 Resolver DNS Firewall로 고급 DNS 위협 방어하기](https://aws.amazon.com/jp/blogs/news/protect-against-advanced-dns-threats-with-amazon-route-53-resolver-dns-firewall/)** — Amazon VPC 내 DNS 쿼리는 보안 그룹이나 AWS Network Firewall 같은 일반 제어를 우회하는 고유한 경로를 따르므로, DNS 터널링 및 도메인 생성 알고리즘(DGA) 같은 위협에 취약합니다. 이 글에서는 Amazon Route 53 Resolver DNS Firewall Advanced를 활용한 실시간 탐지 방법과 AWS CloudFormation을 통한 배포, AWS Security Hub 연동까지 포괄적인 DNS 보안 구성 방법을 설명합니다.
+
 ## 2026-11-03 · 주간 요약
 
 - **[Amazon EVS와 FSx for ONTAP에서 고가용성 Oracle Database 설계하기](https://aws.amazon.com/jp/blogs/news/architect-highly-available-oracle-database-on-amazon-evs-and-fsx-for-ontap/)** — Amazon Elastic VMware Service(Amazon EVS)와 Amazon FSx for NetApp ONTAP을 결합하여 기존 VMware 운영 워크플로를 유지하면서 Oracle Database를 AWS로 마이그레이션하는 방법을 소개합니다. 서브밀리초 스토리지 지연 시간, 스냅샷 기반 백업, 리전 간 재해 복구(DR), 독립적인 스토리지 스케일링을 포함한 고가용성 아키텍처 설계 방법을 다룹니다.
