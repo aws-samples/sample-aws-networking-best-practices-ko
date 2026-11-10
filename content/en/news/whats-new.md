@@ -8,6 +8,12 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-10 · Daily update
+
+- **[Amazon Bedrock AgentCore Now Offers a Web Search API](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-bedrock-agentcore-web-search-api/)** — AWS has announced the general availability of the InvokeWebSearch API on Amazon Bedrock AgentCore, enabling web search with a single API call and no additional resources to provision. Results from Amazon's web index include text extracts, page titles, URLs, and publication times, with support for domain-level filtering.
+- **[Amazon Route 53 Profiles Now Supports Multiple Profiles per VPC](https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-profiles-multiple-per-vpc/)** — Amazon Route 53 Profiles now allows multiple Profiles to be associated with a single VPC, each with a configurable priority. This enables separate teams—such as security teams managing DNS Firewall rule groups and network admins managing private hosted zones and Resolver rules—to maintain independent Profiles without sharing a single configuration.
+- **[Introducing AWS Nitro Sandboxes on Amazon EKS, ECS, and EC2 for Hardware-Isolated Pods, Tasks, and VMs](https://aws.amazon.com/about-aws/whats-new/2026/11/nitro-sandboxes-eks-ecs-ec2/)** — AWS Nitro Sandboxes are now available as lightweight VMs managed by the Nitro Hypervisor, providing hardware-level isolation for Amazon EKS pods, Amazon ECS tasks, and standalone VMs—including AI agents. Each workload runs within its own Nitro-isolated virtual machine on a single EC2 instance at near-native performance, enabling safe execution of untrusted, multi-tenant, or regulated workloads.
+
 ## 2026-11-07 · Daily update
 
 - **[Amazon MSK Replicator is now available in AWS GovCloud (US-East, US-West) Regions](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-msk-replicator-additional-aws-regions)** — Amazon MSK Replicator is now available in the AWS GovCloud (US-East, US-West) Regions, enabling automated replication of streaming data between Amazon MSK clusters or from external Apache Kafka clusters—including on-premises and other cloud providers—to Amazon MSK Provisioned clusters. This eliminates the need for custom replication infrastructure and makes it easier to build regionally resilient streaming applications.

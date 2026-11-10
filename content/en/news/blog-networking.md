@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-10 · Weekly summary
+
+- **[Authenticate external gRPC clients with Amazon VPC Lattice](https://aws.amazon.com/blogs/networking-and-content-delivery/authenticate-external-grpc-clients-with-amazon-vpc-lattice/)** — This post addresses the gap between external gRPC clients using JWTs and Amazon VPC Lattice's reliance on SigV4 signatures by building an ingress layer where an Application Load Balancer validates JWTs and an Amazon ECS proxy translates that identity into SigV4. The approach enforces per-service authorization via VPC Lattice auth policies while preserving end-to-end gRPC over HTTP/2.
+
 ## 2026-11-06 · Weekly summary
 
 - **[Introducing device posture assessment for AWS Client VPN](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-device-posture-assessment-for-aws-client-vpn/)** — AWS Client VPN now supports device posture assessment, allowing administrators to register a device trust provider (CrowdStrike, Jamf, or JumpCloud), write a Cedar policy, and enforce device health as a condition of tunnel access at connect time and throughout the session. Shadow mode and connection logs enable safe policy testing before enforcement.

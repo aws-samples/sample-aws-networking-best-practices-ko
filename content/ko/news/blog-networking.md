@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-10 · 주간 요약
+
+- **[Amazon VPC Lattice에서 외부 gRPC 클라이언트 인증하기](https://aws.amazon.com/blogs/networking-and-content-delivery/authenticate-external-grpc-clients-with-amazon-vpc-lattice/)** — 외부 gRPC 클라이언트가 JWT를 사용하는 반면 Amazon VPC Lattice는 SigV4 서명을 신뢰하는 구조적 차이를 해소하기 위해, Application Load Balancer가 JWT를 검증하고 Amazon ECS 프록시가 해당 ID를 SigV4로 변환하는 인그레스 계층 구성 방법을 소개합니다. 이를 통해 HTTP/2 기반 gRPC 통신을 유지하면서 VPC Lattice 인증 정책으로 서비스별 세밀한 액세스 제어를 적용할 수 있습니다.
+
 ## 2026-11-06 · 주간 요약
 
 - **[AWS Client VPN에 디바이스 상태 평가 기능 도입](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-device-posture-assessment-for-aws-client-vpn/)** — AWS Client VPN이 디바이스 상태 평가 기능을 제공하여, CrowdStrike·Jamf·JumpCloud 등 디바이스 신뢰 공급자를 등록하고 Cedar 정책을 작성하면 터널 연결 시 및 세션 중 지속적으로 디바이스 건강 상태를 조건으로 액세스를 제어할 수 있습니다. 섀도 모드와 연결 로그를 활용해 정책을 실제 적용 전에 테스트할 수 있어 운영 안전성이 높아집니다.

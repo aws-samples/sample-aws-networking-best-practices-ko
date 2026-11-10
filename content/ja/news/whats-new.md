@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-10 · 前日のアップデート
+
+- **[Amazon Bedrock AgentCore が Web Search API を提供開始](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-bedrock-agentcore-web-search-api/)** — AWS は Amazon Bedrock AgentCore において、単一の API 呼び出しで Web 検索を実行できる InvokeWebSearch API の一般提供を開始しました。追加リソースの作成不要で、テキスト抜粋・URL・公開日時を含む検索結果をドメインフィルタリングとともに取得できます。
+- **[Amazon Route 53 Profiles が VPC あたり複数プロファイルの関連付けをサポート](https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-profiles-multiple-per-vpc/)** — Amazon Route 53 Profiles が 1 つの VPC に複数のプロファイルを関連付ける機能をサポートしました。セキュリティチームの DNS Firewall ルールグループとネットワーク管理チームのプライベートホスティングゾーン・Resolver ルールをそれぞれ独立したプロファイルで管理しながら、同一 VPC に適用できるようになります。
+- **[Amazon EKS・ECS・EC2 向けにハードウェア分離された AWS Nitro Sandboxes を提供開始](https://aws.amazon.com/about-aws/whats-new/2026/11/nitro-sandboxes-eks-ecs-ec2/)** — AWS Nitro Sandboxes が Nitro Hypervisor で管理される軽量 VM として利用可能になり、Amazon EKS ポッド・Amazon ECS タスク・スタンドアロン VM にハードウェアレベルの分離境界を提供します。単一の EC2 インスタンス上でネイティブに近いパフォーマンスを維持しながら、信頼できないマルチテナントや規制対象ワークロードを安全に実行できます。
+
 ## 2026-11-07 · 前日のアップデート
 
 - **[Amazon MSK Replicator が AWS GovCloud (US-East, US-West) リージョンで利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-msk-replicator-additional-aws-regions)** — Amazon MSK Replicator が AWS GovCloud (US-East, US-West) リージョンで利用可能になりました。Amazon MSK クラスター間、またはオンプレミスや他のクラウドプロバイダーの外部 Apache Kafka クラスターから Amazon MSK Provisioned クラスターへのストリーミングデータの自動レプリケーションが可能となり、カスタムレプリケーションインフラを管理することなく、復元力の高いストリーミングアプリケーションを構築できます。
