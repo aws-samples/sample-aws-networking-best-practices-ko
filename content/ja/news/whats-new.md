@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-11 · 前日のアップデート
+
+- **[Amazon EC2 G7 インスタンス、追加リージョンで提供開始](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-g7-additional-regions/)** — Amazon EC2 G7 インスタンスが、欧州 (ロンドン)、アジアパシフィック (ムンバイ、シドニー)、南米 (サンパウロ) リージョンで新たに利用可能になりました。NVIDIA RTX PRO 4500 Blackwell GPU を搭載し、G6 インスタンスと比較して AI 推論性能が最大 4.6 倍、グラフィックス性能が最大 2.1 倍向上しています。
+- **[AWS Network Firewall、次世代ファイアウォールポリシーを提供開始](https://aws.amazon.com/about-aws/whats-new/2026/11/network-firewall-launches-ngfw-policy/)** — AWS Network Firewall が新たな次世代ファイアウォール (NGFW) ポリシーモデルを発表し、よりシンプルなポリシー構造と拡張されたルール容量を提供します。ファイアウォール保護と IPS 保護を組み合わせるのではなく階層化することで、セキュリティ態勢を強化しつつポリシー管理を簡素化します。
+
 ## 2026-11-10 · 前日のアップデート
 
 - **[Amazon Bedrock AgentCore が Web Search API を提供開始](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-bedrock-agentcore-web-search-api/)** — AWS は Amazon Bedrock AgentCore において、単一の API 呼び出しで Web 検索を実行できる InvokeWebSearch API の一般提供を開始しました。追加リソースの作成不要で、テキスト抜粋・URL・公開日時を含む検索結果をドメインフィルタリングとともに取得できます。

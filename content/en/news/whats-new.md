@@ -8,6 +8,11 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-11 · Daily update
+
+- **[Amazon EC2 G7 instances now available in additional regions](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-g7-additional-regions/)** — Amazon EC2 G7 instances powered by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs are now available in the Europe (London), Asia Pacific (Mumbai, Sydney), and South America (Sao Paulo) Regions. G7 instances deliver up to 4.6x AI inference performance and up to 2.1x graphics performance compared to G6 instances.
+- **[AWS Network Firewall launches next-generation firewall policy](https://aws.amazon.com/about-aws/whats-new/2026/11/network-firewall-launches-ngfw-policy/)** — AWS Network Firewall introduces a new next-generation firewall (NGFW) policy model that offers a simpler policy structure and increased rule capacity for security teams. By layering firewall and IPS protections separately rather than combining them, the new model strengthens security posture while making policies easier to manage.
+
 ## 2026-11-10 · Daily update
 
 - **[Amazon Bedrock AgentCore Now Offers a Web Search API](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-bedrock-agentcore-web-search-api/)** — AWS has announced the general availability of the InvokeWebSearch API on Amazon Bedrock AgentCore, enabling web search with a single API call and no additional resources to provision. Results from Amazon's web index include text extracts, page titles, URLs, and publication times, with support for domain-level filtering.
