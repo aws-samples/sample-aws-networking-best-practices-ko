@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-12 · 前日のアップデート
+
+- **[AWS Network Security Manager が AWS European Sovereign Cloud および追加の新リージョンで利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/11/network-security-mgr-eu-sovereign-cloud/)** — AWS Network Security Manager が AWS European Sovereign Cloud リージョンを含む 31 の新しいリージョンで一般提供開始されました。AWS WAF および AWS Shield と連携し、大規模なネットワークセキュリティポリシーの展開と適用を簡素化します。
+- **[AWS Cloud WAN が Flow Logs をサポート](https://aws.amazon.com/about-aws/whats-new/2026/11/aws-cloud-wan-flow-logs/)** — AWS Cloud WAN が Flow Logs をサポートし、グローバルネットワーク全体の IP トラフィックを単一の AWS Cloud WAN アカウントから一元的に確認できるようになりました。これにより、複数の VPC・アカウント・リージョンにまたがる VPC Flow Logs を個別に収集する必要がなくなります。
+- **[Amazon EKS Auto Mode が Pod のセキュリティグループをサポート](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-eks-auto-mode-security-groups-for-pods/)** — Amazon EKS Auto Mode が Pod レベルのセキュリティグループをサポートし、同一ノード上の異なるワークロードに個別の Amazon EC2 セキュリティグループルールを適用できるようになりました。別のノードプールを作成することなく Pod 単位のネットワークレベルのセグメンテーションが可能となり、Amazon RDS や Amazon ElastiCache などセキュリティグループベースのアクセス制御を使用するリソースへ Pod から直接接続できます。
+
 ## 2026-11-11 · 前日のアップデート
 
 - **[Amazon EC2 G7 インスタンス、追加リージョンで提供開始](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-g7-additional-regions/)** — Amazon EC2 G7 インスタンスが、欧州 (ロンドン)、アジアパシフィック (ムンバイ、シドニー)、南米 (サンパウロ) リージョンで新たに利用可能になりました。NVIDIA RTX PRO 4500 Blackwell GPU を搭載し、G6 インスタンスと比較して AI 推論性能が最大 4.6 倍、グラフィックス性能が最大 2.1 倍向上しています。

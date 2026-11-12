@@ -8,6 +8,12 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-12 · Daily update
+
+- **[AWS Network Security Manager Now Available in AWS European Sovereign Cloud and Additional New Regions](https://aws.amazon.com/about-aws/whats-new/2026/11/network-security-mgr-eu-sovereign-cloud/)** — AWS Network Security Manager is now generally available in the AWS European Sovereign Cloud Region and 31 additional regions. The service integrates with AWS WAF and AWS Shield to simplify network security policy deployment and enforcement at scale.
+- **[AWS Cloud WAN Now Supports Flow Logs](https://aws.amazon.com/about-aws/whats-new/2026/11/aws-cloud-wan-flow-logs/)** — AWS Cloud WAN now supports Flow Logs, providing a centralized view of IP traffic across your global network from a single AWS Cloud WAN account. This eliminates the need to manually aggregate VPC Flow Logs from multiple VPCs, accounts, and Regions to gain cross-network visibility.
+- **[Amazon EKS Auto Mode Now Supports Security Groups for Pods](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-eks-auto-mode-security-groups-for-pods/)** — Amazon EKS Auto Mode now supports security groups for Pods, enabling dedicated Amazon EC2 security group rules to be applied to individual Pods on the same node without requiring separate node pools. This extends VPC-level network controls to the Pod level, allowing Pods to directly access resources like Amazon RDS and Amazon ElastiCache that use security group-based authorization.
+
 ## 2026-11-11 · Daily update
 
 - **[Amazon EC2 G7 instances now available in additional regions](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-g7-additional-regions/)** — Amazon EC2 G7 instances powered by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs are now available in the Europe (London), Asia Pacific (Mumbai, Sydney), and South America (Sao Paulo) Regions. G7 instances deliver up to 4.6x AI inference performance and up to 2.1x graphics performance compared to G6 instances.
