@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-13 · 전일 업데이트
+
+- **[Amazon Aurora 및 RDS, Graviton5 기반 R9g 데이터베이스 인스턴스 지원](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-aurora-rds-postgresql-mysql-mariadb-r9g-instances/)** — AWS Graviton5 기반 R9g 데이터베이스 인스턴스가 Amazon Aurora(PostgreSQL·MySQL 호환) 및 Amazon RDS for PostgreSQL·MySQL·MariaDB에서 정식 출시되었습니다. Graviton4 대비 최대 30% 성능 향상과 최대 22% 가격 대비 성능 개선을 제공하며, large부터 48xlarge까지 9가지 크기로 제공됩니다.
+- **[Amazon Route 53 Domains, 만료 및 삭제된 도메인 셀프서비스 복원 지원](https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-domains-self-service-restore/)** — Amazon Route 53 Domains에서 이제 만료되거나 최근 삭제된 도메인을 AWS Support 요청 없이 콘솔·CLI·SDK를 통해 직접 복원할 수 있습니다. 갱신 누락, 결제 수단 만료, 실수로 인한 삭제 등으로 잃어버린 도메인과 이에 의존하는 웹사이트·이메일·애플리케이션을 신속하게 복구할 수 있습니다.
+- **[AWS Cloud WAN, Direct Connect 어태치먼트에서 BGP 커뮤니티 기반 라우팅 정책 지원](https://aws.amazon.com/about-aws/whats-new/2026/11/cloud-wan-bgp-community-directconnect/)** — AWS Cloud WAN이 이제 Direct Connect 어태치먼트에서 BGP 커뮤니티를 지원하여, 온프레미스에서 라우팅 의도를 태깅하고 Cloud WAN 내부에서 필터링 및 경로 선호 규칙을 적용한 뒤 커뮤니티를 온프레미스 라우터로 다시 전파할 수 있습니다. 이를 통해 기업은 온프레미스 환경에서 라우팅 정책을 동적으로 신호하여 하이브리드 네트워크 오케스트레이션을 간소화할 수 있습니다.
+
 ## 2026-11-12 · 전일 업데이트
 
 - **[AWS Network Security Manager, AWS European Sovereign Cloud 및 추가 신규 리전에서 출시](https://aws.amazon.com/about-aws/whats-new/2026/11/network-security-mgr-eu-sovereign-cloud/)** — AWS Network Security Manager가 AWS European Sovereign Cloud 리전을 포함한 31개 신규 리전에서 정식 출시되었습니다. 이 서비스는 AWS WAF 및 AWS Shield와 연동하여 대규모 네트워크 보안 정책 배포 및 적용을 단순화합니다.

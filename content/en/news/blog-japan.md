@@ -8,6 +8,11 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-13 · Weekly summary
+
+- **[Securing Access to AWS Quick from Corporate Networks with AWS PrivateLink](https://aws.amazon.com/jp/blogs/news/securing-quick-access-from-corporate-networks-with-aws-privatelink/)** — This post explains how to connect AWS Quick to data sources behind corporate firewalls or on-premises environments without traversing the public internet. It covers a combined architecture using AWS PrivateLink-based VPC endpoints, VPC connectivity, and IAM Identity Center for identity-based access control.
+- **[Embedding the AWS Quick Chat Agent into Enterprise Applications](https://aws.amazon.com/jp/blogs/news/embed-amazon-quick-suite-chat-agents-in-enterprise-applications/)** — AWS Quick's embedded chat feature enables interactive AI directly within existing enterprise applications. This post introduces a one-click deployable solution that securely embeds the AWS Quick chat agent into a corporate portal using Amazon CloudFront, Amazon Cognito, Amazon API Gateway, and AWS Lambda.
+
 ## 2026-11-09 · Weekly summary
 
 - **[Weekly AWS – Week of November 2, 2026](https://aws.amazon.com/jp/blogs/news/aws-weekly-20261102/)** — This week's AWS updates include Amazon Textract adding Japanese language support in the Tokyo Region, Amazon Inspector supporting AMI vulnerability scanning, AWS Lambda supporting self-managed Kafka queues, and Amazon DynamoDB bulk put items reaching GA. From a networking perspective, Amazon CloudFront's support for quota increases via Service Quotas is a notable addition.

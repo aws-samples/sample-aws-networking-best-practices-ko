@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-13 · 前日のアップデート
+
+- **[Amazon Aurora および RDS が Graviton5 ベースの R9g データベースインスタンスをサポート](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-aurora-rds-postgresql-mysql-mariadb-r9g-instances/)** — AWS Graviton5 ベースの R9g データベースインスタンスが、Amazon Aurora (PostgreSQL・MySQL 互換) および Amazon RDS for PostgreSQL・MySQL・MariaDB で一般提供開始されました。Graviton4 ベースの同等インスタンスと比較して最大 30% の性能向上と最大 22% の価格対性能比の改善を実現し、large から 48xlarge まで 9 つのサイズで利用できます。
+- **[Amazon Route 53 Domains が期限切れ・削除済みドメインのセルフサービス復元をサポート](https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-domains-self-service-restore/)** — Amazon Route 53 Domains で、期限切れまたは最近削除されたドメインを AWS Support に依頼することなく、コンソール・AWS CLI・AWS SDK から直接復元できるようになりました。更新忘れや決済手段の期限切れ、誤削除によって失ったドメインと、それに依存するウェブサイト・メール・アプリケーションを迅速に復旧できます。
+- **[AWS Cloud WAN が Direct Connect アタッチメントでのルーティングポリシー向け BGP コミュニティをサポート](https://aws.amazon.com/about-aws/whats-new/2026/11/cloud-wan-bgp-community-directconnect/)** — AWS Cloud WAN が Direct Connect アタッチメントでの BGP コミュニティをサポートし、オンプレミスでルーティングの意図をタグ付けして Cloud WAN 内でフィルタリングやパス優先ルールを適用し、コミュニティをオンプレミスルーターに伝播できるようになりました。これにより、以前は Site-to-Site VPN および Connect アタッチメントのみで利用可能だった BGP コミュニティベースのルーティングポリシーが Direct Connect にも拡張され、ハイブリッドネットワークのオーケストレーションが簡素化されます。
+
 ## 2026-11-12 · 前日のアップデート
 
 - **[AWS Network Security Manager が AWS European Sovereign Cloud および追加の新リージョンで利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/11/network-security-mgr-eu-sovereign-cloud/)** — AWS Network Security Manager が AWS European Sovereign Cloud リージョンを含む 31 の新しいリージョンで一般提供開始されました。AWS WAF および AWS Shield と連携し、大規模なネットワークセキュリティポリシーの展開と適用を簡素化します。

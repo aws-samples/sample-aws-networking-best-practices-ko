@@ -8,6 +8,12 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-13 · Daily update
+
+- **[Amazon Aurora and RDS Now Support Graviton5-Based R9g Database Instances](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-aurora-rds-postgresql-mysql-mariadb-r9g-instances/)** — AWS Graviton5-based R9g database instances are now generally available for Amazon Aurora (PostgreSQL and MySQL compatible) and Amazon RDS for PostgreSQL, MySQL, and MariaDB. They deliver up to 30% better performance and up to 22% improved price-performance over equivalent Graviton4-based instances, available in nine sizes from large to 48xlarge.
+- **[Amazon Route 53 Domains Now Supports Self-Service Restore for Expired and Deleted Domains](https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-domains-self-service-restore/)** — Amazon Route 53 Domains now allows you to restore expired or recently deleted domains directly via the console, AWS CLI, or AWS SDKs, without contacting AWS Support. This enables quick recovery of domains lost due to missed renewals, expired payment methods, or accidental deletions, along with dependent websites, email, and applications.
+- **[AWS Cloud WAN Now Supports BGP Communities on Direct Connect Attachments for Routing Policy](https://aws.amazon.com/about-aws/whats-new/2026/11/cloud-wan-bgp-community-directconnect/)** — AWS Cloud WAN now supports BGP communities on Direct Connect attachments, allowing enterprises to tag routes with routing intent on-premises, apply filtering and path preference rules within Cloud WAN, and propagate communities back to on-premises routers. This extends the BGP community-based routing policy previously available only on Site-to-Site VPN and Connect attachments, simplifying hybrid network orchestration.
+
 ## 2026-11-12 · Daily update
 
 - **[AWS Network Security Manager Now Available in AWS European Sovereign Cloud and Additional New Regions](https://aws.amazon.com/about-aws/whats-new/2026/11/network-security-mgr-eu-sovereign-cloud/)** — AWS Network Security Manager is now generally available in the AWS European Sovereign Cloud Region and 31 additional regions. The service integrates with AWS WAF and AWS Shield to simplify network security policy deployment and enforcement at scale.

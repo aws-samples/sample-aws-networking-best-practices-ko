@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-13 · 週次まとめ
+
+- **[AWS PrivateLink で企業ネットワークから AWS Quick へのアクセスを保護する](https://aws.amazon.com/jp/blogs/news/securing-quick-access-from-corporate-networks-with-aws-privatelink/)** — 社内ファイアウォールの内側やオンプレミスのデータソースに、パブリックインターネットを経由せず AWS Quick から接続する方法を解説します。AWS PrivateLink による VPC エンドポイント、VPC 接続、IAM Identity Center を組み合わせたアクセス制御の構成を紹介します。
+- **[AWS Quick のチャットエージェントを企業アプリケーションに埋め込む](https://aws.amazon.com/jp/blogs/news/embed-amazon-quick-suite-chat-agents-in-enterprise-applications/)** — AWS Quick の埋め込みチャット機能を使うことで、既存のアプリケーション内で対話型 AI を利用できるようになります。Amazon CloudFront、Amazon Cognito、Amazon API Gateway、AWS Lambda を組み合わせ、AWS Quick チャットエージェントを企業ポータルにセキュアに埋め込むソリューションをワンクリックでデプロイする方法を紹介します。
+
 ## 2026-11-09 · 週次まとめ
 
 - **[週刊 AWS – 2026/11/02 週](https://aws.amazon.com/jp/blogs/news/aws-weekly-20261102/)** — 今週は Amazon Textract の日本語対応と東京リージョンでの提供開始、Amazon Inspector による AMI 脆弱性スキャン対応、AWS Lambda のセルフマネージド Kafka キュー対応、Amazon DynamoDB の bulk put items GA など多数のアップデートが発表されました。ネットワーキング観点では、Amazon CloudFront が Service Quotas によるクォータ引き上げに対応した点が注目されます。
