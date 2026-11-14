@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-14 · 週次まとめ
+
+- **[AWS Cloud WAN Flow Logs によるグローバルトラフィックの監視](https://aws.amazon.com/blogs/networking-and-content-delivery/monitoring-global-traffic-with-aws-cloud-wan-flow-logs/)** — AWS Cloud WAN Flow Logs は、コアネットワーク・エッジ・アタッチメントの各スコープでグローバルネットワーク全体のフローレベルのトラフィックをキャプチャし、Amazon CloudWatch Logs・Amazon S3・Amazon Data Firehose へ発行できます。Amazon Athena と CloudWatch Logs Insights を使ってセグメント間・リージョン間のトラフィックやドロップを分析する方法を紹介しています。
+
 ## 2026-11-10 · 週次まとめ
 
 - **[Amazon VPC Lattice で外部 gRPC クライアントを認証する](https://aws.amazon.com/blogs/networking-and-content-delivery/authenticate-external-grpc-clients-with-amazon-vpc-lattice/)** — 外部 gRPC クライアントが JWT を使用する一方、Amazon VPC Lattice は SigV4 署名を信頼するという構造的な差異を解消するため、Application Load Balancer が JWT を検証し Amazon ECS プロキシがその ID を SigV4 に変換するイングレス層の構成方法を紹介しています。これにより HTTP/2 ベースの gRPC 通信を維持しながら、VPC Lattice 認証ポリシーでサービスごとのきめ細かいアクセス制御を適用できます。

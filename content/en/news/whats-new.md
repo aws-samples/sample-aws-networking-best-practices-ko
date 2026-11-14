@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-14 · Daily update
+
+- **[Amazon Route 53 now supports record set protection](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-route-53-record-set-protection/)** — Amazon Route 53 now offers record set protection, allowing DNS administrators to prevent accidental modifications to critical DNS records—such as zone apex records, MX records, and production endpoints—directly within a hosted zone. Changes to protected records are blocked until an authorized user removes the protection, eliminating the need to embed record-level conditions in every IAM policy.
+
 ## 2026-11-13 · Daily update
 
 - **[Amazon Aurora and RDS Now Support Graviton5-Based R9g Database Instances](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-aurora-rds-postgresql-mysql-mariadb-r9g-instances/)** — AWS Graviton5-based R9g database instances are now generally available for Amazon Aurora (PostgreSQL and MySQL compatible) and Amazon RDS for PostgreSQL, MySQL, and MariaDB. They deliver up to 30% better performance and up to 22% improved price-performance over equivalent Graviton4-based instances, available in nine sizes from large to 48xlarge.

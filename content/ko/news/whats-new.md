@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-14 · 전일 업데이트
+
+- **[Amazon Route 53, 레코드 세트 보호 기능 지원 시작](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-route-53-record-set-protection/)** — Amazon Route 53에서 호스팅 영역 내 중요한 DNS 레코드를 실수로 변경하지 못하도록 막는 레코드 세트 보호 기능이 추가되었습니다. 이제 권한 있는 사용자가 보호를 해제하기 전까지 보호된 레코드에 대한 모든 변경이 차단되어, 기존에 IAM 정책에 레코드 수준 조건을 일일이 작성해야 했던 번거로움이 해소됩니다.
+
 ## 2026-11-13 · 전일 업데이트
 
 - **[Amazon Aurora 및 RDS, Graviton5 기반 R9g 데이터베이스 인스턴스 지원](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-aurora-rds-postgresql-mysql-mariadb-r9g-instances/)** — AWS Graviton5 기반 R9g 데이터베이스 인스턴스가 Amazon Aurora(PostgreSQL·MySQL 호환) 및 Amazon RDS for PostgreSQL·MySQL·MariaDB에서 정식 출시되었습니다. Graviton4 대비 최대 30% 성능 향상과 최대 22% 가격 대비 성능 개선을 제공하며, large부터 48xlarge까지 9가지 크기로 제공됩니다.

@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-14 · Weekly summary
+
+- **[Monitoring global traffic with AWS Cloud WAN Flow Logs](https://aws.amazon.com/blogs/networking-and-content-delivery/monitoring-global-traffic-with-aws-cloud-wan-flow-logs/)** — AWS Cloud WAN Flow Logs capture flow-level traffic across your global network at the core network, edge, and attachment scopes, and can publish logs to Amazon CloudWatch Logs, Amazon S3, or Amazon Data Firehose. The post covers how to query and analyze cross-segment and cross-Region traffic and drops using Amazon Athena and CloudWatch Logs Insights.
+
 ## 2026-11-10 · Weekly summary
 
 - **[Authenticate external gRPC clients with Amazon VPC Lattice](https://aws.amazon.com/blogs/networking-and-content-delivery/authenticate-external-grpc-clients-with-amazon-vpc-lattice/)** — This post addresses the gap between external gRPC clients using JWTs and Amazon VPC Lattice's reliance on SigV4 signatures by building an ingress layer where an Application Load Balancer validates JWTs and an Amazon ECS proxy translates that identity into SigV4. The approach enforces per-service authorization via VPC Lattice auth policies while preserving end-to-end gRPC over HTTP/2.
