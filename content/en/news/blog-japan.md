@@ -8,6 +8,10 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-16 · Weekly summary
+
+- **[Malware Analysis on AWS: Building a Secure Environment](https://aws.amazon.com/jp/blogs/news/malware-analysis-on-aws-setting-up-a-secure-environment/)** — This post covers how to build a secure, compliance-ready environment for malware analysis on AWS, leveraging Amazon VPC network isolation and egress traffic blocking, IAM permission boundaries, SCPs, and monitoring via Amazon GuardDuty and AWS CloudTrail. From a networking perspective, VPC-based network segmentation and outbound traffic restriction are highlighted as critical defense layers.
+
 ## 2026-11-13 · Weekly summary
 
 - **[Securing Access to AWS Quick from Corporate Networks with AWS PrivateLink](https://aws.amazon.com/jp/blogs/news/securing-quick-access-from-corporate-networks-with-aws-privatelink/)** — This post explains how to connect AWS Quick to data sources behind corporate firewalls or on-premises environments without traversing the public internet. It covers a combined architecture using AWS PrivateLink-based VPC endpoints, VPC connectivity, and IAM Identity Center for identity-based access control.

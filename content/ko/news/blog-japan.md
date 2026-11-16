@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-16 · 주간 요약
+
+- **[AWS에서의 악성코드 분석: 안전한 환경 구축](https://aws.amazon.com/jp/blogs/news/malware-analysis-on-aws-setting-up-a-secure-environment/)** — Amazon VPC 네트워크 격리, IAM 권한 경계, SCP를 활용한 권한 상승 방지, Amazon GuardDuty 및 AWS CloudTrail 모니터링 등 다층 방어 접근 방식을 통해 AWS에서 악성코드를 안전하게 분석할 수 있는 환경 구축 방법을 소개합니다. 네트워킹 관점에서는 Amazon VPC를 이용한 송신 트래픽 차단과 네트워크 세분화가 핵심 보안 요소로 다뤄집니다.
+
 ## 2026-11-13 · 주간 요약
 
 - **[AWS PrivateLink로 기업 네트워크에서 AWS Quick에 대한 액세스 보안 강화](https://aws.amazon.com/jp/blogs/news/securing-quick-access-from-corporate-networks-with-aws-privatelink/)** — 사내 방화벽 내부 또는 온프레미스 데이터 소스에 퍼블릭 인터넷을 거치지 않고 AWS Quick에서 연결하는 방법을 소개합니다. AWS PrivateLink 기반 VPC 엔드포인트, VPC 연결, IAM Identity Center를 활용한 ID 제어를 조합하여 액세스를 제한하는 구성을 설명합니다.

@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-16 · 週次まとめ
+
+- **[AWS でのマルウェア解析: 安全な環境の構築](https://aws.amazon.com/jp/blogs/news/malware-analysis-on-aws-setting-up-a-secure-environment/)** — Amazon VPC によるネットワーク分離と送信トラフィックの遮断、IAM のアクセス許可の境界や SCP による権限昇格の防止、Amazon GuardDuty および AWS CloudTrail によるモニタリングを組み合わせた多層防御アプローチで、AWS 上に安全なマルウェア解析環境を構築する方法を解説しています。ネットワーキングの観点では、Amazon VPC を活用したネットワーク セグメンテーションと送信トラフィックの制御が重要なセキュリティ要素として取り上げられています。
+
 ## 2026-11-13 · 週次まとめ
 
 - **[AWS PrivateLink で企業ネットワークから AWS Quick へのアクセスを保護する](https://aws.amazon.com/jp/blogs/news/securing-quick-access-from-corporate-networks-with-aws-privatelink/)** — 社内ファイアウォールの内側やオンプレミスのデータソースに、パブリックインターネットを経由せず AWS Quick から接続する方法を解説します。AWS PrivateLink による VPC エンドポイント、VPC 接続、IAM Identity Center を組み合わせたアクセス制御の構成を紹介します。
