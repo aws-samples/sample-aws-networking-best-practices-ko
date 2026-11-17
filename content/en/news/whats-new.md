@@ -8,6 +8,12 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-17 · Daily update
+
+- **[Amazon EBS now supports associating additional KMS keys with snapshots](https://aws.amazon.com/about-aws/whats-new/2026/11/ebs-snapshots-associate-kms-keys/)** — Amazon EBS now allows you to associate additional AWS KMS keys with encrypted snapshots, enabling cross-account sharing and copying without re-encryption. This simplifies disaster recovery and backup workflows by eliminating the need to re-encrypt snapshots before sharing them.
+- **[IAM Identity Center now supports VPC endpoints and network access controls](https://aws.amazon.com/about-aws/whats-new/2026/11/iam-identity-center-vpc-endpoints/)** — AWS IAM Identity Center now supports interface VPC endpoints powered by AWS PrivateLink and network access controls, allowing sign-in and API traffic to be routed over the AWS private network instead of public endpoints. This enables organizations to keep IAM Identity Center traffic private and restrict which networks can reach their identity services.
+- **[AWS announces Networking Flexible Cost Allocation for Amazon VPC](https://aws.amazon.com/about-aws/whats-new/2026/11/networking-flexible-cost-allocation/)** — Amazon VPC now supports Networking Flexible Cost Allocation (FCA), which breaks down shared networking costs—such as NAT gateway data processing and data transfer—by the individual resources that generate them. This eliminates the need for custom scripts and manual estimates previously required to allocate networking costs across teams in AWS Cost and Usage Reports.
+
 ## 2026-11-14 · Daily update
 
 - **[Amazon Route 53 now supports record set protection](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-route-53-record-set-protection/)** — Amazon Route 53 now offers record set protection, allowing DNS administrators to prevent accidental modifications to critical DNS records—such as zone apex records, MX records, and production endpoints—directly within a hosted zone. Changes to protected records are blocked until an authorized user removes the protection, eliminating the need to embed record-level conditions in every IAM policy.

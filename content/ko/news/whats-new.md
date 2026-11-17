@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-17 · 전일 업데이트
+
+- **[Amazon EBS 스냅샷에 추가 KMS 키 연결 지원](https://aws.amazon.com/about-aws/whats-new/2026/11/ebs-snapshots-associate-kms-keys/)** — Amazon EBS 스냅샷에 추가 AWS KMS 키를 연결할 수 있게 되어, 재암호화 없이 계정 간 암호화된 스냅샷 공유 및 복사가 가능해졌습니다. 이를 통해 재해 복구 및 백업 워크플로를 간소화할 수 있습니다.
+- **[IAM Identity Center, VPC 엔드포인트 및 네트워크 액세스 제어 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/11/iam-identity-center-vpc-endpoints/)** — AWS IAM Identity Center가 AWS PrivateLink 기반의 인터페이스 VPC 엔드포인트와 네트워크 액세스 제어를 지원하여, IAM Identity Center 트래픽을 AWS 프라이빗 네트워크로 라우팅하고 액세스 가능한 네트워크를 제한할 수 있게 되었습니다. 기존에는 모든 로그인 및 API 트래픽이 퍼블릭 엔드포인트를 통해야 했으나, 이번 출시로 보안 및 네트워크 격리 요구사항을 충족하기가 용이해졌습니다.
+- **[Amazon VPC를 위한 네트워킹 유연 비용 할당(FCA) 출시](https://aws.amazon.com/about-aws/whats-new/2026/11/networking-flexible-cost-allocation/)** — Amazon VPC에 네트워킹 유연 비용 할당(FCA) 기능이 추가되어, NAT 게이트웨이 데이터 처리 및 데이터 전송 등 공유 네트워킹 비용을 실제로 발생시킨 리소스별로 분리해 표시할 수 있게 되었습니다. 기존에는 AWS Cost and Usage Report에서 네트워킹 사용량이 단일 항목으로 표시되어 팀별 비용 배분에 수작업이 필요했으나, 이제 리소스 단위의 정확한 비용 파악이 가능해졌습니다.
+
 ## 2026-11-14 · 전일 업데이트
 
 - **[Amazon Route 53, 레코드 세트 보호 기능 지원 시작](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-route-53-record-set-protection/)** — Amazon Route 53에서 호스팅 영역 내 중요한 DNS 레코드를 실수로 변경하지 못하도록 막는 레코드 세트 보호 기능이 추가되었습니다. 이제 권한 있는 사용자가 보호를 해제하기 전까지 보호된 레코드에 대한 모든 변경이 차단되어, 기존에 IAM 정책에 레코드 수준 조건을 일일이 작성해야 했던 번거로움이 해소됩니다.

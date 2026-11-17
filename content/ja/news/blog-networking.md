@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-17 · 週次まとめ
+
+- **[AWS Transit Gateway および AWS Cloud WAN における 1:1 NAT の紹介](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-11-nat-on-aws-transit-gateway-and-aws-cloud-wan/)** — AWS Transit Gateway と AWS Cloud WAN に 1:1 NAT 機能が追加され、重複する IP アドレスを持つネットワーク間の接続問題を解決できるようになりました。リージョン内の Private NAT Gateway とのネイティブ統合により、ネットワークの再採番や別途 NAT ソリューションの導入なしに、各ネットワークへ一意の IP 範囲を割り当てられます。
+- **[Amazon VPC Lattice を使用した AWS 上のサードパーティ接続のための単方向エッジレイヤーの構築](https://aws.amazon.com/blogs/networking-and-content-delivery/building-a-unidirectional-edge-layer-for-third-party-connectivity-on-aws-with-amazon-vpc-lattice/)** — Amazon VPC Lattice と AWS PrivateLink を組み合わせることで、ルーティングされたネットワークパスを作成せずに、パートナーやベンダーなどの外部プラットフォームとインgressおよびイグレスの双方向サービス交換が可能になります。これにより、双方向ネットワーク接続による露出範囲の拡大を避けながら、安全なサードパーティ接続を実現できます。
+
 ## 2026-11-14 · 週次まとめ
 
 - **[AWS Cloud WAN Flow Logs によるグローバルトラフィックの監視](https://aws.amazon.com/blogs/networking-and-content-delivery/monitoring-global-traffic-with-aws-cloud-wan-flow-logs/)** — AWS Cloud WAN Flow Logs は、コアネットワーク・エッジ・アタッチメントの各スコープでグローバルネットワーク全体のフローレベルのトラフィックをキャプチャし、Amazon CloudWatch Logs・Amazon S3・Amazon Data Firehose へ発行できます。Amazon Athena と CloudWatch Logs Insights を使ってセグメント間・リージョン間のトラフィックやドロップを分析する方法を紹介しています。

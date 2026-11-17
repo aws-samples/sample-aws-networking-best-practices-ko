@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-17 · 週次まとめ
+
+- **[週刊 AWS – 2026/11/09 週](https://aws.amazon.com/jp/blogs/news/aws-weekly-20261109/)** — 今週の AWS アップデートでは、AWS Network Firewall による次世代ファイアウォール (NGFW) ポリシーの発表や、AWS Network Security Manager が AWS European Sovereign Cloud を含む新たな 31 リージョンに対応したことが注目されます。その他にも、Amazon S3 Access Points for Amazon FSx の追加リージョン展開や AWS Secrets Manager のクロスアカウントレプリケーション対応など、幅広いサービスアップデートが含まれています。
+
 ## 2026-11-16 · 週次まとめ
 
 - **[AWS でのマルウェア解析: 安全な環境の構築](https://aws.amazon.com/jp/blogs/news/malware-analysis-on-aws-setting-up-a-secure-environment/)** — Amazon VPC によるネットワーク分離と送信トラフィックの遮断、IAM のアクセス許可の境界や SCP による権限昇格の防止、Amazon GuardDuty および AWS CloudTrail によるモニタリングを組み合わせた多層防御アプローチで、AWS 上に安全なマルウェア解析環境を構築する方法を解説しています。ネットワーキングの観点では、Amazon VPC を活用したネットワーク セグメンテーションと送信トラフィックの制御が重要なセキュリティ要素として取り上げられています。

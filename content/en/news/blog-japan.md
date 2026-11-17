@@ -8,6 +8,10 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-17 · Weekly summary
+
+- **[Weekly AWS – Week of November 9, 2026](https://aws.amazon.com/jp/blogs/news/aws-weekly-20261109/)** — This week's AWS roundup highlights the launch of next-generation firewall (NGFW) policies for AWS Network Firewall and the expansion of AWS Network Security Manager to the AWS European Sovereign Cloud and 31 additional regions. Other notable updates include Amazon S3 Access Points for Amazon FSx reaching more regions and AWS Secrets Manager gaining cross-account replication support.
+
 ## 2026-11-16 · Weekly summary
 
 - **[Malware Analysis on AWS: Building a Secure Environment](https://aws.amazon.com/jp/blogs/news/malware-analysis-on-aws-setting-up-a-secure-environment/)** — This post covers how to build a secure, compliance-ready environment for malware analysis on AWS, leveraging Amazon VPC network isolation and egress traffic blocking, IAM permission boundaries, SCPs, and monitoring via Amazon GuardDuty and AWS CloudTrail. From a networking perspective, VPC-based network segmentation and outbound traffic restriction are highlighted as critical defense layers.

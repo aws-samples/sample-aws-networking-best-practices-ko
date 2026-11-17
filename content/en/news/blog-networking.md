@@ -8,6 +8,11 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-17 · Weekly summary
+
+- **[Introducing 1:1 NAT on AWS Transit Gateway and AWS Cloud WAN](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-11-nat-on-aws-transit-gateway-and-aws-cloud-wan/)** — AWS Transit Gateway and AWS Cloud WAN now support 1:1 NAT, enabling connectivity between networks with overlapping IP address spaces. Through native Regional Private NAT Gateway integration, each network is assigned a unique IP range without requiring renumbering or a separate NAT solution.
+- **[Building a unidirectional edge layer for third-party connectivity on AWS with Amazon VPC Lattice](https://aws.amazon.com/blogs/networking-and-content-delivery/building-a-unidirectional-edge-layer-for-third-party-connectivity-on-aws-with-amazon-vpc-lattice/)** — By combining Amazon VPC Lattice and AWS PrivateLink, enterprises can exchange services with partners, vendors, and external platforms in both ingress and egress directions without establishing a routed network path. This approach enables secure third-party connectivity while avoiding the broader exposure that comes with bidirectional network connectivity.
+
 ## 2026-11-14 · Weekly summary
 
 - **[Monitoring global traffic with AWS Cloud WAN Flow Logs](https://aws.amazon.com/blogs/networking-and-content-delivery/monitoring-global-traffic-with-aws-cloud-wan-flow-logs/)** — AWS Cloud WAN Flow Logs capture flow-level traffic across your global network at the core network, edge, and attachment scopes, and can publish logs to Amazon CloudWatch Logs, Amazon S3, or Amazon Data Firehose. The post covers how to query and analyze cross-segment and cross-Region traffic and drops using Amazon Athena and CloudWatch Logs Insights.

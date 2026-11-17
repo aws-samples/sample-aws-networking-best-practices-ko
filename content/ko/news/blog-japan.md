@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-17 · 주간 요약
+
+- **[주간 AWS – 2026년 11월 9일 주](https://aws.amazon.com/jp/blogs/news/aws-weekly-20261109/)** — AWS Network Firewall의 차세대 방화벽(NGFW) 정책 발표, AWS Network Security Manager의 AWS European Sovereign Cloud 및 31개 신규 리전 지원 확대 등 네트워킹·보안 분야 업데이트가 포함된 주간 AWS 소식입니다. 그 외 Amazon S3 Access Points for Amazon FSx의 추가 리전 확장, AWS Secrets Manager의 계정 간 복제 지원 등 다양한 서비스 업데이트가 발표되었습니다.
+
 ## 2026-11-16 · 주간 요약
 
 - **[AWS에서의 악성코드 분석: 안전한 환경 구축](https://aws.amazon.com/jp/blogs/news/malware-analysis-on-aws-setting-up-a-secure-environment/)** — Amazon VPC 네트워크 격리, IAM 권한 경계, SCP를 활용한 권한 상승 방지, Amazon GuardDuty 및 AWS CloudTrail 모니터링 등 다층 방어 접근 방식을 통해 AWS에서 악성코드를 안전하게 분석할 수 있는 환경 구축 방법을 소개합니다. 네트워킹 관점에서는 Amazon VPC를 이용한 송신 트래픽 차단과 네트워크 세분화가 핵심 보안 요소로 다뤄집니다.
