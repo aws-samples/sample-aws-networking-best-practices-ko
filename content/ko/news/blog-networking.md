@@ -8,6 +8,13 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-19 · 주간 요약
+
+- **[새 Site-to-Site VPN 연결의 기본 암호화 알고리즘이 권장 설정으로 변경됩니다](https://aws.amazon.com/blogs/networking-and-content-delivery/new-site-to-site-vpn-connections-will-default-to-recommended-cryptography/)** — 2027년 3월 1일부터 새로 생성되는 AWS Site-to-Site VPN 연결은 IKEv2, AES256-GCM-16, SHA2-384, Diffie-Hellman 그룹 20 등 권장 암호화 알고리즘만 기본값으로 사용합니다. 기존 연결은 영향을 받지 않으며, 변경 전에 기존 터널을 감사하고 마이그레이션하는 방법을 안내합니다.
+- **[Amazon CloudFront Functions에서 네트워크 호출 기능 도입](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-network-calls-in-amazon-cloudfront-functions/)** — Amazon CloudFront Functions에서 외부 네트워크 호출이 가능해져, 엣지 위치에서 리디렉션·오리진 라우팅·헤더 수정 외에도 외부 데이터를 참조하는 비즈니스 로직을 낮은 지연 시간으로 실행할 수 있습니다. 이를 통해 CloudFront 엣지에서 처리할 수 있는 로직의 범위가 크게 확장됩니다.
+- **[Amazon Bedrock AgentCore를 위한 올바른 네트워크 아키텍처 선택](https://aws.amazon.com/blogs/networking-and-content-delivery/choosing-the-right-network-architecture-for-amazon-bedrock-agentcore/)** — 이 포스트는 Amazon Bedrock AgentCore에서 Amazon VPC 내 프라이빗 리소스에 접근하는 두 가지 옵션인 AgentCore 런타임 VPC 지원과 VPC Lattice를 활용한 AgentCore Gateway를 비교합니다. 액세스 패턴과 계정 구조에 따라 적합한 아키텍처를 선택하는 기준을 제시합니다.
+- **[AWS Cloud WAN 프라이빗 연결을 위한 Amazon Route 53 Global Resolver 하이브리드 DNS](https://aws.amazon.com/blogs/networking-and-content-delivery/hybrid-dns-with-amazon-route-53-global-resolver-for-private-connections-on-aws-cloud-wan/)** — Amazon Route 53 Global Resolver가 AWS Cloud WAN을 통해 온프레미스 및 지사 클라이언트에 프라이빗 애니캐스트 DNS 확인을 제공하며, 자동 멀티 리전 장애 조치, 세그먼트별 DNS 뷰, 중앙 집중식 쿼리 로깅을 사이트별 별도 구성 없이 지원합니다. 이를 통해 하이브리드 환경에서 복원력 있는 DNS 아키텍처를 간소화할 수 있습니다.
+
 ## 2026-11-17 · 주간 요약
 
 - **[AWS Transit Gateway 및 AWS Cloud WAN의 1:1 NAT 소개](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-11-nat-on-aws-transit-gateway-and-aws-cloud-wan/)** — AWS Transit Gateway와 AWS Cloud WAN에 1:1 NAT 기능이 추가되어, 중복 IP 주소를 가진 네트워크 간 연결 문제를 해결할 수 있습니다. 리전 내 Private NAT Gateway와의 네이티브 통합을 통해 네트워크 재번호 부여나 별도 NAT 솔루션 없이 각 네트워크에 고유한 IP 범위를 할당할 수 있습니다.

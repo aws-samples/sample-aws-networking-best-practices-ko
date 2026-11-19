@@ -8,6 +8,13 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-19 · 週次まとめ
+
+- **[新しい Site-to-Site VPN 接続のデフォルト暗号化アルゴリズムが推奨設定に変更されます](https://aws.amazon.com/blogs/networking-and-content-delivery/new-site-to-site-vpn-connections-will-default-to-recommended-cryptography/)** — 2027 年 3 月 1 日以降、新規に作成される AWS Site-to-Site VPN 接続は IKEv2、AES256-GCM-16、SHA2-384、Diffie-Hellman グループ 20 のみをデフォルトの暗号化アルゴリズムとして使用します。既存の接続への影響はなく、変更前に既存トンネルを監査・移行する方法も解説されています。
+- **[Amazon CloudFront Functions でネットワーク呼び出し機能が導入されました](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-network-calls-in-amazon-cloudfront-functions/)** — Amazon CloudFront Functions でネットワーク呼び出しがサポートされ、リダイレクトやオリジンルーティング、ヘッダー変更に加えて、外部データを参照するビジネスロジックを低レイテンシーでエッジ実行できるようになりました。これにより、CloudFront エッジで処理できるロジックの範囲が大幅に拡張されます。
+- **[Amazon Bedrock AgentCore に適したネットワークアーキテクチャの選択](https://aws.amazon.com/blogs/networking-and-content-delivery/choosing-the-right-network-architecture-for-amazon-bedrock-agentcore/)** — このポストでは、Amazon VPC 内のプライベートリソースへアクセスするための Amazon Bedrock AgentCore の 2 つのオプション、AgentCore ランタイム VPC サポートと VPC Lattice を活用した AgentCore Gateway を比較しています。アクセスパターンとアカウント構成に応じた適切なアーキテクチャ選択の指針を提供しています。
+- **[AWS Cloud WAN のプライベート接続向け Amazon Route 53 Global Resolver によるハイブリッド DNS](https://aws.amazon.com/blogs/networking-and-content-delivery/hybrid-dns-with-amazon-route-53-global-resolver-for-private-connections-on-aws-cloud-wan/)** — Amazon Route 53 Global Resolver が AWS Cloud WAN を通じてオンプレミスおよび支社クライアントにプライベートな Anycast DNS 解決を提供し、自動マルチリージョンフェイルオーバー、セグメントごとの DNS ビュー、中央集中式クエリロギングをサイトごとの設定なしでサポートします。これにより、ハイブリッド環境における復元力のある DNS アーキテクチャを簡素化できます。
+
 ## 2026-11-17 · 週次まとめ
 
 - **[AWS Transit Gateway および AWS Cloud WAN における 1:1 NAT の紹介](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-11-nat-on-aws-transit-gateway-and-aws-cloud-wan/)** — AWS Transit Gateway と AWS Cloud WAN に 1:1 NAT 機能が追加され、重複する IP アドレスを持つネットワーク間の接続問題を解決できるようになりました。リージョン内の Private NAT Gateway とのネイティブ統合により、ネットワークの再採番や別途 NAT ソリューションの導入なしに、各ネットワークへ一意の IP 範囲を割り当てられます。

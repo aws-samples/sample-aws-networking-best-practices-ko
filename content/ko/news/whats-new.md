@@ -8,6 +8,19 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-19 · 전일 업데이트
+
+- **[Amazon CloudFront 표준 로깅, CMCD 및 추가 로그 필드 지원](https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-standard-logging-cmcd-fields)** — Amazon CloudFront 표준 로깅이 기존에 실시간 로그에서만 제공되던 필드(CloudFront 서버 IP, 배포 식별자, 미디어 품질 신뢰도 점수, CMCD 등)를 추가 지원합니다. 별도의 실시간 로그 스트림 없이 Amazon S3, Amazon CloudWatch Logs, Amazon Data Firehose로 전송할 수 있어 로그 수집 구성이 간소화됩니다.
+- **[Amazon CloudFront, WebSocket 및 gRPC에 대한 오리진 상호 TLS 지원 발표](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudfront-origin-mtls-websockets-grpc/)** — Amazon CloudFront가 오리진 상호 TLS(mTLS) 인증을 WebSocket 및 gRPC 트래픽까지 확장 지원합니다. 이를 통해 채팅 플랫폼, 협업 편집 도구, 실시간 대시보드 등 지속적·양방향 연결이 필요한 애플리케이션을 미인증 요청으로부터 보호할 수 있습니다.
+- **[Amazon CloudFront Functions, 네트워크 호출 기능 지원](https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-functions-network-calls/)** — Amazon CloudFront Functions가 새로운 cf.fetch() 메서드를 통해 엣지에서 외부 API를 직접 호출하고 그 응답을 기반으로 요청을 처리할 수 있게 되었습니다. 기존에는 외부 데이터가 필요한 로직을 Lambda@Edge나 오리진으로 이전해야 했으나, 이제 엣지에서 개인화·인증·라우팅을 실시간으로 수행할 수 있습니다.
+- **[Amazon SageMaker HyperPod, EKS 오케스트레이션 클러스터에서 더 높은 파드 밀도 지원](https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-hyperpod-higher-pod-density/)** — Amazon SageMaker HyperPod가 EKS 오케스트레이션 클러스터에서 노드당 더 많은 파드를 실행할 수 있도록 지원하며, Amazon VPC CNI가 파드 증가에 따라 네트워크 용량을 자동으로 확장합니다. Karpenter 기반 오토스케일링도 높은 파드 용량을 지원하여 더 적은 인스턴스로 동일한 워크로드를 처리할 수 있습니다.
+- **[Cost Optimization Hub, 유휴 Amazon EC2 인스턴스 중지 기능 지원](https://aws.amazon.com/about-aws/whats-new/2026/11/cost-hub-stop-idle-ec2/)** — AWS Cost Optimization Hub에서 유휴 Amazon EC2 인스턴스를 콘솔을 벗어나지 않고 직접 중지할 수 있게 되었습니다. 기존에는 EC2 콘솔로 이동해 해당 인스턴스를 직접 찾아야 했으나, 이제 절감 기회 페이지에서 바로 중지 작업을 수행할 수 있습니다.
+- **[Amazon SageMaker HyperPod Inference, 분산 및 멀티 노드 추론을 위한 NVIDIA Dynamo 지원](https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-hyperpod-nvidia-dynamo/)** — Amazon SageMaker HyperPod Inference가 NVIDIA Dynamo를 지원하여 단일 인스턴스의 GPU 메모리를 초과하는 대형 모델의 멀티 노드 추론과 프리필·디코드 단계 분리를 가능하게 합니다. Inference Operator 애드온을 통해 HyperPod가 Dynamo를 직접 관리하므로 분산 서빙 인프라를 직접 구축·운영할 필요가 없습니다.
+- **[AWS Transform, AWS Outposts로의 마이그레이션 지원](https://aws.amazon.com/about-aws/whats-new/2026/11/aws-transform-outposts-migration/)** — AWS Transform이 AWS Outposts를 마이그레이션 대상으로 지원하여 온프레미스 환경, 다른 Outpost, 또는 다른 가용 영역·리전에서 Outposts로 워크로드를 이전할 수 있게 되었습니다. 저지연 요구사항으로 Outposts를 운영하는 고객도 AI 에이전트 기반의 자동화된 마이그레이션 워크플로를 활용할 수 있습니다.
+- **[AWS Transform, Well-Architected Agent 검토 기능 제공](https://aws.amazon.com/about-aws/whats-new/2026/11/transform-well-architected-agent/)** — AWS Transform 마이그레이션 서비스가 인프라를 AWS로 이전하는 과정에서 대상 네트워크에 대한 Well-Architected 검토를 자동으로 제공합니다. 보안, 안정성, 비용 최적화 원칙에 기반한 권고 사항이 배포 전 네트워크 설계에 직접 적용되어 배포 후 수정 비용을 줄일 수 있습니다.
+- **[AWS Transit Gateway, Gateway Load Balancer와의 네이티브 통합 지원](https://aws.amazon.com/about-aws/whats-new/2026/11/transit-gateway-gwlb-integration/)** — AWS Transit Gateway가 Gateway Load Balancer 유형의 네트워크 기능 어태치먼트를 지원하여 방화벽 등 보안 어플라이언스를 복잡한 VPC 구성 없이 트랜짓 게이트웨이에 연결할 수 있게 되었습니다. Transit Gateway가 선택한 가용 영역에 Gateway Load Balancer 엔드포인트를 자동으로 생성·관리하므로 전용 엔드포인트 서브넷과 라우팅 테이블을 별도로 구성할 필요가 없습니다.
+- **[AWS WAF, Bot Control 타겟 보호 온보딩 간소화 발표](https://aws.amazon.com/about-aws/whats-new/2026/11/aws-waf-bot-control-onboarding/)** — AWS WAF가 Bot Control의 타겟 검사 수준에 대한 간소화된 콘솔 경험을 제공하며, 단일 설정으로 Amazon CloudFront 배포에 AWS 권장 구성의 타겟 봇 보호를 적용할 수 있습니다. 봇 신뢰도 수준(높음·중간·낮음) 및 최신 탐지를 자동 유지하는 LATEST 버전이 추가되어 정교한 AI 기반 봇에 대한 보호를 강화합니다.
+
 ## 2026-11-18 · 전일 업데이트
 
 - **[Amazon EC2 C8gn 인스턴스, AWS 이스라엘(텔아비브) 리전에서 출시](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-c8gn/)** — AWS Graviton4 프로세서 기반의 Amazon EC2 C8gn 인스턴스가 AWS 이스라엘(텔아비브) 리전에서 제공됩니다. 최대 600 Gbps 네트워크 대역폭을 지원하며, 이전 세대 C7gn 대비 컴퓨팅 성능이 최대 30% 향상되었습니다.
