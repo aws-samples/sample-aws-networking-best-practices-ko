@@ -8,6 +8,15 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-20 · 週次まとめ
+
+- **[Network Load Balancer への mTLS サポートの導入](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-mtls-for-network-load-balancer/)** — Network Load Balancer が相互 TLS (mTLS) のオフロードをネイティブにサポートし、トラストストアのアタッチ、証明書失効リストの検証、CN・OU・SPIFFE ID によるクライアント証明書フィルタリングが可能になりました。アクセスログと Amazon CloudWatch メトリクスで接続状況を監視できます。
+- **[AWS Transit Gateway へのポリシーベースルーティングの導入](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-policy-based-routing-for-aws-transit-gateway/)** — AWS Transit Gateway のポリシーベースルーティング (PBR) は、送信元・宛先 IP、ポート、プロトコルからなる 5 タプルでトラフィックを分類し、それぞれ異なるルーティングテーブルへ転送します。参照アーキテクチャと 3 つのユースケースを通じて、きめ細かなルーティング制御の実現方法を解説しています。
+- **[AWS Network Firewall プロキシとネイティブ NAT Gateway 統合](https://aws.amazon.com/blogs/networking-and-content-delivery/aws-network-firewall-proxy-and-native-nat-gateway-integration/)** — AWS Network Firewall が明示的プロキシとして HTTP/HTTPS トラフィックをフィルタリングしつつ、その他のトラフィックはルーティングファイアウォールとして検査できるようになりました。また、重複・非重複の送信元 VPC からのアウトバウンドトラフィックを、Network Firewall が管理する NAT Gateway で一元的に処理できます。
+- **[Amazon Route 53 プライベートエンドポイントヘルスチェックによる高速フェイルオーバー](https://aws.amazon.com/blogs/networking-and-content-delivery/fast-failover-with-amazon-route-53-private-endpoint-health-checks/)** — Amazon Route 53 プライベートエンドポイントヘルスチェックにより、VPC 内のプライベートエンドポイントに対して、CloudWatch や Lambda のカスタムループなしにネイティブな高速 DNS フェイルオーバーが実現できます。プライベート環境向けの復元力パターンの設定手順も詳しく解説されています。
+- **[AWS Transit Gateway ファイアウォールポリシーへのリソースコンテキストの導入](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-resource-context-for-firewall-policies-with-aws-transit-gateway/)** — AWS Transit Gateway が VPC、サブネット、セキュリティグループ、アタッチメントなどの AWS リソースコンテキストをサードパーティファイアウォールと共有できるようになり、IP アドレスではなくリソースの構成に基づいたポリシー作成が可能になりました。Gateway Load Balancer ネットワーク関数アタッチメントの作成とコンテキスト共有の有効化手順も紹介されています。
+- **[AWS Cloud WAN と Amazon VPC Lattice による事業部門間の接続](https://aws.amazon.com/blogs/networking-and-content-delivery/connect-business-units-with-aws-cloud-wan-and-amazon-vpc-lattice/)** — 重複する IP レンジ、ファイアウォールルールの乱立、密結合なルーティングといった課題を抱える企業向けに、AWS Cloud WAN と Amazon VPC Lattice を組み合わせて子会社・事業部・買収組織間のワークロードを効率的に接続する方法を解説しています。異なる運用モデルに対応した 3 つの設計パターンが紹介されています。
+
 ## 2026-11-19 · 週次まとめ
 
 - **[新しい Site-to-Site VPN 接続のデフォルト暗号化アルゴリズムが推奨設定に変更されます](https://aws.amazon.com/blogs/networking-and-content-delivery/new-site-to-site-vpn-connections-will-default-to-recommended-cryptography/)** — 2027 年 3 月 1 日以降、新規に作成される AWS Site-to-Site VPN 接続は IKEv2、AES256-GCM-16、SHA2-384、Diffie-Hellman グループ 20 のみをデフォルトの暗号化アルゴリズムとして使用します。既存の接続への影響はなく、変更前に既存トンネルを監査・移行する方法も解説されています。
