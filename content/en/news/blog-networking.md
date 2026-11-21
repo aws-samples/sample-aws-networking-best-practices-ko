@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-21 · Weekly summary
+
+- **[Writing AWS WAF Policies for WebBotAuth Bots Registered with AWS Agent Registry](https://aws.amazon.com/blogs/networking-and-content-delivery/writing-aws-waf-policy-for-webbotauth-bots-registered-with-aws-agent-registry/)** — AWS WAF Bot Control labels WebBotAuth bots registered with AWS Agent Registry, enabling you to write Web ACL rules that allow, block, or rate-limit bots based on their verified outcome and registered identity.
+
 ## 2026-11-20 · Weekly summary
 
 - **[Introducing mTLS for Network Load Balancer](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-mtls-for-network-load-balancer/)** — Network Load Balancer now natively offloads mutual TLS (mTLS), enabling trust store attachment, certificate revocation list validation, and client certificate filtering by CN, OU, or SPIFFE ID. Connections can be monitored through access logs and Amazon CloudWatch metrics.

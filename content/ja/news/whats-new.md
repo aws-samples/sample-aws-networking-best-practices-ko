@@ -8,6 +8,18 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-21 · 前日のアップデート
+
+- **[AWS Network Firewall、自動化されたインターネットファイアウォールをパブリックプレビューで発表](https://aws.amazon.com/about-aws/whats-new/2026/11/network-firewall-automated-internet/)** — AWS Network Firewall が、インターネットゲートウェイに直接アタッチする自動化されたインターネットファイアウォール機能をパブリックプレビューで公開しました。ルーティングやアーキテクチャの変更なしに、すべての VPC のインバウンド・アウトバウンドトラフィックにセキュリティルールを中央集中式で適用でき、ネイティブ NAT 機能も提供されます。
+- **[AWS CloudFormation Service-Managed StackSets、ネストされたスタックをサポートするカスタム実行ロールを追加](https://aws.amazon.com/about-aws/whats-new/2026/11/stacksets-custom-execution-roles/)** — AWS CloudFormation StackSets が、サービス管理型スタックセットでカスタム実行ロールをサポートし、各ターゲットアカウントで使用する権限の範囲を細かく制御できるようになりました。これにより、ネストされたスタックやマクロ、トランスフォームを活用した再利用可能なテンプレートを、組織全体のアカウントおよびリージョンに一括デプロイできます。
+- **[Amazon ECS Action Logs、タスク・コンテナインスタンス・キャパシティプロバイダーまでカバー範囲を拡張](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ecs-action-logs-expanded-troubleshooting)** — Amazon ECS の Action Logs が、サービスデプロイに加えてタスク、コンテナインスタンス、クラスター、キャパシティプロバイダーまでカバー範囲を拡張しました。タイムスタンプ付きの詳細な記録により、タスクの失敗やスケーリングの問題を AWS サポートに問い合わせることなく自己診断・解決できます。
+- **[Amazon Route 53、アベイラビリティーゾーン (AZ) アフィニティルーティングをサポート](https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-affinity-routing/)** — Amazon Route 53 が AZ アフィニティルーティングをサポートし、VPC 内のクライアントからの DNS クエリを同じ AZ 内のリソースへ優先的に応答するようになりました。これにより、AZ 間トラフィックを削減して遅延時間を短縮し、アプリケーションのパフォーマンスを向上させることができます。
+- **[Amazon VPC IPAM ポリシー、自動化されたインターネットファイアウォールおよび AWS Lambda Web Functions・MicroVM をサポート](https://aws.amazon.com/about-aws/whats-new/2026/11/vpc-ipam-policies-firewall-lambda/)** — Amazon VPC IPAM ポリシーが AWS Network Firewall の自動化されたインターネットファイアウォールと AWS Lambda Web Functions・MicroVM をサポートし、BYOIP や Amazon 提供の連続 IPv4 ブロックなど特定の IPAM プールからパブリック IPv4 アドレスを中央集中式に割り当てられるようになりました。これにより、セキュリティ態勢の強化、ネットワーク運用の簡素化、および BYOIP 使用時のパブリック IPv4 コスト削減が期待できます。
+- **[コロンビア・ボゴタの新しい AWS Local Zone が一般提供開始](https://aws.amazon.com/about-aws/whats-new/2026/11/aws-local-zone-bogota-colombia/)** — AWS がコロンビアのボゴタに新しい Local Zone を一般提供開始し、リアルタイムゲームやライブ動画ストリーミング、医療画像処理、金融取引処理など、一桁ミリ秒の遅延時間を必要とするワークロードに対応します。AWS リージョンと同じ API およびツールを使用しながら、コンピューティング・ストレージ・ネットワーキングのインフラをボゴタ近郊のエンドユーザーに近い場所で提供します。
+- **[Amazon Route 53 プライベートホスティングゾーン、パブリック DNS フォールバックをサポート](https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-public-dns-fallback/)** — Amazon Route 53 のプライベートホスティングゾーンがパブリック DNS フォールバックをサポートし、ゾーン内に一致するレコードがないクエリに対して NXDOMAIN ではなくパブリック DNS の応答を返すようになりました。この機能は Advanced Hosted Zones の一部として提供され、パブリックゾーンのすべてのレコードをプライベートゾーンに複製する運用負担を軽減します。
+- **[Amazon VPC Lattice、VPC リソース向け CloudWatch メトリクスをサポート](https://aws.amazon.com/about-aws/whats-new/2026/11/vpc-lattice-cloudwatch-metrics/)** — Amazon VPC Lattice が VPC リソース向けの Amazon CloudWatch メトリクスの公開をサポートし、リソースの公급者と消費者の両方がデータベース・クラスター・オンプレミスエンドポイントへの TCP トラフィックをリアルタイムで確認できるようになりました。これまでは追加処理が必要なリソースアクセスログに依存していましたが、CloudWatch メトリクスによってより簡単に観測性を確保できます。
+- **[Amazon Route 53、Advanced Hosted Zones を提供開始](https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-offers-advanced-hosted-zones/)** — Amazon Route 53 が、変更ガードレール、レコードレベルの変更履歴、プライベートホスティングゾーンのパブリック DNS フォールバックなどの追加保護機能と観測性を提供する新しいホスティングゾーン階層「Advanced Hosted Zones」を発表しました。誤ったレコード削除や委任の削除によるドメイン障害を防ぎ、DNS 運用の復元力を高めます。
+
 ## 2026-11-20 · 前日のアップデート
 
 - **[Amazon CloudFront の SaaS Manager に IP ベースルーティングと接続ログを追加](https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-ip-based-routing-connection-logging)** — Amazon CloudFront SaaS Manager が IP アドレスベースのルーティングをサポートし、同一ワイルドカードドメイン配下で顧客の計層ごとに異なる設定を提供できるようになりました。また、接続ログにより視聴者接続の観測性も確保できます。

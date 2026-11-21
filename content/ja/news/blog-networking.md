@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-21 · 週次まとめ
+
+- **[AWS Agent Registry に登録された WebBotAuth ボット向け AWS WAF ポリシーの作成](https://aws.amazon.com/blogs/networking-and-content-delivery/writing-aws-waf-policy-for-webbotauth-bots-registered-with-aws-agent-registry/)** — AWS WAF Bot Control は AWS Agent Registry に登録された WebBotAuth ボットにラベルを付与し、検証済みの結果と登録済み ID に基づいてボットを許可・ブロック・レート制限する Web ACL ルールを作成できます。
+
 ## 2026-11-20 · 週次まとめ
 
 - **[Network Load Balancer への mTLS サポートの導入](https://aws.amazon.com/blogs/networking-and-content-delivery/introducing-mtls-for-network-load-balancer/)** — Network Load Balancer が相互 TLS (mTLS) のオフロードをネイティブにサポートし、トラストストアのアタッチ、証明書失効リストの検証、CN・OU・SPIFFE ID によるクライアント証明書フィルタリングが可能になりました。アクセスログと Amazon CloudWatch メトリクスで接続状況を監視できます。
