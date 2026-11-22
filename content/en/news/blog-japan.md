@@ -8,6 +8,10 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-22 · Weekly summary
+
+- **[Kiro Cloud Sessions Now Support Private Network Access](https://aws.amazon.com/jp/blogs/news/private-networks/)** — Kiro cloud sessions can now connect to administrator-configured VPCs, enabling access to resources within private networks that were previously unreachable. This extends cloud session connectivity beyond the public internet to internal network resources.
+
 ## 2026-11-17 · Weekly summary
 
 - **[Weekly AWS – Week of November 9, 2026](https://aws.amazon.com/jp/blogs/news/aws-weekly-20261109/)** — This week's AWS roundup highlights the launch of next-generation firewall (NGFW) policies for AWS Network Firewall and the expansion of AWS Network Security Manager to the AWS European Sovereign Cloud and 31 additional regions. Other notable updates include Amazon S3 Access Points for Amazon FSx reaching more regions and AWS Secrets Manager gaining cross-account replication support.

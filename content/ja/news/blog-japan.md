@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-22 · 週次まとめ
+
+- **[Kiro のクラウドセッションからプライベートネットワークにアクセスできるようになりました](https://aws.amazon.com/jp/blogs/news/private-networks/)** — Kiro のクラウドセッションが管理者の設定した VPC に接続できるようになり、これまでアクセスできなかったプライベートネットワーク内のリソースへのアクセスが可能になりました。パブリックインターネットに加え、内部ネットワークリソースにもクラウドセッションから直接アクセスできます。
+
 ## 2026-11-17 · 週次まとめ
 
 - **[週刊 AWS – 2026/11/09 週](https://aws.amazon.com/jp/blogs/news/aws-weekly-20261109/)** — 今週の AWS アップデートでは、AWS Network Firewall による次世代ファイアウォール (NGFW) ポリシーの発表や、AWS Network Security Manager が AWS European Sovereign Cloud を含む新たな 31 リージョンに対応したことが注目されます。その他にも、Amazon S3 Access Points for Amazon FSx の追加リージョン展開や AWS Secrets Manager のクロスアカウントレプリケーション対応など、幅広いサービスアップデートが含まれています。

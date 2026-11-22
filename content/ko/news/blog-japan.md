@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-22 · 주간 요약
+
+- **[Kiro 클라우드 세션에서 프라이빗 네트워크 액세스 지원](https://aws.amazon.com/jp/blogs/news/private-networks/)** — Kiro의 클라우드 세션이 관리자가 구성한 VPC에 연결할 수 있게 되어, 기존에는 불가능했던 프라이빗 네트워크 내 리소스 액세스가 가능해졌습니다. 이를 통해 퍼블릭 인터넷뿐만 아니라 내부 네트워크 리소스에도 클라우드 세션에서 직접 접근할 수 있습니다.
+
 ## 2026-11-17 · 주간 요약
 
 - **[주간 AWS – 2026년 11월 9일 주](https://aws.amazon.com/jp/blogs/news/aws-weekly-20261109/)** — AWS Network Firewall의 차세대 방화벽(NGFW) 정책 발표, AWS Network Security Manager의 AWS European Sovereign Cloud 및 31개 신규 리전 지원 확대 등 네트워킹·보안 분야 업데이트가 포함된 주간 AWS 소식입니다. 그 외 Amazon S3 Access Points for Amazon FSx의 추가 리전 확장, AWS Secrets Manager의 계정 간 복제 지원 등 다양한 서비스 업데이트가 발표되었습니다.
