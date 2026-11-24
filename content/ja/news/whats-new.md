@@ -8,6 +8,17 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-24 · 前日のアップデート
+
+- **[AWS WAF、Amazon Bedrock Guardrails を使用した LLM・MCP・A2A エンドポイントの自動検出と保護機能を発表](https://aws.amazon.com/about-aws/whats-new/2026/11/waf-ai-endpoint-discovery-protection/)** — AWS WAF が、Amazon API Gateway、Application Load Balancer、Amazon CloudFront の背後にある LLM、MCP、A2A エンドポイントを自動検出し、Amazon Bedrock Guardrails で保護する機能を一般提供開始しました。エージェントのデプロイやログ転送なしに、トラフィックログとサービス設定レコードから AI エンドポイントを自動識別し、AWS Organization 全体に保護を適用できます。
+- **[Amazon CloudFront が AWS European Sovereign Cloud で利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-european-sovereign-cloud)** — Amazon CloudFront が AWS European Sovereign Cloud で正式に利用可能となり、EU データ主権要件を持つ組織がコンテンツ配信、TLS 終端、ログおよび設定を EU 境界内に保ちながら CloudFront のパフォーマンスと保護を活用できるようになりました。これまでは EU 内にトラフィックを留めるために独自の配信・TLS 終端インフラを構築する必要がありました。
+- **[Amazon CloudFront、オリジンへの接続で HTTP/2 サポートを発表](https://aws.amazon.com/about-aws/whats-new/2026/01/amazon-cloudfront-http2-origins/)** — Amazon CloudFront がカスタムオリジンおよび VPC オリジンへの HTTP/2 接続をサポートし、より少ない接続と TLS ハンドシェイクで多数のリクエストを処理できるようになりました。AI エージェントによる MCP サーバーへの同時ツール呼び出しなど、トラフィックが急増するエージェント型ワークロードでのオリジン負荷を大幅に軽減します。
+- **[AWS Global Accelerator、TLS リスナーを持つ NLB に対するクライアント IP 保持をサポート](https://aws.amazon.com/about-aws/whats-new/2026/11/global-accelerator-client-ip-nlb-tls/)** — AWS Global Accelerator が TLS リスナーを使用する Network Load Balancer エンドポイントへのトラフィックに対してクライアント IP アドレスの保持をサポートし、NLB で TLS を終端しながらもアプリケーションで実際のクライアント IP を確認できるようになりました。これにより、セキュリティグループ、ジオブロッキング、レート制限、監査ログなどの保護制御を実際のクライアント IP に基づいて適用できます。
+- **[Amazon EC2 G7 インスタンスの metal サイズの提供開始を発表](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-g7-metal-size/)** — AWS が NVIDIA RTX PRO 4500 Blackwell Server Edition GPU を搭載した Amazon EC2 G7 インスタンスの metal サイズを一般提供開始しました。G6 比で最大 4.6 倍の AI 推論性能を提供し、ベアメタルインフラへの直接アクセスが必要な物理 AI シミュレーション、AI エージェントサンドボックス、グラフィクスワークロードに活用できます。
+- **[Amazon Aurora Serverless for MySQL、最大 384 ACU をサポート](https://aws.amazon.com/about-aws/whats-new/2026/11/aurora-serverless-mysql-supports-384-acu/)** — Amazon Aurora Serverless が Aurora MySQL 互換エディションで最大 384 ACU (Aurora Capacity Units) をサポートし、従来の最大値 256 ACU から 50% 増加しました。単一データベースが最大 768 GiB のメモリまでスケールアップでき、活動の急増と長いアイドル期間が繰り返されるエージェント型 AI アプリケーションに特に適しています。
+- **[AWS WAF を活用した API セキュリティの自動化機能が一般提供開始](https://aws.amazon.com/about-aws/whats-new/2026/11/api-security-with-waf/)** — AWS Organization 全体で Amazon API Gateway、Application Load Balancer、Amazon CloudFront の背後にあるすべての API を自動検出し、AWS WAF で保護する機能が一般提供開始されました。新しい API Gateway API Portal はトラフィックログとサービス設定レコードから API を自動識別し、ゾンビ API やシャドウ API を検出して各 API のセキュリティ状態を評価します。
+- **[Amazon SageMaker HyperPod、Amazon EKS オーケストレーションクラスター作成のためのコンソール体験を刷新](https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-hyperpod-console-eks/)** — Amazon SageMaker HyperPod が Amazon EKS オーケストレーションクラスターを作成するための AWS Management Console 体験を刷新し、ネットワーキング、インスタンスグループ、ストレージ、権限、復元力、観測性などをガイド付きワークフローで設定できるようになりました。必須設定とオプション設定を分離し、スマートデフォルトとワークロードプロファイルを提供することで、ML インフラ管理者のクラスター設定の負担を軽減します。
+
 ## 2026-11-21 · 前日のアップデート
 
 - **[AWS Network Firewall、自動化されたインターネットファイアウォールをパブリックプレビューで発表](https://aws.amazon.com/about-aws/whats-new/2026/11/network-firewall-automated-internet/)** — AWS Network Firewall が、インターネットゲートウェイに直接アタッチする自動化されたインターネットファイアウォール機能をパブリックプレビューで公開しました。ルーティングやアーキテクチャの変更なしに、すべての VPC のインバウンド・アウトバウンドトラフィックにセキュリティルールを中央集中式で適用でき、ネイティブ NAT 機能も提供されます。

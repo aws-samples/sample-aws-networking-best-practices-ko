@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-24 · 주간 요약
+
+- **[Amazon CloudFront가 Grand Theft Auto VI 출시를 지원한 방법](https://aws.amazon.com/blogs/networking-and-content-delivery/how-amazon-cloudfront-helped-deliver-grand-theft-auto-vi-to-players/)** — 2026년 11월 19일 자정, 13년 만에 출시된 Grand Theft Auto VI의 글로벌 배포를 Amazon CloudFront가 지원했습니다. 출시 후 18시간에 걸친 대규모 트래픽을 안정적으로 처리하며 전 세계 플레이어에게 게임을 전달한 사례를 소개합니다.
+
 ## 2026-11-21 · 주간 요약
 
 - **[AWS Agent Registry에 등록된 WebBotAuth 봇을 위한 AWS WAF 정책 작성](https://aws.amazon.com/blogs/networking-and-content-delivery/writing-aws-waf-policy-for-webbotauth-bots-registered-with-aws-agent-registry/)** — AWS WAF Bot Control은 AWS Agent Registry에 등록된 WebBotAuth 봇에 레이블을 부여하며, 이를 통해 검증된 신원과 등록된 ID를 기반으로 봇을 허용·차단·속도 제한하는 Web ACL 규칙을 작성할 수 있습니다.

@@ -8,6 +8,17 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-24 · 전일 업데이트
+
+- **[AWS WAF, Amazon Bedrock Guardrails를 활용한 LLM·MCP·A2A 엔드포인트 자동 탐지 및 보호 기능 발표](https://aws.amazon.com/about-aws/whats-new/2026/11/waf-ai-endpoint-discovery-protection/)** — AWS WAF가 Amazon API Gateway, Application Load Balancer, Amazon CloudFront 뒤에 위치한 LLM, MCP, A2A 엔드포인트를 자동으로 탐지하고 Amazon Bedrock Guardrails로 보호하는 기능을 정식 출시했습니다. 에이전트 배포나 로그 전달 없이 트래픽 로그와 서비스 구성 레코드에서 AI 엔드포인트를 자동 식별하여 AWS Organization 전체에 걸쳐 보안을 적용할 수 있습니다.
+- **[Amazon CloudFront, AWS European Sovereign Cloud에서 사용 가능](https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-european-sovereign-cloud)** — Amazon CloudFront가 AWS European Sovereign Cloud에서 정식 제공되어, EU 데이터 주권 요건을 가진 조직이 콘텐츠 전송, TLS 종료, 로그 및 구성을 EU 경계 내에서 유지하면서 CloudFront의 성능과 보안을 활용할 수 있게 되었습니다. 기존에는 EU 내 트래픽 유지를 위해 자체 전송 및 TLS 종료 인프라를 직접 구축해야 했습니다.
+- **[Amazon CloudFront, 오리진 연결에 HTTP/2 지원 발표](https://aws.amazon.com/about-aws/whats-new/2026/01/amazon-cloudfront-http2-origins/)** — Amazon CloudFront가 커스텀 오리진 및 VPC 오리진에 대한 HTTP/2 연결을 지원하여, 더 적은 연결과 TLS 핸드셰이크로 다수의 요청을 처리할 수 있게 되었습니다. 이를 통해 AI 에이전트의 MCP 서버 호출이나 모바일·웹 앱의 백엔드 API 호출 등 트래픽 급증 시 오리진 부하를 크게 줄일 수 있습니다.
+- **[AWS Global Accelerator, TLS 리스너가 있는 NLB에 대한 클라이언트 IP 보존 지원](https://aws.amazon.com/about-aws/whats-new/2026/11/global-accelerator-client-ip-nlb-tls/)** — AWS Global Accelerator가 TLS 리스너를 사용하는 Network Load Balancer(NLB) 엔드포인트에 대해 클라이언트 IP 주소 보존을 지원하여, NLB에서 TLS를 종료하면서도 애플리케이션에서 실제 클라이언트 IP를 확인할 수 있게 되었습니다. 이를 통해 실제 클라이언트 IP 기반의 보안 그룹, 지역 차단, 속도 제한, 감사 로깅 등의 보안 제어를 적용할 수 있습니다.
+- **[Amazon EC2 G7 인스턴스 metal 사이즈 출시 발표](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-g7-metal-size/)** — AWS가 NVIDIA RTX PRO 4500 Blackwell Server Edition GPU로 가속되는 Amazon EC2 G7 인스턴스의 metal 사이즈를 정식 출시했습니다. G7 metal 인스턴스는 베어 메탈 인프라에 직접 액세스가 필요한 물리적 AI 시뮬레이션, AI 에이전트 샌드박스, 그래픽 워크로드에 활용할 수 있으며, G6 대비 최대 4.6배의 AI 추론 성능을 제공합니다.
+- **[Amazon Aurora Serverless MySQL, 최대 384 ACU 지원](https://aws.amazon.com/about-aws/whats-new/2026/11/aurora-serverless-mysql-supports-384-acu/)** — Amazon Aurora Serverless가 Aurora MySQL 호환 에디션에서 최대 384 ACU(Aurora Capacity Units)를 지원하여 기존 최대치인 256 ACU 대비 50% 증가했으며, 단일 데이터베이스가 최대 768 GiB 메모리까지 확장 가능해졌습니다. 이는 활동 급증과 긴 유휴 구간이 반복되는 에이전트형 AI 애플리케이션에 특히 적합합니다.
+- **[AWS WAF를 활용한 API 보안 자동화 기능 정식 출시](https://aws.amazon.com/about-aws/whats-new/2026/11/api-security-with-waf/)** — AWS Organization 전체에서 Amazon API Gateway, Application Load Balancer, Amazon CloudFront 뒤에 위치한 모든 API를 자동으로 탐지하고 AWS WAF로 보호하는 기능이 정식 출시되었습니다. 새로운 API Gateway API Portal은 트래픽 로그와 서비스 구성 레코드에서 API를 자동 식별하고, 좀비·섀도우 API를 탐지하며 각 API의 보안 상태를 평가합니다.
+- **[Amazon SageMaker HyperPod, Amazon EKS 오케스트레이션 클러스터 생성을 위한 콘솔 경험 개선](https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-hyperpod-console-eks/)** — Amazon SageMaker HyperPod가 Amazon EKS 오케스트레이션 클러스터 생성을 위한 AWS Management Console 경험을 개선하여, 네트워킹·인스턴스 그룹·스토리지·권한·복원력·관측성 등의 설정을 단계별 워크플로로 구성할 수 있게 되었습니다. 필수 설정과 선택 설정을 분리하고 스마트 기본값 및 워크로드 프로파일을 제공하여 ML 인프라 관리자의 클러스터 설정 부담을 줄였습니다.
+
 ## 2026-11-21 · 전일 업데이트
 
 - **[AWS Network Firewall, 자동화된 인터넷 방화벽 퍼블릭 프리뷰 출시](https://aws.amazon.com/about-aws/whats-new/2026/11/network-firewall-automated-internet/)** — AWS Network Firewall이 인터넷 게이트웨이에 직접 연결되는 자동화된 인터넷 방화벽 기능을 퍼블릭 프리뷰로 공개했습니다. 라우팅 또는 아키텍처 변경 없이 모든 VPC의 인바운드·아웃바운드 트래픽에 보안 규칙을 중앙 집중식으로 적용할 수 있으며, 네이티브 NAT 기능도 함께 제공됩니다.

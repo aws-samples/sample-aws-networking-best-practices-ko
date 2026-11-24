@@ -8,6 +8,10 @@ Posts from the [AWS Networking & Content Delivery Blog](https://aws.amazon.com/b
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-24 · Weekly summary
+
+- **[How Amazon CloudFront Helped Deliver Grand Theft Auto VI to Players](https://aws.amazon.com/blogs/networking-and-content-delivery/how-amazon-cloudfront-helped-deliver-grand-theft-auto-vi-to-players/)** — Amazon CloudFront powered the global launch of Grand Theft Auto VI on November 19, 2026, handling massive traffic spikes over 18 hours as players worldwide downloaded the game after a 13-year wait. This case highlights CloudFront's ability to reliably deliver large-scale game content at launch.
+
 ## 2026-11-21 · Weekly summary
 
 - **[Writing AWS WAF Policies for WebBotAuth Bots Registered with AWS Agent Registry](https://aws.amazon.com/blogs/networking-and-content-delivery/writing-aws-waf-policy-for-webbotauth-bots-registered-with-aws-agent-registry/)** — AWS WAF Bot Control labels WebBotAuth bots registered with AWS Agent Registry, enabling you to write Web ACL rules that allow, block, or rate-limit bots based on their verified outcome and registered identity.
