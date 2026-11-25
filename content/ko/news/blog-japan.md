@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-25 · 주간 요약
+
+- **[주간 생성 AI with AWS – 2026년 11월 16일 주](https://aws.amazon.com/jp/blogs/news/weekly-genai-20261116/)** — 이번 주에는 Amazon Bedrock AgentCore를 활용한 로그 분석 에이전트 재구축 사례, 기존 코드에서 AI용 사양서를 생성하는 Reverse Spec Flow, Kiro for VS Code 정식 출시, 클라우드 세션의 VPC 연결 등 12편의 기사를 소개합니다. 서비스 업데이트로는 Amazon Bedrock의 OpenAI GPT-6.2 Astra/Sol 지원, AgentCore 웹 검색 5,000건 무료 제공, Amazon S3 Vectors 하이브리드 검색, Amazon Polly 음성 클론 등 27건과 Kiro 최신 changelog 9건이 정리되어 있습니다.
+
 ## 2026-11-22 · 주간 요약
 
 - **[Kiro 클라우드 세션에서 프라이빗 네트워크 액세스 지원](https://aws.amazon.com/jp/blogs/news/private-networks/)** — Kiro의 클라우드 세션이 관리자가 구성한 VPC에 연결할 수 있게 되어, 기존에는 불가능했던 프라이빗 네트워크 내 리소스 액세스가 가능해졌습니다. 이를 통해 퍼블릭 인터넷뿐만 아니라 내부 네트워크 리소스에도 클라우드 세션에서 직접 접근할 수 있습니다.

@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-25 · 前日のアップデート
+
+- **[Amazon API Gateway、API Portal の提供を発表](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-api-gateway-announces-api-portal/)** — Amazon API Gateway は、AWS 組織全体の API および AI エンドポイントを自動的に検出・管理・ドキュメント化する新機能 API Portal をリリースしました。インストールやログ転送、トラフィックの再ルーティングなしに、AWS 側のトラフィックログとサービス設定レコードを活用して継続的に最新のインベントリを維持します。
+
 ## 2026-11-24 · 前日のアップデート
 
 - **[AWS WAF、Amazon Bedrock Guardrails を使用した LLM・MCP・A2A エンドポイントの自動検出と保護機能を発表](https://aws.amazon.com/about-aws/whats-new/2026/11/waf-ai-endpoint-discovery-protection/)** — AWS WAF が、Amazon API Gateway、Application Load Balancer、Amazon CloudFront の背後にある LLM、MCP、A2A エンドポイントを自動検出し、Amazon Bedrock Guardrails で保護する機能を一般提供開始しました。エージェントのデプロイやログ転送なしに、トラフィックログとサービス設定レコードから AI エンドポイントを自動識別し、AWS Organization 全体に保護を適用できます。

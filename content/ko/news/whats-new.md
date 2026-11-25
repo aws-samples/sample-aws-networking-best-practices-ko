@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-25 · 전일 업데이트
+
+- **[Amazon API Gateway, API Portal 출시 발표](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-api-gateway-announces-api-portal/)** — Amazon API Gateway가 AWS 조직 전체의 API 및 AI 엔드포인트를 자동으로 검색·관리·문서화하는 신기능 API Portal을 출시했습니다. 별도 설치나 로그 전달 없이 AWS 트래픽 로그와 서비스 구성 레코드를 활용해 Amazon API Gateway, Application Load Balancer, Amazon CloudFront 뒤에 있는 API 인벤토리를 지속적으로 최신 상태로 유지합니다.
+
 ## 2026-11-24 · 전일 업데이트
 
 - **[AWS WAF, Amazon Bedrock Guardrails를 활용한 LLM·MCP·A2A 엔드포인트 자동 탐지 및 보호 기능 발표](https://aws.amazon.com/about-aws/whats-new/2026/11/waf-ai-endpoint-discovery-protection/)** — AWS WAF가 Amazon API Gateway, Application Load Balancer, Amazon CloudFront 뒤에 위치한 LLM, MCP, A2A 엔드포인트를 자동으로 탐지하고 Amazon Bedrock Guardrails로 보호하는 기능을 정식 출시했습니다. 에이전트 배포나 로그 전달 없이 트래픽 로그와 서비스 구성 레코드에서 AI 엔드포인트를 자동 식별하여 AWS Organization 전체에 걸쳐 보안을 적용할 수 있습니다.

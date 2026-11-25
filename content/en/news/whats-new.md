@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-25 · Daily update
+
+- **[Amazon API Gateway Announces API Portal](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-api-gateway-announces-api-portal/)** — Amazon API Gateway has launched API Portal, a new feature that automatically discovers, governs, and documents APIs and AI endpoints across Amazon API Gateway, Application Load Balancer, and Amazon CloudFront within an AWS organization. It builds a continuously updated inventory using AWS-side traffic logs and service configuration records, requiring no installation, log forwarding, or traffic rerouting.
+
 ## 2026-11-24 · Daily update
 
 - **[AWS WAF Announces Automated Discovery and Protection for LLM, MCP, and A2A Endpoints Using Amazon Bedrock Guardrails](https://aws.amazon.com/about-aws/whats-new/2026/11/waf-ai-endpoint-discovery-protection/)** — AWS WAF now generally supports automated discovery and protection of LLM, MCP, and A2A endpoints behind Amazon API Gateway, Application Load Balancers, and Amazon CloudFront across an AWS Organization using Amazon Bedrock Guardrails. The new API Gateway API Portal automatically identifies AI endpoints from traffic logs and service configuration records with no agents to deploy or logs to forward.

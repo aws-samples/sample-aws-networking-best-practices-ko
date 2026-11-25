@@ -8,6 +8,10 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-25 · Weekly summary
+
+- **[Weekly Generative AI with AWS – Week of November 16, 2026](https://aws.amazon.com/jp/blogs/news/weekly-genai-20261116/)** — This week's edition covers 12 articles including a case study by BTM Co. on rebuilding a log analysis agent with Amazon Bedrock AgentCore, Reverse Spec Flow for generating AI-ready specs from existing code, the general availability of Kiro for VS Code, and VPC connectivity for cloud sessions. Service updates include 27 items such as OpenAI GPT-6.2 Astra/Sol on Amazon Bedrock, 5,000 free web searches in AgentCore, hybrid search for Amazon S3 Vectors, and voice cloning in Amazon Polly, along with 9 Kiro changelog entries.
+
 ## 2026-11-22 · Weekly summary
 
 - **[Kiro Cloud Sessions Now Support Private Network Access](https://aws.amazon.com/jp/blogs/news/private-networks/)** — Kiro cloud sessions can now connect to administrator-configured VPCs, enabling access to resources within private networks that were previously unreachable. This extends cloud session connectivity beyond the public internet to internal network resources.
