@@ -30,9 +30,9 @@
 | --- | --- | --- | --- |
 | 온프레미스로의 프라이빗하고 예측 가능한 대역폭 | **AWS Direct Connect** — 1/10/100/400 Gbps 전용 회선, 파트너 호스팅 회선 50Mbps~10Gbps, 인터넷 대비 낮은 이그레스 요금 | 전용 포트는 최대 72시간 내 준비되지만, 프로비저닝 시 크로스 커넥트 또는 공급자/파트너 조율이 필요합니다. 최대 복원력을 위해 설계하거나(연결 2개 이상, 위치 2개 이상), 네트워크 공급자가 지원하는 경우 해당 설계를 사전 구성해 주는 **AWS Interconnect - last mile**을 사용하세요. | [하이브리드 및 멀티 클라우드](connectivity/hybrid-multicloud.md) |
 | 대기 시간 없이 온프레미스로의 암호화된 연결 | **AWS Site-to-Site VPN** — 인터넷 기반 IPsec, 몇 분 내 구성 가능, Large 터널당 최대 5 Gbps | 인터넷 기반이므로 지연 시간과 처리량을 예측하기 어렵습니다. 프로덕션 하이브리드 환경에서 Direct Connect를 대체할 수 없습니다. | [하이브리드 및 멀티 클라우드](connectivity/hybrid-multicloud.md) |
-| AWS와 다른 클라우드 공급자를 프라이빗하게 연결 | **AWS Interconnect** — 관리형 직접 클라우드 간 연결, 키 관리 불필요한 MACsec, Interconnect당 99.99% SLA, 몇 분 내 프로비저닝 | 링크 크기를 결정하기 전에 통신이 잦은 계층을 먼저 같은 위치에 배치하고 반복 읽기를 스테이징하세요. 클라우드 및 리전 쌍은 계속 확장되고 있으므로 [리전 가용성](https://docs.aws.amazon.com/interconnect/latest/userguide/region-availability.html)을 확인하세요. 지원되지 않는 쌍이 있어도 차단 요소가 되지 않습니다. 지원되는 쌍에 연결한 후 각 클라우드 내부에서 확장하면 되며, 지원되지 않는 클라우드에는 파트너 기반 Direct Connect를 사용하세요. 대역폭 및 거리 계층별 시간당 요금이 부과되며 GB당 요금은 없지만, 먼 거리의 Cloud WAN Core Network Edge는 계층을 높일 수 있습니다. | [하이브리드 및 멀티 클라우드](connectivity/hybrid-multicloud.md) |
+| AWS와 다른 클라우드 공급자를 프라이빗하게 연결 | **AWS Interconnect** — 관리형 직접 클라우드 간 연결, 키 관리 불필요한 MACsec, Interconnect당 99.99% SLA, 몇 분 내 프로비저닝 | 링크 크기를 결정하기 전에 통신이 잦은 계층을 먼저 같은 위치에 배치하고 반복 읽기를 스테이징하세요. 클라우드 및 리전 쌍은 계속 확장되고 있으므로 [리전 가용성](https://docs.aws.amazon.com/interconnect/latest/userguide/region-availability.html)을 확인하세요. 지원되지 않는 쌍이 있어도 차단 요소가 되지 않습니다. 지원되는 쌍에 연결한 후 각 클라우드 내부에서 확장하면 되며, 지원되지 않는 클라우드에는 파트너 기반 Direct Connect를 사용하세요. 대역폭 및 거리 계층에 따라 시간당 요금이 부과되며 GB당 요금은 없지만, 먼 거리의 Cloud WAN Core Network Edge는 계층을 높일 수 있습니다. | [하이브리드 및 멀티 클라우드](connectivity/hybrid-multicloud.md) |
 | 기존 SD-WAN을 AWS와 통합 | **Transit Gateway Connect 또는 Cloud WAN Tunnel-less Connect** — BGP를 사용하는 GRE/터널리스 어태치먼트 | 트랜짓 VPC에 SD-WAN 가상 어플라이언스가 필요합니다(또는 TGW Connect의 경우 DX 언더레이를 사용하는 온프레미스 환경). | [하이브리드 및 멀티 클라우드](connectivity/hybrid-multicloud.md) |
-| 원격 사용자에게 애플리케이션 액세스 제공 | **AWS Verified Access**(권장) — 애플리케이션 계층에서의 제로 트러스트 요청별 인가, 웹 앱에 VPN 운영 불필요(비 HTTP 앱은 Verified Access Connectivity Client 사용) | 특정 애플리케이션에 대한 액세스가 아닌, VPC 내부에서 임의의 호스트, 포트, 비 TCP 프로토콜에 도달하기 위한 라우팅 가능한 IP 등 진정한 네트워크 계층 도달성이 필요한 경우에만 Client VPN을 사용하세요. | [원격 액세스](connectivity/remote-access.md) |
+| 원격 사용자에게 애플리케이션 액세스 제공 | **AWS Verified Access**(권장) — 애플리케이션 계층에서의 제로 트러스트 요청별 인가, 웹 앱에 VPN 운영 불필요(비 HTTP 앱은 Verified Access Connectivity Client 사용) | 특정 애플리케이션에 대한 액세스가 아닌, VPC 내부에서 임의의 호스트, 포트, 비 TCP 프로토콜에 접근하기 위한 라우팅 가능한 IP 등 진정한 네트워크 계층 도달성이 필요한 경우에만 Client VPN을 사용하세요. | [원격 액세스](connectivity/remote-access.md) |
 
 ## 네트워크 트래픽 보안 {#securing-network-traffic}
 
@@ -43,8 +43,8 @@
 | 인터넷 이그레스 또는 VPC 간 트래픽을 포함한 VPC 경계에서의 트래픽 검사(L3-L7) | **AWS Network Firewall** — 관리형 스테이트풀/스테이트리스 검사, Suricata IPS 규칙, 도메인 필터링 | 비용 고려 필요 — 엔드포인트 시간당 요금 + GB당 처리 요금 | [경계 제어](security/perimeter-inbound.md) |
 | 서드파티 방화벽 어플라이언스 삽입 | **Gateway Load Balancer** — GENEVE 캡슐화를 사용하여 서드파티 방화벽 어플라이언스에 대한 세션 선호도 유지, 투명한 삽입, 원본 헤더 보존 | 어플라이언스 플릿(패치, 스케일링, 라이선싱)을 직접 관리해야 하며, Network Firewall보다 운영 비용이 높음. 일부 벤더는 완전 관리형 GWLB 기반 솔루션 제공 | [경계 제어](security/perimeter-inbound.md) |
 | 워크로드가 승인되지 않은 도메인에 접근하는 것을 차단 | **Route 53 DNS Firewall** — DNS 확인 시점의 도메인 기반 필터링, 백만 쿼리당 수 센트 미만의 비용 | 하드코딩된 IP 또는 DNS-over-HTTPS로 우회 가능. 완전한 보호를 위해 Network Firewall과 함께 사용 | [아웃바운드 제어](security/outbound.md) |
-| 승인되지 않은 S3 버킷으로의 데이터 유출 방지 | S3 게이트웨이 엔드포인트의 **VPC 엔드포인트 정책** — 조직 소유 버킷으로만 액세스 제한 | 엔드포인트를 통한 S3 트래픽만 적용되며, 다른 유출 경로는 차단하지 않음 | [아웃바운드 제어](security/outbound.md) |
-| 가장 강력한 수준으로 워크로드 격리 | **별도의 AWS 계정** — 독립적인 IAM, 네트워크, 청구 경계. 무료이며 별도의 네트워킹 구성 불필요 | 계정 간 연결에는 명시적인 연결 설정 필요(Transit Gateway, Cloud WAN, VPC Lattice) | [네트워크 세분화](security/segmentation.md) |
+| 승인되지 않은 S3 버킷으로의 데이터 유출 방지 | S3 게이트웨이 엔드포인트의 **VPC 엔드포인트 정책** — 조직 소유 버킷으로만 액세스 제한 | 엔드포인트를 통한 S3 트래픽에만 적용되며, 다른 데이터 유출 경로는 차단하지 않음 | [아웃바운드 제어](security/outbound.md) |
+| 가장 강력한 수준의 워크로드 격리 | **별도의 AWS 계정** — 독립적인 IAM, 네트워크, 청구 경계. 무료이며 별도의 네트워킹 구성 불필요 | 계정 간 연결에는 명시적인 연결 설정 필요(Transit Gateway, Cloud WAN, VPC Lattice) | [네트워크 세분화](security/segmentation.md) |
 | 마이크로서비스 간 ID 기반 액세스 적용 | **VPC Lattice 인증 정책** — IAM SigV4 서명, 요청별 평가, 네트워크 위치와 무관 | 소비자가 SigV4로 요청에 서명해야 함. 서명 도입 전에는 VPC/경로 기반 조건으로 시작 가능 | [네트워크 세분화](security/segmentation.md) |
 
 ## 모니터링 및 문제 해결 {#monitoring-and-troubleshooting}
@@ -52,14 +52,15 @@
 | 필요한 작업 | 권장 서비스 | 주요 트레이드오프 | 자세히 알아보기 |
 | --- | --- | --- | --- |
 | VPC 내 트래픽 흐름 확인 | **VPC Flow Logs** — VPC 수준에서 활성화, 40개 이상의 필드를 포함한 사용자 지정 형식, 비용 효율적인 Athena 쿼리를 위해 S3로 전송 | S3 전송: 가장 비용 효율적. CloudWatch Logs: 비용이 더 높지만 실시간 알림 가능 | [내부 트래픽](observability/internal-traffic.md) |
-| 조직 내 모든 VPC 간 트래픽 확인 | **Transit Gateway Flow Logs** — 네트워킹 계정의 단일 구성으로 모든 VPC 간 트래픽 포괄 | TGW를 통과하는 트래픽만 캡처하며, VPC 내부 트래픽은 VPC별 Flow Logs 필요 | [내부 트래픽](observability/internal-traffic.md) |
+| 조직 내 모든 VPC 간 트래픽 확인 | **Transit Gateway Flow Logs** 또는 **AWS Cloud WAN Flow Logs** — Transit Gateway 또는 코어 네트워크를 소유한 계정에서 단일 구성으로 해당 경로를 통과하는 모든 트래픽 포함 | Transit Gateway 또는 코어 네트워크를 통과하는 트래픽만 캡처하며, VPC 내부 트래픽은 VPC별 Flow Logs가 별도로 필요 | [내부 트래픽](observability/internal-traffic.md) |
 | 로드 밸런서 상태 및 성능 모니터링 | **CloudWatch 지표** — HealthyHostCount, TargetResponseTime, HTTPCode_ELB_5XX, RejectedConnectionCount | 지표는 집계된 값이므로, 요청별 조사에는 ALB/NLB 액세스 로그 활용 | [AWS 서비스 모니터링](observability/service-monitoring.md) |
-| VPN 터널 또는 DX 연결 중단 시 알림 수신 | 상태 변경 이벤트에 대한 **EventBridge 규칙** + TunnelState/ConnectionState에 대한 **CloudWatch 알람** | 두 터널 모두 중단(장애)이 아닌, 단일 터널 중단(이중화 손실) 시점에 알람 설정 | [알림](observability/notifications.md) |
-| AWS와 온프레미스 라우터 간 실제 교환 중인 프리픽스 확인 | **Direct Connect BGP 경로 가시성** — AS 경로, 커뮤니티 값, 설치 시간을 포함한 VIF별 수락 및 광고 경로를 콘솔, `ListVirtualInterfaceRoutes` 또는 CLI를 통해 확인 | VIF 범위의 특정 시점 뷰이며, 이후 Transit Gateway 또는 Cloud WAN의 경로 처리 내역은 표시되지 않음. `VirtualInterfaceBgpPrefixes*` 지표에 알람을 설정하여 확인 시점 파악 | [하이브리드 및 멀티 클라우드](connectivity/hybrid-multicloud.md) |
-| 이그레스 비용 및 목적지 파악 | **AWS Cost and Usage Reports**(리소스별 데이터 전송 항목) + **CloudWatch 지표**(BytesOutToDestination, ActiveConnectionCount) + **VPC Flow Logs**(목적지 IP, 흐름별 바이트) | CUR은 비용 귀속을 보여주지만 지연이 있으며, Flow Logs는 실시간 목적지 상세 정보를 제공하지만 비용 데이터는 없음 — 전체 파악을 위해 두 가지를 함께 활용 | [외부 트래픽](observability/external-traffic.md) |
-| EC2 인스턴스와 AWS 서비스 간 실시간 패킷 손실 및 지연 시간 측정 | **Network Flow Monitor** — 인스턴스에 설치된 경량 에이전트가 TCP 성능 통계를 보고하며, 대시보드에서 흐름별 패킷 손실, 지연 시간 및 귀속 정보 표시 | 각 인스턴스에 에이전트 설치 필요, TCP 기반 흐름만 지원 | [AWS 서비스 모니터링](observability/service-monitoring.md) |
-| 인터넷 연결 애플리케이션의 인터넷 성능 및 가용성 모니터링 | **Internet Monitor** — AWS 글로벌 네트워크 데이터를 활용하여 성능 기준선 설정, 상태 이벤트 표시 및 CloudFront 또는 대체 리전을 통한 라우팅 개선 제안 | AWS가 관측 가능한 트래픽 경로로 가시성이 제한되며, 온프레미스 커버리지 없음 | [AWS 서비스 모니터링](observability/service-monitoring.md) |
-| 온프레미스 목적지에 대한 하이브리드 연결의 지연 시간 및 패킷 손실 추적 | **Network Synthetic Monitor** — AWS 리소스에서 온프레미스 IP로의 완전 관리형 프로브, 에이전트 설치 불필요, 구성 가능한 임계값으로 상태 이벤트 알림 | AWS에서 온프레미스 방향만 측정하며, 프로브 소스에서 목적지 IP에 도달 가능해야 함 | [AWS 서비스 모니터링](observability/service-monitoring.md) |
+| VPN 터널 또는 DX 연결 중단 시 알림 수신 | 상태 변경 이벤트에 대한 **EventBridge 규칙** + TunnelState/ConnectionState에 대한 **CloudWatch 알람** | 두 터널 모두 중단(장애)이 아닌, 단일 터널 중단(이중화 손실) 시점에 알람 설정 권장 | [알림](observability/notifications.md) |
+| AWS와 온프레미스 라우터 간 실제 교환 중인 프리픽스 확인 | **Direct Connect BGP 경로 가시성** — AS 경로, 커뮤니티 값, 설치 시간을 포함한 VIF별 수락 및 광고 경로를 콘솔, `ListVirtualInterfaceRoutes` 또는 CLI를 통해 확인 | VIF 범위의 특정 시점 뷰이며, 이후 Transit Gateway 또는 Cloud WAN이 해당 경로를 어떻게 처리했는지는 표시되지 않음. `VirtualInterfaceBgpPrefixes*` 지표에 알람을 설정하여 확인 시점 파악 | [하이브리드 및 멀티 클라우드](connectivity/hybrid-multicloud.md) |
+| 이그레스 비용 및 목적지 파악 | **AWS Cost and Usage Reports**(리소스별 데이터 전송 항목) + **CloudWatch 지표**(BytesOutToDestination, ActiveConnectionCount) + **VPC Flow Logs**(목적지 IP, 플로우별 바이트) | CUR은 비용 귀속을 보여주지만 지연이 있으며, Flow Logs는 실시간 목적지 상세 정보를 제공하지만 비용 데이터는 없음 — 전체 파악을 위해 두 가지를 함께 활용 | [외부 트래픽](observability/external-traffic.md) |
+| EC2 인스턴스와 AWS 서비스 간 실시간 패킷 손실 및 지연 시간 측정 | **Network Flow Monitor** — 인스턴스에 경량 에이전트를 설치하여 TCP 성능 통계 보고, 대시보드에서 플로우별 패킷 손실, 지연 시간 및 귀속 정보 확인 | 각 인스턴스에 에이전트 설치 필요, TCP 기반 플로우만 지원 | [네트워크 성능](observability/network-performance.md) |
+| 인터넷 연결 애플리케이션의 인터넷 성능 및 가용성 모니터링 | **Internet Monitor** — AWS 글로벌 네트워크 데이터를 활용하여 성능 기준선 설정, 상태 이벤트 표시 및 CloudFront 또는 대체 리전을 통한 라우팅 개선 제안 | AWS가 관측 가능한 트래픽 경로로 가시성이 제한되며, 온프레미스 커버리지 없음 | [네트워크 성능](observability/network-performance.md) |
+| 온프레미스 목적지에 대한 하이브리드 연결의 지연 시간 및 패킷 손실 추적 | **Network Synthetic Monitor** — AWS 리소스에서 온프레미스 IP로의 완전 관리형 프로브, 에이전트 설치 불필요, 구성 가능한 임계값으로 왕복 시간 및 패킷 손실 알람 | AWS에서 온프레미스 방향만 측정하며, 목적지 IP가 프로브 소스에서 도달 가능해야 함 | [네트워크 성능](observability/network-performance.md) |
+| Direct Connect 또는 리전 간 경로의 성능 저하가 AWS 네트워크로 인한 것인지 확인 | Network Synthetic Monitor의 **네트워크 상태 지표(NHI)**(Direct Connect, Transit Gateway 피어링, VPC 피어링, PrivateLink, EC2 퍼블릭 IP 경로) | NHI 100은 AWS 측 성능 저하가 관측되었음을 의미하며, NHI 0이 전체 경로가 정상임을 보장하지는 않음. Transit Gateway 피어링의 경우 피어링 연결까지의 경로만 포함. Network Flow Monitor도 NHI를 제공하지만, 에이전트가 실행 중인 인스턴스의 TCP 플로우에 한하며 다른 리전의 엣지까지만 측정하고 Direct Connect 경로는 지원하지 않음 | [네트워크 성능](observability/network-performance.md) |
 
 ## 로드 밸런서 선택 {#choosing-a-load-balancer}
 
@@ -67,6 +68,6 @@
 | --- | --- | --- | --- |
 | HTTP, HTTPS, gRPC | **ALB** | NLB (처리는 가능하나 애플리케이션 계층 가시성 없음) | ALB는 콘텐츠 기반 라우팅, TLS 종료, AWS WAF 통합, mTLS, 자동 대상 가중치(Automatic Target Weights)를 제공 |
 | TCP, UDP, TLS, QUIC (비HTTP) | **NLB** | ALB | NLB는 HTTP 디코딩 없이 트래픽을 전달하며, 클라이언트 IP를 보존하고 가용 영역별 정적 IP를 제공 |
-| 정적 IP와 HTTP 라우팅이 모두 필요한 경우 | **NLB + ALB를 대상으로 구성** | ALB 단독 | NLB가 정적 IP를 제공하고, ALB가 그 뒤에서 L7 라우팅을 처리 |
+| 정적 IP와 HTTP 라우팅이 모두 필요한 경우 | **NLB + ALB를 대상으로 구성** | ALB 단독 | NLB가 정적 IP를 제공하고, 그 뒤에서 ALB가 L7 라우팅을 처리 |
 | 서드파티 방화벽 삽입 | **GWLB** | Network Firewall | GWLB는 자체 어플라이언스 플릿에 사용하며, Network Firewall은 AWS 관리형 대안 |
 | VPC 간 서비스 간 통신 | **VPC Lattice** | ALB + PrivateLink | VPC Lattice는 로드 밸런서 관리 없이 VPC 간 연결, 인증, 가중치 기반 라우팅, 액세스 로그를 통합 제공 |

@@ -16,7 +16,7 @@
 
 ## 서비스별 핵심 지표 {#critical-metrics-by-service}
 
-모든 CloudWatch 지표에 알람을 설정할 필요는 없습니다. 아래 표는 실제 운영 문제를 나타내는 지표, 즉 첫 번째 프로덕션 워크로드가 서비스를 통해 라우팅되기 전부터 첫날부터 알람을 설정해야 하는 지표를 정리한 것입니다.
+모든 CloudWatch 지표에 알람을 설정할 필요는 없습니다. 아래 표는 실제 운영 문제를 나타내는 지표, 즉 첫 번째 프로덕션 워크로드가 서비스를 통해 라우팅되기 전부터 처음부터 알람을 설정해야 하는 지표를 정리한 것입니다.
 
 ### Transit Gateway {#transit-gateway}
 
@@ -24,7 +24,7 @@
 | --- | --- | --- |
 | `PacketDropCountBlackhole` | 트래픽이 목적지가 없는 경로로 전송되고 있습니다. 라우팅 테이블 항목이 누락되었거나 잘못 구성되었음을 나타냅니다. | 연속 2개 기간 동안 > 0 |
 | `PacketDropCountNoRoute` | 목적지에 일치하는 경로가 없습니다. 경로 전파 누락 또는 분리된 어태치먼트로 인해 자주 발생합니다. | 연속 2개 기간 동안 > 0 |
-| `PacketDropCountNoPolicy` | 트래픽이 정책 테이블과 연결된 어태치먼트에 도달했지만 일치하는 규칙이 없어 삭제되었습니다. 대부분 포괄(catch-all) 규칙이 누락된 경우입니다. | 연속 2개 기간 동안 > 0 |
+| `PacketDropCountNoPolicy` | 트래픽이 정책 테이블과 연결된 어태치먼트에 도달했지만 일치하는 규칙이 없어 삭제되었습니다. 대부분 포괄적인 catch-all 규칙이 누락된 경우입니다. | 연속 2개 기간 동안 > 0 |
 | `BytesIn` / `BytesOut` | 기준 처리량입니다. 갑작스러운 감소는 연결 손실을 나타내며, 지속적인 증가는 용량 계획이 필요함을 의미합니다. | 이상 탐지 밴드(표준 편차 2) |
 | `AttachmentCount` | 리전별 할당량(기본값 5,000)에 대한 어태치먼트 증가를 추적합니다. | 할당량의 80% 초과 |
 
@@ -32,9 +32,9 @@
 
 | 지표 | 중요한 이유 | 알람 조건 |
 | --- | --- | --- |
-| `ErrorPortAllocation` | NAT 게이트웨이가 단일 목적지에 대한 55,000개의 동시 연결을 모두 소진했습니다. 워크로드가 새 연결을 수립하지 못합니다. | 1개 기간 동안 > 0 |
+| `ErrorPortAllocation` | NAT 게이트웨이가 단일 목적지에 대한 55,000개의 동시 연결을 모두 소진했습니다. 워크로드가 새 연결을 맺지 못하게 됩니다. | 1개 기간 동안 > 0 |
 | `PacketsDropCount` | NAT 게이트웨이 처리 한계로 인해 패킷이 삭제되었습니다. 게이트웨이가 과부하 상태임을 나타냅니다. | 3개 기간 동안 지속적으로 > 0 |
-| `ActiveConnectionCount` | 연결 테이블 사용률을 추적합니다. 용량 계획 및 연결 누수 탐지에 유용합니다. | 이상 탐지 또는 예상 기준값의 80% 초과 |
+| `ActiveConnectionCount` | 연결 테이블 사용률을 추적합니다. 용량 계획 및 연결 누수 탐지에 유용합니다. | 이상 탐지 또는 예상 기준치의 80% 초과 |
 | `BytesOutToDestination` | 데이터 처리량은 비용과 직접적으로 연관됩니다. 예상치 못한 급증은 잘못 구성된 라우팅 또는 데이터 유출을 나타냅니다. | 이상 탐지 밴드 |
 | `ConnectionEstablishedCount` | 새 연결 속도입니다. 갑작스러운 급증은 스캐닝 또는 잘못 구성된 재시도 로직을 나타낼 수 있습니다. | 이상 탐지 밴드 |
 
@@ -44,10 +44,10 @@
 
 | 지표 | 중요한 이유 | 알람 조건 |
 | --- | --- | --- |
-| `ConnectionState` | 이진값: 물리적 연결이 활성 또는 비활성 상태입니다. 상태 변경은 광케이블 절단, 라우터 장애 또는 유지 관리 이벤트를 나타냅니다. | 1개 기간 동안 상태 != 1(활성) |
+| `ConnectionState` | 이진값: 물리적 연결이 활성 또는 비활성 상태입니다. 상태 변경은 광섬유 절단, 라우터 장애 또는 유지 관리 이벤트를 나타냅니다. | 1개 기간 동안 상태 != 1(활성) |
 | `VirtualInterfaceBgpStatus` | VIF별 BGP 세션 상태, 1은 활성 / 0은 비활성입니다. 물리적 연결이 활성 상태여도 BGP 세션이 비활성일 수 있으므로 `ConnectionState`와 구별됩니다. | 1개 기간 동안 != 1 |
-| `VirtualInterfaceBgpPrefixesAccepted` | VIF 할당량 대비 인바운드 프리픽스 사용량을 추적합니다. 할당량에 근접하면 BGP 세션 장애 위험이 있으며, 감소는 세션이 유지된 상태에서 경로가 철회되었음을 의미합니다. | VIF 할당량에 근접하거나, 기준값 이하로 감소하거나, 이상 탐지 밴드를 벗어나는 경우 |
-| `VirtualInterfaceBgpPrefixesAdvertised` | AWS가 피어에 알리는 프리픽스입니다. 감소는 분리된 어태치먼트 또는 제거된 VPC 연결과 같은 AWS 측 변경을 나타냅니다. | 기준값 이하로 감소하거나 이상 탐지 밴드를 벗어나는 경우 |
+| `VirtualInterfaceBgpPrefixesAccepted` | VIF 할당량 대비 인바운드 프리픽스 사용량을 추적합니다. 할당량에 근접하면 BGP 세션 장애 위험이 있으며, 감소는 세션이 유지된 상태에서 경로가 철회되었음을 의미합니다. | VIF 할당량에 근접하거나, 기준치 이하로 감소하거나, 이상 탐지 밴드를 벗어나는 경우 |
+| `VirtualInterfaceBgpPrefixesAdvertised` | AWS가 피어에 광고하는 프리픽스입니다. 감소는 분리된 어태치먼트 또는 제거된 VPC 연결과 같은 AWS 측 변경을 나타냅니다. | 기준치 이하로 감소하거나 이상 탐지 밴드를 벗어나는 경우 |
 | `VirtualInterfaceBpsEgress` / `VirtualInterfaceBpsIngress` | VIF별 처리량입니다. 하나의 VIF 경로가 장애 발생 시 트래픽이 어떻게 재분배되는지 예측하고, 동일한 ECMP 경로 간의 예상치 못한 불균형을 탐지하는 데 사용합니다. [장애 상태 용량 설계](../connectivity/hybrid-multicloud.md#size-capacity-for-the-failure-state)를 참고하세요. | 장애 후 예상 사용률이 설계 상한을 초과하거나, 동일 경로 간에 예상치 못한 불균형이 발생하는 경우 |
 | `ConnectionBpsEgress` / `ConnectionBpsIngress` | 집계된 연결 처리량입니다. 필요한 연결 또는 위치 장애 이후 남은 용량과 비교합니다. | 장애 후 예상 사용률이 설계 상한을 초과하는 경우 |
 | `ConnectionLightLevelTx` / `ConnectionLightLevelRx` | 광학 신호 강도입니다. 광 레벨 저하는 물리적 장애가 발생하기 전에 이를 예측합니다. | 광학 유형에 허용되는 dBm 범위를 벗어나는 경우 |
@@ -87,17 +87,17 @@
 | 지표 | 중요한 이유 | 알람 조건 |
 | --- | --- | --- |
 | `DroppedPackets` | 방화벽 규칙에 의해 명시적으로 삭제된 패킷입니다. 정상 운영에서는 예상되는 값이지만, 갑작스러운 급증은 공격 또는 합법적인 트래픽을 차단하는 규칙 잘못 구성을 나타냅니다. | 이상 탐지 밴드 |
-| `PassedPackets` | 통과가 허용된 패킷입니다. 갑자기 0으로 감소하면 트래픽이 방화벽에 도달하지 못하거나(라우팅 문제) 방화벽이 다운된 것입니다. | 2개 기간 동안 기준값 미만 |
+| `PassedPackets` | 통과가 허용된 패킷입니다. 갑자기 0으로 감소하면 트래픽이 방화벽에 도달하지 못하거나(라우팅 문제) 방화벽이 다운된 것입니다. | 2개 기간 동안 기준치 미만 |
 | `ReceivedPackets` | 방화벽에 유입되는 총 패킷 수입니다. 용량 계획의 기준값입니다. | 이상 탐지 밴드 |
-| `Packets` (규칙 그룹별) | 규칙 그룹별 히트 수입니다. 어떤 규칙이 활성 상태인지, 새 규칙이 예상대로 일치하는지 식별합니다. | 일치가 예상되는 규칙에서 히트가 0인 경우 모니터링 |
+| `Packets` (규칙 그룹별) | 규칙 그룹별 히트 수입니다. 어떤 규칙이 활성화되어 있는지, 새 규칙이 예상대로 일치하는지 파악합니다. | 일치가 예상되는 규칙에서 히트가 0인 경우 모니터링 |
 
 ### Route 53 Resolver {#route-53-resolver}
 
 | 지표 | 중요한 이유 | 알람 조건 |
 | --- | --- | --- |
 | `InboundQueryVolume` | 온프레미스 또는 피어링된 네트워크에서 도착하는 DNS 쿼리입니다. 급증은 DNS 증폭 또는 잘못 구성된 리졸버를 나타낼 수 있습니다. | 이상 탐지 밴드 |
-| `OutboundQueryVolume` | 온프레미스 또는 외부 리졸버로 전달되는 DNS 쿼리입니다. 감소는 전달 규칙 문제를 나타냅니다. | 3개 기간 동안 기준값 미만 |
-| `FirewallRuleGroupQueryVolume` | DNS 방화벽 규칙에 의해 평가된 쿼리입니다. DNS 계층 보안 적용을 추적합니다. | 예상 기준값 모니터링 |
+| `OutboundQueryVolume` | 온프레미스 또는 외부 리졸버로 전달되는 DNS 쿼리입니다. 감소는 전달 규칙 문제를 나타냅니다. | 3개 기간 동안 기준치 미만 |
+| `FirewallRuleGroupQueryVolume` | DNS 방화벽 규칙에 의해 평가된 쿼리입니다. DNS 계층 보안 적용을 추적합니다. | 예상 기준치 모니터링 |
 
 ### VPC Lattice {#vpc-lattice}
 
@@ -124,9 +124,9 @@ Direct Connect의 경우 `ConnectionState` 전환을 모니터링하고, VPN의 
 
 [복합 알람](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Composite_Alarm.html)은 AND/OR 논리로 여러 알람 상태를 결합합니다. 여러 신호가 문제를 확인할 때만 경고하도록 구성하세요.
 
-* Transit Gateway: `PacketDropCountBlackhole > 0` AND `BytesOut` 이상 감지(일시적인 라우팅 업데이트가 아닌 트래픽이 실제로 영향을 받는지 확인)
-* NAT 게이트웨이: `ErrorPortAllocation > 0` AND `ActiveConnectionCount`가 기준선 초과(포트 고갈이 모니터링 아티팩트가 아닌 실제 부하인지 확인)
-* 로드 밸런서: `UnHealthyHostCount > 0` AND `HealthyHostCount < 최솟값`(단일 대상 순환이 아닌 실제 용량 손실인지 확인)
+* Transit Gateway: `PacketDropCountBlackhole > 0` AND `BytesOut` 이상 감지(트래픽이 영향을 받고 있음을 확인, 일시적인 라우팅 업데이트가 아님)
+* NAT 게이트웨이: `ErrorPortAllocation > 0` AND `ActiveConnectionCount`가 기준선 초과(포트 고갈이 실제 부하임을 확인, 모니터링 아티팩트가 아님)
+* 로드 밸런서: `UnHealthyHostCount > 0` AND `HealthyHostCount < 최솟값`(단일 대상 순환이 아닌 실제 용량 손실 확인)
 
 ***핵심 인사이트:*** *복합 알람은 무시되는 모니터링 시스템과 실제로 조치가 취해지는 모니터링 시스템의 차이를 만듭니다. 조치가 필요 없는데 발생하는 모든 알람은 팀이 알람을 무시하도록 훈련시킵니다.*
 
@@ -140,7 +140,7 @@ Direct Connect의 경우 `ConnectionState` 전환을 모니터링하고, VPN의 
 
 이상 감지는 표준 알람과 동일한 비용이 들지만 트래픽 증가, 계절적 패턴, 기준선 변화에 자동으로 적응합니다. 대부분의 네트워킹 지표에는 표준 편차 2의 밴드 너비를 사용하세요. 실제 이상을 감지할 만큼 충분히 좁으면서도 정상적인 분산 중 오탐을 방지할 만큼 충분히 넓습니다.
 
-#### 할당량 한도에 도달하기 전에 모니터링 {#monitor-quotas-before-you-hit-them}
+#### 한도에 도달하기 전에 할당량 모니터링 {#monitor-quotas-before-you-hit-them}
 
 모든 네트워킹 서비스에는 할당량이 있습니다. 할당량에 자동으로 도달하면(새 VPN 연결 불가, 추가 Transit Gateway 어태치먼트 불가, NAT 게이트웨이 탄력적 IP 추가 불가) 서비스 문제처럼 보이지만 실제로는 용량 한도인 장애가 발생합니다.
 
@@ -157,9 +157,9 @@ Direct Connect의 경우 `ConnectionState` 전환을 모니터링하고, VPN의 
 | Network Load Balancer | 대상 그룹당 대상 수 |
 | AWS Network Firewall | 방화벽 정책당 규칙 그룹 수 |
 
-하이브리드 경로 수는 직접적인 할당량 지표가 없는 경우가 있어 추가적인 주의가 필요합니다. Direct Connect의 경우 각 VIF 및 `IpAddressFamily`에 대해 `VirtualInterfaceBgpPrefixesAccepted` 및 `VirtualInterfaceBgpPrefixesAdvertised`에 알람을 설정하세요. 인바운드 프리픽스 할당을 초과하면 VIF의 BGP 세션이 중단됩니다.
+하이브리드 경로 수는 직접적인 할당량 지표가 없는 경우가 있으므로 추가적인 주의가 필요합니다. Direct Connect의 경우 각 VIF 및 `IpAddressFamily`에 대해 `VirtualInterfaceBgpPrefixesAccepted` 및 `VirtualInterfaceBgpPrefixesAdvertised`에 알람을 설정하세요. 인바운드 프리픽스 할당을 초과하면 VIF의 BGP 세션이 중단됩니다.
 
-Transit Gateway의 경우 `SearchTransitGatewayRoutes`로 경로를 계산하세요. Cloud WAN의 경우 라우팅 정책이 적용되기 전의 라우팅 데이터베이스를 보고하는 `list-core-network-routing-information`을 사용하고, 수신 피어의 BGP 뷰에서 최종 광고를 확인하세요. 이러한 수치를 사용자 지정 지표로 게시하고 적용 가능한 한도의 80%에서 알람을 설정하세요.
+Transit Gateway의 경우 `SearchTransitGatewayRoutes`로 경로를 계산하세요. Cloud WAN의 경우 라우팅 정책이 적용되기 전의 라우팅 데이터베이스를 보고하는 `list-core-network-routing-information`을 사용하고, 수신 피어의 BGP 뷰에서 최종 광고를 확인하세요. 이러한 수치를 사용자 지정 지표로 게시하고 해당 한도의 80%에서 알람을 설정하세요.
 
 경로 용량이 한도에 근접하면 [라우팅 정책](../connectivity/within-aws.md#apply-routing-policies-at-network-boundaries), [계층적 주소 계획](../foundation/cidr.md#allocate-contiguously-for-route-summarization), 또는 별도의 [하이브리드 라우팅 도메인](../connectivity/within-aws.md#think-of-segments-as-routing-domains-not-environments)을 통해 줄이세요. 모든 한도에 대해 할당량 증가가 가능한 것은 아니므로, 알람은 아키텍처 변경을 위한 충분한 시간을 남겨두어야 합니다.
 
@@ -167,7 +167,7 @@ Transit Gateway의 경우 `SearchTransitGatewayRoutes`로 경로를 계산하세
 
 #### 중앙 집중식 모니터링 계정 배포 {#deploy-a-centralized-monitoring-account}
 
-멀티 계정 환경에서 네트워킹 리소스는 공유 서비스 계정, 워크로드 계정, 연결 계정에 분산되어 있습니다. 네트워킹 팀은 단일 통합 뷰가 필요합니다.
+멀티 계정 환경에서 네트워킹 리소스는 공유 서비스 계정, 워크로드 계정, 연결 계정에 분산되어 있습니다. 네트워킹 팀은 단일 창구가 필요합니다.
 
 [CloudWatch 계정 간 관측성](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html)을 사용하여 모든 소스 계정의 지표, 로그, 추적을 볼 수 있는 모니터링 계정을 지정하세요. 새 계정이 자동으로 등록되도록 AWS Organizations 수준에서 이를 구성하세요.
 
@@ -188,7 +188,7 @@ Transit Gateway의 경우 `SearchTransitGatewayRoutes`로 경로를 계산하세
 
 각 대시보드는 기본적으로 최근 3시간을 표시하고 추세 분석을 위해 1주일로 확대할 수 있어야 합니다.
 
-***핵심 인사이트:*** *대시보드는 AWS 계정이나 리전이 아닌 네트워킹 관심사(연결 상태, 용량, 보안)별로 구성하세요. 네트워킹 팀은 계정 경계가 아닌 경로와 서비스 관점에서 생각합니다.*
+***핵심 인사이트:*** *AWS 계정이나 리전이 아닌 네트워킹 관심사(연결 상태, 용량, 보안)별로 대시보드를 구성하세요. 네트워킹 팀은 계정 경계가 아닌 경로와 서비스 관점에서 생각합니다.*
 
 ### IPv6 모니터링 고려 사항 {#ipv6-monitoring-considerations}
 
@@ -197,8 +197,8 @@ Transit Gateway의 경우 `SearchTransitGatewayRoutes`로 경로를 계산하세
 여러 네트워킹 서비스는 IPv4와 IPv6 트래픽 경로 간에 다른 지표를 보고합니다. 듀얼 스택을 실행할 때는 다음을 고려하세요.
 
 * **ALB/NLB**: `IPv6ProcessedBytes` 및 `IPv6RequestCount`를 IPv4 대응 지표와 별도로 모니터링하세요. IPv4 트래픽이 지배적인 경우 IPv6 경로의 장애가 집계 지표에 나타나지 않을 수 있습니다.
-* **NAT 게이트웨이**: NAT64 지표(`BytesOutToDestination`은 IPv6-IPv4 변환용)는 표준 NAT와 다른 장애 모드를 추적합니다. 두 경로를 모두 모니터링하세요.
-* **VPC Lattice**: 듀얼 스택 서비스 네트워크는 IPv4와 IPv6 트래픽을 모두 전달합니다. IPv6 특정 라우팅 문제를 감지하려면 프로토콜별 오류율을 모니터링하세요.
+* **NAT 게이트웨이**: NAT64 지표(`BytesOutToDestination`, IPv6-IPv4 변환용)는 표준 NAT와 다른 장애 모드를 추적합니다. 두 경로를 모두 모니터링하세요.
+* **VPC Lattice**: 듀얼 스택 서비스 네트워크는 IPv4 및 IPv6 트래픽을 모두 전달합니다. IPv6 특정 라우팅 문제를 감지하려면 프로토콜별 오류율을 모니터링하세요.
 
 #### IPv6 특정 상태 확인 구성 {#configure-ipv6-specific-health-checks}
 
@@ -211,7 +211,7 @@ IPv6 상태 확인을 지원하는 서비스(ALB, NLB)의 경우 대상이 듀�
 CloudWatch는 알람당 월별 요금을 부과합니다. 모든 NAT 게이트웨이 또는 모든 Transit Gateway 어태치먼트에 대해 개별 알람을 생성하는 대신 [지표 수식](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html)을 사용하여 집계하세요.
 
 * 리전의 모든 NAT 게이트웨이에 걸쳐 `ErrorPortAllocation`을 합산하여 단일 알람으로 구성
-* 모든 대상 그룹의 총 대상 수 대비 `UnHealthyHostCount` 비율 계산
+* 모든 대상 그룹의 총 대상 수에 대한 `UnHealthyHostCount` 비율 계산
 * `PacketDropCountBlackhole + PacketDropCountNoRoute`를 단일 "라우팅 장애" 지표로 계산
 
 이렇게 하면 커버리지를 유지하면서 알람 수(및 비용)를 줄일 수 있습니다. 가장 중요한 개별 리소스(기본 Direct Connect 연결, 프로덕션 ALB)에 대해서만 리소스별 알람을 생성하세요.
@@ -237,7 +237,7 @@ CloudWatch는 알람당 월별 요금을 부과합니다. 모든 NAT 게이트�
 
 ### 자동화된 복구 {#automated-remediation}
 
-#### 자동화된 대응을 위한 EventBridge 사용 {#use-eventbridge-for-automated-response}
+#### 자동화된 응답을 위한 EventBridge 사용 {#use-eventbridge-for-automated-response}
 
 CloudWatch 알람은 상태를 전환합니다. [EventBridge](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html)는 이러한 전환을 캡처하여 자동화된 작업으로 라우팅합니다. 일반적인 네트워킹 복구 패턴은 다음과 같습니다.
 
@@ -259,7 +259,9 @@ CloudWatch 지표 외에도 능동적인 상태 확인은 엔드투엔드 경로
 * **Transit Gateway 경로 검증**: 스포크 VPC A의 Lambda가 Transit Gateway를 통해 스포크 VPC B의 알려진 엔드포인트로 요청을 전송합니다. 어태치먼트 상태뿐만 아니라 라우팅을 검증합니다.
 * **Direct Connect 경로 검증**: 온프레미스 프로브가 알려진 VPC 엔드포인트로 트래픽을 전송합니다. 물리적 연결 상태뿐만 아니라 BGP 라우팅을 포함한 전체 경로를 검증합니다.
 
-***핵심 인사이트:*** *CloudWatch 지표는 서비스가 정상임을 알려줍니다. 합성 상태 확인은 경로가 엔드투엔드로 작동하는지 알려줍니다. 둘 다 필요합니다. 라우팅이 손상된 정상 서비스도 여전히 장애를 의미합니다.*
+하이브리드 및 리전 간 경로의 경우 Network Synthetic Monitor는 사용자 지정 Lambda 코드 없이 관리형 프로브를 제공하고 AWS 네트워크에 대한 성능 저하를 귀속시키는 네트워크 상태 지표를 게시합니다. 사용자 지정 확인 대신 이를 사용해야 하는 경우는 [네트워크 성능 모니터링](network-performance.md)을 참조하세요.
+
+***핵심 인사이트:*** *CloudWatch 지표는 서비스가 정상임을 알려줍니다. 합성 상태 확인은 경로가 엔드투엔드로 작동함을 알려줍니다. 두 가지 모두 필요합니다. 라우팅이 손상된 정상 서비스도 여전히 장애를 의미합니다.*
 
 ## 서비스 모니터링과 다른 서비스 결합 {#combining-service-monitoring-with-other-services}
 
@@ -269,9 +271,10 @@ CloudWatch 지표 외에도 능동적인 상태 확인은 엔드투엔드 경로
 | **서비스 모니터링 + AWS CloudTrail** | 런타임 운영 지표 | API 수준의 감사 추적(누가 어떤 구성을 언제 변경했는지) |
 | **서비스 모니터링 + AWS Network Manager** | 서비스별 지표 알람 및 대시보드 | 글로벌 네트워크 전반의 토폴로지 시각화 및 경로 분석 |
 | **서비스 모니터링 + AWS Health Dashboard** | 리소스별 지표 및 알람 | AWS 측 서비스 이벤트, 유지 관리 알림 및 리전 이슈 |
-| **서비스 모니터링 + Amazon DevOps Guru** | 직접 정의한 명시적 알람 임계값 및 이상 범위 | 명시적으로 계측하지 않은 관련 리소스 전반에 걸친 ML 기반 이상 탐지 |
+| **서비스 모니터링 + Amazon DevOps Guru** | 사용자가 직접 정의한 명시적 알람 임계값 및 이상 범위 | 명시적으로 계측하지 않은 관련 리소스 전반에 걸친 ML 기반 이상 탐지 |
+| **서비스 모니터링 + Network Synthetic Monitor** | Transit Gateway 또는 Direct Connect 리소스의 장애를 파악하는 리소스 지표 | 경로 수준의 왕복 시간, 패킷 손실 및 AWS 측 귀인 분석(자세한 내용은 [네트워크 성능 모니터링](network-performance.md) 참조) |
 | **서비스 모니터링 + AWS Trusted Advisor** | 실시간 운영 상태 | 할당량 사용률, 보안 및 비용 최적화에 대한 주기적 점검 |
-| **서비스 모니터링 + 알림** | 지표 수집 및 알람 평가 | 알림 라우팅, 에스컬레이션 및 온콜 연동(자세한 내용은 [알림](notifications.md) 참조) |
+| **서비스 모니터링 + Notifications** | 지표 수집 및 알람 평가 | 알림 라우팅, 에스컬레이션 및 온콜 통합(자세한 내용은 [알림](notifications.md) 참조) |
 
 ## 문서 {#documentation}
 
@@ -289,7 +292,7 @@ CloudWatch 지표 외에도 능동적인 상태 확인은 엔드투엔드 경로
 
     ---
 
-    수동 임계값 조정 없이 변화하는 트래픽 패턴에 자동으로 적응하는 ML 기반 이상 탐지 알람을 구성합니다.
+    수동으로 임계값을 조정하지 않아도 변화하는 트래픽 패턴에 자동으로 적응하는 ML 기반 이상 탐지 알람을 구성합니다.
 
     [:octicons-arrow-right-24: 문서](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html)
 
@@ -331,6 +334,7 @@ CloudWatch 지표 외에도 능동적인 상태 확인은 엔드투엔드 경로
 
 * **[내부 트래픽 모니터링](internal-traffic.md)** — 네트워크를 통해 흐르는 트래픽을 파악하기 위한 VPC Flow Logs 및 트래픽 미러링을 다루며, 이 페이지의 서비스 상태 뷰를 보완합니다.
 * **[외부 트래픽 모니터링](external-traffic.md)** — CloudFront 및 엣지 서비스 지표를 포함하여 AWS와 인터넷 간의 트래픽 모니터링을 다룹니다.
+* **[네트워크 성능 모니터링](network-performance.md)** — Network Synthetic Monitor, Network Flow Monitor, Internet Monitor를 활용한 경로 수준의 성능 측정 및 원인 분석을 다루며, 서비스 지표만으로는 제공할 수 없는 정보를 보완합니다.
 * **[알림](notifications.md)** — 알림 라우팅, 에스컬레이션 정책, 인시던트 관리 도구와의 통합을 다룹니다. 서비스 모니터링이 신호를 생성하면, 알림이 이를 적절한 담당자에게 전달합니다.
 
 **다른 섹션과의 관계:**

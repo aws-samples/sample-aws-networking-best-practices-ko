@@ -146,6 +146,7 @@ plugins:
         - Internal Traffic: observability/internal-traffic.md
         - External Traffic: observability/external-traffic.md
         - AWS Services: observability/service-monitoring.md
+        - Network Performance: observability/network-performance.md
         - Notifications: observability/notifications.md
       - Changelog: changelog.md
       - Community:
@@ -251,6 +252,7 @@ nav:
   - 내부 트래픽: observability/internal-traffic.md
   - 외부 트래픽: observability/external-traffic.md
   - AWS 서비스: observability/service-monitoring.md
+  - 네트워크 성능: observability/network-performance.md
   - 알림: observability/notifications.md
 - 변경 로그: changelog.md
 - 커뮤니티:
