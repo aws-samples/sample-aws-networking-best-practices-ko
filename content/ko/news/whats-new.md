@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-26 · 전일 업데이트
+
+- **[Amazon EC2 M8g 인스턴스, 이스라엘(텔아비브) 리전 출시](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-m8g-instances-telaviv-region/)** — AWS Graviton4 프로세서 기반의 Amazon EC2 M8g 인스턴스가 이스라엘(텔아비브) 리전에서 사용 가능해졌습니다. 이 인스턴스는 Graviton3 기반 대비 최대 30% 향상된 성능을 제공하며, 애플리케이션 서버·마이크로서비스·게임 서버 등 범용 워크로드에 적합합니다.
+- **[AWS IoT Core, HTTP 규칙 액션에 전용 IPv6 주소 범위 지원 추가](https://aws.amazon.com/about-aws/whats-new/2026/11/aws-iot-core-dedicated-ipv6-ranges/)** — AWS IoT Core가 HTTP 규칙 액션을 통해 HTTPS 엔드포인트로 트래픽을 전송할 때 전용 IPv6 주소 범위를 사용하도록 업데이트되었습니다. 이를 통해 HTTPS 엔드포인트가 AWS IoT Core 발신 트래픽만 허용하고 나머지 공용 인터넷 트래픽을 차단하도록 구성할 수 있어 엔드포인트의 노출 범위를 줄일 수 있습니다.
+
 ## 2026-11-25 · 전일 업데이트
 
 - **[Amazon API Gateway, API Portal 출시 발표](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-api-gateway-announces-api-portal/)** — Amazon API Gateway가 AWS 조직 전체의 API 및 AI 엔드포인트를 자동으로 검색·관리·문서화하는 신기능 API Portal을 출시했습니다. 별도 설치나 로그 전달 없이 AWS 트래픽 로그와 서비스 구성 레코드를 활용해 Amazon API Gateway, Application Load Balancer, Amazon CloudFront 뒤에 있는 API 인벤토리를 지속적으로 최신 상태로 유지합니다.

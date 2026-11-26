@@ -8,6 +8,11 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-26 · Daily update
+
+- **[Amazon EC2 M8g Instances Now Available in Israel (Tel Aviv)](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-m8g-instances-telaviv-region/)** — Amazon EC2 M8g instances powered by AWS Graviton4 processors are now available in the Israel (Tel Aviv) region. They deliver up to 30% better performance than Graviton3-based instances and are suited for general-purpose workloads such as application servers, microservices, and gaming servers.
+- **[AWS IoT Core Now Uses Dedicated IPv6 Address Ranges for the HTTP Rule Action](https://aws.amazon.com/about-aws/whats-new/2026/11/aws-iot-core-dedicated-ipv6-ranges/)** — AWS IoT Core now sends traffic to HTTPS endpoints using a dedicated, published IPv6 address range for its HTTP rule action. This allows you to configure HTTPS endpoints to accept requests only from AWS IoT Core, reducing exposure to the public internet.
+
 ## 2026-11-25 · Daily update
 
 - **[Amazon API Gateway Announces API Portal](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-api-gateway-announces-api-portal/)** — Amazon API Gateway has launched API Portal, a new feature that automatically discovers, governs, and documents APIs and AI endpoints across Amazon API Gateway, Application Load Balancer, and Amazon CloudFront within an AWS organization. It builds a continuously updated inventory using AWS-side traffic logs and service configuration records, requiring no installation, log forwarding, or traffic rerouting.
