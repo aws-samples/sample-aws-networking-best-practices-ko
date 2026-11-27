@@ -114,6 +114,7 @@ plugins:
         Inc.
       nav:
       - Introduction: index.md
+      - Decision Framework: decision-framework.md
       - Decision Map: decisions.md
       - Foundation:
         - foundation/index.md
@@ -220,6 +221,7 @@ plugins:
         - AWS Japan ブログ: news/blog-japan.md
 nav:
 - HOME: index.md
+- 의사결정 프레임워크: decision-framework.md
 - 의사결정 맵: decisions.md
 - 기반:
   - foundation/index.md

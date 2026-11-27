@@ -3,18 +3,18 @@
 !!! info "사전 요구 사항"
     이 섹션은 [Amazon VPC](../foundation/vpc.md), [서브넷](../foundation/subnets.md), [인터넷 연결](../connectivity/internet.md), [경계 제어](perimeter-inbound.md)에 대한 이해를 전제로 합니다. AWS 네트워킹 기초가 처음이라면 해당 항목을 먼저 검토하세요.
 
-아웃바운드 제어는 워크로드가 인터넷에서 접근할 수 있는 대상과 트래픽이 환경을 떠나기 전에 어떻게 필터링되는지를 결정합니다. [인터넷 연결](../connectivity/internet.md) 페이지에서는 이그레스가 *어디서* 발생하는지(중앙 집중식 vs. 분산형, IPv4 vs. IPv6)에 대한 아키텍처 선택을 다룹니다. 이 페이지는 보안 관점에 집중합니다. 즉, *무엇*이 허용되는지, *어떻게* 이를 적용하는지, 그리고 이그레스에 대한 심층 방어가 인그레스만큼 중요한 *이유*를 설명합니다.
+아웃바운드 제어는 워크로드가 인터넷에서 접근할 수 있는 대상과 트래픽이 환경을 떠나기 전에 어떻게 필터링되는지를 결정합니다. [인터넷 연결](../connectivity/internet.md) 페이지에서는 이그레스가 *어디서* 발생하는지(중앙 집중식 vs. 분산형, IPv4 vs. IPv6)에 대한 아키텍처 선택을 다룹니다. 이 페이지는 보안 관점에 초점을 맞춥니다. 즉, *무엇*이 허용되는지, *어떻게* 이를 적용하는지, 그리고 이그레스에 대한 심층 방어가 인그레스만큼 중요한 *이유*를 설명합니다.
 
 핵심 원칙은 단순합니다. **아웃바운드는 기본 거부, 예외적으로 허용**입니다. 대부분의 프로덕션 워크로드는 소수의 잘 정의된 외부 대상, 즉 특정 AWS 서비스 엔드포인트, 일부 서드파티 API, OS 패키지 저장소에만 접근하면 됩니다. 그 외 모든 것은 불필요한 공격 표면입니다. 제한 없는 이그레스 경로는 데이터 유출, 명령 및 제어(C2) 콜백, 공급망 침해를 가능하게 하는 가장 일반적인 요인입니다. 아웃바운드 제어는 이러한 경로를 차단하기 위해 존재합니다.
 
-AWS는 이그레스 필터링을 위한 여러 계층을 제공하며, 각 계층은 스택의 서로 다른 수준에서 동작합니다. 올바른 접근 방식은 하나를 선택하는 것이 아니라, 한 제어에서 발생한 허점을 다음 계층이 포착할 수 있도록 계층화하는 것입니다.
+AWS는 이그레스 필터링을 위한 여러 계층을 제공하며, 각 계층은 스택의 서로 다른 수준에서 동작합니다. 올바른 접근 방식은 하나를 선택하는 것이 아니라, 한 제어에서 발생한 허점을 다음 계층이 잡아낼 수 있도록 계층화하는 것입니다.
 
 ![워크로드에서 보안 그룹, DNS Firewall, Network Firewall, NAT 게이트웨이를 거쳐 인터넷으로 이어지는 심층 방어 파이프라인을 보여주는 아웃바운드 제어 계층](../assets/security/outbound-layers.png)
 /// caption
 아웃바운드 제어 계층 — [Drawio 소스](../assets/security/outbound-layers.drawio)
 ///
 
-각 계층은 고유한 기능을 추가합니다. 보안 그룹은 인스턴스 수준에서 포트 및 프로토콜 제한을 적용하고, DNS Firewall은 연결이 시도되기 전에 승인되지 않은 도메인의 이름 확인을 차단하며, Network Firewall은 실제 트래픽에서 프로토콜 위반 및 알려진 악성 시그니처를 검사하고, 이그레스 경로(NAT 게이트웨이 또는 이그레스 전용 IGW)는 트래픽이 나가는 위치를 결정합니다. 이 계층들이 함께 파이프라인을 형성하여 각 계층이 이전 계층에서 포착하지 못한 것을 잡아냅니다.
+각 계층은 고유한 기능을 추가합니다. 보안 그룹은 인스턴스 수준에서 포트 및 프로토콜 제한을 적용하고, DNS Firewall은 연결이 시도되기 전에 승인되지 않은 도메인의 이름 확인을 차단하며, Network Firewall은 실제 트래픽에서 프로토콜 위반 및 알려진 악성 시그니처를 검사하고, 이그레스 경로(NAT 게이트웨이 또는 이그레스 전용 IGW)는 트래픽이 나가는 위치를 결정합니다. 이 계층들이 함께 파이프라인을 형성하여 각 계층이 이전 계층에서 잡아내지 못한 것을 처리합니다.
 
 ## 주요 기능 {#key-capabilities}
 
@@ -30,7 +30,7 @@ AWS는 이그레스 필터링을 위한 여러 계층을 제공하며, 각 계�
 
     ---
 
-    DNS 확인 계층에서의 도메인 기반 아웃바운드 필터링입니다. 도메인 이름으로 차단 또는 허용하여, 워크로드가 알려진 악성 또는 비인가 대상을 확인하지 못하도록 방지하는 가장 저렴하고 빠른 방법입니다. 계정 또는 조직 내 모든 VPC에 적용됩니다.
+    DNS 확인 계층에서의 도메인 기반 아웃바운드 필터링입니다. 도메인 이름으로 차단 또는 허용하며, 워크로드가 알려진 악성 또는 비인가 대상을 확인하지 못하도록 방지하는 가장 저렴하고 빠른 방법입니다. 계정 또는 조직 내 모든 VPC에 적용됩니다.
 
 *   :material-fire: **AWS Network Firewall (이그레스 규칙)**
 
@@ -66,35 +66,35 @@ AWS는 이그레스 필터링을 위한 여러 계층을 제공하며, 각 계�
 
 보안 그룹 아웃바운드 규칙은 기본 기준선입니다. 모든 ENI에 적용되고, 비용이 없으며, 트래픽이 인스턴스를 떠나기 전에 평가됩니다. 단, IP 주소와 포트를 기준으로 동작하며 도메인 이름은 지원하지 않습니다. CDN을 앞단에 둔 서비스와 동적 IP가 일반화된 환경에서는 IP 기반 필터링만으로는 아웃바운드 제어가 충분하지 않습니다.
 
-**보안 그룹이 차단하는 것**: 절대 사용해서는 안 되는 포트나 프로토콜에 접근하려는 워크로드(웹 서버에서의 SSH 아웃바운드, SMTP 아웃바운드, 임의의 고번호 포트 등). 또한 다른 보안 그룹의 인바운드 규칙과 결합하면 횡적 이동(lateral movement)을 제한합니다.
+**보안 그룹이 차단하는 것**: 절대 사용해서는 안 되는 포트나 프로토콜에 접근하려는 워크로드(예: 외부로 나가는 SSH, 웹 서버에서 나가는 SMTP, 임의의 고번호 포트). 또한 다른 보안 그룹의 인바운드 규칙과 결합하면 횡적 이동(lateral movement)도 제한할 수 있습니다.
 
-**보안 그룹이 놓치는 것**: 포트 443을 통해 C2 서버에 접근하는 침해된 워크로드 — 정상적인 HTTPS 트래픽과 동일한 포트를 사용합니다. 보안 그룹은 `api.legitimate-vendor.com`과 `evil-c2.attacker.com`이 각각 다른 IP로 해석되더라도 포트 443에서 이 둘을 구분할 수 없습니다.
+**보안 그룹이 놓치는 것**: 정상적인 HTTPS 트래픽과 동일한 포트 443을 사용하는 C2(Command & Control) 서버에 접근하는 침해된 워크로드. 보안 그룹은 `api.legitimate-vendor.com`과 `evil-c2.attacker.com`이 각각 다른 IP로 해석되더라도 포트 443을 통한 두 연결을 구분할 수 없습니다.
 
 ### 계층 2: Route 53 DNS Firewall (저비용, 높은 커버리지) {#layer-2-route-53-dns-firewall-low-cost-high-coverage}
 
-DNS Firewall은 해석(resolution) 계층에서 동작합니다. VPC의 Route 53 Resolver로 들어오는 DNS 쿼리를 가로채어 응답을 반환하기 전에 도메인 목록과 대조합니다. 도메인이 차단되면 워크로드는 연결할 IP 주소를 받지 못하므로, 연결이 시작되기 전에 차단됩니다.
+DNS Firewall은 해석(resolution) 계층에서 동작합니다. VPC의 Route 53 Resolver로 들어오는 DNS 쿼리를 가로채어 응답을 반환하기 전에 도메인 목록과 대조합니다. 도메인이 차단되면 워크로드는 연결할 IP 주소를 받지 못하므로, 연결 시도 자체가 시작되기 전에 차단됩니다.
 
 이는 비용 대비 가장 높은 가치를 제공하는 단일 이그레스 제어 수단입니다. DNS Firewall의 요금은 처리된 쿼리 수를 기준으로 책정되며(백만 쿼리당 수 센트 미만), 실제 트래픽을 검사하는 것보다 수십 배 저렴합니다. 공격자는 자신의 인프라에 도달하기 위해 DNS 해석이 필요하므로, 대부분의 데이터 유출 및 C2 패턴을 차단할 수 있습니다.
 
 **DNS Firewall이 차단하는 것**: 알려진 악성 도메인 해석, DNS 터널링(관리형 위협 인텔리전스 도메인 목록 활용), 허용 목록 모드 운영 시 목록에 없는 모든 도메인 해석.
 
-**DNS Firewall이 놓치는 것**: 하드코딩된 IP로의 트래픽(DNS 해석 불필요), VPC 리졸버를 우회하는 DNS-over-HTTPS, 그리고 유출 채널로 악용되는 정상 도메인(예: 정상적인 `s3.amazonaws.com` 엔드포인트를 통해 공격자가 제어하는 S3 버킷으로 데이터 업로드).
+**DNS Firewall이 놓치는 것**: 하드코딩된 IP로의 트래픽(DNS 해석 불필요), VPC 리졸버를 우회하는 DNS-over-HTTPS, 그리고 유출 채널로 악용되는 정상 도메인(예: 정상적인 `s3.amazonaws.com` 엔드포인트를 통해 공격자가 제어하는 S3 버킷으로 데이터를 업로드하는 경우).
 
 ***핵심 인사이트:*** *DNS Firewall은 모든 VPC에 가장 먼저 배포해야 할 이그레스 제어 수단입니다. 이그레스가 중앙 집중식이든 분산형이든 관계없이 동작하며, 가장 낮은 비용으로 가장 넓은 위협 표면을 커버합니다.*
 
 ### 계층 3: AWS Network Firewall (전체 검사) {#layer-3-aws-network-firewall-full-inspection}
 
-Network Firewall은 데이터 경로에 위치하여 실제 트래픽을 검사합니다. TLS ClientHello의 SNI 필드나 HTTP의 Host 헤더를 기반으로 도메인 이름을 필터링하고, Suricata 호환 IPS 시그니처를 적용하여 알려진 악성 패턴을 탐지하며, 프로토콜 준수 여부를 강제할 수 있습니다. 이 계층은 DNS Firewall이 놓치는 것을 차단합니다. 즉, 하드코딩된 IP 연결, 프로토콜 수준의 이상 징후, 패킷 스트림에서만 식별 가능한 트래픽 패턴이 이에 해당합니다.
+Network Firewall은 데이터 경로에 위치하여 실제 트래픽을 검사합니다. TLS ClientHello의 SNI 필드나 HTTP의 Host 헤더를 기반으로 도메인 이름을 필터링하고, Suricata 호환 IPS 시그니처를 적용하여 알려진 악성 패턴을 탐지하며, 프로토콜 준수 여부를 강제할 수 있습니다. 이 계층은 DNS Firewall이 놓치는 것들을 차단합니다. 즉, 하드코딩된 IP 연결, 프로토콜 수준의 이상 징후, 그리고 패킷 스트림에서만 식별 가능한 트래픽 패턴이 이에 해당합니다.
 
-**Network Firewall이 차단하는 것**: DNS 해석 없이 IP로 직접 연결하는 아웃바운드 연결, TLS를 통한 비인가 도메인(SNI 검사), SFTP 및 SSH 등 비TLS 프로토콜을 통한 비인가 도메인(해석된 IP 검증 및 해석된 도메인 규칙 활용), 프로토콜 위반, 알려진 익스플로잇 시그니처, 행동 기반 IPS 규칙에 매칭되는 트래픽.
+**Network Firewall이 차단하는 것**: DNS 해석 없이 IP로 직접 연결하는 아웃바운드 연결, TLS를 통한 비인가 도메인(SNI 검사 활용), SFTP·SSH 등 비TLS 프로토콜을 통한 비인가 도메인(해석된 IP 검증 및 해석된 도메인 규칙 활용), 프로토콜 위반, 알려진 익스플로잇 시그니처, 행동 기반 IPS 규칙에 매칭되는 트래픽.
 
-**Network Firewall의 비용**: 엔드포인트 시간당 요금과 GB당 트래픽 처리 요금이 부과됩니다. 테라바이트 규모의 아웃바운드 트래픽을 처리하는 중앙 집중식 이그레스 VPC에서는 Network Firewall 비용이 상당합니다. 이것이 DNS Firewall을 첫 번째 계층으로 두는 이유입니다. 비인가 목적지를 트래픽 발생 전에 차단함으로써 전체 검사가 필요한 트래픽 양을 줄입니다.
+**Network Firewall의 비용**: 엔드포인트 시간당 요금과 GB당 트래픽 처리 요금이 발생합니다. 테라바이트 규모의 아웃바운드 트래픽을 처리하는 중앙 집중식 이그레스 VPC에서는 Network Firewall 비용이 상당할 수 있습니다. 바로 이 때문에 DNS Firewall을 첫 번째 계층으로 두는 것이 중요합니다. 비인가 목적지를 트래픽 발생 전에 차단함으로써 전체 검사가 필요한 트래픽 양을 줄일 수 있습니다.
 
-**규칙이 적용되는 워크로드**: 규칙은 목적지뿐만 아니라 소스 워크로드 기준으로도 범위를 지정할 수 있습니다. Amazon ECS 및 Amazon EKS의 경우, 컨테이너 연결(container association)을 통해 규칙의 소스 IP 집합이 실행 중인 태스크 및 파드와 동기화되므로, 동일한 VPC를 공유하는 워크로드에 서로 다른 이그레스 정책을 적용할 수 있습니다([컨테이너 워크로드에 이그레스 규칙 범위 지정](#scope-egress-rules-to-container-workloads) 참조).
+**규칙이 적용되는 워크로드**: 규칙은 목적지뿐만 아니라 소스 워크로드 기준으로도 범위를 지정할 수 있습니다. Amazon ECS와 Amazon EKS의 경우, 컨테이너 연관 관계를 통해 규칙의 소스 IP 집합이 실행 중인 태스크 및 파드와 동기화되므로, 동일한 VPC를 공유하는 워크로드에 서로 다른 이그레스 정책을 적용할 수 있습니다([컨테이너 워크로드에 이그레스 규칙 범위 지정](#scope-egress-rules-to-container-workloads) 참조).
 
 ### 계층 4: VPC 엔드포인트 (경로 제거) {#layer-4-vpc-endpoints-path-elimination}
 
-VPC 엔드포인트는 트래픽을 필터링하는 것이 아니라, 이그레스 경로에서 트래픽 자체를 제거합니다. VPC 엔드포인트를 통해 S3, DynamoDB 및 기타 AWS 서비스로 향하는 트래픽은 NAT 게이트웨이를 거치지 않고, Network Firewall 이그레스 규칙에도 적용되지 않으며, AWS 네트워크를 벗어나지 않습니다. 이를 통해 비용이 절감되고(NAT 처리 요금 없음), 공격 표면이 줄어들며(인터셉트 가능한 인터넷 경로 없음), 검사 계층이 처리해야 할 트래픽 양도 감소합니다.
+VPC 엔드포인트는 트래픽을 필터링하는 것이 아니라, 이그레스 경로에서 트래픽 자체를 제거합니다. VPC 엔드포인트를 통해 S3, DynamoDB 및 기타 AWS 서비스로 향하는 트래픽은 NAT 게이트웨이를 거치지 않고, Network Firewall 이그레스 규칙에도 적용되지 않으며, AWS 네트워크를 벗어나지 않습니다. 이를 통해 비용이 절감되고(NAT 처리 요금 없음), 공격 표면이 줄어들며(가로챌 인터넷 경로 없음), 검사 계층이 처리해야 할 트래픽 양도 감소합니다.
 
 ***핵심 인사이트:*** *가장 안전한 아웃바운드 트래픽은 인터넷에 도달하지 않는 트래픽입니다. 이그레스 필터를 조정하기 전에, 워크로드가 사용하는 모든 AWS 서비스에 대해 VPC 엔드포인트를 먼저 배포하세요.*
 
@@ -106,15 +106,15 @@ VPC 엔드포인트는 트래픽을 필터링하는 것이 아니라, 이그레�
 
 IP 주소는 인터넷 목적지를 식별하는 데 불안정한 식별자입니다. CDN은 IP를 순환하고, SaaS 공급자는 테넌트 간에 IP를 공유하며, 클라우드 서비스는 동적 IP 풀을 사용합니다. IP 허용 목록은 지속적인 유지 관리가 필요하며, 공급자가 인프라를 변경하면 조용히 중단됩니다. 도메인 이름은 사람과 애플리케이션이 실제로 사용하는 안정적인 식별자입니다.
 
-DNS Firewall과 Network Firewall은 모두 도메인 기반 필터링을 지원합니다. DNS Firewall은 확인(resolution) 시점에 차단합니다(가장 저렴하고 빠름). Network Firewall은 TLS의 SNI 필드 또는 HTTP의 Host 헤더를 기준으로 매칭합니다(하드코딩된 IP 우회 시도를 포착). 두 가지를 함께 사용하세요. DNS Firewall을 기본 도메인 필터로, Network Firewall을 최종 적용 수단으로 활용합니다.
+DNS Firewall과 Network Firewall은 모두 도메인 기반 필터링을 지원합니다. DNS Firewall은 확인 시점에 차단합니다(가장 저렴하고 빠름). Network Firewall은 TLS의 SNI 필드 또는 HTTP의 Host 헤더를 기준으로 매칭합니다(하드코딩된 IP 우회 시도를 포착). 두 가지를 함께 사용하세요. DNS Firewall을 기본 도메인 필터로, Network Firewall을 최종 적용 수단으로 활용합니다.
 
-[확인된 IP 검증](https://docs.aws.amazon.com/network-firewall/latest/developerguide/route53-resolved-ip-validation.html)은 이 최종 수단을 강화합니다. Network Firewall은 각 연결의 목적지 IP가 VPC의 Route 53 Resolver에 의해 반환된 것인지 확인하여, SNI/Host 스푸핑에 대한 도메인 규칙을 강화합니다. SFTP, SSH 등 비 TLS 프로토콜에서 특정 도메인을 필터링하려면 확인된 도메인 규칙과 함께 사용하세요. 적용하기 전에 [경고 모드에서 확인된 IP 검증 롤아웃](#roll-out-resolved-ip-validation-in-alert-mode)을 먼저 확인하세요.
+[확인된 IP 검증](https://docs.aws.amazon.com/network-firewall/latest/developerguide/route53-resolved-ip-validation.html)은 이 최종 수단을 강화합니다. Network Firewall은 각 연결의 목적지 IP가 VPC의 Route 53 Resolver에 의해 반환되었는지 확인하여, SNI/Host 스푸핑에 대한 도메인 규칙을 강화합니다. SFTP, SSH 등 비 TLS 프로토콜에서 특정 도메인을 필터링하려면 확인된 도메인 규칙과 함께 사용하세요. 적용하기 전에 [경고 모드에서 확인된 IP 검증 롤아웃](#roll-out-resolved-ip-validation-in-alert-mode)을 참조하세요.
 
 | 필터링 방식 | 장점 | 단점 |
 | --- | --- | --- |
 | **IP 기반 (보안 그룹, NACL)** | 비용 없음, 항상 사용 가능, 추가 서비스 불필요 | IP가 변경되고, CDN이 IP를 공유하며, SaaS 목적지에 대해 유지 관리 불가 |
-| **DNS 기반 도메인 필터링 (DNS Firewall)** | 저비용, 연결 시작 전에 차단, 모든 프로토콜 지원 | 하드코딩된 IP, DNS-over-HTTPS, IP 리터럴 URL로 우회 가능 |
-| **데이터 경로 기반 도메인 필터링 (Network Firewall)** | IP 확인 방식에 관계없이 연결 포착; 확인된 IP 검증 및 확인된 도메인 규칙을 통해 비 TLS 프로토콜 지원 및 SNI 스푸핑에 대한 규칙 강화 | 검사 비용 추가, 암호화된 페이로드 불가시; 확인된 IP 검증에는 전용 DNS Firewall 규칙 그룹 및 영역 정렬 라우팅 필요 ([경고 모드에서 확인된 IP 검증 롤아웃](#roll-out-resolved-ip-validation-in-alert-mode) 참조) |
+| **DNS 기반 도메인 필터링 (DNS Firewall)** | 저비용, 연결 시작 전에 차단, 모든 프로토콜 적용 | 하드코딩된 IP, DNS-over-HTTPS, IP 리터럴 URL로 우회 가능 |
+| **데이터 경로 기반 도메인 필터링 (Network Firewall)** | IP 확인 방식에 관계없이 연결 포착; 확인된 IP 검증 및 확인된 도메인 규칙을 사용하면 비 TLS 프로토콜을 지원하고 SNI 스푸핑에 대한 규칙 강화 | 검사 비용 추가, 암호화된 페이로드 불가시; 확인된 IP 검증에는 전용 DNS Firewall 규칙 그룹과 영역 정렬 라우팅 필요 ([경고 모드에서 확인된 IP 검증 롤아웃](#roll-out-resolved-ip-validation-in-alert-mode) 참조) |
 | **명시적 프록시 (Network Firewall Proxy)** | 전체 요청 수준 가시성, URL 경로 필터링, 응답 검사 | 애플리케이션 구성 필요, 프리뷰 서비스, 높은 운영 복잡성 |
 
 #### 경고 모드에서 확인된 IP 검증 롤아웃 {#roll-out-resolved-ip-validation-in-alert-mode}
@@ -122,11 +122,11 @@ DNS Firewall과 Network Firewall은 모두 도메인 기반 필터링을 지원�
 적용 시, 확인된 IP 검증은 Route 53 Resolver가 반환하지 않은 IP 주소(합법적인 IP 포함)로의 연결을 차단합니다. 적용 전에 다음 사항을 확인하세요.
 
 * **전용 규칙 그룹** — 이 방화벽 뒤의 VPC에만 연결된 빈 DNS Firewall 규칙 그룹을 사용하세요. 연결된 VPC는 하나의 확인 풀을 공유하므로, 조직 전체 [Firewall Manager](#use-aws-firewall-manager-for-cross-account-dns-firewall-rules) 규칙 그룹은 방화벽이 허용하는 범위를 넓힙니다.
-* **경고 먼저** — `DnsUnresolvedFlows`가 안정될 때까지 `ALERT` 모드로 실행한 후(일반적으로 약 24시간, 클라이언트 DNS 캐시가 갱신되는 동안), `DROP` 또는 `REJECT`로 전환하세요.
-* **다른 곳에서 확인하는 클라이언트** — 커스텀 DNS 서버, DNS-over-HTTPS, 하드코딩된 IP는 검증에 실패합니다. 우회 또는 소스 범위를 통해 합법적인 경우를 제외하세요.
-* **가용 영역** — 방화벽 엔드포인트의 트래픽을 자체 영역에 유지하거나, Transit Gateway에 연결된 방화벽을 사용하세요. 확인된 도메인 규칙을 추가하기 전에 `DnsAzUnavailableFlows`가 0인지 확인하세요. 지원되지 않는 영역에서는 검사하는 모든 트래픽을 차단합니다.
+* **먼저 경고 모드로 실행** — `DnsUnresolvedFlows`가 안정될 때까지(일반적으로 약 24시간, 클라이언트 DNS 캐시가 갱신되는 동안) `ALERT` 모드로 실행한 후 `DROP` 또는 `REJECT`로 전환하세요.
+* **다른 곳에서 확인하는 클라이언트** — 커스텀 DNS 서버, DNS-over-HTTPS, 하드코딩된 IP는 검증에 실패합니다. 우회 또는 소스 범위를 사용하여 합법적인 경우를 제외하세요.
+* **가용 영역** — 방화벽 엔드포인트 트래픽을 자체 영역에 유지하거나, Transit Gateway에 연결된 방화벽을 사용하세요. 확인된 도메인 규칙을 추가하기 전에 `DnsAzUnavailableFlows`가 0인지 확인하세요. 지원되지 않는 영역에서는 검사하는 모든 트래픽을 차단합니다.
 
-이 기능은 추가 비용이 없으며, Network Firewall과 DNS Firewall을 모두 제공하는 상용 리전에서 사용 가능하고, IP 버전에 관계없이 작동합니다.
+이 기능은 추가 요금이 없으며, Network Firewall과 DNS Firewall을 모두 제공하는 상용 리전에서 사용 가능하고, IP 버전에 관계없이 작동합니다.
 
 #### 민감한 워크로드에는 DNS Firewall을 허용 목록 모드로 사용하세요 {#use-dns-firewall-in-allow-list-mode-for-sensitive-workloads}
 
@@ -134,33 +134,56 @@ DNS Firewall과 Network Firewall은 모두 도메인 기반 필터링을 지원�
 
 허용 목록 모드는 운영 부담이 더 큽니다. 새로운 외부 의존성이 생길 때마다 규칙 업데이트가 필요합니다. 하지만 전체 범주의 데이터 유출 위험을 제거합니다. 애플리케이션 팀이 변경 관리 시스템을 통해 도메인 추가를 요청할 수 있는 셀프 서비스 프로세스와 함께 사용하세요.
 
+#### 자동화된 허용 목록 규칙으로 허용 목록 구성하기 {#build-the-allow-list-with-an-automated-allowlist-rule}
+
+워크로드에 필요한 모든 도메인을 미리 알 수 없는 경우, DNS Firewall이 허용 목록의 첫 번째 버전을 구성하도록 하세요. [자동화된 허용 목록 규칙](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/firewall-advanced-automated-allowlists.html)은 `ALLOW` 액션을 가진 DNS Firewall Advanced 규칙입니다. DNS Firewall은 규칙 그룹이 연결된 모든 VPC(Amazon Route 53 Profiles(Profiles)를 통해 규칙 그룹을 사용하거나 Firewall Manager 또는 AWS Resource Access Manager(AWS RAM)를 통해 수신하는 VPC 포함)의 쿼리를 읽습니다. 1시간에서 1주일까지 선택한 조회 기간 동안 해당 VPC가 쿼리한 도메인을 관찰된 도메인으로 나열합니다. 이를 검토하고 원하는 도메인을 규칙의 도메인 목록에 추가합니다. 규칙은 모든 DNS 쿼리 유형에 적용되므로, 듀얼 스택 워크로드의 AAAA 쿼리도 관찰 목록에 포함되고 허용 목록의 적용을 받습니다(A 쿼리와 동일).
+
+이 규칙은 DNS Firewall Advanced 티어가 필요하며, DNS Firewall Advanced 규칙으로 [청구](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/firewall-advanced-automated-allowlists.html#firewall-advanced-automated-allowlists-pricing)됩니다([Amazon Route 53 요금](https://aws.amazon.com/route53/pricing/) 참조). AWS GovCloud(US) 또는 중국 리전에서는 [사용할 수 없습니다](https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-dns-firewall-auto-allowlists/). 사용할 수 없는 경우 수동으로 관리되는 허용 목록을 유지하고, 계획 전에 현재 리전 가용성을 확인하세요.
+
+우선순위 번호(낮을수록 먼저 실행)를 사용하여 규칙 그룹을 다음 순서로 구성하세요.
+
+1. 선택적으로, 알려진 위협을 차단하는 규칙. 관찰된 도메인을 승인해도 위협 차단을 재정의할 수 없도록 합니다. 동일한 규칙 그룹에서 자동화된 허용 목록 규칙보다 낮은 우선순위 번호를 부여하세요. 다른 규칙 그룹에 있는 경우, 해당 그룹을 자동화된 허용 목록 규칙 그룹보다 낮은 우선순위 번호로 VPC에 연결하세요.
+2. 자동화된 허용 목록 규칙.
+3. 자동화된 허용 목록 규칙보다 높은 우선순위 번호로, 와일드카드 `*`를 포함하는 도메인 목록을 사용하여 다른 모든 도메인을 차단하는 규칙.
+
+다음 사항을 염두에 두세요.
+
+* **전체 차단 규칙은 마지막에 추가하세요.** 이 규칙 없이는 아무것도 적용되지 않으며, 새로운 항목도 검토를 위해 플래그가 지정되지 않습니다. DNS Firewall은 규칙이 쿼리를 차단할 때만 도메인을 관찰 목록에 추가하며, 여기에는 다른 규칙 그룹의 위협 차단 규칙도 포함됩니다. 관찰된 도메인을 검토하고, 워크로드에 필요한 도메인을 추가하고 리디렉션 대상을 확인한 후 전체 차단 규칙을 추가하세요. 도메인 허용은 적용되기까지 약 1시간이 걸릴 수 있으므로, 목록이 완성되기 전에 추가된 전체 차단 규칙은 합법적인 트래픽을 차단합니다.
+* **조회 기간을 정상적인 활동을 포함하도록 설정하세요.** 규칙 생성 후에는 변경할 수 없으므로, 변경하려면 규칙을 삭제하고 다시 만들어야 합니다. 주간 배치 실행과 같은 주기적인 작업을 포함할 만큼 충분히 긴 기간을 선택하세요.
+* **규칙 생성 후 곧바로 관찰된 도메인을 검토하세요.** 조회 기간 동안 VPC가 계속 쿼리하고 어떤 규칙도 차단하지 않는 도메인은 약 하루 내에 `ALLOWED`로 이동합니다.
+* **시작 전에 Resolver 쿼리 로깅을 활성화하세요.** 관찰 목록에는 VPC가 쿼리한 이름이 표시되며, CNAME 대상과 같은 응답의 대상은 표시되지 않습니다. [쿼리 로그](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-query-logs.html)는 이를 찾을 수 있는 유일한 곳이며, 로깅 구성 후에 이루어진 쿼리만 포함합니다. 다른 계정의 VPC의 경우, 응답은 해당 VPC가 사용하는 쿼리 로깅 구성에 있습니다. 전체 차단 규칙을 추가하기 전에 로그를 확인하고 대상 또는 이를 포함하는 와일드카드 도메인을 추가하세요. 그렇지 않으면 해당 도메인에 대한 쿼리가 차단됩니다.
+* **VPC 또는 계정이 추가될 때 다시 검토하세요.** 첫 번째 관찰 목록은 규칙 생성 시 연결된 VPC만 반영합니다. 나중에 연결된 VPC는 조회 이력이 없으며, DNS Firewall은 연결 후 쿼리하는 도메인만 추가합니다. Firewall Manager는 새 VPC와 계정을 자동으로 연결하므로, 새 VPC가 목록에 없는 의존성을 가진 전체 차단 규칙에 진입할 수 있으며 해당 쿼리가 차단됩니다. 새 VPC 또는 계정이 정책 범위에 추가될 때마다 관찰된 도메인을 검토하세요.
+* **승인을 검토 단계로 처리하세요.** 규칙 그룹 소유자만 관찰된 도메인을 볼 수 있습니다. 공유 규칙 그룹의 경우, DNS Firewall은 모든 VPC의 트래픽을 합산하며 어떤 VPC 또는 계정이 도메인을 쿼리했는지 표시하지 않습니다. 멀티 계정 모델에서 중앙 팀은 어떤 워크로드가 필요한지 모른 채 도메인을 승인합니다. 승인은 모든 계정의 이그레스를 넓힐 수 있고, 거부는 단일 계정을 중단시킬 수 있습니다. 관찰된 도메인에는 다른 규칙이 차단한 도메인도 포함될 수 있습니다. 각 승인을 위의 허용 목록 모드에서 설명한 애플리케이션 팀 요청 프로세스와 연결하고, 각 도메인을 신중하게 승인하세요.
+* **목록의 복사본을 규칙 외부에 보관하세요.** 규칙을 삭제하면 도메인 목록도 삭제되며, 새 규칙은 새 목록으로 시작하고 이전 규칙의 관찰되거나 거부된 도메인은 없습니다. 새 규칙을 시드하는 유일한 방법은 생성 시 일회성 가져오기이며, 소스는 소유한 완성된 리전 도메인 목록이어야 합니다. 규칙 자체 목록, AWS 관리 도메인 목록, 또는 다른 자동화된 허용 목록은 사용할 수 없습니다. 승인된 도메인을 코드로 유지하려면 고객 소유 도메인 목록을 관리하고 각 승인을 해당 목록에 미러링하세요.
+* **규칙의 한도를 고려하여 계획하세요.** 규칙 그룹은 하나의 자동화된 허용 목록 규칙을 보유할 수 있으며, 규칙은 리전 단위입니다. 각 규칙은 상태(관찰됨, 허용됨, 거부됨)별로 제한된 수의 도메인을 유지합니다. 상태가 가득 차면 DNS Firewall은 도메인 추가를 중단하므로, 관찰 목록과 분석 뷰에서 워크로드가 여전히 쿼리하는 도메인이 누락될 수 있으며, 불완전한 목록으로 구성된 전체 차단 규칙이 이를 차단합니다. 전체 차단 규칙을 추가하기 전에 Resolver 쿼리 로그와 목록을 비교하세요. 규칙의 도메인 목록도 계정의 도메인 목록 및 도메인 할당량에 포함됩니다. 현재 [DNS Firewall 할당량](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-resolver-dns-firewall)을 참조하세요.
+
 #### 위협 인텔리전스를 위한 관리형 도메인 목록 배포 {#deploy-managed-domain-lists-for-threat-intelligence}
 
-AWS는 알려진 악성 코드 도메인, 봇넷 C2 인프라, 새로 관찰된 도메인을 포함하는 DNS Firewall용 [관리형 도메인 목록](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-dns-firewall-managed-domain-lists.html)을 제공합니다. 특정 워크로드에 허용 목록 모드를 함께 사용하는 경우에도, 모든 VPC에서 기본 차단 목록으로 이를 활성화하세요. 관리형 목록은 AWS 위협 인텔리전스에 의해 업데이트되며 팀의 유지 관리가 필요하지 않습니다.
+AWS는 알려진 악성 코드 도메인, 봇넷 C2 인프라, 새로 관찰된 도메인을 포함하는 DNS Firewall용 [관리형 도메인 목록](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-dns-firewall-managed-domain-lists.html)을 제공합니다. 특정 워크로드에 허용 목록 모드를 실행하는 경우에도, 모든 VPC에서 이를 기본 차단 목록으로 활성화하세요. 관리형 목록은 AWS 위협 인텔리전스에 의해 업데이트되며 팀의 유지 관리가 필요하지 않습니다.
 
 ### 워크로드 인식 이그레스 {#workload-aware-egress}
 
 #### 컨테이너 워크로드에 이그레스 규칙 범위 지정 {#scope-egress-rules-to-container-workloads}
 
-Amazon ECS 태스크 또는 Amazon EKS 파드가 실행되는 VPC에서, CIDR은 워크로드가 실행되는 위치는 알려주지만 어떤 워크로드가 전송하는지는 알 수 없습니다. 따라서 해당 CIDR에 대해 `api.payments.example.com`을 허용하는 규칙은 해당 CIDR의 모든 워크로드에 허용되며, 태스크와 파드 IP는 너무 빠르게 변경되어 정적 IP 세트로 고정할 수 없습니다. 컨테이너 연결(container association)은 이 격차를 해소합니다. 실행 중인 태스크와 파드를 스테이트풀 규칙이 매칭할 수 있는 동적 소스 IP 세트로 추적하므로, 규칙이 특정 워크로드와 목적지를 모두 지정할 수 있습니다. 결제 워크로드만 결제 공급자의 도메인에 접근할 수 있으며, VPC와 이그레스 경로를 다른 모든 것과 공유하더라도 마찬가지입니다.
+Amazon ECS 태스크 또는 Amazon EKS 파드가 실행되는 VPC에서 CIDR은 워크로드가 실행되는 위치를 알려주지만 어떤 워크로드가 전송하는지는 알 수 없습니다. 따라서 해당 CIDR에 대해 `api.payments.example.com`을 허용하는 규칙은 해당 CIDR의 모든 워크로드에 허용되며, 태스크와 파드 IP는 정적 IP 세트로 고정하기에는 너무 빠르게 변경됩니다. 컨테이너 연결은 이 격차를 해소합니다. 실행 중인 태스크와 파드를 스테이트풀 규칙이 매칭할 수 있는 동적 소스 IP 세트로 추적하므로, 규칙이 특정 워크로드와 목적지를 모두 지정할 수 있습니다. 결제 워크로드만 결제 공급자의 도메인에 도달할 수 있으며, VPC와 이그레스 경로를 다른 모든 것과 공유하더라도 마찬가지입니다.
 
-속성 필터를 사용하여 연결이 추적하는 워크로드를 선택합니다. Amazon EKS의 경우 Kubernetes 네임스페이스와 레이블, Amazon ECS의 경우 컨테이너 인스턴스 속성을 사용하며, 와일드카드는 관련 변형을 하나의 필터로 그룹화합니다(`app=payments-*`는 `payments-api`와 `payments-worker`를 포함). 광범위한 와일드카드는 이름이 우연히 일치하는 미래 워크로드도 포함하므로, 패턴을 좁게 유지하세요.
+속성 필터(Amazon EKS의 경우 Kubernetes 네임스페이스와 레이블, Amazon ECS의 경우 컨테이너 인스턴스 속성)를 사용하여 연결이 추적하는 워크로드를 선택하고, 와일드카드는 관련 변형을 하나의 필터 아래 그룹화합니다(`app=payments-*`는 `payments-api`와 `payments-worker`를 포함). 광범위한 와일드카드는 이름이 우연히 일치하는 미래 워크로드도 포함하므로 패턴을 좁게 유지하세요.
 
 #### 컨테이너 연결 제약 조건 검증 {#validate-container-association-constraints}
 
-컨테이너 연결은 미묘한 방식으로 열린 상태로 실패합니다. 아래 제약 조건이 충족되지 않으면 규칙이 오류 없이 단순히 매칭되지 않습니다. 이 패턴에 의존하기 전에 다음을 확인하세요.
+컨테이너 연결은 미묘한 방식으로 개방 실패합니다. 아래 제약 조건이 충족되지 않으면 규칙이 오류 없이 단순히 매칭되지 않습니다. 이 패턴에 의존하기 전에 다음을 확인하세요.
 
-* **Amazon EKS** — VPC CNI에서 소스 NAT를 비활성화하세요. 그렇지 않으면 방화벽이 파드 IP 대신 노드 IP를 보게 되어 규칙이 매칭되지 않습니다.
+* **Amazon EKS** — VPC CNI에서 소스 NAT를 비활성화하세요. 그렇지 않으면 방화벽이 파드 IP 대신 노드 IP를 보고 규칙이 매칭되지 않습니다.
 * **Amazon ECS** — 태스크는 `awsvpc` 네트워크 모드를 사용해야 합니다. 속성 필터는 Amazon EC2 컨테이너 인스턴스에서만 작동합니다. Fargate 태스크에는 속성이 없으므로 필터 없는 연결로 추적하세요.
 * **규칙 그룹** — 규칙 그룹은 컨테이너 연결 또는 일반 IP 세트/접두사 목록 중 하나만 참조하며, 둘 다는 불가합니다. 별도로 유지하세요.
-* **IPv6 Amazon EKS 클러스터** — IPv4 목적지로의 파드 트래픽은 노드의 IPv4 주소로 변환됩니다(동일한 소스 NAT 경로). 따라서 파드 IP 규칙이 매칭될 수 없습니다. 해당 트래픽은 노드 또는 서브넷 수준에서 범위를 지정하세요.
-* **멀티 계정 및 멀티 리전** — 연결은 자체 계정 및 리전의 클러스터만 추적합니다. 중앙 집중식 이그레스의 경우, 각 워크로드 계정 및 리전에 하나씩 생성하고 AWS Resource Access Manager(RAM)를 통해 네트워킹 계정에 공유하세요.
+* **IPv6 Amazon EKS 클러스터** — IPv4 목적지로의 파드 트래픽은 노드의 IPv4 주소로 변환됩니다(동일한 소스 NAT 경로). 따라서 파드 IP 규칙이 매칭될 수 없으므로, 해당 트래픽은 노드 또는 서브넷 수준에서 범위를 지정하세요.
+* **멀티 계정 및 멀티 리전** — 연결은 자체 계정 및 리전의 클러스터만 추적합니다. 중앙 집중식 이그레스의 경우, 각 워크로드 계정 및 리전에 하나씩 생성하고 AWS RAM을 통해 네트워킹 계정에 공유하세요.
 
 ### 데이터 유출 방지 {#data-exfiltration-prevention}
 
 #### DNS Firewall로 DNS 터널링 차단 {#block-dns-tunneling-with-dns-firewall}
 
-DNS 터널링은 정상적인 DNS 트래픽처럼 보이는 DNS 쿼리에 데이터를 인코딩하여 정보를 유출합니다. DNS Firewall의 관리형 위협 목록에는 알려진 터널링 도메인이 포함되어 있으며, 서비스는 비정상적인 쿼리 패턴을 감지할 수 있습니다. 모든 VPC에서 기본값으로 `AWSManagedDomainsMalwareDomainList`와 `AWSManagedDomainsAggregateThreatList`를 활성화하세요.
+DNS 터널링은 정상적인 DNS 트래픽처럼 보이는 DNS 쿼리에 데이터를 인코딩하여 정보를 유출합니다. DNS Firewall의 관리형 위협 목록에는 알려진 터널링 도메인이 포함되어 있으며, 서비스는 비정상적인 쿼리 패턴을 감지할 수 있습니다. 기본값으로 모든 VPC에서 `AWSManagedDomainsMalwareDomainList`와 `AWSManagedDomainsAggregateThreatList`를 활성화하세요.
 
 #### S3 액세스를 승인된 버킷으로만 제한 {#restrict-s3-access-to-authorized-buckets-only}
 
@@ -187,21 +210,21 @@ DNS 터널링은 정상적인 DNS 트래픽처럼 보이는 DNS 쿼리에 데이
 
 #### AWS 서비스 트래픽에 VPC 엔드포인트 정책과 DNS Firewall 결합 {#combine-vpc-endpoint-policies-with-dns-firewall-for-aws-service-traffic}
 
-VPC 엔드포인트 정책은 엔드포인트를 통해 *무엇을* 할 수 있는지(어떤 버킷, 어떤 KMS 키)를 제어합니다. DNS Firewall은 워크로드가 AWS 서비스의 비 엔드포인트 경로를 확인할 수 *있는지*를 제어합니다. 두 가지를 함께 사용하면 AWS 서비스 트래픽이 프라이빗 경로에 유지되고 승인된 리소스로만 범위가 지정됩니다.
+VPC 엔드포인트 정책은 엔드포인트를 통해 *무엇을* 할 수 있는지(어떤 버킷, 어떤 KMS 키)를 제어합니다. DNS Firewall은 워크로드가 AWS 서비스의 비 엔드포인트 경로를 확인할 수 *있는지*를 제어합니다. 함께 사용하면 AWS 서비스 트래픽이 프라이빗 경로에 유지되고 승인된 리소스로만 범위가 지정됩니다.
 
-***핵심 인사이트:*** *데이터 유출 방지에는 DNS 확인, 네트워크 경로, API 인가 등 여러 계층의 제어가 필요합니다. 단일 서비스로는 모든 벡터를 커버할 수 없습니다.*
+***핵심 인사이트:*** *데이터 유출 방지에는 DNS 확인, 네트워크 경로, API 인증 등 여러 계층의 제어가 필요합니다. 단일 서비스로 모든 벡터를 커버할 수 없습니다.*
 
 ### 멀티 계정 거버넌스 {#multi-account-governance}
 
 #### 계정 간 DNS Firewall 규칙에 AWS Firewall Manager 사용 {#use-aws-firewall-manager-for-cross-account-dns-firewall-rules}
 
-멀티 계정 환경에서 DNS Firewall 규칙은 모든 계정의 모든 VPC에서 일관성을 유지해야 합니다. 계정별로 규칙을 수동으로 배포하는 것은 확장되지 않으며 드리프트를 유발합니다. [AWS Firewall Manager](https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html)는 정책이 정의된 후 생성된 계정의 VPC를 포함하여 범위 내 모든 VPC에 DNS Firewall 규칙 그룹 연결을 자동으로 적용합니다.
+멀티 계정 환경에서 DNS Firewall 규칙은 모든 계정의 모든 VPC에서 일관되어야 합니다. 계정별로 수동으로 규칙을 배포하는 것은 확장되지 않으며 드리프트를 발생시킵니다. [AWS Firewall Manager](https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html)는 정책이 정의된 후 생성된 계정의 VPC를 포함하여 범위 내 모든 VPC에 DNS Firewall 규칙 그룹 연결을 자동으로 적용합니다.
 
-Firewall Manager DNS Firewall 정책은 우선순위 순서를 지원하므로, 충돌 없이 중앙 기준(관리형 위협 목록, 조직 전체 차단)과 계정 수준 또는 VPC 수준 추가를 계층화할 수 있습니다.
+Firewall Manager DNS Firewall 정책은 우선순위 순서를 지원하므로, 충돌 없이 중앙 기본값(관리형 위협 목록, 조직 전체 차단)과 계정 수준 또는 VPC 수준 추가를 계층화할 수 있습니다.
 
-#### Firewall Manager를 통해 Network Firewall 정책 중앙화 {#centralize-network-firewall-policy-through-firewall-manager}
+#### Firewall Manager를 통해 Network Firewall 정책 중앙 집중화 {#centralize-network-firewall-policy-through-firewall-manager}
 
-AWS Network Firewall을 사용하는 환경(중앙 집중식 이그레스 VPC 또는 VPC별 분산형)의 경우, Firewall Manager가 방화벽 정책을 중앙에서 관리합니다. 규칙 그룹은 한 번 정의되어 범위 내 모든 방화벽 엔드포인트에 적용됩니다. 이를 통해 새 VPC 또는 계정이 자동으로 조직의 이그레스 검사 기준을 상속합니다.
+AWS Network Firewall을 사용하는 환경(중앙 집중식 이그레스 VPC 또는 VPC별 분산형)의 경우, Firewall Manager가 방화벽 정책을 중앙에서 관리합니다. 규칙 그룹은 한 번 정의되고 범위 내 모든 방화벽 엔드포인트에 적용됩니다. 이를 통해 새 VPC 또는 계정이 자동으로 조직의 이그레스 검사 기본값을 상속합니다.
 
 #### 중앙 팀과 애플리케이션 팀 간 규칙 소유권 분리 {#separate-rule-ownership-between-central-and-application-teams}
 
@@ -213,7 +236,9 @@ AWS Network Firewall을 사용하는 환경(중앙 집중식 이그레스 VPC �
 | **조직 허용 목록** | 중앙 보안 팀 | 모든 VPC, 모든 계정 | 공유 SaaS 벤더, OS 업데이트 저장소, 공통 API |
 | **워크로드별 규칙** | 애플리케이션 팀 | 단일 VPC 또는 계정 | 애플리케이션별 서드파티 API, 파트너 엔드포인트 |
 
-Firewall Manager의 우선순위 순서가 이 계층화를 가능하게 합니다. 중앙 규칙이 먼저 평가되고, 애플리케이션 팀 규칙이 기준을 재정의하지 않고 그 위에 계층화됩니다.
+Firewall Manager의 우선순위 순서가 이 계층화를 가능하게 합니다. 중앙 기본 규칙이 먼저 평가되고, 애플리케이션 팀 규칙이 기본값을 재정의하지 않고 위에 계층화되며, 허용 목록 모드에서 중앙 전체 차단 규칙이 마지막으로 평가됩니다.
+
+허용 목록 모드의 전체 차단 규칙은 애플리케이션 팀이 추가하는 허용 규칙을 포함한 모든 허용 규칙보다 높은 우선순위 번호를 가져야 합니다. 그렇지 않으면 차단됩니다. [Firewall Manager DNS Firewall 정책](https://docs.aws.amazon.com/waf/latest/developerguide/dns-firewall-policies.html)에서 위협 차단을 첫 번째 규칙 그룹에, 전체 차단 규칙을 마지막 규칙 그룹에 배치하세요. 첫 번째 규칙 그룹은 계정 소유자가 연결하는 규칙 그룹보다 먼저 실행되고, 마지막 규칙 그룹은 그 이후에 실행되므로, 애플리케이션 팀의 허용 규칙은 항상 그 사이에서 실행됩니다. 마지막 규칙 그룹은 다른 그룹보다 앞으로 이동할 수 없으므로, 허용 목록보다 먼저 실행되어야 하는 위협 규칙을 보유할 수 없습니다. 규칙 그룹이 서로 다른 Profiles를 통해 도착하는 경우, 하나의 Profile 내 우선순위는 다른 Profile의 그룹에 대한 순서를 지정하지 않습니다. 순서에 대해서는 [자동화된 허용 목록 규칙으로 허용 목록 구성하기](#build-the-allow-list-with-an-automated-allowlist-rule)를 참조하세요.
 
 ### IPv6 이그레스 보안 {#ipv6-egress-security}
 
@@ -221,11 +246,11 @@ Firewall Manager의 우선순위 순서가 이 계층화를 가능하게 합니�
 
 [이그레스 전용 인터넷 게이트웨이](https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html)는 아웃바운드 IPv6 트래픽을 허용하고 원치 않는 인바운드를 차단합니다. 이는 NAT 게이트웨이의 단방향 동작과 동일한 IPv6 버전입니다. 하지만 아웃바운드 트래픽을 필터링하지는 않습니다. 보안 그룹이 첫 번째 제어 수단입니다. IPv4와 마찬가지로 워크로드가 실제로 필요한 포트와 프로토콜로 아웃바운드 IPv6 규칙을 제한하세요.
 
-일반적인 실수는 기본 `0.0.0.0/0` 및 `::/0` 아웃바운드 규칙을 그대로 두는 것입니다. 기본 전체 허용 아웃바운드 규칙을 제거하고 워크로드의 실제 이그레스 요구 사항에 맞는 명시적 규칙으로 교체하세요.
+일반적인 실수는 기본 `0.0.0.0/0` 및 `::/0` 아웃바운드 규칙을 그대로 두는 것입니다. 기본 전체 허용 아웃바운드 규칙을 제거하고 워크로드의 실제 이그레스 요구 사항에 대한 명시적 규칙으로 교체하세요.
 
 #### IPv4와 IPv6에 동일하게 DNS Firewall 사용 {#use-dns-firewall-identically-for-ipv4-and-ipv6}
 
-DNS Firewall은 확인 계층에서 작동하며 프로토콜에 독립적입니다. 결과 연결이 IPv4를 사용하든 IPv6를 사용하든 관계없이 도메인 확인을 차단합니다. DNS Firewall 규칙은 추가 구성 없이 두 주소 체계에 동일하게 적용됩니다.
+DNS Firewall은 확인 계층에서 작동하며 프로토콜에 독립적입니다. 결과 연결이 IPv4 또는 IPv6를 사용하는지에 관계없이 도메인 확인을 차단합니다. DNS Firewall 규칙은 추가 구성 없이 두 주소 패밀리에 동일하게 적용됩니다.
 
 #### 관리형 NAT66이 없음을 이해하세요 {#understand-that-there-is-no-managed-nat66}
 
@@ -241,7 +266,7 @@ AWS는 IPv6용 관리형 NAT를 제공하지 않습니다. IPv6 이그레스는 
 
 #### Network Firewall보다 DNS Firewall을 먼저 배포하세요 {#deploy-dns-firewall-before-network-firewall}
 
-DNS Firewall은 백만 쿼리당 몇 센트의 비용이 듭니다. Network Firewall은 엔드포인트당 시간별 요금과 GB당 처리 요금이 부과됩니다. DNS 계층에서 먼저 승인되지 않은 도메인을 차단하면, 해당 연결이 Network Firewall이 검사해야 할 트래픽을 생성하는 것을 방지합니다. 이그레스가 많은 환경에서 이 순서는 Network Firewall 처리 비용을 크게 줄일 수 있습니다.
+DNS Firewall은 백만 쿼리당 몇 센트의 비용이 듭니다. Network Firewall은 엔드포인트당 시간별 요금과 GB당 처리 요금이 부과됩니다. DNS 계층에서 먼저 승인되지 않은 도메인을 차단하면, Network Firewall이 검사해야 할 트래픽을 생성하는 연결을 방지합니다. 높은 이그레스 환경에서 이 순서는 Network Firewall 처리 비용을 크게 줄일 수 있습니다.
 
 | 서비스 | 요금 모델 | 일반적인 비용 요인 |
 | --- | --- | --- |
@@ -254,15 +279,15 @@ DNS Firewall은 백만 쿼리당 몇 센트의 비용이 듭니다. Network Fire
 
 #### NAT 게이트웨이 처리 요금 절감을 위해 VPC 엔드포인트 사용 {#use-vpc-endpoints-to-reduce-nat-gateway-processing-charges}
 
-NAT 게이트웨이를 통과하는 S3, DynamoDB 또는 기타 AWS 서비스에 대한 모든 API 호출에는 처리 요금이 발생합니다. S3 및 DynamoDB용 게이트웨이 엔드포인트는 무료이며 해당 트래픽을 NAT 경로에서 완전히 제거합니다. 트래픽이 많은 서비스(ECR, CloudWatch Logs, STS, KMS)용 인터페이스 엔드포인트는 며칠 내에 절감된 NAT 요금으로 비용을 회수하는 경우가 많습니다.
+NAT 게이트웨이를 통과하는 S3, DynamoDB 또는 기타 AWS 서비스에 대한 모든 API 호출에는 처리 요금이 발생합니다. S3 및 DynamoDB용 게이트웨이 엔드포인트는 무료이며 해당 트래픽을 NAT 경로에서 완전히 제거합니다. 트래픽이 많은 서비스(ECR, CloudWatch Logs, STS, KMS)의 인터페이스 엔드포인트는 며칠 내에 절감된 NAT 요금으로 비용을 회수하는 경우가 많습니다.
 
 #### Network Firewall 배포 적정 규모 조정 {#right-size-network-firewall-deployment}
 
 Network Firewall은 엔드포인트 시간당 요금이 부과됩니다. 분산형 모델에서는 방화벽 엔드포인트가 있는 모든 VPC가 해당 시간당 비용을 지불합니다. 모든 VPC에 전체 트래픽 검사가 필요한 것은 아닙니다. 인터넷 이그레스가 없는 워크로드나 DNS Firewall과 보안 그룹으로 이그레스가 완전히 커버되는 워크로드는 Network Firewall 엔드포인트가 필요하지 않습니다. 민감한 데이터를 처리하거나 DNS Firewall만으로는 커버할 수 없는 복잡한 이그레스 요구 사항이 있는 VPC에 Network Firewall을 예약하세요.
 
-## 각 아웃바운드 제어 방식의 적합한 사용 시점 {#when-to-use-each-outbound-control}
+## 각 아웃바운드 제어를 사용해야 하는 경우 {#when-to-use-each-outbound-control}
 
-각 제어 방식은 이그레스(egress) 문제의 서로 다른 부분을 해결합니다. 어떤 방식을 선택할지가 아니라, 워크로드의 위험 프로파일과 예산에 맞는 조합이 무엇인지가 핵심입니다.
+각 제어는 이그레스 문제의 서로 다른 부분을 해결합니다. 어떤 것을 사용할지가 아니라, 워크로드의 위험 프로파일과 예산에 맞는 조합이 무엇인지가 핵심입니다.
 
 **보안 그룹(아웃바운드 규칙)** 이 적합한 경우:
 
@@ -286,14 +311,14 @@ DNS Firewall만으로는 **충분하지 않은** 경우:
 
 * 워크로드가 하드코딩된 IP로 연결하는 경우 (Network Firewall 사용)
 * 페이로드 검사 또는 IPS 시그니처가 필요한 경우 (Network Firewall 사용)
-* 도메인 수준이 아닌 URL 경로 기준으로 필터링해야 하는 경우 (Network Firewall Proxy 사용)
+* 도메인이 아닌 URL 경로 기준으로 필터링해야 하는 경우 (Network Firewall Proxy 사용)
 
 **AWS Network Firewall** 이 적합한 경우:
 
 * 아웃바운드 트래픽에 대한 스테이트풀 검사가 필요한 경우 (IPS, 프로토콜 적용)
 * 컴플라이언스 요건상 심층 메타데이터와 함께 모든 아웃바운드 연결을 로깅해야 하는 경우
 * DNS를 우회하는 하드코딩된 IP로의 연결을 차단해야 하는 경우
-* SNI를 통한 도메인 필터링, 또는 비 TLS 프로토콜에 대한 확인된 IP 검증을 DNS Firewall의 보완 수단으로 사용해야 하는 경우
+* SNI를 통한 도메인 필터링, 또는 비 TLS 프로토콜에 대한 확인된 IP 검증이 DNS Firewall의 보완 수단으로 필요한 경우
 * VPC 또는 서브넷을 공유하는 Amazon ECS 또는 Amazon EKS 워크로드 간에 이그레스 정책을 다르게 적용해야 하는 경우 (컨테이너 연결 사용)
 
 Network Firewall이 **적합하지 않은** 경우:
@@ -302,7 +327,7 @@ Network Firewall이 **적합하지 않은** 경우:
 * 워크로드에 인터넷 이그레스가 없는 경우 (검사할 트래픽 없음)
 * 예산 제약으로 인해 엔드포인트 시간당 요금이 부담스러운 경우 (DNS Firewall을 주요 수단으로 사용)
 
-**VPC 엔드포인트** 가 적합한 경우:
+**VPC Endpoints** 가 적합한 경우:
 
 * 워크로드가 AWS 서비스를 호출하는 경우 (항상 적용 — 사용 중인 서비스에 대한 엔드포인트 배포)
 * NAT 게이트웨이 처리 비용을 절감하고자 하는 경우
@@ -314,14 +339,14 @@ Network Firewall이 **적합하지 않은** 경우:
 * 현재 자체 호스팅 Squid 또는 프록시 플릿을 운영 중인 경우
 * 도메인 수준이 아닌 애플리케이션 인식 이그레스 제어가 필요한 경우
 
-## 아웃바운드 제어와 다른 서비스의 결합 {#combining-outbound-controls-with-other-services}
+## 아웃바운드 제어와 다른 서비스의 조합 {#combining-outbound-controls-with-other-services}
 
 | 조합 | 아웃바운드 제어가 제공하는 기능 | 다른 서비스가 제공하는 기능 |
 | --- | --- | --- |
 | **DNS Firewall + VPC Endpoints** | 인터넷 바운드 트래픽에 대한 도메인 기반 차단 | AWS 서비스 트래픽의 경로 제거(엔드포인트로 확인된 이름은 DNS Firewall에 도달하지 않음) |
 | **DNS Firewall + Network Firewall** | DNS 확인 시 1차 도메인 필터링(저비용, 고속) | 실제 트래픽의 2차 검사(하드코딩된 IP, IPS 시그니처, 프로토콜 위반 탐지) |
 | **Network Firewall + NAT gateway** | 트래픽이 외부로 나가기 전 스테이트풀 검사 | IPv4 주소 변환 및 이그레스 경로 |
-| **Security Groups + DNS Firewall** | ENI 수준의 포트/프로토콜 제한 | DNS 확인 시 도메인 기반 제한 |
+| **Security Groups + DNS Firewall** | ENI에서의 포트/프로토콜 제한 | DNS 확인 시 도메인 기반 제한 |
 | **Firewall Manager + DNS Firewall** | 중앙 집중식 정책 정의 및 자동 배포 | VPC별 DNS 쿼리 필터링 |
 | **Firewall Manager + Network Firewall** | 계정 간 중앙 집중식 규칙 그룹 관리 | VPC별 또는 중앙 집중식 VPC 트래픽 검사 |
 | **VPC Endpoints + Endpoint Policies** | AWS 서비스 트래픽을 위한 프라이빗 경로 | 권한 부여 범위 지정(조직 버킷, 특정 KMS 키로 제한) |
@@ -330,15 +355,15 @@ Network Firewall이 **적합하지 않은** 경우:
 
 ## 중앙 집중식 vs. 분산형 이그레스 검사 {#centralized-vs-decentralized-egress-inspection}
 
-[인터넷 연결](../connectivity/internet.md) 페이지에서는 연결 관점에서 중앙 집중식 vs. 분산형 이그레스의 아키텍처 트레이드오프를 다룹니다. 보안 관점에서 핵심 질문은 **검사가 어디서 이루어지는가**입니다.
+[인터넷 연결](../connectivity/internet.md) 페이지에서는 연결 관점에서 중앙 집중식 이그레스와 분산형 이그레스의 아키텍처 트레이드오프를 다룹니다. 보안 관점에서 핵심 질문은 **검사가 어디서 이루어지는가**입니다.
 
 | 항목 | 분산형 검사 | 중앙 집중식 검사 |
 | --- | --- | --- |
 | **검사 위치** | VPC별 Network Firewall 엔드포인트, VPC별 DNS Firewall(중앙에서 관리) | 공유 이그레스 VPC 내 단일 Network Firewall |
 | **정책 일관성** | Firewall Manager를 통해 달성 — 모든 곳에 동일한 규칙 그룹 적용 | 단일 검사 지점을 통해 달성 — 모든 트래픽이 하나의 방화벽을 통과 |
-| **IPv6 지원** | 자연스럽게 동작(IPv6 이그레스는 설계상 VPC별로 구성) | IPv6는 중앙 집중화 불가(관리형 NAT66 없음), 따라서 IPv6 검사는 어떤 경우에도 VPC별로 수행 |
+| **IPv6 지원** | 자연스럽게 동작(IPv6 이그레스는 설계상 VPC별로 구성) | IPv6는 중앙 집중화 불가(관리형 NAT66 없음), IPv6 검사는 무조건 VPC별로 수행 |
 | **장애 반경** | 방화벽 문제가 하나의 VPC에만 영향 | 방화벽 문제가 모든 소비자 VPC에 영향 |
-| **대규모 비용** | VPC별 엔드포인트 사용 시간이 누적 | 엔드포인트 세트는 하나이지만, 모든 플로우에 Transit Gateway/Cloud WAN 처리 비용 발생 |
+| **대규모 비용** | VPC별 엔드포인트 시간 비용이 누적 | 엔드포인트 세트는 하나이지만, 모든 플로우에 Transit Gateway/Cloud WAN 처리 비용 발생 |
 | **가시성** | VPC별 플로우 로그 및 방화벽 로그 | 모든 이그레스 트래픽에 대한 단일 통합 뷰 |
 | **적합한 환경** | 소규모 환경, 팀 자율성, 듀얼 스택 워크로드 | 전담 보안 운영 조직을 갖춘 대규모 환경, IPv4 중심 트래픽, 단일 검사 지점을 요구하는 컴플라이언스 |
 
@@ -352,7 +377,7 @@ Network Firewall이 **적합하지 않은** 경우:
 
     ---
 
-    관리형 도메인 목록 및 사용자 지정 규칙을 포함하여 VPC에서 발생하는 DNS 쿼리에 대한 도메인 기반 필터링을 제공합니다.
+    관리형 도메인 목록 및 사용자 지정 규칙을 포함하여 VPC에서 발생하는 DNS 쿼리에 대한 도메인 기반 필터링.
 
     [:octicons-arrow-right-24: DNS Firewall 문서](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-dns-firewall.html)
 
@@ -360,7 +385,7 @@ Network Firewall이 **적합하지 않은** 경우:
 
     ---
 
-    Suricata 호환 IPS, 도메인 필터링, 프로토콜 검사 기능을 갖춘 관리형 스테이트풀 방화벽입니다.
+    Suricata 호환 IPS, 도메인 필터링, 프로토콜 검사를 갖춘 관리형 스테이트풀 방화벽.
 
     [:octicons-arrow-right-24: Network Firewall 문서](https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html)
 
@@ -368,7 +393,7 @@ Network Firewall이 **적합하지 않은** 경우:
 
     ---
 
-    Amazon ECS 태스크 및 Amazon EKS 파드를 위한 동적 IP 세트, 속성 필터, 규칙 그룹 참조 및 공유 기능을 제공합니다.
+    Amazon ECS 태스크 및 Amazon EKS 파드를 위한 동적 IP 세트, 속성 필터, 규칙 그룹 참조 및 공유.
 
     [:octicons-arrow-right-24: 컨테이너 연결 문서](https://docs.aws.amazon.com/network-firewall/latest/developerguide/container-associations.html)
 
@@ -376,7 +401,7 @@ Network Firewall이 **적합하지 않은** 경우:
 
     ---
 
-    AWS Organizations 전반에 걸쳐 AWS WAF, Network Firewall, DNS Firewall, 보안 그룹을 중앙 집중식으로 관리하는 보안 정책 관리 서비스입니다.
+    AWS WAF, Network Firewall, DNS Firewall, 보안 그룹에 대해 AWS Organizations 전반에 걸친 중앙 집중식 보안 정책 관리.
 
     [:octicons-arrow-right-24: Firewall Manager 문서](https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html)
 
@@ -384,7 +409,7 @@ Network Firewall이 **적합하지 않은** 경우:
 
     ---
 
-    인터넷 게이트웨이, NAT, 퍼블릭 IP 없이 AWS 서비스에 프라이빗으로 연결합니다.
+    인터넷 게이트웨이, NAT, 퍼블릭 IP 없이 AWS 서비스에 프라이빗으로 연결.
 
     [:octicons-arrow-right-24: PrivateLink 문서](https://docs.aws.amazon.com/vpc/latest/privatelink/what-is-privatelink.html)
 
@@ -392,7 +417,7 @@ Network Firewall이 **적합하지 않은** 경우:
 
     ---
 
-    시간당 및 GB당 처리 요금으로, VPC 엔드포인트와 DNS Firewall을 1차 제어 수단으로 활용하는 비용 절감 근거가 됩니다.
+    VPC 엔드포인트 및 DNS Firewall을 1차 제어 수단으로 활용하는 비용 절감 근거가 되는 시간당 및 GB당 처리 요금.
 
     [:octicons-arrow-right-24: NAT 게이트웨이 요금](https://aws.amazon.com/vpc/pricing/)
 
@@ -400,7 +425,7 @@ Network Firewall이 **적합하지 않은** 경우:
 
     ---
 
-    요청 수준 규칙 평가를 지원하는 아웃바운드 웹 트래픽용 관리형 명시적 포워드 프록시입니다.
+    요청 수준 규칙 평가를 지원하는 아웃바운드 웹 트래픽용 관리형 명시적 포워드 프록시.
 
     [:octicons-arrow-right-24: 발표 내용](https://aws.amazon.com/about-aws/whats-new/2025/11/aws-network-firewall-proxy-preview/)
 

@@ -1,6 +1,6 @@
 {
   "files": {
-    "content/index.md": "d61ab858baeb1629718833dd4dd552dd4e73a9ddf3807134ca059cb4a3697fa9",
+    "content/index.md": "25ad960d1d983c9d90e36548b68186cffd3ac0bf9827dc6eecc4e6107ceb82c9",
     "content/application-networking/index.md": "2dcaa8ef84b968ba3afcfb7e15ae76fcfeaaf20bdc08a619a16f1e5b67cd03b1",
     "content/community/index.md": "151945d24fac7f4202de822501052f1473a5153b2f69ca67d137de2ab094465a",
     "content/community/contribute.md": "a24ae2b571906dc6252b00ad8a6b66b03f44d65441329b02e69f3a86b869edb2",
@@ -13,32 +13,33 @@
     "content/application-networking/container-mesh.md": "8966405b31d3f2783fcc4104713bac9f6ee1a6f29d0f56eb606b8d0313ae2105",
     "content/connectivity/remote-access.md": "8bcc1b7dbfa7a05b0739c17131dc5cb2a5bc0e2785e2a6b84f9ee66fb760e9d9",
     "content/application-networking/service-to-service.md": "cd26a1c6463bdff434f0558e20570bf9579c961c58572aa35e2c1e17da1bc33c",
-    "content/decisions.md": "20a8a5e2beaff27950c6b8a364c73c5fbbc370b689c27e553153c1e7cffa2cab",
+    "content/decisions.md": "856dcecfdeda79e119dabbaa53eca149054c264c29a9192c4464016c67375270",
     "content/application-networking/load-balancing.md": "e8cf65b830f265c2653e89651b3dedf8785a964d0d21d894e943ee8cfbd51d27",
     "content/foundation/aws-prerequisites.md": "753e8cf23ed48e12ff77c5c210274a52b0443ec012521418182a8acc1a9d36a1",
     "content/connectivity/internet.md": "53d5e014e82d78dac8b3f898d2eb1a4f74bd1a4ed2a57f040039420c3e767d76",
-    "content/connectivity/hybrid-multicloud.md": "eab7aac3f38dba23b29fc9f5b45d53f829fa6f6dce64ffb3b038ed255631db60",
+    "content/connectivity/hybrid-multicloud.md": "4196d85ea151144a1c2aed20e611b5edcdbd77337f8530bd6618dca7145e2689",
     "content/foundation/cidr.md": "65234bf373762f3bd9a45c32d52cbf394c6f1cfb525c88bb3a66dbec92e76686",
     "content/foundation/index.md": "d387e8b588ef5590250af5ca56f5f668aa29677fd229a9930939a5bf57e51129",
-    "content/foundation/dns.md": "b57406ec9c508bfecb31828b68accb1d82e7e9ced3358ef5a6c084e374953cb9",
+    "content/foundation/dns.md": "9ab120e6aa36bd1b331f4d487c9f538cf96e91226609e07d99e1e4402b91e5e3",
     "content/foundation/organizations.md": "aefd79764df7032f5c54289be4488148cb8ad8a33a2cc2fbabfd812f5a86d26f",
     "content/foundation/regions-azs.md": "fdccdac0f1e04e835e62dc60bac4eaa979c1661b3cf5596b951a8fe469455615",
     "content/foundation/ipam.md": "049c02d5796a128dd3e09f2246777bfdbf7649676414238b5c6c0c321e38f0fd",
     "content/observability/index.md": "af9d5b75bdfe98a4cb95611b330422282796e727065d5c4fd2c371f68b7cef19",
     "content/foundation/subnets.md": "8d80558e71934e9a17c44776c8e863250eedf63ff1de2f57a8ccfce3eec998b2",
     "content/foundation/vpc.md": "c0e8a2db6dfa7ef737d85754d1ac7a0c340c63211fd5d7bd9a109024c8ca6f92",
-    "content/connectivity/within-aws.md": "bce842cfeffe6b3e31d6e07aafa1bda319cc5be92745939d5607b1e63d584d9e",
+    "content/connectivity/within-aws.md": "c1f7ab748c577417342fd90e7ea05d98b4dba8cb8d8ae3fb22f566ad6893cb2e",
     "content/security/index.md": "0cbbfc48506bed9c2c6961a5082e2dc6552203179075da3306f727def6a59117",
     "content/observability/external-traffic.md": "1c54ddbe301dc82b7d88ecd758da339d640f83184086f653350f412b373bb297",
     "content/observability/notifications.md": "85537522233182d87485c56e55a88a3dedd97130c1ae1028470541a1f876b5de",
     "includes/abbreviations.md": "6c77e219d5b8a6d3962b3e0d1fdc13c3a5847a156f0fd54aaba080f408cf5629",
     "content/observability/internal-traffic.md": "85cd636afd32a79fd987564c944dac084a06d456800447fb27ba8f37d6f83226",
     "content/observability/service-monitoring.md": "f5070fcd24e693290dee787fc725776f60814bb2376de43a7fc21a4ad1cb54c5",
-    "content/security/outbound.md": "7d8ef943b0f05dd0d5b7cf7cf864876d9e026d7eb9bdaa67aed644548ce268ef",
+    "content/security/outbound.md": "f0f7886a59b1d4b3d18e3e6a488d41d17b24505d3dfde29e9bc7560718eabc98",
     "content/security/segmentation.md": "3093bb2a95c092260c858d51abc3613653c915c9bccd7e211ab149b56861a8bf",
     "content/security/perimeter-inbound.md": "b90250dd264216817122cdc3d5648842796bbab61afc28a95cb79a53b13b4be3",
     "content/changelog.md": "eeb9b2033e8cd0741321df3d1648031b84e3a738f4d7f35513dee8de3865e133",
-    "content/observability/network-performance.md": "c5d002b3e732ff4472caa33a91eb94c619275a44583d03c855c2bebaefe550dc"
+    "content/observability/network-performance.md": "c5d002b3e732ff4472caa33a91eb94c619275a44583d03c855c2bebaefe550dc",
+    "content/decision-framework.md": "71980ec3a143f1f707a2be283a30f10e3430447d0d16ce42ac870dbb15a4c805"
   },
   "nav_labels": {
     "Introduction": "소개",
@@ -78,6 +79,7 @@
     "Philosophy": "철학",
     "Conventions": "규칙",
     "Changelog": "변경 로그",
-    "Network Performance": "네트워크 성능"
+    "Network Performance": "네트워크 성능",
+    "Decision Framework": "의사결정 프레임워크"
   }
 }
