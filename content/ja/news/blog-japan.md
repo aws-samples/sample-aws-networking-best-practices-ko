@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-27 · 週次まとめ
+
+- **[新しい AWS WAF セキュリティ分析ダッシュボードのご紹介: すべての保護パックのトラフィックを単一ページで調査・対処](https://aws.amazon.com/jp/blogs/news/introducing-the-new-aws-waf-security-analytics-dashboard/)** — AWS WAF セキュリティ分析ダッシュボードを使うと、すべての Web ACL・リージョンリソース・Amazon CloudFront ディストリビューションにわたるトラフィックを単一のグローバルページで調査・対処できます。ホストやラベルなどのディメンションとフィルター・グループ化機能により、トラフィック急増の調査や誤検知を減らすためのルールチューニングが可能です。
+- **[AWS WAF Bot Control のターゲットを絞った検査レベルでオンボーディングを簡素化](https://aws.amazon.com/jp/blogs/news/introducing-simplified-onboarding-for-aws-waf-bot-control-at-the-targeted-inspection-level/)** — AWS WAF Bot Control のターゲットを絞った検査レベルで、簡素化されたオンボーディングとボット信頼度レベル (High・Medium・Low) ごとのアクション設定が利用可能になりました。Amazon CloudFront では 1 つのトグルで Targeted bot control を有効にでき、自動 SDK 統合によりアプリケーションコードを変更せずに導入できるケースが多くあります。
+
 ## 2026-11-25 · 週次まとめ
 
 - **[週刊生成 AI with AWS – 2026/11/16 週](https://aws.amazon.com/jp/blogs/news/weekly-genai-20261116/)** — 今週は、株式会社 BTM 様による Amazon Bedrock AgentCore を使ったログ分析エージェントの再構築事例や、既存コードから AI 向け仕様書を生成する Reverse Spec Flow、Kiro for VS Code の一般提供、クラウドセッションの VPC 接続など 12 本の記事を紹介しています。 サービスアップデートでは、Amazon Bedrock への OpenAI GPT-6.2 Astra/Sol 追加、AgentCore の Web 検索 5,000 件無料枠、Amazon S3 Vectors のハイブリッド検索、Amazon Polly の音声クローンなど 27 件と、Kiro の最新 changelog 9 件がまとめられています。

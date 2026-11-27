@@ -8,6 +8,10 @@ Networking-related items from [AWS What's New](https://aws.amazon.com/new/), aut
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-27 · Daily update
+
+- **[Elastic Load Balancing for Envoy is now generally available](https://aws.amazon.com/about-aws/whats-new/2026/11/elastic-load-balancing-for-envoy-generally-available)** — AWS has announced the general availability of ELB for Envoy, a new load balancer type in Elastic Load Balancing that runs open-source Envoy proxies on dedicated Amazon EC2 instances with AWS Nitro System hardware isolation. It offloads Envoy upgrades, security patching, and CVE monitoring from platform teams, containing any zero-day vulnerabilities within the load balancer boundary.
+
 ## 2026-11-26 · Daily update
 
 - **[Amazon EC2 M8g Instances Now Available in Israel (Tel Aviv)](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-m8g-instances-telaviv-region/)** — Amazon EC2 M8g instances powered by AWS Graviton4 processors are now available in the Israel (Tel Aviv) region. They deliver up to 30% better performance than Graviton3-based instances and are suited for general-purpose workloads such as application servers, microservices, and gaming servers.

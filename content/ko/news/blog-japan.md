@@ -8,6 +8,11 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-27 · 주간 요약
+
+- **[새로운 AWS WAF 보안 분석 대시보드 소개: 모든 보호 팩의 트래픽을 단일 페이지에서 조사 및 대응](https://aws.amazon.com/jp/blogs/news/introducing-the-new-aws-waf-security-analytics-dashboard/)** — AWS WAF 보안 분석 대시보드를 통해 모든 웹 ACL, 리전 리소스, Amazon CloudFront 배포에 걸친 트래픽을 단일 글로벌 페이지에서 조사하고 대응할 수 있습니다. 호스트·레이블 등의 차원과 필터·그룹화 기능을 활용해 트래픽 급증 조사 및 오탐 감소를 위한 규칙 튜닝이 가능합니다.
+- **[AWS WAF Bot Control의 타깃 검사 수준으로 온보딩 간소화](https://aws.amazon.com/jp/blogs/news/introducing-simplified-onboarding-for-aws-waf-bot-control-at-the-targeted-inspection-level/)** — AWS WAF Bot Control의 타깃 검사 수준에서 간소화된 온보딩과 봇 신뢰도 수준(High/Medium/Low) 기반 액션 설정을 지원하기 시작했습니다. Amazon CloudFront에서는 토글 하나로 Targeted bot control을 활성화할 수 있으며, 자동 SDK 통합으로 애플리케이션 코드 변경 없이 도입이 가능한 경우가 많습니다.
+
 ## 2026-11-25 · 주간 요약
 
 - **[주간 생성 AI with AWS – 2026년 11월 16일 주](https://aws.amazon.com/jp/blogs/news/weekly-genai-20261116/)** — 이번 주에는 Amazon Bedrock AgentCore를 활용한 로그 분석 에이전트 재구축 사례, 기존 코드에서 AI용 사양서를 생성하는 Reverse Spec Flow, Kiro for VS Code 정식 출시, 클라우드 세션의 VPC 연결 등 12편의 기사를 소개합니다. 서비스 업데이트로는 Amazon Bedrock의 OpenAI GPT-6.2 Astra/Sol 지원, AgentCore 웹 검색 5,000건 무료 제공, Amazon S3 Vectors 하이브리드 검색, Amazon Polly 음성 클론 등 27건과 Kiro 최신 changelog 9건이 정리되어 있습니다.

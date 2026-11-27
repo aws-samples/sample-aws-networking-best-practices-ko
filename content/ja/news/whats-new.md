@@ -8,6 +8,10 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-27 · 前日のアップデート
+
+- **[Elastic Load Balancing for Envoy が一般提供開始](https://aws.amazon.com/about-aws/whats-new/2026/11/elastic-load-balancing-for-envoy-generally-available)** — AWS は、オープンソースの Envoy プロキシを実行する新しいロードバランサータイプ ELB for Envoy の一般提供を開始しました。AWS Nitro System によるハードウェア分離が施された専用の Amazon EC2 インスタンス上で動作し、Envoy のゼロデイ脆弱性の影響範囲をロードバランサー内に封じ込めるとともに、CVE の監視やセキュリティパッチ適用を AWS が自動的に管理します。
+
 ## 2026-11-26 · 前日のアップデート
 
 - **[Amazon EC2 M8g インスタンスがイスラエル（テルアビブ）リージョンで利用可能に](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-m8g-instances-telaviv-region/)** — AWS Graviton4 プロセッサを搭載した Amazon EC2 M8g インスタンスが、イスラエル（テルアビブ）リージョンで利用可能になりました。Graviton3 ベースのインスタンスと比較して最大 30% の性能向上を実現し、アプリケーションサーバーやマイクロサービスなどの汎用ワークロードに適しています。
