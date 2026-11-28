@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-28 · 주간 요약
+
+- **[AWS Network Firewall 자동 인터넷 방화벽 모드(프리뷰) 출시](https://aws.amazon.com/jp/blogs/news/aws-network-firewall-introduces-automated-internet-firewall-mode-preview/)** — AWS Network Firewall의 자동 인터넷 방화벽 모드(프리뷰)는 중앙에서 정의한 규칙을 각 VPC의 인터넷 게이트웨이에 직접 적용하며, 내장 NAT를 통해 아웃바운드 전용 IPv4 연결을 지원합니다. VPC별로 방화벽 엔드포인트나 NAT 게이트웨이를 별도 배포할 필요가 없어 네트워크 아키텍처가 단순해집니다.
+- **[AWS Network Firewall 컨텍스트 인식 규칙 소개: IP 주소 대신 AWS 리소스 기반 트래픽 매칭](https://aws.amazon.com/jp/blogs/news/introducing-context-aware-rules-for-aws-network-firewall/)** — AWS Network Firewall이 IP 주소 대신 VPC, 서브넷, 보안 그룹, Transit Gateway 어태치먼트 등 AWS 리소스를 기준으로 트래픽을 매칭하는 컨텍스트 인식 규칙을 지원합니다. 이를 통해 VPC에 연결된 Lambda 함수처럼 IP가 수시로 변경되는 단기 워크로드에도 규칙이 자동으로 추적·적용됩니다.
+- **[AWS Network Firewall Next Generation 정책 소개: 액세스 제어와 위협 방어를 별도 엔진으로 구현](https://aws.amazon.com/jp/blogs/news/introducing-aws-network-firewall-next-generation-policy/)** — AWS Network Firewall의 Next Generation 정책은 액세스 제어를 담당하는 방화벽 엔진과 위협 방어를 담당하는 IPS 엔진을 분리하여 각각 독립적인 규칙 용량을 제공합니다. 기존 Classic 정책 대비 도메인 허용 목록과 위협 방어를 독립적으로 조합할 수 있어 정책 관리 유연성이 향상됩니다.
+
 ## 2026-11-27 · 주간 요약
 
 - **[새로운 AWS WAF 보안 분석 대시보드 소개: 모든 보호 팩의 트래픽을 단일 페이지에서 조사 및 대응](https://aws.amazon.com/jp/blogs/news/introducing-the-new-aws-waf-security-analytics-dashboard/)** — AWS WAF 보안 분석 대시보드를 통해 모든 웹 ACL, 리전 리소스, Amazon CloudFront 배포에 걸친 트래픽을 단일 글로벌 페이지에서 조사하고 대응할 수 있습니다. 호스트·레이블 등의 차원과 필터·그룹화 기능을 활용해 트래픽 급증 조사 및 오탐 감소를 위한 규칙 튜닝이 가능합니다.

@@ -8,6 +8,12 @@ hide:
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-28 · 週次まとめ
+
+- **[AWS Network Firewall の自動インターネットファイアウォールモード (プレビュー) の提供開始](https://aws.amazon.com/jp/blogs/news/aws-network-firewall-introduces-automated-internet-firewall-mode-preview/)** — AWS Network Firewall の自動インターネットファイアウォールモード (プレビュー) では、中央で定義したルールを各 VPC のインターネットゲートウェイに直接適用し、組み込みの NAT でアウトバウンド専用の IPv4 接続をサポートします。VPC ごとにファイアウォールエンドポイントや NAT ゲートウェイをデプロイする必要がなくなり、ネットワーク構成がシンプルになります。
+- **[AWS Network Firewall のコンテキスト対応ルールのご紹介: IP アドレスではなく AWS リソースに基づくトラフィック照合](https://aws.amazon.com/jp/blogs/news/introducing-context-aware-rules-for-aws-network-firewall/)** — AWS Network Firewall がコンテキスト対応ルールをサポートし、IP アドレスではなく VPC・サブネット・セキュリティグループ・Transit Gateway アタッチメントなどの AWS リソースを基準にトラフィックを照合できるようになりました。VPC にアタッチされた Lambda 関数のように IP が頻繁に変わる短期ワークロードにも、ルールが自動的に追随します。
+- **[AWS Network Firewall の Next Generation ポリシーのご紹介: アクセス制御と脅威防御を個別のエンジンで実現](https://aws.amazon.com/jp/blogs/news/introducing-aws-network-firewall-next-generation-policy/)** — AWS Network Firewall の Next Generation ポリシーでは、アクセス制御を担うファイアウォールエンジンと脅威防御を担う IPS エンジンが分離され、それぞれ独立したルール容量を持ちます。Classic ポリシーと比較して、ドメイン許可リストと脅威防御を独立して組み合わせられるため、ポリシー管理の柔軟性が向上します。
+
 ## 2026-11-27 · 週次まとめ
 
 - **[新しい AWS WAF セキュリティ分析ダッシュボードのご紹介: すべての保護パックのトラフィックを単一ページで調査・対処](https://aws.amazon.com/jp/blogs/news/introducing-the-new-aws-waf-security-analytics-dashboard/)** — AWS WAF セキュリティ分析ダッシュボードを使うと、すべての Web ACL・リージョンリソース・Amazon CloudFront ディストリビューションにわたるトラフィックを単一のグローバルページで調査・対処できます。ホストやラベルなどのディメンションとフィルター・グループ化機能により、トラフィック急増の調査や誤検知を減らすためのルールチューニングが可能です。

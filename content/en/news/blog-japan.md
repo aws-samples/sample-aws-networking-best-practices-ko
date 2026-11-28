@@ -8,6 +8,12 @@ Networking-related posts from the [AWS Japan Tech Blog](https://aws.amazon.com/j
 
 <!-- NEWS:INSERT -->
 
+## 2026-11-28 · Weekly summary
+
+- **[Introducing AWS Network Firewall Automated Internet Firewall Mode (Preview)](https://aws.amazon.com/jp/blogs/news/aws-network-firewall-introduces-automated-internet-firewall-mode-preview/)** — AWS Network Firewall's new automated internet firewall mode (preview) applies centrally defined rules at each VPC's internet gateway, with built-in NAT for outbound-only IPv4 connectivity. This eliminates the need to deploy per-VPC firewall endpoints or NAT gateways, simplifying network architecture.
+- **[Introducing AWS Network Firewall Context-Aware Rules: Traffic Matching Based on AWS Resources Instead of IP Addresses](https://aws.amazon.com/jp/blogs/news/introducing-context-aware-rules-for-aws-network-firewall/)** — AWS Network Firewall now supports context-aware rules that match traffic based on source and destination AWS resources—such as VPCs, subnets, security groups, and Transit Gateway attachments—rather than IP addresses. This allows rules to automatically follow short-lived workloads like VPC-attached Lambda functions that scale out and change IPs frequently.
+- **[Introducing AWS Network Firewall Next Generation Policy: Separate Engines for Access Control and Threat Prevention](https://aws.amazon.com/jp/blogs/news/introducing-aws-network-firewall-next-generation-policy/)** — AWS Network Firewall's Next Generation Policy separates the firewall engine for access control from the IPS engine for threat prevention, giving each its own independent rule capacity. Compared to Classic policies, this enables more flexible policy management by allowing domain allowlists and threat prevention to be configured and combined independently.
+
 ## 2026-11-27 · Weekly summary
 
 - **[Introducing the New AWS WAF Security Analytics Dashboard: Investigate and Respond to Traffic Across All Protection Packs in a Single Page](https://aws.amazon.com/jp/blogs/news/introducing-the-new-aws-waf-security-analytics-dashboard/)** — The AWS WAF Security Analytics Dashboard lets you investigate and respond to traffic across all web ACLs, regional resources, and Amazon CloudFront distributions from a single global page. It supports dimensions such as hosts and labels, along with controls like filters and grouping, enabling use cases such as traffic spike investigation and rule tuning to reduce false positives.
